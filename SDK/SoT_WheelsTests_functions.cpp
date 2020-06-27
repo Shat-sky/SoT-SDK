@@ -1,0 +1,36 @@
+// Sea of Thieves (1.4.16) SDK
+
+#ifdef _MSC_VER
+	#pragma pack(push, 0x8)
+#endif
+
+#include "SoT_WheelsTests_parameters.hpp"
+
+namespace SDK
+{
+//---------------------------------------------------------------------------
+//Functions
+//---------------------------------------------------------------------------
+
+// Function WheelsTests.WheelMock.GetNormalizedWheelPosition
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float AWheelMock::GetNormalizedWheelPosition()
+{
+	static auto fn = UObject::FindObject<UFunction>("Function WheelsTests.WheelMock.GetNormalizedWheelPosition");
+
+	AWheelMock_GetNormalizedWheelPosition_Params params;
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+}
+
+#ifdef _MSC_VER
+	#pragma pack(pop)
+#endif

@@ -1,0 +1,42 @@
+#pragma once
+
+// Sea of Thieves (1.4.16) SDK
+
+#ifdef _MSC_VER
+	#pragma pack(push, 0x8)
+#endif
+
+#include "SoT_Basic.hpp"
+
+namespace SDK
+{
+//---------------------------------------------------------------------------
+//Enums
+//---------------------------------------------------------------------------
+
+// UserDefinedEnum EObjectAnimationState.EObjectAnimationState
+enum class EObjectAnimationState : uint8_t
+{
+	EObjectAnimationState__NewEnumerator0 = 0,
+	None                           = 1,
+	EObjectAnimationState__NewEnumerator4 = 2,
+	None01                         = 3,
+	EObjectAnimationState__NewEnumerator8 = 4,
+	None02                         = 5,
+	EObjectAnimationState__NewEnumerator12 = 6,
+	None03                         = 7,
+	TextProperty                   = 8,
+	EObjectAnimationState__NewEnumerator16 = 9,
+	None04                         = 10,
+	EObjectAnimationState__NewEnumerator20 = 11,
+	None05                         = 12,
+	UInt16Property                 = 13
+};
+
+
+
+}
+
+#ifdef _MSC_VER
+	#pragma pack(pop)
+#endif
