@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Damage.ExtentEstimationInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Damage.ExtentEstimationInterface"));
 		return ptr;
 	}
 
@@ -37,7 +37,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Damage.HitNotificationTargetInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Damage.HitNotificationTargetInterface"));
 		return ptr;
 	}
 

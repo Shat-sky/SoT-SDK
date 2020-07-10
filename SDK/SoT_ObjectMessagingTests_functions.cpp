@@ -19,9 +19,13 @@ namespace SDK
 
 void UObjectMessagingListenerTestObject::TestFunctionWithEventData(struct FObjectMessagingEventTestData* InEventData)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ObjectMessagingTests.ObjectMessagingListenerTestObject.TestFunctionWithEventData");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function ObjectMessagingTests.ObjectMessagingListenerTestObject.TestFunctionWithEventData"));
 
-	UObjectMessagingListenerTestObject_TestFunctionWithEventData_Params params;
+	struct
+	{
+		struct FObjectMessagingEventTestData InEventData;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -37,9 +41,13 @@ void UObjectMessagingListenerTestObject::TestFunctionWithEventData(struct FObjec
 
 void UObjectMessagingListenerTestObject::TestFunction(int Data)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ObjectMessagingTests.ObjectMessagingListenerTestObject.TestFunction");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function ObjectMessagingTests.ObjectMessagingListenerTestObject.TestFunction"));
 
-	UObjectMessagingListenerTestObject_TestFunction_Params params;
+	struct
+	{
+		int                            Data;
+	} params;
+
 	params.Data = Data;
 
 	UObject::ProcessEvent(fn, &params);
@@ -54,9 +62,14 @@ void UObjectMessagingListenerTestObject::TestFunction(int Data)
 
 int UObjectMessagingListenerTestObject::InvalidEventFunctionWithReturn(struct FObjectMessagingEventTestData* InEventData)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ObjectMessagingTests.ObjectMessagingListenerTestObject.InvalidEventFunctionWithReturn");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function ObjectMessagingTests.ObjectMessagingListenerTestObject.InvalidEventFunctionWithReturn"));
 
-	UObjectMessagingListenerTestObject_InvalidEventFunctionWithReturn_Params params;
+	struct
+	{
+		struct FObjectMessagingEventTestData InEventData;
+		int                            ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -72,9 +85,12 @@ int UObjectMessagingListenerTestObject::InvalidEventFunctionWithReturn(struct FO
 
 void UObjectMessagingListenerTestObject::InvalidEventFunctionWithNoArguments()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ObjectMessagingTests.ObjectMessagingListenerTestObject.InvalidEventFunctionWithNoArguments");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function ObjectMessagingTests.ObjectMessagingListenerTestObject.InvalidEventFunctionWithNoArguments"));
 
-	UObjectMessagingListenerTestObject_InvalidEventFunctionWithNoArguments_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -87,9 +103,13 @@ void UObjectMessagingListenerTestObject::InvalidEventFunctionWithNoArguments()
 
 void UObjectMessagingListenerTestObject::InvalidEventFunctionWithIncorrectArgument(int Value)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ObjectMessagingTests.ObjectMessagingListenerTestObject.InvalidEventFunctionWithIncorrectArgument");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function ObjectMessagingTests.ObjectMessagingListenerTestObject.InvalidEventFunctionWithIncorrectArgument"));
 
-	UObjectMessagingListenerTestObject_InvalidEventFunctionWithIncorrectArgument_Params params;
+	struct
+	{
+		int                            Value;
+	} params;
+
 	params.Value = Value;
 
 	UObject::ProcessEvent(fn, &params);

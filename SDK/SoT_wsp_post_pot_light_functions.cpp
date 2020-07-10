@@ -17,9 +17,12 @@ namespace SDK
 
 void Awsp_post_pot_light_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function wsp_post_pot_light.wsp_post_pot_light_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function wsp_post_pot_light.wsp_post_pot_light_C.UserConstructionScript"));
 
-	Awsp_post_pot_light_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

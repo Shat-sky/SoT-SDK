@@ -225,7 +225,7 @@ enum class EFaunaInWaterState : uint8_t
 {
 	EFaunaInWaterState__NotInWater = 0,
 	None                           = 1,
-	None01                         = 2
+	EFaunaCratedState__NotInCrate  = 2
 };
 
 
@@ -233,7 +233,8 @@ enum class EFaunaInWaterState : uint8_t
 enum class EFaunaCratedState : uint8_t
 {
 	EFaunaCratedState__NotInCrate  = 0,
-	None                           = 1
+	None                           = 1,
+	None01                         = 2
 };
 
 
@@ -242,7 +243,8 @@ enum class ESwimmingLineOfSightTest : uint8_t
 {
 	ESwimmingLineOfSightTest__None = 0,
 	None                           = 1,
-	ESwimmingSyncMode__Synchronous = 2
+	IntProperty                    = 2,
+	ESwimmingSyncMode__Synchronous = 3
 };
 
 

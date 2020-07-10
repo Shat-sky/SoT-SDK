@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngine.AthenaEngineInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.AthenaEngineInterface"));
 		return ptr;
 	}
 
@@ -50,7 +50,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngine.BoxCollisionExtentAdjustOverTimeComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.BoxCollisionExtentAdjustOverTimeComponent"));
 		return ptr;
 	}
 
@@ -67,7 +67,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngine.BoxedRpcDispatcherInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.BoxedRpcDispatcherInterface"));
 		return ptr;
 	}
 
@@ -83,7 +83,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngine.BoxedRpcDispatcherComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.BoxedRpcDispatcherComponent"));
 		return ptr;
 	}
 
@@ -105,7 +105,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngine.DynamicColourPointLightComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.DynamicColourPointLightComponent"));
 		return ptr;
 	}
 
@@ -123,7 +123,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngine.EmptyObject");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.EmptyObject"));
 		return ptr;
 	}
 
@@ -138,7 +138,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngine.ForceFeedbackCondition");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.ForceFeedbackCondition"));
 		return ptr;
 	}
 
@@ -155,7 +155,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngine.GameInstanceSessionIdProviderInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.GameInstanceSessionIdProviderInterface"));
 		return ptr;
 	}
 
@@ -172,7 +172,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngine.NestedWorldRootDataAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.NestedWorldRootDataAsset"));
 		return ptr;
 	}
 
@@ -187,7 +187,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngine.OnlinePlayerPermissionsRetrieverInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.OnlinePlayerPermissionsRetrieverInterface"));
 		return ptr;
 	}
 
@@ -202,17 +202,17 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngine.PlayModeHelpers");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.PlayModeHelpers"));
 		return ptr;
 	}
 
 
-	void STATIC_SetPlayModeVariantOverride(TEnumAsByte<EPlayModeVariant> NewPlayModeVariantOverride);
-	void STATIC_SetPlayModeOverride(TEnumAsByte<EPlayMode> NewPlayModeOverride);
-	TEnumAsByte<EPlayModeVariant> STATIC_GetPlayModeVariant(class UObject* WorldContext);
-	TEnumAsByte<EPlayMode> STATIC_GetPlayMode(class UObject* WorldContext);
-	void STATIC_ClearPlayModeVariantOverride();
-	void STATIC_ClearPlayModeOverride();
+	static void SetPlayModeVariantOverride(TEnumAsByte<EPlayModeVariant> NewPlayModeVariantOverride);
+	static void SetPlayModeOverride(TEnumAsByte<EPlayMode> NewPlayModeOverride);
+	static TEnumAsByte<EPlayModeVariant> GetPlayModeVariant(class UObject* WorldContext);
+	static TEnumAsByte<EPlayMode> GetPlayMode(class UObject* WorldContext);
+	static void ClearPlayModeVariantOverride();
+	static void ClearPlayModeOverride();
 };
 
 
@@ -224,7 +224,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngine.PlayModeInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.PlayModeInterface"));
 		return ptr;
 	}
 
@@ -239,7 +239,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngine.ResourceProviderInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.ResourceProviderInterface"));
 		return ptr;
 	}
 
@@ -260,7 +260,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngine.RotateMeshToActorComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.RotateMeshToActorComponent"));
 		return ptr;
 	}
 
@@ -278,7 +278,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngine.RotateMeshToLocalPlayerComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.RotateMeshToLocalPlayerComponent"));
 		return ptr;
 	}
 
@@ -295,7 +295,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngine.StringToAssetClassMap");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.StringToAssetClassMap"));
 		return ptr;
 	}
 
@@ -310,7 +310,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngine.SyncedRandomRetrievalInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.SyncedRandomRetrievalInterface"));
 		return ptr;
 	}
 

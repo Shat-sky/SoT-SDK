@@ -59,7 +59,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class GameplayDebugger.GameplayDebuggingComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class GameplayDebugger.GameplayDebuggingComponent"));
 		return ptr;
 	}
 
@@ -91,7 +91,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class GameplayDebugger.GameplayDebuggingHUDComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class GameplayDebugger.GameplayDebuggingHUDComponent"));
 		return ptr;
 	}
 
@@ -121,7 +121,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class GameplayDebugger.GameplayDebuggerSettings");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class GameplayDebugger.GameplayDebuggerSettings"));
 		return ptr;
 	}
 
@@ -156,7 +156,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class GameplayDebugger.GameplayDebuggingControllerComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class GameplayDebugger.GameplayDebuggingControllerComponent"));
 		return ptr;
 	}
 
@@ -172,7 +172,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class GameplayDebugger.GaneplayDebuggerProxyHUD");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class GameplayDebugger.GaneplayDebuggerProxyHUD"));
 		return ptr;
 	}
 
@@ -211,7 +211,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class GameplayDebugger.GameplayDebuggingReplicator");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class GameplayDebugger.GameplayDebuggingReplicator"));
 		return ptr;
 	}
 

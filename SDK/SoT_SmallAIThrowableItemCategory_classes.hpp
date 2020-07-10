@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass SmallAIThrowableItemCategory.SmallAIThrowableItemCategory_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass SmallAIThrowableItemCategory.SmallAIThrowableItemCategory_C"));
 		return ptr;
 	}
 

@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_OnlineAthenaPlayerController_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_OnlineAthenaPlayerController.BP_OnlineAthenaPlayerController_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_OnlineAthenaPlayerController.BP_OnlineAthenaPlayerController_C.UserConstructionScript"));
 
-	ABP_OnlineAthenaPlayerController_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

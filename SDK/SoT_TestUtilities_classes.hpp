@@ -23,7 +23,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.DelegateTester");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.DelegateTester"));
 		return ptr;
 	}
 
@@ -41,7 +41,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.MockControllerWithMessagingDispatcher");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.MockControllerWithMessagingDispatcher"));
 		return ptr;
 	}
 
@@ -57,7 +57,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.MockObjectCollectorComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.MockObjectCollectorComponent"));
 		return ptr;
 	}
 
@@ -73,7 +73,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.MockObjectWithMessagingDispatcher");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.MockObjectWithMessagingDispatcher"));
 		return ptr;
 	}
 
@@ -89,7 +89,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.MockPlayerControllerWithMessagingDispatcher");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.MockPlayerControllerWithMessagingDispatcher"));
 		return ptr;
 	}
 
@@ -105,7 +105,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.ObjectCollectorGameState");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.ObjectCollectorGameState"));
 		return ptr;
 	}
 
@@ -120,7 +120,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.SampleUObject");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.SampleUObject"));
 		return ptr;
 	}
 
@@ -135,7 +135,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.TestActor");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.TestActor"));
 		return ptr;
 	}
 
@@ -151,7 +151,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.TestActorWithBoxedRpcDispatcherComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.TestActorWithBoxedRpcDispatcherComponent"));
 		return ptr;
 	}
 
@@ -167,7 +167,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.TestActorWithCapsule");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.TestActorWithCapsule"));
 		return ptr;
 	}
 
@@ -183,7 +183,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.TestActorWithObjectMessagingDispatcher");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.TestActorWithObjectMessagingDispatcher"));
 		return ptr;
 	}
 
@@ -199,7 +199,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.MockActorWithMessagingDispatcherAndSceneComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.MockActorWithMessagingDispatcherAndSceneComponent"));
 		return ptr;
 	}
 
@@ -214,7 +214,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.TestController");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.TestController"));
 		return ptr;
 	}
 
@@ -229,7 +229,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.TestEnvQueryContextPoints");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.TestEnvQueryContextPoints"));
 		return ptr;
 	}
 
@@ -244,7 +244,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.TestEnvQueryContextActors");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.TestEnvQueryContextActors"));
 		return ptr;
 	}
 
@@ -260,7 +260,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.TestObjectWithObjectMessagingDispatcher");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.TestObjectWithObjectMessagingDispatcher"));
 		return ptr;
 	}
 
@@ -276,7 +276,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.TestPawnWithCapsule");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.TestPawnWithCapsule"));
 		return ptr;
 	}
 
@@ -292,7 +292,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.TestPrimitiveComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.TestPrimitiveComponent"));
 		return ptr;
 	}
 
@@ -310,7 +310,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.TestSkeletalMeshComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.TestSkeletalMeshComponent"));
 		return ptr;
 	}
 
@@ -326,7 +326,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class TestUtilities.TestStaticMeshComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TestUtilities.TestStaticMeshComponent"));
 		return ptr;
 	}
 

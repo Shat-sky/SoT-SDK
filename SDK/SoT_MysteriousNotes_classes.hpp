@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class MysteriousNotes.ClientMysteriousNoteInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class MysteriousNotes.ClientMysteriousNoteInterface"));
 		return ptr;
 	}
 
@@ -40,7 +40,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class MysteriousNotes.ClientMysteriousNoteComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class MysteriousNotes.ClientMysteriousNoteComponent"));
 		return ptr;
 	}
 
@@ -57,7 +57,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class MysteriousNotes.HasClientMysteriousNotesRadialContext");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class MysteriousNotes.HasClientMysteriousNotesRadialContext"));
 		return ptr;
 	}
 
@@ -72,7 +72,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class MysteriousNotes.MysteriousNotesServiceInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class MysteriousNotes.MysteriousNotesServiceInterface"));
 		return ptr;
 	}
 
@@ -88,7 +88,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class MysteriousNotes.MysteriousNotesService");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class MysteriousNotes.MysteriousNotesService"));
 		return ptr;
 	}
 

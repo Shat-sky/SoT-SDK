@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_ItemPreview_Lighting_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemPreview_Lighting.BP_ItemPreview_Lighting_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_ItemPreview_Lighting.BP_ItemPreview_Lighting_C.UserConstructionScript"));
 
-	ABP_ItemPreview_Lighting_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -32,9 +35,13 @@ void ABP_ItemPreview_Lighting_C::UserConstructionScript()
 
 void ABP_ItemPreview_Lighting_C::PreviewReady__DelegateSignature(const struct FPiratePreviewReadyEvent& Data)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemPreview_Lighting.BP_ItemPreview_Lighting_C.PreviewReady__DelegateSignature");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_ItemPreview_Lighting.BP_ItemPreview_Lighting_C.PreviewReady__DelegateSignature"));
 
-	ABP_ItemPreview_Lighting_C_PreviewReady__DelegateSignature_Params params;
+	struct
+	{
+		struct FPiratePreviewReadyEvent Data;
+	} params;
+
 	params.Data = Data;
 
 	UObject::ProcessEvent(fn, &params);
@@ -48,9 +55,13 @@ void ABP_ItemPreview_Lighting_C::PreviewReady__DelegateSignature(const struct FP
 
 void ABP_ItemPreview_Lighting_C::PreviewBusy__DelegateSignature(const struct FPiratePreviewBusyEvent& Data)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemPreview_Lighting.BP_ItemPreview_Lighting_C.PreviewBusy__DelegateSignature");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_ItemPreview_Lighting.BP_ItemPreview_Lighting_C.PreviewBusy__DelegateSignature"));
 
-	ABP_ItemPreview_Lighting_C_PreviewBusy__DelegateSignature_Params params;
+	struct
+	{
+		struct FPiratePreviewBusyEvent Data;
+	} params;
+
 	params.Data = Data;
 
 	UObject::ProcessEvent(fn, &params);

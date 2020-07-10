@@ -17,9 +17,12 @@ namespace SDK
 
 void URepairableInterface::HandleDestroy()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Repair.RepairableInterface.HandleDestroy");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Repair.RepairableInterface.HandleDestroy"));
 
-	URepairableInterface_HandleDestroy_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -32,9 +35,13 @@ void URepairableInterface::HandleDestroy()
 
 class UClass* URepairableInterface::GetRepairType()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Repair.RepairableInterface.GetRepairType");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Repair.RepairableInterface.GetRepairType"));
 
-	URepairableInterface_GetRepairType_Params params;
+	struct
+	{
+		class UClass*                  ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -49,9 +56,13 @@ class UClass* URepairableInterface::GetRepairType()
 
 float URepairableInterface::GetRepairTime()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Repair.RepairableInterface.GetRepairTime");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Repair.RepairableInterface.GetRepairTime"));
 
-	URepairableInterface_GetRepairTime_Params params;
+	struct
+	{
+		float                          ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -66,9 +77,13 @@ float URepairableInterface::GetRepairTime()
 
 TEnumAsByte<ERepairableState> URepairableInterface::GetRepairableState()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Repair.RepairableInterface.GetRepairableState");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Repair.RepairableInterface.GetRepairableState"));
 
-	URepairableInterface_GetRepairableState_Params params;
+	struct
+	{
+		TEnumAsByte<ERepairableState>  ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -83,9 +98,13 @@ TEnumAsByte<ERepairableState> URepairableInterface::GetRepairableState()
 
 class UClass* URepairingInterface::GetRepairType()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Repair.RepairingInterface.GetRepairType");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Repair.RepairingInterface.GetRepairType"));
 
-	URepairingInterface_GetRepairType_Params params;
+	struct
+	{
+		class UClass*                  ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 

@@ -129,7 +129,8 @@ enum class EGameplayAbilityTriggerSource : uint8_t
 {
 	EGameplayAbilityTriggerSource__GameplayEvent = 0,
 	None                           = 1,
-	EGameplayAbilityReplicationPolicy__ReplicateNo = 2
+	IntProperty                    = 2,
+	EGameplayAbilityReplicationPolicy__ReplicateNo = 3
 };
 
 
@@ -167,7 +168,7 @@ enum class EGameplayEffectStackingPeriodPolicy : uint8_t
 {
 	EGameplayEffectStackingPeriodPolicy__ResetOnSuccessfulApplication = 0,
 	None                           = 1,
-	IntProperty                    = 2
+	EntitlementInformationComponent = 2
 };
 
 
@@ -195,8 +196,7 @@ enum class EAttributeBasedFloatCalculationType : uint8_t
 {
 	EAttributeBasedFloatCalculationType__AttributeMagnitude = 0,
 	None                           = 1,
-	EntitlementInformationComponent = 2,
-	EAbilityTaskNetSyncType__BothWait = 3
+	EAbilityTaskNetSyncType__BothWait = 2
 };
 
 
@@ -215,7 +215,8 @@ enum class EAbilityTaskNetSyncType : uint8_t
 {
 	EAbilityTaskNetSyncType__BothWait = 0,
 	None                           = 1,
-	ETargetAbilitySelfSelection__TASS_Permit = 2
+	IntProperty                    = 2,
+	ETargetAbilitySelfSelection__TASS_Permit = 3
 };
 
 
@@ -248,7 +249,7 @@ enum class EGameplayAbilityInputBinds : uint8_t
 	None01                         = 3,
 	EGameplayAbilityInputBinds__Ability9 = 4,
 	None02                         = 5,
-	WeakObjectProperty             = 6
+	UInt16Property                 = 6
 };
 
 

@@ -38,7 +38,7 @@ enum class EPetDangerHearingTarget : uint8_t
 	EPetDangerHearingTarget__None  = 0,
 	None                           = 1,
 	EPetDangerHearingTarget__EPetDangerHearingTarget_MAX = 2,
-	ByteProperty                   = 3
+	NameProperty                   = 3
 };
 
 
@@ -64,7 +64,7 @@ enum class EPetFeedingReactionType : uint8_t
 {
 	EPetFeedingReactionType__None  = 0,
 	None                           = 1,
-	EntitlementInformationComponent = 2,
+	IntProperty                    = 2,
 	EMastType__Front               = 3
 };
 

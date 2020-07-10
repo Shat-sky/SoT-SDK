@@ -35,7 +35,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass dvr_sea_rock_cluster_d.dvr_sea_rock_cluster_d_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass dvr_sea_rock_cluster_d.dvr_sea_rock_cluster_d_C"));
 		return ptr;
 	}
 

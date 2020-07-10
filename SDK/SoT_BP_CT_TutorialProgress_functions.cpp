@@ -20,9 +20,14 @@ namespace SDK
 
 void UBP_CT_TutorialProgress_C::GetCompanyTutorials(const struct FName& CompanyName, TArray<class UBP_CT_VoyageProgress_C*>* CompanyTutorials)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.GetCompanyTutorials");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.GetCompanyTutorials"));
 
-	UBP_CT_TutorialProgress_C_GetCompanyTutorials_Params params;
+	struct
+	{
+		struct FName                   CompanyName;
+		TArray<class UBP_CT_VoyageProgress_C*> CompanyTutorials;
+	} params;
+
 	params.CompanyName = CompanyName;
 
 	UObject::ProcessEvent(fn, &params);
@@ -39,9 +44,13 @@ void UBP_CT_TutorialProgress_C::GetCompanyTutorials(const struct FName& CompanyN
 
 void UBP_CT_TutorialProgress_C::GetOrderOfSoulsTutorials(TArray<class UBP_CT_VoyageProgress_C*>* Result)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.GetOrderOfSoulsTutorials");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.GetOrderOfSoulsTutorials"));
 
-	UBP_CT_TutorialProgress_C_GetOrderOfSoulsTutorials_Params params;
+	struct
+	{
+		TArray<class UBP_CT_VoyageProgress_C*> Result;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -57,9 +66,13 @@ void UBP_CT_TutorialProgress_C::GetOrderOfSoulsTutorials(TArray<class UBP_CT_Voy
 
 void UBP_CT_TutorialProgress_C::GetMerchantAllianceTutorials(TArray<class UBP_CT_VoyageProgress_C*>* Result)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.GetMerchantAllianceTutorials");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.GetMerchantAllianceTutorials"));
 
-	UBP_CT_TutorialProgress_C_GetMerchantAllianceTutorials_Params params;
+	struct
+	{
+		TArray<class UBP_CT_VoyageProgress_C*> Result;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -75,9 +88,13 @@ void UBP_CT_TutorialProgress_C::GetMerchantAllianceTutorials(TArray<class UBP_CT
 
 void UBP_CT_TutorialProgress_C::GetGoldhoarderTutorials(TArray<class UBP_CT_VoyageProgress_C*>* Result)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.GetGoldhoarderTutorials");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.GetGoldhoarderTutorials"));
 
-	UBP_CT_TutorialProgress_C_GetGoldhoarderTutorials_Params params;
+	struct
+	{
+		TArray<class UBP_CT_VoyageProgress_C*> Result;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -94,9 +111,14 @@ void UBP_CT_TutorialProgress_C::GetGoldhoarderTutorials(TArray<class UBP_CT_Voya
 
 void UBP_CT_TutorialProgress_C::AreAllTutorialsOnState(TEnumAsByte<ETutorialVoyageInternalState> QueryVoyageState, bool* Result)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.AreAllTutorialsOnState");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.AreAllTutorialsOnState"));
 
-	UBP_CT_TutorialProgress_C_AreAllTutorialsOnState_Params params;
+	struct
+	{
+		TEnumAsByte<ETutorialVoyageInternalState> QueryVoyageState;
+		bool                           Result;
+	} params;
+
 	params.QueryVoyageState = QueryVoyageState;
 
 	UObject::ProcessEvent(fn, &params);
@@ -114,9 +136,14 @@ void UBP_CT_TutorialProgress_C::AreAllTutorialsOnState(TEnumAsByte<ETutorialVoya
 
 void UBP_CT_TutorialProgress_C::IsAnyTutorialOnState(TEnumAsByte<ETutorialVoyageInternalState> QueryVoyageState, bool* Result)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.IsAnyTutorialOnState");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.IsAnyTutorialOnState"));
 
-	UBP_CT_TutorialProgress_C_IsAnyTutorialOnState_Params params;
+	struct
+	{
+		TEnumAsByte<ETutorialVoyageInternalState> QueryVoyageState;
+		bool                           Result;
+	} params;
+
 	params.QueryVoyageState = QueryVoyageState;
 
 	UObject::ProcessEvent(fn, &params);
@@ -134,9 +161,14 @@ void UBP_CT_TutorialProgress_C::IsAnyTutorialOnState(TEnumAsByte<ETutorialVoyage
 
 void UBP_CT_TutorialProgress_C::FindTutorialProgressObject(const struct FText& VoyageName, class UBP_CT_VoyageProgress_C** Voyage)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.FindTutorialProgressObject");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.FindTutorialProgressObject"));
 
-	UBP_CT_TutorialProgress_C_FindTutorialProgressObject_Params params;
+	struct
+	{
+		struct FText                   VoyageName;
+		class UBP_CT_VoyageProgress_C* Voyage;
+	} params;
+
 	params.VoyageName = VoyageName;
 
 	UObject::ProcessEvent(fn, &params);
@@ -157,9 +189,17 @@ void UBP_CT_TutorialProgress_C::FindTutorialProgressObject(const struct FText& V
 
 void UBP_CT_TutorialProgress_C::CreateTutorialProgressTracker(class UClass* VoyageProposalDesc, class UClass* TaleRankDesc, class UClass* ExclusionRank, bool Disable, class UBP_CT_VoyageProgress_C** Result)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.CreateTutorialProgressTracker");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.CreateTutorialProgressTracker"));
 
-	UBP_CT_TutorialProgress_C_CreateTutorialProgressTracker_Params params;
+	struct
+	{
+		class UClass*                  VoyageProposalDesc;
+		class UClass*                  TaleRankDesc;
+		class UClass*                  ExclusionRank;
+		bool                           Disable;
+		class UBP_CT_VoyageProgress_C* Result;
+	} params;
+
 	params.VoyageProposalDesc = VoyageProposalDesc;
 	params.TaleRankDesc = TaleRankDesc;
 	params.ExclusionRank = ExclusionRank;
@@ -177,9 +217,12 @@ void UBP_CT_TutorialProgress_C::CreateTutorialProgressTracker(class UClass* Voya
 
 void UBP_CT_TutorialProgress_C::Start()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.Start");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.Start"));
 
-	UBP_CT_TutorialProgress_C_Start_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -193,9 +236,14 @@ void UBP_CT_TutorialProgress_C::Start()
 
 void UBP_CT_TutorialProgress_C::Change_Voyage_Progress(const struct FText& VoyageName, TEnumAsByte<ETutorialVoyageInternalState> New_Progress_State)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.Change Voyage Progress");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.Change Voyage Progress"));
 
-	UBP_CT_TutorialProgress_C_Change_Voyage_Progress_Params params;
+	struct
+	{
+		struct FText                   VoyageName;
+		TEnumAsByte<ETutorialVoyageInternalState> New_Progress_State;
+	} params;
+
 	params.VoyageName = VoyageName;
 	params.New_Progress_State = New_Progress_State;
 
@@ -210,9 +258,13 @@ void UBP_CT_TutorialProgress_C::Change_Voyage_Progress(const struct FText& Voyag
 
 void UBP_CT_TutorialProgress_C::ExecuteUbergraph_BP_CT_TutorialProgress(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.ExecuteUbergraph_BP_CT_TutorialProgress");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_CT_TutorialProgress.BP_CT_TutorialProgress_C.ExecuteUbergraph_BP_CT_TutorialProgress"));
 
-	UBP_CT_TutorialProgress_C_ExecuteUbergraph_BP_CT_TutorialProgress_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

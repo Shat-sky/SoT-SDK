@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_CosmeticOar_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_CosmeticOar.BP_CosmeticOar_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_CosmeticOar.BP_CosmeticOar_C.UserConstructionScript"));
 
-	ABP_CosmeticOar_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

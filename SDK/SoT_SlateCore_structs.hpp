@@ -129,8 +129,7 @@ enum class EButtonClickMethod : uint8_t
 {
 	EButtonClickMethod__DownAndUp  = 0,
 	None                           = 1,
-	IntProperty                    = 2,
-	EButtonClickMethod__EButtonClickMethod_MAX = 3
+	EButtonClickMethod__EButtonClickMethod_MAX = 2
 };
 
 
@@ -168,8 +167,7 @@ enum class ESlateBrushTileType : uint8_t
 {
 	ESlateBrushTileType__NoTile    = 0,
 	None                           = 1,
-	ESlateBrushTileType__ESlateBrushTileType_MAX = 2,
-	ObjectProperty                 = 3
+	ESlateBrushTileType__ESlateBrushTileType_MAX = 2
 };
 
 

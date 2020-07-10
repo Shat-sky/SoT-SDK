@@ -22,13 +22,13 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaLoadingScreen.AthenaLoadingScreenBlueprintFunctionLibrary");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaLoadingScreen.AthenaLoadingScreenBlueprintFunctionLibrary"));
 		return ptr;
 	}
 
 
-	bool STATIC_IsLoadingScreenVisible();
-	bool STATIC_IsLoadingScreenRegistered();
+	static bool IsLoadingScreenVisible();
+	static bool IsLoadingScreenRegistered();
 };
 
 
@@ -74,7 +74,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaLoadingScreen.SlateLoadingScreenParams");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaLoadingScreen.SlateLoadingScreenParams"));
 		return ptr;
 	}
 
@@ -93,7 +93,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaLoadingScreen.AthenaLoadingScreenParams");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaLoadingScreen.AthenaLoadingScreenParams"));
 		return ptr;
 	}
 
@@ -108,12 +108,12 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaLoadingScreen.LoadingUtilities");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaLoadingScreen.LoadingUtilities"));
 		return ptr;
 	}
 
 
-	bool STATIC_IsStreaming(class UObject* WorldContextObject);
+	static bool IsStreaming(class UObject* WorldContextObject);
 };
 
 

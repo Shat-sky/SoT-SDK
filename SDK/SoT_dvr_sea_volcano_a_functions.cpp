@@ -17,9 +17,12 @@ namespace SDK
 
 void Advr_sea_volcano_a_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function dvr_sea_volcano_a.dvr_sea_volcano_a_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function dvr_sea_volcano_a.dvr_sea_volcano_a_C.UserConstructionScript"));
 
-	Advr_sea_volcano_a_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

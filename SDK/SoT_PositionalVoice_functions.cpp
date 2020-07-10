@@ -18,14 +18,20 @@ namespace SDK
 // class APlayerController*       CurrentPlayer                  (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UPositionalVoiceTestFunctionLibrary::STATIC_GetNumberOfUnmutedRemotePlayers(class APlayerController* CurrentPlayer)
+int UPositionalVoiceTestFunctionLibrary::GetNumberOfUnmutedRemotePlayers(class APlayerController* CurrentPlayer)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PositionalVoice.PositionalVoiceTestFunctionLibrary.GetNumberOfUnmutedRemotePlayers");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PositionalVoice.PositionalVoiceTestFunctionLibrary.GetNumberOfUnmutedRemotePlayers"));
 
-	UPositionalVoiceTestFunctionLibrary_GetNumberOfUnmutedRemotePlayers_Params params;
+	struct
+	{
+		class APlayerController*       CurrentPlayer;
+		int                            ReturnValue;
+	} params;
+
 	params.CurrentPlayer = CurrentPlayer;
 
-	UObject::ProcessEvent(fn, &params);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
 }
@@ -38,15 +44,22 @@ int UPositionalVoiceTestFunctionLibrary::STATIC_GetNumberOfUnmutedRemotePlayers(
 // class UClass*                  VoiceChatRendererClass         (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UPositionalVoiceTestFunctionLibrary::STATIC_GetNumberOfRegisteredChatEmitters(class UObject* WorldContextObject, class UClass* VoiceChatRendererClass)
+int UPositionalVoiceTestFunctionLibrary::GetNumberOfRegisteredChatEmitters(class UObject* WorldContextObject, class UClass* VoiceChatRendererClass)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PositionalVoice.PositionalVoiceTestFunctionLibrary.GetNumberOfRegisteredChatEmitters");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PositionalVoice.PositionalVoiceTestFunctionLibrary.GetNumberOfRegisteredChatEmitters"));
 
-	UPositionalVoiceTestFunctionLibrary_GetNumberOfRegisteredChatEmitters_Params params;
+	struct
+	{
+		class UObject*                 WorldContextObject;
+		class UClass*                  VoiceChatRendererClass;
+		int                            ReturnValue;
+	} params;
+
 	params.WorldContextObject = WorldContextObject;
 	params.VoiceChatRendererClass = VoiceChatRendererClass;
 
-	UObject::ProcessEvent(fn, &params);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
 }
@@ -57,13 +70,18 @@ int UPositionalVoiceTestFunctionLibrary::STATIC_GetNumberOfRegisteredChatEmitter
 // Parameters:
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UPositionalVoiceTestFunctionLibrary::STATIC_GetMaxNumberOfAudibleChatEmitters()
+int UPositionalVoiceTestFunctionLibrary::GetMaxNumberOfAudibleChatEmitters()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PositionalVoice.PositionalVoiceTestFunctionLibrary.GetMaxNumberOfAudibleChatEmitters");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PositionalVoice.PositionalVoiceTestFunctionLibrary.GetMaxNumberOfAudibleChatEmitters"));
 
-	UPositionalVoiceTestFunctionLibrary_GetMaxNumberOfAudibleChatEmitters_Params params;
+	struct
+	{
+		int                            ReturnValue;
+	} params;
 
-	UObject::ProcessEvent(fn, &params);
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
 }
@@ -76,9 +94,13 @@ int UPositionalVoiceTestFunctionLibrary::STATIC_GetMaxNumberOfAudibleChatEmitter
 
 struct FVector UVoiceChatEmitterInterface::GetVoiceLocation()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PositionalVoice.VoiceChatEmitterInterface.GetVoiceLocation");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PositionalVoice.VoiceChatEmitterInterface.GetVoiceLocation"));
 
-	UVoiceChatEmitterInterface_GetVoiceLocation_Params params;
+	struct
+	{
+		struct FVector                 ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -93,9 +115,13 @@ struct FVector UVoiceChatEmitterInterface::GetVoiceLocation()
 
 void UVoiceChatEmitterInterface::GetVoiceAudioEmitterProxy(struct FWwiseEmitter* EmitterProxy)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PositionalVoice.VoiceChatEmitterInterface.GetVoiceAudioEmitterProxy");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PositionalVoice.VoiceChatEmitterInterface.GetVoiceAudioEmitterProxy"));
 
-	UVoiceChatEmitterInterface_GetVoiceAudioEmitterProxy_Params params;
+	struct
+	{
+		struct FWwiseEmitter           EmitterProxy;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -112,9 +138,14 @@ void UVoiceChatEmitterInterface::GetVoiceAudioEmitterProxy(struct FWwiseEmitter*
 
 float UVoiceChatEmitterInterface::GetVoiceAttenuationScaler(const TScriptInterface<class UVoiceChatEmitterInterface>& RelativeToThisEmitter)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PositionalVoice.VoiceChatEmitterInterface.GetVoiceAttenuationScaler");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PositionalVoice.VoiceChatEmitterInterface.GetVoiceAttenuationScaler"));
 
-	UVoiceChatEmitterInterface_GetVoiceAttenuationScaler_Params params;
+	struct
+	{
+		TScriptInterface<class UVoiceChatEmitterInterface> RelativeToThisEmitter;
+		float                          ReturnValue;
+	} params;
+
 	params.RelativeToThisEmitter = RelativeToThisEmitter;
 
 	UObject::ProcessEvent(fn, &params);
@@ -130,9 +161,13 @@ float UVoiceChatEmitterInterface::GetVoiceAttenuationScaler(const TScriptInterfa
 
 struct FVector ATestVoiceChatEmitter::GetVoiceLocation()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PositionalVoice.TestVoiceChatEmitter.GetVoiceLocation");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PositionalVoice.TestVoiceChatEmitter.GetVoiceLocation"));
 
-	ATestVoiceChatEmitter_GetVoiceLocation_Params params;
+	struct
+	{
+		struct FVector                 ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -147,9 +182,13 @@ struct FVector ATestVoiceChatEmitter::GetVoiceLocation()
 
 void ATestVoiceChatEmitter::GetVoiceAudioEmitterProxy(struct FWwiseEmitter* EmitterProxy)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PositionalVoice.TestVoiceChatEmitter.GetVoiceAudioEmitterProxy");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PositionalVoice.TestVoiceChatEmitter.GetVoiceAudioEmitterProxy"));
 
-	ATestVoiceChatEmitter_GetVoiceAudioEmitterProxy_Params params;
+	struct
+	{
+		struct FWwiseEmitter           EmitterProxy;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -166,9 +205,14 @@ void ATestVoiceChatEmitter::GetVoiceAudioEmitterProxy(struct FWwiseEmitter* Emit
 
 float ATestVoiceChatEmitter::GetVoiceAttenuationScaler(const TScriptInterface<class UVoiceChatEmitterInterface>& RelativeToThisEmitter)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PositionalVoice.TestVoiceChatEmitter.GetVoiceAttenuationScaler");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PositionalVoice.TestVoiceChatEmitter.GetVoiceAttenuationScaler"));
 
-	ATestVoiceChatEmitter_GetVoiceAttenuationScaler_Params params;
+	struct
+	{
+		TScriptInterface<class UVoiceChatEmitterInterface> RelativeToThisEmitter;
+		float                          ReturnValue;
+	} params;
+
 	params.RelativeToThisEmitter = RelativeToThisEmitter;
 
 	UObject::ProcessEvent(fn, &params);

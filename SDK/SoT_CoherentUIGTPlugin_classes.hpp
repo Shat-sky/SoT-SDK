@@ -47,7 +47,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CoherentUIGTPlugin.CoherentUIGTBaseComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoherentUIGTPlugin.CoherentUIGTBaseComponent"));
 		return ptr;
 	}
 
@@ -94,7 +94,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CoherentUIGTPlugin.CoherentUIGTComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoherentUIGTPlugin.CoherentUIGTComponent"));
 		return ptr;
 	}
 
@@ -112,7 +112,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CoherentUIGTPlugin.CoherentUIGTLiveView");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoherentUIGTPlugin.CoherentUIGTLiveView"));
 		return ptr;
 	}
 
@@ -130,7 +130,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CoherentUIGTPlugin.CoherentUIGTRenderToTextureLiveView");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoherentUIGTPlugin.CoherentUIGTRenderToTextureLiveView"));
 		return ptr;
 	}
 
@@ -145,7 +145,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CoherentUIGTPlugin.CoherentUIGTAssetReferencer");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoherentUIGTPlugin.CoherentUIGTAssetReferencer"));
 		return ptr;
 	}
 
@@ -161,7 +161,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CoherentUIGTPlugin.CoherentUIGTSystem");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoherentUIGTPlugin.CoherentUIGTSystem"));
 		return ptr;
 	}
 
@@ -178,7 +178,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CoherentUIGTPlugin.CoherentUIGTJSEvent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoherentUIGTPlugin.CoherentUIGTJSEvent"));
 		return ptr;
 	}
 
@@ -206,7 +206,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CoherentUIGTPlugin.CoherentUIGTJSPayload");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoherentUIGTPlugin.CoherentUIGTJSPayload"));
 		return ptr;
 	}
 
@@ -227,7 +227,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CoherentUIGTPlugin.CoherentUIGTEventHelpers");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoherentUIGTPlugin.CoherentUIGTEventHelpers"));
 		return ptr;
 	}
 
@@ -246,7 +246,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CoherentUIGTPlugin.CoherentUIGTHUD");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoherentUIGTPlugin.CoherentUIGTHUD"));
 		return ptr;
 	}
 
@@ -261,23 +261,23 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CoherentUIGTPlugin.CoherentUIGTBlueprintFunctionLibrary");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoherentUIGTPlugin.CoherentUIGTBlueprintFunctionLibrary"));
 		return ptr;
 	}
 
 
-	void STATIC_TriggerJSEvent(class UCoherentUIGTBaseComponent* Component, const class FString& EventName, class UCoherentUIGTJSEvent* JSEvent);
-	void STATIC_SetupLoadingScreen(class UObject* WorldContextObject, const struct FCoherentUIGTLoadingScreenSettings& Settings);
-	class UCoherentUIGTJSEvent* STATIC_CreateJSEvent(class UObject* WorldContextObject);
-	void STATIC_AddStructArg(class UCoherentUIGTJSEvent* JSEvent, class UStructProperty* Arg);
-	void STATIC_AddString(class UCoherentUIGTJSEvent* JSEvent, const class FString& Arg);
-	void STATIC_AddObject(class UCoherentUIGTJSEvent* JSEvent, class UObject* Arg);
-	void STATIC_AddInt32(class UCoherentUIGTJSEvent* JSEvent, int Arg);
-	void STATIC_AddFloat(class UCoherentUIGTJSEvent* JSEvent, float Arg);
-	void STATIC_AddByte(class UCoherentUIGTJSEvent* JSEvent, unsigned char Arg);
-	void STATIC_AddBool(class UCoherentUIGTJSEvent* JSEvent, bool Arg);
-	void STATIC_AddArrayOfStructs(class UCoherentUIGTJSEvent* JSEvent, TArray<int> Arg);
-	void STATIC_AddArray(class UCoherentUIGTJSEvent* JSEvent, TArray<int> Arg, int ArrayType);
+	static void TriggerJSEvent(class UCoherentUIGTBaseComponent* Component, const class FString& EventName, class UCoherentUIGTJSEvent* JSEvent);
+	static void SetupLoadingScreen(class UObject* WorldContextObject, const struct FCoherentUIGTLoadingScreenSettings& Settings);
+	static class UCoherentUIGTJSEvent* CreateJSEvent(class UObject* WorldContextObject);
+	static void AddStructArg(class UCoherentUIGTJSEvent* JSEvent, class UStructProperty* Arg);
+	static void AddString(class UCoherentUIGTJSEvent* JSEvent, const class FString& Arg);
+	static void AddObject(class UCoherentUIGTJSEvent* JSEvent, class UObject* Arg);
+	static void AddInt32(class UCoherentUIGTJSEvent* JSEvent, int Arg);
+	static void AddFloat(class UCoherentUIGTJSEvent* JSEvent, float Arg);
+	static void AddByte(class UCoherentUIGTJSEvent* JSEvent, unsigned char Arg);
+	static void AddBool(class UCoherentUIGTJSEvent* JSEvent, bool Arg);
+	static void AddArrayOfStructs(class UCoherentUIGTJSEvent* JSEvent, TArray<int> Arg);
+	static void AddArray(class UCoherentUIGTJSEvent* JSEvent, TArray<int> Arg, int ArrayType);
 };
 
 
@@ -291,7 +291,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CoherentUIGTPlugin.CoherentUIGTGameHUD");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoherentUIGTPlugin.CoherentUIGTGameHUD"));
 		return ptr;
 	}
 
@@ -314,7 +314,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CoherentUIGTPlugin.CoherentUIGTInputActor");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoherentUIGTPlugin.CoherentUIGTInputActor"));
 		return ptr;
 	}
 
@@ -362,7 +362,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CoherentUIGTPlugin.CoherentUIGTSettings");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoherentUIGTPlugin.CoherentUIGTSettings"));
 		return ptr;
 	}
 
@@ -407,7 +407,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CoherentUIGTPlugin.CoherentUIGTWidget");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoherentUIGTPlugin.CoherentUIGTWidget"));
 		return ptr;
 	}
 

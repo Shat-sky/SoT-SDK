@@ -19,9 +19,13 @@ namespace SDK
 
 float AWheelMock::GetNormalizedWheelPosition()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function WheelsTests.WheelMock.GetNormalizedWheelPosition");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function WheelsTests.WheelMock.GetNormalizedWheelPosition"));
 
-	AWheelMock_GetNormalizedWheelPosition_Params params;
+	struct
+	{
+		float                          ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 

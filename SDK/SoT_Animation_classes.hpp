@@ -31,7 +31,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.CharacterAnimationInstance");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.CharacterAnimationInstance"));
 		return ptr;
 	}
 
@@ -46,7 +46,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimationData");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimationData"));
 		return ptr;
 	}
 
@@ -61,7 +61,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AIAnimationInstanceInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AIAnimationInstanceInterface"));
 		return ptr;
 	}
 
@@ -76,7 +76,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimationDataConsumerInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimationDataConsumerInterface"));
 		return ptr;
 	}
 
@@ -91,15 +91,15 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimationDataFunctionLib");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimationDataFunctionLib"));
 		return ptr;
 	}
 
 
-	bool STATIC_UnwrapAnimDataEntryStruct(const struct FAnimDataEntryStructWrapper& Wrapper, class UScriptStruct* DestinationStruct, struct FGenericStruct* Value);
-	class UAnimationData* STATIC_MakeAnimationData(class UClass* Class);
-	struct FAnimDataEntryStructWrapper STATIC_GetAnimDataEntryStructAsStructWrapper(class UAnimationData* AnimationDataObject, class UScriptStruct* TheClass);
-	void STATIC_CheckAnimDataClassTypeForDuplicateAnimDataEntryStructs(class UClass* InClass);
+	static bool UnwrapAnimDataEntryStruct(const struct FAnimDataEntryStructWrapper& Wrapper, class UScriptStruct* DestinationStruct, struct FGenericStruct* Value);
+	static class UAnimationData* MakeAnimationData(class UClass* Class);
+	static struct FAnimDataEntryStructWrapper GetAnimDataEntryStructAsStructWrapper(class UAnimationData* AnimationDataObject, class UScriptStruct* TheClass);
+	static void CheckAnimDataClassTypeForDuplicateAnimDataEntryStructs(class UClass* InClass);
 };
 
 
@@ -111,7 +111,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimationDataOverriderInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimationDataOverriderInterface"));
 		return ptr;
 	}
 
@@ -126,7 +126,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimationDataStoreId");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimationDataStoreId"));
 		return ptr;
 	}
 
@@ -141,7 +141,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimationDataStoreOverrideId");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimationDataStoreOverrideId"));
 		return ptr;
 	}
 
@@ -159,7 +159,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimationDataStore");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimationDataStore"));
 		return ptr;
 	}
 
@@ -175,13 +175,13 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimationDataStoreAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimationDataStoreAsset"));
 		return ptr;
 	}
 
 
 	class UAnimationData* LookupAnimationData(class UClass* AnimDataId);
-	class UClass* STATIC_GetAnimationDataClass(struct FAnimationDataStoreAssetEntry* Entry);
+	static class UClass* GetAnimationDataClass(struct FAnimationDataStoreAssetEntry* Entry);
 };
 
 
@@ -194,7 +194,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimationDataStoreWeakReferenceAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimationDataStoreWeakReferenceAsset"));
 		return ptr;
 	}
 
@@ -209,7 +209,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimationDataStoreLoaderInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimationDataStoreLoaderInterface"));
 		return ptr;
 	}
 
@@ -227,7 +227,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimationDataStoreComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimationDataStoreComponent"));
 		return ptr;
 	}
 
@@ -242,7 +242,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimationDataStoreInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimationDataStoreInterface"));
 		return ptr;
 	}
 
@@ -259,7 +259,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimationLookAtInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimationLookAtInterface"));
 		return ptr;
 	}
 
@@ -274,7 +274,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimationStateId");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimationStateId"));
 		return ptr;
 	}
 
@@ -289,7 +289,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimNotify_DestroyAllCosmeticItems");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotify_DestroyAllCosmeticItems"));
 		return ptr;
 	}
 
@@ -306,7 +306,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimNotify_DestroyCosmeticItem");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotify_DestroyCosmeticItem"));
 		return ptr;
 	}
 
@@ -322,7 +322,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimNotify_PlayMontage");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotify_PlayMontage"));
 		return ptr;
 	}
 
@@ -344,7 +344,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimNotify_SetCosmeticItemVisibility");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotify_SetCosmeticItemVisibility"));
 		return ptr;
 	}
 
@@ -361,7 +361,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimNotify_SetLookAtEnabled");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotify_SetLookAtEnabled"));
 		return ptr;
 	}
 
@@ -384,7 +384,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimNotify_SpawnCosmeticItem");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotify_SpawnCosmeticItem"));
 		return ptr;
 	}
 
@@ -400,7 +400,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimNotify_StateComplete");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotify_StateComplete"));
 		return ptr;
 	}
 
@@ -418,7 +418,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimNotify_SwitchCosmeticItemAttachment");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotify_SwitchCosmeticItemAttachment"));
 		return ptr;
 	}
 
@@ -436,7 +436,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimNotify_ToggleIK");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotify_ToggleIK"));
 		return ptr;
 	}
 
@@ -454,7 +454,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimNotifyCondition_FeatureConfigValidation");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotifyCondition_FeatureConfigValidation"));
 		return ptr;
 	}
 
@@ -469,7 +469,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimNotifyState_SetLookAtEnabledForDuration");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotifyState_SetLookAtEnabledForDuration"));
 		return ptr;
 	}
 
@@ -493,7 +493,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.AnimNotifyState_SpawnCosmeticItem");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotifyState_SpawnCosmeticItem"));
 		return ptr;
 	}
 
@@ -508,7 +508,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.CharacterIKInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.CharacterIKInterface"));
 		return ptr;
 	}
 
@@ -525,7 +525,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.PreviewCharacterAnimationInstance");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.PreviewCharacterAnimationInstance"));
 		return ptr;
 	}
 
@@ -540,7 +540,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.ClientSkeletalMeshComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.ClientSkeletalMeshComponent"));
 		return ptr;
 	}
 
@@ -558,7 +558,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.CosmeticItemActor");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.CosmeticItemActor"));
 		return ptr;
 	}
 
@@ -573,7 +573,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.CosmeticItemAnimationInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.CosmeticItemAnimationInterface"));
 		return ptr;
 	}
 
@@ -591,7 +591,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.CosmeticItemAnimationComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.CosmeticItemAnimationComponent"));
 		return ptr;
 	}
 
@@ -609,7 +609,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.CosmeticItemAnimationDataAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.CosmeticItemAnimationDataAsset"));
 		return ptr;
 	}
 
@@ -624,7 +624,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.CosmeticItemAnimationDataConsumerInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.CosmeticItemAnimationDataConsumerInterface"));
 		return ptr;
 	}
 
@@ -643,7 +643,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.CosmeticItemAnimationInstance");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.CosmeticItemAnimationInstance"));
 		return ptr;
 	}
 
@@ -660,7 +660,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.CosmeticItemAnimationSetDataAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.CosmeticItemAnimationSetDataAsset"));
 		return ptr;
 	}
 
@@ -675,7 +675,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.CustomAnimationHandlerInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.CustomAnimationHandlerInterface"));
 		return ptr;
 	}
 
@@ -690,7 +690,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.CustomAnimationInstanceInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.CustomAnimationInstanceInterface"));
 		return ptr;
 	}
 
@@ -705,7 +705,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.CustomAnimationInstanceProviderInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.CustomAnimationInstanceProviderInterface"));
 		return ptr;
 	}
 
@@ -720,7 +720,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.DockableInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.DockableInterface"));
 		return ptr;
 	}
 
@@ -738,17 +738,17 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.DockerBlueprintFunctions");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.DockerBlueprintFunctions"));
 		return ptr;
 	}
 
 
-	void STATIC_UpdateDock(float DeltaTime, struct FDocker* Docker);
-	void STATIC_StartDockingWithActor(class AActor* Owner, class AActor* Target, float DockDuration, float DelayAfterDocking, struct FDocker* Docker);
-	bool STATIC_IsFullyDocked(struct FDocker* Docker);
-	bool STATIC_IsDocking(struct FDocker* Docker);
-	struct FVector STATIC_GetTargetLocalOffset(const struct FDocker& Docker);
-	void STATIC_EndDock(struct FDocker* Docker);
+	static void UpdateDock(float DeltaTime, struct FDocker* Docker);
+	static void StartDockingWithActor(class AActor* Owner, class AActor* Target, float DockDuration, float DelayAfterDocking, struct FDocker* Docker);
+	static bool IsFullyDocked(struct FDocker* Docker);
+	static bool IsDocking(struct FDocker* Docker);
+	static struct FVector GetTargetLocalOffset(const struct FDocker& Docker);
+	static void EndDock(struct FDocker* Docker);
 };
 
 
@@ -760,7 +760,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.DockerInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.DockerInterface"));
 		return ptr;
 	}
 
@@ -775,7 +775,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.DockingAnimationInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.DockingAnimationInterface"));
 		return ptr;
 	}
 
@@ -790,7 +790,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.IndexedPlayableMontagesInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.IndexedPlayableMontagesInterface"));
 		return ptr;
 	}
 
@@ -805,31 +805,31 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.LimbIKFunctionLibrary");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.LimbIKFunctionLibrary"));
 		return ptr;
 	}
 
 
-	void STATIC_SetTranslationStrength(float InRotationStrength, struct FLimbIK* LimbIK);
-	void STATIC_SetTransform(const struct FTransform& InTransform, struct FLimbIK* LimbIK);
-	void STATIC_SetRotationStrength(float InRotationStrength, struct FLimbIK* LimbIK);
-	void STATIC_SetParentBone(const struct FName& Bone, struct FLimbIK* LimbIK);
-	void STATIC_SetIKSpace(TEnumAsByte<ELimbIKSpace> IKSpace, struct FLimbIK* LimbIK);
-	void STATIC_SetEnabled(bool Enabled, TEnumAsByte<ELimbIKSpace> IKSpace, const struct FName& ParentBone, struct FLimbIK* LimbIK);
-	void STATIC_SetBlendOutSpeed(float BlendOutSpeed, struct FLimbIK* LimbIK);
-	void STATIC_SetBlendInSpeed(float BlendInSpeed, struct FLimbIK* LimbIK);
-	void STATIC_SetAnimationOverride(bool AnimationOverride, struct FLimbIK* LimbIK);
-	void STATIC_SetAlphaTarget(float AlphaTarget, struct FLimbIK* LimbIK);
-	bool STATIC_IsEnabled(struct FLimbIK* LimbIK);
-	float STATIC_GetTranslationStrength(struct FLimbIK* LimbIK);
-	struct FTransform STATIC_GetTransform(struct FLimbIK* LimbIK);
-	float STATIC_GetRotationStrength(struct FLimbIK* LimbIK);
-	struct FName STATIC_GetParentBone(struct FLimbIK* LimbIK);
-	TEnumAsByte<ELimbIKSpace> STATIC_GetIKSpace(struct FLimbIK* LimbIK);
-	float STATIC_GetCurrentAlpha(struct FLimbIK* LimbIK);
-	bool STATIC_GetAnimationOverride(struct FLimbIK* LimbIK);
-	float STATIC_GetAlphaTarget(struct FLimbIK* LimbIK);
-	float STATIC_ConvertBoolToAlpha(bool InBool);
+	static void SetTranslationStrength(float InRotationStrength, struct FLimbIK* LimbIK);
+	static void SetTransform(const struct FTransform& InTransform, struct FLimbIK* LimbIK);
+	static void SetRotationStrength(float InRotationStrength, struct FLimbIK* LimbIK);
+	static void SetParentBone(const struct FName& Bone, struct FLimbIK* LimbIK);
+	static void SetIKSpace(TEnumAsByte<ELimbIKSpace> IKSpace, struct FLimbIK* LimbIK);
+	static void SetEnabled(bool Enabled, TEnumAsByte<ELimbIKSpace> IKSpace, const struct FName& ParentBone, struct FLimbIK* LimbIK);
+	static void SetBlendOutSpeed(float BlendOutSpeed, struct FLimbIK* LimbIK);
+	static void SetBlendInSpeed(float BlendInSpeed, struct FLimbIK* LimbIK);
+	static void SetAnimationOverride(bool AnimationOverride, struct FLimbIK* LimbIK);
+	static void SetAlphaTarget(float AlphaTarget, struct FLimbIK* LimbIK);
+	static bool IsEnabled(struct FLimbIK* LimbIK);
+	static float GetTranslationStrength(struct FLimbIK* LimbIK);
+	static struct FTransform GetTransform(struct FLimbIK* LimbIK);
+	static float GetRotationStrength(struct FLimbIK* LimbIK);
+	static struct FName GetParentBone(struct FLimbIK* LimbIK);
+	static TEnumAsByte<ELimbIKSpace> GetIKSpace(struct FLimbIK* LimbIK);
+	static float GetCurrentAlpha(struct FLimbIK* LimbIK);
+	static bool GetAnimationOverride(struct FLimbIK* LimbIK);
+	static float GetAlphaTarget(struct FLimbIK* LimbIK);
+	static float ConvertBoolToAlpha(bool InBool);
 };
 
 
@@ -841,14 +841,14 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.LocomotionFunctionLib");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.LocomotionFunctionLib"));
 		return ptr;
 	}
 
 
-	float STATIC_UpdateControllerSpineRotation(const struct FRotator& CharacterRotation, float AngleSpeedMax, float AngleSpeedMin);
-	struct FActorVelocityData STATIC_UpdateCharacterSpeed(const struct FVector& Velocity, float CurrentMaxWalkSpeed, float WantedMovementSpeed, float BaseMaxWalkSpeed, float SpeedBlendValue, bool IsSwimming);
-	float STATIC_UpdateCalculateRateAndCurrentYaw(const struct FRotator& CharacterRotation, float LargeRate, float DeltaSeconds, float* CurrentCharacterYaw);
+	static float UpdateControllerSpineRotation(const struct FRotator& CharacterRotation, float AngleSpeedMax, float AngleSpeedMin);
+	static struct FActorVelocityData UpdateCharacterSpeed(const struct FVector& Velocity, float CurrentMaxWalkSpeed, float WantedMovementSpeed, float BaseMaxWalkSpeed, float SpeedBlendValue, bool IsSwimming);
+	static float UpdateCalculateRateAndCurrentYaw(const struct FRotator& CharacterRotation, float LargeRate, float DeltaSeconds, float* CurrentCharacterYaw);
 };
 
 
@@ -860,7 +860,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.NetworkSyncedAnimationInstanceInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.NetworkSyncedAnimationInstanceInterface"));
 		return ptr;
 	}
 
@@ -884,7 +884,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.NetworkSyncedAnimationComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.NetworkSyncedAnimationComponent"));
 		return ptr;
 	}
 
@@ -902,7 +902,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.RemoteAnimPlayableInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.RemoteAnimPlayableInterface"));
 		return ptr;
 	}
 
@@ -919,7 +919,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.TransformBlendCurveComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.TransformBlendCurveComponent"));
 		return ptr;
 	}
 
@@ -934,12 +934,12 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.TurningFunctionLib");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.TurningFunctionLib"));
 		return ptr;
 	}
 
 
-	bool STATIC_TurningUpdate(float DeltaSeconds, bool CharacterMoving, float TurnRate, float CounterMax, bool* DeadZone, float* DelayedCounter, bool* TurningLeft);
+	static bool TurningUpdate(float DeltaSeconds, bool CharacterMoving, float TurnRate, float CounterMax, bool* DeadZone, float* DelayedCounter, bool* TurningLeft);
 };
 
 
@@ -953,14 +953,14 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.WaitForAnimationStateEntryProxy");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.WaitForAnimationStateEntryProxy"));
 		return ptr;
 	}
 
 
 	void OnEnteredState(const struct FName& path);
 	void OnAnimationUpdated();
-	class UWaitForAnimationStateEntryProxy* STATIC_CreateProxy(class UAnimInstance* AnimInstance, const struct FName& TargetPath);
+	static class UWaitForAnimationStateEntryProxy* CreateProxy(class UAnimInstance* AnimInstance, const struct FName& TargetPath);
 };
 
 
@@ -974,14 +974,14 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.WaitForAnimationStateExitProxy");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.WaitForAnimationStateExitProxy"));
 		return ptr;
 	}
 
 
 	void OnExitState(const struct FName& path);
 	void OnAnimationUpdated();
-	class UWaitForAnimationStateExitProxy* STATIC_CreateProxy(class UAnimInstance* AnimInstance, const struct FName& TargetPath);
+	static class UWaitForAnimationStateExitProxy* CreateProxy(class UAnimInstance* AnimInstance, const struct FName& TargetPath);
 };
 
 
@@ -995,7 +995,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.WeightedAnimationLoadOnDemandDataAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.WeightedAnimationLoadOnDemandDataAsset"));
 		return ptr;
 	}
 
@@ -1013,7 +1013,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Animation.WeightedAnimSequenceLoadOnDemand");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.WeightedAnimSequenceLoadOnDemand"));
 		return ptr;
 	}
 

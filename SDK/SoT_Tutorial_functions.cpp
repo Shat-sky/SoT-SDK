@@ -20,9 +20,14 @@ namespace SDK
 
 bool UCompanyTutorialVoyageProgress::IsSameVoyage(const struct FText& VoyageName)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Tutorial.CompanyTutorialVoyageProgress.IsSameVoyage");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tutorial.CompanyTutorialVoyageProgress.IsSameVoyage"));
 
-	UCompanyTutorialVoyageProgress_IsSameVoyage_Params params;
+	struct
+	{
+		struct FText                   VoyageName;
+		bool                           ReturnValue;
+	} params;
+
 	params.VoyageName = VoyageName;
 
 	UObject::ProcessEvent(fn, &params);
@@ -39,9 +44,14 @@ bool UCompanyTutorialVoyageProgress::IsSameVoyage(const struct FText& VoyageName
 
 void UCompanyTutorialVoyageProgress::AssignVoyage(class UClass* VoyageProposalDescClass, class UClass* TaleRankDescClass)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Tutorial.CompanyTutorialVoyageProgress.AssignVoyage");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tutorial.CompanyTutorialVoyageProgress.AssignVoyage"));
 
-	UCompanyTutorialVoyageProgress_AssignVoyage_Params params;
+	struct
+	{
+		class UClass*                  VoyageProposalDescClass;
+		class UClass*                  TaleRankDescClass;
+	} params;
+
 	params.VoyageProposalDescClass = VoyageProposalDescClass;
 	params.TaleRankDescClass = TaleRankDescClass;
 
@@ -54,9 +64,12 @@ void UCompanyTutorialVoyageProgress::AssignVoyage(class UClass* VoyageProposalDe
 
 void UTutorial2019Component::ReceiveTutorial2019BeginPlayOnServer()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Tutorial.Tutorial2019Component.ReceiveTutorial2019BeginPlayOnServer");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tutorial.Tutorial2019Component.ReceiveTutorial2019BeginPlayOnServer"));
 
-	UTutorial2019Component_ReceiveTutorial2019BeginPlayOnServer_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -67,9 +80,12 @@ void UTutorial2019Component::ReceiveTutorial2019BeginPlayOnServer()
 
 void UTutorial2019Component::ReceiveTutorial2019BeginPlayOnClient()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Tutorial.Tutorial2019Component.ReceiveTutorial2019BeginPlayOnClient");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tutorial.Tutorial2019Component.ReceiveTutorial2019BeginPlayOnClient"));
 
-	UTutorial2019Component_ReceiveTutorial2019BeginPlayOnClient_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -82,9 +98,13 @@ void UTutorial2019Component::ReceiveTutorial2019BeginPlayOnClient()
 
 void UTutorial2019Component::OnRep_IsEnabledByServer(bool OldIsEnabled)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Tutorial.Tutorial2019Component.OnRep_IsEnabledByServer");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tutorial.Tutorial2019Component.OnRep_IsEnabledByServer"));
 
-	UTutorial2019Component_OnRep_IsEnabledByServer_Params params;
+	struct
+	{
+		bool                           OldIsEnabled;
+	} params;
+
 	params.OldIsEnabled = OldIsEnabled;
 
 	UObject::ProcessEvent(fn, &params);
@@ -96,9 +116,12 @@ void UTutorial2019Component::OnRep_IsEnabledByServer(bool OldIsEnabled)
 
 void UTutorial2019Component::ForceDisableComponent_Blueprint()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Tutorial.Tutorial2019Component.ForceDisableComponent_Blueprint");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tutorial.Tutorial2019Component.ForceDisableComponent_Blueprint"));
 
-	UTutorial2019Component_ForceDisableComponent_Blueprint_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -109,9 +132,12 @@ void UTutorial2019Component::ForceDisableComponent_Blueprint()
 
 void UTutorial2019Component::BeginOnServer()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Tutorial.Tutorial2019Component.BeginOnServer");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tutorial.Tutorial2019Component.BeginOnServer"));
 
-	UTutorial2019Component_BeginOnServer_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -123,14 +149,20 @@ void UTutorial2019Component::BeginOnServer()
 // class AActor*                  CharacterToTeleport            (Parm, ZeroConstructor, IsPlainOldData)
 // struct FTeleportLocation       ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FTeleportLocation UTutorial2019FunctionLibrary::STATIC_GetNearestOnboardingSpawnPoint(class AActor* CharacterToTeleport)
+struct FTeleportLocation UTutorial2019FunctionLibrary::GetNearestOnboardingSpawnPoint(class AActor* CharacterToTeleport)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Tutorial.Tutorial2019FunctionLibrary.GetNearestOnboardingSpawnPoint");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tutorial.Tutorial2019FunctionLibrary.GetNearestOnboardingSpawnPoint"));
 
-	UTutorial2019FunctionLibrary_GetNearestOnboardingSpawnPoint_Params params;
+	struct
+	{
+		class AActor*                  CharacterToTeleport;
+		struct FTeleportLocation       ReturnValue;
+	} params;
+
 	params.CharacterToTeleport = CharacterToTeleport;
 
-	UObject::ProcessEvent(fn, &params);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
 }
@@ -142,15 +174,21 @@ struct FTeleportLocation UTutorial2019FunctionLibrary::STATIC_GetNearestOnboardi
 // class UClass*                  AccessKey                      (Parm, ZeroConstructor, IsPlainOldData)
 // class UObject*                 WorldContextObject             (Parm, ZeroConstructor, IsPlainOldData)
 
-void UTutorialHelpersBlueprintLibrary::STATIC_FirePromptCompleted(class UClass* AccessKey, class UObject* WorldContextObject)
+void UTutorialHelpersBlueprintLibrary::FirePromptCompleted(class UClass* AccessKey, class UObject* WorldContextObject)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Tutorial.TutorialHelpersBlueprintLibrary.FirePromptCompleted");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tutorial.TutorialHelpersBlueprintLibrary.FirePromptCompleted"));
 
-	UTutorialHelpersBlueprintLibrary_FirePromptCompleted_Params params;
+	struct
+	{
+		class UClass*                  AccessKey;
+		class UObject*                 WorldContextObject;
+	} params;
+
 	params.AccessKey = AccessKey;
 	params.WorldContextObject = WorldContextObject;
 
-	UObject::ProcessEvent(fn, &params);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 }
 
 
@@ -159,9 +197,12 @@ void UTutorialHelpersBlueprintLibrary::STATIC_FirePromptCompleted(class UClass* 
 
 void UTutorialManager::OnRep_SelectedTutorialClass()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Tutorial.TutorialManager.OnRep_SelectedTutorialClass");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tutorial.TutorialManager.OnRep_SelectedTutorialClass"));
 
-	UTutorialManager_OnRep_SelectedTutorialClass_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -174,9 +215,13 @@ void UTutorialManager::OnRep_SelectedTutorialClass()
 
 bool UCompanyOnboardingStarter::HasPrerequisites()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Tutorial.CompanyOnboardingStarter.HasPrerequisites");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tutorial.CompanyOnboardingStarter.HasPrerequisites"));
 
-	UCompanyOnboardingStarter_HasPrerequisites_Params params;
+	struct
+	{
+		bool                           ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 

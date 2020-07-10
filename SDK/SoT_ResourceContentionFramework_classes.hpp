@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ResourceContentionFramework.PoolableInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ResourceContentionFramework.PoolableInterface"));
 		return ptr;
 	}
 

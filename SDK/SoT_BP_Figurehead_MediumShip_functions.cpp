@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_Figurehead_MediumShip_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Figurehead_MediumShip.BP_Figurehead_MediumShip_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Figurehead_MediumShip.BP_Figurehead_MediumShip_C.UserConstructionScript"));
 
-	ABP_Figurehead_MediumShip_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -32,9 +35,13 @@ void ABP_Figurehead_MediumShip_C::UserConstructionScript()
 
 void ABP_Figurehead_MediumShip_C::OnPartMeshLoaded(class UStaticMesh* Mesh)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Figurehead_MediumShip.BP_Figurehead_MediumShip_C.OnPartMeshLoaded");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Figurehead_MediumShip.BP_Figurehead_MediumShip_C.OnPartMeshLoaded"));
 
-	ABP_Figurehead_MediumShip_C_OnPartMeshLoaded_Params params;
+	struct
+	{
+		class UStaticMesh*             Mesh;
+	} params;
+
 	params.Mesh = Mesh;
 
 	UObject::ProcessEvent(fn, &params);
@@ -48,9 +55,13 @@ void ABP_Figurehead_MediumShip_C::OnPartMeshLoaded(class UStaticMesh* Mesh)
 
 void ABP_Figurehead_MediumShip_C::OnPartDescLoaded(class UGenericPartDescAsset* Desc)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Figurehead_MediumShip.BP_Figurehead_MediumShip_C.OnPartDescLoaded");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Figurehead_MediumShip.BP_Figurehead_MediumShip_C.OnPartDescLoaded"));
 
-	ABP_Figurehead_MediumShip_C_OnPartDescLoaded_Params params;
+	struct
+	{
+		class UGenericPartDescAsset*   Desc;
+	} params;
+
 	params.Desc = Desc;
 
 	UObject::ProcessEvent(fn, &params);
@@ -64,9 +75,13 @@ void ABP_Figurehead_MediumShip_C::OnPartDescLoaded(class UGenericPartDescAsset* 
 
 void ABP_Figurehead_MediumShip_C::ExecuteUbergraph_BP_Figurehead_MediumShip(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Figurehead_MediumShip.BP_Figurehead_MediumShip_C.ExecuteUbergraph_BP_Figurehead_MediumShip");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Figurehead_MediumShip.BP_Figurehead_MediumShip_C.ExecuteUbergraph_BP_Figurehead_MediumShip"));
 
-	ABP_Figurehead_MediumShip_C_ExecuteUbergraph_BP_Figurehead_MediumShip_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

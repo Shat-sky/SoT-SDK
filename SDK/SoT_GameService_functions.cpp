@@ -18,14 +18,20 @@ namespace SDK
 // struct FGameServiceMap         ServiceMap                     (Parm, OutParm, ReferenceParm)
 // class UObject*                 Service                        (Parm, ZeroConstructor, IsPlainOldData)
 
-void UGameServiceMapFunctions::STATIC_UnregisterService(class UObject* Service, struct FGameServiceMap* ServiceMap)
+void UGameServiceMapFunctions::UnregisterService(class UObject* Service, struct FGameServiceMap* ServiceMap)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameService.GameServiceMapFunctions.UnregisterService");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function GameService.GameServiceMapFunctions.UnregisterService"));
 
-	UGameServiceMapFunctions_UnregisterService_Params params;
+	struct
+	{
+		struct FGameServiceMap         ServiceMap;
+		class UObject*                 Service;
+	} params;
+
 	params.Service = Service;
 
-	UObject::ProcessEvent(fn, &params);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
 	if (ServiceMap != nullptr)
 		*ServiceMap = params.ServiceMap;
@@ -39,15 +45,22 @@ void UGameServiceMapFunctions::STATIC_UnregisterService(class UObject* Service, 
 // class UObject*                 Service                        (Parm, ZeroConstructor, IsPlainOldData)
 // class UClass*                  Class                          (Parm, ZeroConstructor, IsPlainOldData)
 
-void UGameServiceMapFunctions::STATIC_RegisterService(class UObject* Service, class UClass* Class, struct FGameServiceMap* ServiceMap)
+void UGameServiceMapFunctions::RegisterService(class UObject* Service, class UClass* Class, struct FGameServiceMap* ServiceMap)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameService.GameServiceMapFunctions.RegisterService");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function GameService.GameServiceMapFunctions.RegisterService"));
 
-	UGameServiceMapFunctions_RegisterService_Params params;
+	struct
+	{
+		struct FGameServiceMap         ServiceMap;
+		class UObject*                 Service;
+		class UClass*                  Class;
+	} params;
+
 	params.Service = Service;
 	params.Class = Class;
 
-	UObject::ProcessEvent(fn, &params);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
 	if (ServiceMap != nullptr)
 		*ServiceMap = params.ServiceMap;
@@ -61,14 +74,21 @@ void UGameServiceMapFunctions::STATIC_RegisterService(class UObject* Service, cl
 // class UClass*                  Class                          (Parm, ZeroConstructor, IsPlainOldData)
 // class UObject*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-class UObject* UGameServiceMapFunctions::STATIC_GetService(class UClass* Class, struct FGameServiceMap* ServiceMap)
+class UObject* UGameServiceMapFunctions::GetService(class UClass* Class, struct FGameServiceMap* ServiceMap)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameService.GameServiceMapFunctions.GetService");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function GameService.GameServiceMapFunctions.GetService"));
 
-	UGameServiceMapFunctions_GetService_Params params;
+	struct
+	{
+		struct FGameServiceMap         ServiceMap;
+		class UClass*                  Class;
+		class UObject*                 ReturnValue;
+	} params;
+
 	params.Class = Class;
 
-	UObject::ProcessEvent(fn, &params);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
 	if (ServiceMap != nullptr)
 		*ServiceMap = params.ServiceMap;
@@ -83,13 +103,19 @@ class UObject* UGameServiceMapFunctions::STATIC_GetService(class UClass* Class, 
 // struct FGameServiceMap         ServiceMap                     (Parm, OutParm, ReferenceParm)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UGameServiceMapFunctions::STATIC_GetNumServices(struct FGameServiceMap* ServiceMap)
+int UGameServiceMapFunctions::GetNumServices(struct FGameServiceMap* ServiceMap)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameService.GameServiceMapFunctions.GetNumServices");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function GameService.GameServiceMapFunctions.GetNumServices"));
 
-	UGameServiceMapFunctions_GetNumServices_Params params;
+	struct
+	{
+		struct FGameServiceMap         ServiceMap;
+		int                            ReturnValue;
+	} params;
 
-	UObject::ProcessEvent(fn, &params);
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
 	if (ServiceMap != nullptr)
 		*ServiceMap = params.ServiceMap;
@@ -105,9 +131,13 @@ int UGameServiceMapFunctions::STATIC_GetNumServices(struct FGameServiceMap* Serv
 
 void UGameServiceProviderInterface::UnregisterService(class UObject* Service)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameService.GameServiceProviderInterface.UnregisterService");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function GameService.GameServiceProviderInterface.UnregisterService"));
 
-	UGameServiceProviderInterface_UnregisterService_Params params;
+	struct
+	{
+		class UObject*                 Service;
+	} params;
+
 	params.Service = Service;
 
 	UObject::ProcessEvent(fn, &params);
@@ -122,9 +152,14 @@ void UGameServiceProviderInterface::UnregisterService(class UObject* Service)
 
 void UGameServiceProviderInterface::RegisterService(class UObject* Service, class UClass* Class)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameService.GameServiceProviderInterface.RegisterService");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function GameService.GameServiceProviderInterface.RegisterService"));
 
-	UGameServiceProviderInterface_RegisterService_Params params;
+	struct
+	{
+		class UObject*                 Service;
+		class UClass*                  Class;
+	} params;
+
 	params.Service = Service;
 	params.Class = Class;
 
@@ -140,9 +175,14 @@ void UGameServiceProviderInterface::RegisterService(class UObject* Service, clas
 
 class UObject* UGameServiceProviderInterface::GetService(class UClass* Class)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function GameService.GameServiceProviderInterface.GetService");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function GameService.GameServiceProviderInterface.GetService"));
 
-	UGameServiceProviderInterface_GetService_Params params;
+	struct
+	{
+		class UClass*                  Class;
+		class UObject*                 ReturnValue;
+	} params;
+
 	params.Class = Class;
 
 	UObject::ProcessEvent(fn, &params);

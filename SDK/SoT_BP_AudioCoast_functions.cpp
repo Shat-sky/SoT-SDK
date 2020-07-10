@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_AudioCoast_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_AudioCoast.BP_AudioCoast_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_AudioCoast.BP_AudioCoast_C.UserConstructionScript"));
 
-	ABP_AudioCoast_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -30,9 +33,12 @@ void ABP_AudioCoast_C::UserConstructionScript()
 
 void ABP_AudioCoast_C::ReceiveBeginPlay()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_AudioCoast.BP_AudioCoast_C.ReceiveBeginPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_AudioCoast.BP_AudioCoast_C.ReceiveBeginPlay"));
 
-	ABP_AudioCoast_C_ReceiveBeginPlay_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -45,9 +51,13 @@ void ABP_AudioCoast_C::ReceiveBeginPlay()
 
 void ABP_AudioCoast_C::ReceiveEndPlay(TEnumAsByte<EEndPlayReason> EndPlayReason)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_AudioCoast.BP_AudioCoast_C.ReceiveEndPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_AudioCoast.BP_AudioCoast_C.ReceiveEndPlay"));
 
-	ABP_AudioCoast_C_ReceiveEndPlay_Params params;
+	struct
+	{
+		TEnumAsByte<EEndPlayReason>    EndPlayReason;
+	} params;
+
 	params.EndPlayReason = EndPlayReason;
 
 	UObject::ProcessEvent(fn, &params);
@@ -61,9 +71,13 @@ void ABP_AudioCoast_C::ReceiveEndPlay(TEnumAsByte<EEndPlayReason> EndPlayReason)
 
 void ABP_AudioCoast_C::ExecuteUbergraph_BP_AudioCoast(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_AudioCoast.BP_AudioCoast_C.ExecuteUbergraph_BP_AudioCoast");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_AudioCoast.BP_AudioCoast_C.ExecuteUbergraph_BP_AudioCoast"));
 
-	ABP_AudioCoast_C_ExecuteUbergraph_BP_AudioCoast_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

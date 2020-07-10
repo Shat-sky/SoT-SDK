@@ -17,9 +17,12 @@ namespace SDK
 
 void UBP_SailAnim_C::Set_Billow_Animation_Rate()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_SailAnim.BP_SailAnim_C.Set Billow Animation Rate");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_SailAnim.BP_SailAnim_C.Set Billow Animation Rate"));
 
-	UBP_SailAnim_C_Set_Billow_Animation_Rate_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -33,9 +36,14 @@ void UBP_SailAnim_C::Set_Billow_Animation_Rate()
 
 void UBP_SailAnim_C::InitialiseSail(float PlayRateMultiplier, bool MainSail)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_SailAnim.BP_SailAnim_C.InitialiseSail");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_SailAnim.BP_SailAnim_C.InitialiseSail"));
 
-	UBP_SailAnim_C_InitialiseSail_Params params;
+	struct
+	{
+		float                          PlayRateMultiplier;
+		bool                           MainSail;
+	} params;
+
 	params.PlayRateMultiplier = PlayRateMultiplier;
 	params.MainSail = MainSail;
 
@@ -50,9 +58,13 @@ void UBP_SailAnim_C::InitialiseSail(float PlayRateMultiplier, bool MainSail)
 
 void UBP_SailAnim_C::ExecuteUbergraph_BP_SailAnim(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_SailAnim.BP_SailAnim_C.ExecuteUbergraph_BP_SailAnim");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_SailAnim.BP_SailAnim_C.ExecuteUbergraph_BP_SailAnim"));
 
-	UBP_SailAnim_C_ExecuteUbergraph_BP_SailAnim_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

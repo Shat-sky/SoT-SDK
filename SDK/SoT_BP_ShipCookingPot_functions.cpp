@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_ShipCookingPot_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ShipCookingPot.BP_ShipCookingPot_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_ShipCookingPot.BP_ShipCookingPot_C.UserConstructionScript"));
 
-	ABP_ShipCookingPot_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

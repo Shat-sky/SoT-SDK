@@ -23,9 +23,17 @@ namespace SDK
 
 void ABP_MediumShipTemplate_C::SetupMastControls(class UChildActorComponent* LeftHoist, class UChildActorComponent* RightHoist, class UChildActorComponent* LeftAngle, class UChildActorComponent* RightAngle, const struct FName& RiggingGroupName)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_MediumShipTemplate.BP_MediumShipTemplate_C.SetupMastControls");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_MediumShipTemplate.BP_MediumShipTemplate_C.SetupMastControls"));
 
-	ABP_MediumShipTemplate_C_SetupMastControls_Params params;
+	struct
+	{
+		class UChildActorComponent*    LeftHoist;
+		class UChildActorComponent*    RightHoist;
+		class UChildActorComponent*    LeftAngle;
+		class UChildActorComponent*    RightAngle;
+		struct FName                   RiggingGroupName;
+	} params;
+
 	params.LeftHoist = LeftHoist;
 	params.RightHoist = RightHoist;
 	params.LeftAngle = LeftAngle;
@@ -41,9 +49,12 @@ void ABP_MediumShipTemplate_C::SetupMastControls(class UChildActorComponent* Lef
 
 void ABP_MediumShipTemplate_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_MediumShipTemplate.BP_MediumShipTemplate_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_MediumShipTemplate.BP_MediumShipTemplate_C.UserConstructionScript"));
 
-	ABP_MediumShipTemplate_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

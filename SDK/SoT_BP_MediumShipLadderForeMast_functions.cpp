@@ -19,9 +19,13 @@ namespace SDK
 
 struct FDockableInfo ABP_MediumShipLadderForeMast_C::GetDockableInfo()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_MediumShipLadderForeMast.BP_MediumShipLadderForeMast_C.GetDockableInfo");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_MediumShipLadderForeMast.BP_MediumShipLadderForeMast_C.GetDockableInfo"));
 
-	ABP_MediumShipLadderForeMast_C_GetDockableInfo_Params params;
+	struct
+	{
+		struct FDockableInfo           ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -37,9 +41,14 @@ struct FDockableInfo ABP_MediumShipLadderForeMast_C::GetDockableInfo()
 
 void ABP_MediumShipLadderForeMast_C::Setup_Spline(class USplineComponent* Spline, TArray<struct FVector>* Positions)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_MediumShipLadderForeMast.BP_MediumShipLadderForeMast_C.Setup Spline");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_MediumShipLadderForeMast.BP_MediumShipLadderForeMast_C.Setup Spline"));
 
-	ABP_MediumShipLadderForeMast_C_Setup_Spline_Params params;
+	struct
+	{
+		class USplineComponent*        Spline;
+		TArray<struct FVector>         Positions;
+	} params;
+
 	params.Spline = Spline;
 
 	UObject::ProcessEvent(fn, &params);
@@ -57,9 +66,14 @@ void ABP_MediumShipLadderForeMast_C::Setup_Spline(class USplineComponent* Spline
 
 bool ABP_MediumShipLadderForeMast_C::CanInteract(class AActor* InInteractor)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_MediumShipLadderForeMast.BP_MediumShipLadderForeMast_C.CanInteract");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_MediumShipLadderForeMast.BP_MediumShipLadderForeMast_C.CanInteract"));
 
-	ABP_MediumShipLadderForeMast_C_CanInteract_Params params;
+	struct
+	{
+		class AActor*                  InInteractor;
+		bool                           ReturnValue;
+	} params;
+
 	params.InInteractor = InInteractor;
 
 	UObject::ProcessEvent(fn, &params);
@@ -73,9 +87,12 @@ bool ABP_MediumShipLadderForeMast_C::CanInteract(class AActor* InInteractor)
 
 void ABP_MediumShipLadderForeMast_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_MediumShipLadderForeMast.BP_MediumShipLadderForeMast_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_MediumShipLadderForeMast.BP_MediumShipLadderForeMast_C.UserConstructionScript"));
 
-	ABP_MediumShipLadderForeMast_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

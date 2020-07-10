@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_StepsTrigger_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_StepsTrigger.BP_StepsTrigger_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_StepsTrigger.BP_StepsTrigger_C.UserConstructionScript"));
 
-	ABP_StepsTrigger_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -30,9 +33,12 @@ void ABP_StepsTrigger_C::UserConstructionScript()
 
 void ABP_StepsTrigger_C::ReceiveBeginPlay()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_StepsTrigger.BP_StepsTrigger_C.ReceiveBeginPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_StepsTrigger.BP_StepsTrigger_C.ReceiveBeginPlay"));
 
-	ABP_StepsTrigger_C_ReceiveBeginPlay_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -45,9 +51,13 @@ void ABP_StepsTrigger_C::ReceiveBeginPlay()
 
 void ABP_StepsTrigger_C::ExecuteUbergraph_BP_StepsTrigger(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_StepsTrigger.BP_StepsTrigger_C.ExecuteUbergraph_BP_StepsTrigger");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_StepsTrigger.BP_StepsTrigger_C.ExecuteUbergraph_BP_StepsTrigger"));
 
-	ABP_StepsTrigger_C_ExecuteUbergraph_BP_StepsTrigger_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

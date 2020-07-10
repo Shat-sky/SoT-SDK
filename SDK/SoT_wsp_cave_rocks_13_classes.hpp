@@ -32,7 +32,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass wsp_cave_rocks_13.wsp_cave_rocks_12_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass wsp_cave_rocks_13.wsp_cave_rocks_12_C"));
 		return ptr;
 	}
 

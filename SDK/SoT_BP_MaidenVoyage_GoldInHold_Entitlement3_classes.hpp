@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass BP_MaidenVoyage_GoldInHold_Entitlement3.BP_MaidenVoyage_GoldInHold_Entitlement3_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass BP_MaidenVoyage_GoldInHold_Entitlement3.BP_MaidenVoyage_GoldInHold_Entitlement3_C"));
 		return ptr;
 	}
 

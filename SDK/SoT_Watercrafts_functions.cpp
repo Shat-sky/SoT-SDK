@@ -17,9 +17,12 @@ namespace SDK
 
 void UItemProxyWatercraftTrackerComponent::OnRep_CurrentWatercraft()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Watercrafts.ItemProxyWatercraftTrackerComponent.OnRep_CurrentWatercraft");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.ItemProxyWatercraftTrackerComponent.OnRep_CurrentWatercraft"));
 
-	UItemProxyWatercraftTrackerComponent_OnRep_CurrentWatercraft_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -32,9 +35,13 @@ void UItemProxyWatercraftTrackerComponent::OnRep_CurrentWatercraft()
 
 void UItemProxyWatercraftTrackerComponent::OnCurrentWatercraftDestroyed(class AActor* DestroyedWatercraft)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Watercrafts.ItemProxyWatercraftTrackerComponent.OnCurrentWatercraftDestroyed");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.ItemProxyWatercraftTrackerComponent.OnCurrentWatercraftDestroyed"));
 
-	UItemProxyWatercraftTrackerComponent_OnCurrentWatercraftDestroyed_Params params;
+	struct
+	{
+		class AActor*                  DestroyedWatercraft;
+	} params;
+
 	params.DestroyedWatercraft = DestroyedWatercraft;
 
 	UObject::ProcessEvent(fn, &params);
@@ -48,9 +55,13 @@ void UItemProxyWatercraftTrackerComponent::OnCurrentWatercraftDestroyed(class AA
 
 void AWatercraft::OnRigidBodyWake(const struct FName& InBoneName)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Watercrafts.Watercraft.OnRigidBodyWake");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.Watercraft.OnRigidBodyWake"));
 
-	AWatercraft_OnRigidBodyWake_Params params;
+	struct
+	{
+		struct FName                   InBoneName;
+	} params;
+
 	params.InBoneName = InBoneName;
 
 	UObject::ProcessEvent(fn, &params);
@@ -64,9 +75,13 @@ void AWatercraft::OnRigidBodyWake(const struct FName& InBoneName)
 
 void AWatercraft::OnRigidBodySleep(const struct FName& InBoneName)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Watercrafts.Watercraft.OnRigidBodySleep");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.Watercraft.OnRigidBodySleep"));
 
-	AWatercraft_OnRigidBodySleep_Params params;
+	struct
+	{
+		struct FName                   InBoneName;
+	} params;
+
 	params.InBoneName = InBoneName;
 
 	UObject::ProcessEvent(fn, &params);
@@ -80,9 +95,13 @@ void AWatercraft::OnRigidBodySleep(const struct FName& InBoneName)
 
 void ARowboat::SetAlwaysEnabledInteractables(TArray<class UChildActorComponent*> InAlwaysEnabledInteractables)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Watercrafts.Rowboat.SetAlwaysEnabledInteractables");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.Rowboat.SetAlwaysEnabledInteractables"));
 
-	ARowboat_SetAlwaysEnabledInteractables_Params params;
+	struct
+	{
+		TArray<class UChildActorComponent*> InAlwaysEnabledInteractables;
+	} params;
+
 	params.InAlwaysEnabledInteractables = InAlwaysEnabledInteractables;
 
 	UObject::ProcessEvent(fn, &params);
@@ -94,9 +113,12 @@ void ARowboat::SetAlwaysEnabledInteractables(TArray<class UChildActorComponent*>
 
 void ARowboat::OnRep_IsSinking()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Watercrafts.Rowboat.OnRep_IsSinking");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.Rowboat.OnRep_IsSinking"));
 
-	ARowboat_OnRep_IsSinking_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -109,9 +131,13 @@ void ARowboat::OnRep_IsSinking()
 
 TEnumAsByte<EInputHandlerResult> URowingCompositeInputHandler::OnUseRightOar()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Watercrafts.RowingCompositeInputHandler.OnUseRightOar");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.RowingCompositeInputHandler.OnUseRightOar"));
 
-	URowingCompositeInputHandler_OnUseRightOar_Params params;
+	struct
+	{
+		TEnumAsByte<EInputHandlerResult> ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -126,9 +152,13 @@ TEnumAsByte<EInputHandlerResult> URowingCompositeInputHandler::OnUseRightOar()
 
 TEnumAsByte<EInputHandlerResult> URowingCompositeInputHandler::OnUseLeftOar()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Watercrafts.RowingCompositeInputHandler.OnUseLeftOar");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.RowingCompositeInputHandler.OnUseLeftOar"));
 
-	URowingCompositeInputHandler_OnUseLeftOar_Params params;
+	struct
+	{
+		TEnumAsByte<EInputHandlerResult> ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -143,9 +173,13 @@ TEnumAsByte<EInputHandlerResult> URowingCompositeInputHandler::OnUseLeftOar()
 
 TEnumAsByte<EInputHandlerResult> URowingCompositeInputHandler::OnStopUseRightOar()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Watercrafts.RowingCompositeInputHandler.OnStopUseRightOar");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.RowingCompositeInputHandler.OnStopUseRightOar"));
 
-	URowingCompositeInputHandler_OnStopUseRightOar_Params params;
+	struct
+	{
+		TEnumAsByte<EInputHandlerResult> ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -160,9 +194,13 @@ TEnumAsByte<EInputHandlerResult> URowingCompositeInputHandler::OnStopUseRightOar
 
 TEnumAsByte<EInputHandlerResult> URowingCompositeInputHandler::OnStopUseLeftOar()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Watercrafts.RowingCompositeInputHandler.OnStopUseLeftOar");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.RowingCompositeInputHandler.OnStopUseLeftOar"));
 
-	URowingCompositeInputHandler_OnStopUseLeftOar_Params params;
+	struct
+	{
+		TEnumAsByte<EInputHandlerResult> ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -177,9 +215,13 @@ TEnumAsByte<EInputHandlerResult> URowingCompositeInputHandler::OnStopUseLeftOar(
 
 TEnumAsByte<EInputHandlerResult> URowingCompositeInputHandler::OnBrakeRightOar()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Watercrafts.RowingCompositeInputHandler.OnBrakeRightOar");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.RowingCompositeInputHandler.OnBrakeRightOar"));
 
-	URowingCompositeInputHandler_OnBrakeRightOar_Params params;
+	struct
+	{
+		TEnumAsByte<EInputHandlerResult> ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -194,9 +236,13 @@ TEnumAsByte<EInputHandlerResult> URowingCompositeInputHandler::OnBrakeRightOar()
 
 TEnumAsByte<EInputHandlerResult> URowingCompositeInputHandler::OnBrakeLeftOar()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Watercrafts.RowingCompositeInputHandler.OnBrakeLeftOar");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.RowingCompositeInputHandler.OnBrakeLeftOar"));
 
-	URowingCompositeInputHandler_OnBrakeLeftOar_Params params;
+	struct
+	{
+		TEnumAsByte<EInputHandlerResult> ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -213,17 +259,26 @@ TEnumAsByte<EInputHandlerResult> URowingCompositeInputHandler::OnBrakeLeftOar()
 // struct FRotator                Rotation                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // class AWatercraft*             ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-class AWatercraft* UWatercraftBlueprintFunctionLibrary::STATIC_SpawnWatercraft(class UObject* WorldContextObject, class UClass* WatercraftClass, const struct FVector& Location, const struct FRotator& Rotation)
+class AWatercraft* UWatercraftBlueprintFunctionLibrary::SpawnWatercraft(class UObject* WorldContextObject, class UClass* WatercraftClass, const struct FVector& Location, const struct FRotator& Rotation)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Watercrafts.WatercraftBlueprintFunctionLibrary.SpawnWatercraft");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.WatercraftBlueprintFunctionLibrary.SpawnWatercraft"));
 
-	UWatercraftBlueprintFunctionLibrary_SpawnWatercraft_Params params;
+	struct
+	{
+		class UObject*                 WorldContextObject;
+		class UClass*                  WatercraftClass;
+		struct FVector                 Location;
+		struct FRotator                Rotation;
+		class AWatercraft*             ReturnValue;
+	} params;
+
 	params.WorldContextObject = WorldContextObject;
 	params.WatercraftClass = WatercraftClass;
 	params.Location = Location;
 	params.Rotation = Rotation;
 
-	UObject::ProcessEvent(fn, &params);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
 }
@@ -236,9 +291,13 @@ class AWatercraft* UWatercraftBlueprintFunctionLibrary::STATIC_SpawnWatercraft(c
 
 void UWatercraftTrackerComponent::OnWatercraftDestroyed(class AActor* WatercraftActor)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Watercrafts.WatercraftTrackerComponent.OnWatercraftDestroyed");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.WatercraftTrackerComponent.OnWatercraftDestroyed"));
 
-	UWatercraftTrackerComponent_OnWatercraftDestroyed_Params params;
+	struct
+	{
+		class AActor*                  WatercraftActor;
+	} params;
+
 	params.WatercraftActor = WatercraftActor;
 
 	UObject::ProcessEvent(fn, &params);

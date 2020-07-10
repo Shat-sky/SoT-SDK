@@ -32,7 +32,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WwiseAudio.WwiseEvent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WwiseAudio.WwiseEvent"));
 		return ptr;
 	}
 
@@ -54,7 +54,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WwiseAudio.MovieSceneAkAudioEventSection");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WwiseAudio.MovieSceneAkAudioEventSection"));
 		return ptr;
 	}
 
@@ -72,7 +72,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WwiseAudio.MovieSceneAkAudioRTPCSection");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WwiseAudio.MovieSceneAkAudioRTPCSection"));
 		return ptr;
 	}
 
@@ -90,7 +90,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WwiseAudio.MovieSceneAkTrack");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WwiseAudio.MovieSceneAkTrack"));
 		return ptr;
 	}
 
@@ -105,7 +105,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WwiseAudio.MovieSceneAkAudioEventTrack");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WwiseAudio.MovieSceneAkAudioEventTrack"));
 		return ptr;
 	}
 
@@ -120,7 +120,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WwiseAudio.MovieSceneAkAudioRTPCTrack");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WwiseAudio.MovieSceneAkAudioRTPCTrack"));
 		return ptr;
 	}
 
@@ -164,7 +164,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WwiseAudio.WwiseAudioSettings");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WwiseAudio.WwiseAudioSettings"));
 		return ptr;
 	}
 
@@ -182,7 +182,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WwiseAudio.WwiseBank");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WwiseAudio.WwiseBank"));
 		return ptr;
 	}
 
@@ -197,7 +197,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WwiseAudio.WwiseSubSystemInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WwiseAudio.WwiseSubSystemInterface"));
 		return ptr;
 	}
 
@@ -213,7 +213,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WwiseAudio.WwiseDebugManager");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WwiseAudio.WwiseDebugManager"));
 		return ptr;
 	}
 
@@ -228,7 +228,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WwiseAudio.WwiseEmitterInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WwiseAudio.WwiseEmitterInterface"));
 		return ptr;
 	}
 
@@ -244,7 +244,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WwiseAudio.WwiseEmitterManager");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WwiseAudio.WwiseEmitterManager"));
 		return ptr;
 	}
 
@@ -259,7 +259,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WwiseAudio.WwiseInputManagerInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WwiseAudio.WwiseInputManagerInterface"));
 		return ptr;
 	}
 
@@ -275,7 +275,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WwiseAudio.WwiseInputManager");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WwiseAudio.WwiseInputManager"));
 		return ptr;
 	}
 
@@ -291,7 +291,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WwiseAudio.WwiseMediaManager");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WwiseAudio.WwiseMediaManager"));
 		return ptr;
 	}
 
@@ -307,7 +307,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WwiseAudio.WwisePersistentContentStore");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WwiseAudio.WwisePersistentContentStore"));
 		return ptr;
 	}
 
@@ -323,7 +323,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WwiseAudio.WwisePoolManager");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WwiseAudio.WwisePoolManager"));
 		return ptr;
 	}
 
@@ -339,7 +339,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WwiseAudio.WwiseSoundFrameManager");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WwiseAudio.WwiseSoundFrameManager"));
 		return ptr;
 	}
 

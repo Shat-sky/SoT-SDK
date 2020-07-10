@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_IslandStorageBarrel_Double_02_a_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_IslandStorageBarrel_Double_02_a.BP_IslandStorageBarrel_Double_02_a_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_IslandStorageBarrel_Double_02_a.BP_IslandStorageBarrel_Double_02_a_C.UserConstructionScript"));
 
-	ABP_IslandStorageBarrel_Double_02_a_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

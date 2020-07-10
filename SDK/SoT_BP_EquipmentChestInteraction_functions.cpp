@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_EquipmentChestInteraction_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_EquipmentChestInteraction.BP_EquipmentChestInteraction_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_EquipmentChestInteraction.BP_EquipmentChestInteraction_C.UserConstructionScript"));
 
-	ABP_EquipmentChestInteraction_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

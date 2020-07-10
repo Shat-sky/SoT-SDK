@@ -249,7 +249,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass BP_tavern_WSP_01_b.BP_tavern_WSP_01_b_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass BP_tavern_WSP_01_b.BP_tavern_WSP_01_b_C"));
 		return ptr;
 	}
 

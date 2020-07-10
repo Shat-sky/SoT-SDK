@@ -17,9 +17,12 @@ namespace SDK
 
 void AShortRangeMarker::Multicast_OnCleanUp()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ShortRangeMarkerFramework.ShortRangeMarker.Multicast_OnCleanUp");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function ShortRangeMarkerFramework.ShortRangeMarker.Multicast_OnCleanUp"));
 
-	AShortRangeMarker_Multicast_OnCleanUp_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -32,15 +35,22 @@ void AShortRangeMarker::Multicast_OnCleanUp()
 // class AActor*                  InMarker                       (Parm, ZeroConstructor, IsPlainOldData)
 // TArray<class AActor*>          InActors                       (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
-void UShortRangeMarkerBlueprintFunctionLibrary::STATIC_RegisterActorsWithShortRangeMarker(class UObject* WorldContextObject, class AActor* InMarker, TArray<class AActor*>* InActors)
+void UShortRangeMarkerBlueprintFunctionLibrary::RegisterActorsWithShortRangeMarker(class UObject* WorldContextObject, class AActor* InMarker, TArray<class AActor*>* InActors)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ShortRangeMarkerFramework.ShortRangeMarkerBlueprintFunctionLibrary.RegisterActorsWithShortRangeMarker");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function ShortRangeMarkerFramework.ShortRangeMarkerBlueprintFunctionLibrary.RegisterActorsWithShortRangeMarker"));
 
-	UShortRangeMarkerBlueprintFunctionLibrary_RegisterActorsWithShortRangeMarker_Params params;
+	struct
+	{
+		class UObject*                 WorldContextObject;
+		class AActor*                  InMarker;
+		TArray<class AActor*>          InActors;
+	} params;
+
 	params.WorldContextObject = WorldContextObject;
 	params.InMarker = InMarker;
 
-	UObject::ProcessEvent(fn, &params);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
 	if (InActors != nullptr)
 		*InActors = params.InActors;

@@ -23,7 +23,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.EmissaryActionRewardBoostComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryActionRewardBoostComponent"));
 		return ptr;
 	}
 
@@ -45,7 +45,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.EmissaryActiveTableVisualiserComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryActiveTableVisualiserComponent"));
 		return ptr;
 	}
 
@@ -62,7 +62,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.EmissaryEntitlementCategory");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryEntitlementCategory"));
 		return ptr;
 	}
 
@@ -77,7 +77,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.EmissaryEntitlementDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryEntitlementDesc"));
 		return ptr;
 	}
 
@@ -93,7 +93,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.EmissaryFlotsamItemInfo");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryFlotsamItemInfo"));
 		return ptr;
 	}
 
@@ -109,7 +109,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.EmissaryFlotsamItemSpawnComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryFlotsamItemSpawnComponent"));
 		return ptr;
 	}
 
@@ -128,7 +128,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.EmissaryFlotsamTooltipCustomizerComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryFlotsamTooltipCustomizerComponent"));
 		return ptr;
 	}
 
@@ -148,7 +148,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.EmissaryLevelSettingsAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryLevelSettingsAsset"));
 		return ptr;
 	}
 
@@ -167,7 +167,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.EmissaryLevelService");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryLevelService"));
 		return ptr;
 	}
 
@@ -190,7 +190,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.EmissaryMaxRankQuestProvider");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryMaxRankQuestProvider"));
 		return ptr;
 	}
 
@@ -213,7 +213,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.EmissaryParticipantComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryParticipantComponent"));
 		return ptr;
 	}
 
@@ -231,7 +231,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.EmissaryRepresentationMeshComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryRepresentationMeshComponent"));
 		return ptr;
 	}
 
@@ -249,7 +249,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.EmissaryRewardSettingsAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryRewardSettingsAsset"));
 		return ptr;
 	}
 
@@ -271,7 +271,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.EmissaryShipAffiliationTrackerComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryShipAffiliationTrackerComponent"));
 		return ptr;
 	}
 
@@ -292,7 +292,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.EmissaryVotingService");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryVotingService"));
 		return ptr;
 	}
 
@@ -315,7 +315,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.EmissaryVoyageInlineVoteConsumerBase");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryVoyageInlineVoteConsumerBase"));
 		return ptr;
 	}
 
@@ -338,7 +338,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.StartEmissaryVoyageInlineVoteConsumer");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.StartEmissaryVoyageInlineVoteConsumer"));
 		return ptr;
 	}
 
@@ -360,7 +360,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.StopEmissaryVoyageInlineVoteConsumer");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.StopEmissaryVoyageInlineVoteConsumer"));
 		return ptr;
 	}
 
@@ -379,7 +379,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.EmissaryVoyageVoteValidatorBase");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryVoyageVoteValidatorBase"));
 		return ptr;
 	}
 
@@ -394,7 +394,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.StartEmissaryVoyageInlineVoteValidator");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.StartEmissaryVoyageInlineVoteValidator"));
 		return ptr;
 	}
 
@@ -409,7 +409,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.StopEmissaryVoyageInlineVoteValidator");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.StopEmissaryVoyageInlineVoteValidator"));
 		return ptr;
 	}
 
@@ -427,7 +427,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryLevel.IsEmissaryStatCondition");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.IsEmissaryStatCondition"));
 		return ptr;
 	}
 

@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_FishCreature_C::ConfigureMaterialInstance()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FishCreature.BP_FishCreature_C.ConfigureMaterialInstance");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FishCreature.BP_FishCreature_C.ConfigureMaterialInstance"));
 
-	ABP_FishCreature_C_ConfigureMaterialInstance_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -30,9 +33,12 @@ void ABP_FishCreature_C::ConfigureMaterialInstance()
 
 void ABP_FishCreature_C::CreateCreature()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FishCreature.BP_FishCreature_C.CreateCreature");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FishCreature.BP_FishCreature_C.CreateCreature"));
 
-	ABP_FishCreature_C_CreateCreature_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -43,9 +49,12 @@ void ABP_FishCreature_C::CreateCreature()
 
 void ABP_FishCreature_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FishCreature.BP_FishCreature_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FishCreature.BP_FishCreature_C.UserConstructionScript"));
 
-	ABP_FishCreature_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

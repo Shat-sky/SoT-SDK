@@ -29,7 +29,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaCheat.AthenaCheatManager");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaCheat.AthenaCheatManager"));
 		return ptr;
 	}
 

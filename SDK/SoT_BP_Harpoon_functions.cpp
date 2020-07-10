@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_Harpoon_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Harpoon.BP_Harpoon_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Harpoon.BP_Harpoon_C.UserConstructionScript"));
 
-	ABP_Harpoon_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -30,9 +33,12 @@ void ABP_Harpoon_C::UserConstructionScript()
 
 void ABP_Harpoon_C::ReceiveBeginPlay()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Harpoon.BP_Harpoon_C.ReceiveBeginPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Harpoon.BP_Harpoon_C.ReceiveBeginPlay"));
 
-	ABP_Harpoon_C_ReceiveBeginPlay_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -45,9 +51,13 @@ void ABP_Harpoon_C::ReceiveBeginPlay()
 
 void ABP_Harpoon_C::ExecuteUbergraph_BP_Harpoon(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Harpoon.BP_Harpoon_C.ExecuteUbergraph_BP_Harpoon");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Harpoon.BP_Harpoon_C.ExecuteUbergraph_BP_Harpoon"));
 
-	ABP_Harpoon_C_ExecuteUbergraph_BP_Harpoon_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

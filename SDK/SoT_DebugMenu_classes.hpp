@@ -25,7 +25,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class DebugMenu.DebugMenuComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class DebugMenu.DebugMenuComponent"));
 		return ptr;
 	}
 
@@ -40,7 +40,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class DebugMenu.DebugMenuEntryGenerator");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class DebugMenu.DebugMenuEntryGenerator"));
 		return ptr;
 	}
 
@@ -59,7 +59,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class DebugMenu.DebugMenuDataAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class DebugMenu.DebugMenuDataAsset"));
 		return ptr;
 	}
 
@@ -75,7 +75,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class DebugMenu.DebugMenu");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class DebugMenu.DebugMenu"));
 		return ptr;
 	}
 
@@ -91,7 +91,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class DebugMenu.DebugMenuComponentMock");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class DebugMenu.DebugMenuComponentMock"));
 		return ptr;
 	}
 
@@ -106,18 +106,18 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class DebugMenu.DebugMenuTestFunctions");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class DebugMenu.DebugMenuTestFunctions"));
 		return ptr;
 	}
 
 
-	bool STATIC_IsDebugMenuReady(class UObject* WorldContextObject);
-	bool STATIC_IsDebugMenuOpen(class UObject* WorldContextObject);
-	bool STATIC_IsDebugMenuAvailable();
-	struct FKey STATIC_GetDebugMenuToggleKeyComboBetaKeyboard();
-	struct FKey STATIC_GetDebugMenuToggleKeyComboAlphaKeyboard();
-	struct FKey STATIC_GetDebugMenuToggleButtonComboBetaGamepad();
-	struct FKey STATIC_GetDebugMenuToggleButtonComboAlphaGamepad();
+	static bool IsDebugMenuReady(class UObject* WorldContextObject);
+	static bool IsDebugMenuOpen(class UObject* WorldContextObject);
+	static bool IsDebugMenuAvailable();
+	static struct FKey GetDebugMenuToggleKeyComboBetaKeyboard();
+	static struct FKey GetDebugMenuToggleKeyComboAlphaKeyboard();
+	static struct FKey GetDebugMenuToggleButtonComboBetaGamepad();
+	static struct FKey GetDebugMenuToggleButtonComboAlphaGamepad();
 };
 
 

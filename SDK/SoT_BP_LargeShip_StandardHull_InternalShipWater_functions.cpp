@@ -22,9 +22,16 @@ namespace SDK
 
 void ABP_LargeShip_StandardHull_InternalShipWater_C::GetLineIntersectionFromPlane(const struct FVector& LineStart, const struct FVector& LineEnd, bool* Intersect, struct FVector* IntersectionPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_LargeShip_StandardHull_InternalShipWater.BP_LargeShip_StandardHull_InternalShipWater_C.GetLineIntersectionFromPlane");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_LargeShip_StandardHull_InternalShipWater.BP_LargeShip_StandardHull_InternalShipWater_C.GetLineIntersectionFromPlane"));
 
-	ABP_LargeShip_StandardHull_InternalShipWater_C_GetLineIntersectionFromPlane_Params params;
+	struct
+	{
+		struct FVector                 LineStart;
+		struct FVector                 LineEnd;
+		bool                           Intersect;
+		struct FVector                 IntersectionPoint;
+	} params;
+
 	params.LineStart = LineStart;
 	params.LineEnd = LineEnd;
 
@@ -44,9 +51,13 @@ void ABP_LargeShip_StandardHull_InternalShipWater_C::GetLineIntersectionFromPlan
 
 void ABP_LargeShip_StandardHull_InternalShipWater_C::GetWaterLevel(float* WaterLevel)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_LargeShip_StandardHull_InternalShipWater.BP_LargeShip_StandardHull_InternalShipWater_C.GetWaterLevel");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_LargeShip_StandardHull_InternalShipWater.BP_LargeShip_StandardHull_InternalShipWater_C.GetWaterLevel"));
 
-	ABP_LargeShip_StandardHull_InternalShipWater_C_GetWaterLevel_Params params;
+	struct
+	{
+		float                          WaterLevel;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -63,9 +74,14 @@ void ABP_LargeShip_StandardHull_InternalShipWater_C::GetWaterLevel(float* WaterL
 
 void ABP_LargeShip_StandardHull_InternalShipWater_C::GetDistanceFromPlane(const struct FVector& Location, float* Distance)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_LargeShip_StandardHull_InternalShipWater.BP_LargeShip_StandardHull_InternalShipWater_C.GetDistanceFromPlane");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_LargeShip_StandardHull_InternalShipWater.BP_LargeShip_StandardHull_InternalShipWater_C.GetDistanceFromPlane"));
 
-	ABP_LargeShip_StandardHull_InternalShipWater_C_GetDistanceFromPlane_Params params;
+	struct
+	{
+		struct FVector                 Location;
+		float                          Distance;
+	} params;
+
 	params.Location = Location;
 
 	UObject::ProcessEvent(fn, &params);
@@ -80,9 +96,12 @@ void ABP_LargeShip_StandardHull_InternalShipWater_C::GetDistanceFromPlane(const 
 
 void ABP_LargeShip_StandardHull_InternalShipWater_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_LargeShip_StandardHull_InternalShipWater.BP_LargeShip_StandardHull_InternalShipWater_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_LargeShip_StandardHull_InternalShipWater.BP_LargeShip_StandardHull_InternalShipWater_C.UserConstructionScript"));
 
-	ABP_LargeShip_StandardHull_InternalShipWater_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -95,9 +114,13 @@ void ABP_LargeShip_StandardHull_InternalShipWater_C::UserConstructionScript()
 
 void ABP_LargeShip_StandardHull_InternalShipWater_C::AddWater(float Water_Amount)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_LargeShip_StandardHull_InternalShipWater.BP_LargeShip_StandardHull_InternalShipWater_C.AddWater");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_LargeShip_StandardHull_InternalShipWater.BP_LargeShip_StandardHull_InternalShipWater_C.AddWater"));
 
-	ABP_LargeShip_StandardHull_InternalShipWater_C_AddWater_Params params;
+	struct
+	{
+		float                          Water_Amount;
+	} params;
+
 	params.Water_Amount = Water_Amount;
 
 	UObject::ProcessEvent(fn, &params);
@@ -109,9 +132,12 @@ void ABP_LargeShip_StandardHull_InternalShipWater_C::AddWater(float Water_Amount
 
 void ABP_LargeShip_StandardHull_InternalShipWater_C::ReceiveBeginPlay()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_LargeShip_StandardHull_InternalShipWater.BP_LargeShip_StandardHull_InternalShipWater_C.ReceiveBeginPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_LargeShip_StandardHull_InternalShipWater.BP_LargeShip_StandardHull_InternalShipWater_C.ReceiveBeginPlay"));
 
-	ABP_LargeShip_StandardHull_InternalShipWater_C_ReceiveBeginPlay_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -124,9 +150,13 @@ void ABP_LargeShip_StandardHull_InternalShipWater_C::ReceiveBeginPlay()
 
 void ABP_LargeShip_StandardHull_InternalShipWater_C::ExecuteUbergraph_BP_LargeShip_StandardHull_InternalShipWater(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_LargeShip_StandardHull_InternalShipWater.BP_LargeShip_StandardHull_InternalShipWater_C.ExecuteUbergraph_BP_LargeShip_StandardHull_InternalShipWater");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_LargeShip_StandardHull_InternalShipWater.BP_LargeShip_StandardHull_InternalShipWater_C.ExecuteUbergraph_BP_LargeShip_StandardHull_InternalShipWater"));
 
-	ABP_LargeShip_StandardHull_InternalShipWater_C_ExecuteUbergraph_BP_LargeShip_StandardHull_InternalShipWater_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

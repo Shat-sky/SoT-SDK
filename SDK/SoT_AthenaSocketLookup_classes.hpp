@@ -22,14 +22,14 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaSocketLookup.SocketIdTestFunctions");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaSocketLookup.SocketIdTestFunctions"));
 		return ptr;
 	}
 
 
-	struct FSocketId STATIC_MakeSocketIdWithInvalidName(const class FString& InPath);
-	struct FSocketId STATIC_MakeSocketIdWithEmptyPath(const struct FName& InSocketName);
-	struct FSocketId STATIC_MakeSocketId(const class FString& InPath, const struct FName& InSocketName);
+	static struct FSocketId MakeSocketIdWithInvalidName(const class FString& InPath);
+	static struct FSocketId MakeSocketIdWithEmptyPath(const struct FName& InSocketName);
+	static struct FSocketId MakeSocketId(const class FString& InPath, const struct FName& InSocketName);
 };
 
 
@@ -41,13 +41,13 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaSocketLookup.SocketLookupCacheTestFunctions");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaSocketLookup.SocketLookupCacheTestFunctions"));
 		return ptr;
 	}
 
 
-	bool STATIC_IsInCache(const struct FSocketId& InSocketId, struct FSocketLookupCache* InCache);
-	bool STATIC_AddToCache(const struct FSocketId& InSocketId, class USceneComponent* InSceneComponent, struct FSocketLookupCache* InCache);
+	static bool IsInCache(const struct FSocketId& InSocketId, struct FSocketLookupCache* InCache);
+	static bool AddToCache(const struct FSocketId& InSocketId, class USceneComponent* InSceneComponent, struct FSocketLookupCache* InCache);
 };
 
 
@@ -59,15 +59,15 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaSocketLookup.SocketLookupFunctions");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaSocketLookup.SocketLookupFunctions"));
 		return ptr;
 	}
 
 
-	bool STATIC_TryGetSocketTransformWithCache(class AActor* InActor, const struct FSocketId& InSocketId, struct FSocketLookupCache* Cache, struct FTransform* OutTransform);
-	bool STATIC_TryGetSocketTransform(class AActor* InActor, const struct FSocketId& InSocketId, TEnumAsByte<ERelativeTransformSpace> Space, struct FTransform* OutTransform);
-	bool STATIC_TryGetRelativeSocketTransform(class AActor* InActor, const struct FSocketId& InSocketId, class USceneComponent* RelativeTo, struct FTransform* OutTransform);
-	class USceneComponent* STATIC_TryFindSocketOwner(class AActor* InActor, const struct FSocketId& InSocketId);
+	static bool TryGetSocketTransformWithCache(class AActor* InActor, const struct FSocketId& InSocketId, struct FSocketLookupCache* Cache, struct FTransform* OutTransform);
+	static bool TryGetSocketTransform(class AActor* InActor, const struct FSocketId& InSocketId, TEnumAsByte<ERelativeTransformSpace> Space, struct FTransform* OutTransform);
+	static bool TryGetRelativeSocketTransform(class AActor* InActor, const struct FSocketId& InSocketId, class USceneComponent* RelativeTo, struct FTransform* OutTransform);
+	static class USceneComponent* TryFindSocketOwner(class AActor* InActor, const struct FSocketId& InSocketId);
 };
 
 
@@ -79,7 +79,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaSocketLookup.SocketLookupInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaSocketLookup.SocketLookupInterface"));
 		return ptr;
 	}
 

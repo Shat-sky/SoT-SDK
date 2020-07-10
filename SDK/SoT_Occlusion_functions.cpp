@@ -19,9 +19,13 @@ namespace SDK
 
 void UOcclusionService::OnPrimaryActorEndPlay(class AActor* InActor)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Occlusion.OcclusionService.OnPrimaryActorEndPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Occlusion.OcclusionService.OnPrimaryActorEndPlay"));
 
-	UOcclusionService_OnPrimaryActorEndPlay_Params params;
+	struct
+	{
+		class AActor*                  InActor;
+	} params;
+
 	params.InActor = InActor;
 
 	UObject::ProcessEvent(fn, &params);
@@ -35,9 +39,13 @@ void UOcclusionService::OnPrimaryActorEndPlay(class AActor* InActor)
 
 void UOcclusionService::OnIgnoredActorEndPlay(class AActor* InActor)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Occlusion.OcclusionService.OnIgnoredActorEndPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Occlusion.OcclusionService.OnIgnoredActorEndPlay"));
 
-	UOcclusionService_OnIgnoredActorEndPlay_Params params;
+	struct
+	{
+		class AActor*                  InActor;
+	} params;
+
 	params.InActor = InActor;
 
 	UObject::ProcessEvent(fn, &params);

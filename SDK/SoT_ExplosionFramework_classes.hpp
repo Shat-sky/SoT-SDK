@@ -24,7 +24,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ExplosionFramework.CreateActorInstanceOnExplodeComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ExplosionFramework.CreateActorInstanceOnExplodeComponent"));
 		return ptr;
 	}
 
@@ -39,7 +39,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ExplosionFramework.ExplosiveComponentInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ExplosionFramework.ExplosiveComponentInterface"));
 		return ptr;
 	}
 
@@ -58,7 +58,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ExplosionFramework.StatusResponseExplodeAfterTime");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ExplosionFramework.StatusResponseExplodeAfterTime"));
 		return ptr;
 	}
 

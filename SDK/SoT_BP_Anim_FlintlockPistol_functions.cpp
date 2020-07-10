@@ -17,9 +17,12 @@ namespace SDK
 
 void UBP_Anim_FlintlockPistol_C::AnimNotify_ExitedFire()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Anim_FlintlockPistol.BP_Anim_FlintlockPistol_C.AnimNotify_ExitedFire");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Anim_FlintlockPistol.BP_Anim_FlintlockPistol_C.AnimNotify_ExitedFire"));
 
-	UBP_Anim_FlintlockPistol_C_AnimNotify_ExitedFire_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -33,9 +36,14 @@ void UBP_Anim_FlintlockPistol_C::AnimNotify_ExitedFire()
 
 void UBP_Anim_FlintlockPistol_C::OnOneShotUseTriggered(class UClass* InputID, const struct FWieldableItemActionVisuals& ActionVisuals)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Anim_FlintlockPistol.BP_Anim_FlintlockPistol_C.OnOneShotUseTriggered");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Anim_FlintlockPistol.BP_Anim_FlintlockPistol_C.OnOneShotUseTriggered"));
 
-	UBP_Anim_FlintlockPistol_C_OnOneShotUseTriggered_Params params;
+	struct
+	{
+		class UClass*                  InputID;
+		struct FWieldableItemActionVisuals ActionVisuals;
+	} params;
+
 	params.InputID = InputID;
 	params.ActionVisuals = ActionVisuals;
 
@@ -51,9 +59,14 @@ void UBP_Anim_FlintlockPistol_C::OnOneShotUseTriggered(class UClass* InputID, co
 
 void UBP_Anim_FlintlockPistol_C::OnUseStarted(class UClass* InputID, const struct FWieldableItemActionVisuals& ActionVisuals)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Anim_FlintlockPistol.BP_Anim_FlintlockPistol_C.OnUseStarted");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Anim_FlintlockPistol.BP_Anim_FlintlockPistol_C.OnUseStarted"));
 
-	UBP_Anim_FlintlockPistol_C_OnUseStarted_Params params;
+	struct
+	{
+		class UClass*                  InputID;
+		struct FWieldableItemActionVisuals ActionVisuals;
+	} params;
+
 	params.InputID = InputID;
 	params.ActionVisuals = ActionVisuals;
 
@@ -66,9 +79,12 @@ void UBP_Anim_FlintlockPistol_C::OnUseStarted(class UClass* InputID, const struc
 
 void UBP_Anim_FlintlockPistol_C::BlueprintInitializeAnimation()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Anim_FlintlockPistol.BP_Anim_FlintlockPistol_C.BlueprintInitializeAnimation");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Anim_FlintlockPistol.BP_Anim_FlintlockPistol_C.BlueprintInitializeAnimation"));
 
-	UBP_Anim_FlintlockPistol_C_BlueprintInitializeAnimation_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -81,9 +97,13 @@ void UBP_Anim_FlintlockPistol_C::BlueprintInitializeAnimation()
 
 void UBP_Anim_FlintlockPistol_C::ReloadEventDelegate(const struct FEventProjectileWeaponReload& Event)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Anim_FlintlockPistol.BP_Anim_FlintlockPistol_C.ReloadEventDelegate");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Anim_FlintlockPistol.BP_Anim_FlintlockPistol_C.ReloadEventDelegate"));
 
-	UBP_Anim_FlintlockPistol_C_ReloadEventDelegate_Params params;
+	struct
+	{
+		struct FEventProjectileWeaponReload Event;
+	} params;
+
 	params.Event = Event;
 
 	UObject::ProcessEvent(fn, &params);
@@ -95,9 +115,12 @@ void UBP_Anim_FlintlockPistol_C::ReloadEventDelegate(const struct FEventProjecti
 
 void UBP_Anim_FlintlockPistol_C::BlueprintUninitializeAnimation()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Anim_FlintlockPistol.BP_Anim_FlintlockPistol_C.BlueprintUninitializeAnimation");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Anim_FlintlockPistol.BP_Anim_FlintlockPistol_C.BlueprintUninitializeAnimation"));
 
-	UBP_Anim_FlintlockPistol_C_BlueprintUninitializeAnimation_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -108,9 +131,12 @@ void UBP_Anim_FlintlockPistol_C::BlueprintUninitializeAnimation()
 
 void UBP_Anim_FlintlockPistol_C::AnimNotify_ResetReload()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Anim_FlintlockPistol.BP_Anim_FlintlockPistol_C.AnimNotify_ResetReload");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Anim_FlintlockPistol.BP_Anim_FlintlockPistol_C.AnimNotify_ResetReload"));
 
-	UBP_Anim_FlintlockPistol_C_AnimNotify_ResetReload_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -123,9 +149,13 @@ void UBP_Anim_FlintlockPistol_C::AnimNotify_ResetReload()
 
 void UBP_Anim_FlintlockPistol_C::ExecuteUbergraph_BP_Anim_FlintlockPistol(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Anim_FlintlockPistol.BP_Anim_FlintlockPistol_C.ExecuteUbergraph_BP_Anim_FlintlockPistol");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Anim_FlintlockPistol.BP_Anim_FlintlockPistol_C.ExecuteUbergraph_BP_Anim_FlintlockPistol"));
 
-	UBP_Anim_FlintlockPistol_C_ExecuteUbergraph_BP_Anim_FlintlockPistol_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

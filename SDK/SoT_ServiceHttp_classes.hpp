@@ -25,7 +25,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ServiceHttp.ServiceHttpSettings");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ServiceHttp.ServiceHttpSettings"));
 		return ptr;
 	}
 
@@ -45,7 +45,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ServiceHttp.DevelopmentAuthenticationSettings");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ServiceHttp.DevelopmentAuthenticationSettings"));
 		return ptr;
 	}
 

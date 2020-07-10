@@ -22,12 +22,12 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class MerchantContracts.MerchantContractsBlueprintLibrary");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class MerchantContracts.MerchantContractsBlueprintLibrary"));
 		return ptr;
 	}
 
 
-	struct FText STATIC_GetDateFromTimeLimit(const TScriptInterface<class UGameServiceProviderInterface>& ServiceProviderInterface, float TimeLimit);
+	static struct FText GetDateFromTimeLimit(const TScriptInterface<class UGameServiceProviderInterface>& ServiceProviderInterface, float TimeLimit);
 };
 
 
@@ -39,7 +39,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class MerchantContracts.MerchantContractsServiceInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class MerchantContracts.MerchantContractsServiceInterface"));
 		return ptr;
 	}
 
@@ -57,7 +57,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class MerchantContracts.MerchantContractsService");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class MerchantContracts.MerchantContractsService"));
 		return ptr;
 	}
 
@@ -72,7 +72,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class MerchantContracts.PlayerMerchantContractsInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class MerchantContracts.PlayerMerchantContractsInterface"));
 		return ptr;
 	}
 
@@ -89,7 +89,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class MerchantContracts.PlayerMerchantContractsComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class MerchantContracts.PlayerMerchantContractsComponent"));
 		return ptr;
 	}
 

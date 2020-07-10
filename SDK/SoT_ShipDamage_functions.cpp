@@ -19,9 +19,13 @@ namespace SDK
 
 void UDamageablePartsInterface::UnregisterDamageablePart(class AActor* DamageableActor)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ShipDamage.DamageablePartsInterface.UnregisterDamageablePart");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function ShipDamage.DamageablePartsInterface.UnregisterDamageablePart"));
 
-	UDamageablePartsInterface_UnregisterDamageablePart_Params params;
+	struct
+	{
+		class AActor*                  DamageableActor;
+	} params;
+
 	params.DamageableActor = DamageableActor;
 
 	UObject::ProcessEvent(fn, &params);
@@ -35,9 +39,13 @@ void UDamageablePartsInterface::UnregisterDamageablePart(class AActor* Damageabl
 
 void UDamageablePartsInterface::RegisterDamageablePart(class AActor* DamageableActor)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ShipDamage.DamageablePartsInterface.RegisterDamageablePart");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function ShipDamage.DamageablePartsInterface.RegisterDamageablePart"));
 
-	UDamageablePartsInterface_RegisterDamageablePart_Params params;
+	struct
+	{
+		class AActor*                  DamageableActor;
+	} params;
+
 	params.DamageableActor = DamageableActor;
 
 	UObject::ProcessEvent(fn, &params);
@@ -51,9 +59,13 @@ void UDamageablePartsInterface::RegisterDamageablePart(class AActor* DamageableA
 
 TArray<class AActor*> UDamageablePartsInterface::GetDamageableParts()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function ShipDamage.DamageablePartsInterface.GetDamageableParts");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function ShipDamage.DamageablePartsInterface.GetDamageableParts"));
 
-	UDamageablePartsInterface_GetDamageableParts_Params params;
+	struct
+	{
+		TArray<class AActor*>          ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 

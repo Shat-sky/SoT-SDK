@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_GhostShips_Signal_Flameheart_NetProxy_C::CollectMaterials()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.CollectMaterials");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.CollectMaterials"));
 
-	ABP_GhostShips_Signal_Flameheart_NetProxy_C_CollectMaterials_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -30,9 +33,12 @@ void ABP_GhostShips_Signal_Flameheart_NetProxy_C::CollectMaterials()
 
 void ABP_GhostShips_Signal_Flameheart_NetProxy_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.UserConstructionScript"));
 
-	ABP_GhostShips_Signal_Flameheart_NetProxy_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -43,9 +49,12 @@ void ABP_GhostShips_Signal_Flameheart_NetProxy_C::UserConstructionScript()
 
 void ABP_GhostShips_Signal_Flameheart_NetProxy_C::FadeIn__FinishedFunc()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.FadeIn__FinishedFunc");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.FadeIn__FinishedFunc"));
 
-	ABP_GhostShips_Signal_Flameheart_NetProxy_C_FadeIn__FinishedFunc_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -56,9 +65,12 @@ void ABP_GhostShips_Signal_Flameheart_NetProxy_C::FadeIn__FinishedFunc()
 
 void ABP_GhostShips_Signal_Flameheart_NetProxy_C::FadeIn__UpdateFunc()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.FadeIn__UpdateFunc");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.FadeIn__UpdateFunc"));
 
-	ABP_GhostShips_Signal_Flameheart_NetProxy_C_FadeIn__UpdateFunc_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -69,9 +81,12 @@ void ABP_GhostShips_Signal_Flameheart_NetProxy_C::FadeIn__UpdateFunc()
 
 void ABP_GhostShips_Signal_Flameheart_NetProxy_C::ReceiveBeginPlay()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.ReceiveBeginPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.ReceiveBeginPlay"));
 
-	ABP_GhostShips_Signal_Flameheart_NetProxy_C_ReceiveBeginPlay_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -82,9 +97,12 @@ void ABP_GhostShips_Signal_Flameheart_NetProxy_C::ReceiveBeginPlay()
 
 void ABP_GhostShips_Signal_Flameheart_NetProxy_C::FlameheartAppear()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.FlameheartAppear");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.FlameheartAppear"));
 
-	ABP_GhostShips_Signal_Flameheart_NetProxy_C_FlameheartAppear_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -95,9 +113,12 @@ void ABP_GhostShips_Signal_Flameheart_NetProxy_C::FlameheartAppear()
 
 void ABP_GhostShips_Signal_Flameheart_NetProxy_C::FlameheartDisappear()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.FlameheartDisappear");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.FlameheartDisappear"));
 
-	ABP_GhostShips_Signal_Flameheart_NetProxy_C_FlameheartDisappear_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -110,9 +131,13 @@ void ABP_GhostShips_Signal_Flameheart_NetProxy_C::FlameheartDisappear()
 
 void ABP_GhostShips_Signal_Flameheart_NetProxy_C::BndEvt__Default__BP_GhostShips_Signal_Flameheart_NetProxy_C_K2Node_InstancedActorBoundEvent_0_NetProxyVisibilityChanged__DelegateSignature(bool IsVisible)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.BndEvt__Default__BP_GhostShips_Signal_Flameheart_NetProxy_C_K2Node_InstancedActorBoundEvent_0_NetProxyVisibilityChanged__DelegateSignature");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.BndEvt__Default__BP_GhostShips_Signal_Flameheart_NetProxy_C_K2Node_InstancedActorBoundEvent_0_NetProxyVisibilityChanged__DelegateSignature"));
 
-	ABP_GhostShips_Signal_Flameheart_NetProxy_C_BndEvt__Default__BP_GhostShips_Signal_Flameheart_NetProxy_C_K2Node_InstancedActorBoundEvent_0_NetProxyVisibilityChanged__DelegateSignature_Params params;
+	struct
+	{
+		bool                           IsVisible;
+	} params;
+
 	params.IsVisible = IsVisible;
 
 	UObject::ProcessEvent(fn, &params);
@@ -126,9 +151,13 @@ void ABP_GhostShips_Signal_Flameheart_NetProxy_C::BndEvt__Default__BP_GhostShips
 
 void ABP_GhostShips_Signal_Flameheart_NetProxy_C::ExecuteUbergraph_BP_GhostShips_Signal_Flameheart_NetProxy(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.ExecuteUbergraph_BP_GhostShips_Signal_Flameheart_NetProxy");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.ExecuteUbergraph_BP_GhostShips_Signal_Flameheart_NetProxy"));
 
-	ABP_GhostShips_Signal_Flameheart_NetProxy_C_ExecuteUbergraph_BP_GhostShips_Signal_Flameheart_NetProxy_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

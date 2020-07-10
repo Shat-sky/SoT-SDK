@@ -27,8 +27,7 @@ enum class EReviveState : uint8_t
 {
 	EReviveState__Revivable        = 0,
 	None                           = 1,
-	EReviveState__EReviveState_MAX = 2,
-	VectorProperty                 = 3
+	EReviveState__EReviveState_MAX = 2
 };
 
 

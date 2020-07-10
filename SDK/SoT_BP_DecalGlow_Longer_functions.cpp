@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_DecalGlow_Longer_C::StartGlowEffect()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_DecalGlow_Longer.BP_DecalGlow_Longer_C.StartGlowEffect");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_DecalGlow_Longer.BP_DecalGlow_Longer_C.StartGlowEffect"));
 
-	ABP_DecalGlow_Longer_C_StartGlowEffect_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -32,9 +35,13 @@ void ABP_DecalGlow_Longer_C::StartGlowEffect()
 
 bool ABP_DecalGlow_Longer_C::StartReaction()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_DecalGlow_Longer.BP_DecalGlow_Longer_C.StartReaction");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_DecalGlow_Longer.BP_DecalGlow_Longer_C.StartReaction"));
 
-	ABP_DecalGlow_Longer_C_StartReaction_Params params;
+	struct
+	{
+		bool                           ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -49,9 +56,13 @@ bool ABP_DecalGlow_Longer_C::StartReaction()
 
 bool ABP_DecalGlow_Longer_C::StopReaction()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_DecalGlow_Longer.BP_DecalGlow_Longer_C.StopReaction");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_DecalGlow_Longer.BP_DecalGlow_Longer_C.StopReaction"));
 
-	ABP_DecalGlow_Longer_C_StopReaction_Params params;
+	struct
+	{
+		bool                           ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -64,9 +75,12 @@ bool ABP_DecalGlow_Longer_C::StopReaction()
 
 void ABP_DecalGlow_Longer_C::CollectDecalMaterials()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_DecalGlow_Longer.BP_DecalGlow_Longer_C.CollectDecalMaterials");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_DecalGlow_Longer.BP_DecalGlow_Longer_C.CollectDecalMaterials"));
 
-	ABP_DecalGlow_Longer_C_CollectDecalMaterials_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -77,9 +91,12 @@ void ABP_DecalGlow_Longer_C::CollectDecalMaterials()
 
 void ABP_DecalGlow_Longer_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_DecalGlow_Longer.BP_DecalGlow_Longer_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_DecalGlow_Longer.BP_DecalGlow_Longer_C.UserConstructionScript"));
 
-	ABP_DecalGlow_Longer_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -90,9 +107,12 @@ void ABP_DecalGlow_Longer_C::UserConstructionScript()
 
 void ABP_DecalGlow_Longer_C::ReceiveBeginPlay()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_DecalGlow_Longer.BP_DecalGlow_Longer_C.ReceiveBeginPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_DecalGlow_Longer.BP_DecalGlow_Longer_C.ReceiveBeginPlay"));
 
-	ABP_DecalGlow_Longer_C_ReceiveBeginPlay_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -105,9 +125,13 @@ void ABP_DecalGlow_Longer_C::ReceiveBeginPlay()
 
 void ABP_DecalGlow_Longer_C::ExecuteUbergraph_BP_DecalGlow_Longer(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_DecalGlow_Longer.BP_DecalGlow_Longer_C.ExecuteUbergraph_BP_DecalGlow_Longer");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_DecalGlow_Longer.BP_DecalGlow_Longer_C.ExecuteUbergraph_BP_DecalGlow_Longer"));
 
-	ABP_DecalGlow_Longer_C_ExecuteUbergraph_BP_DecalGlow_Longer_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

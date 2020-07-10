@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_FishingFish_SplashTail_03_Colour_04_Umber_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FishingFish_SplashTail_03_Colour_04_Umber.BP_FishingFish_SplashTail_03_Colour_04_Umber_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FishingFish_SplashTail_03_Colour_04_Umber.BP_FishingFish_SplashTail_03_Colour_04_Umber_C.UserConstructionScript"));
 
-	ABP_FishingFish_SplashTail_03_Colour_04_Umber_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

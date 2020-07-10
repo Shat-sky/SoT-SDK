@@ -23,7 +23,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass tls_wld_Orb_light_c.tls_wld_Orb_light_c_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass tls_wld_Orb_light_c.tls_wld_Orb_light_c_C"));
 		return ptr;
 	}
 

@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Cleanliness.CleanlinessInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Cleanliness.CleanlinessInterface"));
 		return ptr;
 	}
 
@@ -37,7 +37,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Cleanliness.CleanlinessTransferInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Cleanliness.CleanlinessTransferInterface"));
 		return ptr;
 	}
 
@@ -58,7 +58,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Cleanliness.CleanlinessComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Cleanliness.CleanlinessComponent"));
 		return ptr;
 	}
 

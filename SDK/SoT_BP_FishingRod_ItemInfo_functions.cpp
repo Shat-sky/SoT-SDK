@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_FishingRod_ItemInfo_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FishingRod_ItemInfo.BP_FishingRod_ItemInfo_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FishingRod_ItemInfo.BP_FishingRod_ItemInfo_C.UserConstructionScript"));
 
-	ABP_FishingRod_ItemInfo_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

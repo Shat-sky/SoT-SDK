@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ContestRowboats.ContestRowboatsServiceInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ContestRowboats.ContestRowboatsServiceInterface"));
 		return ptr;
 	}
 
@@ -40,7 +40,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ContestRowboats.ContestRowboatsService");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ContestRowboats.ContestRowboatsService"));
 		return ptr;
 	}
 

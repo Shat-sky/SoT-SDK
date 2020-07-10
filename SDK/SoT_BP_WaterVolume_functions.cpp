@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_WaterVolume_C::CollectRippleGenerators()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_WaterVolume.BP_WaterVolume_C.CollectRippleGenerators");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_WaterVolume.BP_WaterVolume_C.CollectRippleGenerators"));
 
-	ABP_WaterVolume_C_CollectRippleGenerators_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -30,9 +33,12 @@ void ABP_WaterVolume_C::CollectRippleGenerators()
 
 void ABP_WaterVolume_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_WaterVolume.BP_WaterVolume_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_WaterVolume.BP_WaterVolume_C.UserConstructionScript"));
 
-	ABP_WaterVolume_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -43,9 +49,12 @@ void ABP_WaterVolume_C::UserConstructionScript()
 
 void ABP_WaterVolume_C::ReceiveBeginPlay()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_WaterVolume.BP_WaterVolume_C.ReceiveBeginPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_WaterVolume.BP_WaterVolume_C.ReceiveBeginPlay"));
 
-	ABP_WaterVolume_C_ReceiveBeginPlay_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -58,9 +67,13 @@ void ABP_WaterVolume_C::ReceiveBeginPlay()
 
 void ABP_WaterVolume_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_WaterVolume.BP_WaterVolume_C.ReceiveActorBeginOverlap");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_WaterVolume.BP_WaterVolume_C.ReceiveActorBeginOverlap"));
 
-	ABP_WaterVolume_C_ReceiveActorBeginOverlap_Params params;
+	struct
+	{
+		class AActor*                  OtherActor;
+	} params;
+
 	params.OtherActor = OtherActor;
 
 	UObject::ProcessEvent(fn, &params);
@@ -74,9 +87,13 @@ void ABP_WaterVolume_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
 
 void ABP_WaterVolume_C::ReceiveActorEndOverlap(class AActor* OtherActor)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_WaterVolume.BP_WaterVolume_C.ReceiveActorEndOverlap");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_WaterVolume.BP_WaterVolume_C.ReceiveActorEndOverlap"));
 
-	ABP_WaterVolume_C_ReceiveActorEndOverlap_Params params;
+	struct
+	{
+		class AActor*                  OtherActor;
+	} params;
+
 	params.OtherActor = OtherActor;
 
 	UObject::ProcessEvent(fn, &params);
@@ -90,9 +107,13 @@ void ABP_WaterVolume_C::ReceiveActorEndOverlap(class AActor* OtherActor)
 
 void ABP_WaterVolume_C::ExecuteUbergraph_BP_WaterVolume(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_WaterVolume.BP_WaterVolume_C.ExecuteUbergraph_BP_WaterVolume");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_WaterVolume.BP_WaterVolume_C.ExecuteUbergraph_BP_WaterVolume"));
 
-	ABP_WaterVolume_C_ExecuteUbergraph_BP_WaterVolume_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

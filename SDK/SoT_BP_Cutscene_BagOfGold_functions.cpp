@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_Cutscene_BagOfGold_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Cutscene_BagOfGold.BP_Cutscene_BagOfGold_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Cutscene_BagOfGold.BP_Cutscene_BagOfGold_C.UserConstructionScript"));
 
-	ABP_Cutscene_BagOfGold_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

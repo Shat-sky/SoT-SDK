@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_FishingFish_Wrecker_05_Colour_05_Moon_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FishingFish_Wrecker_05_Colour_05_Moon.BP_FishingFish_Wrecker_05_Colour_05_Moon_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FishingFish_Wrecker_05_Colour_05_Moon.BP_FishingFish_Wrecker_05_Colour_05_Moon_C.UserConstructionScript"));
 
-	ABP_FishingFish_Wrecker_05_Colour_05_Moon_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

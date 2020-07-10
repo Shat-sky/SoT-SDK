@@ -17,9 +17,12 @@ namespace SDK
 
 void Acmn_looted__box_bottles_02_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function cmn_looted__box_bottles_02.cmn_looted__box_bottles_02_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function cmn_looted__box_bottles_02.cmn_looted__box_bottles_02_C.UserConstructionScript"));
 
-	Acmn_looted__box_bottles_02_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

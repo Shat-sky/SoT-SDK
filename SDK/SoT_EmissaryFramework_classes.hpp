@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryFramework.EmissaryLevelServiceInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryFramework.EmissaryLevelServiceInterface"));
 		return ptr;
 	}
 
@@ -37,7 +37,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryFramework.EmissaryParticipantInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryFramework.EmissaryParticipantInterface"));
 		return ptr;
 	}
 
@@ -52,7 +52,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class EmissaryFramework.EmissaryVotingServiceInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryFramework.EmissaryVotingServiceInterface"));
 		return ptr;
 	}
 

@@ -24,7 +24,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass BP_WorldMarkerManager.BP_WorldMarkerManager_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass BP_WorldMarkerManager.BP_WorldMarkerManager_C"));
 		return ptr;
 	}
 

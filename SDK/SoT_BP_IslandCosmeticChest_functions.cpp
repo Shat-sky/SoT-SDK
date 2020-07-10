@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_IslandCosmeticChest_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_IslandCosmeticChest.BP_IslandCosmeticChest_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_IslandCosmeticChest.BP_IslandCosmeticChest_C.UserConstructionScript"));
 
-	ABP_IslandCosmeticChest_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

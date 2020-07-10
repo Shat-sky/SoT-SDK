@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_FogBankManager_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FogBankManager.BP_FogBankManager_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FogBankManager.BP_FogBankManager_C.UserConstructionScript"));
 
-	ABP_FogBankManager_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

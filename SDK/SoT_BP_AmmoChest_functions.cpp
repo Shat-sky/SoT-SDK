@@ -19,9 +19,13 @@ namespace SDK
 
 struct FText ABP_AmmoChest_C::GetObjectDisplayName()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_AmmoChest.BP_AmmoChest_C.GetObjectDisplayName");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_AmmoChest.BP_AmmoChest_C.GetObjectDisplayName"));
 
-	ABP_AmmoChest_C_GetObjectDisplayName_Params params;
+	struct
+	{
+		struct FText                   ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -38,9 +42,15 @@ struct FText ABP_AmmoChest_C::GetObjectDisplayName()
 
 struct FVector ABP_AmmoChest_C::GetClosestInteractionPoint(const struct FVector& ReferencePosition, float* OutInteractionPointRadius)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_AmmoChest.BP_AmmoChest_C.GetClosestInteractionPoint");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_AmmoChest.BP_AmmoChest_C.GetClosestInteractionPoint"));
 
-	ABP_AmmoChest_C_GetClosestInteractionPoint_Params params;
+	struct
+	{
+		struct FVector                 ReferencePosition;
+		float                          OutInteractionPointRadius;
+		struct FVector                 ReturnValue;
+	} params;
+
 	params.ReferencePosition = ReferencePosition;
 
 	UObject::ProcessEvent(fn, &params);
@@ -57,9 +67,12 @@ struct FVector ABP_AmmoChest_C::GetClosestInteractionPoint(const struct FVector&
 
 void ABP_AmmoChest_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_AmmoChest.BP_AmmoChest_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_AmmoChest.BP_AmmoChest_C.UserConstructionScript"));
 
-	ABP_AmmoChest_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -70,9 +83,12 @@ void ABP_AmmoChest_C::UserConstructionScript()
 
 void ABP_AmmoChest_C::ReceiveBeginPlay()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_AmmoChest.BP_AmmoChest_C.ReceiveBeginPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_AmmoChest.BP_AmmoChest_C.ReceiveBeginPlay"));
 
-	ABP_AmmoChest_C_ReceiveBeginPlay_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -85,9 +101,13 @@ void ABP_AmmoChest_C::ReceiveBeginPlay()
 
 void ABP_AmmoChest_C::Blueprint_OnInteract_Client(class AActor* InInteractor)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_AmmoChest.BP_AmmoChest_C.Blueprint_OnInteract_Client");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_AmmoChest.BP_AmmoChest_C.Blueprint_OnInteract_Client"));
 
-	ABP_AmmoChest_C_Blueprint_OnInteract_Client_Params params;
+	struct
+	{
+		class AActor*                  InInteractor;
+	} params;
+
 	params.InInteractor = InInteractor;
 
 	UObject::ProcessEvent(fn, &params);
@@ -101,9 +121,13 @@ void ABP_AmmoChest_C::Blueprint_OnInteract_Client(class AActor* InInteractor)
 
 void ABP_AmmoChest_C::Blueprint_OnInteract_Server(class AActor* InInteractor)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_AmmoChest.BP_AmmoChest_C.Blueprint_OnInteract_Server");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_AmmoChest.BP_AmmoChest_C.Blueprint_OnInteract_Server"));
 
-	ABP_AmmoChest_C_Blueprint_OnInteract_Server_Params params;
+	struct
+	{
+		class AActor*                  InInteractor;
+	} params;
+
 	params.InInteractor = InInteractor;
 
 	UObject::ProcessEvent(fn, &params);
@@ -117,9 +141,13 @@ void ABP_AmmoChest_C::Blueprint_OnInteract_Server(class AActor* InInteractor)
 
 void ABP_AmmoChest_C::ExecuteUbergraph_BP_AmmoChest(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_AmmoChest.BP_AmmoChest_C.ExecuteUbergraph_BP_AmmoChest");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_AmmoChest.BP_AmmoChest_C.ExecuteUbergraph_BP_AmmoChest"));
 
-	ABP_AmmoChest_C_ExecuteUbergraph_BP_AmmoChest_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

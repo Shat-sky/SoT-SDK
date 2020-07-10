@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ItemQuality.ItemQualityInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ItemQuality.ItemQualityInterface"));
 		return ptr;
 	}
 
@@ -43,7 +43,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ItemQuality.ItemQualityComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ItemQuality.ItemQualityComponent"));
 		return ptr;
 	}
 

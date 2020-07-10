@@ -17,9 +17,12 @@ namespace SDK
 
 void Abp_lantern_hook_01_a_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function bp_lantern_hook_01_a.bp_lantern_hook_01_a_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function bp_lantern_hook_01_a.bp_lantern_hook_01_a_C.UserConstructionScript"));
 
-	Abp_lantern_hook_01_a_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

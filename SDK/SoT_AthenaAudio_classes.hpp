@@ -23,7 +23,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaAudio.AthenaAudioConfig");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaAudio.AthenaAudioConfig"));
 		return ptr;
 	}
 
@@ -39,7 +39,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaAudio.AthenaAudioModuleSettings");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaAudio.AthenaAudioModuleSettings"));
 		return ptr;
 	}
 

@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_AggressiveGhostShip_Portal_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_AggressiveGhostShip_Portal.BP_AggressiveGhostShip_Portal_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_AggressiveGhostShip_Portal.BP_AggressiveGhostShip_Portal_C.UserConstructionScript"));
 
-	ABP_AggressiveGhostShip_Portal_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -30,9 +33,12 @@ void ABP_AggressiveGhostShip_Portal_C::UserConstructionScript()
 
 void ABP_AggressiveGhostShip_Portal_C::ReceiveBeginPlay()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_AggressiveGhostShip_Portal.BP_AggressiveGhostShip_Portal_C.ReceiveBeginPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_AggressiveGhostShip_Portal.BP_AggressiveGhostShip_Portal_C.ReceiveBeginPlay"));
 
-	ABP_AggressiveGhostShip_Portal_C_ReceiveBeginPlay_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -43,9 +49,12 @@ void ABP_AggressiveGhostShip_Portal_C::ReceiveBeginPlay()
 
 void ABP_AggressiveGhostShip_Portal_C::StartOpening()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_AggressiveGhostShip_Portal.BP_AggressiveGhostShip_Portal_C.StartOpening");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_AggressiveGhostShip_Portal.BP_AggressiveGhostShip_Portal_C.StartOpening"));
 
-	ABP_AggressiveGhostShip_Portal_C_StartOpening_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -56,9 +65,12 @@ void ABP_AggressiveGhostShip_Portal_C::StartOpening()
 
 void ABP_AggressiveGhostShip_Portal_C::StartClosing()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_AggressiveGhostShip_Portal.BP_AggressiveGhostShip_Portal_C.StartClosing");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_AggressiveGhostShip_Portal.BP_AggressiveGhostShip_Portal_C.StartClosing"));
 
-	ABP_AggressiveGhostShip_Portal_C_StartClosing_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -69,9 +81,12 @@ void ABP_AggressiveGhostShip_Portal_C::StartClosing()
 
 void ABP_AggressiveGhostShip_Portal_C::End()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_AggressiveGhostShip_Portal.BP_AggressiveGhostShip_Portal_C.End");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_AggressiveGhostShip_Portal.BP_AggressiveGhostShip_Portal_C.End"));
 
-	ABP_AggressiveGhostShip_Portal_C_End_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -84,9 +99,13 @@ void ABP_AggressiveGhostShip_Portal_C::End()
 
 void ABP_AggressiveGhostShip_Portal_C::ExecuteUbergraph_BP_AggressiveGhostShip_Portal(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_AggressiveGhostShip_Portal.BP_AggressiveGhostShip_Portal_C.ExecuteUbergraph_BP_AggressiveGhostShip_Portal");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_AggressiveGhostShip_Portal.BP_AggressiveGhostShip_Portal_C.ExecuteUbergraph_BP_AggressiveGhostShip_Portal"));
 
-	ABP_AggressiveGhostShip_Portal_C_ExecuteUbergraph_BP_AggressiveGhostShip_Portal_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

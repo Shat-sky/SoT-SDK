@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_FishingFish_Plentifin_03_Colour_05_Watery_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FishingFish_Plentifin_03_Colour_05_Watery.BP_FishingFish_Plentifin_03_Colour_05_Watery_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FishingFish_Plentifin_03_Colour_05_Watery.BP_FishingFish_Plentifin_03_Colour_05_Watery_C.UserConstructionScript"));
 
-	ABP_FishingFish_Plentifin_03_Colour_05_Watery_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

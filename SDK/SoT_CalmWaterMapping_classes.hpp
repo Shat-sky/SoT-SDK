@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CalmWaterMapping.CalmWaterMappingInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CalmWaterMapping.CalmWaterMappingInterface"));
 		return ptr;
 	}
 
@@ -41,7 +41,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CalmWaterMapping.AthenaCalmWaterZone");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CalmWaterMapping.AthenaCalmWaterZone"));
 		return ptr;
 	}
 
@@ -57,12 +57,12 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CalmWaterMapping.CalmWaterMappingService");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CalmWaterMapping.CalmWaterMappingService"));
 		return ptr;
 	}
 
 
-	float STATIC_GetMaxWindSpeed();
+	static float GetMaxWindSpeed();
 };
 
 

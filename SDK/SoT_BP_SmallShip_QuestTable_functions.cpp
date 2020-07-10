@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_SmallShip_QuestTable_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_SmallShip_QuestTable.BP_SmallShip_QuestTable_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_SmallShip_QuestTable.BP_SmallShip_QuestTable_C.UserConstructionScript"));
 
-	ABP_SmallShip_QuestTable_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

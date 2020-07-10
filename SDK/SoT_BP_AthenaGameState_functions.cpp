@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_AthenaGameState_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_AthenaGameState.BP_AthenaGameState_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_AthenaGameState.BP_AthenaGameState_C.UserConstructionScript"));
 
-	ABP_AthenaGameState_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

@@ -23,7 +23,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass BP_WaterExclusionVolume.BP_WaterExclusionVolume_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass BP_WaterExclusionVolume.BP_WaterExclusionVolume_C"));
 		return ptr;
 	}
 

@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_Ritual2_L_Pendant_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Ritual2_L_Pendant.BP_Ritual2_L_Pendant_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Ritual2_L_Pendant.BP_Ritual2_L_Pendant_C.UserConstructionScript"));
 
-	ABP_Ritual2_L_Pendant_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_MediumShipLanterns_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_MediumShipLanterns.BP_MediumShipLanterns_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_MediumShipLanterns.BP_MediumShipLanterns_C.UserConstructionScript"));
 
-	ABP_MediumShipLanterns_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

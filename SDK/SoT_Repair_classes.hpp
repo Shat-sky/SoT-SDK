@@ -23,7 +23,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Repair.RepairTypeId");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Repair.RepairTypeId"));
 		return ptr;
 	}
 
@@ -38,7 +38,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Repair.RepairableInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Repair.RepairableInterface"));
 		return ptr;
 	}
 
@@ -58,7 +58,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Repair.RepairingInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Repair.RepairingInterface"));
 		return ptr;
 	}
 
@@ -75,7 +75,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Repair.WoodRepairTypeId");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Repair.WoodRepairTypeId"));
 		return ptr;
 	}
 

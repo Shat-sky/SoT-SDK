@@ -19,9 +19,13 @@ namespace SDK
 
 void UPlayerGenderInterface_C::CheckIsFemale(bool* IsFemale)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function PlayerGenderInterface.PlayerGenderInterface_C.CheckIsFemale");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PlayerGenderInterface.PlayerGenderInterface_C.CheckIsFemale"));
 
-	UPlayerGenderInterface_C_CheckIsFemale_Params params;
+	struct
+	{
+		bool                           IsFemale;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 

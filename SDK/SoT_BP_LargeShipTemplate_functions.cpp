@@ -23,9 +23,17 @@ namespace SDK
 
 void ABP_LargeShipTemplate_C::SetupMastControls(class UChildActorComponent* LeftHoist, class UChildActorComponent* RightHoist, class UChildActorComponent* LeftAngle, class UChildActorComponent* RightAngle, const struct FName& RiggingGroupName)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.SetupMastControls");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.SetupMastControls"));
 
-	ABP_LargeShipTemplate_C_SetupMastControls_Params params;
+	struct
+	{
+		class UChildActorComponent*    LeftHoist;
+		class UChildActorComponent*    RightHoist;
+		class UChildActorComponent*    LeftAngle;
+		class UChildActorComponent*    RightAngle;
+		struct FName                   RiggingGroupName;
+	} params;
+
 	params.LeftHoist = LeftHoist;
 	params.RightHoist = RightHoist;
 	params.LeftAngle = LeftAngle;
@@ -41,9 +49,12 @@ void ABP_LargeShipTemplate_C::SetupMastControls(class UChildActorComponent* Left
 
 void ABP_LargeShipTemplate_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.UserConstructionScript"));
 
-	ABP_LargeShipTemplate_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

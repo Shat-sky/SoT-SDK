@@ -50,7 +50,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass BP_AudioBoatMediumHullAmbi.BP_AudioBoatMediumHullAmbi_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass BP_AudioBoatMediumHullAmbi.BP_AudioBoatMediumHullAmbi_C"));
 		return ptr;
 	}
 

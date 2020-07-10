@@ -23,7 +23,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass BP_SpyglassItemInfo.BP_SpyglassItemInfo_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass BP_SpyglassItemInfo.BP_SpyglassItemInfo_C"));
 		return ptr;
 	}
 

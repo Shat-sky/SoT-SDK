@@ -20,9 +20,14 @@ namespace SDK
 
 float AMultiTargetEnchantedCompass::CalculateDesiredYaw(const struct FRotator& CompassRotation)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function EnchantedCompass.MultiTargetEnchantedCompass.CalculateDesiredYaw");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function EnchantedCompass.MultiTargetEnchantedCompass.CalculateDesiredYaw"));
 
-	AMultiTargetEnchantedCompass_CalculateDesiredYaw_Params params;
+	struct
+	{
+		struct FRotator                CompassRotation;
+		float                          ReturnValue;
+	} params;
+
 	params.CompassRotation = CompassRotation;
 
 	UObject::ProcessEvent(fn, &params);

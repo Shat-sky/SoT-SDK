@@ -20,9 +20,14 @@ namespace SDK
 
 void AStatusEffectOverlapZone::OnStatusDelayEnd(int InStatusIndex, class AActor* ActorRef)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function StatusEffects.StatusEffectOverlapZone.OnStatusDelayEnd");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StatusEffects.StatusEffectOverlapZone.OnStatusDelayEnd"));
 
-	AStatusEffectOverlapZone_OnStatusDelayEnd_Params params;
+	struct
+	{
+		int                            InStatusIndex;
+		class AActor*                  ActorRef;
+	} params;
+
 	params.InStatusIndex = InStatusIndex;
 	params.ActorRef = ActorRef;
 
@@ -35,9 +40,12 @@ void AStatusEffectOverlapZone::OnStatusDelayEnd(int InStatusIndex, class AActor*
 
 void UDebugStatusEffectOverlapZoneVisualizerComponent::OnRep_SetDebugDrawColour()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function StatusEffects.DebugStatusEffectOverlapZoneVisualizerComponent.OnRep_SetDebugDrawColour");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StatusEffects.DebugStatusEffectOverlapZoneVisualizerComponent.OnRep_SetDebugDrawColour"));
 
-	UDebugStatusEffectOverlapZoneVisualizerComponent_OnRep_SetDebugDrawColour_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -48,9 +56,12 @@ void UDebugStatusEffectOverlapZoneVisualizerComponent::OnRep_SetDebugDrawColour(
 
 void UDebugStatusEffectOverlapZoneVisualizerComponent::OnRep_DebugBoxDimensions()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function StatusEffects.DebugStatusEffectOverlapZoneVisualizerComponent.OnRep_DebugBoxDimensions");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StatusEffects.DebugStatusEffectOverlapZoneVisualizerComponent.OnRep_DebugBoxDimensions"));
 
-	UDebugStatusEffectOverlapZoneVisualizerComponent_OnRep_DebugBoxDimensions_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -63,9 +74,13 @@ void UDebugStatusEffectOverlapZoneVisualizerComponent::OnRep_DebugBoxDimensions(
 
 void ULightWeightStatusEffectManagerComponent::OnRep_ActiveEffects(TArray<struct FActiveStatusEffect> OldEffects)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function StatusEffects.LightWeightStatusEffectManagerComponent.OnRep_ActiveEffects");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StatusEffects.LightWeightStatusEffectManagerComponent.OnRep_ActiveEffects"));
 
-	ULightWeightStatusEffectManagerComponent_OnRep_ActiveEffects_Params params;
+	struct
+	{
+		TArray<struct FActiveStatusEffect> OldEffects;
+	} params;
+
 	params.OldEffects = OldEffects;
 
 	UObject::ProcessEvent(fn, &params);
@@ -79,9 +94,13 @@ void ULightWeightStatusEffectManagerComponent::OnRep_ActiveEffects(TArray<struct
 
 void ULightWeightStatusEffectManagerComponent::MultiCast_ApplyOneShotStatus(TArray<struct FActiveStatusEffect> ActivatedEffects)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function StatusEffects.LightWeightStatusEffectManagerComponent.MultiCast_ApplyOneShotStatus");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StatusEffects.LightWeightStatusEffectManagerComponent.MultiCast_ApplyOneShotStatus"));
 
-	ULightWeightStatusEffectManagerComponent_MultiCast_ApplyOneShotStatus_Params params;
+	struct
+	{
+		TArray<struct FActiveStatusEffect> ActivatedEffects;
+	} params;
+
 	params.ActivatedEffects = ActivatedEffects;
 
 	UObject::ProcessEvent(fn, &params);
@@ -94,15 +113,21 @@ void ULightWeightStatusEffectManagerComponent::MultiCast_ApplyOneShotStatus(TArr
 // class AActor*                  Recipient                      (Parm, ZeroConstructor, IsPlainOldData)
 // struct FStatus                 Status                         (ConstParm, Parm, OutParm, ReferenceParm)
 
-void UStatusEffectHelperFunctionLibrary::STATIC_ApplyOneShotStatus(class AActor* Recipient, const struct FStatus& Status)
+void UStatusEffectHelperFunctionLibrary::ApplyOneShotStatus(class AActor* Recipient, const struct FStatus& Status)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function StatusEffects.StatusEffectHelperFunctionLibrary.ApplyOneShotStatus");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StatusEffects.StatusEffectHelperFunctionLibrary.ApplyOneShotStatus"));
 
-	UStatusEffectHelperFunctionLibrary_ApplyOneShotStatus_Params params;
+	struct
+	{
+		class AActor*                  Recipient;
+		struct FStatus                 Status;
+	} params;
+
 	params.Recipient = Recipient;
 	params.Status = Status;
 
-	UObject::ProcessEvent(fn, &params);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 }
 
 
@@ -113,9 +138,13 @@ void UStatusEffectHelperFunctionLibrary::STATIC_ApplyOneShotStatus(class AActor*
 
 void UStatusEffectManagerComponent::OnRep_ActiveEffects(TArray<struct FActiveStatusEffect> OldEffects)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function StatusEffects.StatusEffectManagerComponent.OnRep_ActiveEffects");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StatusEffects.StatusEffectManagerComponent.OnRep_ActiveEffects"));
 
-	UStatusEffectManagerComponent_OnRep_ActiveEffects_Params params;
+	struct
+	{
+		TArray<struct FActiveStatusEffect> OldEffects;
+	} params;
+
 	params.OldEffects = OldEffects;
 
 	UObject::ProcessEvent(fn, &params);
@@ -129,9 +158,13 @@ void UStatusEffectManagerComponent::OnRep_ActiveEffects(TArray<struct FActiveSta
 
 void UStatusEffectManagerComponent::MultiCast_ApplyOneShotStatus(TArray<struct FActiveStatusEffect> ActivatedEffects)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function StatusEffects.StatusEffectManagerComponent.MultiCast_ApplyOneShotStatus");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StatusEffects.StatusEffectManagerComponent.MultiCast_ApplyOneShotStatus"));
 
-	UStatusEffectManagerComponent_MultiCast_ApplyOneShotStatus_Params params;
+	struct
+	{
+		TArray<struct FActiveStatusEffect> ActivatedEffects;
+	} params;
+
 	params.ActivatedEffects = ActivatedEffects;
 
 	UObject::ProcessEvent(fn, &params);

@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WorldSafeZoneFramework.WorldSafeZoneHostInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WorldSafeZoneFramework.WorldSafeZoneHostInterface"));
 		return ptr;
 	}
 

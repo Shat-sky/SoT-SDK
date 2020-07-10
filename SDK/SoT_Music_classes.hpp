@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Music.MusicZoneInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Music.MusicZoneInterface"));
 		return ptr;
 	}
 
@@ -51,7 +51,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Music.MusicZoneComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Music.MusicZoneComponent"));
 		return ptr;
 	}
 
@@ -76,7 +76,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Music.AISpawnerMusicZoneComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Music.AISpawnerMusicZoneComponent"));
 		return ptr;
 	}
 
@@ -94,7 +94,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Music.SynchedMusicZoneComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Music.SynchedMusicZoneComponent"));
 		return ptr;
 	}
 
@@ -109,7 +109,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Music.MusicZoneServiceInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Music.MusicZoneServiceInterface"));
 		return ptr;
 	}
 
@@ -125,7 +125,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Music.MusicZoneService");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Music.MusicZoneService"));
 		return ptr;
 	}
 

@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_Campaign026_HauntedShores_BilgeRats_NPC_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Campaign026_HauntedShores_BilgeRats_NPC.BP_Campaign026_HauntedShores_BilgeRats_NPC_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Campaign026_HauntedShores_BilgeRats_NPC.BP_Campaign026_HauntedShores_BilgeRats_NPC_C.UserConstructionScript"));
 
-	ABP_Campaign026_HauntedShores_BilgeRats_NPC_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -32,9 +35,13 @@ void ABP_Campaign026_HauntedShores_BilgeRats_NPC_C::UserConstructionScript()
 
 void ABP_Campaign026_HauntedShores_BilgeRats_NPC_C::ExecuteUbergraph_BP_Campaign026_HauntedShores_BilgeRats_NPC(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Campaign026_HauntedShores_BilgeRats_NPC.BP_Campaign026_HauntedShores_BilgeRats_NPC_C.ExecuteUbergraph_BP_Campaign026_HauntedShores_BilgeRats_NPC");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Campaign026_HauntedShores_BilgeRats_NPC.BP_Campaign026_HauntedShores_BilgeRats_NPC_C.ExecuteUbergraph_BP_Campaign026_HauntedShores_BilgeRats_NPC"));
 
-	ABP_Campaign026_HauntedShores_BilgeRats_NPC_C_ExecuteUbergraph_BP_Campaign026_HauntedShores_BilgeRats_NPC_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

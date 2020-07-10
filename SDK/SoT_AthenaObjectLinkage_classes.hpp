@@ -23,7 +23,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaObjectLinkage.EndPlayHandler");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaObjectLinkage.EndPlayHandler"));
 		return ptr;
 	}
 
@@ -40,16 +40,16 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaObjectLinkage.LinkEndpointIdUtilities");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaObjectLinkage.LinkEndpointIdUtilities"));
 		return ptr;
 	}
 
 
-	bool STATIC_IsValid(const struct FLinkEndpointId& Id);
-	bool STATIC_IsPathed(const struct FLinkEndpointId& Id);
-	struct FLinkEndpointId STATIC_CreateEndpointId(const class FString& String);
-	class FString STATIC_Conv_LinkEndpointIdToString(const struct FLinkEndpointId& Id);
-	struct FLinkEndpointId STATIC_CombineEndpointIds(const struct FLinkEndpointId& Root, const struct FLinkEndpointId& path);
+	static bool IsValid(const struct FLinkEndpointId& Id);
+	static bool IsPathed(const struct FLinkEndpointId& Id);
+	static struct FLinkEndpointId CreateEndpointId(const class FString& String);
+	static class FString Conv_LinkEndpointIdToString(const struct FLinkEndpointId& Id);
+	static struct FLinkEndpointId CombineEndpointIds(const struct FLinkEndpointId& Root, const struct FLinkEndpointId& path);
 };
 
 
@@ -61,7 +61,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaObjectLinkage.LinkEndpointInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaObjectLinkage.LinkEndpointInterface"));
 		return ptr;
 	}
 
@@ -81,7 +81,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaObjectLinkage.LinkerComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaObjectLinkage.LinkerComponent"));
 		return ptr;
 	}
 
@@ -109,7 +109,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaObjectLinkage.LinkerInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaObjectLinkage.LinkerInterface"));
 		return ptr;
 	}
 

@@ -22,9 +22,16 @@ namespace SDK
 
 void ABP_Mast_C::AttemptToAddDamageDecal(TEnumAsByte<ERepairableState> RepairableState, const struct FTransform& RelativeTransform, class UMaterialInterface* NewDecalMaterial, class UDecalComponent** DecalComponent)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Mast.BP_Mast_C.AttemptToAddDamageDecal");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Mast.BP_Mast_C.AttemptToAddDamageDecal"));
 
-	ABP_Mast_C_AttemptToAddDamageDecal_Params params;
+	struct
+	{
+		TEnumAsByte<ERepairableState>  RepairableState;
+		class UDecalComponent*         DecalComponent;
+		struct FTransform              RelativeTransform;
+		class UMaterialInterface*      NewDecalMaterial;
+	} params;
+
 	params.RepairableState = RepairableState;
 	params.RelativeTransform = RelativeTransform;
 	params.NewDecalMaterial = NewDecalMaterial;
@@ -43,9 +50,13 @@ void ABP_Mast_C::AttemptToAddDamageDecal(TEnumAsByte<ERepairableState> Repairabl
 
 bool ABP_Mast_C::IsMastVisuallyFractured()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Mast.BP_Mast_C.IsMastVisuallyFractured");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Mast.BP_Mast_C.IsMastVisuallyFractured"));
 
-	ABP_Mast_C_IsMastVisuallyFractured_Params params;
+	struct
+	{
+		bool                           ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -61,9 +72,14 @@ bool ABP_Mast_C::IsMastVisuallyFractured()
 
 void ABP_Mast_C::Customise_Static_Mesh(class UStaticMesh* New_Static_Mesh, class UStaticMeshComponent* Static_Mesh_Component)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Mast.BP_Mast_C.Customise Static Mesh");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Mast.BP_Mast_C.Customise Static Mesh"));
 
-	ABP_Mast_C_Customise_Static_Mesh_Params params;
+	struct
+	{
+		class UStaticMesh*             New_Static_Mesh;
+		class UStaticMeshComponent*    Static_Mesh_Component;
+	} params;
+
 	params.New_Static_Mesh = New_Static_Mesh;
 	params.Static_Mesh_Component = Static_Mesh_Component;
 
@@ -79,9 +95,14 @@ void ABP_Mast_C::Customise_Static_Mesh(class UStaticMesh* New_Static_Mesh, class
 
 void ABP_Mast_C::Trim_Array_Func(int Size, TArray<class UObject*>* TargetArray)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Mast.BP_Mast_C.Trim Array Func");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Mast.BP_Mast_C.Trim Array Func"));
 
-	ABP_Mast_C_Trim_Array_Func_Params params;
+	struct
+	{
+		TArray<class UObject*>         TargetArray;
+		int                            Size;
+	} params;
+
 	params.Size = Size;
 
 	UObject::ProcessEvent(fn, &params);
@@ -96,9 +117,12 @@ void ABP_Mast_C::Trim_Array_Func(int Size, TArray<class UObject*>* TargetArray)
 
 void ABP_Mast_C::Initialise_Sail_Parameters()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Mast.BP_Mast_C.Initialise Sail Parameters");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Mast.BP_Mast_C.Initialise Sail Parameters"));
 
-	ABP_Mast_C_Initialise_Sail_Parameters_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -109,9 +133,12 @@ void ABP_Mast_C::Initialise_Sail_Parameters()
 
 void ABP_Mast_C::Populate_Lists_of_Yards_and_Sails()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Mast.BP_Mast_C.Populate Lists of Yards and Sails");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Mast.BP_Mast_C.Populate Lists of Yards and Sails"));
 
-	ABP_Mast_C_Populate_Lists_of_Yards_and_Sails_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -124,9 +151,13 @@ void ABP_Mast_C::Populate_Lists_of_Yards_and_Sails()
 
 void ABP_Mast_C::Cull_Excess_Components(TArray<class UActorComponent*>* TargetArray)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Mast.BP_Mast_C.Cull Excess Components");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Mast.BP_Mast_C.Cull Excess Components"));
 
-	ABP_Mast_C_Cull_Excess_Components_Params params;
+	struct
+	{
+		TArray<class UActorComponent*> TargetArray;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -140,9 +171,12 @@ void ABP_Mast_C::Cull_Excess_Components(TArray<class UActorComponent*>* TargetAr
 
 void ABP_Mast_C::Initialise_Sails()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Mast.BP_Mast_C.Initialise Sails");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Mast.BP_Mast_C.Initialise Sails"));
 
-	ABP_Mast_C_Initialise_Sails_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -153,9 +187,12 @@ void ABP_Mast_C::Initialise_Sails()
 
 void ABP_Mast_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Mast.BP_Mast_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Mast.BP_Mast_C.UserConstructionScript"));
 
-	ABP_Mast_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -168,9 +205,13 @@ void ABP_Mast_C::UserConstructionScript()
 
 void ABP_Mast_C::OnMastDescLoaded(class UMastDescAsset* MastDesc)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Mast.BP_Mast_C.OnMastDescLoaded");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Mast.BP_Mast_C.OnMastDescLoaded"));
 
-	ABP_Mast_C_OnMastDescLoaded_Params params;
+	struct
+	{
+		class UMastDescAsset*          MastDesc;
+	} params;
+
 	params.MastDesc = MastDesc;
 
 	UObject::ProcessEvent(fn, &params);
@@ -185,9 +226,14 @@ void ABP_Mast_C::OnMastDescLoaded(class UMastDescAsset* MastDesc)
 
 void ABP_Mast_C::OnMastMeshSwapRequested(class UStaticMesh* NewMeshBottom, class UStaticMesh* NewMeshTop)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Mast.BP_Mast_C.OnMastMeshSwapRequested");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Mast.BP_Mast_C.OnMastMeshSwapRequested"));
 
-	ABP_Mast_C_OnMastMeshSwapRequested_Params params;
+	struct
+	{
+		class UStaticMesh*             NewMeshBottom;
+		class UStaticMesh*             NewMeshTop;
+	} params;
+
 	params.NewMeshBottom = NewMeshBottom;
 	params.NewMeshTop = NewMeshTop;
 
@@ -204,9 +250,15 @@ void ABP_Mast_C::OnMastMeshSwapRequested(class UStaticMesh* NewMeshBottom, class
 
 void ABP_Mast_C::BndEvt__RepairableComponentFirst_K2Node_ComponentBoundEvent_3_RepairableStateChangedDelegate__DelegateSignature(TEnumAsByte<ERepairableState> State, TEnumAsByte<ERepairableState> PreviousState, class URepairableComponent* RepairableComponent)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Mast.BP_Mast_C.BndEvt__RepairableComponentFirst_K2Node_ComponentBoundEvent_3_RepairableStateChangedDelegate__DelegateSignature");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Mast.BP_Mast_C.BndEvt__RepairableComponentFirst_K2Node_ComponentBoundEvent_3_RepairableStateChangedDelegate__DelegateSignature"));
 
-	ABP_Mast_C_BndEvt__RepairableComponentFirst_K2Node_ComponentBoundEvent_3_RepairableStateChangedDelegate__DelegateSignature_Params params;
+	struct
+	{
+		TEnumAsByte<ERepairableState>  State;
+		TEnumAsByte<ERepairableState>  PreviousState;
+		class URepairableComponent*    RepairableComponent;
+	} params;
+
 	params.State = State;
 	params.PreviousState = PreviousState;
 	params.RepairableComponent = RepairableComponent;
@@ -224,9 +276,15 @@ void ABP_Mast_C::BndEvt__RepairableComponentFirst_K2Node_ComponentBoundEvent_3_R
 
 void ABP_Mast_C::BndEvt__RepairableComponentSecond_K2Node_ComponentBoundEvent_6_RepairableStateChangedDelegate__DelegateSignature(TEnumAsByte<ERepairableState> State, TEnumAsByte<ERepairableState> PreviousState, class URepairableComponent* RepairableComponent)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Mast.BP_Mast_C.BndEvt__RepairableComponentSecond_K2Node_ComponentBoundEvent_6_RepairableStateChangedDelegate__DelegateSignature");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Mast.BP_Mast_C.BndEvt__RepairableComponentSecond_K2Node_ComponentBoundEvent_6_RepairableStateChangedDelegate__DelegateSignature"));
 
-	ABP_Mast_C_BndEvt__RepairableComponentSecond_K2Node_ComponentBoundEvent_6_RepairableStateChangedDelegate__DelegateSignature_Params params;
+	struct
+	{
+		TEnumAsByte<ERepairableState>  State;
+		TEnumAsByte<ERepairableState>  PreviousState;
+		class URepairableComponent*    RepairableComponent;
+	} params;
+
 	params.State = State;
 	params.PreviousState = PreviousState;
 	params.RepairableComponent = RepairableComponent;
@@ -244,9 +302,15 @@ void ABP_Mast_C::BndEvt__RepairableComponentSecond_K2Node_ComponentBoundEvent_6_
 
 void ABP_Mast_C::BndEvt__RepairableComponentThird_K2Node_ComponentBoundEvent_10_RepairableStateChangedDelegate__DelegateSignature(TEnumAsByte<ERepairableState> State, TEnumAsByte<ERepairableState> PreviousState, class URepairableComponent* RepairableComponent)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Mast.BP_Mast_C.BndEvt__RepairableComponentThird_K2Node_ComponentBoundEvent_10_RepairableStateChangedDelegate__DelegateSignature");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Mast.BP_Mast_C.BndEvt__RepairableComponentThird_K2Node_ComponentBoundEvent_10_RepairableStateChangedDelegate__DelegateSignature"));
 
-	ABP_Mast_C_BndEvt__RepairableComponentThird_K2Node_ComponentBoundEvent_10_RepairableStateChangedDelegate__DelegateSignature_Params params;
+	struct
+	{
+		TEnumAsByte<ERepairableState>  State;
+		TEnumAsByte<ERepairableState>  PreviousState;
+		class URepairableComponent*    RepairableComponent;
+	} params;
+
 	params.State = State;
 	params.PreviousState = PreviousState;
 	params.RepairableComponent = RepairableComponent;
@@ -262,9 +326,13 @@ void ABP_Mast_C::BndEvt__RepairableComponentThird_K2Node_ComponentBoundEvent_10_
 
 void ABP_Mast_C::ExecuteUbergraph_BP_Mast(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Mast.BP_Mast_C.ExecuteUbergraph_BP_Mast");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Mast.BP_Mast_C.ExecuteUbergraph_BP_Mast"));
 
-	ABP_Mast_C_ExecuteUbergraph_BP_Mast_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

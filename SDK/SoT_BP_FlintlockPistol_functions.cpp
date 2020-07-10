@@ -19,9 +19,13 @@ namespace SDK
 
 void ABP_FlintlockPistol_C::SetScopeEffectOn(bool IsOn)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FlintlockPistol.BP_FlintlockPistol_C.SetScopeEffectOn");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FlintlockPistol.BP_FlintlockPistol_C.SetScopeEffectOn"));
 
-	ABP_FlintlockPistol_C_SetScopeEffectOn_Params params;
+	struct
+	{
+		bool                           IsOn;
+	} params;
+
 	params.IsOn = IsOn;
 
 	UObject::ProcessEvent(fn, &params);
@@ -35,9 +39,13 @@ void ABP_FlintlockPistol_C::SetScopeEffectOn(bool IsOn)
 
 void ABP_FlintlockPistol_C::determine_sfx_relationship(TEnumAsByte<EEmitterRelationship>* Relationship)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FlintlockPistol.BP_FlintlockPistol_C.determine sfx relationship");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FlintlockPistol.BP_FlintlockPistol_C.determine sfx relationship"));
 
-	ABP_FlintlockPistol_C_determine_sfx_relationship_Params params;
+	struct
+	{
+		TEnumAsByte<EEmitterRelationship> Relationship;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -51,9 +59,12 @@ void ABP_FlintlockPistol_C::determine_sfx_relationship(TEnumAsByte<EEmitterRelat
 
 void ABP_FlintlockPistol_C::DoFireEffect()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FlintlockPistol.BP_FlintlockPistol_C.DoFireEffect");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FlintlockPistol.BP_FlintlockPistol_C.DoFireEffect"));
 
-	ABP_FlintlockPistol_C_DoFireEffect_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -64,9 +75,12 @@ void ABP_FlintlockPistol_C::DoFireEffect()
 
 void ABP_FlintlockPistol_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FlintlockPistol.BP_FlintlockPistol_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FlintlockPistol.BP_FlintlockPistol_C.UserConstructionScript"));
 
-	ABP_FlintlockPistol_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -77,9 +91,12 @@ void ABP_FlintlockPistol_C::UserConstructionScript()
 
 void ABP_FlintlockPistol_C::OnWeaponFired()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FlintlockPistol.BP_FlintlockPistol_C.OnWeaponFired");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FlintlockPistol.BP_FlintlockPistol_C.OnWeaponFired"));
 
-	ABP_FlintlockPistol_C_OnWeaponFired_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -90,9 +107,12 @@ void ABP_FlintlockPistol_C::OnWeaponFired()
 
 void ABP_FlintlockPistol_C::RadialBlurOn()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FlintlockPistol.BP_FlintlockPistol_C.RadialBlurOn");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FlintlockPistol.BP_FlintlockPistol_C.RadialBlurOn"));
 
-	ABP_FlintlockPistol_C_RadialBlurOn_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -103,9 +123,12 @@ void ABP_FlintlockPistol_C::RadialBlurOn()
 
 void ABP_FlintlockPistol_C::RadialBlurOff()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FlintlockPistol.BP_FlintlockPistol_C.RadialBlurOff");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FlintlockPistol.BP_FlintlockPistol_C.RadialBlurOff"));
 
-	ABP_FlintlockPistol_C_RadialBlurOff_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -118,9 +141,13 @@ void ABP_FlintlockPistol_C::RadialBlurOff()
 
 void ABP_FlintlockPistol_C::ExecuteUbergraph_BP_FlintlockPistol(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FlintlockPistol.BP_FlintlockPistol_C.ExecuteUbergraph_BP_FlintlockPistol");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FlintlockPistol.BP_FlintlockPistol_C.ExecuteUbergraph_BP_FlintlockPistol"));
 
-	ABP_FlintlockPistol_C_ExecuteUbergraph_BP_FlintlockPistol_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

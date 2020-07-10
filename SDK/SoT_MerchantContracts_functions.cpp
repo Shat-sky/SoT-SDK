@@ -19,15 +19,22 @@ namespace SDK
 // float                          TimeLimit                      (Parm, ZeroConstructor, IsPlainOldData)
 // struct FText                   ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FText UMerchantContractsBlueprintLibrary::STATIC_GetDateFromTimeLimit(const TScriptInterface<class UGameServiceProviderInterface>& ServiceProviderInterface, float TimeLimit)
+struct FText UMerchantContractsBlueprintLibrary::GetDateFromTimeLimit(const TScriptInterface<class UGameServiceProviderInterface>& ServiceProviderInterface, float TimeLimit)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function MerchantContracts.MerchantContractsBlueprintLibrary.GetDateFromTimeLimit");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function MerchantContracts.MerchantContractsBlueprintLibrary.GetDateFromTimeLimit"));
 
-	UMerchantContractsBlueprintLibrary_GetDateFromTimeLimit_Params params;
+	struct
+	{
+		TScriptInterface<class UGameServiceProviderInterface> ServiceProviderInterface;
+		float                          TimeLimit;
+		struct FText                   ReturnValue;
+	} params;
+
 	params.ServiceProviderInterface = ServiceProviderInterface;
 	params.TimeLimit = TimeLimit;
 
-	UObject::ProcessEvent(fn, &params);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
 }

@@ -17,9 +17,12 @@ namespace SDK
 
 void Awsp_bush_cluster_01_h_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function wsp_bush_cluster_01_h.wsp_bush_cluster_01_h_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function wsp_bush_cluster_01_h.wsp_bush_cluster_01_h_C.UserConstructionScript"));
 
-	Awsp_bush_cluster_01_h_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

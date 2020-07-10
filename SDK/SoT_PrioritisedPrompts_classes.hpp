@@ -27,7 +27,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class PrioritisedPrompts.BasePromptCoordinator");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class PrioritisedPrompts.BasePromptCoordinator"));
 		return ptr;
 	}
 
@@ -43,9 +43,9 @@ public:
 	void RegisterCharacterEvents_Implementable(const struct FObjectMessagingDispatcherHandle& CharacterDispatcher);
 	void OnControllerEndPlay(TEnumAsByte<EEndPlayReason> EndPlayReason);
 	void MarkAsComplete_Implementable();
-	struct FPromptEvaluation STATIC_MakeShowPrompt(const struct FPrioritisedPromptWithHandle& Prompt);
-	struct FPromptEvaluation STATIC_MakeHideCurrentPrompts();
-	struct FPromptEvaluation STATIC_MakeCompleteCoordinator();
+	static struct FPromptEvaluation MakeShowPrompt(const struct FPrioritisedPromptWithHandle& Prompt);
+	static struct FPromptEvaluation MakeHideCurrentPrompts();
+	static struct FPromptEvaluation MakeCompleteCoordinator();
 	void Initialize(class AAthenaPlayerController* PlayerController, class UPrioritisedPromptsManager* PrioritisedPromptsManager);
 	bool GetCompleted();
 	struct FPromptEvaluation EvaluatePromptDisplayState();
@@ -63,12 +63,12 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class PrioritisedPrompts.GetPromptsLocalService");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class PrioritisedPrompts.GetPromptsLocalService"));
 		return ptr;
 	}
 
 
-	class UGetPromptsLocalService* STATIC_GetPromptsLocalService(class UObject* WorldContextObject);
+	static class UGetPromptsLocalService* GetPromptsLocalService(class UObject* WorldContextObject);
 };
 
 
@@ -83,7 +83,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class PrioritisedPrompts.PrioritisedPromptsManager");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class PrioritisedPrompts.PrioritisedPromptsManager"));
 		return ptr;
 	}
 
@@ -99,7 +99,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class PrioritisedPrompts.PromptCounterAccessKey");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class PrioritisedPrompts.PromptCounterAccessKey"));
 		return ptr;
 	}
 
@@ -114,7 +114,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class PrioritisedPrompts.PromptsLocalServiceInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class PrioritisedPrompts.PromptsLocalServiceInterface"));
 		return ptr;
 	}
 
@@ -133,7 +133,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class PrioritisedPrompts.PromptsLocalService");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class PrioritisedPrompts.PromptsLocalService"));
 		return ptr;
 	}
 

@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.StatusBase");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusBase"));
 		return ptr;
 	}
 
@@ -37,7 +37,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.StatusResponse");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusResponse"));
 		return ptr;
 	}
 
@@ -52,7 +52,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.ActivateableSurfaceMaterialStatusZoneInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.ActivateableSurfaceMaterialStatusZoneInterface"));
 		return ptr;
 	}
 
@@ -69,7 +69,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.DebugMenuStatusDataAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.DebugMenuStatusDataAsset"));
 		return ptr;
 	}
 
@@ -88,7 +88,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.StatusEffectOverlapZone");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusEffectOverlapZone"));
 		return ptr;
 	}
 
@@ -110,7 +110,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.DebugStatusEffectOverlapZoneVisualizerComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.DebugStatusEffectOverlapZoneVisualizerComponent"));
 		return ptr;
 	}
 
@@ -129,7 +129,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.DebugStatusTicketHolder");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.DebugStatusTicketHolder"));
 		return ptr;
 	}
 
@@ -144,7 +144,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.StatusEffectCancellationInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusEffectCancellationInterface"));
 		return ptr;
 	}
 
@@ -159,7 +159,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.StatusEffectRecipientInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusEffectRecipientInterface"));
 		return ptr;
 	}
 
@@ -174,7 +174,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.StatusEffectResponseConfigurationInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusEffectResponseConfigurationInterface"));
 		return ptr;
 	}
 
@@ -189,7 +189,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.StatusEffectSuspensionInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusEffectSuspensionInterface"));
 		return ptr;
 	}
 
@@ -206,7 +206,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.StatusResponseAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusResponseAsset"));
 		return ptr;
 	}
 
@@ -224,7 +224,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.StatusRecipientResponseList");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusRecipientResponseList"));
 		return ptr;
 	}
 
@@ -242,7 +242,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.LightWeightStatusEffectManagerComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.LightWeightStatusEffectManagerComponent"));
 		return ptr;
 	}
 
@@ -260,7 +260,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.MaterialStatusSusceptibilityInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.MaterialStatusSusceptibilityInterface"));
 		return ptr;
 	}
 
@@ -275,7 +275,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.SurfaceMaterialStatusZoneInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.SurfaceMaterialStatusZoneInterface"));
 		return ptr;
 	}
 
@@ -294,7 +294,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.MaterialStatusSusceptibilityComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.MaterialStatusSusceptibilityComponent"));
 		return ptr;
 	}
 
@@ -310,7 +310,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.StatusApplicationDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusApplicationDesc"));
 		return ptr;
 	}
 
@@ -326,7 +326,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.StatusApplicationMonitorComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusApplicationMonitorComponent"));
 		return ptr;
 	}
 
@@ -341,12 +341,12 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.StatusEffectHelperFunctionLibrary");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusEffectHelperFunctionLibrary"));
 		return ptr;
 	}
 
 
-	void STATIC_ApplyOneShotStatus(class AActor* Recipient, const struct FStatus& Status);
+	static void ApplyOneShotStatus(class AActor* Recipient, const struct FStatus& Status);
 };
 
 
@@ -358,7 +358,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.StatusEffectTicketDispenserInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusEffectTicketDispenserInterface"));
 		return ptr;
 	}
 
@@ -376,7 +376,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.StatusEffectManagerComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusEffectManagerComponent"));
 		return ptr;
 	}
 
@@ -394,7 +394,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.StatusEffectPersistenceInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusEffectPersistenceInterface"));
 		return ptr;
 	}
 
@@ -410,7 +410,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.StatusEffectPersistenceComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusEffectPersistenceComponent"));
 		return ptr;
 	}
 
@@ -426,7 +426,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.StatusEffectsSettings");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusEffectsSettings"));
 		return ptr;
 	}
 
@@ -441,7 +441,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class StatusEffects.StatusResponseNull");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusResponseNull"));
 		return ptr;
 	}
 

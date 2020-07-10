@@ -17,9 +17,12 @@ namespace SDK
 
 void UClientMysteriousNoteComponent::OnRep_PendingNotes()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function MysteriousNotes.ClientMysteriousNoteComponent.OnRep_PendingNotes");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function MysteriousNotes.ClientMysteriousNoteComponent.OnRep_PendingNotes"));
 
-	UClientMysteriousNoteComponent_OnRep_PendingNotes_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

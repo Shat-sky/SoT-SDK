@@ -17,9 +17,12 @@ namespace SDK
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::ShowAppropriateMerchantPrompt()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.ShowAppropriateMerchantPrompt");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.ShowAppropriateMerchantPrompt"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_ShowAppropriateMerchantPrompt_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -32,9 +35,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::ShowAppropriateMerchantPrompt()
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::SetIsHidden(bool NewHidden)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.SetIsHidden");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.SetIsHidden"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_SetIsHidden_Params params;
+	struct
+	{
+		bool                           NewHidden;
+	} params;
+
 	params.NewHidden = NewHidden;
 
 	UObject::ProcessEvent(fn, &params);
@@ -48,9 +55,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::SetIsHidden(bool NewHidden)
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::PlayerLeftGoldhoarderRadiusFunc(class AActor* Actor)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.PlayerLeftGoldhoarderRadiusFunc");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.PlayerLeftGoldhoarderRadiusFunc"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_PlayerLeftGoldhoarderRadiusFunc_Params params;
+	struct
+	{
+		class AActor*                  Actor;
+	} params;
+
 	params.Actor = Actor;
 
 	UObject::ProcessEvent(fn, &params);
@@ -64,9 +75,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::PlayerLeftGoldhoarderRadiusFunc(clas
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::PlayerEnteredGoldhoarderRadiusFunc(class AActor* Actor)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.PlayerEnteredGoldhoarderRadiusFunc");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.PlayerEnteredGoldhoarderRadiusFunc"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_PlayerEnteredGoldhoarderRadiusFunc_Params params;
+	struct
+	{
+		class AActor*                  Actor;
+	} params;
+
 	params.Actor = Actor;
 
 	UObject::ProcessEvent(fn, &params);
@@ -80,9 +95,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::PlayerEnteredGoldhoarderRadiusFunc(c
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::PlayerLeftOutpostRadiusFunc(class AActor* Actor)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.PlayerLeftOutpostRadiusFunc");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.PlayerLeftOutpostRadiusFunc"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_PlayerLeftOutpostRadiusFunc_Params params;
+	struct
+	{
+		class AActor*                  Actor;
+	} params;
+
 	params.Actor = Actor;
 
 	UObject::ProcessEvent(fn, &params);
@@ -96,9 +115,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::PlayerLeftOutpostRadiusFunc(class AA
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::PlayerEnteredOutpostRadiusFunc(class AActor* Actor)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.PlayerEnteredOutpostRadiusFunc");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.PlayerEnteredOutpostRadiusFunc"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_PlayerEnteredOutpostRadiusFunc_Params params;
+	struct
+	{
+		class AActor*                  Actor;
+	} params;
+
 	params.Actor = Actor;
 
 	UObject::ProcessEvent(fn, &params);
@@ -112,9 +135,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::PlayerEnteredOutpostRadiusFunc(class
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnCompanyRankPurchasedFunc(const struct FEventCompanyRankProgressUpdateNotification& InputPin)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnCompanyRankPurchasedFunc");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnCompanyRankPurchasedFunc"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnCompanyRankPurchasedFunc_Params params;
+	struct
+	{
+		struct FEventCompanyRankProgressUpdateNotification InputPin;
+	} params;
+
 	params.InputPin = InputPin;
 
 	UObject::ProcessEvent(fn, &params);
@@ -128,9 +155,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnCompanyRankPurchasedFunc(const str
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnPlayerWithdrewVoyageFunc(const struct FEventPlayerWithdrewVoyage& EventPlayerWithdrewVoyage)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnPlayerWithdrewVoyageFunc");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnPlayerWithdrewVoyageFunc"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnPlayerWithdrewVoyageFunc_Params params;
+	struct
+	{
+		struct FEventPlayerWithdrewVoyage EventPlayerWithdrewVoyage;
+	} params;
+
 	params.EventPlayerWithdrewVoyage = EventPlayerWithdrewVoyage;
 
 	UObject::ProcessEvent(fn, &params);
@@ -144,9 +175,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnPlayerWithdrewVoyageFunc(const str
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnVoyageDiscardFromInventoryFunc(const struct FVoyageProposalDiscardEvent& VoyageProposalDiscardEvent)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnVoyageDiscardFromInventoryFunc");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnVoyageDiscardFromInventoryFunc"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnVoyageDiscardFromInventoryFunc_Params params;
+	struct
+	{
+		struct FVoyageProposalDiscardEvent VoyageProposalDiscardEvent;
+	} params;
+
 	params.VoyageProposalDiscardEvent = VoyageProposalDiscardEvent;
 
 	UObject::ProcessEvent(fn, &params);
@@ -160,9 +195,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnVoyageDiscardFromInventoryFunc(con
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnPlayerProposedVoyageFunc(const struct FVoyageProposalSelectedEvent& VoyageProposalSelectedEvent)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnPlayerProposedVoyageFunc");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnPlayerProposedVoyageFunc"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnPlayerProposedVoyageFunc_Params params;
+	struct
+	{
+		struct FVoyageProposalSelectedEvent VoyageProposalSelectedEvent;
+	} params;
+
 	params.VoyageProposalSelectedEvent = VoyageProposalSelectedEvent;
 
 	UObject::ProcessEvent(fn, &params);
@@ -176,9 +215,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnPlayerProposedVoyageFunc(const str
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnOfferPurchasedFunc(const struct FOfferPurchasedEvent& OfferPurchasedEvent)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnOfferPurchasedFunc");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnOfferPurchasedFunc"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnOfferPurchasedFunc_Params params;
+	struct
+	{
+		struct FOfferPurchasedEvent    OfferPurchasedEvent;
+	} params;
+
 	params.OfferPurchasedEvent = OfferPurchasedEvent;
 
 	UObject::ProcessEvent(fn, &params);
@@ -192,9 +235,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnOfferPurchasedFunc(const struct FO
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnPlayerCancelledVoyageFunc(const struct FVoyageCancelled& VoyageCancelled)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnPlayerCancelledVoyageFunc");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnPlayerCancelledVoyageFunc"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnPlayerCancelledVoyageFunc_Params params;
+	struct
+	{
+		struct FVoyageCancelled        VoyageCancelled;
+	} params;
+
 	params.VoyageCancelled = VoyageCancelled;
 
 	UObject::ProcessEvent(fn, &params);
@@ -206,9 +253,12 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnPlayerCancelledVoyageFunc(const st
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnPlayerExitedShipFunc()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnPlayerExitedShipFunc");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnPlayerExitedShipFunc"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnPlayerExitedShipFunc_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -221,9 +271,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnPlayerExitedShipFunc()
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnSomethingEnteredShipFunc(const struct FEventEnteredShip& EventEnteredShip)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnSomethingEnteredShipFunc");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnSomethingEnteredShipFunc"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnSomethingEnteredShipFunc_Params params;
+	struct
+	{
+		struct FEventEnteredShip       EventEnteredShip;
+	} params;
+
 	params.EventEnteredShip = EventEnteredShip;
 
 	UObject::ProcessEvent(fn, &params);
@@ -237,9 +291,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnSomethingEnteredShipFunc(const str
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnVoyageCompletedFunc(const struct FVoyageComplete& VoyageComplete)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnVoyageCompletedFunc");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnVoyageCompletedFunc"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnVoyageCompletedFunc_Params params;
+	struct
+	{
+		struct FVoyageComplete         VoyageComplete;
+	} params;
+
 	params.VoyageComplete = VoyageComplete;
 
 	UObject::ProcessEvent(fn, &params);
@@ -253,9 +311,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnVoyageCompletedFunc(const struct F
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnVoyageBegunFunc(const struct FVoyageBegun& VoyageBegun)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnVoyageBegunFunc");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnVoyageBegunFunc"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnVoyageBegunFunc_Params params;
+	struct
+	{
+		struct FVoyageBegun            VoyageBegun;
+	} params;
+
 	params.VoyageBegun = VoyageBegun;
 
 	UObject::ProcessEvent(fn, &params);
@@ -269,9 +331,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnVoyageBegunFunc(const struct FVoya
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::IsNearAnyShopkeeper(bool* Result)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.IsNearAnyShopkeeper");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.IsNearAnyShopkeeper"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_IsNearAnyShopkeeper_Params params;
+	struct
+	{
+		bool                           Result;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -287,9 +353,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::IsNearAnyShopkeeper(bool* Result)
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::AreTutorialsForceDisabled(bool* Result)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.AreTutorialsForceDisabled");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.AreTutorialsForceDisabled"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_AreTutorialsForceDisabled_Params params;
+	struct
+	{
+		bool                           Result;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -306,9 +376,14 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::AreTutorialsForceDisabled(bool* Resu
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::IsCurrentlyControlledCharacter(class AActor* Actor, bool* Result)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.IsCurrentlyControlledCharacter");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.IsCurrentlyControlledCharacter"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_IsCurrentlyControlledCharacter_Params params;
+	struct
+	{
+		class AActor*                  Actor;
+		bool                           Result;
+	} params;
+
 	params.Actor = Actor;
 
 	UObject::ProcessEvent(fn, &params);
@@ -325,9 +400,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::IsCurrentlyControlledCharacter(class
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::ShouldShowMerchantAllianceCompanyPrompts(bool* Result)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.ShouldShowMerchantAllianceCompanyPrompts");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.ShouldShowMerchantAllianceCompanyPrompts"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_ShouldShowMerchantAllianceCompanyPrompts_Params params;
+	struct
+	{
+		bool                           Result;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -343,9 +422,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::ShouldShowMerchantAllianceCompanyPro
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::ShouldShowOrderOfSoulsCompanyPrompts(bool* Result)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.ShouldShowOrderOfSoulsCompanyPrompts");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.ShouldShowOrderOfSoulsCompanyPrompts"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_ShouldShowOrderOfSoulsCompanyPrompts_Params params;
+	struct
+	{
+		bool                           Result;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -359,9 +442,12 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::ShouldShowOrderOfSoulsCompanyPrompts
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::ClearAllOutpostOverlapActors()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.ClearAllOutpostOverlapActors");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.ClearAllOutpostOverlapActors"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_ClearAllOutpostOverlapActors_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -374,9 +460,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::ClearAllOutpostOverlapActors()
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::ShouldShowGoldHoarderCompanyPrompts(bool* Result)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.ShouldShowGoldHoarderCompanyPrompts");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.ShouldShowGoldHoarderCompanyPrompts"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_ShouldShowGoldHoarderCompanyPrompts_Params params;
+	struct
+	{
+		bool                           Result;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -390,9 +480,12 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::ShouldShowGoldHoarderCompanyPrompts(
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::ClearAllGoldHoarderOverlapActors()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.ClearAllGoldHoarderOverlapActors");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.ClearAllGoldHoarderOverlapActors"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_ClearAllGoldHoarderOverlapActors_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -405,9 +498,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::ClearAllGoldHoarderOverlapActors()
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::SetGoldHoardersLocations(TArray<struct FVector>* GoldHoarderLocations)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.SetGoldHoardersLocations");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.SetGoldHoardersLocations"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_SetGoldHoardersLocations_Params params;
+	struct
+	{
+		TArray<struct FVector>         GoldHoarderLocations;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -421,9 +518,12 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::SetGoldHoardersLocations(TArray<stru
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::Evaluate()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.Evaluate");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.Evaluate"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_Evaluate_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -434,9 +534,12 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::Evaluate()
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::Complete()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.Complete");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.Complete"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_Complete_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -449,9 +552,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::Complete()
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::SetOutposts(TArray<struct FName>* OutpostNames)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.SetOutposts");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.SetOutposts"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_SetOutposts_Params params;
+	struct
+	{
+		TArray<struct FName>           OutpostNames;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -465,9 +572,12 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::SetOutposts(TArray<struct FName>* Ou
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::UninitializeImplementable()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.UninitializeImplementable");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.UninitializeImplementable"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_UninitializeImplementable_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -478,9 +588,12 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::UninitializeImplementable()
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::PostInitialize()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.PostInitialize");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.PostInitialize"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_PostInitialize_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -493,9 +606,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::PostInitialize()
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::SetOrderOfSoulsLocations(TArray<struct FVector>* Order_of_Souls_Locations)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.SetOrderOfSoulsLocations");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.SetOrderOfSoulsLocations"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_SetOrderOfSoulsLocations_Params params;
+	struct
+	{
+		TArray<struct FVector>         Order_of_Souls_Locations;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -511,9 +628,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::SetOrderOfSoulsLocations(TArray<stru
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::SetMerchantAllianceLocations(TArray<struct FVector>* Merchant_Alliance_Locations)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.SetMerchantAllianceLocations");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.SetMerchantAllianceLocations"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_SetMerchantAllianceLocations_Params params;
+	struct
+	{
+		TArray<struct FVector>         Merchant_Alliance_Locations;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -529,9 +650,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::SetMerchantAllianceLocations(TArray<
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::RegisterCharacterEvents_Implementable(const struct FObjectMessagingDispatcherHandle& CharacterDispatcher)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.RegisterCharacterEvents_Implementable");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.RegisterCharacterEvents_Implementable"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_RegisterCharacterEvents_Implementable_Params params;
+	struct
+	{
+		struct FObjectMessagingDispatcherHandle CharacterDispatcher;
+	} params;
+
 	params.CharacterDispatcher = CharacterDispatcher;
 
 	UObject::ProcessEvent(fn, &params);
@@ -545,9 +670,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::RegisterCharacterEvents_Implementabl
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::UnregisterCharacterEvents_Implementable(const struct FObjectMessagingDispatcherHandle& CharacterDispatcher)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.UnregisterCharacterEvents_Implementable");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.UnregisterCharacterEvents_Implementable"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_UnregisterCharacterEvents_Implementable_Params params;
+	struct
+	{
+		struct FObjectMessagingDispatcherHandle CharacterDispatcher;
+	} params;
+
 	params.CharacterDispatcher = CharacterDispatcher;
 
 	UObject::ProcessEvent(fn, &params);
@@ -559,9 +688,12 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::UnregisterCharacterEvents_Implementa
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::UnregisterOtherEvents_Implementable()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.UnregisterOtherEvents_Implementable");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.UnregisterOtherEvents_Implementable"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_UnregisterOtherEvents_Implementable_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -572,9 +704,12 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::UnregisterOtherEvents_Implementable(
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::RegisterOtherEvents_Implementable()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.RegisterOtherEvents_Implementable");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.RegisterOtherEvents_Implementable"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_RegisterOtherEvents_Implementable_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -585,9 +720,12 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::RegisterOtherEvents_Implementable()
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::ForceDisableTutorials()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.ForceDisableTutorials");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.ForceDisableTutorials"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_ForceDisableTutorials_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -598,9 +736,12 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::ForceDisableTutorials()
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::Unregister_HUD_Events()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.Unregister HUD Events");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.Unregister HUD Events"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_Unregister_HUD_Events_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -613,9 +754,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::Unregister_HUD_Events()
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnOfferPurchased(const struct FOfferPurchasedEvent& Event)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnOfferPurchased");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnOfferPurchased"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnOfferPurchased_Params params;
+	struct
+	{
+		struct FOfferPurchasedEvent    Event;
+	} params;
+
 	params.Event = Event;
 
 	UObject::ProcessEvent(fn, &params);
@@ -629,9 +774,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnOfferPurchased(const struct FOffer
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnPlayerProposedVoyage(const struct FVoyageProposalSelectedEvent& Event)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnPlayerProposedVoyage");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnPlayerProposedVoyage"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnPlayerProposedVoyage_Params params;
+	struct
+	{
+		struct FVoyageProposalSelectedEvent Event;
+	} params;
+
 	params.Event = Event;
 
 	UObject::ProcessEvent(fn, &params);
@@ -645,9 +794,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnPlayerProposedVoyage(const struct 
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnVoyageDiscardFromInventory(const struct FVoyageProposalDiscardEvent& Event)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnVoyageDiscardFromInventory");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnVoyageDiscardFromInventory"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnVoyageDiscardFromInventory_Params params;
+	struct
+	{
+		struct FVoyageProposalDiscardEvent Event;
+	} params;
+
 	params.Event = Event;
 
 	UObject::ProcessEvent(fn, &params);
@@ -661,9 +814,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnVoyageDiscardFromInventory(const s
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnVoyageBegun(const struct FVoyageBegun& Event)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnVoyageBegun");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnVoyageBegun"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnVoyageBegun_Params params;
+	struct
+	{
+		struct FVoyageBegun            Event;
+	} params;
+
 	params.Event = Event;
 
 	UObject::ProcessEvent(fn, &params);
@@ -677,9 +834,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnVoyageBegun(const struct FVoyageBe
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnVoyageCompleted(const struct FVoyageComplete& Event)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnVoyageCompleted");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnVoyageCompleted"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnVoyageCompleted_Params params;
+	struct
+	{
+		struct FVoyageComplete         Event;
+	} params;
+
 	params.Event = Event;
 
 	UObject::ProcessEvent(fn, &params);
@@ -693,9 +854,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnVoyageCompleted(const struct FVoya
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnSomethingEnteredShip(const struct FEventEnteredShip& Event)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnSomethingEnteredShip");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnSomethingEnteredShip"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnSomethingEnteredShip_Params params;
+	struct
+	{
+		struct FEventEnteredShip       Event;
+	} params;
+
 	params.Event = Event;
 
 	UObject::ProcessEvent(fn, &params);
@@ -709,9 +874,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnSomethingEnteredShip(const struct 
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnPlayerExitedShip(const struct FEventExitedShip& Event)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnPlayerExitedShip");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnPlayerExitedShip"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnPlayerExitedShip_Params params;
+	struct
+	{
+		struct FEventExitedShip        Event;
+	} params;
+
 	params.Event = Event;
 
 	UObject::ProcessEvent(fn, &params);
@@ -725,9 +894,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnPlayerExitedShip(const struct FEve
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::PlayerLeftOutpostRadius(class AActor* ActorInZone)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.PlayerLeftOutpostRadius");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.PlayerLeftOutpostRadius"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_PlayerLeftOutpostRadius_Params params;
+	struct
+	{
+		class AActor*                  ActorInZone;
+	} params;
+
 	params.ActorInZone = ActorInZone;
 
 	UObject::ProcessEvent(fn, &params);
@@ -741,9 +914,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::PlayerLeftOutpostRadius(class AActor
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::PlayerEnteredOutpostRadius(class AActor* ActorInZone)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.PlayerEnteredOutpostRadius");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.PlayerEnteredOutpostRadius"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_PlayerEnteredOutpostRadius_Params params;
+	struct
+	{
+		class AActor*                  ActorInZone;
+	} params;
+
 	params.ActorInZone = ActorInZone;
 
 	UObject::ProcessEvent(fn, &params);
@@ -757,9 +934,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::PlayerEnteredOutpostRadius(class AAc
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::PlayerLeftGoldhoarderRadius(class AActor* ActorInZone)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.PlayerLeftGoldhoarderRadius");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.PlayerLeftGoldhoarderRadius"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_PlayerLeftGoldhoarderRadius_Params params;
+	struct
+	{
+		class AActor*                  ActorInZone;
+	} params;
+
 	params.ActorInZone = ActorInZone;
 
 	UObject::ProcessEvent(fn, &params);
@@ -773,9 +954,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::PlayerLeftGoldhoarderRadius(class AA
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::PlayerEnteredGoldhoarderRadius(class AActor* ActorInZone)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.PlayerEnteredGoldhoarderRadius");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.PlayerEnteredGoldhoarderRadius"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_PlayerEnteredGoldhoarderRadius_Params params;
+	struct
+	{
+		class AActor*                  ActorInZone;
+	} params;
+
 	params.ActorInZone = ActorInZone;
 
 	UObject::ProcessEvent(fn, &params);
@@ -789,9 +974,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::PlayerEnteredGoldhoarderRadius(class
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnPlayerWithdrewVoyage(const struct FEventPlayerWithdrewVoyage& Event)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnPlayerWithdrewVoyage");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnPlayerWithdrewVoyage"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnPlayerWithdrewVoyage_Params params;
+	struct
+	{
+		struct FEventPlayerWithdrewVoyage Event;
+	} params;
+
 	params.Event = Event;
 
 	UObject::ProcessEvent(fn, &params);
@@ -805,9 +994,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnPlayerWithdrewVoyage(const struct 
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnPlayerCancelledVoyage(const struct FVoyageCancelled& Event)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnPlayerCancelledVoyage");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnPlayerCancelledVoyage"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnPlayerCancelledVoyage_Params params;
+	struct
+	{
+		struct FVoyageCancelled        Event;
+	} params;
+
 	params.Event = Event;
 
 	UObject::ProcessEvent(fn, &params);
@@ -821,9 +1014,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnPlayerCancelledVoyage(const struct
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnCompanyRankPurchased(const struct FEventCompanyRankProgressUpdateNotification& Event)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnCompanyRankPurchased");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnCompanyRankPurchased"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnCompanyRankPurchased_Params params;
+	struct
+	{
+		struct FEventCompanyRankProgressUpdateNotification Event;
+	} params;
+
 	params.Event = Event;
 
 	UObject::ProcessEvent(fn, &params);
@@ -837,9 +1034,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnCompanyRankPurchased(const struct 
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::OnEndPlay_HUD(TEnumAsByte<EEndPlayReason> EndPlayReason)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnEndPlay_HUD");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnEndPlay_HUD"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_OnEndPlay_HUD_Params params;
+	struct
+	{
+		TEnumAsByte<EEndPlayReason>    EndPlayReason;
+	} params;
+
 	params.EndPlayReason = EndPlayReason;
 
 	UObject::ProcessEvent(fn, &params);
@@ -853,9 +1054,13 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnEndPlay_HUD(TEnumAsByte<EEndPlayRe
 
 void UBP_Prompt_CTPurchaseVoyageSequence_C::ExecuteUbergraph_BP_Prompt_CTPurchaseVoyageSequence(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.ExecuteUbergraph_BP_Prompt_CTPurchaseVoyageSequence");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.ExecuteUbergraph_BP_Prompt_CTPurchaseVoyageSequence"));
 
-	UBP_Prompt_CTPurchaseVoyageSequence_C_ExecuteUbergraph_BP_Prompt_CTPurchaseVoyageSequence_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

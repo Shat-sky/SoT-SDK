@@ -21,9 +21,15 @@ namespace SDK
 
 struct FVector ABP_MediumShip_ServingHatch_Right_C::GetClosestInteractionPoint(const struct FVector& ReferencePosition, float* OutInteractionPointRadius)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_MediumShip_ServingHatch_Right.BP_MediumShip_ServingHatch_Right_C.GetClosestInteractionPoint");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_MediumShip_ServingHatch_Right.BP_MediumShip_ServingHatch_Right_C.GetClosestInteractionPoint"));
 
-	ABP_MediumShip_ServingHatch_Right_C_GetClosestInteractionPoint_Params params;
+	struct
+	{
+		struct FVector                 ReferencePosition;
+		float                          OutInteractionPointRadius;
+		struct FVector                 ReturnValue;
+	} params;
+
 	params.ReferencePosition = ReferencePosition;
 
 	UObject::ProcessEvent(fn, &params);
@@ -40,9 +46,12 @@ struct FVector ABP_MediumShip_ServingHatch_Right_C::GetClosestInteractionPoint(c
 
 void ABP_MediumShip_ServingHatch_Right_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_MediumShip_ServingHatch_Right.BP_MediumShip_ServingHatch_Right_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_MediumShip_ServingHatch_Right.BP_MediumShip_ServingHatch_Right_C.UserConstructionScript"));
 
-	ABP_MediumShip_ServingHatch_Right_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -53,9 +62,12 @@ void ABP_MediumShip_ServingHatch_Right_C::UserConstructionScript()
 
 void ABP_MediumShip_ServingHatch_Right_C::OnAnimationStarted()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_MediumShip_ServingHatch_Right.BP_MediumShip_ServingHatch_Right_C.OnAnimationStarted");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_MediumShip_ServingHatch_Right.BP_MediumShip_ServingHatch_Right_C.OnAnimationStarted"));
 
-	ABP_MediumShip_ServingHatch_Right_C_OnAnimationStarted_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -66,9 +78,12 @@ void ABP_MediumShip_ServingHatch_Right_C::OnAnimationStarted()
 
 void ABP_MediumShip_ServingHatch_Right_C::OnAnimationCompleted()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_MediumShip_ServingHatch_Right.BP_MediumShip_ServingHatch_Right_C.OnAnimationCompleted");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_MediumShip_ServingHatch_Right.BP_MediumShip_ServingHatch_Right_C.OnAnimationCompleted"));
 
-	ABP_MediumShip_ServingHatch_Right_C_OnAnimationCompleted_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -81,9 +96,13 @@ void ABP_MediumShip_ServingHatch_Right_C::OnAnimationCompleted()
 
 void ABP_MediumShip_ServingHatch_Right_C::ExecuteUbergraph_BP_MediumShip_ServingHatch_Right(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_MediumShip_ServingHatch_Right.BP_MediumShip_ServingHatch_Right_C.ExecuteUbergraph_BP_MediumShip_ServingHatch_Right");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_MediumShip_ServingHatch_Right.BP_MediumShip_ServingHatch_Right_C.ExecuteUbergraph_BP_MediumShip_ServingHatch_Right"));
 
-	ABP_MediumShip_ServingHatch_Right_C_ExecuteUbergraph_BP_MediumShip_ServingHatch_Right_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

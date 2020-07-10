@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass BP_vfx_SkeletonVfxCustom_Summon_Slow.BP_vfx_SkeletonVfxCustom_Summon_Slow_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass BP_vfx_SkeletonVfxCustom_Summon_Slow.BP_vfx_SkeletonVfxCustom_Summon_Slow_C"));
 		return ptr;
 	}
 

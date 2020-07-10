@@ -26,7 +26,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass BP_PromptCoordinator_Base.BP_PromptCoordinator_Base_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass BP_PromptCoordinator_Base.BP_PromptCoordinator_Base_C"));
 		return ptr;
 	}
 

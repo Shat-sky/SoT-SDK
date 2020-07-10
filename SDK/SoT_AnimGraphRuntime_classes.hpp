@@ -23,7 +23,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AnimGraphRuntime.AnimSequencerInstance");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AnimGraphRuntime.AnimSequencerInstance"));
 		return ptr;
 	}
 

@@ -19,9 +19,13 @@ namespace SDK
 
 unsigned char ABP_PlayerPirate_C::GetPxActorCapacityForPhysXAggregate()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.GetPxActorCapacityForPhysXAggregate");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.GetPxActorCapacityForPhysXAggregate"));
 
-	ABP_PlayerPirate_C_GetPxActorCapacityForPhysXAggregate_Params params;
+	struct
+	{
+		unsigned char                  ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -36,9 +40,13 @@ unsigned char ABP_PlayerPirate_C::GetPxActorCapacityForPhysXAggregate()
 
 void ABP_PlayerPirate_C::TattoGlowDynamicMaterials(class UMeshComponent* Mesh)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.TattoGlowDynamicMaterials");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.TattoGlowDynamicMaterials"));
 
-	ABP_PlayerPirate_C_TattoGlowDynamicMaterials_Params params;
+	struct
+	{
+		class UMeshComponent*          Mesh;
+	} params;
+
 	params.Mesh = Mesh;
 
 	UObject::ProcessEvent(fn, &params);
@@ -52,9 +60,13 @@ void ABP_PlayerPirate_C::TattoGlowDynamicMaterials(class UMeshComponent* Mesh)
 
 struct FVector ABP_PlayerPirate_C::GetMouthPosition()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.GetMouthPosition");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.GetMouthPosition"));
 
-	ABP_PlayerPirate_C_GetMouthPosition_Params params;
+	struct
+	{
+		struct FVector                 ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -67,9 +79,12 @@ struct FVector ABP_PlayerPirate_C::GetMouthPosition()
 
 void ABP_PlayerPirate_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.UserConstructionScript"));
 
-	ABP_PlayerPirate_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -82,9 +97,13 @@ void ABP_PlayerPirate_C::UserConstructionScript()
 
 void ABP_PlayerPirate_C::Update_Athena_Character(class AAthenaCharacter* AthenaCharacter)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.Update Athena Character");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.Update Athena Character"));
 
-	ABP_PlayerPirate_C_Update_Athena_Character_Params params;
+	struct
+	{
+		class AAthenaCharacter*        AthenaCharacter;
+	} params;
+
 	params.AthenaCharacter = AthenaCharacter;
 
 	UObject::ProcessEvent(fn, &params);
@@ -98,9 +117,13 @@ void ABP_PlayerPirate_C::Update_Athena_Character(class AAthenaCharacter* AthenaC
 
 void ABP_PlayerPirate_C::CapstanRotationSpeed(float RotationSpeed)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.CapstanRotationSpeed");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.CapstanRotationSpeed"));
 
-	ABP_PlayerPirate_C_CapstanRotationSpeed_Params params;
+	struct
+	{
+		float                          RotationSpeed;
+	} params;
+
 	params.RotationSpeed = RotationSpeed;
 
 	UObject::ProcessEvent(fn, &params);
@@ -114,9 +137,13 @@ void ABP_PlayerPirate_C::CapstanRotationSpeed(float RotationSpeed)
 
 void ABP_PlayerPirate_C::DockingInterface(const struct FBP_Docking& Docking)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.DockingInterface");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.DockingInterface"));
 
-	ABP_PlayerPirate_C_DockingInterface_Params params;
+	struct
+	{
+		struct FBP_Docking             Docking;
+	} params;
+
 	params.Docking = Docking;
 
 	UObject::ProcessEvent(fn, &params);
@@ -133,9 +160,16 @@ void ABP_PlayerPirate_C::DockingInterface(const struct FBP_Docking& Docking)
 
 void ABP_PlayerPirate_C::CapstanForce(float IndividualForce, const struct FTransform& LH_IK, const struct FTransform& RH_IK, class AActor* Actor)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.CapstanForce");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.CapstanForce"));
 
-	ABP_PlayerPirate_C_CapstanForce_Params params;
+	struct
+	{
+		float                          IndividualForce;
+		struct FTransform              LH_IK;
+		struct FTransform              RH_IK;
+		class AActor*                  Actor;
+	} params;
+
 	params.IndividualForce = IndividualForce;
 	params.LH_IK = LH_IK;
 	params.RH_IK = RH_IK;
@@ -153,9 +187,14 @@ void ABP_PlayerPirate_C::CapstanForce(float IndividualForce, const struct FTrans
 
 void ABP_PlayerPirate_C::IK_Limb_Update_Transform(TEnumAsByte<EIKLimbName> LimbId, const struct FTransform& TransformUpdate)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.IK Limb Update Transform");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.IK Limb Update Transform"));
 
-	ABP_PlayerPirate_C_IK_Limb_Update_Transform_Params params;
+	struct
+	{
+		TEnumAsByte<EIKLimbName>       LimbId;
+		struct FTransform              TransformUpdate;
+	} params;
+
 	params.LimbId = LimbId;
 	params.TransformUpdate = TransformUpdate;
 
@@ -172,9 +211,15 @@ void ABP_PlayerPirate_C::IK_Limb_Update_Transform(TEnumAsByte<EIKLimbName> LimbI
 
 void ABP_PlayerPirate_C::IK_Limb_Blend_Timing(TEnumAsByte<EIKLimbName> LimbId, float BlendIn, float BlendOut)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.IK Limb Blend Timing");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.IK Limb Blend Timing"));
 
-	ABP_PlayerPirate_C_IK_Limb_Blend_Timing_Params params;
+	struct
+	{
+		TEnumAsByte<EIKLimbName>       LimbId;
+		float                          BlendIn;
+		float                          BlendOut;
+	} params;
+
 	params.LimbId = LimbId;
 	params.BlendIn = BlendIn;
 	params.BlendOut = BlendOut;
@@ -192,9 +237,15 @@ void ABP_PlayerPirate_C::IK_Limb_Blend_Timing(TEnumAsByte<EIKLimbName> LimbId, f
 
 void ABP_PlayerPirate_C::IK_Limb_Update_Strength(TEnumAsByte<EIKLimbName> LimbId, float LocationStrength, float RotationStrength)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.IK Limb Update Strength");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.IK Limb Update Strength"));
 
-	ABP_PlayerPirate_C_IK_Limb_Update_Strength_Params params;
+	struct
+	{
+		TEnumAsByte<EIKLimbName>       LimbId;
+		float                          LocationStrength;
+		float                          RotationStrength;
+	} params;
+
 	params.LimbId = LimbId;
 	params.LocationStrength = LocationStrength;
 	params.RotationStrength = RotationStrength;
@@ -212,9 +263,15 @@ void ABP_PlayerPirate_C::IK_Limb_Update_Strength(TEnumAsByte<EIKLimbName> LimbId
 
 void ABP_PlayerPirate_C::IK_Limb_Active(TEnumAsByte<EIKLimbName> LimbId, bool Active, TEnumAsByte<ELimbIKSpace> CoordinateSpace)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.IK Limb Active");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.IK Limb Active"));
 
-	ABP_PlayerPirate_C_IK_Limb_Active_Params params;
+	struct
+	{
+		TEnumAsByte<EIKLimbName>       LimbId;
+		bool                           Active;
+		TEnumAsByte<ELimbIKSpace>      CoordinateSpace;
+	} params;
+
 	params.LimbId = LimbId;
 	params.Active = Active;
 	params.CoordinateSpace = CoordinateSpace;
@@ -232,9 +289,15 @@ void ABP_PlayerPirate_C::IK_Limb_Active(TEnumAsByte<EIKLimbName> LimbId, bool Ac
 
 void ABP_PlayerPirate_C::IK_Limb_Stretch(float ArmStretch, float SpineStretch, float LegStretch)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.IK Limb Stretch");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.IK Limb Stretch"));
 
-	ABP_PlayerPirate_C_IK_Limb_Stretch_Params params;
+	struct
+	{
+		float                          ArmStretch;
+		float                          SpineStretch;
+		float                          LegStretch;
+	} params;
+
 	params.ArmStretch = ArmStretch;
 	params.SpineStretch = SpineStretch;
 	params.LegStretch = LegStretch;
@@ -248,9 +311,12 @@ void ABP_PlayerPirate_C::IK_Limb_Stretch(float ArmStretch, float SpineStretch, f
 
 void ABP_PlayerPirate_C::ReceiveBeginPlay()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.ReceiveBeginPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.ReceiveBeginPlay"));
 
-	ABP_PlayerPirate_C_ReceiveBeginPlay_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -261,9 +327,12 @@ void ABP_PlayerPirate_C::ReceiveBeginPlay()
 
 void ABP_PlayerPirate_C::TriggerTattooGlow()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.TriggerTattooGlow");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.TriggerTattooGlow"));
 
-	ABP_PlayerPirate_C_TriggerTattooGlow_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -278,9 +347,15 @@ void ABP_PlayerPirate_C::TriggerTattooGlow()
 
 void ABP_PlayerPirate_C::ScaleMesh(const struct FVector& Scale, class UPrimitiveComponent* FirstPersonMesh, class UPrimitiveComponent* ThirdPersonMesh)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.ScaleMesh");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.ScaleMesh"));
 
-	ABP_PlayerPirate_C_ScaleMesh_Params params;
+	struct
+	{
+		struct FVector                 Scale;
+		class UPrimitiveComponent*     FirstPersonMesh;
+		class UPrimitiveComponent*     ThirdPersonMesh;
+	} params;
+
 	params.Scale = Scale;
 	params.FirstPersonMesh = FirstPersonMesh;
 	params.ThirdPersonMesh = ThirdPersonMesh;
@@ -294,9 +369,12 @@ void ABP_PlayerPirate_C::ScaleMesh(const struct FVector& Scale, class UPrimitive
 
 void ABP_PlayerPirate_C::SkipToNextMesh()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.SkipToNextMesh");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.SkipToNextMesh"));
 
-	ABP_PlayerPirate_C_SkipToNextMesh_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -316,9 +394,20 @@ void ABP_PlayerPirate_C::SkipToNextMesh()
 
 void ABP_PlayerPirate_C::SetWieldedItemMesh(class AWieldableItem* Wieldable_Item_Ref, class UStaticMesh* StaticMesh, class USkeletalMesh* SkeletalMesh, bool WieldItem, const struct FVector& ItemScale, bool UseItemScale, TArray<class UStaticMesh*>* StaticMeshArray, TArray<class USkeletalMesh*>* SkeletalMeshArray)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.SetWieldedItemMesh");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.SetWieldedItemMesh"));
 
-	ABP_PlayerPirate_C_SetWieldedItemMesh_Params params;
+	struct
+	{
+		class AWieldableItem*          Wieldable_Item_Ref;
+		class UStaticMesh*             StaticMesh;
+		class USkeletalMesh*           SkeletalMesh;
+		bool                           WieldItem;
+		TArray<class UStaticMesh*>     StaticMeshArray;
+		TArray<class USkeletalMesh*>   SkeletalMeshArray;
+		struct FVector                 ItemScale;
+		bool                           UseItemScale;
+	} params;
+
 	params.Wieldable_Item_Ref = Wieldable_Item_Ref;
 	params.StaticMesh = StaticMesh;
 	params.SkeletalMesh = SkeletalMesh;
@@ -342,9 +431,13 @@ void ABP_PlayerPirate_C::SetWieldedItemMesh(class AWieldableItem* Wieldable_Item
 
 void ABP_PlayerPirate_C::IncreaseWieldedObjectScale(const struct FVector& ItemScaleIncrement)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.IncreaseWieldedObjectScale");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.IncreaseWieldedObjectScale"));
 
-	ABP_PlayerPirate_C_IncreaseWieldedObjectScale_Params params;
+	struct
+	{
+		struct FVector                 ItemScaleIncrement;
+	} params;
+
 	params.ItemScaleIncrement = ItemScaleIncrement;
 
 	UObject::ProcessEvent(fn, &params);
@@ -358,9 +451,13 @@ void ABP_PlayerPirate_C::IncreaseWieldedObjectScale(const struct FVector& ItemSc
 
 void ABP_PlayerPirate_C::ExecuteUbergraph_BP_PlayerPirate(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PlayerPirate.BP_PlayerPirate_C.ExecuteUbergraph_BP_PlayerPirate");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PlayerPirate.BP_PlayerPirate_C.ExecuteUbergraph_BP_PlayerPirate"));
 
-	ABP_PlayerPirate_C_ExecuteUbergraph_BP_PlayerPirate_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

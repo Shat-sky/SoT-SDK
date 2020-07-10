@@ -23,7 +23,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaProjectiles.AthenaProjectilesThrottledTickCollectionAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaProjectiles.AthenaProjectilesThrottledTickCollectionAsset"));
 		return ptr;
 	}
 

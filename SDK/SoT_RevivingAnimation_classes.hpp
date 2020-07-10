@@ -23,7 +23,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class RevivingAnimation.ReviveGhostAnimationData");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class RevivingAnimation.ReviveGhostAnimationData"));
 		return ptr;
 	}
 
@@ -39,7 +39,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class RevivingAnimation.ReviveGhostAnimationDataAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class RevivingAnimation.ReviveGhostAnimationDataAsset"));
 		return ptr;
 	}
 
@@ -60,7 +60,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class RevivingAnimation.ReviveGhostAnimationInstance");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class RevivingAnimation.ReviveGhostAnimationInstance"));
 		return ptr;
 	}
 

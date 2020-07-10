@@ -17,9 +17,12 @@ namespace SDK
 
 void Awsp_bottle_burner_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function wsp_bottle_burner.wsp_bottle_burner_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function wsp_bottle_burner.wsp_bottle_burner_C.UserConstructionScript"));
 
-	Awsp_bottle_burner_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

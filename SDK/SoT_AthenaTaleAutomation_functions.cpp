@@ -19,9 +19,13 @@ namespace SDK
 
 class AAthenaPlayerCharacter* UTaleQuestAutomationService::GetPuppet()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaTaleAutomation.TaleQuestAutomationService.GetPuppet");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaTaleAutomation.TaleQuestAutomationService.GetPuppet"));
 
-	UTaleQuestAutomationService_GetPuppet_Params params;
+	struct
+	{
+		class AAthenaPlayerCharacter*  ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 

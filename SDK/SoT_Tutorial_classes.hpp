@@ -25,7 +25,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Tutorial.CompanyTutorialVoyageProgress");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tutorial.CompanyTutorialVoyageProgress"));
 		return ptr;
 	}
 
@@ -46,7 +46,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Tutorial.ContextualTutorialComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tutorial.ContextualTutorialComponent"));
 		return ptr;
 	}
 
@@ -61,7 +61,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Tutorial.OnboardingStatusInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tutorial.OnboardingStatusInterface"));
 		return ptr;
 	}
 
@@ -79,7 +79,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Tutorial.Tutorial2019Component");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tutorial.Tutorial2019Component"));
 		return ptr;
 	}
 
@@ -101,7 +101,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Tutorial.Tutorial2019ContextualDelegatingComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tutorial.Tutorial2019ContextualDelegatingComponent"));
 		return ptr;
 	}
 
@@ -116,12 +116,12 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Tutorial.Tutorial2019FunctionLibrary");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tutorial.Tutorial2019FunctionLibrary"));
 		return ptr;
 	}
 
 
-	struct FTeleportLocation STATIC_GetNearestOnboardingSpawnPoint(class AActor* CharacterToTeleport);
+	static struct FTeleportLocation GetNearestOnboardingSpawnPoint(class AActor* CharacterToTeleport);
 };
 
 
@@ -133,12 +133,12 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Tutorial.TutorialHelpersBlueprintLibrary");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tutorial.TutorialHelpersBlueprintLibrary"));
 		return ptr;
 	}
 
 
-	void STATIC_FirePromptCompleted(class UClass* AccessKey, class UObject* WorldContextObject);
+	static void FirePromptCompleted(class UClass* AccessKey, class UObject* WorldContextObject);
 };
 
 
@@ -159,7 +159,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Tutorial.TutorialManager");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tutorial.TutorialManager"));
 		return ptr;
 	}
 
@@ -180,7 +180,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Tutorial.TutorialStarter");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tutorial.TutorialStarter"));
 		return ptr;
 	}
 
@@ -195,7 +195,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Tutorial.CompanyOnboardingStarter");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tutorial.CompanyOnboardingStarter"));
 		return ptr;
 	}
 
@@ -212,7 +212,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Tutorial.MaidenVoyageStarter");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tutorial.MaidenVoyageStarter"));
 		return ptr;
 	}
 

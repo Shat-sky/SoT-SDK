@@ -29,7 +29,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("AnimBlueprintGeneratedClass BP_FishAnimGraph.BP_FishAnimGraph_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("AnimBlueprintGeneratedClass BP_FishAnimGraph.BP_FishAnimGraph_C"));
 		return ptr;
 	}
 

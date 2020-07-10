@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CrewOwnershipTracking.CrewOwnershipTrackingInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CrewOwnershipTracking.CrewOwnershipTrackingInterface"));
 		return ptr;
 	}
 
@@ -43,7 +43,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CrewOwnershipTracking.CrewOwnershipTrackingComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CrewOwnershipTracking.CrewOwnershipTrackingComponent"));
 		return ptr;
 	}
 
@@ -58,7 +58,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class CrewOwnershipTracking.CrewOwnershipTrackingControlInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CrewOwnershipTracking.CrewOwnershipTrackingControlInterface"));
 		return ptr;
 	}
 

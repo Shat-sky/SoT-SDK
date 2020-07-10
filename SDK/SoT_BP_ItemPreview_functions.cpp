@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_ItemPreview_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemPreview.BP_ItemPreview_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_ItemPreview.BP_ItemPreview_C.UserConstructionScript"));
 
-	ABP_ItemPreview_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -32,9 +35,13 @@ void ABP_ItemPreview_C::UserConstructionScript()
 
 void ABP_ItemPreview_C::ReceiveEndPlay(TEnumAsByte<EEndPlayReason> EndPlayReason)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemPreview.BP_ItemPreview_C.ReceiveEndPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_ItemPreview.BP_ItemPreview_C.ReceiveEndPlay"));
 
-	ABP_ItemPreview_C_ReceiveEndPlay_Params params;
+	struct
+	{
+		TEnumAsByte<EEndPlayReason>    EndPlayReason;
+	} params;
+
 	params.EndPlayReason = EndPlayReason;
 
 	UObject::ProcessEvent(fn, &params);
@@ -46,9 +53,12 @@ void ABP_ItemPreview_C::ReceiveEndPlay(TEnumAsByte<EEndPlayReason> EndPlayReason
 
 void ABP_ItemPreview_C::ReceiveBeginPlay()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemPreview.BP_ItemPreview_C.ReceiveBeginPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_ItemPreview.BP_ItemPreview_C.ReceiveBeginPlay"));
 
-	ABP_ItemPreview_C_ReceiveBeginPlay_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -61,9 +71,13 @@ void ABP_ItemPreview_C::ReceiveBeginPlay()
 
 void ABP_ItemPreview_C::ExecuteUbergraph_BP_ItemPreview(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemPreview.BP_ItemPreview_C.ExecuteUbergraph_BP_ItemPreview");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_ItemPreview.BP_ItemPreview_C.ExecuteUbergraph_BP_ItemPreview"));
 
-	ABP_ItemPreview_C_ExecuteUbergraph_BP_ItemPreview_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);
@@ -77,9 +91,13 @@ void ABP_ItemPreview_C::ExecuteUbergraph_BP_ItemPreview(int EntryPoint)
 
 void ABP_ItemPreview_C::PreviewShutdown__DelegateSignature(const struct FPiratePreviewShutdownEvent& Data)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemPreview.BP_ItemPreview_C.PreviewShutdown__DelegateSignature");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_ItemPreview.BP_ItemPreview_C.PreviewShutdown__DelegateSignature"));
 
-	ABP_ItemPreview_C_PreviewShutdown__DelegateSignature_Params params;
+	struct
+	{
+		struct FPiratePreviewShutdownEvent Data;
+	} params;
+
 	params.Data = Data;
 
 	UObject::ProcessEvent(fn, &params);
@@ -93,9 +111,13 @@ void ABP_ItemPreview_C::PreviewShutdown__DelegateSignature(const struct FPirateP
 
 void ABP_ItemPreview_C::PreviewReady__DelegateSignature(const struct FPiratePreviewReadyEvent& Data)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemPreview.BP_ItemPreview_C.PreviewReady__DelegateSignature");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_ItemPreview.BP_ItemPreview_C.PreviewReady__DelegateSignature"));
 
-	ABP_ItemPreview_C_PreviewReady__DelegateSignature_Params params;
+	struct
+	{
+		struct FPiratePreviewReadyEvent Data;
+	} params;
+
 	params.Data = Data;
 
 	UObject::ProcessEvent(fn, &params);
@@ -109,9 +131,13 @@ void ABP_ItemPreview_C::PreviewReady__DelegateSignature(const struct FPiratePrev
 
 void ABP_ItemPreview_C::PreviewBusy__DelegateSignature(const struct FPiratePreviewBusyEvent& Data)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ItemPreview.BP_ItemPreview_C.PreviewBusy__DelegateSignature");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_ItemPreview.BP_ItemPreview_C.PreviewBusy__DelegateSignature"));
 
-	ABP_ItemPreview_C_PreviewBusy__DelegateSignature_Params params;
+	struct
+	{
+		struct FPiratePreviewBusyEvent Data;
+	} params;
+
 	params.Data = Data;
 
 	UObject::ProcessEvent(fn, &params);

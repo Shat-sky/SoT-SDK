@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass MechanismMaterialMap.MechanismMaterialMap_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass MechanismMaterialMap.MechanismMaterialMap_C"));
 		return ptr;
 	}
 

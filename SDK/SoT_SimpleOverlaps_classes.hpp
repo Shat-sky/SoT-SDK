@@ -24,7 +24,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class SimpleOverlaps.OverlapTestActor");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class SimpleOverlaps.OverlapTestActor"));
 		return ptr;
 	}
 
@@ -39,7 +39,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class SimpleOverlaps.SimpleOverlapCollectionKey");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class SimpleOverlaps.SimpleOverlapCollectionKey"));
 		return ptr;
 	}
 
@@ -55,7 +55,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class SimpleOverlaps.SimpleOverlapComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class SimpleOverlaps.SimpleOverlapComponent"));
 		return ptr;
 	}
 
@@ -71,7 +71,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class SimpleOverlaps.TestObjectMessagingDispatcherInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class SimpleOverlaps.TestObjectMessagingDispatcherInterface"));
 		return ptr;
 	}
 
@@ -89,7 +89,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class SimpleOverlaps.TestOverlapBroadcasterActor");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class SimpleOverlaps.TestOverlapBroadcasterActor"));
 		return ptr;
 	}
 
@@ -106,7 +106,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class SimpleOverlaps.TestOverlapShapeActor");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class SimpleOverlaps.TestOverlapShapeActor"));
 		return ptr;
 	}
 
@@ -122,7 +122,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class SimpleOverlaps.TestSimpleOverlapsGameState");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class SimpleOverlaps.TestSimpleOverlapsGameState"));
 		return ptr;
 	}
 

@@ -17,9 +17,12 @@ namespace SDK
 
 void UCleanlinessComponent::OnRep_CleanlinessInfo()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Cleanliness.CleanlinessComponent.OnRep_CleanlinessInfo");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Cleanliness.CleanlinessComponent.OnRep_CleanlinessInfo"));
 
-	UCleanlinessComponent_OnRep_CleanlinessInfo_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

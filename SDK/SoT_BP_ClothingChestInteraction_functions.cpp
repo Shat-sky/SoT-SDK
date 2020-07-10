@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_ClothingChestInteraction_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ClothingChestInteraction.BP_ClothingChestInteraction_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_ClothingChestInteraction.BP_ClothingChestInteraction_C.UserConstructionScript"));
 
-	ABP_ClothingChestInteraction_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

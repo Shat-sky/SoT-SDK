@@ -17,9 +17,12 @@ namespace SDK
 
 void UFlammableComponent::OnRep_OnFire()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Fire.FlammableComponent.OnRep_OnFire");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Fire.FlammableComponent.OnRep_OnFire"));
 
-	UFlammableComponent_OnRep_OnFire_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -32,9 +35,13 @@ void UFlammableComponent::OnRep_OnFire()
 
 void UFlammableComponent::Multicast_NotifyExtinguished_RPC(const struct FVector& InExtinguishLocationWS)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Fire.FlammableComponent.Multicast_NotifyExtinguished_RPC");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Fire.FlammableComponent.Multicast_NotifyExtinguished_RPC"));
 
-	UFlammableComponent_Multicast_NotifyExtinguished_RPC_Params params;
+	struct
+	{
+		struct FVector                 InExtinguishLocationWS;
+	} params;
+
 	params.InExtinguishLocationWS = InExtinguishLocationWS;
 
 	UObject::ProcessEvent(fn, &params);
@@ -48,9 +55,13 @@ void UFlammableComponent::Multicast_NotifyExtinguished_RPC(const struct FVector&
 
 bool UFlammableComponent::IsOnFire()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Fire.FlammableComponent.IsOnFire");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Fire.FlammableComponent.IsOnFire"));
 
-	UFlammableComponent_IsOnFire_Params params;
+	struct
+	{
+		bool                           ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -63,9 +74,12 @@ bool UFlammableComponent::IsOnFire()
 
 void UFlammableComponent::IncrementFireSource()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Fire.FlammableComponent.IncrementFireSource");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Fire.FlammableComponent.IncrementFireSource"));
 
-	UFlammableComponent_IncrementFireSource_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -76,9 +90,12 @@ void UFlammableComponent::IncrementFireSource()
 
 void UFlammableComponent::DecrementFireSource()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Fire.FlammableComponent.DecrementFireSource");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Fire.FlammableComponent.DecrementFireSource"));
 
-	UFlammableComponent_DecrementFireSource_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -89,9 +106,12 @@ void UFlammableComponent::DecrementFireSource()
 
 void UFlammableInterface::IncrementFireSource()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Fire.FlammableInterface.IncrementFireSource");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Fire.FlammableInterface.IncrementFireSource"));
 
-	UFlammableInterface_IncrementFireSource_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -102,9 +122,12 @@ void UFlammableInterface::IncrementFireSource()
 
 void UFlammableInterface::DecrementFireSource()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Fire.FlammableInterface.DecrementFireSource");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Fire.FlammableInterface.DecrementFireSource"));
 
-	UFlammableInterface_DecrementFireSource_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -117,9 +140,13 @@ void UFlammableInterface::DecrementFireSource()
 
 void UFirePropagationInterface::SetAllCellsState(TEnumAsByte<EFireCellState> State)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Fire.FirePropagationInterface.SetAllCellsState");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Fire.FirePropagationInterface.SetAllCellsState"));
 
-	UFirePropagationInterface_SetAllCellsState_Params params;
+	struct
+	{
+		TEnumAsByte<EFireCellState>    State;
+	} params;
+
 	params.State = State;
 
 	UObject::ProcessEvent(fn, &params);
@@ -131,9 +158,12 @@ void UFirePropagationInterface::SetAllCellsState(TEnumAsByte<EFireCellState> Sta
 
 void UShipFirePropagationComponent::OnRep_CellData()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Fire.ShipFirePropagationComponent.OnRep_CellData");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Fire.ShipFirePropagationComponent.OnRep_CellData"));
 
-	UShipFirePropagationComponent_OnRep_CellData_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -144,9 +174,12 @@ void UShipFirePropagationComponent::OnRep_CellData()
 
 void UShipFirePropagationComponent::OnRep_CellCharringData()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Fire.ShipFirePropagationComponent.OnRep_CellCharringData");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Fire.ShipFirePropagationComponent.OnRep_CellCharringData"));
 
-	UShipFirePropagationComponent_OnRep_CellCharringData_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

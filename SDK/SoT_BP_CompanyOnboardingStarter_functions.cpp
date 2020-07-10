@@ -19,9 +19,13 @@ namespace SDK
 
 bool UBP_CompanyOnboardingStarter_C::HasPrerequisites()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_CompanyOnboardingStarter.BP_CompanyOnboardingStarter_C.HasPrerequisites");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_CompanyOnboardingStarter.BP_CompanyOnboardingStarter_C.HasPrerequisites"));
 
-	UBP_CompanyOnboardingStarter_C_HasPrerequisites_Params params;
+	struct
+	{
+		bool                           ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 

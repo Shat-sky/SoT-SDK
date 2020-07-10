@@ -22,8 +22,7 @@ enum class ECreatureNumbers : uint8_t
 	ECreatureNumbers__NewEnumerator4 = 2,
 	None01                         = 3,
 	ECreatureNumbers__NewEnumerator8 = 4,
-	None02                         = 5,
-	ByteProperty                   = 6
+	None02                         = 5
 };
 
 

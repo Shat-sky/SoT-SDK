@@ -17,9 +17,12 @@ namespace SDK
 
 void UBP_NPC_AnimatedItemInterface_C::PlayItemAnimation()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_NPC_AnimatedItemInterface.BP_NPC_AnimatedItemInterface_C.PlayItemAnimation");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_NPC_AnimatedItemInterface.BP_NPC_AnimatedItemInterface_C.PlayItemAnimation"));
 
-	UBP_NPC_AnimatedItemInterface_C_PlayItemAnimation_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

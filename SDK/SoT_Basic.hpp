@@ -120,21 +120,6 @@ public:
 	{
 		return i < Num();
 	}
-	inline T& begin()
-	{
-		if (Data[0])
-			return Data[0];
-		else
-			return nullptr;
-	}
-
-	inline T& end()
-	{
-		if (Data[Count - 1])
-			return Data[Count - 1];
-		else
-			return nullptr;
-	}
 
 private:
 	T* Data;
@@ -178,9 +163,9 @@ public:
 	}
 };
 
-	template<typename ElementType, int32_t MaxTotalElements, int32_t ElementsPerChunk>
-	class TStaticIndirectArrayThreadSafeRead
-	{
+template<typename ElementType, int32_t MaxTotalElements, int32_t ElementsPerChunk>
+class TStaticIndirectArrayThreadSafeRead
+{
 	public:
 		inline size_t Num() const
 		{
@@ -211,14 +196,14 @@ public:
 			ChunkTableSize = (MaxTotalElements + ElementsPerChunk - 1) / ElementsPerChunk
 		};
 
-		ElementType** Chunks[ChunkTableSize];
-		int32_t NumElements;
-		int32_t NumChunks;
-	};
+	ElementType** Chunks[ChunkTableSize];
+	int32_t NumElements;
+	int32_t NumChunks;
+};
 
-	using TNameEntryArray = TStaticIndirectArrayThreadSafeRead<FNameEntry, 2 * 1024 * 1024, 16384>;
+using TNameEntryArray = TStaticIndirectArrayThreadSafeRead<FNameEntry, 2 * 1024 * 1024, 16384>;
 
-	struct FName
+struct FName
 	{
 		int32_t ComparisonIndex;
 		int32_t Number;
@@ -369,48 +354,8 @@ private:
 	uint8_t value;
 };
 
-	class FScriptInterface
-	{
-	private:
-		UObject* ObjectPointer;
-		void* InterfacePointer;
-
-	public:
-		inline UObject* GetObject() const
-		{
-			return ObjectPointer;
-		}
-
-		inline UObject*& GetObjectRef()
-		{
-			return ObjectPointer;
-		}
-
-		inline void* GetInterface() const
-		{
-			return ObjectPointer != nullptr ? InterfacePointer : nullptr;
-		}
-	};
-
-	template<class InterfaceType>
-	class TScriptInterface : public FScriptInterface
-	{
-	public:
-		inline InterfaceType* operator->() const
-		{
-			return (InterfaceType*)GetInterface();
-		}
-
-		inline InterfaceType& operator*() const
-		{
-			return *((InterfaceType*)GetInterface());
-		}
-
-		inline operator bool() const
-		{
-			return GetInterface() != nullptr;
-		}
-	};{
+class FScriptInterface
+{
 private:
 	UObject* ObjectPointer;
 	void* InterfacePointer;
@@ -453,147 +398,147 @@ public:
 };
 
 struct FText
+{
+	char UnknownData[0x38];
+};
+
+struct FScriptDelegate
+{
+	char UnknownData[20];
+};
+
+struct FScriptMulticastDelegate
+{
+	char UnknownData[16];
+};
+
+template<typename Key, typename Value>
+class TMap
+{
+	char UnknownData[0x50];
+};
+
+struct FWeakObjectPtr
+{
+public:
+	inline bool SerialNumbersMatch(FUObjectItem* ObjectItem) const
 	{
-		char UnknownData[0x38];
-	};
+		return true;//ObjectItem->SerialNumber == ObjectSerialNumber;
+	}
 
-	struct FScriptDelegate
+	bool IsValid() const;
+
+	UObject* Get() const;
+
+	int32_t ObjectIndex;
+	int32_t ObjectSerialNumber;
+};
+
+template<class T, class TWeakObjectPtrBase = FWeakObjectPtr>
+struct TWeakObjectPtr : private TWeakObjectPtrBase
+{
+public:
+	inline T* Get() const
 	{
-		char UnknownData[20];
-	};
+		return (T*)TWeakObjectPtrBase::Get();
+	}
 
-	struct FScriptMulticastDelegate
+	inline T& operator*() const
 	{
-		char UnknownData[16];
-	};
+		return *Get();
+	}
 
-	template<typename Key, typename Value>
-	class TMap
+	inline T* operator->() const
 	{
-		char UnknownData[0x50];
-	};
+		return Get();
+	}
 
-	struct FWeakObjectPtr
+	inline bool IsValid() const
 	{
-	public:
-		inline bool SerialNumbersMatch(FUObjectItem* ObjectItem) const
-		{
-			return true;//ObjectItem->SerialNumber == ObjectSerialNumber;
-		}
+		return TWeakObjectPtrBase::IsValid();
+	}
+};
 
-		bool IsValid() const;
-
-		UObject* Get() const;
-
-		int32_t ObjectIndex;
-		int32_t ObjectSerialNumber;
-	};
-
-	template<class T, class TWeakObjectPtrBase = FWeakObjectPtr>
-	struct TWeakObjectPtr : private TWeakObjectPtrBase
+template<class T, class TBASE>
+class TAutoPointer : public TBASE
+{
+public:
+	inline operator T* () const
 	{
-	public:
-		inline T* Get() const
-		{
-			return (T*)TWeakObjectPtrBase::Get();
-		}
+		return TBASE::Get();
+	}
 
-		inline T& operator*() const
-		{
-			return *Get();
-		}
-
-		inline T* operator->() const
-		{
-			return Get();
-		}
-
-		inline bool IsValid() const
-		{
-			return TWeakObjectPtrBase::IsValid();
-		}
-	};
-
-	template<class T, class TBASE>
-	class TAutoPointer : public TBASE
+	inline operator const T* () const
 	{
-	public:
-		inline operator T* () const
-		{
-			return TBASE::Get();
-		}
+		return (const T*)TBASE::Get();
+	}
 
-		inline operator const T* () const
-		{
-			return (const T*)TBASE::Get();
-		}
-
-		explicit inline operator bool() const
-		{
-			return TBASE::Get() != nullptr;
-		}
-	};
-
-	template<class T>
-	class TAutoWeakObjectPtr : public TAutoPointer<T, TWeakObjectPtr<T>>
+	explicit inline operator bool() const
 	{
-	public:
-	};
+		return TBASE::Get() != nullptr;
+	}
+};
 
-	template<typename TObjectID>
-	class TPersistentObjectPtr
-	{
-	public:
-		FWeakObjectPtr WeakPtr;
-		int32_t TagAtLastTest;
-		TObjectID ObjectID;
-	};
+template<class T>
+class TAutoWeakObjectPtr : public TAutoPointer<T, TWeakObjectPtr<T>>
+{
+public:
+};
 
-	struct FStringAssetReference_
-	{
-		char UnknownData[0x10];
-	};
+template<typename TObjectID>
+class TPersistentObjectPtr
+{
+public:
+	FWeakObjectPtr WeakPtr;
+	int32_t TagAtLastTest;
+	TObjectID ObjectID;
+};
 
-	class FAssetPtr : public TPersistentObjectPtr<FStringAssetReference_>
-	{
+struct FStringAssetReference_
+{
+	char UnknownData[0x10];
+};
 
-	};
+class FAssetPtr : public TPersistentObjectPtr<FStringAssetReference_>
+{
 
-	template<typename ObjectType>
-	class TAssetPtr : FAssetPtr
-	{
+};
 
-	};
+template<typename ObjectType>
+class TAssetPtr : FAssetPtr
+{
 
-	struct FSoftObjectPath
-	{
-		FName AssetPathName;
-		FString SubPathString;
-	};
+};
 
-	class FSoftObjectPtr : public TPersistentObjectPtr<FSoftObjectPath>
-	{
+struct FSoftObjectPath
+{
+	FName AssetPathName;
+	FString SubPathString;
+};
 
-	};
+class FSoftObjectPtr : public TPersistentObjectPtr<FSoftObjectPath>
+{
 
-	template<typename ObjectType>
-	class TSoftObjectPtr : FSoftObjectPtr
-	{
+};
 
-	};
+template<typename ObjectType>
+class TSoftObjectPtr : FSoftObjectPtr
+{
 
-	struct FUniqueObjectGuid_
-	{
-		char UnknownData[0x10];
-	};
+};
 
-	class FLazyObjectPtr : public TPersistentObjectPtr<FUniqueObjectGuid_>
-	{
+struct FUniqueObjectGuid_
+{
+	char UnknownData[0x10];
+};
 
-	};
+class FLazyObjectPtr : public TPersistentObjectPtr<FUniqueObjectGuid_>
+{
 
-	template<typename ObjectType>
-	class TLazyObjectPtr : FLazyObjectPtr
+};
+
+template<typename ObjectType>
+class TLazyObjectPtr : FLazyObjectPtr
 {
 
 };

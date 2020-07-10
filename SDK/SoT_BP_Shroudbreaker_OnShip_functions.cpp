@@ -19,9 +19,13 @@ namespace SDK
 
 class UWwiseEmitterComponent* ABP_Shroudbreaker_OnShip_C::GetShroudBreakerObjectEmitterComponent()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.GetShroudBreakerObjectEmitterComponent");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.GetShroudBreakerObjectEmitterComponent"));
 
-	ABP_Shroudbreaker_OnShip_C_GetShroudBreakerObjectEmitterComponent_Params params;
+	struct
+	{
+		class UWwiseEmitterComponent*  ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -36,9 +40,13 @@ class UWwiseEmitterComponent* ABP_Shroudbreaker_OnShip_C::GetShroudBreakerObject
 
 void ABP_Shroudbreaker_OnShip_C::GetShipHullAudio(class AShipHullAudio** ShipHullAudioRef)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.GetShipHullAudio");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.GetShipHullAudio"));
 
-	ABP_Shroudbreaker_OnShip_C_GetShipHullAudio_Params params;
+	struct
+	{
+		class AShipHullAudio*          ShipHullAudioRef;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -52,9 +60,12 @@ void ABP_Shroudbreaker_OnShip_C::GetShipHullAudio(class AShipHullAudio** ShipHul
 
 void ABP_Shroudbreaker_OnShip_C::OnRep_ShroudBreakerDeactivate()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnRep_ShroudBreakerDeactivate");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnRep_ShroudBreakerDeactivate"));
 
-	ABP_Shroudbreaker_OnShip_C_OnRep_ShroudBreakerDeactivate_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -65,9 +76,12 @@ void ABP_Shroudbreaker_OnShip_C::OnRep_ShroudBreakerDeactivate()
 
 void ABP_Shroudbreaker_OnShip_C::OnRep_ShroudBreakerEffectsActive()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnRep_ShroudBreakerEffectsActive");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnRep_ShroudBreakerEffectsActive"));
 
-	ABP_Shroudbreaker_OnShip_C_OnRep_ShroudBreakerEffectsActive_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -78,9 +92,12 @@ void ABP_Shroudbreaker_OnShip_C::OnRep_ShroudBreakerEffectsActive()
 
 void ABP_Shroudbreaker_OnShip_C::OnRep_MusicZoneActive()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnRep_MusicZoneActive");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnRep_MusicZoneActive"));
 
-	ABP_Shroudbreaker_OnShip_C_OnRep_MusicZoneActive_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -94,9 +111,14 @@ void ABP_Shroudbreaker_OnShip_C::OnRep_MusicZoneActive()
 
 void ABP_Shroudbreaker_OnShip_C::UnregisterShipEvent(struct FObjectMessagingDispatcherHandle* Dispatcher, struct FObjectMessagingHandle* Handle)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.UnregisterShipEvent");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.UnregisterShipEvent"));
 
-	ABP_Shroudbreaker_OnShip_C_UnregisterShipEvent_Params params;
+	struct
+	{
+		struct FObjectMessagingDispatcherHandle Dispatcher;
+		struct FObjectMessagingHandle  Handle;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -115,9 +137,14 @@ void ABP_Shroudbreaker_OnShip_C::UnregisterShipEvent(struct FObjectMessagingDisp
 
 void ABP_Shroudbreaker_OnShip_C::GetObjMsgDispatcher(struct FObjectMessagingDispatcherHandle* Dispatcher, bool* Success)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.GetObjMsgDispatcher");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.GetObjMsgDispatcher"));
 
-	ABP_Shroudbreaker_OnShip_C_GetObjMsgDispatcher_Params params;
+	struct
+	{
+		struct FObjectMessagingDispatcherHandle Dispatcher;
+		bool                           Success;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -133,9 +160,12 @@ void ABP_Shroudbreaker_OnShip_C::GetObjMsgDispatcher(struct FObjectMessagingDisp
 
 void ABP_Shroudbreaker_OnShip_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.UserConstructionScript"));
 
-	ABP_Shroudbreaker_OnShip_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -146,9 +176,12 @@ void ABP_Shroudbreaker_OnShip_C::UserConstructionScript()
 
 void ABP_Shroudbreaker_OnShip_C::ReceiveBeginPlay()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.ReceiveBeginPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.ReceiveBeginPlay"));
 
-	ABP_Shroudbreaker_OnShip_C_ReceiveBeginPlay_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -161,9 +194,13 @@ void ABP_Shroudbreaker_OnShip_C::ReceiveBeginPlay()
 
 void ABP_Shroudbreaker_OnShip_C::ReceiveEndPlay(TEnumAsByte<EEndPlayReason> EndPlayReason)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.ReceiveEndPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.ReceiveEndPlay"));
 
-	ABP_Shroudbreaker_OnShip_C_ReceiveEndPlay_Params params;
+	struct
+	{
+		TEnumAsByte<EEndPlayReason>    EndPlayReason;
+	} params;
+
 	params.EndPlayReason = EndPlayReason;
 
 	UObject::ProcessEvent(fn, &params);
@@ -177,9 +214,13 @@ void ABP_Shroudbreaker_OnShip_C::ReceiveEndPlay(TEnumAsByte<EEndPlayReason> EndP
 
 void ABP_Shroudbreaker_OnShip_C::OnShroudbreakerActivated(const struct FShroudBreakerActivatedEvent& Ev)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnShroudbreakerActivated");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnShroudbreakerActivated"));
 
-	ABP_Shroudbreaker_OnShip_C_OnShroudbreakerActivated_Params params;
+	struct
+	{
+		struct FShroudBreakerActivatedEvent Ev;
+	} params;
+
 	params.Ev = Ev;
 
 	UObject::ProcessEvent(fn, &params);
@@ -193,9 +234,13 @@ void ABP_Shroudbreaker_OnShip_C::OnShroudbreakerActivated(const struct FShroudBr
 
 void ABP_Shroudbreaker_OnShip_C::OnShroudbreakerDeactivated(const struct FShroudBreakerDeactivatedEvent& Ev)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnShroudbreakerDeactivated");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnShroudbreakerDeactivated"));
 
-	ABP_Shroudbreaker_OnShip_C_OnShroudbreakerDeactivated_Params params;
+	struct
+	{
+		struct FShroudBreakerDeactivatedEvent Ev;
+	} params;
+
 	params.Ev = Ev;
 
 	UObject::ProcessEvent(fn, &params);
@@ -209,9 +254,13 @@ void ABP_Shroudbreaker_OnShip_C::OnShroudbreakerDeactivated(const struct FShroud
 
 void ABP_Shroudbreaker_OnShip_C::OnShipDestroyed(const struct FEventShipDestroyed& Ev)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnShipDestroyed");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnShipDestroyed"));
 
-	ABP_Shroudbreaker_OnShip_C_OnShipDestroyed_Params params;
+	struct
+	{
+		struct FEventShipDestroyed     Ev;
+	} params;
+
 	params.Ev = Ev;
 
 	UObject::ProcessEvent(fn, &params);
@@ -225,9 +274,13 @@ void ABP_Shroudbreaker_OnShip_C::OnShipDestroyed(const struct FEventShipDestroye
 
 void ABP_Shroudbreaker_OnShip_C::OnActivateEffects(const struct FShroudBreakerActivateEffectsEvent& Ev)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnActivateEffects");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnActivateEffects"));
 
-	ABP_Shroudbreaker_OnShip_C_OnActivateEffects_Params params;
+	struct
+	{
+		struct FShroudBreakerActivateEffectsEvent Ev;
+	} params;
+
 	params.Ev = Ev;
 
 	UObject::ProcessEvent(fn, &params);
@@ -241,9 +294,13 @@ void ABP_Shroudbreaker_OnShip_C::OnActivateEffects(const struct FShroudBreakerAc
 
 void ABP_Shroudbreaker_OnShip_C::OnDeactivateEffects(const struct FShroudBreakerDeactivateEffectsEvent& Ev)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnDeactivateEffects");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnDeactivateEffects"));
 
-	ABP_Shroudbreaker_OnShip_C_OnDeactivateEffects_Params params;
+	struct
+	{
+		struct FShroudBreakerDeactivateEffectsEvent Ev;
+	} params;
+
 	params.Ev = Ev;
 
 	UObject::ProcessEvent(fn, &params);
@@ -257,9 +314,13 @@ void ABP_Shroudbreaker_OnShip_C::OnDeactivateEffects(const struct FShroudBreaker
 
 void ABP_Shroudbreaker_OnShip_C::PlayerEnteredTP(const struct FEventPlayerEnteredIslandVicinity& Ev)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.PlayerEnteredTP");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.PlayerEnteredTP"));
 
-	ABP_Shroudbreaker_OnShip_C_PlayerEnteredTP_Params params;
+	struct
+	{
+		struct FEventPlayerEnteredIslandVicinity Ev;
+	} params;
+
 	params.Ev = Ev;
 
 	UObject::ProcessEvent(fn, &params);
@@ -273,9 +334,13 @@ void ABP_Shroudbreaker_OnShip_C::PlayerEnteredTP(const struct FEventPlayerEntere
 
 void ABP_Shroudbreaker_OnShip_C::PlayerLeftTP(const struct FEventPlayerLeftIslandVicinity& Ev)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.PlayerLeftTP");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.PlayerLeftTP"));
 
-	ABP_Shroudbreaker_OnShip_C_PlayerLeftTP_Params params;
+	struct
+	{
+		struct FEventPlayerLeftIslandVicinity Ev;
+	} params;
+
 	params.Ev = Ev;
 
 	UObject::ProcessEvent(fn, &params);
@@ -287,9 +352,12 @@ void ABP_Shroudbreaker_OnShip_C::PlayerLeftTP(const struct FEventPlayerLeftIslan
 
 void ABP_Shroudbreaker_OnShip_C::OnRepFunctionDeactivateShroudBreaker()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnRepFunctionDeactivateShroudBreaker");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnRepFunctionDeactivateShroudBreaker"));
 
-	ABP_Shroudbreaker_OnShip_C_OnRepFunctionDeactivateShroudBreaker_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -300,9 +368,12 @@ void ABP_Shroudbreaker_OnShip_C::OnRepFunctionDeactivateShroudBreaker()
 
 void ABP_Shroudbreaker_OnShip_C::OnShroudBreakerActivationStateChange()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnShroudBreakerActivationStateChange");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.OnShroudBreakerActivationStateChange"));
 
-	ABP_Shroudbreaker_OnShip_C_OnShroudBreakerActivationStateChange_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -313,9 +384,12 @@ void ABP_Shroudbreaker_OnShip_C::OnShroudBreakerActivationStateChange()
 
 void ABP_Shroudbreaker_OnShip_C::Stage_4_Activation()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.Stage 4 Activation");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.Stage 4 Activation"));
 
-	ABP_Shroudbreaker_OnShip_C_Stage_4_Activation_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -326,9 +400,12 @@ void ABP_Shroudbreaker_OnShip_C::Stage_4_Activation()
 
 void ABP_Shroudbreaker_OnShip_C::Stage_3_Activation()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.Stage 3 Activation");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.Stage 3 Activation"));
 
-	ABP_Shroudbreaker_OnShip_C_Stage_3_Activation_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -339,9 +416,12 @@ void ABP_Shroudbreaker_OnShip_C::Stage_3_Activation()
 
 void ABP_Shroudbreaker_OnShip_C::Stage_2_Activation()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.Stage 2 Activation");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.Stage 2 Activation"));
 
-	ABP_Shroudbreaker_OnShip_C_Stage_2_Activation_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -352,9 +432,12 @@ void ABP_Shroudbreaker_OnShip_C::Stage_2_Activation()
 
 void ABP_Shroudbreaker_OnShip_C::Stage1Activation()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.Stage1Activation");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.Stage1Activation"));
 
-	ABP_Shroudbreaker_OnShip_C_Stage1Activation_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -365,9 +448,12 @@ void ABP_Shroudbreaker_OnShip_C::Stage1Activation()
 
 void ABP_Shroudbreaker_OnShip_C::Deactivate_All_VFX_and_SFX()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.Deactivate All VFX and SFX");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.Deactivate All VFX and SFX"));
 
-	ABP_Shroudbreaker_OnShip_C_Deactivate_All_VFX_and_SFX_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -378,9 +464,12 @@ void ABP_Shroudbreaker_OnShip_C::Deactivate_All_VFX_and_SFX()
 
 void ABP_Shroudbreaker_OnShip_C::Deactivation_Stage_4()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.Deactivation Stage 4");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.Deactivation Stage 4"));
 
-	ABP_Shroudbreaker_OnShip_C_Deactivation_Stage_4_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -391,9 +480,12 @@ void ABP_Shroudbreaker_OnShip_C::Deactivation_Stage_4()
 
 void ABP_Shroudbreaker_OnShip_C::Deactivation_Stage_3()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.Deactivation Stage 3");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.Deactivation Stage 3"));
 
-	ABP_Shroudbreaker_OnShip_C_Deactivation_Stage_3_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -404,9 +496,12 @@ void ABP_Shroudbreaker_OnShip_C::Deactivation_Stage_3()
 
 void ABP_Shroudbreaker_OnShip_C::Deactivation_Stage_2()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.Deactivation Stage 2");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.Deactivation Stage 2"));
 
-	ABP_Shroudbreaker_OnShip_C_Deactivation_Stage_2_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -417,9 +512,12 @@ void ABP_Shroudbreaker_OnShip_C::Deactivation_Stage_2()
 
 void ABP_Shroudbreaker_OnShip_C::Deactivation_Stage_1()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.Deactivation Stage 1");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.Deactivation Stage 1"));
 
-	ABP_Shroudbreaker_OnShip_C_Deactivation_Stage_1_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -432,9 +530,13 @@ void ABP_Shroudbreaker_OnShip_C::Deactivation_Stage_1()
 
 void ABP_Shroudbreaker_OnShip_C::ExecuteUbergraph_BP_Shroudbreaker_OnShip(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.ExecuteUbergraph_BP_Shroudbreaker_OnShip");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip.BP_Shroudbreaker_OnShip_C.ExecuteUbergraph_BP_Shroudbreaker_OnShip"));
 
-	ABP_Shroudbreaker_OnShip_C_ExecuteUbergraph_BP_Shroudbreaker_OnShip_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

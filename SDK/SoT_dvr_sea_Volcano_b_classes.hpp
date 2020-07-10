@@ -78,7 +78,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass dvr_sea_Volcano_b.dvr_sea_Volcano_b_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass dvr_sea_Volcano_b.dvr_sea_Volcano_b_C"));
 		return ptr;
 	}
 

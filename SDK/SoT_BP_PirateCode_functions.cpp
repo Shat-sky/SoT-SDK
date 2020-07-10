@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_PirateCode_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_PirateCode.BP_PirateCode_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PirateCode.BP_PirateCode_C.UserConstructionScript"));
 
-	ABP_PirateCode_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

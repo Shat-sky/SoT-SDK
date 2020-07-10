@@ -23,9 +23,17 @@ namespace SDK
 
 void UBP_HullInterface_C::Apply_Hit(const struct FVector& HitPosition, const struct FVector& HitNormal, float HitStrength, bool Has_Decal, class UDecalComponent** Decal)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_HullInterface.BP_HullInterface_C.Apply Hit");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_HullInterface.BP_HullInterface_C.Apply Hit"));
 
-	UBP_HullInterface_C_Apply_Hit_Params params;
+	struct
+	{
+		struct FVector                 HitPosition;
+		struct FVector                 HitNormal;
+		float                          HitStrength;
+		bool                           Has_Decal;
+		class UDecalComponent*         Decal;
+	} params;
+
 	params.HitPosition = HitPosition;
 	params.HitNormal = HitNormal;
 	params.HitStrength = HitStrength;

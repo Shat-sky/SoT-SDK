@@ -23,7 +23,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaInput.NotificationInputId");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaInput.NotificationInputId"));
 		return ptr;
 	}
 
@@ -39,7 +39,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaInput.CompositeInputHandler");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaInput.CompositeInputHandler"));
 		return ptr;
 	}
 
@@ -58,7 +58,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaInput.AnalogInputId");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaInput.AnalogInputId"));
 		return ptr;
 	}
 
@@ -75,7 +75,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaInput.InputBinder");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaInput.InputBinder"));
 		return ptr;
 	}
 
@@ -95,7 +95,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaInput.InputHandlerInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaInput.InputHandlerInterface"));
 		return ptr;
 	}
 
@@ -113,7 +113,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaInput.TestAnalogInputId");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaInput.TestAnalogInputId"));
 		return ptr;
 	}
 
@@ -128,7 +128,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaInput.TestAnalogInput2Id");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaInput.TestAnalogInput2Id"));
 		return ptr;
 	}
 
@@ -144,7 +144,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaInput.CompositeInputDelegatorTestsCallbackHelper");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaInput.CompositeInputDelegatorTestsCallbackHelper"));
 		return ptr;
 	}
 
@@ -165,7 +165,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaInput.MockDerivedCompositeInputHandler");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaInput.MockDerivedCompositeInputHandler"));
 		return ptr;
 	}
 
@@ -180,12 +180,12 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaInput.InputHandlerFunctionLibrary");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaInput.InputHandlerFunctionLibrary"));
 		return ptr;
 	}
 
 
-	class UCompositeInputHandler* STATIC_MakeCompositeInputHandler();
+	static class UCompositeInputHandler* MakeCompositeInputHandler();
 };
 
 
@@ -197,7 +197,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaInput.MockInputHandlerCharacter");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaInput.MockInputHandlerCharacter"));
 		return ptr;
 	}
 
@@ -212,7 +212,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaInput.NamedNotificationInputInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaInput.NamedNotificationInputInterface"));
 		return ptr;
 	}
 
@@ -231,7 +231,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaInput.NamedNotificationInputComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaInput.NamedNotificationInputComponent"));
 		return ptr;
 	}
 
@@ -246,7 +246,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaInput.PressedNotificationInputId");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaInput.PressedNotificationInputId"));
 		return ptr;
 	}
 
@@ -261,7 +261,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaInput.ReleasedNotificationInputId");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaInput.ReleasedNotificationInputId"));
 		return ptr;
 	}
 
@@ -276,7 +276,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaInput.TestNotificationInput2Id");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaInput.TestNotificationInput2Id"));
 		return ptr;
 	}
 
@@ -291,7 +291,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaInput.TestNotificationInputId");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaInput.TestNotificationInputId"));
 		return ptr;
 	}
 
@@ -306,7 +306,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaInput.ReceivesInputInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaInput.ReceivesInputInterface"));
 		return ptr;
 	}
 

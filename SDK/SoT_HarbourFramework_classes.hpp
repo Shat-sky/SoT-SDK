@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class HarbourFramework.HarbourInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class HarbourFramework.HarbourInterface"));
 		return ptr;
 	}
 
@@ -39,7 +39,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class HarbourFramework.HarbourComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class HarbourFramework.HarbourComponent"));
 		return ptr;
 	}
 
@@ -54,7 +54,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class HarbourFramework.HarbourServiceInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class HarbourFramework.HarbourServiceInterface"));
 		return ptr;
 	}
 
@@ -70,7 +70,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class HarbourFramework.HarbourService");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class HarbourFramework.HarbourService"));
 		return ptr;
 	}
 

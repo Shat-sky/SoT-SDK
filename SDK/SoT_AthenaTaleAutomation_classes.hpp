@@ -26,7 +26,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationService");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationService"));
 		return ptr;
 	}
 
@@ -43,7 +43,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationStep");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationStep"));
 		return ptr;
 	}
 
@@ -59,7 +59,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationAwaitStep");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationAwaitStep"));
 		return ptr;
 	}
 
@@ -75,7 +75,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationAwaitAICharacterStep");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationAwaitAICharacterStep"));
 		return ptr;
 	}
 
@@ -91,7 +91,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationAwaitAICharacterStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationAwaitAICharacterStepDesc"));
 		return ptr;
 	}
 
@@ -107,7 +107,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationAwaitAISpawnerStep");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationAwaitAISpawnerStep"));
 		return ptr;
 	}
 
@@ -124,7 +124,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationAwaitAISpawnerStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationAwaitAISpawnerStepDesc"));
 		return ptr;
 	}
 
@@ -141,7 +141,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationAwaitBuriedItemStep");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationAwaitBuriedItemStep"));
 		return ptr;
 	}
 
@@ -159,7 +159,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationAwaitBuriedItemStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationAwaitBuriedItemStepDesc"));
 		return ptr;
 	}
 
@@ -176,7 +176,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationAwaitSpawnStep");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationAwaitSpawnStep"));
 		return ptr;
 	}
 
@@ -192,7 +192,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationAwaitSpawnStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationAwaitSpawnStepDesc"));
 		return ptr;
 	}
 
@@ -208,7 +208,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationAwaitActorFromVariableStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationAwaitActorFromVariableStepDesc"));
 		return ptr;
 	}
 
@@ -224,7 +224,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationAwaitActorStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationAwaitActorStepDesc"));
 		return ptr;
 	}
 
@@ -240,7 +240,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationAwaitItemFromVariableStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationAwaitItemFromVariableStepDesc"));
 		return ptr;
 	}
 
@@ -256,7 +256,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationAwaitItemStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationAwaitItemStepDesc"));
 		return ptr;
 	}
 
@@ -272,7 +272,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationAwaitVaultAssignmentStep");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationAwaitVaultAssignmentStep"));
 		return ptr;
 	}
 
@@ -289,7 +289,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationAwaitVaultAssignmentStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationAwaitVaultAssignmentStepDesc"));
 		return ptr;
 	}
 
@@ -306,7 +306,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationCompleteVaultStep");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationCompleteVaultStep"));
 		return ptr;
 	}
 
@@ -322,7 +322,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationCompleteVaultStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationCompleteVaultStepDesc"));
 		return ptr;
 	}
 
@@ -338,7 +338,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationHandInStep");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationHandInStep"));
 		return ptr;
 	}
 
@@ -355,7 +355,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationHandInStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationHandInStepDesc"));
 		return ptr;
 	}
 
@@ -373,7 +373,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationKillAIService");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationKillAIService"));
 		return ptr;
 	}
 
@@ -389,7 +389,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationKillAIServiceDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationKillAIServiceDesc"));
 		return ptr;
 	}
 
@@ -405,7 +405,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationPickupItemStep");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationPickupItemStep"));
 		return ptr;
 	}
 
@@ -421,7 +421,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationPickupItemStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationPickupItemStepDesc"));
 		return ptr;
 	}
 
@@ -439,7 +439,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationRootStep");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationRootStep"));
 		return ptr;
 	}
 
@@ -456,7 +456,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationRootStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationRootStepDesc"));
 		return ptr;
 	}
 
@@ -471,7 +471,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationServiceDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationServiceDesc"));
 		return ptr;
 	}
 
@@ -488,7 +488,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationSkipAnimationService");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationSkipAnimationService"));
 		return ptr;
 	}
 
@@ -503,7 +503,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationSkipAnimationServiceDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationSkipAnimationServiceDesc"));
 		return ptr;
 	}
 
@@ -519,7 +519,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationStopSceneDialogueStep");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationStopSceneDialogueStep"));
 		return ptr;
 	}
 
@@ -535,7 +535,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationTakeChestItemStep");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationTakeChestItemStep"));
 		return ptr;
 	}
 
@@ -551,7 +551,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationTakeChestLayerStep");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationTakeChestLayerStep"));
 		return ptr;
 	}
 
@@ -567,7 +567,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationTakeCollectableObjectStep");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationTakeCollectableObjectStep"));
 		return ptr;
 	}
 
@@ -583,7 +583,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationTeleportPuppetStep");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationTeleportPuppetStep"));
 		return ptr;
 	}
 
@@ -599,7 +599,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationUnlockStep");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationUnlockStep"));
 		return ptr;
 	}
 
@@ -615,7 +615,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationStopSceneDialogueStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationStopSceneDialogueStepDesc"));
 		return ptr;
 	}
 
@@ -633,7 +633,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationTakeChestItemStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationTakeChestItemStepDesc"));
 		return ptr;
 	}
 
@@ -650,7 +650,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationTakeChestLayerStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationTakeChestLayerStepDesc"));
 		return ptr;
 	}
 
@@ -666,7 +666,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationTakeCollectableObjectStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationTakeCollectableObjectStepDesc"));
 		return ptr;
 	}
 
@@ -682,7 +682,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationTeleportPuppetToLocationStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationTeleportPuppetToLocationStepDesc"));
 		return ptr;
 	}
 
@@ -699,7 +699,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationTeleportPuppetToPositionStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationTeleportPuppetToPositionStepDesc"));
 		return ptr;
 	}
 
@@ -716,7 +716,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaTaleAutomation.TaleQuestAutomationUnlockStepDesc");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaTaleAutomation.TaleQuestAutomationUnlockStepDesc"));
 		return ptr;
 	}
 

@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass Title_AF_LegendarySeaDog.Title_AF_LegendarySeaDog_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass Title_AF_LegendarySeaDog.Title_AF_LegendarySeaDog_C"));
 		return ptr;
 	}
 

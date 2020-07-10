@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ShortRangeMarkerFramework.ShortRangeMarkerInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ShortRangeMarkerFramework.ShortRangeMarkerInterface"));
 		return ptr;
 	}
 
@@ -44,7 +44,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ShortRangeMarkerFramework.ShortRangeMarker");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ShortRangeMarkerFramework.ShortRangeMarker"));
 		return ptr;
 	}
 
@@ -61,12 +61,12 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ShortRangeMarkerFramework.ShortRangeMarkerBlueprintFunctionLibrary");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ShortRangeMarkerFramework.ShortRangeMarkerBlueprintFunctionLibrary"));
 		return ptr;
 	}
 
 
-	void STATIC_RegisterActorsWithShortRangeMarker(class UObject* WorldContextObject, class AActor* InMarker, TArray<class AActor*>* InActors);
+	static void RegisterActorsWithShortRangeMarker(class UObject* WorldContextObject, class AActor* InMarker, TArray<class AActor*>* InActors);
 };
 
 

@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass BP_Emote_Wave_Desc.BP_Emote_Wave_Desc_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass BP_Emote_Wave_Desc.BP_Emote_Wave_Desc_C"));
 		return ptr;
 	}
 

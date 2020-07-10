@@ -17,9 +17,12 @@ namespace SDK
 
 void UBP_FishAnimGraph_C::AnimNotify_StartJump()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FishAnimGraph.BP_FishAnimGraph_C.AnimNotify_StartJump");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FishAnimGraph.BP_FishAnimGraph_C.AnimNotify_StartJump"));
 
-	UBP_FishAnimGraph_C_AnimNotify_StartJump_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -30,9 +33,12 @@ void UBP_FishAnimGraph_C::AnimNotify_StartJump()
 
 void UBP_FishAnimGraph_C::AnimNotify_EndJump()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FishAnimGraph.BP_FishAnimGraph_C.AnimNotify_EndJump");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FishAnimGraph.BP_FishAnimGraph_C.AnimNotify_EndJump"));
 
-	UBP_FishAnimGraph_C_AnimNotify_EndJump_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -45,9 +51,13 @@ void UBP_FishAnimGraph_C::AnimNotify_EndJump()
 
 void UBP_FishAnimGraph_C::ExecuteUbergraph_BP_FishAnimGraph(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FishAnimGraph.BP_FishAnimGraph_C.ExecuteUbergraph_BP_FishAnimGraph");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FishAnimGraph.BP_FishAnimGraph_C.ExecuteUbergraph_BP_FishAnimGraph"));
 
-	UBP_FishAnimGraph_C_ExecuteUbergraph_BP_FishAnimGraph_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

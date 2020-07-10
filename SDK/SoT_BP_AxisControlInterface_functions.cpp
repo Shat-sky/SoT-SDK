@@ -19,9 +19,13 @@ namespace SDK
 
 void UBP_AxisControlInterface_C::StickInput(float StickInputX)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_AxisControlInterface.BP_AxisControlInterface_C.StickInput");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_AxisControlInterface.BP_AxisControlInterface_C.StickInput"));
 
-	UBP_AxisControlInterface_C_StickInput_Params params;
+	struct
+	{
+		float                          StickInputX;
+	} params;
+
 	params.StickInputX = StickInputX;
 
 	UObject::ProcessEvent(fn, &params);

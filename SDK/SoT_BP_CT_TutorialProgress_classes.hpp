@@ -30,7 +30,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass BP_CT_TutorialProgress.BP_CT_TutorialProgress_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass BP_CT_TutorialProgress.BP_CT_TutorialProgress_C"));
 		return ptr;
 	}
 

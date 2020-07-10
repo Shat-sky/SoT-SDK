@@ -19,9 +19,13 @@ namespace SDK
 
 void UBoxCollisionExtentAdjustOverTimeComponent::SetBoxCollisionToAdjust(class UBoxComponent* InBoxComponent)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaEngine.BoxCollisionExtentAdjustOverTimeComponent.SetBoxCollisionToAdjust");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaEngine.BoxCollisionExtentAdjustOverTimeComponent.SetBoxCollisionToAdjust"));
 
-	UBoxCollisionExtentAdjustOverTimeComponent_SetBoxCollisionToAdjust_Params params;
+	struct
+	{
+		class UBoxComponent*           InBoxComponent;
+	} params;
+
 	params.InBoxComponent = InBoxComponent;
 
 	UObject::ProcessEvent(fn, &params);
@@ -35,9 +39,13 @@ void UBoxCollisionExtentAdjustOverTimeComponent::SetBoxCollisionToAdjust(class U
 
 void UBoxedRpcDispatcherComponent::Server_SendRpc(const struct FSerialisedRpc& Event)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaEngine.BoxedRpcDispatcherComponent.Server_SendRpc");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaEngine.BoxedRpcDispatcherComponent.Server_SendRpc"));
 
-	UBoxedRpcDispatcherComponent_Server_SendRpc_Params params;
+	struct
+	{
+		struct FSerialisedRpc          Event;
+	} params;
+
 	params.Event = Event;
 
 	UObject::ProcessEvent(fn, &params);
@@ -51,9 +59,13 @@ void UBoxedRpcDispatcherComponent::Server_SendRpc(const struct FSerialisedRpc& E
 
 void UBoxedRpcDispatcherComponent::NetMulticastExcludeServer_SendRpc(const struct FSerialisedRpc& Event)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaEngine.BoxedRpcDispatcherComponent.NetMulticastExcludeServer_SendRpc");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaEngine.BoxedRpcDispatcherComponent.NetMulticastExcludeServer_SendRpc"));
 
-	UBoxedRpcDispatcherComponent_NetMulticastExcludeServer_SendRpc_Params params;
+	struct
+	{
+		struct FSerialisedRpc          Event;
+	} params;
+
 	params.Event = Event;
 
 	UObject::ProcessEvent(fn, &params);
@@ -67,9 +79,13 @@ void UBoxedRpcDispatcherComponent::NetMulticastExcludeServer_SendRpc(const struc
 
 void UBoxedRpcDispatcherComponent::Client_SendRpc(const struct FSerialisedRpc& Event)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaEngine.BoxedRpcDispatcherComponent.Client_SendRpc");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaEngine.BoxedRpcDispatcherComponent.Client_SendRpc"));
 
-	UBoxedRpcDispatcherComponent_Client_SendRpc_Params params;
+	struct
+	{
+		struct FSerialisedRpc          Event;
+	} params;
+
 	params.Event = Event;
 
 	UObject::ProcessEvent(fn, &params);
@@ -83,9 +99,13 @@ void UBoxedRpcDispatcherComponent::Client_SendRpc(const struct FSerialisedRpc& E
 
 void UDynamicColourPointLightComponent::DeactivateLight(bool Blend)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaEngine.DynamicColourPointLightComponent.DeactivateLight");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaEngine.DynamicColourPointLightComponent.DeactivateLight"));
 
-	UDynamicColourPointLightComponent_DeactivateLight_Params params;
+	struct
+	{
+		bool                           Blend;
+	} params;
+
 	params.Blend = Blend;
 
 	UObject::ProcessEvent(fn, &params);
@@ -99,9 +119,13 @@ void UDynamicColourPointLightComponent::DeactivateLight(bool Blend)
 
 void UDynamicColourPointLightComponent::ActivateLight(bool Blend)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaEngine.DynamicColourPointLightComponent.ActivateLight");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaEngine.DynamicColourPointLightComponent.ActivateLight"));
 
-	UDynamicColourPointLightComponent_ActivateLight_Params params;
+	struct
+	{
+		bool                           Blend;
+	} params;
+
 	params.Blend = Blend;
 
 	UObject::ProcessEvent(fn, &params);
@@ -116,9 +140,14 @@ void UDynamicColourPointLightComponent::ActivateLight(bool Blend)
 
 bool UForceFeedbackCondition::CanPlayForceFeedback(class AActor* InOwner)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaEngine.ForceFeedbackCondition.CanPlayForceFeedback");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaEngine.ForceFeedbackCondition.CanPlayForceFeedback"));
 
-	UForceFeedbackCondition_CanPlayForceFeedback_Params params;
+	struct
+	{
+		class AActor*                  InOwner;
+		bool                           ReturnValue;
+	} params;
+
 	params.InOwner = InOwner;
 
 	UObject::ProcessEvent(fn, &params);
@@ -132,14 +161,19 @@ bool UForceFeedbackCondition::CanPlayForceFeedback(class AActor* InOwner)
 // Parameters:
 // TEnumAsByte<EPlayModeVariant>  NewPlayModeVariantOverride     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
-void UPlayModeHelpers::STATIC_SetPlayModeVariantOverride(TEnumAsByte<EPlayModeVariant> NewPlayModeVariantOverride)
+void UPlayModeHelpers::SetPlayModeVariantOverride(TEnumAsByte<EPlayModeVariant> NewPlayModeVariantOverride)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaEngine.PlayModeHelpers.SetPlayModeVariantOverride");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaEngine.PlayModeHelpers.SetPlayModeVariantOverride"));
 
-	UPlayModeHelpers_SetPlayModeVariantOverride_Params params;
+	struct
+	{
+		TEnumAsByte<EPlayModeVariant>  NewPlayModeVariantOverride;
+	} params;
+
 	params.NewPlayModeVariantOverride = NewPlayModeVariantOverride;
 
-	UObject::ProcessEvent(fn, &params);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 }
 
 
@@ -148,14 +182,19 @@ void UPlayModeHelpers::STATIC_SetPlayModeVariantOverride(TEnumAsByte<EPlayModeVa
 // Parameters:
 // TEnumAsByte<EPlayMode>         NewPlayModeOverride            (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
-void UPlayModeHelpers::STATIC_SetPlayModeOverride(TEnumAsByte<EPlayMode> NewPlayModeOverride)
+void UPlayModeHelpers::SetPlayModeOverride(TEnumAsByte<EPlayMode> NewPlayModeOverride)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaEngine.PlayModeHelpers.SetPlayModeOverride");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaEngine.PlayModeHelpers.SetPlayModeOverride"));
 
-	UPlayModeHelpers_SetPlayModeOverride_Params params;
+	struct
+	{
+		TEnumAsByte<EPlayMode>         NewPlayModeOverride;
+	} params;
+
 	params.NewPlayModeOverride = NewPlayModeOverride;
 
-	UObject::ProcessEvent(fn, &params);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 }
 
 
@@ -165,14 +204,20 @@ void UPlayModeHelpers::STATIC_SetPlayModeOverride(TEnumAsByte<EPlayMode> NewPlay
 // class UObject*                 WorldContext                   (Parm, ZeroConstructor, IsPlainOldData)
 // TEnumAsByte<EPlayModeVariant>  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-TEnumAsByte<EPlayModeVariant> UPlayModeHelpers::STATIC_GetPlayModeVariant(class UObject* WorldContext)
+TEnumAsByte<EPlayModeVariant> UPlayModeHelpers::GetPlayModeVariant(class UObject* WorldContext)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaEngine.PlayModeHelpers.GetPlayModeVariant");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaEngine.PlayModeHelpers.GetPlayModeVariant"));
 
-	UPlayModeHelpers_GetPlayModeVariant_Params params;
+	struct
+	{
+		class UObject*                 WorldContext;
+		TEnumAsByte<EPlayModeVariant>  ReturnValue;
+	} params;
+
 	params.WorldContext = WorldContext;
 
-	UObject::ProcessEvent(fn, &params);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
 }
@@ -184,14 +229,20 @@ TEnumAsByte<EPlayModeVariant> UPlayModeHelpers::STATIC_GetPlayModeVariant(class 
 // class UObject*                 WorldContext                   (Parm, ZeroConstructor, IsPlainOldData)
 // TEnumAsByte<EPlayMode>         ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-TEnumAsByte<EPlayMode> UPlayModeHelpers::STATIC_GetPlayMode(class UObject* WorldContext)
+TEnumAsByte<EPlayMode> UPlayModeHelpers::GetPlayMode(class UObject* WorldContext)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaEngine.PlayModeHelpers.GetPlayMode");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaEngine.PlayModeHelpers.GetPlayMode"));
 
-	UPlayModeHelpers_GetPlayMode_Params params;
+	struct
+	{
+		class UObject*                 WorldContext;
+		TEnumAsByte<EPlayMode>         ReturnValue;
+	} params;
+
 	params.WorldContext = WorldContext;
 
-	UObject::ProcessEvent(fn, &params);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
 }
@@ -200,26 +251,34 @@ TEnumAsByte<EPlayMode> UPlayModeHelpers::STATIC_GetPlayMode(class UObject* World
 // Function AthenaEngine.PlayModeHelpers.ClearPlayModeVariantOverride
 // (Final, Native, Static, Public, BlueprintCallable)
 
-void UPlayModeHelpers::STATIC_ClearPlayModeVariantOverride()
+void UPlayModeHelpers::ClearPlayModeVariantOverride()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaEngine.PlayModeHelpers.ClearPlayModeVariantOverride");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaEngine.PlayModeHelpers.ClearPlayModeVariantOverride"));
 
-	UPlayModeHelpers_ClearPlayModeVariantOverride_Params params;
+	struct
+	{
+	} params;
 
-	UObject::ProcessEvent(fn, &params);
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 }
 
 
 // Function AthenaEngine.PlayModeHelpers.ClearPlayModeOverride
 // (Final, Native, Static, Public, BlueprintCallable)
 
-void UPlayModeHelpers::STATIC_ClearPlayModeOverride()
+void UPlayModeHelpers::ClearPlayModeOverride()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaEngine.PlayModeHelpers.ClearPlayModeOverride");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaEngine.PlayModeHelpers.ClearPlayModeOverride"));
 
-	UPlayModeHelpers_ClearPlayModeOverride_Params params;
+	struct
+	{
+	} params;
 
-	UObject::ProcessEvent(fn, &params);
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 }
 
 
@@ -228,9 +287,12 @@ void UPlayModeHelpers::STATIC_ClearPlayModeOverride()
 
 void URotateMeshToActorComponent::SnapMeshToLookAtActor()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaEngine.RotateMeshToActorComponent.SnapMeshToLookAtActor");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaEngine.RotateMeshToActorComponent.SnapMeshToLookAtActor"));
 
-	URotateMeshToActorComponent_SnapMeshToLookAtActor_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -244,9 +306,14 @@ void URotateMeshToActorComponent::SnapMeshToLookAtActor()
 
 void URotateMeshToActorComponent::Initialise(class UMeshComponent* InMeshToRotate, class AActor* InActorToRotateTo)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function AthenaEngine.RotateMeshToActorComponent.Initialise");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaEngine.RotateMeshToActorComponent.Initialise"));
 
-	URotateMeshToActorComponent_Initialise_Params params;
+	struct
+	{
+		class UMeshComponent*          InMeshToRotate;
+		class AActor*                  InActorToRotateTo;
+	} params;
+
 	params.InMeshToRotate = InMeshToRotate;
 	params.InActorToRotateTo = InActorToRotateTo;
 

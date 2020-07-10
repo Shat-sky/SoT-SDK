@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass Title_HC_MasterHunterOfTheSerpentsScale.Title_HC_MasterHunterOfTheSerpentsScale_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass Title_HC_MasterHunterOfTheSerpentsScale.Title_HC_MasterHunterOfTheSerpentsScale_C"));
 		return ptr;
 	}
 

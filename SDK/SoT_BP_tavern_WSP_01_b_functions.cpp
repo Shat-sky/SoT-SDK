@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_tavern_WSP_01_b_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_tavern_WSP_01_b.BP_tavern_WSP_01_b_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_tavern_WSP_01_b.BP_tavern_WSP_01_b_C.UserConstructionScript"));
 
-	ABP_tavern_WSP_01_b_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

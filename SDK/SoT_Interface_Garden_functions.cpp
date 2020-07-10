@@ -21,9 +21,15 @@ namespace SDK
 
 void UInterface_Garden_C::Set_Garden_Parameters(float Radius, int Int, bool* Instances_Created)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Interface_Garden.Interface_Garden_C.Set Garden Parameters");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Interface_Garden.Interface_Garden_C.Set Garden Parameters"));
 
-	UInterface_Garden_C_Set_Garden_Parameters_Params params;
+	struct
+	{
+		float                          Radius;
+		int                            Int;
+		bool                           Instances_Created;
+	} params;
+
 	params.Radius = Radius;
 	params.Int = Int;
 

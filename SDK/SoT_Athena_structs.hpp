@@ -260,7 +260,7 @@ enum class ESkeletonShipCaptainDockedAnimationState : uint8_t
 	ESkeletonShipCaptainDockedAnimationState__None = 0,
 	None                           = 1,
 	ESkeletonShipCaptainDockedAnimationState__ESkeletonShipCaptainDockedAnimationState_MAX = 2,
-	BoolProperty                   = 3
+	IntProperty                    = 3
 };
 
 
@@ -737,9 +737,7 @@ enum class ECarouselPirateBodyshapeDirection : uint8_t
 	ECarouselPirateBodyshapeDirection__SW = 2,
 	None01                         = 3,
 	ECarouselPirateBodyshapeDirection__NE = 4,
-	None02                         = 5,
-	RotatorProperty                = 6,
-	LazyObjectProperty             = 7
+	None02                         = 5
 };
 
 
@@ -1607,7 +1605,7 @@ enum class EDamnedFortAudioState : uint8_t
 	IntProperty                    = 2,
 	EDamnedFortAudioState__MAX     = 3,
 	None01                         = 4,
-	EWaitForLoadingScreenSubState__Invalid = 5
+	EBootflowErrorPriority__High   = 5
 };
 
 
@@ -1720,7 +1718,7 @@ enum class ETreasureRoomState : uint8_t
 	None                           = 1,
 	ETreasureRoomState__Aftermath  = 2,
 	None01                         = 3,
-	EBootflowErrorPriority__High   = 4
+	EDamnedFortAudioState__Inactive = 4
 };
 
 
@@ -1778,7 +1776,7 @@ enum class ELocalGameChatStatus : uint8_t
 	None                           = 1,
 	ELocalGameChatStatus__Ready    = 2,
 	None01                         = 3,
-	EDamnedFortAudioState__Inactive = 4
+	EWaitForLoadingScreenSubState__Invalid = 4
 };
 
 
@@ -1856,10 +1854,7 @@ enum class EBootflowError : uint8_t
 	None29                         = 59,
 	EBootflowError__TestFailed     = 60,
 	None30                         = 61,
-	IntProperty                    = 62,
-	BoolProperty                   = 63,
-	ArrayProperty                  = 64,
-	DelegateProperty               = 65
+	BoolProperty                   = 62
 };
 
 
@@ -2989,8 +2984,7 @@ enum class ELadderType : uint8_t
 {
 	ELadderType__Generic           = 0,
 	None                           = 1,
-	ELadderType__ELadderType_MAX   = 2,
-	FloatProperty                  = 3
+	ELadderType__ELadderType_MAX   = 2
 };
 
 
@@ -3188,7 +3182,7 @@ enum class EWieldedItemAnimationState : uint8_t
 	None01                         = 3,
 	EWieldedItemAnimationState__Blocking = 4,
 	None02                         = 5,
-	UInt64Property                 = 6
+	ArrayProperty                  = 6
 };
 
 
@@ -3283,7 +3277,7 @@ enum class ERewardType : uint8_t
 	None01                         = 3,
 	ERewardType__Null              = 4,
 	None02                         = 5,
-	Int64Property                  = 6
+	UInt32Property                 = 6
 };
 
 
@@ -3354,8 +3348,7 @@ enum class EQuestStatus : uint8_t
 {
 	EQuestStatus__Pending          = 0,
 	None                           = 1,
-	EQuestStatus__EQuestStatus_MAX = 2,
-	NameProperty                   = 3
+	EQuestStatus__EQuestStatus_MAX = 2
 };
 
 
@@ -3854,7 +3847,8 @@ enum class EMechanismActionActivationMode : uint8_t
 enum class EMechanismActionState : uint8_t
 {
 	EMechanismActionState__Active  = 0,
-	None                           = 1
+	None                           = 1,
+	IntProperty                    = 2
 };
 
 
@@ -3914,7 +3908,7 @@ enum class ECollisionShapeType : uint8_t
 {
 	ECollisionShapeType__Sphere    = 0,
 	None                           = 1,
-	IntProperty                    = 2
+	EntitlementInformationComponent = 2
 };
 
 
@@ -3950,7 +3944,7 @@ enum class ERiddleLocations : uint8_t
 	None                           = 1,
 	ERiddleLocations__Island       = 2,
 	None01                         = 3,
-	EPetDangerHearingResponseType__RunAway = 4
+	EAddEndpointResult__Success    = 4
 };
 
 

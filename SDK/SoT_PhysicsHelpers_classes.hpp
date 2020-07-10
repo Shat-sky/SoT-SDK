@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class PhysicsHelpers.PostPhysicsTickerInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class PhysicsHelpers.PostPhysicsTickerInterface"));
 		return ptr;
 	}
 
@@ -38,7 +38,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class PhysicsHelpers.MockPostPhysicsTickerComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class PhysicsHelpers.MockPostPhysicsTickerComponent"));
 		return ptr;
 	}
 

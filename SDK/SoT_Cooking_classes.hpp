@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Cooking.CookableInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Cooking.CookableInterface"));
 		return ptr;
 	}
 
@@ -37,7 +37,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Cooking.CookingDefaultsInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Cooking.CookingDefaultsInterface"));
 		return ptr;
 	}
 
@@ -52,7 +52,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Cooking.CookingStatusPublisherInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Cooking.CookingStatusPublisherInterface"));
 		return ptr;
 	}
 
@@ -67,7 +67,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Cooking.CookingStateInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Cooking.CookingStateInterface"));
 		return ptr;
 	}
 
@@ -92,7 +92,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Cooking.CookableComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Cooking.CookableComponent"));
 		return ptr;
 	}
 
@@ -107,7 +107,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Cooking.CookerInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Cooking.CookerInterface"));
 		return ptr;
 	}
 
@@ -142,7 +142,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Cooking.CookerComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Cooking.CookerComponent"));
 		return ptr;
 	}
 
@@ -175,7 +175,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Cooking.CookingComponentAudioParams");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Cooking.CookingComponentAudioParams"));
 		return ptr;
 	}
 
@@ -202,7 +202,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Cooking.CookingPot");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Cooking.CookingPot"));
 		return ptr;
 	}
 
@@ -217,7 +217,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Cooking.MixableInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Cooking.MixableInterface"));
 		return ptr;
 	}
 
@@ -232,7 +232,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Cooking.PottableInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Cooking.PottableInterface"));
 		return ptr;
 	}
 
@@ -250,7 +250,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Cooking.PottableComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Cooking.PottableComponent"));
 		return ptr;
 	}
 

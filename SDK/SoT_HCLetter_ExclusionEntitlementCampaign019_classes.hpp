@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass HCLetter_ExclusionEntitlementCampaign019.HCLetter_ExclusionEntitlementCampaign019_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass HCLetter_ExclusionEntitlementCampaign019.HCLetter_ExclusionEntitlementCampaign019_C"));
 		return ptr;
 	}
 

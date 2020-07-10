@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Time.TimeInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Time.TimeInterface"));
 		return ptr;
 	}
 
@@ -43,7 +43,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Time.DebugTimeInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Time.DebugTimeInterface"));
 		return ptr;
 	}
 
@@ -65,7 +65,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Time.LocationProviderInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Time.LocationProviderInterface"));
 		return ptr;
 	}
 
@@ -80,15 +80,15 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Time.TimeBlueprintLibrary");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Time.TimeBlueprintLibrary"));
 		return ptr;
 	}
 
 
-	struct FReplicatedDateTime STATIC_MakeReplicatedDateTimeFromDateTime(const struct FDateTime& InDateTime);
-	struct FDateTime STATIC_MakeDateTimeFromReplicatedDateTime(const struct FReplicatedDateTime& InDateTime);
-	struct FDateTime STATIC_MakeDateTimeFromRaw(int Year, int Month, int Day, int Hour, int Minute, int Second, int Millisecond);
-	bool STATIC_DateTimesWithinTolerance(const struct FDateTime& FirstDateTime, const struct FDateTime& SecondDateTime, const struct FTimespan& Tolerance);
+	static struct FReplicatedDateTime MakeReplicatedDateTimeFromDateTime(const struct FDateTime& InDateTime);
+	static struct FDateTime MakeDateTimeFromReplicatedDateTime(const struct FReplicatedDateTime& InDateTime);
+	static struct FDateTime MakeDateTimeFromRaw(int Year, int Month, int Day, int Hour, int Minute, int Second, int Millisecond);
+	static bool DateTimesWithinTolerance(const struct FDateTime& FirstDateTime, const struct FDateTime& SecondDateTime, const struct FTimespan& Tolerance);
 };
 
 
@@ -100,7 +100,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Time.TimeFormatterInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Time.TimeFormatterInterface"));
 		return ptr;
 	}
 
@@ -134,7 +134,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Time.TimeService");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Time.TimeService"));
 		return ptr;
 	}
 
@@ -153,7 +153,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Time.DebugTimeService");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Time.DebugTimeService"));
 		return ptr;
 	}
 
@@ -170,7 +170,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Time.TestTimeService");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Time.TestTimeService"));
 		return ptr;
 	}
 

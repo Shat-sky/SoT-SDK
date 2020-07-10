@@ -28,7 +28,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class WheelsTests.WheelMock");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class WheelsTests.WheelMock"));
 		return ptr;
 	}
 

@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass ShroudbreakerAmbientSpawnContext.ShroudbreakerAmbientSpawnContext_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass ShroudbreakerAmbientSpawnContext.ShroudbreakerAmbientSpawnContext_C"));
 		return ptr;
 	}
 

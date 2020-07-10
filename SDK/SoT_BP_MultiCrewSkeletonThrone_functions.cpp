@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_MultiCrewSkeletonThrone_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_MultiCrewSkeletonThrone.BP_MultiCrewSkeletonThrone_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_MultiCrewSkeletonThrone.BP_MultiCrewSkeletonThrone_C.UserConstructionScript"));
 
-	ABP_MultiCrewSkeletonThrone_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

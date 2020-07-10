@@ -29,7 +29,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Retraction.RetractableComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Retraction.RetractableComponent"));
 		return ptr;
 	}
 
@@ -44,7 +44,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Retraction.RetractorInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Retraction.RetractorInterface"));
 		return ptr;
 	}
 
@@ -59,7 +59,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Retraction.RetractableInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Retraction.RetractableInterface"));
 		return ptr;
 	}
 
@@ -74,7 +74,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Retraction.RetractableProviderInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Retraction.RetractableProviderInterface"));
 		return ptr;
 	}
 
@@ -90,7 +90,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Retraction.RetractableFloatingBarrelComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Retraction.RetractableFloatingBarrelComponent"));
 		return ptr;
 	}
 
@@ -111,7 +111,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Retraction.RetractorComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Retraction.RetractorComponent"));
 		return ptr;
 	}
 

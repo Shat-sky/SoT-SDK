@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_onboarding_intro_tavern_table_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_onboarding_intro_tavern_table.BP_onboarding_intro_tavern_table_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_onboarding_intro_tavern_table.BP_onboarding_intro_tavern_table_C.UserConstructionScript"));
 
-	ABP_onboarding_intro_tavern_table_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

@@ -1782,7 +1782,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("AnimBlueprintGeneratedClass BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("AnimBlueprintGeneratedClass BP_Humanoid_ThirdPerson.BP_Humanoid_ThirdPerson_C"));
 		return ptr;
 	}
 

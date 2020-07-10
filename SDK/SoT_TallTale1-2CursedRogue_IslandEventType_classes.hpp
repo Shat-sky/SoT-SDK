@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass TallTale1-2CursedRogue_IslandEventType.TallTale1-2CursedRogue_IslandEventType_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass TallTale1-2CursedRogue_IslandEventType.TallTale1-2CursedRogue_IslandEventType_C"));
 		return ptr;
 	}
 

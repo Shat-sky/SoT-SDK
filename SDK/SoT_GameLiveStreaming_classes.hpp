@@ -22,14 +22,14 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class GameLiveStreaming.GameLiveStreamingFunctionLibrary");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class GameLiveStreaming.GameLiveStreamingFunctionLibrary"));
 		return ptr;
 	}
 
 
-	void STATIC_StopBroadcastingGame();
-	void STATIC_StartBroadcastingGame(int FrameRate, float ScreenScaling, bool bEnableWebCam, int DesiredWebCamWidth, int DesiredWebCamHeight, bool bMirrorWebCamImage, bool bCaptureAudioFromComputer, bool bCaptureAudioFromMicrophone, bool bDrawSimpleWebCamVideo);
-	bool STATIC_IsBroadcastingGame();
+	static void StopBroadcastingGame();
+	static void StartBroadcastingGame(int FrameRate, float ScreenScaling, bool bEnableWebCam, int DesiredWebCamWidth, int DesiredWebCamHeight, bool bMirrorWebCamImage, bool bCaptureAudioFromComputer, bool bCaptureAudioFromMicrophone, bool bDrawSimpleWebCamVideo);
+	static bool IsBroadcastingGame();
 };
 
 
@@ -43,12 +43,12 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class GameLiveStreaming.QueryLiveStreamsCallbackProxy");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class GameLiveStreaming.QueryLiveStreamsCallbackProxy"));
 		return ptr;
 	}
 
 
-	class UQueryLiveStreamsCallbackProxy* STATIC_QueryLiveStreams(const class FString& GameName);
+	static class UQueryLiveStreamsCallbackProxy* QueryLiveStreams(const class FString& GameName);
 };
 
 

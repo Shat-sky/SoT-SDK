@@ -27,7 +27,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngineTests.MockBoxedRpcDispatcherComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngineTests.MockBoxedRpcDispatcherComponent"));
 		return ptr;
 	}
 
@@ -45,7 +45,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngineTests.MockResourceProviderComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngineTests.MockResourceProviderComponent"));
 		return ptr;
 	}
 
@@ -61,7 +61,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngineTests.MockSyncedRandomRetrievalComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngineTests.MockSyncedRandomRetrievalComponent"));
 		return ptr;
 	}
 
@@ -77,7 +77,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngineTests.TestActorWithDynamicColourPointLightComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngineTests.TestActorWithDynamicColourPointLightComponent"));
 		return ptr;
 	}
 
@@ -94,7 +94,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngineTests.TestActorWithRotateMeshToActorComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngineTests.TestActorWithRotateMeshToActorComponent"));
 		return ptr;
 	}
 
@@ -110,7 +110,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngineTests.TestBoxedRpcDispatcherComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngineTests.TestBoxedRpcDispatcherComponent"));
 		return ptr;
 	}
 
@@ -127,7 +127,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AthenaEngineTests.TestForceFeedbackCondition");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngineTests.TestForceFeedbackCondition"));
 		return ptr;
 	}
 

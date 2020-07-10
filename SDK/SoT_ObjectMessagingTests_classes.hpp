@@ -23,7 +23,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ObjectMessagingTests.MockPawnWithMessagingDispatcher");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ObjectMessagingTests.MockPawnWithMessagingDispatcher"));
 		return ptr;
 	}
 
@@ -39,7 +39,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ObjectMessagingTests.ObjectMessagingDispatcherTestObject");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ObjectMessagingTests.ObjectMessagingDispatcherTestObject"));
 		return ptr;
 	}
 
@@ -55,7 +55,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ObjectMessagingTests.ObjectMessagingListenerTestObject");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ObjectMessagingTests.ObjectMessagingListenerTestObject"));
 		return ptr;
 	}
 
@@ -78,7 +78,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ObjectMessagingTests.TestGameInstanceWithObjectMessagingDispatcher");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ObjectMessagingTests.TestGameInstanceWithObjectMessagingDispatcher"));
 		return ptr;
 	}
 
@@ -94,7 +94,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ObjectMessagingTests.TestGameStateWithObjectMessagingDispatcher");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ObjectMessagingTests.TestGameStateWithObjectMessagingDispatcher"));
 		return ptr;
 	}
 

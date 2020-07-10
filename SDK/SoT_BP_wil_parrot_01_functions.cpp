@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_wil_parrot_01_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_wil_parrot_01.BP_wil_parrot_01_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_wil_parrot_01.BP_wil_parrot_01_C.UserConstructionScript"));
 
-	ABP_wil_parrot_01_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

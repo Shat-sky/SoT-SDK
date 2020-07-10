@@ -25,7 +25,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Foliage.FoliageInstancedStaticMeshComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Foliage.FoliageInstancedStaticMeshComponent"));
 		return ptr;
 	}
 
@@ -40,13 +40,13 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Foliage.FoliageStatistics");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Foliage.FoliageStatistics"));
 		return ptr;
 	}
 
 
-	int STATIC_FoliageOverlappingSphereCount(class UObject* WorldContextObject, class UStaticMesh* StaticMesh, const struct FVector& CenterPosition, float Radius);
-	int STATIC_FoliageOverlappingBoxCount(class UObject* WorldContextObject, class UStaticMesh* StaticMesh, const struct FBox& Box);
+	static int FoliageOverlappingSphereCount(class UObject* WorldContextObject, class UStaticMesh* StaticMesh, const struct FVector& CenterPosition, float Radius);
+	static int FoliageOverlappingBoxCount(class UObject* WorldContextObject, class UStaticMesh* StaticMesh, const struct FBox& Box);
 };
 
 
@@ -146,7 +146,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Foliage.FoliageType");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Foliage.FoliageType"));
 		return ptr;
 	}
 
@@ -164,7 +164,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Foliage.FoliageType_InstancedStaticMesh");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Foliage.FoliageType_InstancedStaticMesh"));
 		return ptr;
 	}
 
@@ -180,7 +180,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Foliage.InstancedFoliageActor");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Foliage.InstancedFoliageActor"));
 		return ptr;
 	}
 
@@ -210,7 +210,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Foliage.InteractiveFoliageActor");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Foliage.InteractiveFoliageActor"));
 		return ptr;
 	}
 
@@ -228,7 +228,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Foliage.InteractiveFoliageComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Foliage.InteractiveFoliageComponent"));
 		return ptr;
 	}
 
@@ -244,7 +244,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Foliage.ProceduralFoliageBlockingVolume");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Foliage.ProceduralFoliageBlockingVolume"));
 		return ptr;
 	}
 
@@ -264,7 +264,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Foliage.ProceduralFoliageComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Foliage.ProceduralFoliageComponent"));
 		return ptr;
 	}
 
@@ -286,7 +286,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Foliage.ProceduralFoliageSpawner");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Foliage.ProceduralFoliageSpawner"));
 		return ptr;
 	}
 
@@ -307,7 +307,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Foliage.ProceduralFoliageTile");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Foliage.ProceduralFoliageTile"));
 		return ptr;
 	}
 
@@ -323,7 +323,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Foliage.ProceduralFoliageVolume");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Foliage.ProceduralFoliageVolume"));
 		return ptr;
 	}
 

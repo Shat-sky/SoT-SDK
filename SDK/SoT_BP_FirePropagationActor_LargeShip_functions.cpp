@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_FirePropagationActor_LargeShip_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FirePropagationActor_LargeShip.BP_FirePropagationActor_LargeShip_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FirePropagationActor_LargeShip.BP_FirePropagationActor_LargeShip_C.UserConstructionScript"));
 
-	ABP_FirePropagationActor_LargeShip_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

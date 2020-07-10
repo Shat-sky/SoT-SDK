@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_Linstock_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Linstock.BP_Linstock_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Linstock.BP_Linstock_C.UserConstructionScript"));
 
-	ABP_Linstock_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -30,9 +33,12 @@ void ABP_Linstock_C::UserConstructionScript()
 
 void ABP_Linstock_C::ReceiveBeginPlay()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Linstock.BP_Linstock_C.ReceiveBeginPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Linstock.BP_Linstock_C.ReceiveBeginPlay"));
 
-	ABP_Linstock_C_ReceiveBeginPlay_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -45,9 +51,13 @@ void ABP_Linstock_C::ReceiveBeginPlay()
 
 void ABP_Linstock_C::ExecuteUbergraph_BP_Linstock(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Linstock.BP_Linstock_C.ExecuteUbergraph_BP_Linstock");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Linstock.BP_Linstock_C.ExecuteUbergraph_BP_Linstock"));
 
-	ABP_Linstock_C_ExecuteUbergraph_BP_Linstock_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

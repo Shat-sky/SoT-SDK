@@ -17,9 +17,12 @@ namespace SDK
 
 void Acmn_candle_group_02_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function cmn_candle_group_02.cmn_candle_group_02_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function cmn_candle_group_02.cmn_candle_group_02_C.UserConstructionScript"));
 
-	Acmn_candle_group_02_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

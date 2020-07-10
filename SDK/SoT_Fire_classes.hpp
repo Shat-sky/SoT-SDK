@@ -25,7 +25,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.FlammableComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.FlammableComponent"));
 		return ptr;
 	}
 
@@ -51,7 +51,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.ActorFlammableComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.ActorFlammableComponent"));
 		return ptr;
 	}
 
@@ -66,7 +66,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.ExtinguishableInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.ExtinguishableInterface"));
 		return ptr;
 	}
 
@@ -81,7 +81,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.FireDamagerType");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.FireDamagerType"));
 		return ptr;
 	}
 
@@ -96,7 +96,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.FireExplosionDamagerType");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.FireExplosionDamagerType"));
 		return ptr;
 	}
 
@@ -111,7 +111,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.FireStatus");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.FireStatus"));
 		return ptr;
 	}
 
@@ -126,7 +126,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.FlammableInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.FlammableInterface"));
 		return ptr;
 	}
 
@@ -145,7 +145,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.FlammableWieldableComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.FlammableWieldableComponent"));
 		return ptr;
 	}
 
@@ -164,7 +164,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.TimedFlammableComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.TimedFlammableComponent"));
 		return ptr;
 	}
 
@@ -179,7 +179,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.IgniteStatus");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.IgniteStatus"));
 		return ptr;
 	}
 
@@ -194,7 +194,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.StatusResponseExtinguish");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.StatusResponseExtinguish"));
 		return ptr;
 	}
 
@@ -209,7 +209,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.StatusResponseIgnite");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.StatusResponseIgnite"));
 		return ptr;
 	}
 
@@ -225,7 +225,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.FireGridCellSelectionParamsDataAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.FireGridCellSelectionParamsDataAsset"));
 		return ptr;
 	}
 
@@ -240,7 +240,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.FirePropagationInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.FirePropagationInterface"));
 		return ptr;
 	}
 
@@ -258,7 +258,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.CookerIgnitionComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.CookerIgnitionComponent"));
 		return ptr;
 	}
 
@@ -275,7 +275,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.FireCellStateTimingParamsDataAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.FireCellStateTimingParamsDataAsset"));
 		return ptr;
 	}
 
@@ -294,7 +294,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.FireGridAudioManager");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.FireGridAudioManager"));
 		return ptr;
 	}
 
@@ -309,7 +309,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.FireGridLocationInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.FireGridLocationInterface"));
 		return ptr;
 	}
 
@@ -324,7 +324,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.FireGridProxyInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.FireGridProxyInterface"));
 		return ptr;
 	}
 
@@ -340,7 +340,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.FireGridVFXParamsDataAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.FireGridVFXParamsDataAsset"));
 		return ptr;
 	}
 
@@ -372,7 +372,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.FireGridVFXManager");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.FireGridVFXManager"));
 		return ptr;
 	}
 
@@ -392,7 +392,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.FirePropagator");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.FirePropagator"));
 		return ptr;
 	}
 
@@ -410,7 +410,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.MastFlammableComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.MastFlammableComponent"));
 		return ptr;
 	}
 
@@ -426,7 +426,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.ShipFireDamageParamsDataAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.ShipFireDamageParamsDataAsset"));
 		return ptr;
 	}
 
@@ -443,7 +443,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.ShipFireLightParamsDataAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.ShipFireLightParamsDataAsset"));
 		return ptr;
 	}
 
@@ -479,7 +479,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Fire.ShipFirePropagationComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Fire.ShipFirePropagationComponent"));
 		return ptr;
 	}
 

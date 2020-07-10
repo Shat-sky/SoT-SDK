@@ -17,9 +17,12 @@ namespace SDK
 
 void Awsp_light_plate_a_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function wsp_light_plate_a.wsp_light_plate_a_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function wsp_light_plate_a.wsp_light_plate_a_C.UserConstructionScript"));
 
-	Awsp_light_plate_a_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

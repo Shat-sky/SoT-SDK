@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "../SDK.hpp"
+#include "SoT_CoreUObject_classes.hpp"
 
 namespace SDK
 {

@@ -20,9 +20,14 @@ namespace SDK
 
 class UTaleQuestCargoRunContract* UTaleQuestCargoRunContractsService::GetContract(const struct FGuid& Guid)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Tales.TaleQuestCargoRunContractsService.GetContract");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestCargoRunContractsService.GetContract"));
 
-	UTaleQuestCargoRunContractsService_GetContract_Params params;
+	struct
+	{
+		struct FGuid                   Guid;
+		class UTaleQuestCargoRunContract* ReturnValue;
+	} params;
+
 	params.Guid = Guid;
 
 	UObject::ProcessEvent(fn, &params);
@@ -42,9 +47,17 @@ class UTaleQuestCargoRunContract* UTaleQuestCargoRunContractsService::GetContrac
 
 struct FGuid UTaleQuestCargoRunContractsService::AddContract(TArray<class UClass*> InItems, class AActor* InCollectFromNPC, class AActor* InDeliverToNPC, int InTimeLimitInMinutes)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Tales.TaleQuestCargoRunContractsService.AddContract");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestCargoRunContractsService.AddContract"));
 
-	UTaleQuestCargoRunContractsService_AddContract_Params params;
+	struct
+	{
+		TArray<class UClass*>          InItems;
+		class AActor*                  InCollectFromNPC;
+		class AActor*                  InDeliverToNPC;
+		int                            InTimeLimitInMinutes;
+		struct FGuid                   ReturnValue;
+	} params;
+
 	params.InItems = InItems;
 	params.InCollectFromNPC = InCollectFromNPC;
 	params.InDeliverToNPC = InDeliverToNPC;
@@ -64,9 +77,14 @@ struct FGuid UTaleQuestCargoRunContractsService::AddContract(TArray<class UClass
 
 class UTaleQuestMerchantContract* UTaleQuestMerchantContractsService::GetContract(const struct FGuid& Guid)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Tales.TaleQuestMerchantContractsService.GetContract");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestMerchantContractsService.GetContract"));
 
-	UTaleQuestMerchantContractsService_GetContract_Params params;
+	struct
+	{
+		struct FGuid                   Guid;
+		class UTaleQuestMerchantContract* ReturnValue;
+	} params;
+
 	params.Guid = Guid;
 
 	UObject::ProcessEvent(fn, &params);
@@ -85,9 +103,16 @@ class UTaleQuestMerchantContract* UTaleQuestMerchantContractsService::GetContrac
 
 struct FGuid UTaleQuestMerchantContractsService::AddContract(TArray<struct FTaleQuestDeliveryRequest> Requests, const struct FName& InDeliveryDestination, float InTimeLimit)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Tales.TaleQuestMerchantContractsService.AddContract");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestMerchantContractsService.AddContract"));
 
-	UTaleQuestMerchantContractsService_AddContract_Params params;
+	struct
+	{
+		TArray<struct FTaleQuestDeliveryRequest> Requests;
+		struct FName                   InDeliveryDestination;
+		float                          InTimeLimit;
+		struct FGuid                   ReturnValue;
+	} params;
+
 	params.Requests = Requests;
 	params.InDeliveryDestination = InDeliveryDestination;
 	params.InTimeLimit = InTimeLimit;
@@ -107,9 +132,15 @@ struct FGuid UTaleQuestMerchantContractsService::AddContract(TArray<struct FTale
 
 void UTaleQuestMapService::UpdateMerchantMap(const struct FName& MapId, int Index, const struct FTaleQuestDeliverableItem& Deliverable)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Tales.TaleQuestMapService.UpdateMerchantMap");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestMapService.UpdateMerchantMap"));
 
-	UTaleQuestMapService_UpdateMerchantMap_Params params;
+	struct
+	{
+		struct FName                   MapId;
+		int                            Index;
+		struct FTaleQuestDeliverableItem Deliverable;
+	} params;
+
 	params.MapId = MapId;
 	params.Index = Index;
 	params.Deliverable = Deliverable;
@@ -125,9 +156,13 @@ void UTaleQuestMapService::UpdateMerchantMap(const struct FName& MapId, int Inde
 
 void UTaleQuestMapService::AdvanceRiddleMap(const struct FName& MapId)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Tales.TaleQuestMapService.AdvanceRiddleMap");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestMapService.AdvanceRiddleMap"));
 
-	UTaleQuestMapService_AdvanceRiddleMap_Params params;
+	struct
+	{
+		struct FName                   MapId;
+	} params;
+
 	params.MapId = MapId;
 
 	UObject::ProcessEvent(fn, &params);

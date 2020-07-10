@@ -28,7 +28,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass BP_Campaign026_HauntedShores_BilgeRats_NPC.BP_Campaign026_HauntedShores_BilgeRats_NPC_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass BP_Campaign026_HauntedShores_BilgeRats_NPC.BP_Campaign026_HauntedShores_BilgeRats_NPC_C"));
 		return ptr;
 	}
 

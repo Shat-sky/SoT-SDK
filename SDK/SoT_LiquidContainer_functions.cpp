@@ -19,9 +19,13 @@ namespace SDK
 
 void ULiquidContainerInterface::SetLiquidLevel(float Level)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function LiquidContainer.LiquidContainerInterface.SetLiquidLevel");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function LiquidContainer.LiquidContainerInterface.SetLiquidLevel"));
 
-	ULiquidContainerInterface_SetLiquidLevel_Params params;
+	struct
+	{
+		float                          Level;
+	} params;
+
 	params.Level = Level;
 
 	UObject::ProcessEvent(fn, &params);
@@ -35,9 +39,13 @@ void ULiquidContainerInterface::SetLiquidLevel(float Level)
 
 float ULiquidContainerInterface::GetWantedLiquidLevel()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function LiquidContainer.LiquidContainerInterface.GetWantedLiquidLevel");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function LiquidContainer.LiquidContainerInterface.GetWantedLiquidLevel"));
 
-	ULiquidContainerInterface_GetWantedLiquidLevel_Params params;
+	struct
+	{
+		float                          ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -52,9 +60,13 @@ float ULiquidContainerInterface::GetWantedLiquidLevel()
 
 float ULiquidContainerInterface::GetMaxLiquidCollectionAmount()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function LiquidContainer.LiquidContainerInterface.GetMaxLiquidCollectionAmount");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function LiquidContainer.LiquidContainerInterface.GetMaxLiquidCollectionAmount"));
 
-	ULiquidContainerInterface_GetMaxLiquidCollectionAmount_Params params;
+	struct
+	{
+		float                          ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -69,9 +81,13 @@ float ULiquidContainerInterface::GetMaxLiquidCollectionAmount()
 
 float ULiquidContainerInterface::GetLiquidLevel()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function LiquidContainer.LiquidContainerInterface.GetLiquidLevel");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function LiquidContainer.LiquidContainerInterface.GetLiquidLevel"));
 
-	ULiquidContainerInterface_GetLiquidLevel_Params params;
+	struct
+	{
+		float                          ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -87,9 +103,14 @@ float ULiquidContainerInterface::GetLiquidLevel()
 
 float ULiquidContainerInterface::CollectLiquidAmount(float DesiredAmount)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function LiquidContainer.LiquidContainerInterface.CollectLiquidAmount");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function LiquidContainer.LiquidContainerInterface.CollectLiquidAmount"));
 
-	ULiquidContainerInterface_CollectLiquidAmount_Params params;
+	struct
+	{
+		float                          DesiredAmount;
+		float                          ReturnValue;
+	} params;
+
 	params.DesiredAmount = DesiredAmount;
 
 	UObject::ProcessEvent(fn, &params);
@@ -105,9 +126,13 @@ float ULiquidContainerInterface::CollectLiquidAmount(float DesiredAmount)
 
 void ULiquidContainerComponent::SetLiquidType(TEnumAsByte<ELiquidType> LiquidType)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function LiquidContainer.LiquidContainerComponent.SetLiquidType");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function LiquidContainer.LiquidContainerComponent.SetLiquidType"));
 
-	ULiquidContainerComponent_SetLiquidType_Params params;
+	struct
+	{
+		TEnumAsByte<ELiquidType>       LiquidType;
+	} params;
+
 	params.LiquidType = LiquidType;
 
 	UObject::ProcessEvent(fn, &params);
@@ -121,9 +146,13 @@ void ULiquidContainerComponent::SetLiquidType(TEnumAsByte<ELiquidType> LiquidTyp
 
 void ULiquidContainerComponent::SetLiquidLevel(float Level)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function LiquidContainer.LiquidContainerComponent.SetLiquidLevel");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function LiquidContainer.LiquidContainerComponent.SetLiquidLevel"));
 
-	ULiquidContainerComponent_SetLiquidLevel_Params params;
+	struct
+	{
+		float                          Level;
+	} params;
+
 	params.Level = Level;
 
 	UObject::ProcessEvent(fn, &params);
@@ -137,9 +166,13 @@ void ULiquidContainerComponent::SetLiquidLevel(float Level)
 
 float ULiquidContainerComponent::GetLiquidLevel()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function LiquidContainer.LiquidContainerComponent.GetLiquidLevel");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function LiquidContainer.LiquidContainerComponent.GetLiquidLevel"));
 
-	ULiquidContainerComponent_GetLiquidLevel_Params params;
+	struct
+	{
+		float                          ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -154,9 +187,13 @@ float ULiquidContainerComponent::GetLiquidLevel()
 
 void ULiquidContainerComponent::CollectLiquidMaterials(class UMeshComponent* MeshComponent)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function LiquidContainer.LiquidContainerComponent.CollectLiquidMaterials");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function LiquidContainer.LiquidContainerComponent.CollectLiquidMaterials"));
 
-	ULiquidContainerComponent_CollectLiquidMaterials_Params params;
+	struct
+	{
+		class UMeshComponent*          MeshComponent;
+	} params;
+
 	params.MeshComponent = MeshComponent;
 
 	UObject::ProcessEvent(fn, &params);

@@ -17,9 +17,12 @@ namespace SDK
 
 void Acmn_cma_tree_01_e_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function cmn_cma_tree_01_e.cmn_cma_tree_01_e_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function cmn_cma_tree_01_e.cmn_cma_tree_01_e_C.UserConstructionScript"));
 
-	Acmn_cma_tree_01_e_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

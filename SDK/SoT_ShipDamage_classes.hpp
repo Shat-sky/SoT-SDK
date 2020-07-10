@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ShipDamage.DamageablePartsInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ShipDamage.DamageablePartsInterface"));
 		return ptr;
 	}
 
@@ -41,7 +41,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ShipDamage.HullDamageInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ShipDamage.HullDamageInterface"));
 		return ptr;
 	}
 
@@ -56,7 +56,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ShipDamage.LandscapeDamagerType");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ShipDamage.LandscapeDamagerType"));
 		return ptr;
 	}
 
@@ -71,7 +71,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ShipDamage.ShipDamagerType");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ShipDamage.ShipDamagerType"));
 		return ptr;
 	}
 
@@ -86,7 +86,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ShipDamage.StrainDamagerType");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ShipDamage.StrainDamagerType"));
 		return ptr;
 	}
 

@@ -19,9 +19,13 @@ namespace SDK
 
 void UCookerComponent::OnRep_CookingState(const struct FCookingClientRepresentation& OldRepresentation)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Cooking.CookerComponent.OnRep_CookingState");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Cooking.CookerComponent.OnRep_CookingState"));
 
-	UCookerComponent_OnRep_CookingState_Params params;
+	struct
+	{
+		struct FCookingClientRepresentation OldRepresentation;
+	} params;
+
 	params.OldRepresentation = OldRepresentation;
 
 	UObject::ProcessEvent(fn, &params);

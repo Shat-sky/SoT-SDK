@@ -17,9 +17,12 @@ namespace SDK
 
 void UDeathSelfInteractionComponent::SetGiveUpAvaliable()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Reviving.DeathSelfInteractionComponent.SetGiveUpAvaliable");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Reviving.DeathSelfInteractionComponent.SetGiveUpAvaliable"));
 
-	UDeathSelfInteractionComponent_SetGiveUpAvaliable_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -30,9 +33,12 @@ void UDeathSelfInteractionComponent::SetGiveUpAvaliable()
 
 void UDeathSelfInteractionComponent::OnRep_HasGivenUp()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Reviving.DeathSelfInteractionComponent.OnRep_HasGivenUp");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Reviving.DeathSelfInteractionComponent.OnRep_HasGivenUp"));
 
-	UDeathSelfInteractionComponent_OnRep_HasGivenUp_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -45,9 +51,13 @@ void UDeathSelfInteractionComponent::OnRep_HasGivenUp()
 
 void UReviveComponent::OnRep_ReviveState(TEnumAsByte<EReviveState> PreviousReviveState)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Reviving.ReviveComponent.OnRep_ReviveState");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Reviving.ReviveComponent.OnRep_ReviveState"));
 
-	UReviveComponent_OnRep_ReviveState_Params params;
+	struct
+	{
+		TEnumAsByte<EReviveState>      PreviousReviveState;
+	} params;
+
 	params.PreviousReviveState = PreviousReviveState;
 
 	UObject::ProcessEvent(fn, &params);
@@ -59,9 +69,12 @@ void UReviveComponent::OnRep_ReviveState(TEnumAsByte<EReviveState> PreviousReviv
 
 void UReviveComponent::HandleOwningCharacterEndPlay()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Reviving.ReviveComponent.HandleOwningCharacterEndPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Reviving.ReviveComponent.HandleOwningCharacterEndPlay"));
 
-	UReviveComponent_HandleOwningCharacterEndPlay_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

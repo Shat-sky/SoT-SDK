@@ -17,9 +17,12 @@ namespace SDK
 
 void Awsp_palm_cluster_03_d_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function wsp_palm_cluster_03_d.wsp_palm_cluster_03_d_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function wsp_palm_cluster_03_d.wsp_palm_cluster_03_d_C.UserConstructionScript"));
 
-	Awsp_palm_cluster_03_d_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

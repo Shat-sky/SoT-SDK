@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_Sail_C::Debug()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Sail.BP_Sail_C.Debug");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Sail.BP_Sail_C.Debug"));
 
-	ABP_Sail_C_Debug_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -33,9 +36,14 @@ void ABP_Sail_C::Debug()
 
 void ABP_Sail_C::Initialise(bool IsMainSail, float SailForceScalar)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Sail.BP_Sail_C.Initialise");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Sail.BP_Sail_C.Initialise"));
 
-	ABP_Sail_C_Initialise_Params params;
+	struct
+	{
+		bool                           IsMainSail;
+		float                          SailForceScalar;
+	} params;
+
 	params.IsMainSail = IsMainSail;
 	params.SailForceScalar = SailForceScalar;
 
@@ -48,9 +56,12 @@ void ABP_Sail_C::Initialise(bool IsMainSail, float SailForceScalar)
 
 void ABP_Sail_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Sail.BP_Sail_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Sail.BP_Sail_C.UserConstructionScript"));
 
-	ABP_Sail_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

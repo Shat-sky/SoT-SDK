@@ -19,9 +19,13 @@ namespace SDK
 
 void UEmissaryActiveTableVisualiserComponent::OnControllerEndPlay(TEnumAsByte<EEndPlayReason> EndPlayReason)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function EmissaryLevel.EmissaryActiveTableVisualiserComponent.OnControllerEndPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function EmissaryLevel.EmissaryActiveTableVisualiserComponent.OnControllerEndPlay"));
 
-	UEmissaryActiveTableVisualiserComponent_OnControllerEndPlay_Params params;
+	struct
+	{
+		TEnumAsByte<EEndPlayReason>    EndPlayReason;
+	} params;
+
 	params.EndPlayReason = EndPlayReason;
 
 	UObject::ProcessEvent(fn, &params);
@@ -33,9 +37,12 @@ void UEmissaryActiveTableVisualiserComponent::OnControllerEndPlay(TEnumAsByte<EE
 
 void UEmissaryParticipantComponent::OnRep_EmissaryLevel()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function EmissaryLevel.EmissaryParticipantComponent.OnRep_EmissaryLevel");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function EmissaryLevel.EmissaryParticipantComponent.OnRep_EmissaryLevel"));
 
-	UEmissaryParticipantComponent_OnRep_EmissaryLevel_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -48,9 +55,13 @@ void UEmissaryParticipantComponent::OnRep_EmissaryLevel()
 
 void UEmissaryParticipantComponent::OnRep_AffiliatedCompany(const struct FName& PreviousId)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function EmissaryLevel.EmissaryParticipantComponent.OnRep_AffiliatedCompany");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function EmissaryLevel.EmissaryParticipantComponent.OnRep_AffiliatedCompany"));
 
-	UEmissaryParticipantComponent_OnRep_AffiliatedCompany_Params params;
+	struct
+	{
+		struct FName                   PreviousId;
+	} params;
+
 	params.PreviousId = PreviousId;
 
 	UObject::ProcessEvent(fn, &params);
@@ -62,9 +73,12 @@ void UEmissaryParticipantComponent::OnRep_AffiliatedCompany(const struct FName& 
 
 void UEmissaryShipAffiliationTrackerComponent::OnRep_EmissaryCount()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function EmissaryLevel.EmissaryShipAffiliationTrackerComponent.OnRep_EmissaryCount");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function EmissaryLevel.EmissaryShipAffiliationTrackerComponent.OnRep_EmissaryCount"));
 
-	UEmissaryShipAffiliationTrackerComponent_OnRep_EmissaryCount_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -75,9 +89,12 @@ void UEmissaryShipAffiliationTrackerComponent::OnRep_EmissaryCount()
 
 void AEmissaryVotingService::OnRep_Votes()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function EmissaryLevel.EmissaryVotingService.OnRep_Votes");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function EmissaryLevel.EmissaryVotingService.OnRep_Votes"));
 
-	AEmissaryVotingService_OnRep_Votes_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

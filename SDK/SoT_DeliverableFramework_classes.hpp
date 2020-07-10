@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class DeliverableFramework.DeliverableRequirementBase");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class DeliverableFramework.DeliverableRequirementBase"));
 		return ptr;
 	}
 
@@ -37,7 +37,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class DeliverableFramework.DeliverableInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class DeliverableFramework.DeliverableInterface"));
 		return ptr;
 	}
 
@@ -54,7 +54,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class DeliverableFramework.DeliverableComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class DeliverableFramework.DeliverableComponent"));
 		return ptr;
 	}
 
@@ -70,7 +70,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class DeliverableFramework.DeliverableRequirementsDataAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class DeliverableFramework.DeliverableRequirementsDataAsset"));
 		return ptr;
 	}
 
@@ -85,7 +85,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class DeliverableFramework.DeliverableTooltipCustomizerInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class DeliverableFramework.DeliverableTooltipCustomizerInterface"));
 		return ptr;
 	}
 

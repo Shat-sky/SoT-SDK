@@ -28,7 +28,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass BP_CT_VoyageProgress.BP_CT_VoyageProgress_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass BP_CT_VoyageProgress.BP_CT_VoyageProgress_C"));
 		return ptr;
 	}
 

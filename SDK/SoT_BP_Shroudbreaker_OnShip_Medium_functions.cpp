@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_Shroudbreaker_OnShip_Medium_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Shroudbreaker_OnShip_Medium.BP_Shroudbreaker_OnShip_Medium_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Shroudbreaker_OnShip_Medium.BP_Shroudbreaker_OnShip_Medium_C.UserConstructionScript"));
 
-	ABP_Shroudbreaker_OnShip_Medium_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

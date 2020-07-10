@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_msc_concertina_smp_01_a_ItemInfo_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_msc_concertina_smp_01_a_ItemInfo.BP_msc_concertina_smp_01_a_ItemInfo_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_msc_concertina_smp_01_a_ItemInfo.BP_msc_concertina_smp_01_a_ItemInfo_C.UserConstructionScript"));
 
-	ABP_msc_concertina_smp_01_a_ItemInfo_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

@@ -19,9 +19,13 @@ namespace SDK
 
 struct FGameTime UTimeInterface::GetTime()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Time.TimeInterface.GetTime");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Time.TimeInterface.GetTime"));
 
-	UTimeInterface_GetTime_Params params;
+	struct
+	{
+		struct FGameTime               ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -36,9 +40,13 @@ struct FGameTime UTimeInterface::GetTime()
 
 struct FDateTime UTimeInterface::GetSmoothRealWorldTime()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Time.TimeInterface.GetSmoothRealWorldTime");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Time.TimeInterface.GetSmoothRealWorldTime"));
 
-	UTimeInterface_GetSmoothRealWorldTime_Params params;
+	struct
+	{
+		struct FDateTime               ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -53,9 +61,13 @@ struct FDateTime UTimeInterface::GetSmoothRealWorldTime()
 
 struct FDateTime UTimeInterface::GetPreciseRealWorldTime()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Time.TimeInterface.GetPreciseRealWorldTime");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Time.TimeInterface.GetPreciseRealWorldTime"));
 
-	UTimeInterface_GetPreciseRealWorldTime_Params params;
+	struct
+	{
+		struct FDateTime               ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -71,9 +83,14 @@ struct FDateTime UTimeInterface::GetPreciseRealWorldTime()
 
 struct FGameTime UTimeInterface::ConvertRealWorldTimeToGameWorldTime(const struct FDateTime& RealWorldTime)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Time.TimeInterface.ConvertRealWorldTimeToGameWorldTime");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Time.TimeInterface.ConvertRealWorldTimeToGameWorldTime"));
 
-	UTimeInterface_ConvertRealWorldTimeToGameWorldTime_Params params;
+	struct
+	{
+		struct FDateTime               RealWorldTime;
+		struct FGameTime               ReturnValue;
+	} params;
+
 	params.RealWorldTime = RealWorldTime;
 
 	UObject::ProcessEvent(fn, &params);
@@ -90,9 +107,14 @@ struct FGameTime UTimeInterface::ConvertRealWorldTimeToGameWorldTime(const struc
 
 struct FDateTime UTimeInterface::ConvertGameWorldTimeToRealWorldTime(const struct FGameTime& GameWorldTime)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Time.TimeInterface.ConvertGameWorldTimeToRealWorldTime");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Time.TimeInterface.ConvertGameWorldTimeToRealWorldTime"));
 
-	UTimeInterface_ConvertGameWorldTimeToRealWorldTime_Params params;
+	struct
+	{
+		struct FGameTime               GameWorldTime;
+		struct FDateTime               ReturnValue;
+	} params;
+
 	params.GameWorldTime = GameWorldTime;
 
 	UObject::ProcessEvent(fn, &params);
@@ -108,9 +130,13 @@ struct FDateTime UTimeInterface::ConvertGameWorldTimeToRealWorldTime(const struc
 
 void UDebugTimeInterface::SetTimeScalar(int RequestedTimeScalar)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Time.DebugTimeInterface.SetTimeScalar");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Time.DebugTimeInterface.SetTimeScalar"));
 
-	UDebugTimeInterface_SetTimeScalar_Params params;
+	struct
+	{
+		int                            RequestedTimeScalar;
+	} params;
+
 	params.RequestedTimeScalar = RequestedTimeScalar;
 
 	UObject::ProcessEvent(fn, &params);
@@ -124,9 +150,13 @@ void UDebugTimeInterface::SetTimeScalar(int RequestedTimeScalar)
 
 void UDebugTimeInterface::SetSunset(float SunsetHours)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Time.DebugTimeInterface.SetSunset");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Time.DebugTimeInterface.SetSunset"));
 
-	UDebugTimeInterface_SetSunset_Params params;
+	struct
+	{
+		float                          SunsetHours;
+	} params;
+
 	params.SunsetHours = SunsetHours;
 
 	UObject::ProcessEvent(fn, &params);
@@ -140,9 +170,13 @@ void UDebugTimeInterface::SetSunset(float SunsetHours)
 
 void UDebugTimeInterface::SetSunrise(float SunriseHours)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Time.DebugTimeInterface.SetSunrise");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Time.DebugTimeInterface.SetSunrise"));
 
-	UDebugTimeInterface_SetSunrise_Params params;
+	struct
+	{
+		float                          SunriseHours;
+	} params;
+
 	params.SunriseHours = SunriseHours;
 
 	UObject::ProcessEvent(fn, &params);
@@ -156,9 +190,13 @@ void UDebugTimeInterface::SetSunrise(float SunriseHours)
 
 void UDebugTimeInterface::SetGameWorldTime(const struct FGameTime& RequestedTime)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Time.DebugTimeInterface.SetGameWorldTime");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Time.DebugTimeInterface.SetGameWorldTime"));
 
-	UDebugTimeInterface_SetGameWorldTime_Params params;
+	struct
+	{
+		struct FGameTime               RequestedTime;
+	} params;
+
 	params.RequestedTime = RequestedTime;
 
 	UObject::ProcessEvent(fn, &params);
@@ -172,9 +210,13 @@ void UDebugTimeInterface::SetGameWorldTime(const struct FGameTime& RequestedTime
 
 int UDebugTimeInterface::GetTimeScalar()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Time.DebugTimeInterface.GetTimeScalar");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Time.DebugTimeInterface.GetTimeScalar"));
 
-	UDebugTimeInterface_GetTimeScalar_Params params;
+	struct
+	{
+		int                            ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -189,9 +231,13 @@ int UDebugTimeInterface::GetTimeScalar()
 
 void UDebugTimeInterface::EnableQueryServiceTime(bool Enable)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Time.DebugTimeInterface.EnableQueryServiceTime");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Time.DebugTimeInterface.EnableQueryServiceTime"));
 
-	UDebugTimeInterface_EnableQueryServiceTime_Params params;
+	struct
+	{
+		bool                           Enable;
+	} params;
+
 	params.Enable = Enable;
 
 	UObject::ProcessEvent(fn, &params);
@@ -204,14 +250,20 @@ void UDebugTimeInterface::EnableQueryServiceTime(bool Enable)
 // struct FDateTime               InDateTime                     (Parm, ZeroConstructor)
 // struct FReplicatedDateTime     ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FReplicatedDateTime UTimeBlueprintLibrary::STATIC_MakeReplicatedDateTimeFromDateTime(const struct FDateTime& InDateTime)
+struct FReplicatedDateTime UTimeBlueprintLibrary::MakeReplicatedDateTimeFromDateTime(const struct FDateTime& InDateTime)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Time.TimeBlueprintLibrary.MakeReplicatedDateTimeFromDateTime");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Time.TimeBlueprintLibrary.MakeReplicatedDateTimeFromDateTime"));
 
-	UTimeBlueprintLibrary_MakeReplicatedDateTimeFromDateTime_Params params;
+	struct
+	{
+		struct FDateTime               InDateTime;
+		struct FReplicatedDateTime     ReturnValue;
+	} params;
+
 	params.InDateTime = InDateTime;
 
-	UObject::ProcessEvent(fn, &params);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
 }
@@ -223,14 +275,20 @@ struct FReplicatedDateTime UTimeBlueprintLibrary::STATIC_MakeReplicatedDateTimeF
 // struct FReplicatedDateTime     InDateTime                     (Parm)
 // struct FDateTime               ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
 
-struct FDateTime UTimeBlueprintLibrary::STATIC_MakeDateTimeFromReplicatedDateTime(const struct FReplicatedDateTime& InDateTime)
+struct FDateTime UTimeBlueprintLibrary::MakeDateTimeFromReplicatedDateTime(const struct FReplicatedDateTime& InDateTime)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Time.TimeBlueprintLibrary.MakeDateTimeFromReplicatedDateTime");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Time.TimeBlueprintLibrary.MakeDateTimeFromReplicatedDateTime"));
 
-	UTimeBlueprintLibrary_MakeDateTimeFromReplicatedDateTime_Params params;
+	struct
+	{
+		struct FReplicatedDateTime     InDateTime;
+		struct FDateTime               ReturnValue;
+	} params;
+
 	params.InDateTime = InDateTime;
 
-	UObject::ProcessEvent(fn, &params);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
 }
@@ -248,11 +306,22 @@ struct FDateTime UTimeBlueprintLibrary::STATIC_MakeDateTimeFromReplicatedDateTim
 // int                            Millisecond                    (Parm, ZeroConstructor, IsPlainOldData)
 // struct FDateTime               ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
 
-struct FDateTime UTimeBlueprintLibrary::STATIC_MakeDateTimeFromRaw(int Year, int Month, int Day, int Hour, int Minute, int Second, int Millisecond)
+struct FDateTime UTimeBlueprintLibrary::MakeDateTimeFromRaw(int Year, int Month, int Day, int Hour, int Minute, int Second, int Millisecond)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Time.TimeBlueprintLibrary.MakeDateTimeFromRaw");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Time.TimeBlueprintLibrary.MakeDateTimeFromRaw"));
 
-	UTimeBlueprintLibrary_MakeDateTimeFromRaw_Params params;
+	struct
+	{
+		int                            Year;
+		int                            Month;
+		int                            Day;
+		int                            Hour;
+		int                            Minute;
+		int                            Second;
+		int                            Millisecond;
+		struct FDateTime               ReturnValue;
+	} params;
+
 	params.Year = Year;
 	params.Month = Month;
 	params.Day = Day;
@@ -261,7 +330,8 @@ struct FDateTime UTimeBlueprintLibrary::STATIC_MakeDateTimeFromRaw(int Year, int
 	params.Second = Second;
 	params.Millisecond = Millisecond;
 
-	UObject::ProcessEvent(fn, &params);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
 }
@@ -275,16 +345,24 @@ struct FDateTime UTimeBlueprintLibrary::STATIC_MakeDateTimeFromRaw(int Year, int
 // struct FTimespan               Tolerance                      (Parm, ZeroConstructor)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UTimeBlueprintLibrary::STATIC_DateTimesWithinTolerance(const struct FDateTime& FirstDateTime, const struct FDateTime& SecondDateTime, const struct FTimespan& Tolerance)
+bool UTimeBlueprintLibrary::DateTimesWithinTolerance(const struct FDateTime& FirstDateTime, const struct FDateTime& SecondDateTime, const struct FTimespan& Tolerance)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Time.TimeBlueprintLibrary.DateTimesWithinTolerance");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Time.TimeBlueprintLibrary.DateTimesWithinTolerance"));
 
-	UTimeBlueprintLibrary_DateTimesWithinTolerance_Params params;
+	struct
+	{
+		struct FDateTime               FirstDateTime;
+		struct FDateTime               SecondDateTime;
+		struct FTimespan               Tolerance;
+		bool                           ReturnValue;
+	} params;
+
 	params.FirstDateTime = FirstDateTime;
 	params.SecondDateTime = SecondDateTime;
 	params.Tolerance = Tolerance;
 
-	UObject::ProcessEvent(fn, &params);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
 }
@@ -295,9 +373,12 @@ bool UTimeBlueprintLibrary::STATIC_DateTimesWithinTolerance(const struct FDateTi
 
 void ATimeService::OnRep_ReplicatedServerTime()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Time.TimeService.OnRep_ReplicatedServerTime");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Time.TimeService.OnRep_ReplicatedServerTime"));
 
-	ATimeService_OnRep_ReplicatedServerTime_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -310,9 +391,13 @@ void ATimeService::OnRep_ReplicatedServerTime()
 
 void ATimeService::MulticastOnServiceTimeChangedRPC(int64_t ServiceTimeInTicks)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Time.TimeService.MulticastOnServiceTimeChangedRPC");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Time.TimeService.MulticastOnServiceTimeChangedRPC"));
 
-	ATimeService_MulticastOnServiceTimeChangedRPC_Params params;
+	struct
+	{
+		int64_t                        ServiceTimeInTicks;
+	} params;
+
 	params.ServiceTimeInTicks = ServiceTimeInTicks;
 
 	UObject::ProcessEvent(fn, &params);
@@ -327,9 +412,14 @@ void ATimeService::MulticastOnServiceTimeChangedRPC(int64_t ServiceTimeInTicks)
 
 void ADebugTimeService::MulticastOnTimeScalarOffsetRPC(int Scalar, int64_t Offset)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Time.DebugTimeService.MulticastOnTimeScalarOffsetRPC");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Time.DebugTimeService.MulticastOnTimeScalarOffsetRPC"));
 
-	ADebugTimeService_MulticastOnTimeScalarOffsetRPC_Params params;
+	struct
+	{
+		int                            Scalar;
+		int64_t                        Offset;
+	} params;
+
 	params.Scalar = Scalar;
 	params.Offset = Offset;
 

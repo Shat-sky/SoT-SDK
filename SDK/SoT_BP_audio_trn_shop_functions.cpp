@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_audio_trn_shop_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_audio_trn_shop.BP_audio_trn_shop_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_audio_trn_shop.BP_audio_trn_shop_C.UserConstructionScript"));
 
-	ABP_audio_trn_shop_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

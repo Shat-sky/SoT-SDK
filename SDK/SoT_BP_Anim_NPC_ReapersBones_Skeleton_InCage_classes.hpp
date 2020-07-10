@@ -86,7 +86,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("AnimBlueprintGeneratedClass BP_Anim_NPC_ReapersBones_Skeleton_InCage.BP_Anim_NPC_ReapersBones_Skeleton_InCage_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("AnimBlueprintGeneratedClass BP_Anim_NPC_ReapersBones_Skeleton_InCage.BP_Anim_NPC_ReapersBones_Skeleton_InCage_C"));
 		return ptr;
 	}
 

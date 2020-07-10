@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass BP_Constellation_Feather_SSE.BP_Constellation_Feather_SSE_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass BP_Constellation_Feather_SSE.BP_Constellation_Feather_SSE_C"));
 		return ptr;
 	}
 

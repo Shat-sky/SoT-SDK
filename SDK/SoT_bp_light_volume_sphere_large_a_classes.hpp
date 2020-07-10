@@ -24,7 +24,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass bp_light_volume_sphere_large_a.bp_light_volume_sphere_large_a_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass bp_light_volume_sphere_large_a.bp_light_volume_sphere_large_a_C"));
 		return ptr;
 	}
 

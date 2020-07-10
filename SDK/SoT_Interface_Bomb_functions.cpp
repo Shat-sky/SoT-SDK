@@ -17,9 +17,12 @@ namespace SDK
 
 void UInterface_Bomb_C::Interface_Trigger()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Interface_Bomb.Interface_Bomb_C.Interface Trigger");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Interface_Bomb.Interface_Bomb_C.Interface Trigger"));
 
-	UInterface_Bomb_C_Interface_Trigger_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -33,9 +36,14 @@ void UInterface_Bomb_C::Interface_Trigger()
 
 void UInterface_Bomb_C::Set_Bomb_Parameters(float Radius, int Seed)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function Interface_Bomb.Interface_Bomb_C.Set Bomb Parameters");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Interface_Bomb.Interface_Bomb_C.Set Bomb Parameters"));
 
-	UInterface_Bomb_C_Set_Bomb_Parameters_Params params;
+	struct
+	{
+		float                          Radius;
+		int                            Seed;
+	} params;
+
 	params.Radius = Radius;
 	params.Seed = Seed;
 

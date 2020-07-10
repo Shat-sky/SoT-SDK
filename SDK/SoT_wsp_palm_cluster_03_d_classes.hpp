@@ -39,7 +39,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass wsp_palm_cluster_03_d.wsp_palm_cluster_03_d_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass wsp_palm_cluster_03_d.wsp_palm_cluster_03_d_C"));
 		return ptr;
 	}
 

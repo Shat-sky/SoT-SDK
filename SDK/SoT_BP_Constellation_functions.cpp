@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_Constellation_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Constellation.BP_Constellation_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Constellation.BP_Constellation_C.UserConstructionScript"));
 
-	ABP_Constellation_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -30,9 +33,12 @@ void ABP_Constellation_C::UserConstructionScript()
 
 void ABP_Constellation_C::ReceiveBeginPlay()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Constellation.BP_Constellation_C.ReceiveBeginPlay");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Constellation.BP_Constellation_C.ReceiveBeginPlay"));
 
-	ABP_Constellation_C_ReceiveBeginPlay_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -45,9 +51,13 @@ void ABP_Constellation_C::ReceiveBeginPlay()
 
 void ABP_Constellation_C::ExecuteUbergraph_BP_Constellation(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_Constellation.BP_Constellation_C.ExecuteUbergraph_BP_Constellation");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Constellation.BP_Constellation_C.ExecuteUbergraph_BP_Constellation"));
 
-	ABP_Constellation_C_ExecuteUbergraph_BP_Constellation_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

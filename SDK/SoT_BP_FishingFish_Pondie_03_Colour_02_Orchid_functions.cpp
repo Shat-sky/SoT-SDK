@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_FishingFish_Pondie_03_Colour_02_Orchid_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_FishingFish_Pondie_03_Colour_02_Orchid.BP_FishingFish_Pondie_03_Colour_02_Orchid_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_FishingFish_Pondie_03_Colour_02_Orchid.BP_FishingFish_Pondie_03_Colour_02_Orchid_C.UserConstructionScript"));
 
-	ABP_FishingFish_Pondie_03_Colour_02_Orchid_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

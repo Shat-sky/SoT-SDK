@@ -31,7 +31,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass wsp_mushroom_glow_01_c.wsp_mushroom_glow_01_c_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass wsp_mushroom_glow_01_c.wsp_mushroom_glow_01_c_C"));
 		return ptr;
 	}
 

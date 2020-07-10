@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_MediumShip_StandardHull_Art_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_MediumShip_StandardHull_Art.BP_MediumShip_StandardHull_Art_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_MediumShip_StandardHull_Art.BP_MediumShip_StandardHull_Art_C.UserConstructionScript"));
 
-	ABP_MediumShip_StandardHull_Art_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

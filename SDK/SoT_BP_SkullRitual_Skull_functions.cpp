@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_SkullRitual_Skull_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_SkullRitual_Skull.BP_SkullRitual_Skull_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_SkullRitual_Skull.BP_SkullRitual_Skull_C.UserConstructionScript"));
 
-	ABP_SkullRitual_Skull_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

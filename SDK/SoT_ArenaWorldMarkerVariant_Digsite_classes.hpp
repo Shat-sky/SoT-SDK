@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("BlueprintGeneratedClass ArenaWorldMarkerVariant_Digsite.ArenaWorldMarkerVariant_Digsite_C");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("BlueprintGeneratedClass ArenaWorldMarkerVariant_Digsite.ArenaWorldMarkerVariant_Digsite_C"));
 		return ptr;
 	}
 

@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_LargeShip_Capstan_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_LargeShip_Capstan.BP_LargeShip_Capstan_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_LargeShip_Capstan.BP_LargeShip_Capstan_C.UserConstructionScript"));
 
-	ABP_LargeShip_Capstan_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

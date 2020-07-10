@@ -17,9 +17,12 @@ namespace SDK
 
 void Absp_torch_bell_a_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function bsp_torch_bell_a.bsp_torch_bell_a_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function bsp_torch_bell_a.bsp_torch_bell_a_C.UserConstructionScript"));
 
-	Absp_torch_bell_a_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

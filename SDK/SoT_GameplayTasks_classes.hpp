@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class GameplayTasks.GameplayTaskOwnerInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class GameplayTasks.GameplayTaskOwnerInterface"));
 		return ptr;
 	}
 
@@ -39,7 +39,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class GameplayTasks.GameplayTask");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class GameplayTasks.GameplayTask"));
 		return ptr;
 	}
 
@@ -62,12 +62,12 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class GameplayTasks.GameplayTask_SpawnActor");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class GameplayTasks.GameplayTask_SpawnActor"));
 		return ptr;
 	}
 
 
-	class UGameplayTask_SpawnActor* STATIC_SpawnActor(const TScriptInterface<class UGameplayTaskOwnerInterface>& TaskOwner, const struct FVector& SpawnLocation, const struct FRotator& SpawnRotation, class UClass* Class, bool bSpawnOnlyOnAuthority);
+	static class UGameplayTask_SpawnActor* SpawnActor(const TScriptInterface<class UGameplayTaskOwnerInterface>& TaskOwner, const struct FVector& SpawnLocation, const struct FRotator& SpawnRotation, class UClass* Class, bool bSpawnOnlyOnAuthority);
 	void FinishSpawningActor(class UObject* WorldContextObject, class AActor* SpawnedActor);
 	bool BeginSpawningActor(class UObject* WorldContextObject, class AActor** SpawnedActor);
 };
@@ -83,12 +83,12 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class GameplayTasks.GameplayTask_WaitDelay");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class GameplayTasks.GameplayTask_WaitDelay"));
 		return ptr;
 	}
 
 
-	class UGameplayTask_WaitDelay* STATIC_TaskWaitDelay(const TScriptInterface<class UGameplayTaskOwnerInterface>& TaskOwner, float Time);
+	static class UGameplayTask_WaitDelay* TaskWaitDelay(const TScriptInterface<class UGameplayTaskOwnerInterface>& TaskOwner, float Time);
 	void TaskDelayDelegate__DelegateSignature();
 };
 
@@ -105,7 +105,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class GameplayTasks.GameplayTaskResource");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class GameplayTasks.GameplayTaskResource"));
 		return ptr;
 	}
 
@@ -125,13 +125,13 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class GameplayTasks.GameplayTasksComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class GameplayTasks.GameplayTasksComponent"));
 		return ptr;
 	}
 
 
 	void OnRep_SimulatedTasks();
-	TEnumAsByte<EGameplayTaskRunResult> STATIC_K2_RunGameplayTask(const TScriptInterface<class UGameplayTaskOwnerInterface>& TaskOwner, class UGameplayTask* Task, unsigned char Priority, TArray<class UClass*> AdditionalRequiredResources, TArray<class UClass*> AdditionalClaimedResources);
+	static TEnumAsByte<EGameplayTaskRunResult> K2_RunGameplayTask(const TScriptInterface<class UGameplayTaskOwnerInterface>& TaskOwner, class UGameplayTask* Task, unsigned char Priority, TArray<class UClass*> AdditionalRequiredResources, TArray<class UClass*> AdditionalClaimedResources);
 };
 
 

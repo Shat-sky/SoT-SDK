@@ -17,9 +17,12 @@ namespace SDK
 
 void Awsp_beach_rocks_04_c_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function wsp_beach_rocks_04_c.wsp_beach_rocks_04_c_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function wsp_beach_rocks_04_c.wsp_beach_rocks_04_c_C.UserConstructionScript"));
 
-	Awsp_beach_rocks_04_c_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

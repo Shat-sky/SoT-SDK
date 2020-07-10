@@ -22,7 +22,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ActionStateMachine.ActionStateId");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.ActionStateId"));
 		return ptr;
 	}
 
@@ -37,7 +37,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ActionStateMachine.ActionStateCreatorDefinition");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.ActionStateCreatorDefinition"));
 		return ptr;
 	}
 
@@ -53,7 +53,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ActionStateMachine.TestActionStateCreatorDefinition");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.TestActionStateCreatorDefinition"));
 		return ptr;
 	}
 
@@ -68,7 +68,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ActionStateMachine.CustomClientValidityActionState2Id");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.CustomClientValidityActionState2Id"));
 		return ptr;
 	}
 
@@ -83,7 +83,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ActionStateMachine.CustomClientValidityActionStateId");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.CustomClientValidityActionStateId"));
 		return ptr;
 	}
 
@@ -98,7 +98,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ActionStateMachine.NullActionStateId");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.NullActionStateId"));
 		return ptr;
 	}
 
@@ -113,7 +113,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ActionStateMachine.TestActionStateId");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.TestActionStateId"));
 		return ptr;
 	}
 
@@ -128,7 +128,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ActionStateMachine.TestActionStateId2");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.TestActionStateId2"));
 		return ptr;
 	}
 
@@ -146,7 +146,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ActionStateMachine.ActionStateMachineComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.ActionStateMachineComponent"));
 		return ptr;
 	}
 
@@ -173,7 +173,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ActionStateMachine.TestActionStateMachineComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.TestActionStateMachineComponent"));
 		return ptr;
 	}
 
@@ -190,7 +190,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ActionStateMachine.CustomClientValidityCheckCallback");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.CustomClientValidityCheckCallback"));
 		return ptr;
 	}
 
@@ -205,25 +205,25 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ActionStateMachine.ActionStateMachineComponentTestFunctions");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.ActionStateMachineComponentTestFunctions"));
 		return ptr;
 	}
 
 
-	bool STATIC_SetTestStateValidatorThatAlwaysPassesExceptForId(class UActionStateMachineComponent* InComponent, class UClass* StateId);
-	bool STATIC_SetTestStateValidatorThatAlwaysPasses(class UActionStateMachineComponent* InComponent);
-	bool STATIC_SetTestStateValidatorThatAlwaysFails(class UActionStateMachineComponent* InComponent);
-	bool STATIC_SetTestStateFactoryChangeToNullOnUpdate(class UActionStateMachineComponent* InComponent);
-	bool STATIC_SetTestStateFactory(class UActionStateMachineComponent* InComponent);
-	bool STATIC_SetCustomClientValidationTestStateFactory(class UActionStateMachineComponent* InComponent, class UCustomClientValidityCheckCallback* InCallback);
-	bool STATIC_RequestUnpredictedTestActionStateWithIdOnTrack(class UActionStateMachineComponent* InComponent, TEnumAsByte<EActionStateMachineTrackId> TrackId, class UClass* ClientStateId, class UClass* ServerStateId);
-	bool STATIC_RequestTestActionStateWithIdOnTrack(class UActionStateMachineComponent* InComponent, TEnumAsByte<EActionStateMachineTrackId> TrackId, class UClass* StateId);
-	bool STATIC_RequestNullActionStateOnTrack(class UActionStateMachineComponent* InComponent, TEnumAsByte<EActionStateMachineTrackId> TrackId);
-	void STATIC_PushTestActionStateSerialisableDataOnTrack(class UActionStateMachineComponent* InComponent, TEnumAsByte<EActionStateMachineTrackId> TrackId, class UClass* StateId, int DataValue);
-	bool STATIC_IsActionStateTypeActiveOnTrack(class UActionStateMachineComponent* InComponent, TEnumAsByte<EActionStateMachineTrackId> TrackId, class UClass* StateId);
-	class UClass* STATIC_GetTypeOfActionStateActiveOnTrack(class UActionStateMachineComponent* InComponent, TEnumAsByte<EActionStateMachineTrackId> TrackId);
-	bool STATIC_GetTestActionStateSerialisableDataOnTrack(class UActionStateMachineComponent* InComponent, TEnumAsByte<EActionStateMachineTrackId> TrackId, struct FTestActionStateSerialisableData* Data);
-	class UCustomClientValidityCheckCallback* STATIC_CreateCustomClientValidityCheckCallback();
+	static bool SetTestStateValidatorThatAlwaysPassesExceptForId(class UActionStateMachineComponent* InComponent, class UClass* StateId);
+	static bool SetTestStateValidatorThatAlwaysPasses(class UActionStateMachineComponent* InComponent);
+	static bool SetTestStateValidatorThatAlwaysFails(class UActionStateMachineComponent* InComponent);
+	static bool SetTestStateFactoryChangeToNullOnUpdate(class UActionStateMachineComponent* InComponent);
+	static bool SetTestStateFactory(class UActionStateMachineComponent* InComponent);
+	static bool SetCustomClientValidationTestStateFactory(class UActionStateMachineComponent* InComponent, class UCustomClientValidityCheckCallback* InCallback);
+	static bool RequestUnpredictedTestActionStateWithIdOnTrack(class UActionStateMachineComponent* InComponent, TEnumAsByte<EActionStateMachineTrackId> TrackId, class UClass* ClientStateId, class UClass* ServerStateId);
+	static bool RequestTestActionStateWithIdOnTrack(class UActionStateMachineComponent* InComponent, TEnumAsByte<EActionStateMachineTrackId> TrackId, class UClass* StateId);
+	static bool RequestNullActionStateOnTrack(class UActionStateMachineComponent* InComponent, TEnumAsByte<EActionStateMachineTrackId> TrackId);
+	static void PushTestActionStateSerialisableDataOnTrack(class UActionStateMachineComponent* InComponent, TEnumAsByte<EActionStateMachineTrackId> TrackId, class UClass* StateId, int DataValue);
+	static bool IsActionStateTypeActiveOnTrack(class UActionStateMachineComponent* InComponent, TEnumAsByte<EActionStateMachineTrackId> TrackId, class UClass* StateId);
+	static class UClass* GetTypeOfActionStateActiveOnTrack(class UActionStateMachineComponent* InComponent, TEnumAsByte<EActionStateMachineTrackId> TrackId);
+	static bool GetTestActionStateSerialisableDataOnTrack(class UActionStateMachineComponent* InComponent, TEnumAsByte<EActionStateMachineTrackId> TrackId, struct FTestActionStateSerialisableData* Data);
+	static class UCustomClientValidityCheckCallback* CreateCustomClientValidityCheckCallback();
 };
 
 
@@ -235,7 +235,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ActionStateMachine.ActionStateMachineInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.ActionStateMachineInterface"));
 		return ptr;
 	}
 
@@ -252,7 +252,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ActionStateMachine.ActionStatePriorityTableData");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.ActionStatePriorityTableData"));
 		return ptr;
 	}
 
@@ -267,13 +267,13 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ActionStateMachine.ActionStatePriorityTableUtility");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.ActionStatePriorityTableUtility"));
 		return ptr;
 	}
 
 
-	TEnumAsByte<EActionStatePriority> STATIC_GetPriority(class UClass* InStateA, class UClass* InStateB, struct FActionStatePriorityTable* PriorityTable);
-	struct FActionStatePriorityTable STATIC_CreatePriorityTable(class UActionStatePriorityTableData* Data);
+	static TEnumAsByte<EActionStatePriority> GetPriority(class UClass* InStateA, class UClass* InStateB, struct FActionStatePriorityTable* PriorityTable);
+	static struct FActionStatePriorityTable CreatePriorityTable(class UActionStatePriorityTableData* Data);
 };
 
 
@@ -286,7 +286,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ActionStateMachine.RemoteValidationFailActionStateActor");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.RemoteValidationFailActionStateActor"));
 		return ptr;
 	}
 
@@ -301,19 +301,19 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ActionStateMachine.SerialisedActionStateConstructionInfoTestFunctions");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.SerialisedActionStateConstructionInfoTestFunctions"));
 		return ptr;
 	}
 
 
-	bool STATIC_IsValid(const struct FSerialisedActionStateInfo& TestStruct);
-	bool STATIC_HasTestConstructionInfoWithInner(const struct FSerialisedActionStateInfo& TestStruct);
-	bool STATIC_HasTestConstructionInfo(const struct FSerialisedActionStateInfo& TestStruct);
-	struct FTestActionStateConstructionInfoWithInner STATIC_GetTestConstructionInfoWithInner(const struct FSerialisedActionStateInfo& TestStruct);
-	struct FTestActionStateConstructionInfo STATIC_GetTestConstructionInfo(const struct FSerialisedActionStateInfo& TestStruct);
-	struct FSerialisedActionStateInfo STATIC_CreateTestSerialisableData(class UClass* Id, int IntProp);
-	struct FSerialisedActionStateInfo STATIC_CreateTestConstructionInfoWithInner(class UClass* Id, float FloatProp, bool BoolProp, const class FString& StringProp);
-	struct FSerialisedActionStateInfo STATIC_CreateTestConstructionInfo(class UClass* Id, int IntProp);
+	static bool IsValid(const struct FSerialisedActionStateInfo& TestStruct);
+	static bool HasTestConstructionInfoWithInner(const struct FSerialisedActionStateInfo& TestStruct);
+	static bool HasTestConstructionInfo(const struct FSerialisedActionStateInfo& TestStruct);
+	static struct FTestActionStateConstructionInfoWithInner GetTestConstructionInfoWithInner(const struct FSerialisedActionStateInfo& TestStruct);
+	static struct FTestActionStateConstructionInfo GetTestConstructionInfo(const struct FSerialisedActionStateInfo& TestStruct);
+	static struct FSerialisedActionStateInfo CreateTestSerialisableData(class UClass* Id, int IntProp);
+	static struct FSerialisedActionStateInfo CreateTestConstructionInfoWithInner(class UClass* Id, float FloatProp, bool BoolProp, const class FString& StringProp);
+	static struct FSerialisedActionStateInfo CreateTestConstructionInfo(class UClass* Id, int IntProp);
 };
 
 
@@ -327,7 +327,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class ActionStateMachine.TestObjectWithActionStateMachine");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.TestObjectWithActionStateMachine"));
 		return ptr;
 	}
 

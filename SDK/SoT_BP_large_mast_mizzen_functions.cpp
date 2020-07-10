@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_large_mast_mizzen_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_large_mast_mizzen.BP_large_mast_mizzen_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_large_mast_mizzen.BP_large_mast_mizzen_C.UserConstructionScript"));
 
-	ABP_large_mast_mizzen_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -32,9 +35,13 @@ void ABP_large_mast_mizzen_C::UserConstructionScript()
 
 void ABP_large_mast_mizzen_C::OnMastDescLoaded(class UMastDescAsset* MastDesc)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_large_mast_mizzen.BP_large_mast_mizzen_C.OnMastDescLoaded");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_large_mast_mizzen.BP_large_mast_mizzen_C.OnMastDescLoaded"));
 
-	ABP_large_mast_mizzen_C_OnMastDescLoaded_Params params;
+	struct
+	{
+		class UMastDescAsset*          MastDesc;
+	} params;
+
 	params.MastDesc = MastDesc;
 
 	UObject::ProcessEvent(fn, &params);
@@ -48,9 +55,13 @@ void ABP_large_mast_mizzen_C::OnMastDescLoaded(class UMastDescAsset* MastDesc)
 
 void ABP_large_mast_mizzen_C::ExecuteUbergraph_BP_large_mast_mizzen(int EntryPoint)
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_large_mast_mizzen.BP_large_mast_mizzen_C.ExecuteUbergraph_BP_large_mast_mizzen");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_large_mast_mizzen.BP_large_mast_mizzen_C.ExecuteUbergraph_BP_large_mast_mizzen"));
 
-	ABP_large_mast_mizzen_C_ExecuteUbergraph_BP_large_mast_mizzen_Params params;
+	struct
+	{
+		int                            EntryPoint;
+	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);

@@ -17,9 +17,12 @@ namespace SDK
 
 void Awsp_Pole_Orb_Light_b_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function wsp_Pole_Orb_Light_b.wsp_Pole_Orb_Light_b_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function wsp_Pole_Orb_Light_b.wsp_Pole_Orb_Light_b_C.UserConstructionScript"));
 
-	Awsp_Pole_Orb_Light_b_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

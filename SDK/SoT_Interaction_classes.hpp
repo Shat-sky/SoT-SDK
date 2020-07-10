@@ -37,7 +37,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Interaction.InteractableComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Interaction.InteractableComponent"));
 		return ptr;
 	}
 
@@ -60,7 +60,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Interaction.InteractionValidatorSetterInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Interaction.InteractionValidatorSetterInterface"));
 		return ptr;
 	}
 
@@ -78,7 +78,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Interaction.CharacterInteractionComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Interaction.CharacterInteractionComponent"));
 		return ptr;
 	}
 
@@ -98,7 +98,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Interaction.GroupedInteractableAreaComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Interaction.GroupedInteractableAreaComponent"));
 		return ptr;
 	}
 
@@ -118,7 +118,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Interaction.InteractableArea");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Interaction.InteractableArea"));
 		return ptr;
 	}
 
@@ -143,7 +143,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Interaction.InteractableInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Interaction.InteractableInterface"));
 		return ptr;
 	}
 
@@ -172,7 +172,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Interaction.InteractableIdentifierInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Interaction.InteractableIdentifierInterface"));
 		return ptr;
 	}
 
@@ -187,7 +187,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Interaction.InteractableServiceInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Interaction.InteractableServiceInterface"));
 		return ptr;
 	}
 
@@ -205,7 +205,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Interaction.InteractableService");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Interaction.InteractableService"));
 		return ptr;
 	}
 
@@ -220,7 +220,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Interaction.InteractionValidatorOwnerInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Interaction.InteractionValidatorOwnerInterface"));
 		return ptr;
 	}
 
@@ -235,7 +235,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Interaction.InteractorInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Interaction.InteractorInterface"));
 		return ptr;
 	}
 
@@ -253,7 +253,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Interaction.MockActorWithCharacterInteractionComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Interaction.MockActorWithCharacterInteractionComponent"));
 		return ptr;
 	}
 
@@ -269,7 +269,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Interaction.MockInteractableService");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Interaction.MockInteractableService"));
 		return ptr;
 	}
 
@@ -289,7 +289,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Interaction.MockInteractorActor");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Interaction.MockInteractorActor"));
 		return ptr;
 	}
 
@@ -304,7 +304,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Interaction.SelfInteractionInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Interaction.SelfInteractionInterface"));
 		return ptr;
 	}
 

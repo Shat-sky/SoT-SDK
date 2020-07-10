@@ -36,7 +36,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Reviving.ReviveSettings");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Reviving.ReviveSettings"));
 		return ptr;
 	}
 
@@ -54,7 +54,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Reviving.DeathSelfInteractionComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Reviving.DeathSelfInteractionComponent"));
 		return ptr;
 	}
 
@@ -72,7 +72,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Reviving.RevivableStatus");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Reviving.RevivableStatus"));
 		return ptr;
 	}
 
@@ -87,7 +87,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Reviving.ReviveableActionStateId");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Reviving.ReviveableActionStateId"));
 		return ptr;
 	}
 
@@ -102,7 +102,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Reviving.ReviveableCharacterInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Reviving.ReviveableCharacterInterface"));
 		return ptr;
 	}
 
@@ -117,7 +117,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Reviving.ReviveableRepresentationInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Reviving.ReviveableRepresentationInterface"));
 		return ptr;
 	}
 
@@ -133,7 +133,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Reviving.ReviveAudioComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Reviving.ReviveAudioComponent"));
 		return ptr;
 	}
 
@@ -148,7 +148,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Reviving.ReviveInterface");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Reviving.ReviveInterface"));
 		return ptr;
 	}
 
@@ -175,7 +175,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Reviving.ReviveComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Reviving.ReviveComponent"));
 		return ptr;
 	}
 
@@ -193,7 +193,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Reviving.RevivedActionStateId");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Reviving.RevivedActionStateId"));
 		return ptr;
 	}
 
@@ -209,7 +209,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Reviving.ReviveDebugComponent");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Reviving.ReviveDebugComponent"));
 		return ptr;
 	}
 
@@ -249,7 +249,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Reviving.ReviveEffectsDataAsset");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Reviving.ReviveEffectsDataAsset"));
 		return ptr;
 	}
 
@@ -287,7 +287,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Reviving.ReviveGhost");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Reviving.ReviveGhost"));
 		return ptr;
 	}
 
@@ -302,7 +302,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class Reviving.RevivePlayerActionStateId");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Reviving.RevivePlayerActionStateId"));
 		return ptr;
 	}
 

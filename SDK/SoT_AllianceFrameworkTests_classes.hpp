@@ -26,7 +26,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>("Class AllianceFrameworkTests.MockAllianceService");
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AllianceFrameworkTests.MockAllianceService"));
 		return ptr;
 	}
 

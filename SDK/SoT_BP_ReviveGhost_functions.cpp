@@ -17,9 +17,12 @@ namespace SDK
 
 void ABP_ReviveGhost_C::UserConstructionScript()
 {
-	static auto fn = UObject::FindObject<UFunction>("Function BP_ReviveGhost.BP_ReviveGhost_C.UserConstructionScript");
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_ReviveGhost.BP_ReviveGhost_C.UserConstructionScript"));
 
-	ABP_ReviveGhost_C_UserConstructionScript_Params params;
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
