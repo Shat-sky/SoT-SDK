@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -40,7 +40,8 @@ struct ULightWeightStatusEffectManagerComponent_OnRep_ActiveEffects_Params
 // Function StatusEffects.LightWeightStatusEffectManagerComponent.MultiCast_ApplyOneShotStatus
 struct ULightWeightStatusEffectManagerComponent_MultiCast_ApplyOneShotStatus_Params
 {
-	TArray<struct FActiveStatusEffect>                 ActivatedEffects;                                         // (ConstParm, Parm, ZeroConstructor, ReferenceParm)
+	TArray<struct FActiveStatusEffect>                 AddedEffects;                                             // (ConstParm, Parm, ZeroConstructor, ReferenceParm)
+	TArray<struct FActiveStatusEffect>                 RemovedEffects;                                           // (ConstParm, Parm, ZeroConstructor, ReferenceParm)
 };
 
 // Function StatusEffects.StatusEffectHelperFunctionLibrary.ApplyOneShotStatus
@@ -59,7 +60,8 @@ struct UStatusEffectManagerComponent_OnRep_ActiveEffects_Params
 // Function StatusEffects.StatusEffectManagerComponent.MultiCast_ApplyOneShotStatus
 struct UStatusEffectManagerComponent_MultiCast_ApplyOneShotStatus_Params
 {
-	TArray<struct FActiveStatusEffect>                 ActivatedEffects;                                         // (ConstParm, Parm, ZeroConstructor, ReferenceParm)
+	TArray<struct FActiveStatusEffect>                 AddedEffects;                                             // (ConstParm, Parm, ZeroConstructor, ReferenceParm)
+	TArray<struct FActiveStatusEffect>                 RemovedEffects;                                           // (ConstParm, Parm, ZeroConstructor, ReferenceParm)
 };
 
 }

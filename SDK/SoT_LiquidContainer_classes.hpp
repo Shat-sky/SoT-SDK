@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -62,6 +62,37 @@ public:
 	void SetLiquidLevel(float Level);
 	float GetLiquidLevel();
 	void CollectLiquidMaterials(class UMeshComponent* MeshComponent);
+};
+
+
+// Class LiquidContainer.LiquidContainerServiceInterface
+// 0x0000 (0x0028 - 0x0028)
+class ULiquidContainerServiceInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class LiquidContainer.LiquidContainerServiceInterface"));
+		return ptr;
+	}
+
+};
+
+
+// Class LiquidContainer.LiquidContainerService
+// 0x0008 (0x0078 - 0x0070)
+class ULiquidContainerService : public UInteractableService
+{
+public:
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0070(0x0008) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class LiquidContainer.LiquidContainerService"));
+		return ptr;
+	}
+
 };
 
 

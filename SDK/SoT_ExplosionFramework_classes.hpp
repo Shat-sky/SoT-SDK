@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -47,14 +47,14 @@ public:
 
 
 // Class ExplosionFramework.StatusResponseExplodeAfterTime
-// 0x0018 (0x0040 - 0x0028)
+// 0x0018 (0x0048 - 0x0030)
 class UStatusResponseExplodeAfterTime : public UStatusResponse
 {
 public:
-	float                                              MinTimeUntilExplosion;                                    // 0x0028(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              MaxTimeUntilExplosion;                                    // 0x002C(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0030(0x0008) MISSED OFFSET
-	class UWorld*                                      CachedWorld;                                              // 0x0038(0x0008) (ZeroConstructor, IsPlainOldData)
+	float                                              MinTimeUntilExplosion;                                    // 0x0030(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              MaxTimeUntilExplosion;                                    // 0x0034(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0038(0x0008) MISSED OFFSET
+	class UWorld*                                      CachedWorld;                                              // 0x0040(0x0008) (ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

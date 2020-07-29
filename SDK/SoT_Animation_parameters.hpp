@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -63,6 +63,17 @@ struct UAnimationDataStoreInterface_GetAnimationDataForId_Params
 {
 	class UClass*                                      AnimDataId;                                               // (Parm, ZeroConstructor, IsPlainOldData)
 	class UAnimationData*                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Animation.CosmeticItemAnimationComponent.SpawnCosmeticItem
+struct UCosmeticItemAnimationComponent_SpawnCosmeticItem_Params
+{
+	class USkeletalMeshComponent*                      MeshComponent;                                            // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UClass*                                      ObjectToSpawn;                                            // (Parm, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EWieldAnimationLocation>               SpawnLocation;                                            // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+	class UCosmeticItemAnimationSetDataAsset*          CosmeticData;                                             // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               SpawnHidden;                                              // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Animation.CosmeticItemAnimationComponent.DestroyAllCosmeticItems

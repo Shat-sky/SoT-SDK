@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -38,7 +38,7 @@ enum class ELandscapeLayerPaintingRestriction : uint8_t
 {
 	ELandscapeLayerPaintingRestriction__None = 0,
 	None                           = 1,
-	LSMO_XUp                       = 2
+	LB_WeightBlend                 = 2
 };
 
 
@@ -64,7 +64,8 @@ enum class ELandscapeLayerBlendType : uint8_t
 {
 	LB_WeightBlend                 = 0,
 	None                           = 1,
-	ENodeAdvancedPins__NoPins      = 2
+	IntProperty                    = 2,
+	ENodeAdvancedPins__NoPins      = 3
 };
 
 

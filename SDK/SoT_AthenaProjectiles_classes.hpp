@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -24,6 +24,22 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaProjectiles.AthenaProjectilesThrottledTickCollectionAsset"));
+		return ptr;
+	}
+
+};
+
+
+// Class AthenaProjectiles.ProjectileLauncherSpecificSettings
+// 0x0010 (0x0048 - 0x0038)
+class UProjectileLauncherSpecificSettings : public UDeveloperSettings
+{
+public:
+	TArray<struct FGlobalProjectileSettings>           GlobalSettings;                                           // 0x0038(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaProjectiles.ProjectileLauncherSpecificSettings"));
 		return ptr;
 	}
 

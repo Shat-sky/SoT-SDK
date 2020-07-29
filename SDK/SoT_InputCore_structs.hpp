@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -57,8 +57,7 @@ enum class EConsoleForGamepadLabels : uint8_t
 enum class EControllerHand : uint8_t
 {
 	EControllerHand__Left          = 0,
-	None                           = 1,
-	IntProperty                    = 2
+	None                           = 1
 };
 
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -85,11 +85,11 @@ public:
 
 
 // Class EmissaryLevel.EmissaryFlotsamItemInfo
-// 0x0018 (0x0740 - 0x0728)
+// 0x0018 (0x0768 - 0x0750)
 class AEmissaryFlotsamItemInfo : public ABootyItemInfo
 {
 public:
-	struct FCompanySpecificBootyReward                 HandInOwnFlotsamReward;                                   // 0x0728(0x0018) (Edit, DisableEditOnInstance)
+	struct FCompanySpecificBootyReward                 HandInOwnFlotsamReward;                                   // 0x0750(0x0018) (Edit, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{
@@ -175,7 +175,7 @@ public:
 
 
 // Class EmissaryLevel.EmissaryMaxRankQuestProvider
-// 0x00B0 (0x0178 - 0x00C8)
+// 0x0098 (0x0160 - 0x00C8)
 class UEmissaryMaxRankQuestProvider : public UActorComponent
 {
 public:
@@ -186,7 +186,6 @@ public:
 	struct FText                                       CannotStartMaxRankQuestToolTipText;                       // 0x0110(0x0038) (Edit, DisableEditOnInstance)
 	struct FStringAssetReference                       QuestDesc;                                                // 0x0148(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 	class UClass*                                      Company;                                                  // 0x0158(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x18];                                      // 0x0160(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

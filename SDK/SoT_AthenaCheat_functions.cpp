@@ -1,4 +1,4 @@
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -599,6 +599,22 @@ void UAthenaCheatManager::ToggleMigrationPointOfInterestChecks(bool Enabled)
 void UAthenaCheatManager::ToggleFastShipControls()
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.ToggleFastShipControls"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.ToggleDrowning
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::ToggleDrowning()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.ToggleDrowning"));
 
 	struct
 	{
@@ -1361,6 +1377,22 @@ void UAthenaCheatManager::StopShip()
 void UAthenaCheatManager::StopPetHangout()
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.StopPetHangout"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.StopAllShips
+// (Final, Exec, Native, Public, BlueprintCallable)
+
+void UAthenaCheatManager::StopAllShips()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.StopAllShips"));
 
 	struct
 	{
@@ -4481,6 +4513,22 @@ void UAthenaCheatManager::SailShip()
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.SailAllShips
+// (Final, Exec, Native, Public, BlueprintCallable)
+
+void UAthenaCheatManager::SailAllShips()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.SailAllShips"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.RewindPhysicsSceneBy
 // (Final, Exec, Native, Public)
 // Parameters:
@@ -4675,6 +4723,22 @@ void UAthenaCheatManager::ResetTinySharkSpawnTimer()
 void UAthenaCheatManager::ResetStats()
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.ResetStats"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.ResetNearestVault
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::ResetNearestVault()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.ResetNearestVault"));
 
 	struct
 	{
@@ -4939,6 +5003,22 @@ void UAthenaCheatManager::ReplaceShipWithSmallShip(const class FString& ShipActo
 void UAthenaCheatManager::RepairShipAndClearInternalWater()
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.RepairShipAndClearInternalWater"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.RepairAndClearInternalWaterOnAllShips
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::RepairAndClearInternalWaterOnAllShips()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.RepairAndClearInternalWaterOnAllShips"));
 
 	struct
 	{

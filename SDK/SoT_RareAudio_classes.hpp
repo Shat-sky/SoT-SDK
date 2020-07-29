@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -60,6 +60,23 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class RareAudio.AnimNotify_WwiseSound"));
+		return ptr;
+	}
+
+};
+
+
+// Class RareAudio.AnimNotify_WwiseSoundMeshSwitch
+// 0x0018 (0x0060 - 0x0048)
+class UAnimNotify_WwiseSoundMeshSwitch : public UAnimNotify_WwiseSound
+{
+public:
+	struct FName                                       SkeletalMeshSwitchGroup;                                  // 0x0048(0x0008) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	TArray<struct FAnimNotify_SoundSwitch>             MeshOverrides;                                            // 0x0050(0x0010) (Edit, BlueprintReadOnly, ZeroConstructor)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class RareAudio.AnimNotify_WwiseSoundMeshSwitch"));
 		return ptr;
 	}
 
@@ -149,6 +166,7 @@ public:
 	static bool WwiseGetGlobalRTPC(const struct FName& RTPCName, float* RTPCValue);
 	static bool WwiseEmitterWaitToComplete(const struct FWwiseEmitter& Emitter, int PlayId, class UObject* WorldContextObject, const struct FLatentActionInfo& LatentInfo);
 	static bool WwiseEmitterStop(const struct FWwiseEmitter& Emitter, int PlayId, float FadeTime);
+	static bool WwiseEmitterSetSwitch(const struct FWwiseEmitter& Emitter, const struct FName& SwitchGroup, const struct FName& Value);
 	static bool WwiseEmitterSetRTPCOnAll(TArray<struct FWwiseEmitter> Emitters, const struct FName& Name, float Value);
 	static bool WwiseEmitterSetRTPC(const struct FWwiseEmitter& Emitter, const struct FName& Name, float Value);
 	static bool WwiseEmitterSetParams(const struct FWwiseEmitter& Emitter, const struct FWwiseEmitterParams& Params);
@@ -445,6 +463,22 @@ public:
 
 
 	void PopulateInstanceAssociations();
+};
+
+
+// Class RareAudio.WwiseObjectPoolWrapperMock
+// 0x0018 (0x0098 - 0x0080)
+class UWwiseObjectPoolWrapperMock : public UWwiseObjectPoolWrapper
+{
+public:
+	unsigned char                                      UnknownData00[0x18];                                      // 0x0080(0x0018) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class RareAudio.WwiseObjectPoolWrapperMock"));
+		return ptr;
+	}
+
 };
 
 

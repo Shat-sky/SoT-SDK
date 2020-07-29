@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,6 +37,17 @@ struct AAshenLordVolcano_Multicast_FireProjectile_Params
 	struct FVector                                     AuthoritySpawnLocation;                                   // (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 	struct FVector                                     LaunchVelocity;                                           // (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 	struct FVector                                     RotationRate;                                             // (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+};
+
+// Function NaturalDisasters.AshenLordWorldEndCloud.OnRep_CloudStateChange
+struct AAshenLordWorldEndCloud_OnRep_CloudStateChange_Params
+{
+};
+
+// Function NaturalDisasters.AshenLordWorldEndCloud.AnimateCloud
+struct AAshenLordWorldEndCloud_AnimateCloud_Params
+{
+	float                                              AdjustedLifetime;                                         // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 };
 
 // Function NaturalDisasters.Earthquake.OnRep_EarthquakeState

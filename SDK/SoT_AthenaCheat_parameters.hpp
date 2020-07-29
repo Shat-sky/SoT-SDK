@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -194,6 +194,11 @@ struct UAthenaCheatManager_ToggleMigrationPointOfInterestChecks_Params
 
 // Function AthenaCheat.AthenaCheatManager.ToggleFastShipControls
 struct UAthenaCheatManager_ToggleFastShipControls_Params
+{
+};
+
+// Function AthenaCheat.AthenaCheatManager.ToggleDrowning
+struct UAthenaCheatManager_ToggleDrowning_Params
 {
 };
 
@@ -430,6 +435,11 @@ struct UAthenaCheatManager_StopShip_Params
 
 // Function AthenaCheat.AthenaCheatManager.StopPetHangout
 struct UAthenaCheatManager_StopPetHangout_Params
+{
+};
+
+// Function AthenaCheat.AthenaCheatManager.StopAllShips
+struct UAthenaCheatManager_StopAllShips_Params
 {
 };
 
@@ -1383,6 +1393,11 @@ struct UAthenaCheatManager_SailShip_Params
 {
 };
 
+// Function AthenaCheat.AthenaCheatManager.SailAllShips
+struct UAthenaCheatManager_SailAllShips_Params
+{
+};
+
 // Function AthenaCheat.AthenaCheatManager.RewindPhysicsSceneBy
 struct UAthenaCheatManager_RewindPhysicsSceneBy_Params
 {
@@ -1443,6 +1458,11 @@ struct UAthenaCheatManager_ResetTinySharkSpawnTimer_Params
 
 // Function AthenaCheat.AthenaCheatManager.ResetStats
 struct UAthenaCheatManager_ResetStats_Params
+{
+};
+
+// Function AthenaCheat.AthenaCheatManager.ResetNearestVault
+struct UAthenaCheatManager_ResetNearestVault_Params
 {
 };
 
@@ -1525,6 +1545,11 @@ struct UAthenaCheatManager_ReplaceShipWithSmallShip_Params
 
 // Function AthenaCheat.AthenaCheatManager.RepairShipAndClearInternalWater
 struct UAthenaCheatManager_RepairShipAndClearInternalWater_Params
+{
+};
+
+// Function AthenaCheat.AthenaCheatManager.RepairAndClearInternalWaterOnAllShips
+struct UAthenaCheatManager_RepairAndClearInternalWaterOnAllShips_Params
 {
 };
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,8 +20,7 @@ enum class ERepairableState : uint8_t
 {
 	ERepairableState__NeverDamaged = 0,
 	None                           = 1,
-	IntProperty                    = 2,
-	ERepairableState__ERepairableState_MAX = 3
+	ERepairableState__ERepairableState_MAX = 2
 };
 
 

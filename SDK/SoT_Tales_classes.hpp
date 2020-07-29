@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -179,6 +179,54 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.SplineFootprintPathComponent"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestArrayEntrySelectionStrategy
+// 0x0000 (0x0028 - 0x0028)
+class UTaleQuestArrayEntrySelectionStrategy : public UObject
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestArrayEntrySelectionStrategy"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.FixedArrayEntrySelectionStrategy
+// 0x0008 (0x0030 - 0x0028)
+class UFixedArrayEntrySelectionStrategy : public UTaleQuestArrayEntrySelectionStrategy
+{
+public:
+	int                                                IndexToSelect;                                            // 0x0028(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x002C(0x0004) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.FixedArrayEntrySelectionStrategy"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.RandomArrayEntrySelectionStrategy
+// 0x0008 (0x0030 - 0x0028)
+class URandomArrayEntrySelectionStrategy : public UTaleQuestArrayEntrySelectionStrategy
+{
+public:
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0028(0x0008) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.RandomArrayEntrySelectionStrategy"));
 		return ptr;
 	}
 
@@ -526,6 +574,23 @@ public:
 };
 
 
+// Class Tales.TaleQuestSelectEntryFromArrayStep
+// 0x0028 (0x0090 - 0x0068)
+class UTaleQuestSelectEntryFromArrayStep : public UTaleQuestStep
+{
+public:
+	class UTaleQuestArrayEntrySelectionStrategy*       SelectionStrategy;                                        // 0x0068(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x20];                                      // 0x0070(0x0020) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestSelectEntryFromArrayStep"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleQuestUpdateCheckpointStep
 // 0x0008 (0x0070 - 0x0068)
 class UTaleQuestUpdateCheckpointStep : public UTaleQuestStep
@@ -822,6 +887,24 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestRemoveMapStepDesc"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestSelectEntryFromArrayStepDesc
+// 0x0028 (0x0058 - 0x0030)
+class UTaleQuestSelectEntryFromArrayStepDesc : public UTaleQuestStepDesc
+{
+public:
+	class UTaleQuestArrayEntrySelectionStrategy*       SelectionStrategy;                                        // 0x0030(0x0008) (Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	struct FQuestVariableArray                         InputArray;                                               // 0x0038(0x0010) (Edit)
+	struct FQuestVariableAny                           OutputEntry;                                              // 0x0048(0x0010) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestSelectEntryFromArrayStepDesc"));
 		return ptr;
 	}
 

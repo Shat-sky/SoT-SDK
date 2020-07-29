@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_GeyserManager.BP_GeyserManager_C
-// 0x0000 (0x0458 - 0x0458)
+// 0x0000 (0x0470 - 0x0470)
 class ABP_GeyserManager_C : public AGeyserManager
 {
 public:

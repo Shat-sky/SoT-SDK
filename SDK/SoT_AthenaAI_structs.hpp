@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -62,7 +62,7 @@ enum class EAISpawnRequestResult : uint8_t
 	AISpawnRequestResult__FailedNoValidPos = 2,
 	None01                         = 3,
 	AISpawnRequestResult__AISpawnRequestResult_MAX = 4,
-	EFishingFishState__NotSet      = 5,
+	ERespawnPointOrientation__None = 5,
 	None02                         = 6
 };
 
@@ -104,7 +104,7 @@ enum class EAISpawnRequestState : uint8_t
 	None                           = 1,
 	AISpawnRequestState__Complete  = 2,
 	None01                         = 3,
-	EOarState__Idle                = 4
+	ERiddleActions__RaiseLanternAnyone = 4
 };
 
 
@@ -234,7 +234,7 @@ enum class EFaunaCratedState : uint8_t
 {
 	EFaunaCratedState__NotInCrate  = 0,
 	None                           = 1,
-	None01                         = 2
+	EPromptPriority__Low           = 2
 };
 
 
@@ -243,8 +243,7 @@ enum class ESwimmingLineOfSightTest : uint8_t
 {
 	ESwimmingLineOfSightTest__None = 0,
 	None                           = 1,
-	IntProperty                    = 2,
-	ESwimmingSyncMode__Synchronous = 3
+	ESwimmingSyncMode__Synchronous = 2
 };
 
 
@@ -252,8 +251,7 @@ enum class ESwimmingLineOfSightTest : uint8_t
 enum class ESwimmingSyncMode : uint8_t
 {
 	ESwimmingSyncMode__Synchronous = 0,
-	None                           = 1,
-	EntitlementInformationComponent = 2
+	None                           = 1
 };
 
 
@@ -1028,10 +1026,11 @@ struct FIslandDioramas
 };
 
 // ScriptStruct AthenaAI.DioramaCategoryEntries
-// 0x0050
+// 0x00A0
 struct FDioramaCategoryEntries
 {
 	TMap<struct FName, struct FIslandDioramas>         EntriesByIslandName;                                      // 0x0000(0x0050) (ZeroConstructor)
+	unsigned char                                      UnknownData00[0x50];                                      // 0x0050(0x0050) MISSED OFFSET
 };
 
 // ScriptStruct AthenaAI.AIEncounterSpecification
@@ -1333,6 +1332,20 @@ struct FAthenaAIControllerTargetPickingData
 	float                                              RecentDamage;                                             // 0x0034(0x0004) (ZeroConstructor, IsPlainOldData)
 };
 
+// ScriptStruct AthenaAI.EventAIVulnerabilityAbilityEnded
+// 0x0001
+struct FEventAIVulnerabilityAbilityEnded
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct AthenaAI.EventAIVulnerabilityAbilityStarted
+// 0x0001
+struct FEventAIVulnerabilityAbilityStarted
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
 // ScriptStruct AthenaAI.EventAIOnDelayedAssignedMeshConsumed
 // 0x0010
 struct FEventAIOnDelayedAssignedMeshConsumed
@@ -1429,7 +1442,7 @@ struct FEventPawnStartedDying
 	class APawn*                                       AIPawn;                                                   // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<ECharacterDeathType>                   DeathType;                                                // 0x0008(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x0009(0x0007) MISSED OFFSET
-	class AActor*                                      Instigator;                                               // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
+	class AActor*                                      Instigator;                                               // 0x0010(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct AthenaAI.EventOwnedPawnRemoveOwnership

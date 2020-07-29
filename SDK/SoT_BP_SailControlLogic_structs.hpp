@@ -1,14 +1,14 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
-#include "SoT_ESailAnimationType_classes.hpp"
 #include "SoT_ESailAnimationState_classes.hpp"
+#include "SoT_ESailAnimationType_classes.hpp"
 
 namespace SDK
 {

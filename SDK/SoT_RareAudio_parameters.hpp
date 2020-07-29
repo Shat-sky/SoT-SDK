@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -162,6 +162,15 @@ struct UWwiseEmitterBlueprintLibrary_WwiseEmitterStop_Params
 	struct FWwiseEmitter                               Emitter;                                                  // (ConstParm, Parm, OutParm, ReferenceParm)
 	int                                                PlayId;                                                   // (Parm, ZeroConstructor, IsPlainOldData)
 	float                                              FadeTime;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function RareAudio.WwiseEmitterBlueprintLibrary.WwiseEmitterSetSwitch
+struct UWwiseEmitterBlueprintLibrary_WwiseEmitterSetSwitch_Params
+{
+	struct FWwiseEmitter                               Emitter;                                                  // (ConstParm, Parm, OutParm, ReferenceParm)
+	struct FName                                       SwitchGroup;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	struct FName                                       Value;                                                    // (Parm, ZeroConstructor, IsPlainOldData)
 	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 

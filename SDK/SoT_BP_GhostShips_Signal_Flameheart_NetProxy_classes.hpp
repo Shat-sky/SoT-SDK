@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,7 +22,7 @@ public:
 	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0438(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
 	class URotateMeshToLocalPlayerComponent*           RotateMeshToLocalPlayer;                                  // 0x0440(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	class UStaticMeshComponent*                        FarCloudDistortion;                                       // 0x0448(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UStaticMeshComponent*                        shroud;                                                   // 0x0450(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UStaticMeshComponent*                        Shroud;                                                   // 0x0450(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	float                                              FadeIn_GhostBloom_8A3F310E4DA80126C74D32B4D69B71D3;       // 0x0458(0x0004) (ZeroConstructor, IsPlainOldData)
 	float                                              FadeIn_GhostOpacity_8A3F310E4DA80126C74D32B4D69B71D3;     // 0x045C(0x0004) (ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<ETimelineDirection>                    FadeIn__Direction_8A3F310E4DA80126C74D32B4D69B71D3;       // 0x0460(0x0001) (ZeroConstructor, IsPlainOldData)
@@ -44,7 +44,7 @@ public:
 	void ReceiveBeginPlay();
 	void FlameheartAppear();
 	void FlameheartDisappear();
-	void BndEvt__Default__BP_GhostShips_Signal_Flameheart_NetProxy_C_K2Node_InstancedActorBoundEvent_0_NetProxyVisibilityChanged__DelegateSignature(bool IsVisible);
+	void BndEvt__Default__BP_GhostShips_Signal_Flameheart_NetProxy_C_K2Node_InstancedActorBoundEvent_3_NetProxyVisibilityChanged__DelegateSignature(bool IsVisible);
 	void ExecuteUbergraph_BP_GhostShips_Signal_Flameheart_NetProxy(int EntryPoint);
 };
 

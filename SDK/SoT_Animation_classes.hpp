@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -313,6 +313,26 @@ public:
 };
 
 
+// Class Animation.AnimNotify_PlayAnimationForCosmetic
+// 0x0018 (0x0048 - 0x0030)
+class UAnimNotify_PlayAnimationForCosmetic : public UAnimNotify
+{
+public:
+	TEnumAsByte<EWieldAnimationLocation>               CosmeticLocation;                                         // 0x0030(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0031(0x0007) MISSED OFFSET
+	class UAnimSequenceBase*                           CosmeticItemAnimation;                                    // 0x0038(0x0008) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               Looping;                                                  // 0x0040(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x7];                                       // 0x0041(0x0007) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotify_PlayAnimationForCosmetic"));
+		return ptr;
+	}
+
+};
+
+
 // Class Animation.AnimNotify_PlayMontage
 // 0x0008 (0x0038 - 0x0030)
 class UAnimNotify_PlayMontage : public UAnimNotify
@@ -596,6 +616,7 @@ public:
 	}
 
 
+	bool SpawnCosmeticItem(class USkeletalMeshComponent* MeshComponent, class UClass* ObjectToSpawn, TEnumAsByte<EWieldAnimationLocation> SpawnLocation, class UCosmeticItemAnimationSetDataAsset* CosmeticData, bool SpawnHidden);
 	void DestroyAllCosmeticItems();
 };
 

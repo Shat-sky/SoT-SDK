@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,8 +20,7 @@ enum class ESessionGrouping : uint8_t
 {
 	ESessionGrouping__Invalid      = 0,
 	None                           = 1,
-	IntProperty                    = 2,
-	ESessionVisibility__Invalid    = 3
+	ESessionGrouping__ESessionGrouping_MAX = 2
 };
 
 
@@ -32,7 +31,7 @@ enum class ECrewSessionType : uint8_t
 	None                           = 1,
 	ECrewSessionType__ServerLarge  = 2,
 	None01                         = 3,
-	EAllianceNotificationType__Joined = 4,
+	EInteractableIdentifier__None  = 4,
 	None02                         = 5
 };
 

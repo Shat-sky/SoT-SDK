@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -25,7 +25,7 @@ enum class EPathFollowingResult : uint8_t
 	None                           = 1,
 	EPathFollowingResult__Skipped  = 2,
 	None01                         = 3,
-	EndTask                        = 4
+	EEnvQueryStatus__Processing    = 4
 };
 
 
@@ -36,7 +36,7 @@ enum class EEnvQueryStatus : uint8_t
 	None                           = 1,
 	EEnvQueryStatus__OwnerLost     = 2,
 	None01                         = 3,
-	EAIRequestPriority__SoftScript = 4
+	EQSQueryDoneSignature__DelegateSignature = 4
 };
 
 
@@ -48,7 +48,7 @@ enum class EAILockSource : uint8_t
 	IntProperty                    = 2,
 	EAILockSource__MAX             = 3,
 	None01                         = 4,
-	EPawnActionResult__NotStarted  = 5
+	EAITaskPriority__Lowest        = 5
 };
 
 
@@ -81,7 +81,7 @@ enum class EPawnActionResult : uint8_t
 	None                           = 1,
 	EPawnActionResult__Aborted     = 2,
 	None01                         = 3,
-	EAITaskPriority__Lowest        = 4
+	EPathFollowingAction__Error    = 4
 };
 
 
@@ -209,7 +209,7 @@ enum class EAITaskPriority : uint8_t
 	None                           = 1,
 	EAITaskPriority__Ultimate      = 2,
 	None01                         = 3,
-	EPathFollowingAction__Error    = 4
+	EPawnActionResult__NotStarted  = 4
 };
 
 

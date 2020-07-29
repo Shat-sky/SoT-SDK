@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -19,7 +19,7 @@ enum class ERefChangeFadPhase : uint8_t
 {
 	NoFading                       = 0,
 	None                           = 1,
-	ESimulationQuery__CollisionOverlap = 2
+	ETwoPlayerSplitScreenType__Horizontal = 2
 };
 
 

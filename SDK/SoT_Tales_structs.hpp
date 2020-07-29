@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -9,10 +9,10 @@
 #include "SoT_Basic.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
-#include "SoT_PrioritisedPrompts_classes.hpp"
 #include "SoT_MerchantContracts_classes.hpp"
 #include "SoT_Athena_classes.hpp"
 #include "SoT_EmissaryFramework_classes.hpp"
+#include "SoT_PrioritisedPrompts_classes.hpp"
 
 namespace SDK
 {
@@ -97,6 +97,20 @@ struct FQuestVariablePrioritisedPrompt : public FQuestVariable
 
 };
 
+// ScriptStruct Tales.QuestVariableArray
+// 0x0000 (0x0010 - 0x0010)
+struct FQuestVariableArray : public FQuestVariable
+{
+
+};
+
+// ScriptStruct Tales.QuestVariableAny
+// 0x0000 (0x0010 - 0x0010)
+struct FQuestVariableAny : public FQuestVariable
+{
+
+};
+
 // ScriptStruct Tales.QuestVariableMerchantItem
 // 0x0000 (0x0010 - 0x0010)
 struct FQuestVariableMerchantItem : public FQuestVariable
@@ -125,6 +139,18 @@ struct FStepMerchantItemDesc
 {
 	struct FText                                       Name;                                                     // 0x0000(0x0038) (Edit, BlueprintVisible)
 	class UTexture*                                    Icon;                                                     // 0x0038(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Tales.TaleQuestDesc
+// 0x0058 (0x0080 - 0x0028)
+struct FTaleQuestDesc : public FQuestDesc
+{
+	class UTaleQuestStepDesc*                          Root;                                                     // 0x0028(0x0008) (ZeroConstructor, IsPlainOldData)
+	class UObject*                                     Definition;                                               // 0x0030(0x0008) (ZeroConstructor, IsPlainOldData)
+	struct FText                                       TaleFailMessage;                                          // 0x0038(0x0038)
+	struct FName                                       TaleFailBannerTag;                                        // 0x0070(0x0008) (ZeroConstructor, IsPlainOldData)
+	bool                                               Development;                                              // 0x0078(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0079(0x0007) MISSED OFFSET
 };
 
 }

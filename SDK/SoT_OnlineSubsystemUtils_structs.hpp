@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -37,7 +37,9 @@ enum class EPartyReservationResult : uint8_t
 	None02                         = 5,
 	EPartyReservationResult__ReservationInvalid = 6,
 	None03                         = 7,
-	TextProperty                   = 8
+	TextProperty                   = 8,
+	EPlayerHeroStatsSuccess__Success = 9,
+	None04                         = 10
 };
 
 

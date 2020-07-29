@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -36,20 +36,24 @@ public:
 
 
 // Class NaturalDisasters.AshenLordAshCloud
-// 0x0060 (0x0470 - 0x0410)
+// 0x0088 (0x0498 - 0x0410)
 class AAshenLordAshCloud : public AActor
 {
 public:
 	class UStaticMeshComponent*                        CloudMesh;                                                // 0x0410(0x0008) (Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 	class UAshenLordAshCloudSetupDataAsset*            SetupData;                                                // 0x0418(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0420(0x0004) MISSED OFFSET
-	float                                              LifeTime;                                                 // 0x0424(0x0004) (Net, ZeroConstructor, IsPlainOldData)
-	float                                              StartTime;                                                // 0x0428(0x0004) (Net, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x24];                                      // 0x042C(0x0024) MISSED OFFSET
-	TEnumAsByte<EAshCloudState>                        CloudState;                                               // 0x0450(0x0001) (Net, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x3];                                       // 0x0451(0x0003) MISSED OFFSET
-	float                                              Radius;                                                   // 0x0454(0x0004) (Net, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData03[0x18];                                      // 0x0458(0x0018) MISSED OFFSET
+	float                                              InnerRangeStartOffset;                                    // 0x0420(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              OuterRangeStart;                                          // 0x0424(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FName                                       NormalisedEngulfedRTPC;                                   // 0x0428(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              RTPCSecondsBetweenUpdates;                                // 0x0430(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0434(0x0004) MISSED OFFSET
+	float                                              LifeTime;                                                 // 0x0438(0x0004) (Net, ZeroConstructor, IsPlainOldData)
+	float                                              StartTime;                                                // 0x043C(0x0004) (Net, ZeroConstructor, IsPlainOldData)
+	float                                              TimeOffset;                                               // 0x0440(0x0004) (Net, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EAshCloudState>                        CloudState;                                               // 0x0444(0x0001) (Net, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x37];                                      // 0x0445(0x0037) MISSED OFFSET
+	float                                              MaxRadiusMultiplier;                                      // 0x047C(0x0004) (Net, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x18];                                      // 0x0480(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -160,6 +164,29 @@ public:
 		return ptr;
 	}
 
+};
+
+
+// Class NaturalDisasters.AshenLordWorldEndCloud
+// 0x0018 (0x0428 - 0x0410)
+class AAshenLordWorldEndCloud : public AActor
+{
+public:
+	float                                              SelfDestructDelayOnComplete;                              // 0x0410(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	TEnumAsByte<EAshenLordWorldEndCloudState>          CloudState;                                               // 0x0414(0x0001) (Net, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0415(0x0003) MISSED OFFSET
+	struct FAshenLordWorldEndCloudAnimation            CurrentCloudAnimation;                                    // 0x0418(0x0008) (Net)
+	unsigned char                                      UnknownData01[0x8];                                       // 0x0420(0x0008) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class NaturalDisasters.AshenLordWorldEndCloud"));
+		return ptr;
+	}
+
+
+	void OnRep_CloudStateChange();
+	void AnimateCloud(float AdjustedLifetime);
 };
 
 
@@ -284,7 +311,8 @@ public:
 	struct FWeightedProbabilityRangeOfRanges           DelayBetweenGeyserGroupsDuringGeyserEvent;                // 0x0088(0x0030) (Edit, DisableEditOnInstance)
 	bool                                               StartInactive;                                            // 0x00B8(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	bool                                               NoRestartAfterGeyserSpurtComplete;                        // 0x00B9(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x2];                                       // 0x00BA(0x0002) MISSED OFFSET
+	bool                                               UseUniqueLocationsForEachGeyser;                          // 0x00BA(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x1];                                       // 0x00BB(0x0001) MISSED OFFSET
 	float                                              MinDistanceFromPlayerInMetres;                            // 0x00BC(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	float                                              MinGeyserSequenceSpacing;                                 // 0x00C0(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x4];                                       // 0x00C4(0x0004) MISSED OFFSET
@@ -323,14 +351,14 @@ public:
 
 
 // Class NaturalDisasters.GeyserManager
-// 0x0048 (0x0458 - 0x0410)
+// 0x0060 (0x0470 - 0x0410)
 class AGeyserManager : public AActor
 {
 public:
 	class UGeyserManagerSetupDataAsset*                GeyserManagerSetupData;                                   // 0x0410(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	class USceneComponent*                             Root;                                                     // 0x0418(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 	TEnumAsByte<EGeyserManagerState>                   State;                                                    // 0x0420(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x37];                                      // 0x0421(0x0037) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x4F];                                      // 0x0421(0x004F) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -438,7 +466,7 @@ public:
 
 
 // Class NaturalDisasters.SuperheatedWater
-// 0x0100 (0x05B0 - 0x04B0)
+// 0x0108 (0x05B8 - 0x04B0)
 class ASuperheatedWater : public AMurk
 {
 public:
@@ -448,7 +476,7 @@ public:
 	float                                              FakeUnderwaterLocationsMinDistanceInMetres;               // 0x04D0(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	float                                              FakeUnderwaterLocationsDistanceBetweenPointsInMetres;     // 0x04D4(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	TArray<TWeakObjectPtr<class AAthenaPlayerCharacter>> PlayersInZone;                                            // 0x04D8(0x0010) (Net, ZeroConstructor)
-	unsigned char                                      UnknownData01[0xC8];                                      // 0x04E8(0x00C8) MISSED OFFSET
+	unsigned char                                      UnknownData01[0xD0];                                      // 0x04E8(0x00D0) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

@@ -1,4 +1,4 @@
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -124,14 +124,14 @@ void ABP_GhostShips_Signal_Flameheart_NetProxy_C::FlameheartDisappear()
 }
 
 
-// Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.BndEvt__Default__BP_GhostShips_Signal_Flameheart_NetProxy_C_K2Node_InstancedActorBoundEvent_0_NetProxyVisibilityChanged__DelegateSignature
+// Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.BndEvt__Default__BP_GhostShips_Signal_Flameheart_NetProxy_C_K2Node_InstancedActorBoundEvent_3_NetProxyVisibilityChanged__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
 // bool                           IsVisible                      (Parm, ZeroConstructor, IsPlainOldData)
 
-void ABP_GhostShips_Signal_Flameheart_NetProxy_C::BndEvt__Default__BP_GhostShips_Signal_Flameheart_NetProxy_C_K2Node_InstancedActorBoundEvent_0_NetProxyVisibilityChanged__DelegateSignature(bool IsVisible)
+void ABP_GhostShips_Signal_Flameheart_NetProxy_C::BndEvt__Default__BP_GhostShips_Signal_Flameheart_NetProxy_C_K2Node_InstancedActorBoundEvent_3_NetProxyVisibilityChanged__DelegateSignature(bool IsVisible)
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.BndEvt__Default__BP_GhostShips_Signal_Flameheart_NetProxy_C_K2Node_InstancedActorBoundEvent_0_NetProxyVisibilityChanged__DelegateSignature"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GhostShips_Signal_Flameheart_NetProxy.BP_GhostShips_Signal_Flameheart_NetProxy_C.BndEvt__Default__BP_GhostShips_Signal_Flameheart_NetProxy_C_K2Node_InstancedActorBoundEvent_3_NetProxyVisibilityChanged__DelegateSignature"));
 
 	struct
 	{

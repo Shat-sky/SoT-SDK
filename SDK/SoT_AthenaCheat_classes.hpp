@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -67,6 +67,7 @@ public:
 	void ToggleNearestLava();
 	void ToggleMigrationPointOfInterestChecks(bool Enabled);
 	void ToggleFastShipControls();
+	void ToggleDrowning();
 	void ToggleDrawShipSpeed();
 	void ToggleDisplayCannonAISpawnerZones();
 	void ToggleDebugFlying();
@@ -107,6 +108,7 @@ public:
 	void StoreShipLocation(float LocationX, float LocationY, float LocationZ, float Yaw);
 	void StopShip();
 	void StopPetHangout();
+	void StopAllShips();
 	void StopAllPetsHangout();
 	void StartVoyage(const class FString& SourceAssetName, bool Development);
 	void StartSicknessOnPlayer();
@@ -270,6 +272,7 @@ public:
 	void SchedulerInitAggroGhostShip();
 	void SchedulerAdvance(float Time);
 	void SailShip();
+	void SailAllShips();
 	void RewindPhysicsSceneBy(float SecondsToRewindBy);
 	void ReviveLocalPlayerInstantly();
 	void ReviveLocalPlayerAccordingToReviveTime();
@@ -282,6 +285,7 @@ public:
 	void ResetTinySharkSpawnTimerWithTime(float Timer);
 	void ResetTinySharkSpawnTimer();
 	void ResetStats();
+	void ResetNearestVault();
 	void ResetMouseDelta();
 	void ResetMaxNumOfSpawnedAI();
 	void ResetMaxMovingPetsOnServerToDefault();
@@ -298,6 +302,7 @@ public:
 	void ReplenishShip();
 	void ReplaceShipWithSmallShip(const class FString& ShipActorIdConsoleString);
 	void RepairShipAndClearInternalWater();
+	void RepairAndClearInternalWaterOnAllShips();
 	void RenameTreasure(const class FString& InVendorName);
 	void RemovePetsFromAllPlayers();
 	void RemovePetFromPlayer();

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -40,7 +40,7 @@ enum class EHealthIndex : uint8_t
 	None01                         = 3,
 	EHealthIndex__MAX              = 4,
 	None02                         = 5,
-	AssetObjectProperty            = 6
+	ByteProperty                   = 6
 };
 
 

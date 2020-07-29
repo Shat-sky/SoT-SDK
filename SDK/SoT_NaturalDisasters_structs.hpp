@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -44,7 +44,15 @@ enum class EVolcanoTargetType : uint8_t
 {
 	EVolcanoTargetType__Player     = 0,
 	None                           = 1,
-	EGeyserState__Dormant          = 2
+	EAshenLordWorldEndCloudState__Inactive = 2
+};
+
+
+// Enum NaturalDisasters.EAshenLordWorldEndCloudState
+enum class EAshenLordWorldEndCloudState : uint8_t
+{
+	EAshenLordWorldEndCloudState__Inactive = 0,
+	None                           = 1
 };
 
 
@@ -53,8 +61,7 @@ enum class EEarthquakeState : uint8_t
 {
 	EEarthquakeState__Dormant      = 0,
 	None                           = 1,
-	EEarthquakeState__EEarthquakeState_MAX = 2,
-	DefaultRadiusTracker           = 3
+	EEarthquakeState__EEarthquakeState_MAX = 2
 };
 
 
@@ -79,7 +86,7 @@ enum class EVolcanoState : uint8_t
 {
 	EVolcanoState__Dormant         = 0,
 	None                           = 1,
-	ERomeBeaconAttachType__Ship    = 2
+	EMastType__Front               = 2
 };
 
 
@@ -141,6 +148,14 @@ struct FWeightedAshenLordVolcanoProjectile
 	struct FWeightedProbabilityRangeOfRanges           RotationRateRoll;                                         // 0x0068(0x0030) (Edit, DisableEditOnInstance)
 	struct FWeightedProbabilityRangeOfRanges           RotationRateYaw;                                          // 0x0098(0x0030) (Edit, DisableEditOnInstance)
 	class UClass*                                      ProjectileClass;                                          // 0x00C8(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+};
+
+// ScriptStruct NaturalDisasters.AshenLordWorldEndCloudAnimation
+// 0x0008
+struct FAshenLordWorldEndCloudAnimation
+{
+	float                                              ServerStartTime;                                          // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
+	float                                              ServerLifeTime;                                           // 0x0004(0x0004) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct NaturalDisasters.EarthquakeForceFeedbackOption

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,10 +15,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class StatusEffects.StatusBase
-// 0x0000 (0x0028 - 0x0028)
+// 0x0008 (0x0030 - 0x0028)
 class UStatusBase : public UObject
 {
 public:
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0028(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -30,10 +31,11 @@ public:
 
 
 // Class StatusEffects.StatusResponse
-// 0x0000 (0x0028 - 0x0028)
+// 0x0008 (0x0030 - 0x0028)
 class UStatusResponse : public UObject
 {
 public:
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0028(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -197,12 +199,13 @@ public:
 
 
 // Class StatusEffects.StatusResponseAsset
-// 0x0020 (0x0048 - 0x0028)
+// 0x0058 (0x0080 - 0x0028)
 class UStatusResponseAsset : public UDataAsset
 {
 public:
-	TArray<class UClass*>                              TriggerStatus;                                            // 0x0028(0x0010) (Edit, ZeroConstructor)
-	TArray<class UStatusResponse*>                     Responses;                                                // 0x0038(0x0010) (Edit, ExportObject, ZeroConstructor)
+	struct FText                                       HighFrequencyTriggerStatusHelper;                         // 0x0028(0x0038) (Edit, EditConst)
+	TArray<class UClass*>                              TriggerStatus;                                            // 0x0060(0x0010) (Edit, ZeroConstructor)
+	TArray<class UStatusResponse*>                     Responses;                                                // 0x0070(0x0010) (Edit, ExportObject, ZeroConstructor)
 
 	static UClass* StaticClass()
 	{
@@ -248,7 +251,7 @@ public:
 
 
 	void OnRep_ActiveEffects(TArray<struct FActiveStatusEffect> OldEffects);
-	void MultiCast_ApplyOneShotStatus(TArray<struct FActiveStatusEffect> ActivatedEffects);
+	void MultiCast_ApplyOneShotStatus(TArray<struct FActiveStatusEffect> AddedEffects, TArray<struct FActiveStatusEffect> RemovedEffects);
 };
 
 
@@ -382,7 +385,7 @@ public:
 
 
 	void OnRep_ActiveEffects(TArray<struct FActiveStatusEffect> OldEffects);
-	void MultiCast_ApplyOneShotStatus(TArray<struct FActiveStatusEffect> ActivatedEffects);
+	void MultiCast_ApplyOneShotStatus(TArray<struct FActiveStatusEffect> AddedEffects, TArray<struct FActiveStatusEffect> RemovedEffects);
 };
 
 
@@ -434,7 +437,7 @@ public:
 
 
 // Class StatusEffects.StatusResponseNull
-// 0x0000 (0x0028 - 0x0028)
+// 0x0000 (0x0030 - 0x0030)
 class UStatusResponseNull : public UStatusResponse
 {
 public:

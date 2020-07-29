@@ -1,4 +1,4 @@
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -144,6 +144,22 @@ void UAIEncounterServiceInterface::RegisterLoadedEncounter(TAssetPtr<class UAIEn
 	} params;
 
 	params.Encounter = Encounter;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaAI.AICombatEncounterInterface.OnVulnerabilityStateEntered
+// (Native, Event, Public, BlueprintEvent)
+
+void UAICombatEncounterInterface::OnVulnerabilityStateEntered()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaAI.AICombatEncounterInterface.OnVulnerabilityStateEntered"));
+
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

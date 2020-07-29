@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,7 +23,7 @@ enum class EColorVisionDeficiency : uint8_t
 	CVD_Protanopia                 = 2,
 	None01                         = 3,
 	CVD_MAX                        = 4,
-	EFishingFloatState__NotSet     = 5,
+	EWaitAttributeChangeComparison__None = 5,
 	None02                         = 6
 };
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -33,7 +33,7 @@ enum class EInteractableIdentifier : uint8_t
 	None                           = 1,
 	EInteractableIdentifier__Sail  = 2,
 	None01                         = 3,
-	EWieldableItemAnimVariant__Default = 4,
+	EObjectPitchTargetingStates__None = 4,
 	None02                         = 5
 };
 
@@ -43,8 +43,7 @@ enum class EInteractionObject : uint8_t
 {
 	EInteractionObject__None       = 0,
 	None                           = 1,
-	IntProperty                    = 2,
-	EInteractionObject__EInteractionObject_MAX = 3
+	EInteractionObject__EInteractionObject_MAX = 2
 };
 
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -9,6 +9,7 @@
 #include "SoT_Basic.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
+#include "SoT_Interaction_classes.hpp"
 
 namespace SDK
 {
@@ -21,7 +22,7 @@ enum class ELiquidType : uint8_t
 {
 	ELiquidType__Water             = 0,
 	None                           = 1,
-	EClientMysteriousNoteType__Default = 2
+	EShantyEnsembleOption__TryToJoinExistingNearbyEnsemble = 2
 };
 
 

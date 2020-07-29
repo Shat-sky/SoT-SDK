@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -551,13 +551,13 @@ public:
 
 
 // Class Watercrafts.WatercraftSpawnData
-// 0x0010 (0x0038 - 0x0028)
+// 0x0010 (0x0068 - 0x0058)
 class UWatercraftSpawnData : public UItemSpawnData
 {
 public:
-	class UClass*                                      WatercraftType;                                           // 0x0028(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              MinDistanceToNearestWatercraftInMetres;                   // 0x0030(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0034(0x0004) MISSED OFFSET
+	class UClass*                                      WatercraftType;                                           // 0x0058(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              MinDistanceToNearestWatercraftInMetres;                   // 0x0060(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0064(0x0004) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

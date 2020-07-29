@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -16,10 +16,10 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // AnimDataEntryStruct ADS_LocomotionNative.ADS_LocomotionNative
-// 0x0048
+// 0x0050
 struct FADS_LocomotionNative
 {
-	struct FAthenaAnimationLocomotionAnimData          Locomotion_29_A586B449410EBBDE851BBD991F7C6A63;           // 0x0000(0x0048) (Edit, BlueprintVisible)
+	struct FAthenaAnimationLocomotionAnimData          Locomotion_29_A586B449410EBBDE851BBD991F7C6A63;           // 0x0000(0x0050) (Edit, BlueprintVisible)
 };
 
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -30,7 +30,7 @@ public:
 
 
 // Class ShortRangeMarkerFramework.ShortRangeMarker
-// 0x0088 (0x0498 - 0x0410)
+// 0x0058 (0x0468 - 0x0410)
 class AShortRangeMarker : public AActor
 {
 public:
@@ -40,7 +40,7 @@ public:
 	float                                              FadeTimer;                                                // 0x0434(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	struct FScriptMulticastDelegate                    TriggerFadeIn;                                            // 0x0438(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
 	struct FScriptMulticastDelegate                    TriggerFadeOut;                                           // 0x0448(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
-	unsigned char                                      UnknownData01[0x40];                                      // 0x0458(0x0040) MISSED OFFSET
+	TArray<TWeakObjectPtr<class AActor>>               CachedActors;                                             // 0x0458(0x0010) (ZeroConstructor, Transient)
 
 	static UClass* StaticClass()
 	{

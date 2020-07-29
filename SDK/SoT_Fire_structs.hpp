@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -26,7 +26,7 @@ enum class EFireCellState : uint8_t
 	EFireCellState__Smouldering    = 2,
 	None01                         = 3,
 	EFireCellState__EFireCellState_MAX = 4,
-	EWaitAttributeChangeComparison__None = 5,
+	EFishingFishState__NotSet      = 5,
 	None02                         = 6
 };
 
@@ -36,7 +36,7 @@ enum class ELastIgnitionState : uint8_t
 {
 	ELastIgnitionState__None       = 0,
 	None                           = 1,
-	EGameplayEffectGrantedAbilityRemovePolicy__CancelAbilityImmediately = 2
+	ERomeBeaconAttachType__Ship    = 2
 };
 
 

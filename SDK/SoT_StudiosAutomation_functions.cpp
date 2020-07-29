@@ -1,4 +1,4 @@
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -1093,6 +1093,23 @@ void UAutomationBlueprintFunctionLibrary::OpenLevelWithGameMode(class UObject* W
 	params.LevelName = LevelName;
 	params.GameMode = GameMode;
 	params.Absolute = Absolute;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+}
+
+
+// Function StudiosAutomation.AutomationBlueprintFunctionLibrary.LogPlatformMemoryStats
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void UAutomationBlueprintFunctionLibrary::LogPlatformMemoryStats()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StudiosAutomation.AutomationBlueprintFunctionLibrary.LogPlatformMemoryStats"));
+
+	struct
+	{
+	} params;
+
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);

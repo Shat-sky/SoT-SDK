@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -208,6 +208,13 @@ struct FEventDockableObjectDestroyed
 	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
 
+// ScriptStruct Animation.EventAnimationHappyReact
+// 0x0001
+struct FEventAnimationHappyReact
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
 // ScriptStruct Animation.EventHitReactAnimationFinished
 // 0x0001
 struct FEventHitReactAnimationFinished
@@ -244,7 +251,7 @@ struct FHitReactionAnimationState
 };
 
 // ScriptStruct Animation.AnimNode_WeightedLoadOnDemandSquencePlayer
-// 0x0028 (0x0068 - 0x0040)
+// 0x0030 (0x0070 - 0x0040)
 struct FAnimNode_WeightedLoadOnDemandSquencePlayer : public FAnimNode_AssetPlayerBase
 {
 	float                                              PlayRate;                                                 // 0x0040(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
@@ -255,6 +262,7 @@ struct FAnimNode_WeightedLoadOnDemandSquencePlayer : public FAnimNode_AssetPlaye
 	unsigned char                                      UnknownData01[0x3];                                       // 0x0055(0x0003) MISSED OFFSET
 	class UAnimSequence*                               CurrentSequence;                                          // 0x0058(0x0008) (ZeroConstructor, IsPlainOldData)
 	class UAnimSequence*                               NextSequence;                                             // 0x0060(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x8];                                       // 0x0068(0x0008) MISSED OFFSET
 };
 
 // ScriptStruct Animation.EventPreviewCharacterAnimationRequest

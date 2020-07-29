@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,7 +22,7 @@ enum class ETextJustify : uint8_t
 {
 	ETextJustify__Left             = 0,
 	None                           = 1,
-	ETableViewMode__List           = 2
+	EConsumeMouseWheel__WhenScrollingPossible = 2
 };
 
 
@@ -31,7 +31,7 @@ enum class ETableViewMode : uint8_t
 {
 	ETableViewMode__List           = 0,
 	None                           = 1,
-	EStretchDirection__Both        = 2
+	EThreePlayerSplitScreenType__FavorTop = 2
 };
 
 
@@ -41,7 +41,7 @@ enum class ESelectionMode : uint8_t
 	ESelectionMode__None           = 0,
 	None                           = 1,
 	ESelectionMode__ESelectionMode_MAX = 2,
-	ESlateBrushDrawType__NoDrawType = 3
+	ETestAutomationPlayModeOverride__Adventure = 3
 };
 
 
@@ -63,7 +63,7 @@ enum class EStretchDirection : uint8_t
 {
 	EStretchDirection__Both        = 0,
 	None                           = 1,
-	EThreePlayerSplitScreenType__FavorTop = 2
+	ETableViewMode__List           = 2
 };
 
 

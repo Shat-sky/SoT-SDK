@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,7 +23,7 @@ enum class EFontHinting : uint8_t
 	IntProperty                    = 2,
 	EFontHinting__None             = 3,
 	None01                         = 4,
-	EProgressBarFillType__LeftToRight = 5
+	ETestArea__None                = 5
 };
 
 
@@ -41,8 +41,7 @@ enum class ETextCommit : uint8_t
 {
 	ETextCommit__Default           = 0,
 	None                           = 1,
-	ETextCommit__ETextCommit_MAX   = 2,
-	EAxis__None                    = 3
+	ETextCommit__ETextCommit_MAX   = 2
 };
 
 
@@ -80,7 +79,7 @@ enum class EVerticalAlignment : uint8_t
 	VAlign_Fill                    = 0,
 	None                           = 1,
 	VAlign_MAX                     = 2,
-	HAlign_Fill                    = 3
+	ESlateColorStylingMode__UseColor_Specified = 3
 };
 
 
@@ -90,7 +89,7 @@ enum class EHorizontalAlignment : uint8_t
 	HAlign_Fill                    = 0,
 	None                           = 1,
 	HAlign_MAX                     = 2,
-	ESlateBrushTileType__NoTile    = 3
+	VAlign_Fill                    = 3
 };
 
 
@@ -112,7 +111,7 @@ enum class EButtonPressMethod : uint8_t
 {
 	EButtonPressMethod__DownAndUp  = 0,
 	None                           = 1,
-	EButtonTouchMethod__DownAndUp  = 2
+	ESlateBrushImageType__NoImage  = 2
 };
 
 
@@ -139,7 +138,7 @@ enum class ESlateColorStylingMode : uint8_t
 	ESlateColorStylingMode__UseColor_Specified = 0,
 	None                           = 1,
 	ESlateColorStylingMode__UseColor_MAX = 2,
-	VAlign_Fill                    = 3
+	ESlateBrushMirrorType__NoMirror = 3
 };
 
 
@@ -148,7 +147,7 @@ enum class ESlateBrushImageType : uint8_t
 {
 	ESlateBrushImageType__NoImage  = 0,
 	None                           = 1,
-	ESlateCheckBoxType__CheckBox   = 2
+	EButtonTouchMethod__DownAndUp  = 2
 };
 
 
@@ -158,7 +157,7 @@ enum class ESlateBrushMirrorType : uint8_t
 	ESlateBrushMirrorType__NoMirror = 0,
 	None                           = 1,
 	ESlateBrushMirrorType__ESlateBrushMirrorType_MAX = 2,
-	ESlateColorStylingMode__UseColor_Specified = 3
+	ESlateBrushDrawType__NoDrawType = 3
 };
 
 
@@ -167,7 +166,8 @@ enum class ESlateBrushTileType : uint8_t
 {
 	ESlateBrushTileType__NoTile    = 0,
 	None                           = 1,
-	ESlateBrushTileType__ESlateBrushTileType_MAX = 2
+	ESlateBrushTileType__ESlateBrushTileType_MAX = 2,
+	HAlign_Fill                    = 3
 };
 
 
@@ -177,7 +177,7 @@ enum class ESlateBrushDrawType : uint8_t
 	ESlateBrushDrawType__NoDrawType = 0,
 	None                           = 1,
 	ESlateBrushDrawType__ESlateBrushDrawType_MAX = 2,
-	ESlateBrushMirrorType__NoMirror = 3
+	ESelectionMode__None           = 3
 };
 
 
@@ -186,7 +186,7 @@ enum class ECheckBoxState : uint8_t
 {
 	ECheckBoxState__Unchecked      = 0,
 	None                           = 1,
-	ESlateBrushImageType__NoImage  = 2
+	ESlateCheckBoxType__CheckBox   = 2
 };
 
 

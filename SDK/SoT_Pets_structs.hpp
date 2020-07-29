@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -28,7 +28,8 @@ enum class EPetDangerHearingResponseType : uint8_t
 	EPetDangerHearingResponseType__RunAway = 0,
 	None                           = 1,
 	EPetDangerHearingResponseType__MAX = 2,
-	None01                         = 3
+	None01                         = 3,
+	ETransientCampfireStateChange__Extinguished = 4
 };
 
 
@@ -38,7 +39,7 @@ enum class EPetDangerHearingTarget : uint8_t
 	EPetDangerHearingTarget__None  = 0,
 	None                           = 1,
 	EPetDangerHearingTarget__EPetDangerHearingTarget_MAX = 2,
-	NameProperty                   = 3
+	FloatProperty                  = 3
 };
 
 
@@ -64,8 +65,7 @@ enum class EPetFeedingReactionType : uint8_t
 {
 	EPetFeedingReactionType__None  = 0,
 	None                           = 1,
-	IntProperty                    = 2,
-	EMastType__Front               = 3
+	EGameplayEffectGrantedAbilityRemovePolicy__CancelAbilityImmediately = 2
 };
 
 

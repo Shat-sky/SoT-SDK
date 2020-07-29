@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11374,7 +11374,7 @@ public:
 
 
 // Class Engine.PhysicsSettings
-// 0x0098 (0x00D0 - 0x0038)
+// 0x0090 (0x00C8 - 0x0038)
 class UPhysicsSettings : public UDeveloperSettings
 {
 public:
@@ -11419,14 +11419,7 @@ public:
 	unsigned char                                      UnknownData04[0x1];                                       // 0x00BB(0x0001) MISSED OFFSET
 	int                                                MBPSubdivisions;                                          // 0x00BC(0x0004) (Edit, ZeroConstructor, Config, IsPlainOldData)
 	float                                              MBPWorldHalfExtentInCM;                                   // 0x00C0(0x0004) (Edit, ZeroConstructor, Config, IsPlainOldData)
-	unsigned char                                      AthenaCharacterPxAggregateCapacity;                       // 0x00C4(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      BuoyantStorageContainerPxAggregateCapacity;               // 0x00C5(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      BuoyantActorPxAggregateCapacity;                          // 0x00C6(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      FaunaPxAggregateCapacity;                                 // 0x00C7(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      FloatingItemProxyPxAggregateCapacity;                     // 0x00C8(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      RowboatPxAggregateCapacity;                               // 0x00C9(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      ShipPxAggregateCapacity;                                  // 0x00CA(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData05[0x5];                                       // 0x00CB(0x0005) MISSED OFFSET
+	unsigned char                                      UnknownData05[0x4];                                       // 0x00C4(0x0004) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -19404,8 +19397,9 @@ class UParticleModuleVelocityInheritParent : public UParticleModuleVelocityBase
 public:
 	struct FRawDistributionVector                      Scale;                                                    // 0x0058(0x0038) (Edit)
 	struct FRawDistributionVector                      CustomParentScale;                                        // 0x0090(0x0038) (Edit)
-	float                                              SpeedCap;                                                 // 0x00C8(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x00CC(0x0004) MISSED OFFSET
+	unsigned char                                      ScalesRespectEmitterRotation : 1;                         // 0x00C8(0x0001) (Edit)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x00C9(0x0003) MISSED OFFSET
+	float                                              SpeedCap;                                                 // 0x00CC(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

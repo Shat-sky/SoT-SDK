@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -21,7 +21,7 @@ enum class EInterpCurveMode : uint8_t
 	None                           = 1,
 	CIM_CurveBreak                 = 2,
 	None01                         = 3,
-	ExecuteUbergraph               = 4
+	TG_PrePhysics                  = 4
 };
 
 
@@ -29,7 +29,8 @@ enum class EInterpCurveMode : uint8_t
 enum class ERangeBoundTypes : uint8_t
 {
 	ERangeBoundTypes__Exclusive    = 0,
-	None                           = 1
+	None                           = 1,
+	OverlapFilter_All              = 2
 };
 
 
@@ -95,7 +96,7 @@ enum class EMouseCursor : uint8_t
 	None02                         = 5,
 	EMouseCursor__SlashedCircle    = 6,
 	None03                         = 7,
-	EPartyReservationResult__NoResult = 8,
+	EStoreAsyncResult__Unknown     = 8,
 	None04                         = 9
 };
 
@@ -143,7 +144,8 @@ enum class EAxis : uint8_t
 {
 	EAxis__None                    = 0,
 	None                           = 1,
-	EAxis__EAxis_MAX               = 2
+	EAxis__EAxis_MAX               = 2,
+	ETextCommit__Default           = 3
 };
 
 

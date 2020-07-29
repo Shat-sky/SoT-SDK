@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,11 +14,23 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function EnchantedCompass.MultiTargetEnchantedCompass.CalculateDesiredYaw
-struct AMultiTargetEnchantedCompass_CalculateDesiredYaw_Params
+// Function EnchantedCompass.PrototypeMultiTargetEnchantedCompass.GetFloatMax
+struct APrototypeMultiTargetEnchantedCompass_GetFloatMax_Params
+{
+	float                                              ReturnValue;                                              // (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function EnchantedCompass.PrototypeMultiTargetEnchantedCompass.CalculateDesiredYaw
+struct APrototypeMultiTargetEnchantedCompass_CalculateDesiredYaw_Params
 {
 	struct FRotator                                    CompassRotation;                                          // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 	float                                              ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function EnchantedCompass.PrototypeMultiTargetEnchantedCompass.BP_GetTargetLocations
+struct APrototypeMultiTargetEnchantedCompass_BP_GetTargetLocations_Params
+{
+	TArray<struct FVector>                             ReturnValue;                                              // (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm)
 };
 
 }

@@ -1,4 +1,4 @@
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -187,6 +187,42 @@ class UAnimationData* UAnimationDataStoreInterface::GetAnimationDataForId(class 
 	} params;
 
 	params.AnimDataId = AnimDataId;
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Animation.CosmeticItemAnimationComponent.SpawnCosmeticItem
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class USkeletalMeshComponent*  MeshComponent                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// class UClass*                  ObjectToSpawn                  (Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EWieldAnimationLocation> SpawnLocation                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// class UCosmeticItemAnimationSetDataAsset* CosmeticData                   (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           SpawnHidden                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UCosmeticItemAnimationComponent::SpawnCosmeticItem(class USkeletalMeshComponent* MeshComponent, class UClass* ObjectToSpawn, TEnumAsByte<EWieldAnimationLocation> SpawnLocation, class UCosmeticItemAnimationSetDataAsset* CosmeticData, bool SpawnHidden)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Animation.CosmeticItemAnimationComponent.SpawnCosmeticItem"));
+
+	struct
+	{
+		class USkeletalMeshComponent*  MeshComponent;
+		class UClass*                  ObjectToSpawn;
+		TEnumAsByte<EWieldAnimationLocation> SpawnLocation;
+		class UCosmeticItemAnimationSetDataAsset* CosmeticData;
+		bool                           SpawnHidden;
+		bool                           ReturnValue;
+	} params;
+
+	params.MeshComponent = MeshComponent;
+	params.ObjectToSpawn = ObjectToSpawn;
+	params.SpawnLocation = SpawnLocation;
+	params.CosmeticData = CosmeticData;
+	params.SpawnHidden = SpawnHidden;
 
 	UObject::ProcessEvent(fn, &params);
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -64,7 +64,7 @@ enum class ETargetDataFilterSelf : uint8_t
 {
 	ETargetDataFilterSelf__TDFS_Any = 0,
 	None                           = 1,
-	EGameplayTagEventType__NewOrRemoved = 2
+	EFishSpawnTimeOfDay__AnyTime   = 2
 };
 
 
@@ -129,8 +129,7 @@ enum class EGameplayAbilityTriggerSource : uint8_t
 {
 	EGameplayAbilityTriggerSource__GameplayEvent = 0,
 	None                           = 1,
-	IntProperty                    = 2,
-	EGameplayAbilityReplicationPolicy__ReplicateNo = 3
+	EGameplayAbilityReplicationPolicy__ReplicateNo = 2
 };
 
 
@@ -138,8 +137,7 @@ enum class EGameplayAbilityTriggerSource : uint8_t
 enum class EGameplayAbilityReplicationPolicy : uint8_t
 {
 	EGameplayAbilityReplicationPolicy__ReplicateNo = 0,
-	None                           = 1,
-	IntProperty                    = 2
+	None                           = 1
 };
 
 
@@ -158,8 +156,7 @@ enum class EGameplayAbilityInstancingPolicy : uint8_t
 {
 	EGameplayAbilityInstancingPolicy__NonInstanced = 0,
 	None                           = 1,
-	IntProperty                    = 2,
-	EGameplayEffectStackingPeriodPolicy__ResetOnSuccessfulApplication = 3
+	EGameplayEffectStackingPeriodPolicy__ResetOnSuccessfulApplication = 2
 };
 
 
@@ -167,8 +164,7 @@ enum class EGameplayAbilityInstancingPolicy : uint8_t
 enum class EGameplayEffectStackingPeriodPolicy : uint8_t
 {
 	EGameplayEffectStackingPeriodPolicy__ResetOnSuccessfulApplication = 0,
-	None                           = 1,
-	EntitlementInformationComponent = 2
+	None                           = 1
 };
 
 
@@ -177,7 +173,7 @@ enum class EGameplayEffectStackingDurationPolicy : uint8_t
 {
 	EGameplayEffectStackingDurationPolicy__RefreshOnSuccessfulApplication = 0,
 	None                           = 1,
-	EntitlementInformationComponent = 2
+	CoherentTooltipsDetailedComponent = 2
 };
 
 
@@ -186,8 +182,7 @@ enum class EGameplayEffectDurationType : uint8_t
 {
 	EGameplayEffectDurationType__Instant = 0,
 	None                           = 1,
-	EntitlementInformationComponent = 2,
-	EAttributeBasedFloatCalculationType__AttributeMagnitude = 3
+	EAttributeBasedFloatCalculationType__AttributeMagnitude = 2
 };
 
 
@@ -196,7 +191,8 @@ enum class EAttributeBasedFloatCalculationType : uint8_t
 {
 	EAttributeBasedFloatCalculationType__AttributeMagnitude = 0,
 	None                           = 1,
-	EAbilityTaskNetSyncType__BothWait = 2
+	IntProperty                    = 2,
+	EAbilityTaskNetSyncType__BothWait = 3
 };
 
 
@@ -249,7 +245,7 @@ enum class EGameplayAbilityInputBinds : uint8_t
 	None01                         = 3,
 	EGameplayAbilityInputBinds__Ability9 = 4,
 	None02                         = 5,
-	UInt16Property                 = 6
+	NameProperty                   = 6
 };
 
 

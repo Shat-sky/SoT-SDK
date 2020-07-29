@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -144,6 +144,7 @@ public:
 	static void StepFinished();
 	static void SetTestTimeoutAsFatal(bool TimeoutIsFatal);
 	static void OpenLevelWithGameMode(class UObject* WorldContextObject, const struct FName& LevelName, class UClass* GameMode, bool Absolute);
+	static void LogPlatformMemoryStats();
 	static bool IsTravelFinished(class UObject* WorldContextObject);
 	static bool IsFeatureToggleEnabled(const struct FName& FeatureToggleName);
 	static bool IsEditor();

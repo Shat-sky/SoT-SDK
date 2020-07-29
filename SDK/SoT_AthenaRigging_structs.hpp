@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -27,12 +27,10 @@ enum class EInstancedRopeParameterType : uint8_t
 	None01                         = 3,
 	RPT_WindAmount                 = 4,
 	None02                         = 5,
-	StructProperty                 = 6,
-	RPT_CatenaryXYDistance         = 7,
-	None03                         = 8,
-	TextProperty                   = 9,
-	ECannonballIconType__Normal    = 10,
-	None04                         = 11
+	RPT_CatenaryXYDistance         = 6,
+	None03                         = 7,
+	ECannonballIconType__Normal    = 8,
+	None04                         = 9
 };
 
 

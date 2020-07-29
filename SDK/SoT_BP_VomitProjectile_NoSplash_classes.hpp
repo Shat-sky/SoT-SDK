@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_VomitProjectile_NoSplash.BP_VomitProjectile_NoSplash_C
-// 0x0000 (0x0750 - 0x0750)
+// 0x0000 (0x0748 - 0x0748)
 class ABP_VomitProjectile_NoSplash_C : public ABP_VomitProjectile_C
 {
 public:

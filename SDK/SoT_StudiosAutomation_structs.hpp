@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,8 +23,7 @@ enum class EComparisonMethod : uint8_t
 	None                           = 1,
 	EComparisonMethod__Greater_Than = 2,
 	None01                         = 3,
-	NameProperty                   = 4,
-	ETestCategory__Unit            = 5
+	ETestCategory__Unit            = 4
 };
 
 
@@ -34,7 +33,7 @@ enum class ETestAutomationPlayModeOverride : uint8_t
 	ETestAutomationPlayModeOverride__Adventure = 0,
 	None                           = 1,
 	ETestAutomationPlayModeOverride__ETestAutomationPlayModeOverride_MAX = 2,
-	ESelectionMode__None           = 3
+	EPerformanceCaptureType__None  = 3
 };
 
 
@@ -43,8 +42,7 @@ enum class EPerformanceCaptureType : uint8_t
 {
 	EPerformanceCaptureType__None  = 0,
 	None                           = 1,
-	EPerformanceCaptureType__EPerformanceCaptureType_MAX = 2,
-	ETestAutomationPlayModeOverride__Adventure = 3
+	EPerformanceCaptureType__EPerformanceCaptureType_MAX = 2
 };
 
 
@@ -54,8 +52,7 @@ enum class ETestArea : uint8_t
 	ETestArea__None                = 0,
 	None                           = 1,
 	ETestArea__Art                 = 2,
-	None01                         = 3,
-	EFontHinting__Default          = 4
+	None01                         = 3
 };
 
 
@@ -65,8 +62,7 @@ enum class ETestCategory : uint8_t
 	ETestCategory__Unit            = 0,
 	None                           = 1,
 	ETestCategory__Soak            = 2,
-	None01                         = 3,
-	MovieScene3DPathSection_Axis__X = 4
+	None01                         = 3
 };
 
 

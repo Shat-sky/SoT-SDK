@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -104,7 +104,7 @@ public:
 
 
 // Class Fire.FireStatus
-// 0x0000 (0x0028 - 0x0028)
+// 0x0000 (0x0030 - 0x0030)
 class UFireStatus : public UStatusBase
 {
 public:
@@ -172,7 +172,7 @@ public:
 
 
 // Class Fire.IgniteStatus
-// 0x0000 (0x0028 - 0x0028)
+// 0x0000 (0x0030 - 0x0030)
 class UIgniteStatus : public UStatusBase
 {
 public:
@@ -187,7 +187,7 @@ public:
 
 
 // Class Fire.StatusResponseExtinguish
-// 0x0000 (0x0028 - 0x0028)
+// 0x0000 (0x0030 - 0x0030)
 class UStatusResponseExtinguish : public UStatusResponse
 {
 public:
@@ -202,7 +202,7 @@ public:
 
 
 // Class Fire.StatusResponseIgnite
-// 0x0000 (0x0028 - 0x0028)
+// 0x0000 (0x0030 - 0x0030)
 class UStatusResponseIgnite : public UStatusResponse
 {
 public:

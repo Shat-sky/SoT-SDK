@@ -1,4 +1,4 @@
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -88,6 +88,42 @@ void AAshenLordVolcano::Multicast_FireProjectile(int WeightedVolcanoProjectileIn
 	params.AuthoritySpawnLocation = AuthoritySpawnLocation;
 	params.LaunchVelocity = LaunchVelocity;
 	params.RotationRate = RotationRate;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function NaturalDisasters.AshenLordWorldEndCloud.OnRep_CloudStateChange
+// (Final, Native, Public)
+
+void AAshenLordWorldEndCloud::OnRep_CloudStateChange()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function NaturalDisasters.AshenLordWorldEndCloud.OnRep_CloudStateChange"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function NaturalDisasters.AshenLordWorldEndCloud.AnimateCloud
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                          AdjustedLifetime               (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void AAshenLordWorldEndCloud::AnimateCloud(float AdjustedLifetime)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function NaturalDisasters.AshenLordWorldEndCloud.AnimateCloud"));
+
+	struct
+	{
+		float                          AdjustedLifetime;
+	} params;
+
+	params.AdjustedLifetime = AdjustedLifetime;
 
 	UObject::ProcessEvent(fn, &params);
 }

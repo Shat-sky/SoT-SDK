@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -282,7 +282,7 @@ struct FEmissaryEntitlementPurchasedEvent
 
 // ScriptStruct EmissaryLevel.EmissaryLevelRankChange
 // 0x000C
-struct FEmissaryLevelRankChange
+struct FEmissaryLevel_FEmissaryLevelRankChange
 {
 	int                                                NewLevel;                                                 // 0x0000(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	struct FName                                       CompanyName;                                              // 0x0004(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
@@ -290,7 +290,7 @@ struct FEmissaryLevelRankChange
 
 // ScriptStruct EmissaryLevel.EmissaryActivated
 // 0x0008
-struct FEmissaryActivated
+struct FEmissaryLevel_FEmissaryActivated
 {
 	struct FName                                       CompanyName;                                              // 0x0000(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 };
@@ -358,6 +358,14 @@ struct FEmissaryMaxLevelReachedNetworkEvent : public FNetworkEventStruct
 struct FEmissaryDeactivatedNetworkEvent : public FNetworkEventStruct
 {
 
+};
+
+// ScriptStruct EmissaryLevel.EmissaryStateUpdateEvent
+// 0x000C
+struct FEmissaryStateUpdateEvent
+{
+	float                                              CurrentRepTotal;                                          // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
+	struct FName                                       CompanyId;                                                // 0x0004(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct EmissaryLevel.EmissaryProgressUpdatedNetworkEvent

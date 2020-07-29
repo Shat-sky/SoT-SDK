@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -63,6 +63,13 @@ struct FEventEmoteEndRequested
 struct FEventEndEmoteAnimation
 {
 	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct EmotingFramework.EventEmoteSwapped
+// 0x0050
+struct FEventEmoteSwapped
+{
+	struct FEmoteData                                  EmoteData;                                                // 0x0000(0x0050)
 };
 
 // ScriptStruct EmotingFramework.EventEmoteCompleted

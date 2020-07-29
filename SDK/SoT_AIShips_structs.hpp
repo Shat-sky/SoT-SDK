@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -42,10 +42,9 @@ enum class ECannonballIconType : uint8_t
 	None02                         = 5,
 	ECannonballIconType__Snooze    = 6,
 	None03                         = 7,
-	TextProperty                   = 8,
-	EIslandType__Resource          = 9,
-	None04                         = 10,
-	EIslandType__Large             = 11
+	EIslandType__Resource          = 8,
+	None04                         = 9,
+	EIslandType__Large             = 10
 };
 
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -21,8 +21,7 @@ enum class EObjectTargetingStates : uint8_t
 	None                           = 1,
 	EObjectTargetingStates__NewEnumerator4 = 2,
 	None01                         = 3,
-	NameProperty                   = 4,
-	ByteProperty                   = 5
+	NameProperty                   = 4
 };
 
 

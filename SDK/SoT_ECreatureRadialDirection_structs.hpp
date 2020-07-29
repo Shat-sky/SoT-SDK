@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -18,8 +18,7 @@ namespace SDK
 enum class ECreatureRadialDirection : uint8_t
 {
 	ECreatureRadialDirection__NewEnumerator0 = 0,
-	None                           = 1,
-	IntProperty                    = 2
+	None                           = 1
 };
 
 

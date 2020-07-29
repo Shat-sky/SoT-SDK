@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,7 +20,7 @@ enum class ESpawnOwnership : uint8_t
 {
 	ESpawnOwnership__InnerSequence = 0,
 	None                           = 1,
-	EQuitPreference__Quit          = 2
+	EMoveComponentAction__Move     = 2
 };
 
 
@@ -48,7 +48,8 @@ enum class EMovieSceneCompletionMode : uint8_t
 enum class EEvaluationMethod : uint8_t
 {
 	EEvaluationMethod__Static      = 0,
-	None                           = 1
+	None                           = 1,
+	IntProperty                    = 2
 };
 
 

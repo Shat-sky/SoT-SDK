@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -30,7 +30,7 @@ public:
 
 
 // Class AthenaEngine.BoxCollisionExtentAdjustOverTimeComponent
-// 0x0030 (0x00F8 - 0x00C8)
+// 0x0040 (0x0108 - 0x00C8)
 class UBoxCollisionExtentAdjustOverTimeComponent : public UActorComponent
 {
 public:
@@ -44,9 +44,10 @@ public:
 	bool                                               ShouldAdjustBoxExtentZ;                                   // 0x00DC(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData02[0x3];                                       // 0x00DD(0x0003) MISSED OFFSET
 	float                                              PostAdjustmentBoxExtentZ;                                 // 0x00E0(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData03[0x4];                                       // 0x00E4(0x0004) MISSED OFFSET
-	class UBoxComponent*                               BoxCollisionToAdjust;                                     // 0x00E8(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	class UWorld*                                      CachedWorld;                                              // 0x00F0(0x0008) (ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ServerSizeScale;                                          // 0x00E4(0x000C) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData03[0x8];                                       // 0x00F0(0x0008) MISSED OFFSET
+	class UBoxComponent*                               BoxCollisionToAdjust;                                     // 0x00F8(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UWorld*                                      CachedWorld;                                              // 0x0100(0x0008) (ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

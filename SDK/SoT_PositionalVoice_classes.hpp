@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -77,7 +77,7 @@ public:
 
 
 // Class PositionalVoice.VoiceChatRenderer
-// 0x00F8 (0x0120 - 0x0028)
+// 0x0148 (0x0170 - 0x0028)
 class UVoiceChatRenderer : public UObject
 {
 public:
@@ -88,8 +88,7 @@ public:
 	int                                                PreBufferInMilliseconds;                                  // 0x0050(0x0004) (Edit, ZeroConstructor, Config, IsPlainOldData)
 	int                                                ChatRoutingListenerIndex;                                 // 0x0054(0x0004) (Edit, ZeroConstructor, Config, IsPlainOldData)
 	float                                              EmitterHoldInSeconds;                                     // 0x0058(0x0004) (Edit, ZeroConstructor, Config, IsPlainOldData)
-	float                                              IsAudibleAttenuationHoldInSecondsForText;                 // 0x005C(0x0004) (Edit, ZeroConstructor, Config, IsPlainOldData)
-	unsigned char                                      UnknownData01[0xC0];                                      // 0x0060(0x00C0) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x114];                                     // 0x005C(0x0114) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -139,11 +138,13 @@ public:
 
 
 // Class PositionalVoice.TestVoiceChatEmitter
-// 0x0058 (0x0468 - 0x0410)
+// 0x0068 (0x0478 - 0x0410)
 class ATestVoiceChatEmitter : public AActor
 {
 public:
 	unsigned char                                      UnknownData00[0x58];                                      // 0x0410(0x0058) MISSED OFFSET
+	class UWwiseObjectPoolWrapper*                     PoolWrapper;                                              // 0x0468(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x8];                                       // 0x0470(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

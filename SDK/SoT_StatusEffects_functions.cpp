@@ -1,4 +1,4 @@
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -90,18 +90,21 @@ void ULightWeightStatusEffectManagerComponent::OnRep_ActiveEffects(TArray<struct
 // Function StatusEffects.LightWeightStatusEffectManagerComponent.MultiCast_ApplyOneShotStatus
 // (Net, NetReliable, Native, Event, NetMulticast, Public)
 // Parameters:
-// TArray<struct FActiveStatusEffect> ActivatedEffects               (ConstParm, Parm, ZeroConstructor, ReferenceParm)
+// TArray<struct FActiveStatusEffect> AddedEffects                   (ConstParm, Parm, ZeroConstructor, ReferenceParm)
+// TArray<struct FActiveStatusEffect> RemovedEffects                 (ConstParm, Parm, ZeroConstructor, ReferenceParm)
 
-void ULightWeightStatusEffectManagerComponent::MultiCast_ApplyOneShotStatus(TArray<struct FActiveStatusEffect> ActivatedEffects)
+void ULightWeightStatusEffectManagerComponent::MultiCast_ApplyOneShotStatus(TArray<struct FActiveStatusEffect> AddedEffects, TArray<struct FActiveStatusEffect> RemovedEffects)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StatusEffects.LightWeightStatusEffectManagerComponent.MultiCast_ApplyOneShotStatus"));
 
 	struct
 	{
-		TArray<struct FActiveStatusEffect> ActivatedEffects;
+		TArray<struct FActiveStatusEffect> AddedEffects;
+		TArray<struct FActiveStatusEffect> RemovedEffects;
 	} params;
 
-	params.ActivatedEffects = ActivatedEffects;
+	params.AddedEffects = AddedEffects;
+	params.RemovedEffects = RemovedEffects;
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -154,18 +157,21 @@ void UStatusEffectManagerComponent::OnRep_ActiveEffects(TArray<struct FActiveSta
 // Function StatusEffects.StatusEffectManagerComponent.MultiCast_ApplyOneShotStatus
 // (Net, NetReliable, Native, Event, NetMulticast, Public)
 // Parameters:
-// TArray<struct FActiveStatusEffect> ActivatedEffects               (ConstParm, Parm, ZeroConstructor, ReferenceParm)
+// TArray<struct FActiveStatusEffect> AddedEffects                   (ConstParm, Parm, ZeroConstructor, ReferenceParm)
+// TArray<struct FActiveStatusEffect> RemovedEffects                 (ConstParm, Parm, ZeroConstructor, ReferenceParm)
 
-void UStatusEffectManagerComponent::MultiCast_ApplyOneShotStatus(TArray<struct FActiveStatusEffect> ActivatedEffects)
+void UStatusEffectManagerComponent::MultiCast_ApplyOneShotStatus(TArray<struct FActiveStatusEffect> AddedEffects, TArray<struct FActiveStatusEffect> RemovedEffects)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StatusEffects.StatusEffectManagerComponent.MultiCast_ApplyOneShotStatus"));
 
 	struct
 	{
-		TArray<struct FActiveStatusEffect> ActivatedEffects;
+		TArray<struct FActiveStatusEffect> AddedEffects;
+		TArray<struct FActiveStatusEffect> RemovedEffects;
 	} params;
 
-	params.ActivatedEffects = ActivatedEffects;
+	params.AddedEffects = AddedEffects;
+	params.RemovedEffects = RemovedEffects;
 
 	UObject::ProcessEvent(fn, &params);
 }

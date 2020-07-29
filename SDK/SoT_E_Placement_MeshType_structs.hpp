@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -21,9 +21,7 @@ enum class E_Placement_MeshType : uint8_t
 	None                           = 1,
 	E_Placement_MeshType__NewEnumerator3 = 2,
 	None01                         = 3,
-	NameProperty                   = 4,
-	None02                         = 5,
-	None03                         = 6
+	NameProperty                   = 4
 };
 
 

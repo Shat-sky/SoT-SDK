@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -58,9 +58,7 @@ enum class EWwise7Point1Order : uint8_t
 	EWwise7Point1Order__Right_Surround = 2,
 	None01                         = 3,
 	EWwise7Point1Order__Null_Channel = 4,
-	None02                         = 5,
-	EWieldedItemAnimationState__Equipping = 6,
-	None03                         = 7
+	None02                         = 5
 };
 
 
@@ -164,6 +162,14 @@ struct FWwiseAudioGameStateSettings
 	TArray<struct FStringAssetReference>               EventsToPlayOnLoadingEnd;                                 // 0x0050(0x0010) (Edit, ZeroConstructor, Config)
 	TArray<struct FStringAssetReference>               EventsToPlayOnFrontEndOrLoadingStart;                     // 0x0060(0x0010) (Edit, ZeroConstructor, Config)
 	TArray<struct FStringAssetReference>               EventsToPlayOnFrontEndOrLoadingEnd;                       // 0x0070(0x0010) (Edit, ZeroConstructor, Config)
+};
+
+// ScriptStruct WwiseAudio.AnimNotify_SoundSwitch
+// 0x0018
+struct FAnimNotify_SoundSwitch
+{
+	struct FStringAssetReference                       SkeletalMeshReference;                                    // 0x0000(0x0010) (Edit, ZeroConstructor)
+	struct FName                                       SkeletalMeshCategoryName;                                 // 0x0010(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct WwiseAudio.WwiseEventParam

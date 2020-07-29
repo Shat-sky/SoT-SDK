@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
+
+// Function BP_WaterProjectile_NoSplash.BP_WaterProjectile_NoSplash_C.UserConstructionScript
+struct ABP_WaterProjectile_NoSplash_C_UserConstructionScript_Params
+{
+};
 
 }
 

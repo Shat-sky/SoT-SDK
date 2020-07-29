@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.0.17) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,7 +23,8 @@ enum class EAddLinkResult : uint8_t
 	None                           = 1,
 	EAddLinkResult__Failed_CoincidentEndpointIds = 2,
 	None01                         = 3,
-	NameProperty                   = 4
+	NameProperty                   = 4,
+	GetId                          = 5
 };
 
 
@@ -34,7 +35,7 @@ enum class EAddEndpointResult : uint8_t
 	None                           = 1,
 	EAddEndpointResult__Failed_DoesntImplementEndpointInterface = 2,
 	None01                         = 3,
-	EPetDangerHearingResponseType__RunAway = 4
+	ERiddleLocations__NotOnIsland  = 4
 };
 
 
