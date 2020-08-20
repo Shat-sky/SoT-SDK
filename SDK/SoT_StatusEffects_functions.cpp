@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_StatusEffects_parameters.hpp"
+#include "SoT_StatusEffects_classes.hpp"
 
 namespace SDK
 {

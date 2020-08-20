@@ -20,8 +20,8 @@ namespace SDK
 enum class EExecutionTarget : uint8_t
 {
 	EExecutionTarget__OldServer    = 0,
-	None                           = 1,
-	EActionPredictionType__Predicted = 2
+	EExecutionTarget__Client       = 1,
+	EExecutionTarget__EExecutionTarget_MAX = 2
 };
 
 

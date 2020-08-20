@@ -12,9 +12,9 @@
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Athena_classes.hpp"
 #include "SoT_ActionStateMachine_classes.hpp"
-#include "SoT_Pets_classes.hpp"
 #include "SoT_Maths_classes.hpp"
 #include "SoT_AthenaEngine_classes.hpp"
+#include "SoT_Pets_classes.hpp"
 #include "SoT_Animation_classes.hpp"
 
 namespace SDK
@@ -26,10 +26,7 @@ namespace SDK
 // Enum AthenaAI.EAIAbilityDamageIntervalCounterMode
 enum class EAIAbilityDamageIntervalCounterMode : uint8_t
 {
-	DontBlock                      = 0,
-	None                           = 1,
-	IntProperty                    = 2,
-	EAthenaAISpawnType__SpawnOnLand = 3
+	EAIAbilityDamageIntervalCounterMode_MAX = 0
 };
 
 
@@ -37,10 +34,10 @@ enum class EAIAbilityDamageIntervalCounterMode : uint8_t
 enum class EAIDebugColour : uint8_t
 {
 	EAIDebugColour__Red            = 0,
-	None                           = 1,
-	EAIDebugColour__Yellow         = 2,
-	None01                         = 3,
-	EBlackboardValueComparisonType__NearlyEqual = 4
+	EAIDebugColour__Blue           = 1,
+	EAIDebugColour__White          = 2,
+	EAIDebugColour__Yellow         = 3,
+	EAIDebugColour__EAIDebugColour_MAX = 4
 };
 
 
@@ -48,22 +45,16 @@ enum class EAIDebugColour : uint8_t
 enum class EAIDialogueState : uint8_t
 {
 	EAIDialogueState__Inactive     = 0,
-	None                           = 1,
-	EAIDialogueState__EAIDialogueState_MAX = 2,
-	EVoiceChatState__Silent        = 3
+	EAIDialogueState__Alerted      = 1,
+	EAIDialogueState__Dead         = 2,
+	EAIDialogueState__EAIDialogueState_MAX = 3
 };
 
 
 // Enum AthenaAI.AISpawnRequestResult
 enum class EAISpawnRequestResult : uint8_t
 {
-	AISpawnRequestResult__Incomplete = 0,
-	None                           = 1,
-	AISpawnRequestResult__FailedNoValidPos = 2,
-	None01                         = 3,
-	AISpawnRequestResult__AISpawnRequestResult_MAX = 4,
-	ERespawnPointOrientation__None = 5,
-	None02                         = 6
+
 };
 
 
@@ -71,40 +62,29 @@ enum class EAISpawnRequestResult : uint8_t
 enum class EAthenaAISpawnType : uint8_t
 {
 	EAthenaAISpawnType__SpawnOnLand = 0,
-	None                           = 1,
-	EBountySpawnerAudioState__None = 2
+	EAthenaAISpawnType__SpawnSummoned = 1,
+	EAthenaAISpawnType__EAthenaAISpawnType_MAX = 2
 };
 
 
 // Enum AthenaAI.ClassLoadState
 enum class EClassLoadState : uint8_t
 {
-	ClassLoadState__Incomplete     = 0,
-	None                           = 1,
-	ClassLoadState__ClassLoadState_MAX = 2,
-	EAIDialogueState__Inactive     = 3
+
 };
 
 
 // Enum AthenaAI.AISpawnLocationSearchResult
 enum class EAISpawnLocationSearchResult : uint8_t
 {
-	AISpawnLocationSearchResult__Incomplete = 0,
-	None                           = 1,
-	AISpawnLocationSearchResult__Cancelled = 2,
-	None01                         = 3,
-	ECookingState__Raw             = 4
+
 };
 
 
 // Enum AthenaAI.AISpawnRequestState
 enum class EAISpawnRequestState : uint8_t
 {
-	AISpawnRequestState__AwaitingBegin = 0,
-	None                           = 1,
-	AISpawnRequestState__Complete  = 2,
-	None01                         = 3,
-	ERiddleActions__RaiseLanternAnyone = 4
+
 };
 
 
@@ -112,8 +92,8 @@ enum class EAISpawnRequestState : uint8_t
 enum class EBountySpawnerAudioState : uint8_t
 {
 	EBountySpawnerAudioState__None = 0,
-	None                           = 1,
-	EBountySpawnerType__Default    = 2
+	EBountySpawnerAudioState__Anticipation = 1,
+	EBountySpawnerAudioState__EBountySpawnerAudioState_MAX = 2
 };
 
 
@@ -121,8 +101,8 @@ enum class EBountySpawnerAudioState : uint8_t
 enum class EBountySpawnerType : uint8_t
 {
 	EBountySpawnerType__Default    = 0,
-	None                           = 1,
-	EBountyTargetRank__Captain     = 2
+	EBountySpawnerType__BountyFort = 1,
+	EBountySpawnerType__EBountySpawnerType_MAX = 2
 };
 
 
@@ -130,7 +110,7 @@ enum class EBountySpawnerType : uint8_t
 enum class EBountyTargetRank : uint8_t
 {
 	EBountyTargetRank__Captain     = 0,
-	None                           = 1
+	EBountyTargetRank__EBountyTargetRank_MAX = 1
 };
 
 
@@ -138,17 +118,14 @@ enum class EBountyTargetRank : uint8_t
 enum class EBountyTargetGender : uint8_t
 {
 	EBountyTargetGender__Male      = 0,
-	None                           = 1,
-	IntProperty                    = 2
+	EBountyTargetGender__EBountyTargetGender_MAX = 1
 };
 
 
 // Enum AthenaAI.EAITargetWeaponFiringArcResult
 enum class EAITargetWeaponFiringArcResult : uint8_t
 {
-	LeftOfArc                      = 0,
-	None                           = 1,
-	EBlackboardValueCompositeType__And = 2
+	EAITargetWeaponFiringArcResult_MAX = 0
 };
 
 
@@ -156,10 +133,10 @@ enum class EAITargetWeaponFiringArcResult : uint8_t
 enum class EBlackboardIntValueComparisonType : uint8_t
 {
 	EBlackboardIntValueComparisonType__Equal = 0,
-	None                           = 1,
-	EBlackboardIntValueComparisonType__GreaterThanEquals = 2,
-	None01                         = 3,
-	EPetMontageAnimationState__None = 4
+	EBlackboardIntValueComparisonType__GreaterThan = 1,
+	EBlackboardIntValueComparisonType__LessThan = 2,
+	EBlackboardIntValueComparisonType__GreaterThanEquals = 3,
+	EBlackboardIntValueComparisonType__EBlackboardIntValueComparisonType_MAX = 4
 };
 
 
@@ -167,7 +144,7 @@ enum class EBlackboardIntValueComparisonType : uint8_t
 enum class EBlackboardValueCompositeType : uint8_t
 {
 	EBlackboardValueCompositeType__And = 0,
-	None                           = 1
+	EBlackboardValueCompositeType__EBlackboardValueCompositeType_MAX = 1
 };
 
 
@@ -175,10 +152,10 @@ enum class EBlackboardValueCompositeType : uint8_t
 enum class EBlackboardValueComparisonType : uint8_t
 {
 	EBlackboardValueComparisonType__NearlyEqual = 0,
-	None                           = 1,
-	EBlackboardValueComparisonType__GreaterThanEquals = 2,
-	None01                         = 3,
-	EFloatValueComparisonType__NearlyEqual = 4
+	EBlackboardValueComparisonType__GreaterThan = 1,
+	EBlackboardValueComparisonType__LessThan = 2,
+	EBlackboardValueComparisonType__GreaterThanEquals = 3,
+	EBlackboardValueComparisonType__EBlackboardValueComparisonType_MAX = 4
 };
 
 
@@ -186,10 +163,10 @@ enum class EBlackboardValueComparisonType : uint8_t
 enum class EFloatValueComparisonType : uint8_t
 {
 	EFloatValueComparisonType__NearlyEqual = 0,
-	None                           = 1,
-	EFloatValueComparisonType__GreaterThanEquals = 2,
-	None01                         = 3,
-	EBlackboardIntValueComparisonType__Equal = 4
+	EFloatValueComparisonType__GreaterThan = 1,
+	EFloatValueComparisonType__LessThan = 2,
+	EFloatValueComparisonType__GreaterThanEquals = 3,
+	EFloatValueComparisonType__EFloatValueComparisonType_MAX = 4
 };
 
 
@@ -197,7 +174,7 @@ enum class EFloatValueComparisonType : uint8_t
 enum class ETraceDirection : uint8_t
 {
 	ETraceDirection__ItemToContext = 0,
-	None                           = 1
+	ETraceDirection__ETraceDirection_MAX = 1
 };
 
 
@@ -205,8 +182,8 @@ enum class ETraceDirection : uint8_t
 enum class EAIKnockbackStrengthType : uint8_t
 {
 	EAIKnockbackStrengthType__Low  = 0,
-	None                           = 1,
-	ENPCChatType__Chat             = 2
+	EAIKnockbackStrengthType__High = 1,
+	EAIKnockbackStrengthType__EAIKnockbackStrengthType_MAX = 2
 };
 
 
@@ -214,9 +191,9 @@ enum class EAIKnockbackStrengthType : uint8_t
 enum class EAIThreatLevel : uint8_t
 {
 	EAIThreatLevel__NoDanger       = 0,
-	None                           = 1,
-	EAIThreatLevel__EAIThreatLevel_MAX = 2,
-	ClassLoadState__Incomplete     = 3
+	EAIThreatLevel__Threatened     = 1,
+	EAIThreatLevel__Calm           = 2,
+	EAIThreatLevel__EAIThreatLevel_MAX = 3
 };
 
 
@@ -224,8 +201,8 @@ enum class EAIThreatLevel : uint8_t
 enum class EFaunaInWaterState : uint8_t
 {
 	EFaunaInWaterState__NotInWater = 0,
-	None                           = 1,
-	EFaunaCratedState__NotInCrate  = 2
+	EFaunaInWaterState__Underwater = 1,
+	EFaunaInWaterState__EFaunaInWaterState_MAX = 2
 };
 
 
@@ -233,8 +210,25 @@ enum class EFaunaInWaterState : uint8_t
 enum class EFaunaCratedState : uint8_t
 {
 	EFaunaCratedState__NotInCrate  = 0,
-	None                           = 1,
-	EPromptPriority__Low           = 2
+	EFaunaCratedState__InWieldedCrate = 1,
+	EFaunaCratedState__EFaunaCratedState_MAX = 2
+};
+
+
+// Enum AthenaAI.ESwimRotationMode
+enum class ESwimRotationMode : uint8_t
+{
+	ESwimRotationMode__FaceMovement = 0,
+	ESwimRotationMode__LongwaysStrafe = 1,
+	ESwimRotationMode__ESwimRotationMode_MAX = 2
+};
+
+
+// Enum AthenaAI.EArcFollowingMode
+enum class EArcFollowingMode : uint8_t
+{
+	EArcFollowingMode__SharkArc    = 0,
+	EArcFollowingMode__EArcFollowingMode_MAX = 1
 };
 
 
@@ -242,8 +236,8 @@ enum class EFaunaCratedState : uint8_t
 enum class ESwimmingLineOfSightTest : uint8_t
 {
 	ESwimmingLineOfSightTest__None = 0,
-	None                           = 1,
-	ESwimmingSyncMode__Synchronous = 2
+	ESwimmingLineOfSightTest__Immediate = 1,
+	ESwimmingLineOfSightTest__ESwimmingLineOfSightTest_MAX = 2
 };
 
 
@@ -251,7 +245,7 @@ enum class ESwimmingLineOfSightTest : uint8_t
 enum class ESwimmingSyncMode : uint8_t
 {
 	ESwimmingSyncMode__Synchronous = 0,
-	None                           = 1
+	ESwimmingSyncMode__ESwimmingSyncMode_MAX = 1
 };
 
 
@@ -259,8 +253,7 @@ enum class ESwimmingSyncMode : uint8_t
 enum class ESwimmingArcMode : uint8_t
 {
 	ESwimmingArcMode__ArcToTarget  = 0,
-	None                           = 1,
-	IntProperty                    = 2
+	ESwimmingArcMode__ESwimmingArcMode_MAX = 1
 };
 
 
@@ -268,7 +261,7 @@ enum class ESwimmingArcMode : uint8_t
 enum class ESwimmingGoalCheckMode : uint8_t
 {
 	ESwimmingGoalCheckMode__Goal2D = 0,
-	None                           = 1
+	ESwimmingGoalCheckMode__ESwimmingGoalCheckMode_MAX = 1
 };
 
 
@@ -276,8 +269,8 @@ enum class ESwimmingGoalCheckMode : uint8_t
 enum class ETinySharkDespawnReason : uint8_t
 {
 	ETinySharkDespawnReason__Invalid = 0,
-	None                           = 1,
-	EAISpawnerMusicZoneState__Passive = 2
+	ETinySharkDespawnReason__TimedOut = 1,
+	ETinySharkDespawnReason__ETinySharkDespawnReason_MAX = 2
 };
 
 
@@ -285,9 +278,9 @@ enum class ETinySharkDespawnReason : uint8_t
 enum class ETinySharkActiveState : uint8_t
 {
 	ETinySharkActiveState__TrackingTarget = 0,
-	None                           = 1,
-	ETinySharkActiveState__ETinySharkActiveState_MAX = 2,
-	EPetMontageAnimationType__None = 3
+	ETinySharkActiveState__RepositionToTarget = 1,
+	ETinySharkActiveState__WaitingForRespawn = 2,
+	ETinySharkActiveState__ETinySharkActiveState_MAX = 3
 };
 
 
@@ -295,9 +288,9 @@ enum class ETinySharkActiveState : uint8_t
 enum class ETinySharkState : uint8_t
 {
 	ETinySharkState__Inactive      = 0,
-	None                           = 1,
-	ETinySharkState__Despawning    = 2,
-	None01                         = 3
+	ETinySharkState__Active        = 1,
+	ETinySharkState__Defeated      = 2,
+	ETinySharkState__Despawning    = 3
 };
 
 
@@ -305,12 +298,13 @@ enum class ETinySharkState : uint8_t
 enum class EDebugPetStateDescriptor : uint8_t
 {
 	EDebugPetStateDescriptor__NoState = 0,
-	None                           = 1,
-	EDebugPetStateDescriptor__Pursuit = 2,
-	None01                         = 3,
-	EDebugPetStateDescriptor__Scared = 4,
-	None02                         = 5,
-	EMusicalInstrumentType__Banjo  = 6
+	EDebugPetStateDescriptor__Hangout_MoveToLocation = 1,
+	EDebugPetStateDescriptor__Reacting = 2,
+	EDebugPetStateDescriptor__Pursuit = 3,
+	EDebugPetStateDescriptor__Follow = 4,
+	EDebugPetStateDescriptor__Eating = 5,
+	EDebugPetStateDescriptor__Scared = 6,
+	EDebugPetStateDescriptor__EDebugPetStateDescriptor_MAX = 7
 };
 
 
@@ -318,8 +312,8 @@ enum class EDebugPetStateDescriptor : uint8_t
 enum class EPetSize : uint8_t
 {
 	EPetSize__Small                = 0,
-	None                           = 1,
-	EWieldablePetDropRequestReason__None = 2
+	EPetSize__Large                = 1,
+	EPetSize__EPetSize_MAX         = 2
 };
 
 

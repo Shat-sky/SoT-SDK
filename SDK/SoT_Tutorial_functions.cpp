@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_Tutorial_parameters.hpp"
+#include "SoT_Tutorial_classes.hpp"
 
 namespace SDK
 {

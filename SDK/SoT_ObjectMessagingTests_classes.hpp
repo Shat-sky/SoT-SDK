@@ -15,11 +15,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class ObjectMessagingTests.MockPawnWithMessagingDispatcher
-// 0x00A8 (0x0520 - 0x0478)
+// 0x00A8 (0x0568 - 0x04C0)
 class AMockPawnWithMessagingDispatcher : public APawn
 {
 public:
-	unsigned char                                      UnknownData00[0xA8];                                      // 0x0478(0x00A8) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xA8];                                      // 0x04C0(0x00A8) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -31,11 +31,11 @@ public:
 
 
 // Class ObjectMessagingTests.ObjectMessagingDispatcherTestObject
-// 0x00A8 (0x04B8 - 0x0410)
+// 0x00A8 (0x0500 - 0x0458)
 class AObjectMessagingDispatcherTestObject : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0xA8];                                      // 0x0410(0x00A8) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xA8];                                      // 0x0458(0x00A8) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -86,11 +86,11 @@ public:
 
 
 // Class ObjectMessagingTests.TestGameStateWithObjectMessagingDispatcher
-// 0x00A8 (0x0510 - 0x0468)
+// 0x00A8 (0x0558 - 0x04B0)
 class ATestGameStateWithObjectMessagingDispatcher : public AGameState
 {
 public:
-	unsigned char                                      UnknownData00[0xA8];                                      // 0x0468(0x00A8) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xA8];                                      // 0x04B0(0x00A8) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

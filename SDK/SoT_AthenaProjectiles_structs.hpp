@@ -19,9 +19,9 @@ namespace SDK
 enum class EProjectileFiredFrom : uint8_t
 {
 	EProjectileFiredFrom__Cannon   = 0,
-	None                           = 1,
-	EProjectileFiredFrom__EProjectileFiredFrom_MAX = 2,
-	EPetDangerHearingTarget__None  = 3
+	EProjectileFiredFrom__DeepSeaCannon = 1,
+	EProjectileFiredFrom__DeepSeaCharacter = 2,
+	EProjectileFiredFrom__EProjectileFiredFrom_MAX = 3
 };
 
 

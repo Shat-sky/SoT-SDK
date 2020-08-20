@@ -117,11 +117,11 @@ public:
 
 
 // Class Music.MusicZoneService
-// 0x00A8 (0x04B8 - 0x0410)
+// 0x00A8 (0x0500 - 0x0458)
 class AMusicZoneService : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0xA8];                                      // 0x0410(0x00A8) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xA8];                                      // 0x0458(0x00A8) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

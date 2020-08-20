@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_GameplayDebugger_parameters.hpp"
+#include "SoT_GameplayDebugger_classes.hpp"
 
 namespace SDK
 {

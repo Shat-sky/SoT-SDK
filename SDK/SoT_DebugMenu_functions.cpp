@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_DebugMenu_parameters.hpp"
+#include "SoT_DebugMenu_classes.hpp"
 
 namespace SDK
 {

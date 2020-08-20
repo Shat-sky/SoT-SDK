@@ -22,8 +22,8 @@ namespace SDK
 enum class EEmitterRelationship : uint8_t
 {
 	EEmitterRelationship__Audio_Remote = 0,
-	None                           = 1,
-	EBuoyancyBlend__PrimaryToSecondary = 2
+	EEmitterRelationship__Audio_Default = 1,
+	EEmitterRelationship__Audio_MAX = 2
 };
 
 

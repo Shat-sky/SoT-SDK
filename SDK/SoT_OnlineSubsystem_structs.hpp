@@ -19,9 +19,9 @@ namespace SDK
 enum class EOnlineStatsSuccess : uint8_t
 {
 	EOnlineStatsSuccess__Success   = 0,
-	None                           = 1,
-	EOnlineStatsSuccess__InvalidUser = 2,
-	None01                         = 3
+	EOnlineStatsSuccess__InvalidStatId = 1,
+	EOnlineStatsSuccess__InvalidArgument = 2,
+	EOnlineStatsSuccess__InvalidUser = 3
 };
 
 
@@ -29,11 +29,11 @@ enum class EOnlineStatsSuccess : uint8_t
 enum class EInAppPurchaseState : uint8_t
 {
 	EInAppPurchaseState__Success   = 0,
-	None                           = 1,
-	EInAppPurchaseState__NotAllowed = 2,
-	None01                         = 3,
-	EClientRequestType__NonePending = 4,
-	None02                         = 5
+	EInAppPurchaseState__Cancelled = 1,
+	EInAppPurchaseState__Invalid   = 2,
+	EInAppPurchaseState__NotAllowed = 3,
+	EInAppPurchaseState__Unknown   = 4,
+	EInAppPurchaseState__EInAppPurchaseState_MAX = 5
 };
 
 
@@ -41,13 +41,13 @@ enum class EInAppPurchaseState : uint8_t
 enum class EMPMatchOutcome : uint8_t
 {
 	EMPMatchOutcome__None          = 0,
-	None                           = 1,
-	EMPMatchOutcome__Tied          = 2,
-	None01                         = 3,
-	EMPMatchOutcome__Third         = 4,
-	None02                         = 5,
-	None03                         = 6,
-	EEmissaryQualityLevel__Invalid = 7
+	EMPMatchOutcome__Won           = 1,
+	EMPMatchOutcome__Lost          = 2,
+	EMPMatchOutcome__Tied          = 3,
+	EMPMatchOutcome__First         = 4,
+	EMPMatchOutcome__Second        = 5,
+	EMPMatchOutcome__Third         = 6,
+	EMPMatchOutcome__EMPMatchOutcome_MAX = 7
 };
 
 
@@ -97,7 +97,7 @@ struct FInAppPurchaseRestoreInfo
 };
 
 // ScriptStruct OnlineSubsystem.OnlineStoreCatalogItem
-// 0x0080
+// 0x0090
 struct FOnlineStoreCatalogItem
 {
 	class FString                                      ProductId;                                                // 0x0000(0x0010) (ZeroConstructor)
@@ -109,7 +109,8 @@ struct FOnlineStoreCatalogItem
 	unsigned char                                      UnknownData00[0x7];                                       // 0x0051(0x0007) MISSED OFFSET
 	struct FDateTime                                   SaleEndDate;                                              // 0x0058(0x0008) (ZeroConstructor)
 	class FString                                      ImageUri;                                                 // 0x0060(0x0010) (ZeroConstructor)
-	TArray<class FString>                              MetaTags;                                                 // 0x0070(0x0010) (ZeroConstructor)
+	class FString                                      CurrencyCode;                                             // 0x0070(0x0010) (ZeroConstructor)
+	TArray<class FString>                              MetaTags;                                                 // 0x0080(0x0010) (ZeroConstructor)
 };
 
 // ScriptStruct OnlineSubsystem.InAppPurchaseProductRequest

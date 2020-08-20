@@ -21,8 +21,8 @@ namespace SDK
 enum class EAISpawnerMusicZoneState : uint8_t
 {
 	EAISpawnerMusicZoneState__Passive = 0,
-	None                           = 1,
-	EHullDamageDeck__Bottom        = 2
+	EAISpawnerMusicZoneState__BattleWon = 1,
+	EAISpawnerMusicZoneState__EAISpawnerMusicZoneState_MAX = 2
 };
 
 

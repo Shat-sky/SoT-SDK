@@ -20,8 +20,8 @@ namespace SDK
 enum class ETetherConstrainMode : uint8_t
 {
 	ETetherConstrainMode__ShrinkLength = 0,
-	None                           = 1,
-	EWieldableItemBlockingAnimState__Main = 2
+	ETetherConstrainMode__GrowLength = 1,
+	ETetherConstrainMode__ETetherConstrainMode_MAX = 2
 };
 
 

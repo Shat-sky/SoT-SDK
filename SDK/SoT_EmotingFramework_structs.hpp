@@ -20,8 +20,8 @@ namespace SDK
 enum class EEmoteFlourishType : uint8_t
 {
 	EEmoteFlourishType__Invalid    = 0,
-	None                           = 1,
-	EEmoteSequenceType__Continuous = 2
+	EEmoteFlourishType__SecondaryWeaponSlotFlourish = 1,
+	EEmoteFlourishType__EEmoteFlourishType_MAX = 2
 };
 
 

@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_RareAudio_parameters.hpp"
+#include "SoT_RareAudio_classes.hpp"
 
 namespace SDK
 {

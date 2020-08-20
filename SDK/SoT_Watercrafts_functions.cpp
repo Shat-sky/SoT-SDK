@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_Watercrafts_parameters.hpp"
+#include "SoT_Watercrafts_classes.hpp"
 
 namespace SDK
 {

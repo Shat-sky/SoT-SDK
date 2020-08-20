@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_PositionalVoice_parameters.hpp"
+#include "SoT_PositionalVoice_classes.hpp"
 
 namespace SDK
 {
@@ -41,22 +41,19 @@ int UPositionalVoiceTestFunctionLibrary::GetNumberOfUnmutedRemotePlayers(class A
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContextObject             (Parm, ZeroConstructor, IsPlainOldData)
-// class UClass*                  VoiceChatRendererClass         (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UPositionalVoiceTestFunctionLibrary::GetNumberOfRegisteredChatEmitters(class UObject* WorldContextObject, class UClass* VoiceChatRendererClass)
+int UPositionalVoiceTestFunctionLibrary::GetNumberOfRegisteredChatEmitters(class UObject* WorldContextObject)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PositionalVoice.PositionalVoiceTestFunctionLibrary.GetNumberOfRegisteredChatEmitters"));
 
 	struct
 	{
 		class UObject*                 WorldContextObject;
-		class UClass*                  VoiceChatRendererClass;
 		int                            ReturnValue;
 	} params;
 
 	params.WorldContextObject = WorldContextObject;
-	params.VoiceChatRendererClass = VoiceChatRendererClass;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);

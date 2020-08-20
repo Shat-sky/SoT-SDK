@@ -20,10 +20,10 @@ namespace SDK
 enum class EComparisonMethod : uint8_t
 {
 	EComparisonMethod__Equal_To    = 0,
-	None                           = 1,
-	EComparisonMethod__Greater_Than = 2,
-	None01                         = 3,
-	ETestCategory__Unit            = 4
+	EComparisonMethod__Greater_Than_Or_Equal_To = 1,
+	EComparisonMethod__Less_Than_Or_Equal_To = 2,
+	EComparisonMethod__Greater_Than = 3,
+	EComparisonMethod__EComparisonMethod_MAX = 4
 };
 
 
@@ -31,9 +31,9 @@ enum class EComparisonMethod : uint8_t
 enum class ETestAutomationPlayModeOverride : uint8_t
 {
 	ETestAutomationPlayModeOverride__Adventure = 0,
-	None                           = 1,
-	ETestAutomationPlayModeOverride__ETestAutomationPlayModeOverride_MAX = 2,
-	EPerformanceCaptureType__None  = 3
+	ETestAutomationPlayModeOverride__Tutorial = 1,
+	ETestAutomationPlayModeOverride__NotSelectedYet = 2,
+	ETestAutomationPlayModeOverride__ETestAutomationPlayModeOverride_MAX = 3
 };
 
 
@@ -41,8 +41,9 @@ enum class ETestAutomationPlayModeOverride : uint8_t
 enum class EPerformanceCaptureType : uint8_t
 {
 	EPerformanceCaptureType__None  = 0,
-	None                           = 1,
-	EPerformanceCaptureType__EPerformanceCaptureType_MAX = 2
+	EPerformanceCaptureType__StreamingMemory = 1,
+	EPerformanceCaptureType__StreamingPositional = 2,
+	EPerformanceCaptureType__EPerformanceCaptureType_MAX = 3
 };
 
 
@@ -50,9 +51,10 @@ enum class EPerformanceCaptureType : uint8_t
 enum class ETestArea : uint8_t
 {
 	ETestArea__None                = 0,
-	None                           = 1,
-	ETestArea__Art                 = 2,
-	None01                         = 3
+	ETestArea__UserInterface       = 1,
+	ETestArea__UserInterfaceInitialization = 2,
+	ETestArea__Art                 = 3,
+	ETestArea__ETestArea_MAX       = 4
 };
 
 
@@ -60,9 +62,10 @@ enum class ETestArea : uint8_t
 enum class ETestCategory : uint8_t
 {
 	ETestCategory__Unit            = 0,
-	None                           = 1,
-	ETestCategory__Soak            = 2,
-	None01                         = 3
+	ETestCategory__Acceptance      = 1,
+	ETestCategory__Stress          = 2,
+	ETestCategory__Soak            = 3,
+	ETestCategory__ETestCategory_MAX = 4
 };
 
 
@@ -70,12 +73,12 @@ enum class ETestCategory : uint8_t
 enum class ECollectionAuditType : uint8_t
 {
 	ECollectionAuditType__NoneSet  = 0,
-	None                           = 1,
-	ECollectionAuditType__AnimSequenceLimits = 2,
-	None01                         = 3,
-	ECollectionAuditType__ECollectionAuditType_MAX = 4,
-	FunctionInput_Scalar           = 5,
-	None02                         = 6
+	ECollectionAuditType__Totals   = 1,
+	ECollectionAuditType__MeshLimits = 2,
+	ECollectionAuditType__AnimSequenceLimits = 3,
+	ECollectionAuditType__ExceptionList = 4,
+	ECollectionAuditType__WIP      = 5,
+	ECollectionAuditType__ECollectionAuditType_MAX = 6
 };
 
 

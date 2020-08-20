@@ -17,14 +17,14 @@ namespace SDK
 // Function MysteriousNotes.PlayerMysteriousNoteComponent.Server_NoteCompletionStepReceived
 struct UPlayerMysteriousNoteComponent_Server_NoteCompletionStepReceived_Params
 {
-	class ACharacter*                                  InCharacter;                                              // (Parm, ZeroConstructor, IsPlainOldData)
+	class APlayerController*                           InPlayerController;                                       // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FName                                       InCompletionID;                                           // (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 };
 
 // Function MysteriousNotes.PlayerMysteriousNoteComponent.Server_MarkNoteAsRead
 struct UPlayerMysteriousNoteComponent_Server_MarkNoteAsRead_Params
 {
-	class ACharacter*                                  InCharacter;                                              // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+	class APlayerController*                           InPlayerController;                                       // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 	struct FGuid                                       NoteId;                                                   // (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 };
 

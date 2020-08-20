@@ -31,6 +31,21 @@ public:
 };
 
 
+// Class ExplosionFramework.ExplosionReceiverInterface
+// 0x0000 (0x0028 - 0x0028)
+class UExplosionReceiverInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ExplosionFramework.ExplosionReceiverInterface"));
+		return ptr;
+	}
+
+};
+
+
 // Class ExplosionFramework.ExplosiveComponentInterface
 // 0x0000 (0x0028 - 0x0028)
 class UExplosiveComponentInterface : public UInterface

@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_MysteriousNotes_parameters.hpp"
+#include "SoT_MysteriousNotes_classes.hpp"
 
 namespace SDK
 {
@@ -15,20 +15,20 @@ namespace SDK
 // Function MysteriousNotes.PlayerMysteriousNoteComponent.Server_NoteCompletionStepReceived
 // (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
 // Parameters:
-// class ACharacter*              InCharacter                    (Parm, ZeroConstructor, IsPlainOldData)
+// class APlayerController*       InPlayerController             (Parm, ZeroConstructor, IsPlainOldData)
 // struct FName                   InCompletionID                 (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
-void UPlayerMysteriousNoteComponent::Server_NoteCompletionStepReceived(class ACharacter* InCharacter, const struct FName& InCompletionID)
+void UPlayerMysteriousNoteComponent::Server_NoteCompletionStepReceived(class APlayerController* InPlayerController, const struct FName& InCompletionID)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function MysteriousNotes.PlayerMysteriousNoteComponent.Server_NoteCompletionStepReceived"));
 
 	struct
 	{
-		class ACharacter*              InCharacter;
+		class APlayerController*       InPlayerController;
 		struct FName                   InCompletionID;
 	} params;
 
-	params.InCharacter = InCharacter;
+	params.InPlayerController = InPlayerController;
 	params.InCompletionID = InCompletionID;
 
 	UObject::ProcessEvent(fn, &params);
@@ -38,20 +38,20 @@ void UPlayerMysteriousNoteComponent::Server_NoteCompletionStepReceived(class ACh
 // Function MysteriousNotes.PlayerMysteriousNoteComponent.Server_MarkNoteAsRead
 // (Net, NetReliable, Native, Event, Protected, NetServer, HasDefaults, NetValidate)
 // Parameters:
-// class ACharacter*              InCharacter                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// class APlayerController*       InPlayerController             (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // struct FGuid                   NoteId                         (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
-void UPlayerMysteriousNoteComponent::Server_MarkNoteAsRead(class ACharacter* InCharacter, const struct FGuid& NoteId)
+void UPlayerMysteriousNoteComponent::Server_MarkNoteAsRead(class APlayerController* InPlayerController, const struct FGuid& NoteId)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function MysteriousNotes.PlayerMysteriousNoteComponent.Server_MarkNoteAsRead"));
 
 	struct
 	{
-		class ACharacter*              InCharacter;
+		class APlayerController*       InPlayerController;
 		struct FGuid                   NoteId;
 	} params;
 
-	params.InCharacter = InCharacter;
+	params.InPlayerController = InPlayerController;
 	params.NoteId = NoteId;
 
 	UObject::ProcessEvent(fn, &params);

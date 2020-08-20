@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_EnchantedCompass_parameters.hpp"
+#include "SoT_EnchantedCompass_classes.hpp"
 
 namespace SDK
 {

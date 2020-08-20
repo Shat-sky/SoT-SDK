@@ -19,8 +19,9 @@ namespace SDK
 enum class ERepairableState : uint8_t
 {
 	ERepairableState__NeverDamaged = 0,
-	None                           = 1,
-	ERepairableState__ERepairableState_MAX = 2
+	ERepairableState__Repairing    = 1,
+	ERepairableState__Repaired     = 2,
+	ERepairableState__ERepairableState_MAX = 3
 };
 
 

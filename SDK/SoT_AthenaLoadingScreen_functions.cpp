@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_AthenaLoadingScreen_parameters.hpp"
+#include "SoT_AthenaLoadingScreen_classes.hpp"
 
 namespace SDK
 {

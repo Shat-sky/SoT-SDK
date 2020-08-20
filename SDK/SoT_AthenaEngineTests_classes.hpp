@@ -69,11 +69,11 @@ public:
 
 
 // Class AthenaEngineTests.TestActorWithDynamicColourPointLightComponent
-// 0x0008 (0x0418 - 0x0410)
+// 0x0008 (0x0460 - 0x0458)
 class ATestActorWithDynamicColourPointLightComponent : public AActor
 {
 public:
-	class UDynamicColourPointLightComponent*           LightComponent;                                           // 0x0410(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+	class UDynamicColourPointLightComponent*           LightComponent;                                           // 0x0458(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -85,12 +85,12 @@ public:
 
 
 // Class AthenaEngineTests.TestActorWithRotateMeshToActorComponent
-// 0x0010 (0x0420 - 0x0410)
+// 0x0010 (0x0468 - 0x0458)
 class ATestActorWithRotateMeshToActorComponent : public AActor
 {
 public:
-	class UStaticMeshComponent*                        StaticMeshComponent;                                      // 0x0410(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	class URotateMeshToActorComponent*                 RotateMeshToActorComponent;                               // 0x0418(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UStaticMeshComponent*                        StaticMeshComponent;                                      // 0x0458(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class URotateMeshToActorComponent*                 RotateMeshToActorComponent;                               // 0x0460(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -128,6 +128,22 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngineTests.TestForceFeedbackCondition"));
+		return ptr;
+	}
+
+};
+
+
+// Class AthenaEngineTests.TestPrimitiveCollisionExtentAdjustOverTimeComponent
+// 0x0008 (0x0110 - 0x0108)
+class UTestPrimitiveCollisionExtentAdjustOverTimeComponent : public UPrimitiveCollisionExtentAdjustOverTimeComponent
+{
+public:
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0108(0x0008) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngineTests.TestPrimitiveCollisionExtentAdjustOverTimeComponent"));
 		return ptr;
 	}
 

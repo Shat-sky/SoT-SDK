@@ -20,7 +20,7 @@ namespace SDK
 enum class EJsonTestEnum : uint8_t
 {
 	EJsonTestEnum__Value0          = 0,
-	None                           = 1
+	EJsonTestEnum__EJsonTestEnum_MAX = 1
 };
 
 

@@ -22,8 +22,7 @@ namespace SDK
 enum class EPromptPriority : uint8_t
 {
 	EPromptPriority__Low           = 0,
-	None                           = 1,
-	TRUE                           = 2
+	EPromptPriority__EPromptPriority_MAX = 1
 };
 
 
@@ -31,8 +30,8 @@ enum class EPromptPriority : uint8_t
 enum class EPromptEvaluatedType : uint8_t
 {
 	EPromptEvaluatedType__ShowPrompt = 0,
-	None                           = 1,
-	EPromptStartStop__Start        = 2
+	EPromptEvaluatedType__CompleteCoordinator = 1,
+	EPromptEvaluatedType__EPromptEvaluatedType_MAX = 2
 };
 
 
@@ -40,7 +39,7 @@ enum class EPromptEvaluatedType : uint8_t
 enum class EPromptStartStop : uint8_t
 {
 	EPromptStartStop__Start        = 0,
-	None                           = 1
+	EPromptStartStop__EPromptStartStop_MAX = 1
 };
 
 

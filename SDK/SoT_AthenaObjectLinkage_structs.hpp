@@ -20,11 +20,10 @@ namespace SDK
 enum class EAddLinkResult : uint8_t
 {
 	EAddLinkResult__Success_Set    = 0,
-	None                           = 1,
-	EAddLinkResult__Failed_CoincidentEndpointIds = 2,
-	None01                         = 3,
-	NameProperty                   = 4,
-	GetId                          = 5
+	EAddLinkResult__Failed_SourceEndpointIdInvalid = 1,
+	EAddLinkResult__Failed_TargetEndpointIdInvalid = 2,
+	EAddLinkResult__Failed_CoincidentEndpointIds = 3,
+	EAddLinkResult__EAddLinkResult_MAX = 4
 };
 
 
@@ -32,10 +31,9 @@ enum class EAddLinkResult : uint8_t
 enum class EAddEndpointResult : uint8_t
 {
 	EAddEndpointResult__Success    = 0,
-	None                           = 1,
-	EAddEndpointResult__Failed_DoesntImplementEndpointInterface = 2,
-	None01                         = 3,
-	ERiddleLocations__NotOnIsland  = 4
+	EAddEndpointResult__Failed_InvalidId = 1,
+	EAddEndpointResult__Failed_DuplicateId = 2,
+	EAddEndpointResult__Failed_DoesntImplementEndpointInterface = 3
 };
 
 

@@ -19,16 +19,13 @@ namespace SDK
 enum class ETouchIndex : uint8_t
 {
 	ETouchIndex__Touch1            = 0,
-	None                           = 1,
-	IntProperty                    = 2,
+	ETouchIndex__Touch3            = 1,
+	ETouchIndex__Touch4            = 2,
 	ETouchIndex__Touch5            = 3,
-	None01                         = 4,
-	NameProperty                   = 5,
+	ETouchIndex__Touch7            = 4,
+	ETouchIndex__Touch8            = 5,
 	ETouchIndex__Touch9            = 6,
-	None02                         = 7,
-	StructProperty                 = 8,
-	None03                         = 9,
-	ECrewSpawnState__Invalid       = 10
+	ETouchIndex__ETouchIndex_MAX   = 7
 };
 
 
@@ -36,10 +33,9 @@ enum class ETouchIndex : uint8_t
 enum class ETouchType : uint8_t
 {
 	ETouchType__Began              = 0,
-	None                           = 1,
-	IntProperty                    = 2,
-	ETouchType__NumTypes           = 3,
-	None01                         = 4
+	ETouchType__Stationary         = 1,
+	ETouchType__Ended              = 2,
+	ETouchType__NumTypes           = 3
 };
 
 
@@ -47,9 +43,8 @@ enum class ETouchType : uint8_t
 enum class EConsoleForGamepadLabels : uint8_t
 {
 	EConsoleForGamepadLabels__None = 0,
-	None                           = 1,
-	IntProperty                    = 2,
-	EControllerHand__Left          = 3
+	EConsoleForGamepadLabels__PS4  = 1,
+	EConsoleForGamepadLabels__EConsoleForGamepadLabels_MAX = 2
 };
 
 
@@ -57,7 +52,7 @@ enum class EConsoleForGamepadLabels : uint8_t
 enum class EControllerHand : uint8_t
 {
 	EControllerHand__Left          = 0,
-	None                           = 1
+	EControllerHand__EControllerHand_MAX = 1
 };
 
 

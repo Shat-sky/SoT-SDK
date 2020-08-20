@@ -19,11 +19,7 @@ namespace SDK
 // Enum MovieSceneCapture.EHDRCaptureGamut
 enum class EHDRCaptureGamut : uint8_t
 {
-	HCGM_Rec709                    = 0,
-	None                           = 1,
-	HCGM_ACEScg                    = 2,
-	None01                         = 3,
-	EOnlineStatsSuccess__Success   = 4
+
 };
 
 

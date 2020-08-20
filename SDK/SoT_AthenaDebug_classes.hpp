@@ -30,18 +30,18 @@ public:
 
 
 // Class AthenaDebug.DrawDebugService
-// 0x0078 (0x0488 - 0x0410)
+// 0x0078 (0x04D0 - 0x0458)
 class ADrawDebugService : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0410(0x0008) MISSED OFFSET
-	TArray<struct FDrawDebugItemMessage>               MessagesReplicated;                                       // 0x0418(0x0010) (Net, ZeroConstructor)
-	TArray<struct FDrawDebugItemSphere>                SpheresReplicated;                                        // 0x0428(0x0010) (Net, ZeroConstructor)
-	TArray<struct FDrawDebugItemBox>                   BoxesReplicated;                                          // 0x0438(0x0010) (Net, ZeroConstructor)
-	TArray<struct FDrawDebugItemCapsule>               CapsulesReplicated;                                       // 0x0448(0x0010) (Net, ZeroConstructor)
-	TArray<struct FDrawDebugItemLine>                  LinesReplicated;                                          // 0x0458(0x0010) (Net, ZeroConstructor)
-	TArray<struct FDrawDebugItemSector>                SectorsReplicated;                                        // 0x0468(0x0010) (Net, ZeroConstructor)
-	TArray<struct FDrawDebugItemString>                StringsReplicated;                                        // 0x0478(0x0010) (Net, ZeroConstructor)
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0458(0x0008) MISSED OFFSET
+	TArray<struct FDrawDebugItemMessage>               MessagesReplicated;                                       // 0x0460(0x0010) (Net, ZeroConstructor)
+	TArray<struct FDrawDebugItemSphere>                SpheresReplicated;                                        // 0x0470(0x0010) (Net, ZeroConstructor)
+	TArray<struct FDrawDebugItemBox>                   BoxesReplicated;                                          // 0x0480(0x0010) (Net, ZeroConstructor)
+	TArray<struct FDrawDebugItemCapsule>               CapsulesReplicated;                                       // 0x0490(0x0010) (Net, ZeroConstructor)
+	TArray<struct FDrawDebugItemLine>                  LinesReplicated;                                          // 0x04A0(0x0010) (Net, ZeroConstructor)
+	TArray<struct FDrawDebugItemSector>                SectorsReplicated;                                        // 0x04B0(0x0010) (Net, ZeroConstructor)
+	TArray<struct FDrawDebugItemString>                StringsReplicated;                                        // 0x04C0(0x0010) (Net, ZeroConstructor)
 
 	static UClass* StaticClass()
 	{
@@ -77,14 +77,14 @@ public:
 
 
 // Class AthenaDebug.Videprinter
-// 0x0028 (0x0438 - 0x0410)
+// 0x0028 (0x0480 - 0x0458)
 class AVideprinter : public AActor
 {
 public:
-	TArray<class FString>                              OutputRingBuffer;                                         // 0x0410(0x0010) (Net, ZeroConstructor)
-	int                                                AddAt;                                                    // 0x0420(0x0004) (Net, ZeroConstructor, IsPlainOldData)
-	struct FName                                       Id;                                                       // 0x0424(0x0008) (Net, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0xC];                                       // 0x042C(0x000C) MISSED OFFSET
+	TArray<class FString>                              OutputRingBuffer;                                         // 0x0458(0x0010) (Net, ZeroConstructor)
+	int                                                AddAt;                                                    // 0x0468(0x0004) (Net, ZeroConstructor, IsPlainOldData)
+	struct FName                                       Id;                                                       // 0x046C(0x0008) (Net, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0xC];                                       // 0x0474(0x000C) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

@@ -139,7 +139,7 @@ public:
 	struct FStringAssetReference                       InitBank;                                                 // 0x00D8(0x0010) (Edit, ZeroConstructor, Config)
 	struct FDirectoryPath                              WwiseSoundbanksRoot;                                      // 0x00E8(0x0010) (Edit, Config)
 	struct FDirectoryPath                              WwiseStreamedFilesDirectory;                              // 0x00F8(0x0010) (Edit, Config)
-	struct FDirectoryPath                              StarlightWwiseStreamedFilesDirectory;                     // 0x0108(0x0010) (Edit, Config)
+	struct FDirectoryPath                              NonShippingWwiseStreamedFilesDirectory;                   // 0x0108(0x0010) (Edit, Config)
 	TArray<struct FWwiseIOPriorityMappingConfig>       AsyncIOPriorityMappings;                                  // 0x0118(0x0010) (Edit, ZeroConstructor, Config)
 	struct FDirectoryPath                              TritonAcousticMapsDirectory;                              // 0x0128(0x0010) (Edit, Config)
 	class FString                                      DefaultLanguage;                                          // 0x0138(0x0010) (Edit, ZeroConstructor, Config)

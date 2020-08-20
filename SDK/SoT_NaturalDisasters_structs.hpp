@@ -24,9 +24,8 @@ namespace SDK
 enum class EAshCloudState : uint8_t
 {
 	EAshCloudState__Spawning       = 0,
-	None                           = 1,
-	IntProperty                    = 2,
-	EVolcanoTargetHitType__OnTarget = 3
+	EAshCloudState__Dissipating    = 1,
+	EAshCloudState__EAshCloudState_MAX = 2
 };
 
 
@@ -34,8 +33,8 @@ enum class EAshCloudState : uint8_t
 enum class EVolcanoTargetHitType : uint8_t
 {
 	EVolcanoTargetHitType__OnTarget = 0,
-	None                           = 1,
-	EVolcanoTargetType__Player     = 2
+	EVolcanoTargetHitType__Random  = 1,
+	EVolcanoTargetHitType__EVolcanoTargetHitType_MAX = 2
 };
 
 
@@ -43,8 +42,8 @@ enum class EVolcanoTargetHitType : uint8_t
 enum class EVolcanoTargetType : uint8_t
 {
 	EVolcanoTargetType__Player     = 0,
-	None                           = 1,
-	EAshenLordWorldEndCloudState__Inactive = 2
+	EVolcanoTargetType__Watercraft = 1,
+	EVolcanoTargetType__EVolcanoTargetType_MAX = 2
 };
 
 
@@ -52,7 +51,7 @@ enum class EVolcanoTargetType : uint8_t
 enum class EAshenLordWorldEndCloudState : uint8_t
 {
 	EAshenLordWorldEndCloudState__Inactive = 0,
-	None                           = 1
+	EAshenLordWorldEndCloudState__EAshenLordWorldEndCloudState_MAX = 1
 };
 
 
@@ -60,8 +59,9 @@ enum class EAshenLordWorldEndCloudState : uint8_t
 enum class EEarthquakeState : uint8_t
 {
 	EEarthquakeState__Dormant      = 0,
-	None                           = 1,
-	EEarthquakeState__EEarthquakeState_MAX = 2
+	EEarthquakeState__Active       = 1,
+	EEarthquakeState__CoolingDown  = 2,
+	EEarthquakeState__EEarthquakeState_MAX = 3
 };
 
 
@@ -69,7 +69,7 @@ enum class EEarthquakeState : uint8_t
 enum class EGeyserState : uint8_t
 {
 	EGeyserState__Dormant          = 0,
-	None                           = 1
+	EGeyserState__EGeyserState_MAX = 1
 };
 
 
@@ -77,7 +77,7 @@ enum class EGeyserState : uint8_t
 enum class EGeyserManagerState : uint8_t
 {
 	EGeyserManagerState__Dormant   = 0,
-	None                           = 1
+	EGeyserManagerState__EGeyserManagerState_MAX = 1
 };
 
 
@@ -85,8 +85,8 @@ enum class EGeyserManagerState : uint8_t
 enum class EVolcanoState : uint8_t
 {
 	EVolcanoState__Dormant         = 0,
-	None                           = 1,
-	EMastType__Front               = 2
+	EVolcanoState__Erupting        = 1,
+	EVolcanoState__EVolcanoState_MAX = 2
 };
 
 

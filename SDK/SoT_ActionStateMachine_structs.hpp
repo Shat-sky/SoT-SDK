@@ -20,11 +20,11 @@ namespace SDK
 enum class EActionStateMachineTrackId : uint8_t
 {
 	EActionStateMachineTrackId__Locomotion = 0,
-	None                           = 1,
-	EActionStateMachineTrackId__Migration = 2,
-	None01                         = 3,
-	EPlayMode__Adventure           = 4,
-	None02                         = 5
+	EActionStateMachineTrackId__ItemUse = 1,
+	EActionStateMachineTrackId__ForcedMovement = 2,
+	EActionStateMachineTrackId__Migration = 3,
+	EActionStateMachineTrackId__Invalid = 4,
+	EActionStateMachineTrackId__EActionStateMachineTrackId_MAX = 5
 };
 
 
@@ -32,8 +32,7 @@ enum class EActionStateMachineTrackId : uint8_t
 enum class EActionPredictionType : uint8_t
 {
 	EActionPredictionType__Predicted = 0,
-	None                           = 1,
-	IntProperty                    = 2
+	EActionPredictionType__EActionPredictionType_MAX = 1
 };
 
 
@@ -41,7 +40,7 @@ enum class EActionPredictionType : uint8_t
 enum class EActionStatePriority : uint8_t
 {
 	EActionStatePriority__Overrides = 0,
-	None                           = 1
+	EActionStatePriority__EActionStatePriority_MAX = 1
 };
 
 

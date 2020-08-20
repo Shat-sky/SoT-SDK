@@ -25,9 +25,9 @@ namespace SDK
 enum class EAIShipEncounterType : uint8_t
 {
 	EAIShipEncounterType__Battle   = 0,
-	None                           = 1,
-	EAIShipEncounterType__EAIShipEncounterType_MAX = 2,
-	EKrakenBehaviourType__Idle     = 3
+	EAIShipEncounterType__Aggressive = 1,
+	EAIShipEncounterType__MAX      = 2,
+	EAIShipEncounterType__EAIShipEncounterType_MAX = 3
 };
 
 
@@ -35,16 +35,17 @@ enum class EAIShipEncounterType : uint8_t
 enum class ECannonballIconType : uint8_t
 {
 	ECannonballIconType__Normal    = 0,
-	None                           = 1,
-	ECannonballIconType__Boogie    = 2,
-	None01                         = 3,
-	ECannonballIconType__Rigging   = 4,
-	None02                         = 5,
-	ECannonballIconType__Snooze    = 6,
-	None03                         = 7,
-	EIslandType__Resource          = 8,
-	None04                         = 9,
-	EIslandType__Large             = 10
+	ECannonballIconType__Ballast   = 1,
+	ECannonballIconType__Barrel    = 2,
+	ECannonballIconType__Boogie    = 3,
+	ECannonballIconType__Limp      = 4,
+	ECannonballIconType__Passive   = 5,
+	ECannonballIconType__Rigging   = 6,
+	ECannonballIconType__Silence   = 7,
+	ECannonballIconType__Snake     = 8,
+	ECannonballIconType__Snooze    = 9,
+	ECannonballIconType__Max       = 10,
+	ECannonballIconType__ECannonballIconType_MAX = 11
 };
 
 
@@ -52,10 +53,10 @@ enum class ECannonballIconType : uint8_t
 enum class ESkellyFormIconType : uint8_t
 {
 	ESkellyFormIconType__Normal    = 0,
-	None                           = 1,
-	ESkellyFormIconType__None      = 2,
-	None01                         = 3,
-	EAddLinkResult__Success_Set    = 4
+	ESkellyFormIconType__Plant     = 1,
+	ESkellyFormIconType__Shadow    = 2,
+	ESkellyFormIconType__None      = 3,
+	ESkellyFormIconType__ESkellyFormIconType_MAX = 4
 };
 
 
@@ -63,17 +64,14 @@ enum class ESkellyFormIconType : uint8_t
 enum class EAIShipType : uint8_t
 {
 	EAIShipType__Normal            = 0,
-	None                           = 1
+	EAIShipType__EAIShipType_MAX   = 1
 };
 
 
 // Enum AIShips.EAIShipPlayerTrackerType
 enum class EAIShipPlayerTrackerType : uint8_t
 {
-	DefaultRadiusTracker           = 0,
-	None                           = 1,
-	EAIShipPlayerTrackerType_MAX   = 2,
-	EAIShipEncounterType__Battle   = 3
+	EAIShipPlayerTrackerType_MAX   = 0
 };
 
 
@@ -81,7 +79,7 @@ enum class EAIShipPlayerTrackerType : uint8_t
 enum class EAIShipDestructionReason : uint8_t
 {
 	EAIShipDestructionReason__Defeated = 0,
-	None                           = 1
+	EAIShipDestructionReason__EAIShipDestructionReason_MAX = 1
 };
 
 

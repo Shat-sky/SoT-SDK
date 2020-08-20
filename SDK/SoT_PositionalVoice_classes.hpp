@@ -77,7 +77,7 @@ public:
 
 
 // Class PositionalVoice.VoiceChatRenderer
-// 0x0148 (0x0170 - 0x0028)
+// 0x0158 (0x0180 - 0x0028)
 class UVoiceChatRenderer : public UObject
 {
 public:
@@ -88,7 +88,7 @@ public:
 	int                                                PreBufferInMilliseconds;                                  // 0x0050(0x0004) (Edit, ZeroConstructor, Config, IsPlainOldData)
 	int                                                ChatRoutingListenerIndex;                                 // 0x0054(0x0004) (Edit, ZeroConstructor, Config, IsPlainOldData)
 	float                                              EmitterHoldInSeconds;                                     // 0x0058(0x0004) (Edit, ZeroConstructor, Config, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x114];                                     // 0x005C(0x0114) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x124];                                     // 0x005C(0x0124) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -113,7 +113,7 @@ public:
 
 
 	static int GetNumberOfUnmutedRemotePlayers(class APlayerController* CurrentPlayer);
-	static int GetNumberOfRegisteredChatEmitters(class UObject* WorldContextObject, class UClass* VoiceChatRendererClass);
+	static int GetNumberOfRegisteredChatEmitters(class UObject* WorldContextObject);
 	static int GetMaxNumberOfAudibleChatEmitters();
 };
 
@@ -138,13 +138,13 @@ public:
 
 
 // Class PositionalVoice.TestVoiceChatEmitter
-// 0x0068 (0x0478 - 0x0410)
+// 0x0068 (0x04C0 - 0x0458)
 class ATestVoiceChatEmitter : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0x58];                                      // 0x0410(0x0058) MISSED OFFSET
-	class UWwiseObjectPoolWrapper*                     PoolWrapper;                                              // 0x0468(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x8];                                       // 0x0470(0x0008) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x58];                                      // 0x0458(0x0058) MISSED OFFSET
+	class UWwiseObjectPoolWrapper*                     PoolWrapper;                                              // 0x04B0(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x8];                                       // 0x04B8(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

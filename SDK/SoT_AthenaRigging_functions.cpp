@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_AthenaRigging_parameters.hpp"
+#include "SoT_AthenaRigging_classes.hpp"
 
 namespace SDK
 {

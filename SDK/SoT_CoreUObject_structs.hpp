@@ -18,10 +18,10 @@ namespace SDK
 enum class EInterpCurveMode : uint8_t
 {
 	CIM_Linear                     = 0,
-	None                           = 1,
-	CIM_CurveBreak                 = 2,
-	None01                         = 3,
-	TG_PrePhysics                  = 4
+	CIM_Constant                   = 1,
+	CIM_CurveUser                  = 2,
+	CIM_CurveBreak                 = 3,
+	CIM_MAX                        = 4
 };
 
 
@@ -29,8 +29,8 @@ enum class EInterpCurveMode : uint8_t
 enum class ERangeBoundTypes : uint8_t
 {
 	ERangeBoundTypes__Exclusive    = 0,
-	None                           = 1,
-	OverlapFilter_All              = 2
+	ERangeBoundTypes__Open         = 1,
+	ERangeBoundTypes__ERangeBoundTypes_MAX = 2
 };
 
 
@@ -38,50 +38,42 @@ enum class ERangeBoundTypes : uint8_t
 enum class EUnit : uint8_t
 {
 	EUnit__Micrometers             = 0,
-	None                           = 1,
-	IntProperty                    = 2,
+	EUnit__Centimeters             = 1,
+	EUnit__Meters                  = 2,
 	EUnit__Kilometers              = 3,
-	None01                         = 4,
-	NameProperty                   = 5,
+	EUnit__Feet                    = 4,
+	EUnit__Yards                   = 5,
 	EUnit__Miles                   = 6,
-	None02                         = 7,
-	StructProperty                 = 8,
+	EUnit__Degrees                 = 7,
+	EUnit__Radians                 = 8,
 	EUnit__MetersPerSecond         = 9,
-	None03                         = 10,
-	TextProperty                   = 11,
+	EUnit__MilesPerHour            = 10,
+	EUnit__Celsius                 = 11,
 	EUnit__Farenheit               = 12,
-	None04                         = 13,
-	LazyObjectProperty             = 14,
+	EUnit__Micrograms              = 13,
+	EUnit__Milligrams              = 14,
 	EUnit__Grams                   = 15,
-	None05                         = 16,
-	UInt16Property                 = 17,
+	EUnit__MetricTons              = 16,
+	EUnit__Ounces                  = 17,
 	EUnit__Pounds                  = 18,
-	None06                         = 19,
-	Int8Property                   = 20,
+	EUnit__Newtons                 = 19,
+	EUnit__PoundsForce             = 20,
 	EUnit__KilogramsForce          = 21,
-	None07                         = 22,
-	Core                           = 23,
+	EUnit__Kilohertz               = 22,
+	EUnit__Megahertz               = 23,
 	EUnit__Gigahertz               = 24,
-	None08                         = 25,
-	EUnit__Megabytes               = 26,
-	None09                         = 27,
-	EUnit__Milliseconds            = 28,
-	None10                         = 29,
-	EUnit__Days                    = 30,
-	None11                         = 31,
-	EUnit__EUnit_MAX               = 32,
-	None12                         = 33,
-	None13                         = 34,
-	None14                         = 35,
-	EHealthChangedReason__NoChange = 36,
-	None15                         = 37,
-	IntProperty01                  = 38,
-	EHealthChangedReason__CannonBallSplashDamage = 39,
-	None16                         = 40,
-	NameProperty01                 = 41,
-	EHealthChangedReason__DamagedBySwimmingCreature = 42,
-	None17                         = 43,
-	StructProperty01               = 44
+	EUnit__Bytes                   = 25,
+	EUnit__Kilobytes               = 26,
+	EUnit__Megabytes               = 27,
+	EUnit__Terabytes               = 28,
+	EUnit__Lumens                  = 29,
+	EUnit__Milliseconds            = 30,
+	EUnit__Minutes                 = 31,
+	EUnit__Hours                   = 32,
+	EUnit__Days                    = 33,
+	EUnit__Years                   = 34,
+	EUnit__Unspecified             = 35,
+	EUnit__EUnit_MAX               = 36
 };
 
 
@@ -89,15 +81,16 @@ enum class EUnit : uint8_t
 enum class EMouseCursor : uint8_t
 {
 	EMouseCursor__None             = 0,
-	None                           = 1,
-	EMouseCursor__ResizeUpDown     = 2,
-	None01                         = 3,
-	EMouseCursor__Crosshairs       = 4,
-	None02                         = 5,
-	EMouseCursor__SlashedCircle    = 6,
-	None03                         = 7,
-	EStoreAsyncResult__Unknown     = 8,
-	None04                         = 9
+	EMouseCursor__TextEditBeam     = 1,
+	EMouseCursor__ResizeLeftRight  = 2,
+	EMouseCursor__ResizeUpDown     = 3,
+	EMouseCursor__ResizeSouthWest  = 4,
+	EMouseCursor__CardinalCross    = 5,
+	EMouseCursor__Crosshairs       = 6,
+	EMouseCursor__GrabHand         = 7,
+	EMouseCursor__GrabHandClosed   = 8,
+	EMouseCursor__SlashedCircle    = 9,
+	EMouseCursor__EMouseCursor_MAX = 10
 };
 
 
@@ -105,37 +98,53 @@ enum class EMouseCursor : uint8_t
 enum class EPixelFormat : uint8_t
 {
 	PF_Unknown                     = 0,
-	None                           = 1,
-	PF_G16                         = 2,
-	None01                         = 3,
-	PF_UYVY                        = 4,
-	None02                         = 5,
-	PF_ShadowDepth                 = 6,
-	None03                         = 7,
-	PF_G16R16F_FILTER              = 8,
-	None04                         = 9,
-	PF_D24                         = 10,
-	None05                         = 11,
-	PF_V8U8                        = 12,
-	None06                         = 13,
-	PF_R32_UINT                    = 14,
-	None07                         = 15,
-	PF_R16_UINT                    = 16,
-	None08                         = 17,
-	PF_R5G6B5_UNORM                = 18,
-	None09                         = 19,
-	PF_R8G8                        = 20,
-	None10                         = 21,
-	PF_X24_G8                      = 22,
-	None11                         = 23,
-	PF_R32G32B32A32_UINT           = 24,
-	None12                         = 25,
-	PF_ASTC_8x8                    = 26,
-	None13                         = 27,
-	PF_BC7                         = 28,
-	None14                         = 29,
-	PF_R32G32_SINT                 = 30,
-	None15                         = 31
+	PF_B8G8R8A8                    = 1,
+	PF_G8                          = 2,
+	PF_G16                         = 3,
+	PF_DXT3                        = 4,
+	PF_DXT5                        = 5,
+	PF_UYVY                        = 6,
+	PF_FloatRGBA                   = 7,
+	PF_DepthStencil                = 8,
+	PF_ShadowDepth                 = 9,
+	PF_G16R16                      = 10,
+	PF_G16R16F                     = 11,
+	PF_G16R16F_FILTER              = 12,
+	PF_A2B10G10R10                 = 13,
+	PF_A16B16G16R16                = 14,
+	PF_D24                         = 15,
+	PF_R16F_FILTER                 = 16,
+	PF_BC5                         = 17,
+	PF_V8U8                        = 18,
+	PF_FloatR11G11B10              = 19,
+	PF_A8                          = 20,
+	PF_R32_UINT                    = 21,
+	PF_PVRTC2                      = 22,
+	PF_PVRTC4                      = 23,
+	PF_R16_UINT                    = 24,
+	PF_R16G16B16A16_UINT           = 25,
+	PF_R16G16B16A16_SINT           = 26,
+	PF_R5G6B5_UNORM                = 27,
+	PF_A8R8G8B8                    = 28,
+	PF_BC4                         = 29,
+	PF_R8G8                        = 30,
+	PF_ATC_RGBA_E                  = 31,
+	PF_ATC_RGBA_I                  = 32,
+	PF_X24_G8                      = 33,
+	PF_ETC2_RGB                    = 34,
+	PF_ETC2_RGBA                   = 35,
+	PF_R32G32B32A32_UINT           = 36,
+	PF_ASTC_4x4                    = 37,
+	PF_ASTC_6x6                    = 38,
+	PF_ASTC_8x8                    = 39,
+	PF_ASTC_12x12                  = 40,
+	PF_BC6H                        = 41,
+	PF_BC7                         = 42,
+	PF_BC6H_SF16                   = 43,
+	PF_BC6H_UF16                   = 44,
+	PF_R32G32_SINT                 = 45,
+	PF_Depth                       = 46,
+	PF_MAX                         = 47
 };
 
 
@@ -143,9 +152,9 @@ enum class EPixelFormat : uint8_t
 enum class EAxis : uint8_t
 {
 	EAxis__None                    = 0,
-	None                           = 1,
-	EAxis__EAxis_MAX               = 2,
-	ETextCommit__Default           = 3
+	EAxis__Y                       = 1,
+	EAxis__Z                       = 2,
+	EAxis__EAxis_MAX               = 3
 };
 
 
@@ -153,8 +162,8 @@ enum class EAxis : uint8_t
 enum class ELogTimes : uint8_t
 {
 	ELogTimes__None                = 0,
-	None                           = 1,
-	ESearchDir__FromStart          = 2
+	ELogTimes__SinceGStartTime     = 1,
+	ELogTimes__ELogTimes_MAX       = 2
 };
 
 
@@ -162,7 +171,7 @@ enum class ELogTimes : uint8_t
 enum class ESearchDir : uint8_t
 {
 	ESearchDir__FromStart          = 0,
-	None                           = 1
+	ESearchDir__ESearchDir_MAX     = 1
 };
 
 
@@ -170,7 +179,7 @@ enum class ESearchDir : uint8_t
 enum class ESearchCase : uint8_t
 {
 	ESearchCase__CaseSensitive     = 0,
-	None                           = 1
+	ESearchCase__ESearchCase_MAX   = 1
 };
 
 

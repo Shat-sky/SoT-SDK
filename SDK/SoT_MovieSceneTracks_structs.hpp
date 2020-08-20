@@ -20,12 +20,7 @@ namespace SDK
 // Enum MovieSceneTracks.MovieScene3DPathSection_Axis
 enum class EMovieScene3DPathSection_Axis : uint8_t
 {
-	MovieScene3DPathSection_Axis__X = 0,
-	None                           = 1,
-	MovieScene3DPathSection_Axis__NEG_Y = 2,
-	None01                         = 3,
-	NameProperty                   = 4,
-	OnGenerateRowUObject__DelegateSignature = 5
+
 };
 
 
@@ -33,8 +28,8 @@ enum class EMovieScene3DPathSection_Axis : uint8_t
 enum class EShow3DTrajectory : uint8_t
 {
 	EShow3DTrajectory__EST_OnlyWhenSelected = 0,
-	None                           = 1,
-	ELevelVisibility__Visible      = 2
+	EShow3DTrajectory__EST_Never   = 1,
+	EShow3DTrajectory__EST_MAX     = 2
 };
 
 
@@ -42,8 +37,7 @@ enum class EShow3DTrajectory : uint8_t
 enum class ELevelVisibility : uint8_t
 {
 	ELevelVisibility__Visible      = 0,
-	None                           = 1,
-	IntProperty                    = 2
+	ELevelVisibility__ELevelVisibility_MAX = 1
 };
 
 
@@ -51,9 +45,8 @@ enum class ELevelVisibility : uint8_t
 enum class EParticleKey : uint8_t
 {
 	EParticleKey__Activate         = 0,
-	None                           = 1,
-	IntProperty                    = 2,
-	ESlateSizeRule__Automatic      = 3
+	EParticleKey__Trigger          = 1,
+	EParticleKey__EParticleKey_MAX = 2
 };
 
 

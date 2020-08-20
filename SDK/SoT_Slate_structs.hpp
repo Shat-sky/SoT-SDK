@@ -21,8 +21,8 @@ namespace SDK
 enum class ETextJustify : uint8_t
 {
 	ETextJustify__Left             = 0,
-	None                           = 1,
-	EConsumeMouseWheel__WhenScrollingPossible = 2
+	ETextJustify__Right            = 1,
+	ETextJustify__ETextJustify_MAX = 2
 };
 
 
@@ -30,8 +30,8 @@ enum class ETextJustify : uint8_t
 enum class ETableViewMode : uint8_t
 {
 	ETableViewMode__List           = 0,
-	None                           = 1,
-	EThreePlayerSplitScreenType__FavorTop = 2
+	ETableViewMode__Tree           = 1,
+	ETableViewMode__ETableViewMode_MAX = 2
 };
 
 
@@ -39,9 +39,9 @@ enum class ETableViewMode : uint8_t
 enum class ESelectionMode : uint8_t
 {
 	ESelectionMode__None           = 0,
-	None                           = 1,
-	ESelectionMode__ESelectionMode_MAX = 2,
-	ETestAutomationPlayModeOverride__Adventure = 3
+	ESelectionMode__SingleToggle   = 1,
+	ESelectionMode__Multi          = 2,
+	ESelectionMode__ESelectionMode_MAX = 3
 };
 
 
@@ -49,12 +49,11 @@ enum class ESelectionMode : uint8_t
 enum class EStretch : uint8_t
 {
 	EStretch__None                 = 0,
-	None                           = 1,
-	EStretch__ScaleToFitY          = 2,
-	None01                         = 3,
-	NameProperty                   = 4,
-	EComparisonMethod__Equal_To    = 5,
-	None02                         = 6
+	EStretch__ScaleToFit           = 1,
+	EStretch__ScaleToFitX          = 2,
+	EStretch__ScaleToFitY          = 3,
+	EStretch__UserSpecified        = 4,
+	EStretch__EStretch_MAX         = 5
 };
 
 
@@ -62,8 +61,8 @@ enum class EStretch : uint8_t
 enum class EStretchDirection : uint8_t
 {
 	EStretchDirection__Both        = 0,
-	None                           = 1,
-	ETableViewMode__List           = 2
+	EStretchDirection__UpOnly      = 1,
+	EStretchDirection__EStretchDirection_MAX = 2
 };
 
 
@@ -71,9 +70,9 @@ enum class EStretchDirection : uint8_t
 enum class EProgressBarFillType : uint8_t
 {
 	EProgressBarFillType__LeftToRight = 0,
-	None                           = 1,
-	EProgressBarFillType__BottomToTop = 2,
-	None01                         = 3
+	EProgressBarFillType__FillFromCenter = 1,
+	EProgressBarFillType__TopToBottom = 2,
+	EProgressBarFillType__BottomToTop = 3
 };
 
 

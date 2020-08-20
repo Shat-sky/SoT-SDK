@@ -20,11 +20,11 @@ namespace SDK
 enum class EGameplayTagQueryExprType : uint8_t
 {
 	EGameplayTagQueryExprType__Undefined = 0,
-	None                           = 1,
-	EGameplayTagQueryExprType__AnyExprMatch = 2,
-	None01                         = 3,
-	NameProperty                   = 4,
-	TaskDelayDelegate__DelegateSignature = 5
+	EGameplayTagQueryExprType__AllTagsMatch = 1,
+	EGameplayTagQueryExprType__NoTagsMatch = 2,
+	EGameplayTagQueryExprType__AnyExprMatch = 3,
+	EGameplayTagQueryExprType__NoExprMatch = 4,
+	EGameplayTagQueryExprType__EGameplayTagQueryExprType_MAX = 5
 };
 
 
@@ -32,7 +32,7 @@ enum class EGameplayTagQueryExprType : uint8_t
 enum class EGameplayContainerMatchType : uint8_t
 {
 	EGameplayContainerMatchType__Any = 0,
-	None                           = 1
+	EGameplayContainerMatchType__EGameplayContainerMatchType_MAX = 1
 };
 
 
@@ -40,7 +40,7 @@ enum class EGameplayContainerMatchType : uint8_t
 enum class EGameplayTagMatchType : uint8_t
 {
 	EGameplayTagMatchType__Explicit = 0,
-	None                           = 1
+	EGameplayTagMatchType__EGameplayTagMatchType_MAX = 1
 };
 
 

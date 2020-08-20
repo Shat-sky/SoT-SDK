@@ -21,8 +21,8 @@ namespace SDK
 enum class ELiquidType : uint8_t
 {
 	ELiquidType__Water             = 0,
-	None                           = 1,
-	EShantyEnsembleOption__TryToJoinExistingNearbyEnsemble = 2
+	ELiquidType__BoilingWater      = 1,
+	ELiquidType__ELiquidType_MAX   = 2
 };
 
 

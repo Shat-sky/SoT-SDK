@@ -19,12 +19,13 @@ namespace SDK
 enum class EEmisaryCompanyActionType : uint8_t
 {
 	EEmisaryCompanyActionType__CompleteRiddleStep = 0,
-	None                           = 1,
-	EEmisaryCompanyActionType__CompleteBountyQuest = 2,
-	None01                         = 3,
-	EEmisaryCompanyActionType__CompleteMerchantQuest = 4,
-	None02                         = 5,
-	EMPMatchOutcome__None          = 6
+	EEmisaryCompanyActionType__CompleteXMarksTheSpotQuest = 1,
+	EEmisaryCompanyActionType__DefeatNamedSkeleton = 2,
+	EEmisaryCompanyActionType__CompleteBountyQuest = 3,
+	EEmisaryCompanyActionType__CompleteCargoRunQuest = 4,
+	EEmisaryCompanyActionType__CompleteMerchantStep = 5,
+	EEmisaryCompanyActionType__CompleteMerchantQuest = 6,
+	EEmisaryCompanyActionType__EEmisaryCompanyActionType_MAX = 7
 };
 
 

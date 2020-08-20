@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class AthenaCheat.AthenaCheatManager
-// 0x0078 (0x00F0 - 0x0078)
+// 0x0080 (0x00F8 - 0x0078)
 class UAthenaCheatManager : public UCheatManager
 {
 public:
@@ -24,8 +24,9 @@ public:
 	unsigned char                                      UnknownData00[0x28];                                      // 0x0088(0x0028) MISSED OFFSET
 	TArray<struct FWorldMarkerDesc>                    CreatedWorldMarkers;                                      // 0x00B0(0x0010) (ZeroConstructor, Transient)
 	class UGameEventSchedulerSettingsAsset*            DebugSchedulerSettings;                                   // 0x00C0(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	float                                              TeleportToDigsiteHeightOffset;                            // 0x00C8(0x0004) (Edit, ZeroConstructor, Config, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x24];                                      // 0x00CC(0x0024) MISSED OFFSET
+	class AServerPerformanceReplicator*                ServerPerformanceReplicator;                              // 0x00C8(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	float                                              TeleportToDigsiteHeightOffset;                            // 0x00D0(0x0004) (Edit, ZeroConstructor, Config, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x24];                                      // 0x00D4(0x0024) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -151,6 +152,7 @@ public:
 	void SpawnKrakenAtCurrentLocation();
 	void SpawnItemOnFloor(const class FString& ItemString);
 	void SpawnItemInHand(const class FString& ItemString);
+	void SpawnGoldMound(const class FString& GoldMoundTypeString);
 	void SpawnGeyserAtPlayerLocationWithDormancy(float Dormancy);
 	void SpawnGeyserAtPlayerLocation();
 	void SpawnGeyserAtLocation(float LocationX, float LocationY, float LocationZ, float Dormancy);
@@ -170,6 +172,7 @@ public:
 	void SpawnAIAtLocationDelayed(const class FString& AIDescString, float LocationX, float LocationY, float LocationZ, float Yaw, float Delay);
 	void SpawnAIAtCurrentLocationDelayed(const class FString& AIDescString, float Delay);
 	void SpawnAI(const class FString& AIDescString);
+	void SpawnAggressiveGhostShipEncounterSpire();
 	void SpawnAggressiveGhostShipEncounter();
 	void SmoulderClosestShipFire();
 	void SmoulderAllShipFires();
@@ -248,6 +251,8 @@ public:
 	void SetCurrentCulture(const class FString& Culture);
 	void SetCapstanPosition(float Position);
 	void SetAxisBinding(const class FString& InBindingName, const class FString& InKeyName);
+	void SetAllAIOverrideShotHitChance(float HitChance);
+	void SetAllAIOverrideCannonShotHitChance(float HitChance);
 	void SetAITeamAttitude(const class FString& TeamAString, const class FString& TeamBString, const class FString& AttitudeString);
 	void SetAIExclusiveAbility(const class FString& AIAbilityString);
 	void SetAIAbilityTimeMultiplier(const class FString& AIAbilityString, float IntervalCooldownMultiplier, float ActivationCooldownMultiplier);
@@ -290,7 +295,9 @@ public:
 	void ResetMaxNumOfSpawnedAI();
 	void ResetMaxMovingPetsOnServerToDefault();
 	void ResetDemoSession(bool StartNewSession);
+	void ResetAllOverrideCannonShotHitChance();
 	void ResetAllMechanisms();
+	void ResetAllAIOverrideShotHitChance();
 	void ResetAITeamAttitudes();
 	void ResetAIExclusiveAbilities();
 	void ResetAbilityAlwaysOn();
@@ -437,6 +444,7 @@ public:
 	void DisplaySingleEmblemProgress(const class FString& StatName);
 	void DisplayServersideHitsAtPlayerPosWithDefaults();
 	void DisplayServersideHitsAtPlayerPos(uint32_t NumSamplesPerDimension, float DistanceBetweenSamples, float TestHeight);
+	void DisplayServerFPS();
 	void DisplayNonVagueNonUniqueLandmarksForIsland(bool Enabled);
 	void DisplayLoadingScreenTeleport();
 	void DisplayLoadingScreenBoot();
@@ -486,7 +494,6 @@ public:
 	void CloseLoadingScreen();
 	void ClearVoiceChatMeters();
 	void ClearSlowMotionOverride();
-	void ClearShipRestockingTimeouts();
 	void ClearGrogSecondary();
 	void ClearDebugStormLocation();
 	void ClearAxisBinding(const class FString& InBindingName);
@@ -513,6 +520,7 @@ public:
 	void AllJoinAlliance();
 	void AIPlayerShip();
 	void AdjustGhostShader(bool Enabled, float InStartingAmount, float InTargetAmount, float InVengeanceStartingAmount, float InVengeanceTargetAmount, float InDelayBeforeStart, float InBlendDuration);
+	void AddTornMapPiece();
 	void AddShipToCrew(const class FString& ActorIdString, const class FString& CrewId);
 	void AddRandomPetForAllPlayers();
 	void AddPlayerToCrew(const class FString& ActorIdString, const class FString& CrewId);

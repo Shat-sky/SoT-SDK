@@ -268,6 +268,13 @@ struct ATestLevelScriptActor_ClearPawnInputBindings_Params
 	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function StudiosAutomation.TestLevelScriptActor.AddServerOnNewMap
+struct ATestLevelScriptActor_AddServerOnNewMap_Params
+{
+	class FString                                      Name;                                                     // (Parm, ZeroConstructor)
+	class FString                                      MapPath;                                                  // (Parm, ZeroConstructor)
+};
+
 // Function StudiosAutomation.TestLevelScriptActor.AddServer
 struct ATestLevelScriptActor_AddServer_Params
 {
@@ -327,6 +334,11 @@ struct UAutomationBlueprintFunctionLibrary_StepFinished_Params
 struct UAutomationBlueprintFunctionLibrary_SetTestTimeoutAsFatal_Params
 {
 	bool                                               TimeoutIsFatal;                                           // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function StudiosAutomation.AutomationBlueprintFunctionLibrary.PreventGarbageCollection
+struct UAutomationBlueprintFunctionLibrary_PreventGarbageCollection_Params
+{
 };
 
 // Function StudiosAutomation.AutomationBlueprintFunctionLibrary.OpenLevelWithGameMode

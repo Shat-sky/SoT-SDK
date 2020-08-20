@@ -20,8 +20,9 @@ namespace SDK
 enum class EIPGEthnicity : uint8_t
 {
 	EIPGEthnicity__UNSPECIFIED     = 0,
-	None                           = 1,
-	EIPGEthnicity__EIPGEthnicity_MAX = 2
+	EIPGEthnicity__BLACK           = 1,
+	EIPGEthnicity__WHITE           = 2,
+	EIPGEthnicity__EIPGEthnicity_MAX = 3
 };
 
 
@@ -29,8 +30,8 @@ enum class EIPGEthnicity : uint8_t
 enum class EIPGGender : uint8_t
 {
 	EIPGGender__UNSPECIFIED        = 0,
-	None                           = 1,
-	EIPGPirateType__PLAYER         = 2
+	EIPGGender__FEMALE             = 1,
+	EIPGGender__EIPGGender_MAX     = 2
 };
 
 
@@ -38,7 +39,7 @@ enum class EIPGGender : uint8_t
 enum class EIPGPirateType : uint8_t
 {
 	EIPGPirateType__PLAYER         = 0,
-	None                           = 1
+	EIPGPirateType__EIPGPirateType_MAX = 1
 };
 
 
@@ -46,7 +47,7 @@ enum class EIPGPirateType : uint8_t
 enum class EIPGTestEnum : uint8_t
 {
 	EIPGTestEnum__RANDOM           = 0,
-	None                           = 1
+	EIPGTestEnum__EIPGTestEnum_MAX = 1
 };
 
 
@@ -54,7 +55,7 @@ enum class EIPGTestEnum : uint8_t
 enum class EIPGPartType : uint8_t
 {
 	EIPGPartType__DEFAULT          = 0,
-	None                           = 1
+	EIPGPartType__EIPGPartType_MAX = 1
 };
 
 
@@ -62,7 +63,7 @@ enum class EIPGPartType : uint8_t
 enum class EIPGSlotType : uint8_t
 {
 	EIPGSlotType__DEFAULT          = 0,
-	None                           = 1
+	EIPGSlotType__EIPGSlotType_MAX = 1
 };
 
 
@@ -70,10 +71,10 @@ enum class EIPGSlotType : uint8_t
 enum class EIPGSetMode : uint8_t
 {
 	EIPGSetMode__RANDOM            = 0,
-	None                           = 1,
-	EIPGSetMode__NONE              = 2,
-	None01                         = 3,
-	EUINavigationRule__Escape      = 4
+	EIPGSetMode__BLEND2_FIRST_ORDER = 1,
+	EIPGSetMode__BLEND2_RANDOM     = 2,
+	EIPGSetMode__NONE              = 3,
+	EIPGSetMode__EIPGSetMode_MAX   = 4
 };
 
 
@@ -81,12 +82,13 @@ enum class EIPGSetMode : uint8_t
 enum class EIPGBlendType : uint8_t
 {
 	EIPGBlendType__NIX             = 0,
-	None                           = 1,
-	EIPGBlendType__POSNEG          = 2,
-	None01                         = 3,
-	EIPGBlendType__ONOFF_BIAS      = 4,
-	None02                         = 5,
-	ESimplygonMaterialChannel__SG_MATERIAL_CHANNEL_AMBIENT = 6
+	EIPGBlendType__RND             = 1,
+	EIPGBlendType__ONOFF           = 2,
+	EIPGBlendType__POSNEG          = 3,
+	EIPGBlendType__ON              = 4,
+	EIPGBlendType__ONOFF_NEAREST   = 5,
+	EIPGBlendType__ONOFF_BIAS      = 6,
+	EIPGBlendType__EIPGBlendType_MAX = 7
 };
 
 
@@ -94,12 +96,12 @@ enum class EIPGBlendType : uint8_t
 enum class EPirateBakeFlags : uint8_t
 {
 	EPirateBakeFlags__None         = 0,
-	None                           = 1,
-	EPirateBakeFlags__StripTopLOD  = 2,
-	None01                         = 3,
-	EPirateBakeFlags__EPirateBakeFlags_MAX = 4,
-	EShipBuilderErrorCode__AlreadyInProgress = 5,
-	None02                         = 6
+	EPirateBakeFlags__NoObjectFading = 1,
+	EPirateBakeFlags__NoLODs       = 2,
+	EPirateBakeFlags__StripTopLOD  = 3,
+	EPirateBakeFlags__DiscardImmediately = 4,
+	EPirateBakeFlags__HighPriority = 5,
+	EPirateBakeFlags__EPirateBakeFlags_MAX = 6
 };
 
 
@@ -107,7 +109,7 @@ enum class EPirateBakeFlags : uint8_t
 enum class EFileAccessAsyncResult : uint8_t
 {
 	EFileAccessAsyncResult__Succeeded = 0,
-	None                           = 1
+	EFileAccessAsyncResult__EFileAccessAsyncResult_MAX = 1
 };
 
 

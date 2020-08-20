@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_AthenaAIAbilities_parameters.hpp"
+#include "SoT_AthenaAIAbilities_classes.hpp"
 
 namespace SDK
 {

@@ -21,16 +21,7 @@ namespace SDK
 // Enum AthenaRigging.EInstancedRopeParameterType
 enum class EInstancedRopeParameterType : uint8_t
 {
-	RPT_Start                      = 0,
-	None                           = 1,
-	RPT_UVScale                    = 2,
-	None01                         = 3,
-	RPT_WindAmount                 = 4,
-	None02                         = 5,
-	RPT_CatenaryXYDistance         = 6,
-	None03                         = 7,
-	ECannonballIconType__Normal    = 8,
-	None04                         = 9
+
 };
 
 

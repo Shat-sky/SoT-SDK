@@ -85,11 +85,11 @@ public:
 
 
 // Class EmissaryLevel.EmissaryFlotsamItemInfo
-// 0x0018 (0x0768 - 0x0750)
+// 0x0018 (0x07B0 - 0x0798)
 class AEmissaryFlotsamItemInfo : public ABootyItemInfo
 {
 public:
-	struct FCompanySpecificBootyReward                 HandInOwnFlotsamReward;                                   // 0x0750(0x0018) (Edit, DisableEditOnInstance)
+	struct FCompanySpecificBootyReward                 HandInOwnFlotsamReward;                                   // 0x0798(0x0018) (Edit, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{
@@ -156,14 +156,14 @@ public:
 
 
 // Class EmissaryLevel.EmissaryLevelService
-// 0x02B0 (0x06C0 - 0x0410)
+// 0x02B0 (0x0708 - 0x0458)
 class AEmissaryLevelService : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0x68];                                      // 0x0410(0x0068) MISSED OFFSET
-	class UEmissaryLevelSettingsAsset*                 Settings;                                                 // 0x0478(0x0008) (ZeroConstructor, IsPlainOldData)
-	class UEmissaryRewardSettingsAsset*                RewardSettings;                                           // 0x0480(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x238];                                     // 0x0488(0x0238) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x68];                                      // 0x0458(0x0068) MISSED OFFSET
+	class UEmissaryLevelSettingsAsset*                 Settings;                                                 // 0x04C0(0x0008) (ZeroConstructor, IsPlainOldData)
+	class UEmissaryRewardSettingsAsset*                RewardSettings;                                           // 0x04C8(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x238];                                     // 0x04D0(0x0238) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -280,14 +280,14 @@ public:
 
 
 // Class EmissaryLevel.EmissaryVotingService
-// 0x00F8 (0x0508 - 0x0410)
+// 0x00F8 (0x0550 - 0x0458)
 class AEmissaryVotingService : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0410(0x0010) MISSED OFFSET
-	TArray<struct FCrewMemberVotes>                    Votes;                                                    // 0x0420(0x0010) (Net, ZeroConstructor, Transient)
-	class UBoxedRpcDispatcherComponent*                RpcDispatcher;                                            // 0x0430(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
-	unsigned char                                      UnknownData01[0xD0];                                      // 0x0438(0x00D0) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x10];                                      // 0x0458(0x0010) MISSED OFFSET
+	TArray<struct FCrewMemberVotes>                    Votes;                                                    // 0x0468(0x0010) (Net, ZeroConstructor, Transient)
+	class UBoxedRpcDispatcherComponent*                RpcDispatcher;                                            // 0x0478(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
+	unsigned char                                      UnknownData01[0xD0];                                      // 0x0480(0x00D0) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

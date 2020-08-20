@@ -4,33 +4,13 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_AthenaEngine_parameters.hpp"
+#include "SoT_AthenaEngine_classes.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function AthenaEngine.BoxCollisionExtentAdjustOverTimeComponent.SetBoxCollisionToAdjust
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UBoxComponent*           InBoxComponent                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UBoxCollisionExtentAdjustOverTimeComponent::SetBoxCollisionToAdjust(class UBoxComponent* InBoxComponent)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaEngine.BoxCollisionExtentAdjustOverTimeComponent.SetBoxCollisionToAdjust"));
-
-	struct
-	{
-		class UBoxComponent*           InBoxComponent;
-	} params;
-
-	params.InBoxComponent = InBoxComponent;
-
-	UObject::ProcessEvent(fn, &params);
-}
-
 
 // Function AthenaEngine.BoxedRpcDispatcherComponent.Server_SendRpc
 // (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)

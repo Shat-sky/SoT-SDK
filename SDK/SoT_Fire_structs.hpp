@@ -22,12 +22,12 @@ namespace SDK
 enum class EFireCellState : uint8_t
 {
 	EFireCellState__Deactivated    = 0,
-	None                           = 1,
-	EFireCellState__Smouldering    = 2,
-	None01                         = 3,
-	EFireCellState__EFireCellState_MAX = 4,
-	EFishingFishState__NotSet      = 5,
-	None02                         = 6
+	EFireCellState__Wet            = 1,
+	EFireCellState__Kindled        = 2,
+	EFireCellState__Smouldering    = 3,
+	EFireCellState__Burning        = 4,
+	EFireCellState__MAX            = 5,
+	EFireCellState__EFireCellState_MAX = 6
 };
 
 
@@ -35,8 +35,8 @@ enum class EFireCellState : uint8_t
 enum class ELastIgnitionState : uint8_t
 {
 	ELastIgnitionState__None       = 0,
-	None                           = 1,
-	ERomeBeaconAttachType__Ship    = 2
+	ELastIgnitionState__Failure    = 1,
+	ELastIgnitionState__ELastIgnitionState_MAX = 2
 };
 
 

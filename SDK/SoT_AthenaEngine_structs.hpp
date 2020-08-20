@@ -20,8 +20,8 @@ namespace SDK
 enum class EPlayModeVariant : uint8_t
 {
 	EPlayModeVariant__Normal       = 0,
-	None                           = 1,
-	IntProperty                    = 2,
+	EPlayModeVariant__Invalid      = 1,
+	EPlayModeVariant__MAX          = 2,
 	EPlayModeVariant__EPlayModeVariant_MAX = 3
 };
 
@@ -30,10 +30,10 @@ enum class EPlayModeVariant : uint8_t
 enum class EPlayMode : uint8_t
 {
 	EPlayMode__Adventure           = 0,
-	None                           = 1,
-	EPlayMode__MAX                 = 2,
-	None01                         = 3,
-	ECrewSessionType__Invalid      = 4
+	EPlayMode__Tutorial            = 1,
+	EPlayMode__NotSelectedYet      = 2,
+	EPlayMode__MAX                 = 3,
+	EPlayMode__EPlayMode_MAX       = 4
 };
 
 

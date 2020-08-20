@@ -14,6 +14,20 @@
 namespace SDK
 {
 //---------------------------------------------------------------------------
+//Enums
+//---------------------------------------------------------------------------
+
+// Enum ExplosionFramework.EExplosionReceiverCurveType
+enum class EExplosionReceiverCurveType : uint8_t
+{
+	EExplosionReceiverCurveType__None = 0,
+	EExplosionReceiverCurveType__Player = 1,
+	EExplosionReceiverCurveType__EExplosionReceiverCurveType_MAX = 2
+};
+
+
+
+//---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
 

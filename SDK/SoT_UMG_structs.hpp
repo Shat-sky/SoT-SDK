@@ -9,10 +9,10 @@
 #include "SoT_Basic.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
+#include "SoT_Slate_classes.hpp"
 #include "SoT_SlateCore_classes.hpp"
 #include "SoT_MovieScene_classes.hpp"
 #include "SoT_MovieSceneTracks_classes.hpp"
-#include "SoT_Slate_classes.hpp"
 #include "SoT_InputCore_classes.hpp"
 
 namespace SDK
@@ -25,10 +25,9 @@ namespace SDK
 enum class ESlateVisibility : uint8_t
 {
 	ESlateVisibility__Visible      = 0,
-	None                           = 1,
-	IntProperty                    = 2,
-	ESlateVisibility__SelfHitTestInvisible = 3,
-	None01                         = 4
+	ESlateVisibility__Hidden       = 1,
+	ESlateVisibility__HitTestInvisible = 2,
+	ESlateVisibility__SelfHitTestInvisible = 3
 };
 
 
@@ -36,12 +35,13 @@ enum class ESlateVisibility : uint8_t
 enum class EDragPivot : uint8_t
 {
 	EDragPivot__MouseDown          = 0,
-	None                           = 1,
-	EDragPivot__CenterLeft         = 2,
-	None01                         = 3,
-	EDragPivot__BottomCenter       = 4,
-	None02                         = 5,
-	EIPGBlendType__NIX             = 6
+	EDragPivot__TopCenter          = 1,
+	EDragPivot__TopRight           = 2,
+	EDragPivot__CenterLeft         = 3,
+	EDragPivot__CenterRight        = 4,
+	EDragPivot__BottomLeft         = 5,
+	EDragPivot__BottomCenter       = 6,
+	EDragPivot__EDragPivot_MAX     = 7
 };
 
 
@@ -49,7 +49,7 @@ enum class EDragPivot : uint8_t
 enum class ESlateSizeRule : uint8_t
 {
 	ESlateSizeRule__Automatic      = 0,
-	None                           = 1
+	ESlateSizeRule__ESlateSizeRule_MAX = 1
 };
 
 
@@ -57,8 +57,8 @@ enum class ESlateSizeRule : uint8_t
 enum class EWidgetDesignFlags : uint8_t
 {
 	EWidgetDesignFlags__None       = 0,
-	None                           = 1,
-	EUMGSequencePlayMode__Forward  = 2
+	EWidgetDesignFlags__ShowOutline = 1,
+	EWidgetDesignFlags__EWidgetDesignFlags_MAX = 2
 };
 
 
@@ -66,10 +66,9 @@ enum class EWidgetDesignFlags : uint8_t
 enum class EDesignPreviewSizeMode : uint8_t
 {
 	EDesignPreviewSizeMode__FillScreen = 0,
-	None                           = 1,
-	EDesignPreviewSizeMode__DesiredOnScreen = 2,
-	None01                         = 3,
-	EGameplayTaskState__Uninitialized = 4
+	EDesignPreviewSizeMode__CustomOnScreen = 1,
+	EDesignPreviewSizeMode__Desired = 2,
+	EDesignPreviewSizeMode__DesiredOnScreen = 3
 };
 
 
@@ -77,8 +76,8 @@ enum class EDesignPreviewSizeMode : uint8_t
 enum class EUMGSequencePlayMode : uint8_t
 {
 	EUMGSequencePlayMode__Forward  = 0,
-	None                           = 1,
-	EBindingKind__Function         = 2
+	EUMGSequencePlayMode__PingPong = 1,
+	EUMGSequencePlayMode__EUMGSequencePlayMode_MAX = 2
 };
 
 
@@ -86,7 +85,7 @@ enum class EUMGSequencePlayMode : uint8_t
 enum class EBindingKind : uint8_t
 {
 	EBindingKind__Function         = 0,
-	None                           = 1
+	EBindingKind__EBindingKind_MAX = 1
 };
 
 
@@ -94,8 +93,8 @@ enum class EBindingKind : uint8_t
 enum class EWidgetBlendMode : uint8_t
 {
 	EWidgetBlendMode__Opaque       = 0,
-	None                           = 1,
-	EWidgetSpace__World            = 2
+	EWidgetBlendMode__Transparent  = 1,
+	EWidgetBlendMode__EWidgetBlendMode_MAX = 2
 };
 
 
@@ -103,7 +102,7 @@ enum class EWidgetBlendMode : uint8_t
 enum class EWidgetSpace : uint8_t
 {
 	EWidgetSpace__World            = 0,
-	None                           = 1
+	EWidgetSpace__EWidgetSpace_MAX = 1
 };
 
 

@@ -15,14 +15,14 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class AllianceFrameworkTests.MockAllianceService
-// 0x00B0 (0x04C0 - 0x0410)
+// 0x00B0 (0x0508 - 0x0458)
 class AMockAllianceService : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0x18];                                      // 0x0410(0x0018) MISSED OFFSET
-	struct FAlliancePennantData                        PennantData;                                              // 0x0428(0x0038)
-	unsigned char                                      UnknownData01[0x58];                                      // 0x0460(0x0058) MISSED OFFSET
-	class UTexture*                                    MapFlagIconToReturn;                                      // 0x04B8(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x18];                                      // 0x0458(0x0018) MISSED OFFSET
+	struct FAlliancePennantData                        PennantData;                                              // 0x0470(0x0038)
+	unsigned char                                      UnknownData01[0x58];                                      // 0x04A8(0x0058) MISSED OFFSET
+	class UTexture*                                    MapFlagIconToReturn;                                      // 0x0500(0x0008) (ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

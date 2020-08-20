@@ -20,7 +20,7 @@ namespace SDK
 enum class EBuoyancyBlend : uint8_t
 {
 	EBuoyancyBlend__PrimaryToSecondary = 0,
-	None                           = 1
+	EBuoyancyBlend__EBuoyancyBlend_MAX = 1
 };
 
 
@@ -28,8 +28,8 @@ enum class EBuoyancyBlend : uint8_t
 enum class EPlaneLineIntersectionType : uint8_t
 {
 	EPlaneLineIntersectionType__IntersectionWithinLineSegment = 0,
-	None                           = 1,
-	EWieldAnimationGraph__ThirdPerson = 2
+	EPlaneLineIntersectionType__PlaneAndLineParallel = 1,
+	EPlaneLineIntersectionType__EPlaneLineIntersectionType_MAX = 2
 };
 
 

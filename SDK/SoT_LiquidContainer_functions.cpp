@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_LiquidContainer_parameters.hpp"
+#include "SoT_LiquidContainer_classes.hpp"
 
 namespace SDK
 {

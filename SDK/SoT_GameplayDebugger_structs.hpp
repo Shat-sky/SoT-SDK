@@ -21,13 +21,15 @@ namespace SDK
 enum class EAIDebugDrawDataView : uint8_t
 {
 	EAIDebugDrawDataView__Empty    = 0,
-	None                           = 1,
-	EAIDebugDrawDataView__EQS      = 2,
-	None01                         = 3,
-	EAIDebugDrawDataView__GameView3 = 4,
-	None02                         = 5,
-	EAIDebugDrawDataView__MAX      = 6,
-	None03                         = 7
+	EAIDebugDrawDataView__Basic    = 1,
+	EAIDebugDrawDataView__BehaviorTree = 2,
+	EAIDebugDrawDataView__EQS      = 3,
+	EAIDebugDrawDataView__GameView1 = 4,
+	EAIDebugDrawDataView__GameView2 = 5,
+	EAIDebugDrawDataView__GameView3 = 6,
+	EAIDebugDrawDataView__GameView5 = 7,
+	EAIDebugDrawDataView__NavMesh  = 8,
+	EAIDebugDrawDataView__MAX      = 9
 };
 
 
@@ -35,9 +37,11 @@ enum class EAIDebugDrawDataView : uint8_t
 enum class EDebugComponentMessage : uint8_t
 {
 	EDebugComponentMessage__EnableExtendedView = 0,
-	None                           = 1,
-	EDebugComponentMessage__ActivateDataView = 2,
-	None01                         = 3
+	EDebugComponentMessage__ActivateReplication = 1,
+	EDebugComponentMessage__DeactivateReplilcation = 2,
+	EDebugComponentMessage__ActivateDataView = 3,
+	EDebugComponentMessage__SetMultipleDataViews = 4,
+	EDebugComponentMessage__EDebugComponentMessage_MAX = 5
 };
 
 

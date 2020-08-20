@@ -19,8 +19,8 @@ namespace SDK
 enum class EServiceHttpMetricsLevel : uint8_t
 {
 	EServiceHttpMetricsLevel__None = 0,
-	None                           = 1,
-	EInputControllerType__GamePad  = 2
+	EServiceHttpMetricsLevel__All  = 1,
+	EServiceHttpMetricsLevel__EServiceHttpMetricsLevel_MAX = 2
 };
 
 

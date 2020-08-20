@@ -11,8 +11,8 @@
 #include "SoT_Engine_classes.hpp"
 #include "SoT_EmissaryFramework_classes.hpp"
 #include "SoT_AthenaEngine_classes.hpp"
-#include "SoT_Athena_classes.hpp"
 #include "SoT_ItemQuality_classes.hpp"
+#include "SoT_Athena_classes.hpp"
 
 namespace SDK
 {
@@ -24,10 +24,10 @@ namespace SDK
 enum class EBootyRewardType : uint8_t
 {
 	EBootyRewardType__OwnershipChanged = 0,
-	None                           = 1,
-	EBootyRewardType__Handin       = 2,
-	None01                         = 3,
-	EAggressiveGhostShipTarget__None = 4
+	EBootyRewardType__PlayerKilled = 1,
+	EBootyRewardType__GameEventsFinished = 2,
+	EBootyRewardType__Handin       = 3,
+	EBootyRewardType__EBootyRewardType_MAX = 4
 };
 
 
@@ -35,7 +35,7 @@ enum class EBootyRewardType : uint8_t
 enum class EEmissaryDeactivateReason : uint8_t
 {
 	EEmissaryDeactivateReason__DissociateFromShip = 0,
-	None                           = 1
+	EEmissaryDeactivateReason__EEmissaryDeactivateReason_MAX = 1
 };
 
 
@@ -282,7 +282,7 @@ struct FEmissaryEntitlementPurchasedEvent
 
 // ScriptStruct EmissaryLevel.EmissaryLevelRankChange
 // 0x000C
-struct FEmissaryLevel_FEmissaryLevelRankChange
+struct FEmissaryLevelRankChange
 {
 	int                                                NewLevel;                                                 // 0x0000(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	struct FName                                       CompanyName;                                              // 0x0004(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
@@ -290,7 +290,7 @@ struct FEmissaryLevel_FEmissaryLevelRankChange
 
 // ScriptStruct EmissaryLevel.EmissaryActivated
 // 0x0008
-struct FEmissaryLevel_FEmissaryActivated
+struct FEmissaryActivated
 {
 	struct FName                                       CompanyName;                                              // 0x0000(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 };

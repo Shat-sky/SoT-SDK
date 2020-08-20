@@ -21,8 +21,8 @@ namespace SDK
 enum class EInteractionBlockReason : uint8_t
 {
 	EInteractionBlockReason__None  = 0,
-	None                           = 1,
-	EInteractableState__Interactable = 2
+	EInteractionBlockReason__Other = 1,
+	EInteractionBlockReason__EInteractionBlockReason_MAX = 2
 };
 
 
@@ -30,11 +30,11 @@ enum class EInteractionBlockReason : uint8_t
 enum class EInteractableIdentifier : uint8_t
 {
 	EInteractableIdentifier__None  = 0,
-	None                           = 1,
-	EInteractableIdentifier__Sail  = 2,
-	None01                         = 3,
-	EObjectPitchTargetingStates__None = 4,
-	None02                         = 5
+	EInteractableIdentifier__Cannon = 1,
+	EInteractableIdentifier__Harpoon = 2,
+	EInteractableIdentifier__Sail  = 3,
+	EInteractableIdentifier__MAX   = 4,
+	EInteractableIdentifier__EInteractableIdentifier_MAX = 5
 };
 
 
@@ -42,8 +42,9 @@ enum class EInteractableIdentifier : uint8_t
 enum class EInteractionObject : uint8_t
 {
 	EInteractionObject__None       = 0,
-	None                           = 1,
-	EInteractionObject__EInteractionObject_MAX = 2
+	EInteractionObject__Chest      = 1,
+	EInteractionObject__Barrel     = 2,
+	EInteractionObject__EInteractionObject_MAX = 3
 };
 
 

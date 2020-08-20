@@ -190,7 +190,7 @@ public:
 
 
 // Class AthenaInput.MockInputHandlerCharacter
-// 0x0000 (0x0610 - 0x0610)
+// 0x0000 (0x0660 - 0x0660)
 class AMockInputHandlerCharacter : public ACharacter
 {
 public:

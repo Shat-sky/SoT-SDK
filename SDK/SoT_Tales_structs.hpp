@@ -24,7 +24,7 @@ namespace SDK
 enum class ETaleQuestStepBeginMode : uint8_t
 {
 	ETaleQuestStepBeginMode__Cold  = 0,
-	None                           = 1
+	ETaleQuestStepBeginMode__ETaleQuestStepBeginMode_MAX = 1
 };
 
 
@@ -32,8 +32,9 @@ enum class ETaleQuestStepBeginMode : uint8_t
 enum class ETaleQuestStepState : uint8_t
 {
 	ETaleQuestStepState__Inactive  = 0,
-	None                           = 1,
-	ETaleQuestStepState__ETaleQuestStepState_MAX = 2
+	ETaleQuestStepState__PendingCompletion = 1,
+	ETaleQuestStepState__Completed = 2,
+	ETaleQuestStepState__ETaleQuestStepState_MAX = 3
 };
 
 
@@ -68,28 +69,6 @@ struct FTaleQuestDeliveryRequest
 	int                                                NumToAllocate;                                            // 0x0034(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct Tales.TaleQuestDeliverableItem
-// 0x0040
-struct FTaleQuestDeliverableItem
-{
-	struct FText                                       Name;                                                     // 0x0000(0x0038) (Edit, BlueprintVisible)
-	class UTexture*                                    Icon;                                                     // 0x0038(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-};
-
-// ScriptStruct Tales.QuestVariableBountyTargetArray
-// 0x0000 (0x0010 - 0x0010)
-struct FQuestVariableBountyTargetArray : public FQuestVariable
-{
-
-};
-
-// ScriptStruct Tales.QuestVariableMerchantItemArray
-// 0x0000 (0x0010 - 0x0010)
-struct FQuestVariableMerchantItemArray : public FQuestVariable
-{
-
-};
-
 // ScriptStruct Tales.QuestVariablePrioritisedPrompt
 // 0x0000 (0x0010 - 0x0010)
 struct FQuestVariablePrioritisedPrompt : public FQuestVariable
@@ -111,6 +90,28 @@ struct FQuestVariableAny : public FQuestVariable
 
 };
 
+// ScriptStruct Tales.QuestVariableBountyTargetArray
+// 0x0000 (0x0010 - 0x0010)
+struct FQuestVariableBountyTargetArray : public FQuestVariable
+{
+
+};
+
+// ScriptStruct Tales.QuestVariableMerchantItemArray
+// 0x0000 (0x0010 - 0x0010)
+struct FQuestVariableMerchantItemArray : public FQuestVariable
+{
+
+};
+
+// ScriptStruct Tales.TaleQuestDeliverableItem
+// 0x0040
+struct FTaleQuestDeliverableItem
+{
+	struct FText                                       Name;                                                     // 0x0000(0x0038) (Edit, BlueprintVisible)
+	class UTexture*                                    Icon;                                                     // 0x0038(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+};
+
 // ScriptStruct Tales.QuestVariableMerchantItem
 // 0x0000 (0x0010 - 0x0010)
 struct FQuestVariableMerchantItem : public FQuestVariable
@@ -123,14 +124,6 @@ struct FQuestVariableMerchantItem : public FQuestVariable
 struct FParticpantToolGroup
 {
 	unsigned char                                      UnknownData00[0x20];                                      // 0x0000(0x0020) MISSED OFFSET
-};
-
-// ScriptStruct Tales.StepBountyTargetDesc
-// 0x0040
-struct FStepBountyTargetDesc
-{
-	struct FText                                       Name;                                                     // 0x0000(0x0038) (Edit, BlueprintVisible)
-	class UTexture*                                    Portrait;                                                 // 0x0038(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Tales.StepMerchantItemDesc
@@ -151,6 +144,14 @@ struct FTaleQuestDesc : public FQuestDesc
 	struct FName                                       TaleFailBannerTag;                                        // 0x0070(0x0008) (ZeroConstructor, IsPlainOldData)
 	bool                                               Development;                                              // 0x0078(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x0079(0x0007) MISSED OFFSET
+};
+
+// ScriptStruct Tales.StepBountyTargetDesc
+// 0x0040
+struct FStepBountyTargetDesc
+{
+	struct FText                                       Name;                                                     // 0x0000(0x0038) (Edit, BlueprintVisible)
+	class UTexture*                                    Portrait;                                                 // 0x0038(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 };
 
 }

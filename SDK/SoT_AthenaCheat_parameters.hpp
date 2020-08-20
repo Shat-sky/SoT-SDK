@@ -703,6 +703,12 @@ struct UAthenaCheatManager_SpawnItemInHand_Params
 	class FString                                      ItemString;                                               // (Parm, ZeroConstructor)
 };
 
+// Function AthenaCheat.AthenaCheatManager.SpawnGoldMound
+struct UAthenaCheatManager_SpawnGoldMound_Params
+{
+	class FString                                      GoldMoundTypeString;                                      // (Parm, ZeroConstructor)
+};
+
 // Function AthenaCheat.AthenaCheatManager.SpawnGeyserAtPlayerLocationWithDormancy
 struct UAthenaCheatManager_SpawnGeyserAtPlayerLocationWithDormancy_Params
 {
@@ -820,6 +826,11 @@ struct UAthenaCheatManager_SpawnAIAtCurrentLocationDelayed_Params
 struct UAthenaCheatManager_SpawnAI_Params
 {
 	class FString                                      AIDescString;                                             // (Parm, ZeroConstructor)
+};
+
+// Function AthenaCheat.AthenaCheatManager.SpawnAggressiveGhostShipEncounterSpire
+struct UAthenaCheatManager_SpawnAggressiveGhostShipEncounterSpire_Params
+{
 };
 
 // Function AthenaCheat.AthenaCheatManager.SpawnAggressiveGhostShipEncounter
@@ -1261,6 +1272,18 @@ struct UAthenaCheatManager_SetAxisBinding_Params
 	class FString                                      InKeyName;                                                // (Parm, ZeroConstructor)
 };
 
+// Function AthenaCheat.AthenaCheatManager.SetAllAIOverrideShotHitChance
+struct UAthenaCheatManager_SetAllAIOverrideShotHitChance_Params
+{
+	float                                              HitChance;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaCheat.AthenaCheatManager.SetAllAIOverrideCannonShotHitChance
+struct UAthenaCheatManager_SetAllAIOverrideCannonShotHitChance_Params
+{
+	float                                              HitChance;                                                // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function AthenaCheat.AthenaCheatManager.SetAITeamAttitude
 struct UAthenaCheatManager_SetAITeamAttitude_Params
 {
@@ -1487,8 +1510,18 @@ struct UAthenaCheatManager_ResetDemoSession_Params
 	bool                                               StartNewSession;                                          // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function AthenaCheat.AthenaCheatManager.ResetAllOverrideCannonShotHitChance
+struct UAthenaCheatManager_ResetAllOverrideCannonShotHitChance_Params
+{
+};
+
 // Function AthenaCheat.AthenaCheatManager.ResetAllMechanisms
 struct UAthenaCheatManager_ResetAllMechanisms_Params
+{
+};
+
+// Function AthenaCheat.AthenaCheatManager.ResetAllAIOverrideShotHitChance
+struct UAthenaCheatManager_ResetAllAIOverrideShotHitChance_Params
 {
 };
 
@@ -2294,6 +2327,11 @@ struct UAthenaCheatManager_DisplayServersideHitsAtPlayerPos_Params
 	float                                              TestHeight;                                               // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 };
 
+// Function AthenaCheat.AthenaCheatManager.DisplayServerFPS
+struct UAthenaCheatManager_DisplayServerFPS_Params
+{
+};
+
 // Function AthenaCheat.AthenaCheatManager.DisplayNonVagueNonUniqueLandmarksForIsland
 struct UAthenaCheatManager_DisplayNonVagueNonUniqueLandmarksForIsland_Params
 {
@@ -2574,11 +2612,6 @@ struct UAthenaCheatManager_ClearSlowMotionOverride_Params
 {
 };
 
-// Function AthenaCheat.AthenaCheatManager.ClearShipRestockingTimeouts
-struct UAthenaCheatManager_ClearShipRestockingTimeouts_Params
-{
-};
-
 // Function AthenaCheat.AthenaCheatManager.ClearGrogSecondary
 struct UAthenaCheatManager_ClearGrogSecondary_Params
 {
@@ -2726,6 +2759,11 @@ struct UAthenaCheatManager_AdjustGhostShader_Params
 	float                                              InVengeanceTargetAmount;                                  // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 	float                                              InDelayBeforeStart;                                       // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 	float                                              InBlendDuration;                                          // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaCheat.AthenaCheatManager.AddTornMapPiece
+struct UAthenaCheatManager_AddTornMapPiece_Params
+{
 };
 
 // Function AthenaCheat.AthenaCheatManager.AddShipToCrew

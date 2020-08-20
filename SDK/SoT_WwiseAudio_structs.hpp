@@ -21,9 +21,9 @@ namespace SDK
 enum class EWwiseEventDurationType : uint8_t
 {
 	EWwiseEventDurationType__OneShot = 0,
-	None                           = 1,
-	EWwiseEventDurationType__EWwiseEventDurationType_MAX = 2,
-	MTR_Succeeded                  = 3
+	EWwiseEventDurationType__Infinite = 1,
+	EWwiseEventDurationType__Unknown = 2,
+	EWwiseEventDurationType__EWwiseEventDurationType_MAX = 3
 };
 
 
@@ -31,8 +31,9 @@ enum class EWwiseEventDurationType : uint8_t
 enum class EWwiseAsyncIOPriorityDisplay : uint8_t
 {
 	EWwiseAsyncIOPriorityDisplay__Low = 0,
-	None                           = 1,
-	EWwiseAsyncIOPriorityDisplay__EWwiseAsyncIOPriorityDisplay_MAX = 2
+	EWwiseAsyncIOPriorityDisplay__Normal = 1,
+	EWwiseAsyncIOPriorityDisplay__High = 2,
+	EWwiseAsyncIOPriorityDisplay__EWwiseAsyncIOPriorityDisplay_MAX = 3
 };
 
 
@@ -40,13 +41,12 @@ enum class EWwiseAsyncIOPriorityDisplay : uint8_t
 enum class EWwiseLanguageOrder : uint8_t
 {
 	EWwiseLanguageOrder__English   = 0,
-	None                           = 1,
-	EWwiseLanguageOrder__Spanish   = 2,
-	None01                         = 3,
-	EWwiseLanguageOrder__Japanese  = 4,
-	None02                         = 5,
-	EWwise7Point1Order__Front_Left = 6,
-	None03                         = 7
+	EWwiseLanguageOrder__Italian   = 1,
+	EWwiseLanguageOrder__German    = 2,
+	EWwiseLanguageOrder__Spanish   = 3,
+	EWwiseLanguageOrder__Brazil    = 4,
+	EWwiseLanguageOrder__Russian   = 5,
+	EWwiseLanguageOrder__Japanese  = 6
 };
 
 
@@ -54,11 +54,12 @@ enum class EWwiseLanguageOrder : uint8_t
 enum class EWwise7Point1Order : uint8_t
 {
 	EWwise7Point1Order__Front_Left = 0,
-	None                           = 1,
-	EWwise7Point1Order__Right_Surround = 2,
-	None01                         = 3,
-	EWwise7Point1Order__Null_Channel = 4,
-	None02                         = 5
+	EWwise7Point1Order__Center     = 1,
+	EWwise7Point1Order__Left_Surround = 2,
+	EWwise7Point1Order__Right_Surround = 3,
+	EWwise7Point1Order__Right_Side = 4,
+	EWwise7Point1Order__LFE        = 5,
+	EWwise7Point1Order__Null_Channel = 6
 };
 
 

@@ -20,7 +20,7 @@ namespace SDK
 enum class EMemoryUsageVisualiserInstanceType : uint8_t
 {
 	EMemoryUsageVisualiserInstanceType__Server = 0,
-	None                           = 1
+	EMemoryUsageVisualiserInstanceType__EMemoryUsageVisualiserInstanceType_MAX = 1
 };
 
 
@@ -28,15 +28,14 @@ enum class EMemoryUsageVisualiserInstanceType : uint8_t
 enum class EMemoryGatheringMode : uint8_t
 {
 	EMemoryGatheringMode__Exclusive = 0,
-	None                           = 1
+	EMemoryGatheringMode__EMemoryGatheringMode_MAX = 1
 };
 
 
 // Enum RareEngine.ETestEnum
 enum class ETestEnum : uint8_t
 {
-	Alpha                          = 0,
-	None                           = 1
+	ETestEnum_MAX                  = 0
 };
 
 

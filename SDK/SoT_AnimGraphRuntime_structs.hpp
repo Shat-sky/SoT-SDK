@@ -20,9 +20,8 @@ namespace SDK
 enum class EDrivenBoneModificationMode : uint8_t
 {
 	EDrivenBoneModificationMode__AddToInput = 0,
-	None                           = 1,
-	IntProperty                    = 2,
-	BMM_Ignore                     = 3
+	EDrivenBoneModificationMode__AddToRefPose = 1,
+	EDrivenBoneModificationMode__EDrivenBoneModificationMode_MAX = 2
 };
 
 
@@ -30,14 +29,14 @@ enum class EDrivenBoneModificationMode : uint8_t
 enum class EComponentType : uint8_t
 {
 	EComponentType__None           = 0,
-	None                           = 1,
-	EComponentType__RotationX      = 2,
-	None01                         = 3,
-	NameProperty                   = 4,
-	EComponentType__ScaleX         = 5,
-	None02                         = 6,
-	ETravelFailure__NoLevel        = 7,
-	None03                         = 8
+	EComponentType__TranslationY   = 1,
+	EComponentType__TranslationZ   = 2,
+	EComponentType__RotationX      = 3,
+	EComponentType__RotationZ      = 4,
+	EComponentType__Scale          = 5,
+	EComponentType__ScaleX         = 6,
+	EComponentType__ScaleZ         = 7,
+	EComponentType__EComponentType_MAX = 8
 };
 
 
@@ -45,12 +44,12 @@ enum class EComponentType : uint8_t
 enum class EInterpolationBlend : uint8_t
 {
 	EInterpolationBlend__Linear    = 0,
-	None                           = 1,
-	EInterpolationBlend__EaseInOutExponent3 = 2,
-	None01                         = 3,
-	EInterpolationBlend__EInterpolationBlend_MAX = 4,
-	ECollectionAuditType__NoneSet  = 5,
-	None02                         = 6
+	EInterpolationBlend__Sinusoidal = 1,
+	EInterpolationBlend__EaseInOutExponent2 = 2,
+	EInterpolationBlend__EaseInOutExponent3 = 3,
+	EInterpolationBlend__EaseInOutExponent5 = 4,
+	EInterpolationBlend__MAX       = 5,
+	EInterpolationBlend__EInterpolationBlend_MAX = 6
 };
 
 
@@ -58,28 +57,24 @@ enum class EInterpolationBlend : uint8_t
 enum class EAxisOption : uint8_t
 {
 	EAxisOption__X                 = 0,
-	None                           = 1,
-	EAxisOption__Y_Neg             = 2,
-	None01                         = 3,
-	EStretch__None                 = 4
+	EAxisOption__Z                 = 1,
+	EAxisOption__X_Neg             = 2,
+	EAxisOption__Y_Neg             = 3,
+	EAxisOption__EAxisOption_MAX   = 4
 };
 
 
 // Enum AnimGraphRuntime.EBoneModificationMode
 enum class EBoneModificationMode : uint8_t
 {
-	BMM_Ignore                     = 0,
-	None                           = 1,
-	BA_X                           = 2
+
 };
 
 
 // Enum AnimGraphRuntime.EBoneAxis
 enum class EBoneAxis : uint8_t
 {
-	BA_X                           = 0,
-	None                           = 1,
-	EShow3DTrajectory__EST_OnlyWhenSelected = 2
+
 };
 
 

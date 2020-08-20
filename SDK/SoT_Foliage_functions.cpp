@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_Foliage_parameters.hpp"
+#include "SoT_Foliage_classes.hpp"
 
 namespace SDK
 {

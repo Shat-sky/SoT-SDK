@@ -251,6 +251,22 @@ public:
 };
 
 
+// Class Animation.AnimationEditorSettings
+// 0x0010 (0x0048 - 0x0038)
+class UAnimationEditorSettings : public UDeveloperSettings
+{
+public:
+	struct FStringAssetReference                       CustomAnimationMontageIdListings;                         // 0x0038(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimationEditorSettings"));
+		return ptr;
+	}
+
+};
+
+
 // Class Animation.AnimationLookAtInterface
 // 0x0000 (0x0028 - 0x0028)
 class UAnimationLookAtInterface : public UInterface
@@ -481,6 +497,21 @@ public:
 };
 
 
+// Class Animation.AnimNotifyState_SetLookAtDisabledForDuration
+// 0x0000 (0x0028 - 0x0028)
+class UAnimNotifyState_SetLookAtDisabledForDuration : public UAnimNotifyState
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotifyState_SetLookAtDisabledForDuration"));
+		return ptr;
+	}
+
+};
+
+
 // Class Animation.AnimNotifyState_SetLookAtEnabledForDuration
 // 0x0000 (0x0028 - 0x0028)
 class UAnimNotifyState_SetLookAtEnabledForDuration : public UAnimNotifyState
@@ -568,13 +599,13 @@ public:
 
 
 // Class Animation.CosmeticItemActor
-// 0x00B0 (0x04C0 - 0x0410)
+// 0x00B0 (0x0508 - 0x0458)
 class ACosmeticItemActor : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0410(0x0008) MISSED OFFSET
-	class USkeletalMeshComponent*                      MeshComponent;                                            // 0x0418(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData)
-	unsigned char                                      UnknownData01[0xA0];                                      // 0x0420(0x00A0) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0458(0x0008) MISSED OFFSET
+	class USkeletalMeshComponent*                      MeshComponent;                                            // 0x0460(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData)
+	unsigned char                                      UnknownData01[0xA0];                                      // 0x0468(0x00A0) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -727,6 +758,58 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.CustomAnimationInstanceProviderInterface"));
+		return ptr;
+	}
+
+};
+
+
+// Class Animation.CustomAnimationMontageDefinitionDataAsset
+// 0x0030 (0x0058 - 0x0028)
+class UCustomAnimationMontageDefinitionDataAsset : public UDataAsset
+{
+public:
+	struct FName                                       MontageId;                                                // 0x0028(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, EditConst, IsPlainOldData)
+	TEnumAsByte<ECustomAnimationMontageType>           MontageType;                                              // 0x0030(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0031(0x0007) MISSED OFFSET
+	class UAnimMontage*                                MontageData;                                              // 0x0038(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FCustomAnimationMontageStagedLoopingData    LoopingData;                                              // 0x0040(0x0018) (Edit, DisableEditOnInstance)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.CustomAnimationMontageDefinitionDataAsset"));
+		return ptr;
+	}
+
+};
+
+
+// Class Animation.CustomAnimationMontageDefinitionListingDataAsset
+// 0x0010 (0x0038 - 0x0028)
+class UCustomAnimationMontageDefinitionListingDataAsset : public UDataAsset
+{
+public:
+	TArray<struct FCustomAnimationMontageDefinitionEntry> Entries;                                                  // 0x0028(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.CustomAnimationMontageDefinitionListingDataAsset"));
+		return ptr;
+	}
+
+};
+
+
+// Class Animation.CustomAnimationMontageIdListingDataAsset
+// 0x0010 (0x0038 - 0x0028)
+class UCustomAnimationMontageIdListingDataAsset : public UDataAsset
+{
+public:
+	TArray<struct FName>                               MontageIds;                                               // 0x0028(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.CustomAnimationMontageIdListingDataAsset"));
 		return ptr;
 	}
 

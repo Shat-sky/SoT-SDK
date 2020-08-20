@@ -9,10 +9,10 @@
 #include "SoT_Basic.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
-#include "SoT_StatusEffects_classes.hpp"
 #include "SoT_AthenaEngine_classes.hpp"
 #include "SoT_Athena_classes.hpp"
 #include "SoT_Interaction_classes.hpp"
+#include "SoT_StatusEffects_classes.hpp"
 #include "SoT_ActionStateMachine_classes.hpp"
 #include "SoT_RareAudio_classes.hpp"
 
@@ -26,9 +26,9 @@ namespace SDK
 enum class EReviveState : uint8_t
 {
 	EReviveState__Revivable        = 0,
-	None                           = 1,
-	EReviveState__EReviveState_MAX = 2,
-	ArrayProperty                  = 3
+	EReviveState__BeingRevived     = 1,
+	EReviveState__Revived          = 2,
+	EReviveState__EReviveState_MAX = 3
 };
 
 

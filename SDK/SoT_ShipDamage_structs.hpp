@@ -20,7 +20,7 @@ namespace SDK
 enum class EHullDamageDeck : uint8_t
 {
 	EHullDamageDeck__Bottom        = 0,
-	None                           = 1
+	EHullDamageDeck__EHullDamageDeck_MAX = 1
 };
 
 

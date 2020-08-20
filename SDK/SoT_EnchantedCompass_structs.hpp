@@ -21,7 +21,7 @@ namespace SDK
 enum class ETargetUpdateReason : uint8_t
 {
 	ETargetUpdateReason__Update    = 0,
-	None                           = 1
+	ETargetUpdateReason__ETargetUpdateReason_MAX = 1
 };
 
 

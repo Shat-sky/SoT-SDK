@@ -17,9 +17,7 @@ namespace SDK
 // Enum Renderer.ERefChangeFadPhase
 enum class ERefChangeFadPhase : uint8_t
 {
-	NoFading                       = 0,
-	None                           = 1,
-	ETwoPlayerSplitScreenType__Horizontal = 2
+	ERefChangeFadPhase_MAX         = 0
 };
 
 

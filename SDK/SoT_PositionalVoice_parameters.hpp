@@ -25,7 +25,6 @@ struct UPositionalVoiceTestFunctionLibrary_GetNumberOfUnmutedRemotePlayers_Param
 struct UPositionalVoiceTestFunctionLibrary_GetNumberOfRegisteredChatEmitters_Params
 {
 	class UObject*                                     WorldContextObject;                                       // (Parm, ZeroConstructor, IsPlainOldData)
-	class UClass*                                      VoiceChatRendererClass;                                   // (Parm, ZeroConstructor, IsPlainOldData)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 

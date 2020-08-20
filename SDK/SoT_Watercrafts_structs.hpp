@@ -7,10 +7,10 @@
 #endif
 
 #include "SoT_Basic.hpp"
-#include "SoT_Water_classes.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Athena_classes.hpp"
+#include "SoT_Water_classes.hpp"
 #include "SoT_AthenaInput_classes.hpp"
 #include "SoT_ActionStateMachine_classes.hpp"
 
@@ -24,11 +24,9 @@ namespace SDK
 enum class EOarState : uint8_t
 {
 	EOarState__Idle                = 0,
-	None                           = 1,
-	IntProperty                    = 2,
-	EOarState__Braking             = 3,
-	None01                         = 4,
-	EWatercraftDespawnReason__Unknown = 5
+	EOarState__ApexOfStroke        = 1,
+	EOarState__RecoveringFromStroke = 2,
+	EOarState__Braking             = 3
 };
 
 
@@ -36,7 +34,7 @@ enum class EOarState : uint8_t
 enum class EOarIdentifier : uint8_t
 {
 	EOarIdentifier__Left           = 0,
-	None                           = 1
+	EOarIdentifier__EOarIdentifier_MAX = 1
 };
 
 
@@ -44,8 +42,8 @@ enum class EOarIdentifier : uint8_t
 enum class ERowboatActionTelemetry : uint8_t
 {
 	ERowboatActionTelemetry__None  = 0,
-	None                           = 1,
-	EOarInputState__Inactive       = 2
+	ERowboatActionTelemetry__Unmount = 1,
+	ERowboatActionTelemetry__ERowboatActionTelemetry_MAX = 2
 };
 
 
@@ -53,10 +51,9 @@ enum class ERowboatActionTelemetry : uint8_t
 enum class EWatercraftDespawnReason : uint8_t
 {
 	EWatercraftDespawnReason__Unknown = 0,
-	None                           = 1,
-	EWatercraftDespawnReason__WorldEnding = 2,
-	None01                         = 3,
-	ETinySharkState__Inactive      = 4
+	EWatercraftDespawnReason__ExternalRequest = 1,
+	EWatercraftDespawnReason__Migration = 2,
+	EWatercraftDespawnReason__WorldEnding = 3
 };
 
 
@@ -64,8 +61,8 @@ enum class EWatercraftDespawnReason : uint8_t
 enum class EOarInputState : uint8_t
 {
 	EOarInputState__Inactive       = 0,
-	None                           = 1,
-	EEmissaryDeactivateReason__DissociateFromShip = 2
+	EOarInputState__Braking        = 1,
+	EOarInputState__EOarInputState_MAX = 2
 };
 
 

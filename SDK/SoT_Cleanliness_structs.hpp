@@ -20,8 +20,8 @@ namespace SDK
 enum class EDirtinessType : uint8_t
 {
 	EDirtinessType__Soot           = 0,
-	None                           = 1,
-	ERiddleActionLocationOffsets__PerformActionAtLocation = 2
+	EDirtinessType__MAX            = 1,
+	EDirtinessType__EDirtinessType_MAX = 2
 };
 
 

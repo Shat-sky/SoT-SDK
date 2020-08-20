@@ -19,9 +19,9 @@ namespace SDK
 enum class EOcclusionTypes : uint8_t
 {
 	EOcclusionTypes__Visible       = 0,
-	None                           = 1,
-	EOcclusionTypes__EOcclusionTypes_MAX = 2,
-	EBuoyantObjectState__Rising    = 3
+	EOcclusionTypes__Unknown       = 1,
+	EOcclusionTypes__MAX           = 2,
+	EOcclusionTypes__EOcclusionTypes_MAX = 3
 };
 
 

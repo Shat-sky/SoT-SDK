@@ -7,9 +7,9 @@
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_OnlineSubsystem_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
-#include "SoT_OnlineSubsystem_classes.hpp"
 
 namespace SDK
 {
@@ -21,8 +21,9 @@ namespace SDK
 enum class EBeaconConnectionState : uint8_t
 {
 	EBeaconConnectionState__Invalid = 0,
-	None                           = 1,
-	EBeaconConnectionState__EBeaconConnectionState_MAX = 2
+	EBeaconConnectionState__Pending = 1,
+	EBeaconConnectionState__Open   = 2,
+	EBeaconConnectionState__EBeaconConnectionState_MAX = 3
 };
 
 
@@ -30,16 +31,16 @@ enum class EBeaconConnectionState : uint8_t
 enum class EPartyReservationResult : uint8_t
 {
 	EPartyReservationResult__NoResult = 0,
-	None                           = 1,
-	EPartyReservationResult__IncorrectPlayerCount = 2,
-	None01                         = 3,
-	EPartyReservationResult__ReservationAccepted = 4,
-	None02                         = 5,
-	EPartyReservationResult__ReservationInvalid = 6,
-	None03                         = 7,
-	TextProperty                   = 8,
-	EPlayerHeroStatsSuccess__Success = 9,
-	None04                         = 10
+	EPartyReservationResult__GeneralError = 1,
+	EPartyReservationResult__PartyLimitReached = 2,
+	EPartyReservationResult__IncorrectPlayerCount = 3,
+	EPartyReservationResult__ReservationDuplicate = 4,
+	EPartyReservationResult__ReservationNotFound = 5,
+	EPartyReservationResult__ReservationAccepted = 6,
+	EPartyReservationResult__ReservationDenied_Banned = 7,
+	EPartyReservationResult__ReservationRequestCanceled = 8,
+	EPartyReservationResult__ReservationInvalid = 9,
+	EPartyReservationResult__EPartyReservationResult_MAX = 10
 };
 
 
@@ -47,10 +48,10 @@ enum class EPartyReservationResult : uint8_t
 enum class EClientRequestType : uint8_t
 {
 	EClientRequestType__NonePending = 0,
-	None                           = 1,
-	EClientRequestType__ChangeWorldRequest = 2,
-	None01                         = 3,
-	EEnvTestWeight__None           = 4
+	EClientRequestType__ReservationUpdate = 1,
+	EClientRequestType__EmptyServerReservation = 2,
+	EClientRequestType__ChangeWorldRequest = 3,
+	EClientRequestType__EClientRequestType_MAX = 4
 };
 
 

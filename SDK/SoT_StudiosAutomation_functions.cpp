@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_StudiosAutomation_parameters.hpp"
+#include "SoT_StudiosAutomation_classes.hpp"
 
 namespace SDK
 {
@@ -862,6 +862,29 @@ void ATestLevelScriptActor::ClearPawnInputBindings(class UObject* WorldContextOb
 }
 
 
+// Function StudiosAutomation.TestLevelScriptActor.AddServerOnNewMap
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable, Const)
+// Parameters:
+// class FString                  Name                           (Parm, ZeroConstructor)
+// class FString                  MapPath                        (Parm, ZeroConstructor)
+
+void ATestLevelScriptActor::AddServerOnNewMap(const class FString& Name, const class FString& MapPath)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StudiosAutomation.TestLevelScriptActor.AddServerOnNewMap"));
+
+	struct
+	{
+		class FString                  Name;
+		class FString                  MapPath;
+	} params;
+
+	params.Name = Name;
+	params.MapPath = MapPath;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function StudiosAutomation.TestLevelScriptActor.AddServer
 // (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable, Const)
 // Parameters:
@@ -1063,6 +1086,23 @@ void UAutomationBlueprintFunctionLibrary::SetTestTimeoutAsFatal(bool TimeoutIsFa
 	} params;
 
 	params.TimeoutIsFatal = TimeoutIsFatal;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+}
+
+
+// Function StudiosAutomation.AutomationBlueprintFunctionLibrary.PreventGarbageCollection
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void UAutomationBlueprintFunctionLibrary::PreventGarbageCollection()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StudiosAutomation.AutomationBlueprintFunctionLibrary.PreventGarbageCollection"));
+
+	struct
+	{
+	} params;
+
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);

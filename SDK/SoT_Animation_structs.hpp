@@ -21,11 +21,9 @@ namespace SDK
 enum class ECharacterIKLimb : uint8_t
 {
 	ECharacterIKLimb__None         = 0,
-	None                           = 1,
-	IntProperty                    = 2,
-	ECharacterIKLimb__RightFoot    = 3,
-	None01                         = 4,
-	CameraFacing_NoneUP            = 5
+	ECharacterIKLimb__RightHand    = 1,
+	ECharacterIKLimb__LeftFoot     = 2,
+	ECharacterIKLimb__RightFoot    = 3
 };
 
 
@@ -33,8 +31,17 @@ enum class ECharacterIKLimb : uint8_t
 enum class ELimbIKSpace : uint8_t
 {
 	ELimbIKSpace__Local            = 0,
-	None                           = 1,
-	EDockableSocketOverlapUpdates__AllowUpdate = 2
+	ELimbIKSpace__Character        = 1,
+	ELimbIKSpace__ELimbIKSpace_MAX = 2
+};
+
+
+// Enum Animation.ECustomAnimationMontageType
+enum class ECustomAnimationMontageType : uint8_t
+{
+	ECustomAnimationMontageType__OneShot = 0,
+	ECustomAnimationMontageType__LoopingStaged = 1,
+	ECustomAnimationMontageType__ECustomAnimationMontageType_MAX = 2
 };
 
 
@@ -42,7 +49,7 @@ enum class ELimbIKSpace : uint8_t
 enum class EDockableSocketOverlapUpdates : uint8_t
 {
 	EDockableSocketOverlapUpdates__AllowUpdate = 0,
-	None                           = 1
+	EDockableSocketOverlapUpdates__EDockableSocketOverlapUpdates_MAX = 1
 };
 
 
@@ -130,6 +137,23 @@ struct FCosmeticItemAnimationSetLoopData
 	struct FName                                       LoopSyncGroup;                                            // 0x0010(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 };
 
+// ScriptStruct Animation.CustomAnimationMontageStagedLoopingData
+// 0x0018
+struct FCustomAnimationMontageStagedLoopingData
+{
+	class UAnimMontage*                                Into;                                                     // 0x0000(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UAnimMontage*                                Loop;                                                     // 0x0008(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UAnimMontage*                                Outof;                                                    // 0x0010(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+};
+
+// ScriptStruct Animation.CustomAnimationMontageDefinitionEntry
+// 0x0018
+struct FCustomAnimationMontageDefinitionEntry
+{
+	struct FName                                       MontageId;                                                // 0x0000(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, EditConst, IsPlainOldData)
+	struct FStringAssetReference                       Definition;                                               // 0x0008(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+};
+
 // ScriptStruct Animation.DockableInfo
 // 0x0018
 struct FDockableInfo
@@ -184,6 +208,13 @@ struct FWeightedAnimationData
 	struct FStringAssetReference                       Animation;                                                // 0x0000(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 	float                                              Weighting;                                                // 0x0010(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0014(0x0004) MISSED OFFSET
+};
+
+// ScriptStruct Animation.CustomAnimationMontageId
+// 0x0008
+struct FCustomAnimationMontageId
+{
+	struct FName                                       CustomAnimationMontageId;                                 // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Animation.EventCosmeticItemAttachmentSwitched
@@ -263,6 +294,23 @@ struct FAnimNode_WeightedLoadOnDemandSquencePlayer : public FAnimNode_AssetPlaye
 	class UAnimSequence*                               CurrentSequence;                                          // 0x0058(0x0008) (ZeroConstructor, IsPlainOldData)
 	class UAnimSequence*                               NextSequence;                                             // 0x0060(0x0008) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData02[0x8];                                       // 0x0068(0x0008) MISSED OFFSET
+};
+
+// ScriptStruct Animation.EventCustomAnimationMontageRequested
+// 0x0008
+struct FEventCustomAnimationMontageRequested
+{
+	struct FCustomAnimationMontageId                   MontageId;                                                // 0x0000(0x0008)
+};
+
+// ScriptStruct Animation.CustomAnimationMontageStateMachine
+// 0x0118
+struct FCustomAnimationMontageStateMachine
+{
+	class UCustomAnimationMontageDefinitionDataAsset*  ActiveState;                                              // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	class UCustomAnimationMontageDefinitionDataAsset*  PendingState;                                             // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
+	class UAnimMontage*                                ActiveMontage;                                            // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x100];                                     // 0x0018(0x0100) MISSED OFFSET
 };
 
 // ScriptStruct Animation.EventPreviewCharacterAnimationRequest

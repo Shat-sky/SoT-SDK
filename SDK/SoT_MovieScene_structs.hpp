@@ -19,8 +19,8 @@ namespace SDK
 enum class ESpawnOwnership : uint8_t
 {
 	ESpawnOwnership__InnerSequence = 0,
-	None                           = 1,
-	EMoveComponentAction__Move     = 2
+	ESpawnOwnership__External      = 1,
+	ESpawnOwnership__ESpawnOwnership_MAX = 2
 };
 
 
@@ -28,11 +28,9 @@ enum class ESpawnOwnership : uint8_t
 enum class EMovieSceneKeyInterpolation : uint8_t
 {
 	EMovieSceneKeyInterpolation__Auto = 0,
-	None                           = 1,
-	IntProperty                    = 2,
-	EMovieSceneKeyInterpolation__Constant = 3,
-	None01                         = 4,
-	LCCT_None                      = 5
+	EMovieSceneKeyInterpolation__Break = 1,
+	EMovieSceneKeyInterpolation__Linear = 2,
+	EMovieSceneKeyInterpolation__Constant = 3
 };
 
 
@@ -40,7 +38,7 @@ enum class EMovieSceneKeyInterpolation : uint8_t
 enum class EMovieSceneCompletionMode : uint8_t
 {
 	EMovieSceneCompletionMode__KeepState = 0,
-	None                           = 1
+	EMovieSceneCompletionMode__EMovieSceneCompletionMode_MAX = 1
 };
 
 
@@ -48,8 +46,7 @@ enum class EMovieSceneCompletionMode : uint8_t
 enum class EEvaluationMethod : uint8_t
 {
 	EEvaluationMethod__Static      = 0,
-	None                           = 1,
-	IntProperty                    = 2
+	EEvaluationMethod__EEvaluationMethod_MAX = 1
 };
 
 

@@ -21,8 +21,8 @@ namespace SDK
 enum class EActorSequenceObjectReferenceType : uint8_t
 {
 	EActorSequenceObjectReferenceType__ContextActor = 0,
-	None                           = 1,
-	EJsonTestEnum__Value0          = 2
+	EActorSequenceObjectReferenceType__Component = 1,
+	EActorSequenceObjectReferenceType__EActorSequenceObjectReferenceType_MAX = 2
 };
 
 

@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_MediaAssets_parameters.hpp"
+#include "SoT_MediaAssets_classes.hpp"
 
 namespace SDK
 {

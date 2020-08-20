@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_GameplayTasks_parameters.hpp"
+#include "SoT_GameplayTasks_classes.hpp"
 
 namespace SDK
 {

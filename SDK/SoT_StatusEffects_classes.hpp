@@ -79,14 +79,14 @@ public:
 
 
 // Class StatusEffects.StatusEffectOverlapZone
-// 0x0020 (0x0430 - 0x0410)
+// 0x0020 (0x0478 - 0x0458)
 class AStatusEffectOverlapZone : public AActor
 {
 public:
-	class UBoxComponent*                               CollisionMesh;                                            // 0x0410(0x0008) (Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	TArray<struct FDelayedStatusEffect>                StatusesToApplyOnOverlap;                                 // 0x0418(0x0010) (Edit, ZeroConstructor)
-	bool                                               StartActive;                                              // 0x0428(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0429(0x0007) MISSED OFFSET
+	class UBoxComponent*                               CollisionMesh;                                            // 0x0458(0x0008) (Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	TArray<struct FDelayedStatusEffect>                StatusesToApplyOnOverlap;                                 // 0x0460(0x0010) (Edit, ZeroConstructor)
+	bool                                               StartActive;                                              // 0x0470(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0471(0x0007) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -123,11 +123,11 @@ public:
 
 
 // Class StatusEffects.DebugStatusTicketHolder
-// 0x0008 (0x0418 - 0x0410)
+// 0x0008 (0x0460 - 0x0458)
 class ADebugStatusTicketHolder : public AActor
 {
 public:
-	class AActor*                                      StatusRecipient;                                          // 0x0410(0x0008) (ZeroConstructor, IsPlainOldData)
+	class AActor*                                      StatusRecipient;                                          // 0x0458(0x0008) (ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

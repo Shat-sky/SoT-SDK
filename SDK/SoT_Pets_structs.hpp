@@ -26,10 +26,9 @@ namespace SDK
 enum class EPetDangerHearingResponseType : uint8_t
 {
 	EPetDangerHearingResponseType__RunAway = 0,
-	None                           = 1,
-	EPetDangerHearingResponseType__MAX = 2,
-	None01                         = 3,
-	ETransientCampfireStateChange__Extinguished = 4
+	EPetDangerHearingResponseType__TurnToward = 1,
+	EPetDangerHearingResponseType__RunToOwner = 2,
+	EPetDangerHearingResponseType__MAX = 3
 };
 
 
@@ -37,9 +36,9 @@ enum class EPetDangerHearingResponseType : uint8_t
 enum class EPetDangerHearingTarget : uint8_t
 {
 	EPetDangerHearingTarget__None  = 0,
-	None                           = 1,
-	EPetDangerHearingTarget__EPetDangerHearingTarget_MAX = 2,
-	FloatProperty                  = 3
+	EPetDangerHearingTarget__Crew  = 1,
+	EPetDangerHearingTarget__Alliance = 2,
+	EPetDangerHearingTarget__EPetDangerHearingTarget_MAX = 3
 };
 
 
@@ -47,7 +46,7 @@ enum class EPetDangerHearingTarget : uint8_t
 enum class EHangoutRotationMode : uint8_t
 {
 	EHangoutRotationMode__Match    = 0,
-	None                           = 1
+	EHangoutRotationMode__EHangoutRotationMode_MAX = 1
 };
 
 
@@ -55,8 +54,8 @@ enum class EHangoutRotationMode : uint8_t
 enum class EWieldablePetDropRequestReason : uint8_t
 {
 	EWieldablePetDropRequestReason__None = 0,
-	None                           = 1,
-	EPetFeedingReactionType__None  = 2
+	EWieldablePetDropRequestReason__Escaped = 1,
+	EWieldablePetDropRequestReason__EWieldablePetDropRequestReason_MAX = 2
 };
 
 
@@ -64,8 +63,8 @@ enum class EWieldablePetDropRequestReason : uint8_t
 enum class EPetFeedingReactionType : uint8_t
 {
 	EPetFeedingReactionType__None  = 0,
-	None                           = 1,
-	EGameplayEffectGrantedAbilityRemovePolicy__CancelAbilityImmediately = 2
+	EPetFeedingReactionType__Happy = 1,
+	EPetFeedingReactionType__EPetFeedingReactionType_MAX = 2
 };
 
 

@@ -20,23 +20,16 @@ namespace SDK
 enum class EFoliageScaling : uint8_t
 {
 	EFoliageScaling__Uniform       = 0,
-	None                           = 1,
-	IntProperty                    = 2,
-	EFoliageScaling__LockYZ        = 3,
-	None01                         = 4,
-	FOLIAGEVERTEXCOLORMASK_Disabled = 5
+	EFoliageScaling__LockXY        = 1,
+	EFoliageScaling__LockXZ        = 2,
+	EFoliageScaling__LockYZ        = 3
 };
 
 
 // Enum Foliage.FoliageVertexColorMask
 enum class EFoliageVertexColorMask : uint8_t
 {
-	FOLIAGEVERTEXCOLORMASK_Disabled = 0,
-	None                           = 1,
-	IntProperty                    = 2,
-	FOLIAGEVERTEXCOLORMASK_Alpha   = 3,
-	None01                         = 4,
-	EMovieSceneKeyInterpolation__Auto = 5
+
 };
 
 
@@ -44,8 +37,8 @@ enum class EFoliageVertexColorMask : uint8_t
 enum class ESimulationQuery : uint8_t
 {
 	ESimulationQuery__CollisionOverlap = 0,
-	None                           = 1,
-	ESimulationOverlap__CollisionOverlap = 2
+	ESimulationQuery__AnyOverlap   = 1,
+	ESimulationQuery__ESimulationQuery_MAX = 2
 };
 
 
@@ -53,8 +46,8 @@ enum class ESimulationQuery : uint8_t
 enum class ESimulationOverlap : uint8_t
 {
 	ESimulationOverlap__CollisionOverlap = 0,
-	None                           = 1,
-	LGT_None                       = 2
+	ESimulationOverlap__None       = 1,
+	ESimulationOverlap__ESimulationOverlap_MAX = 2
 };
 
 

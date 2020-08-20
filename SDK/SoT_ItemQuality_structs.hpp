@@ -20,14 +20,13 @@ namespace SDK
 enum class EEmissaryQualityLevel : uint8_t
 {
 	EEmissaryQualityLevel__Invalid = 0,
-	None                           = 1,
-	EEmissaryQualityLevel__Level4  = 2,
-	None01                         = 3,
-	EEmissaryQualityLevel__Level8  = 4,
-	None02                         = 5,
-	StructProperty                 = 6,
-	None03                         = 7,
-	EFishingState__None            = 8
+	EEmissaryQualityLevel__Level2  = 1,
+	EEmissaryQualityLevel__Level3  = 2,
+	EEmissaryQualityLevel__Level4  = 3,
+	EEmissaryQualityLevel__Level6  = 4,
+	EEmissaryQualityLevel__Level7  = 5,
+	EEmissaryQualityLevel__Level8  = 6,
+	EEmissaryQualityLevel__EEmissaryQualityLevel_MAX = 7
 };
 
 
@@ -35,12 +34,12 @@ enum class EEmissaryQualityLevel : uint8_t
 enum class EHealthIndex : uint8_t
 {
 	EHealthIndex__DontCare         = 0,
-	None                           = 1,
-	EHealthIndex__Level4           = 2,
-	None01                         = 3,
-	EHealthIndex__MAX              = 4,
-	None02                         = 5,
-	ByteProperty                   = 6
+	EHealthIndex__Level2           = 1,
+	EHealthIndex__Level3           = 2,
+	EHealthIndex__Level4           = 3,
+	EHealthIndex__Level6           = 4,
+	EHealthIndex__Level7           = 5,
+	EHealthIndex__MAX              = 6
 };
 
 
@@ -48,8 +47,8 @@ enum class EHealthIndex : uint8_t
 enum class EStatusType : uint8_t
 {
 	EStatusType__DontCare          = 0,
-	None                           = 1,
-	ERewardDestinationType__Player = 2
+	EStatusType__No                = 1,
+	EStatusType__EStatusType_MAX   = 2
 };
 
 

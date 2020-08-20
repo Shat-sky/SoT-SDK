@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_AthenaCheat_parameters.hpp"
+#include "SoT_AthenaCheat_classes.hpp"
 
 namespace SDK
 {
@@ -2255,6 +2255,26 @@ void UAthenaCheatManager::SpawnItemInHand(const class FString& ItemString)
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.SpawnGoldMound
+// (Final, Exec, Native, Public)
+// Parameters:
+// class FString                  GoldMoundTypeString            (Parm, ZeroConstructor)
+
+void UAthenaCheatManager::SpawnGoldMound(const class FString& GoldMoundTypeString)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.SpawnGoldMound"));
+
+	struct
+	{
+		class FString                  GoldMoundTypeString;
+	} params;
+
+	params.GoldMoundTypeString = GoldMoundTypeString;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.SpawnGeyserAtPlayerLocationWithDormancy
 // (Final, Exec, Native, Public)
 // Parameters:
@@ -2643,6 +2663,22 @@ void UAthenaCheatManager::SpawnAI(const class FString& AIDescString)
 	} params;
 
 	params.AIDescString = AIDescString;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.SpawnAggressiveGhostShipEncounterSpire
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::SpawnAggressiveGhostShipEncounterSpire()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.SpawnAggressiveGhostShipEncounterSpire"));
+
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -4086,6 +4122,46 @@ void UAthenaCheatManager::SetAxisBinding(const class FString& InBindingName, con
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.SetAllAIOverrideShotHitChance
+// (Final, Exec, Native, Public)
+// Parameters:
+// float                          HitChance                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaCheatManager::SetAllAIOverrideShotHitChance(float HitChance)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.SetAllAIOverrideShotHitChance"));
+
+	struct
+	{
+		float                          HitChance;
+	} params;
+
+	params.HitChance = HitChance;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.SetAllAIOverrideCannonShotHitChance
+// (Final, Exec, Native, Public)
+// Parameters:
+// float                          HitChance                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaCheatManager::SetAllAIOverrideCannonShotHitChance(float HitChance)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.SetAllAIOverrideCannonShotHitChance"));
+
+	struct
+	{
+		float                          HitChance;
+	} params;
+
+	params.HitChance = HitChance;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.SetAITeamAttitude
 // (Final, Exec, Native, Public)
 // Parameters:
@@ -4817,12 +4893,44 @@ void UAthenaCheatManager::ResetDemoSession(bool StartNewSession)
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.ResetAllOverrideCannonShotHitChance
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::ResetAllOverrideCannonShotHitChance()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.ResetAllOverrideCannonShotHitChance"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.ResetAllMechanisms
 // (Final, Exec, Native, Public)
 
 void UAthenaCheatManager::ResetAllMechanisms()
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.ResetAllMechanisms"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.ResetAllAIOverrideShotHitChance
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::ResetAllAIOverrideShotHitChance()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.ResetAllAIOverrideShotHitChance"));
 
 	struct
 	{
@@ -7440,6 +7548,22 @@ void UAthenaCheatManager::DisplayServersideHitsAtPlayerPos(uint32_t NumSamplesPe
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.DisplayServerFPS
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::DisplayServerFPS()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.DisplayServerFPS"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.DisplayNonVagueNonUniqueLandmarksForIsland
 // (Final, Exec, Native, Public)
 // Parameters:
@@ -8345,22 +8469,6 @@ void UAthenaCheatManager::ClearSlowMotionOverride()
 }
 
 
-// Function AthenaCheat.AthenaCheatManager.ClearShipRestockingTimeouts
-// (Final, Exec, Native, Public)
-
-void UAthenaCheatManager::ClearShipRestockingTimeouts()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.ClearShipRestockingTimeouts"));
-
-	struct
-	{
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
 // Function AthenaCheat.AthenaCheatManager.ClearGrogSecondary
 // (Final, Exec, Native, Public)
 
@@ -8839,6 +8947,22 @@ void UAthenaCheatManager::AdjustGhostShader(bool Enabled, float InStartingAmount
 	params.InVengeanceTargetAmount = InVengeanceTargetAmount;
 	params.InDelayBeforeStart = InDelayBeforeStart;
 	params.InBlendDuration = InBlendDuration;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.AddTornMapPiece
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::AddTornMapPiece()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.AddTornMapPiece"));
+
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

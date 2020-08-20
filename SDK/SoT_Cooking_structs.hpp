@@ -22,10 +22,9 @@ namespace SDK
 enum class ECookingState : uint8_t
 {
 	ECookingState__Raw             = 0,
-	None                           = 1,
-	ECookingState__Fresh           = 2,
-	None01                         = 3,
-	AISpawnRequestState__AwaitingBegin = 4
+	ECookingState__Cooked          = 1,
+	ECookingState__Burned          = 2,
+	ECookingState__Fresh           = 3
 };
 
 
@@ -33,10 +32,10 @@ enum class ECookingState : uint8_t
 enum class ECookingSmokeFeedbackLevel : uint8_t
 {
 	ECookingSmokeFeedbackLevel__NotCooking = 0,
-	None                           = 1,
-	ECookingSmokeFeedbackLevel__BurnedWarning = 2,
-	None01                         = 3,
-	EAIDebugColour__Red            = 4
+	ECookingSmokeFeedbackLevel__CookedWarning = 1,
+	ECookingSmokeFeedbackLevel__Cooked = 2,
+	ECookingSmokeFeedbackLevel__BurnedWarning = 3,
+	ECookingSmokeFeedbackLevel__ECookingSmokeFeedbackLevel_MAX = 4
 };
 
 

@@ -378,6 +378,15 @@ struct URotationMaths_RotatorToQuat_Params
 	struct FQuat                                       ReturnValue;                                              // (Parm, OutParm, ReturnParm, IsPlainOldData)
 };
 
+// Function Maths.RotationMaths.AreRotatorsTheSameRotation
+struct URotationMaths_AreRotatorsTheSameRotation_Params
+{
+	struct FRotator                                    Rotator1;                                                 // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	struct FRotator                                    Rotator2;                                                 // (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+	float                                              ErrorTolerance;                                           // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
 // Function Maths.ShapeMathsBlueprintLibrary.IsPointOnOrWithinABox
 struct UShapeMathsBlueprintLibrary_IsPointOnOrWithinABox_Params
 {

@@ -14,12 +14,6 @@ namespace SDK
 //Parameters
 //---------------------------------------------------------------------------
 
-// Function AthenaEngine.BoxCollisionExtentAdjustOverTimeComponent.SetBoxCollisionToAdjust
-struct UBoxCollisionExtentAdjustOverTimeComponent_SetBoxCollisionToAdjust_Params
-{
-	class UBoxComponent*                               InBoxComponent;                                           // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-};
-
 // Function AthenaEngine.BoxedRpcDispatcherComponent.Server_SendRpc
 struct UBoxedRpcDispatcherComponent_Server_SendRpc_Params
 {

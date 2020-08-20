@@ -4,7 +4,7 @@
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_AIShips_parameters.hpp"
+#include "SoT_AIShips_classes.hpp"
 
 namespace SDK
 {

@@ -21,9 +21,9 @@ namespace SDK
 enum class EVoiceChatState : uint8_t
 {
 	EVoiceChatState__Silent        = 0,
-	None                           = 1,
-	EVoiceChatState__EVoiceChatState_MAX = 2,
-	EQuestStatus__Pending          = 3
+	EVoiceChatState__Muted         = 1,
+	EVoiceChatState__Deafened      = 2,
+	EVoiceChatState__EVoiceChatState_MAX = 3
 };
 
 

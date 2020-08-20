@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class GameServiceTests.GameModeWithServiceProviderGameState
-// 0x0000 (0x0508 - 0x0508)
+// 0x0000 (0x0550 - 0x0550)
 class AGameModeWithServiceProviderGameState : public AGameMode
 {
 public:
@@ -92,11 +92,11 @@ public:
 
 
 // Class GameServiceTests.TestGameServiceActor
-// 0x0008 (0x0418 - 0x0410)
+// 0x0008 (0x0460 - 0x0458)
 class ATestGameServiceActor : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0410(0x0008) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0458(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -124,11 +124,11 @@ public:
 
 
 // Class GameServiceTests.TestGameStateWithCollection
-// 0x0060 (0x04C8 - 0x0468)
+// 0x0060 (0x0510 - 0x04B0)
 class ATestGameStateWithCollection : public AGameState
 {
 public:
-	unsigned char                                      UnknownData00[0x60];                                      // 0x0468(0x0060) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x60];                                      // 0x04B0(0x0060) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -140,11 +140,11 @@ public:
 
 
 // Class GameServiceTests.TestGameStateWithObjectMessagingServiceProvider
-// 0x00D8 (0x05E8 - 0x0510)
+// 0x00D8 (0x0630 - 0x0558)
 class ATestGameStateWithObjectMessagingServiceProvider : public ATestGameStateWithObjectMessagingDispatcher
 {
 public:
-	unsigned char                                      UnknownData00[0xD8];                                      // 0x0510(0x00D8) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xD8];                                      // 0x0558(0x00D8) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -173,12 +173,12 @@ public:
 
 
 // Class GameServiceTests.TestServiceProviderGameState
-// 0x0018 (0x0480 - 0x0468)
+// 0x0018 (0x04C8 - 0x04B0)
 class ATestServiceProviderGameState : public AGameState
 {
 public:
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0468(0x0010) MISSED OFFSET
-	class UObject*                                     ServiceToReturn;                                          // 0x0478(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x10];                                      // 0x04B0(0x0010) MISSED OFFSET
+	class UObject*                                     ServiceToReturn;                                          // 0x04C0(0x0008) (ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
