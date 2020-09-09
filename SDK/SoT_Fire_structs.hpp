@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,12 +22,14 @@ namespace SDK
 enum class EFireCellState : uint8_t
 {
 	EFireCellState__Deactivated    = 0,
-	EFireCellState__Wet            = 1,
-	EFireCellState__Kindled        = 2,
-	EFireCellState__Smouldering    = 3,
-	EFireCellState__Burning        = 4,
-	EFireCellState__MAX            = 5,
-	EFireCellState__EFireCellState_MAX = 6
+	EFireCellState__Flooded        = 1,
+	EFireCellState__Wet            = 2,
+	EFireCellState__Kindled        = 3,
+	EFireCellState__Smouldering    = 4,
+	EFireCellState__Steaming       = 5,
+	EFireCellState__Burning        = 6,
+	EFireCellState__MAX            = 7,
+	EFireCellState__EFireCellState_MAX = 8
 };
 
 
@@ -35,8 +37,9 @@ enum class EFireCellState : uint8_t
 enum class ELastIgnitionState : uint8_t
 {
 	ELastIgnitionState__None       = 0,
-	ELastIgnitionState__Failure    = 1,
-	ELastIgnitionState__ELastIgnitionState_MAX = 2
+	ELastIgnitionState__Success    = 1,
+	ELastIgnitionState__Failure    = 2,
+	ELastIgnitionState__ELastIgnitionState_MAX = 3
 };
 
 
@@ -236,11 +239,10 @@ struct FFireParticleSpawnList
 // 0x0038
 struct FActorFireDamageParams
 {
-	TAssetPtr<class UClass>                            ActorClass;                                               // 0x0000(0x001C) (Edit)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0000(0x0004) FIX WRONG TYPE SIZE OF PREVIOUS PROPERTY
+	TAssetPtr<class UClass>                            ActorClass;                                               // 0x0000(0x0020) (Edit)
 	struct FFloatRange                                 TimeInFireBeforeDamage;                                   // 0x0020(0x0010) (Edit, ZeroConstructor, IsPlainOldData)
 	int                                                LevelsOfDamage;                                           // 0x0030(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x0034(0x0004) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0034(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct Fire.ShipFireDamageParams

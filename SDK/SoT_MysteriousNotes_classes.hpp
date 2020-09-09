@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -61,7 +61,7 @@ public:
 
 
 // Class MysteriousNotes.MysteriousNoteSettingsAsset
-// 0x0030 (0x0058 - 0x0028)
+// 0x00D8 (0x0100 - 0x0028)
 class UMysteriousNoteSettingsAsset : public UDataAsset
 {
 public:
@@ -70,6 +70,10 @@ public:
 	struct FStringAssetReference                       MysteriousNotesCompletionStringsAsset;                    // 0x0030(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 	struct FStringAssetReference                       DefaultRadialIcon;                                        // 0x0040(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 	class UWieldableMysteriousNoteDataAsset*           WieldableNoteDataAsset;                                   // 0x0050(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FStringAssetReference                       Image;                                                    // 0x0058(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	struct FStringAssetReference                       NotificationBackground;                                   // 0x0068(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	struct FText                                       NotificationText;                                         // 0x0078(0x0038) (Edit, DisableEditOnInstance)
+	TMap<class FString, class FString>                 NotificationTest;                                         // 0x00B0(0x0050) (Edit, ZeroConstructor, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{
@@ -96,16 +100,14 @@ public:
 
 
 // Class MysteriousNotes.WieldableMysteriousNoteLayout
-// 0x0098 (0x00C0 - 0x0028)
+// 0x0118 (0x0140 - 0x0028)
 class UWieldableMysteriousNoteLayout : public UDataAsset
 {
 public:
-	struct FWieldableMysteriousNoteLayoutItem          DefaultNoteLayoutItem;                                    // 0x0028(0x0040) (Edit, DisableEditOnInstance)
-	TArray<struct FWieldableMysteriousNoteLayoutItem>  NoteLayoutItems;                                          // 0x0068(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
-	struct FTreasureMapWidgetText                      NoteTitleWidgetText;                                      // 0x0078(0x0020) (Edit, DisableEditOnInstance)
-	struct FTreasureMapWidgetText                      NoteBodyWidgetText;                                       // 0x0098(0x0020) (Edit, DisableEditOnInstance)
-	float                                              NoteWidth;                                                // 0x00B8(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              NoteScale;                                                // 0x00BC(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FText                                       DefaultTitle;                                             // 0x0028(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       DefaultBody;                                              // 0x0060(0x0038) (Edit, DisableEditOnInstance)
+	struct FWieldableMysteriousNoteLayoutItem          DefaultNoteLayoutItem;                                    // 0x0098(0x0098) (Edit, DisableEditOnInstance)
+	TArray<struct FWieldableMysteriousNoteLayoutItem>  NoteLayoutItems;                                          // 0x0130(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{
@@ -134,14 +136,14 @@ public:
 
 
 // Class MysteriousNotes.MysteriousNotesService
-// 0x0060 (0x04B8 - 0x0458)
+// 0x0078 (0x04D0 - 0x0458)
 class AMysteriousNotesService : public AActor
 {
 public:
 	unsigned char                                      UnknownData00[0x28];                                      // 0x0458(0x0028) MISSED OFFSET
 	class UMysteriousNoteSettingsAsset*                NoteSettingsDataAsset;                                    // 0x0480(0x0008) (ZeroConstructor, IsPlainOldData)
 	class UMysteriousNotesCompletionEventsModelDataAsset* MysteriousNotesCompletionEventsModelDataAsset;            // 0x0488(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x28];                                      // 0x0490(0x0028) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x40];                                      // 0x0490(0x0040) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -168,13 +170,13 @@ public:
 
 
 // Class MysteriousNotes.PlayerMysteriousNoteComponent
-// 0x0080 (0x0148 - 0x00C8)
+// 0x00A8 (0x0170 - 0x00C8)
 class UPlayerMysteriousNoteComponent : public UActorComponent
 {
 public:
 	unsigned char                                      UnknownData00[0x8];                                       // 0x00C8(0x0008) MISSED OFFSET
-	TArray<struct FMysteriousNoteInfo>                 PendingNotes;                                             // 0x00D0(0x0010) (Net, ZeroConstructor)
-	unsigned char                                      UnknownData01[0x68];                                      // 0x00E0(0x0068) MISSED OFFSET
+	struct FClientNoteData                             NoteData;                                                 // 0x00D0(0x0018) (Net)
+	unsigned char                                      UnknownData01[0x88];                                      // 0x00E8(0x0088) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -183,9 +185,12 @@ public:
 	}
 
 
+	void TriggerNotesReceivedPopup();
 	void Server_NoteCompletionStepReceived(class APlayerController* InPlayerController, const struct FName& InCompletionID);
 	void Server_MarkNoteAsRead(class APlayerController* InPlayerController, const struct FGuid& NoteId);
-	void OnRep_PendingNotes();
+	void Server_MarkNoteAsDeleted(class APlayerController* InPlayerController, const struct FGuid& NoteId);
+	void OnRep_NoteData();
+	void AddFakeNote(const class FString& NoteType, const class FString& NoteTitle, const class FString& NoteBody, TArray<class FString> CompletionStrings);
 };
 
 
@@ -214,6 +219,7 @@ public:
 
 
 	void OnTextCanvasUpdate(class UCanvas* Canvas, int Width, int Height);
+	void OnRep_NoteLayout();
 };
 
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,11 +20,13 @@ namespace SDK
 enum class EActionStateMachineTrackId : uint8_t
 {
 	EActionStateMachineTrackId__Locomotion = 0,
-	EActionStateMachineTrackId__ItemUse = 1,
-	EActionStateMachineTrackId__ForcedMovement = 2,
-	EActionStateMachineTrackId__Migration = 3,
-	EActionStateMachineTrackId__Invalid = 4,
-	EActionStateMachineTrackId__EActionStateMachineTrackId_MAX = 5
+	EActionStateMachineTrackId__Overlay = 1,
+	EActionStateMachineTrackId__ItemUse = 2,
+	EActionStateMachineTrackId__ForcedMovement = 3,
+	EActionStateMachineTrackId__Migration = 4,
+	EActionStateMachineTrackId__Count = 5,
+	EActionStateMachineTrackId__Invalid = 6,
+	EActionStateMachineTrackId__EActionStateMachineTrackId_MAX = 7
 };
 
 
@@ -32,7 +34,8 @@ enum class EActionStateMachineTrackId : uint8_t
 enum class EActionPredictionType : uint8_t
 {
 	EActionPredictionType__Predicted = 0,
-	EActionPredictionType__EActionPredictionType_MAX = 1
+	EActionPredictionType__NotPredicted = 1,
+	EActionPredictionType__EActionPredictionType_MAX = 2
 };
 
 
@@ -40,7 +43,8 @@ enum class EActionPredictionType : uint8_t
 enum class EActionStatePriority : uint8_t
 {
 	EActionStatePriority__Overrides = 0,
-	EActionStatePriority__EActionStatePriority_MAX = 1
+	EActionStatePriority__Overriden = 1,
+	EActionStatePriority__EActionStatePriority_MAX = 2
 };
 
 
@@ -193,6 +197,13 @@ struct FTestActionStateConstructionInfoWithObjPointers : public FActionStateCons
 	class UObject*                                     ObjPointer;                                               // 0x0028(0x0008) (ZeroConstructor, IsPlainOldData)
 	struct FInnerWithObjTestStruct                     Inner;                                                    // 0x0030(0x0008)
 	TArray<class UObject*>                             Array;                                                    // 0x0038(0x0010) (ZeroConstructor)
+};
+
+// ScriptStruct ActionStateMachine.EventFirstPersonAnimaticActionStateEndedClient
+// 0x0001
+struct FEventFirstPersonAnimaticActionStateEndedClient
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
 
 // ScriptStruct ActionStateMachine.NullActionStateConstructionInfo

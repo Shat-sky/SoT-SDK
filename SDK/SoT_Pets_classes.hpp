@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -691,6 +691,22 @@ public:
 };
 
 
+// Class Pets.PetCustomisationOverrideMappingsDataAsset
+// 0x0010 (0x0038 - 0x0028)
+class UPetCustomisationOverrideMappingsDataAsset : public UDataAsset
+{
+public:
+	TArray<struct FPetCustomiationOverrideMappingEntry> MappingEntries;                                           // 0x0028(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Pets.PetCustomisationOverrideMappingsDataAsset"));
+		return ptr;
+	}
+
+};
+
+
 // Class Pets.PetDangerDataAsset
 // 0x0028 (0x0050 - 0x0028)
 class UPetDangerDataAsset : public UDataAsset
@@ -894,8 +910,7 @@ class UPetSpawnParamsDataAsset : public UDataAsset
 public:
 	class UClass*                                      PetClassID;                                               // 0x0028(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class UBehaviorTree*                               TreeToRun;                                                // 0x0030(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	TAssetPtr<class UAthenaAIControllerParamsDataAsset> PetSkillset;                                              // 0x0038(0x001C) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0038(0x0004) FIX WRONG TYPE SIZE OF PREVIOUS PROPERTY
+	TAssetPtr<class UAthenaAIControllerParamsDataAsset> PetSkillset;                                              // 0x0038(0x0020) (Edit, DisableEditOnInstance)
 	class UEnvQuery*                                   SpawnQueryForLand;                                        // 0x0058(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class UEnvQuery*                                   SpawnQueryForShip;                                        // 0x0060(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
@@ -972,7 +987,7 @@ public:
 
 
 // Class Pets.PetsSettings
-// 0x0060 (0x0088 - 0x0028)
+// 0x0070 (0x0098 - 0x0028)
 class UPetsSettings : public UObject
 {
 public:
@@ -981,7 +996,8 @@ public:
 	struct FStringAssetReference                       PetPartIdListingDataAsset;                                // 0x0048(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
 	struct FStringAssetReference                       PetsServiceParamsDataAsset;                               // 0x0058(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
 	struct FStringAssetReference                       PetSpawnDefinitionsDataAsset;                             // 0x0068(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
-	TArray<TEnumAsByte<EAthenaAnimationPetRoamingState>> ExcludedStatesForRoamingAssetGeneration;                  // 0x0078(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
+	struct FStringAssetReference                       PetCustomisationOverrideMappingsDataAsset;                // 0x0078(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
+	TArray<TEnumAsByte<EAthenaAnimationPetRoamingState>> ExcludedStatesForRoamingAssetGeneration;                  // 0x0088(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{

@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,15 +14,19 @@ namespace SDK
 
 // Function Watercrafts.ItemProxyWatercraftTrackerComponent.OnRep_CurrentWatercraft
 // (Final, Native, Private)
+// Parameters:
+// class AActor*                  PreviousWatercraft             (Parm, ZeroConstructor, IsPlainOldData)
 
-void UItemProxyWatercraftTrackerComponent::OnRep_CurrentWatercraft()
+void UItemProxyWatercraftTrackerComponent::OnRep_CurrentWatercraft(class AActor* PreviousWatercraft)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.ItemProxyWatercraftTrackerComponent.OnRep_CurrentWatercraft"));
 
 	struct
 	{
+		class AActor*                  PreviousWatercraft;
 	} params;
 
+	params.PreviousWatercraft = PreviousWatercraft;
 
 	UObject::ProcessEvent(fn, &params);
 }

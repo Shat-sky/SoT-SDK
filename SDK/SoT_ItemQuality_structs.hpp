@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -16,17 +16,31 @@ namespace SDK
 //Enums
 //---------------------------------------------------------------------------
 
+// Enum ItemQuality.EItemQualityQueryReason
+enum class EItemQualityQueryReason : uint8_t
+{
+	EItemQualityQueryReason__DontCare = 0,
+	EItemQualityQueryReason__ChangeOwnership = 1,
+	EItemQualityQueryReason__DropOnShip = 2,
+	EItemQualityQueryReason__HandIn = 3,
+	EItemQualityQueryReason__EItemQualityQueryReason_MAX = 4
+};
+
+
 // Enum ItemQuality.EEmissaryQualityLevel
 enum class EEmissaryQualityLevel : uint8_t
 {
 	EEmissaryQualityLevel__Invalid = 0,
-	EEmissaryQualityLevel__Level2  = 1,
-	EEmissaryQualityLevel__Level3  = 2,
-	EEmissaryQualityLevel__Level4  = 3,
-	EEmissaryQualityLevel__Level6  = 4,
-	EEmissaryQualityLevel__Level7  = 5,
-	EEmissaryQualityLevel__Level8  = 6,
-	EEmissaryQualityLevel__EEmissaryQualityLevel_MAX = 7
+	EEmissaryQualityLevel__Level1  = 1,
+	EEmissaryQualityLevel__Level2  = 2,
+	EEmissaryQualityLevel__Level3  = 3,
+	EEmissaryQualityLevel__Level4  = 4,
+	EEmissaryQualityLevel__Level5  = 5,
+	EEmissaryQualityLevel__Level6  = 6,
+	EEmissaryQualityLevel__Level7  = 7,
+	EEmissaryQualityLevel__Level8  = 8,
+	EEmissaryQualityLevel__MAX     = 9,
+	EEmissaryQualityLevel__EEmissaryQualityLevel_MAX = 10
 };
 
 
@@ -34,12 +48,15 @@ enum class EEmissaryQualityLevel : uint8_t
 enum class EHealthIndex : uint8_t
 {
 	EHealthIndex__DontCare         = 0,
-	EHealthIndex__Level2           = 1,
-	EHealthIndex__Level3           = 2,
-	EHealthIndex__Level4           = 3,
-	EHealthIndex__Level6           = 4,
-	EHealthIndex__Level7           = 5,
-	EHealthIndex__MAX              = 6
+	EHealthIndex__Level1           = 1,
+	EHealthIndex__Level2           = 2,
+	EHealthIndex__Level3           = 3,
+	EHealthIndex__Level4           = 4,
+	EHealthIndex__Level5           = 5,
+	EHealthIndex__Level6           = 6,
+	EHealthIndex__Level7           = 7,
+	EHealthIndex__MAX              = 8,
+	EHealthIndex__EHealthIndex_MAX = 9
 };
 
 
@@ -47,8 +64,9 @@ enum class EHealthIndex : uint8_t
 enum class EStatusType : uint8_t
 {
 	EStatusType__DontCare          = 0,
-	EStatusType__No                = 1,
-	EStatusType__EStatusType_MAX   = 2
+	EStatusType__Yes               = 1,
+	EStatusType__No                = 2,
+	EStatusType__EStatusType_MAX   = 3
 };
 
 
@@ -74,8 +92,9 @@ struct FComplexItemQualityEntry
 	TEnumAsByte<EHealthIndex>                          HealthLevel;                                              // 0x0001(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	TEnumAsByte<EStatusType>                           IsComissioned;                                            // 0x0002(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	TEnumAsByte<EStatusType>                           IsStolen;                                                 // 0x0003(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	TEnumAsByte<EEmissaryQualityLevel>                 QualityLevel;                                             // 0x0004(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x0005(0x0003) MISSED OFFSET
+	TEnumAsByte<EItemQualityQueryReason>               QueryReason;                                              // 0x0004(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	TEnumAsByte<EEmissaryQualityLevel>                 QualityLevel;                                             // 0x0005(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x2];                                       // 0x0006(0x0002) MISSED OFFSET
 	struct FName                                       Rarity;                                                   // 0x0008(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 };
 

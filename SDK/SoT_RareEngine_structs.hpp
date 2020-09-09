@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,7 +20,8 @@ namespace SDK
 enum class EMemoryUsageVisualiserInstanceType : uint8_t
 {
 	EMemoryUsageVisualiserInstanceType__Server = 0,
-	EMemoryUsageVisualiserInstanceType__EMemoryUsageVisualiserInstanceType_MAX = 1
+	EMemoryUsageVisualiserInstanceType__Client = 1,
+	EMemoryUsageVisualiserInstanceType__EMemoryUsageVisualiserInstanceType_MAX = 2
 };
 
 
@@ -28,7 +29,8 @@ enum class EMemoryUsageVisualiserInstanceType : uint8_t
 enum class EMemoryGatheringMode : uint8_t
 {
 	EMemoryGatheringMode__Exclusive = 0,
-	EMemoryGatheringMode__EMemoryGatheringMode_MAX = 1
+	EMemoryGatheringMode__Inclusive = 1,
+	EMemoryGatheringMode__EMemoryGatheringMode_MAX = 2
 };
 
 

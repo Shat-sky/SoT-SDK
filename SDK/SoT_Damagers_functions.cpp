@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -79,6 +79,103 @@ void UShipDamagerComponent::SetShape(class UPrimitiveComponent* InShape)
 	} params;
 
 	params.InShape = InShape;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Damagers.ShockwaveDamagerInterface.StartShockwaveAtLocation
+// (Native, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector                 StartLocation                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+
+void UShockwaveDamagerInterface::StartShockwaveAtLocation(const struct FVector& StartLocation)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Damagers.ShockwaveDamagerInterface.StartShockwaveAtLocation"));
+
+	struct
+	{
+		struct FVector                 StartLocation;
+	} params;
+
+	params.StartLocation = StartLocation;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Damagers.ShockwaveDamagerInterface.StartShockwave
+// (Native, Public, BlueprintCallable)
+
+void UShockwaveDamagerInterface::StartShockwave()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Damagers.ShockwaveDamagerInterface.StartShockwave"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Damagers.ShockwaveDamagerInterface.IgnoreGhostShip
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class AAggressiveGhostShip*    Ship                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UShockwaveDamagerInterface::IgnoreGhostShip(class AAggressiveGhostShip* Ship)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Damagers.ShockwaveDamagerInterface.IgnoreGhostShip"));
+
+	struct
+	{
+		class AAggressiveGhostShip*    Ship;
+	} params;
+
+	params.Ship = Ship;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Damagers.ShockwaveDamagerInterface.GetShockwaveRadius
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UShockwaveDamagerInterface::GetShockwaveRadius()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Damagers.ShockwaveDamagerInterface.GetShockwaveRadius"));
+
+	struct
+	{
+		float                          ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Damagers.ShockwaveDamagerComponent.Multi_StartShockwave
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private, HasDefaults)
+// Parameters:
+// struct FVector                 InStartLocation                (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+
+void UShockwaveDamagerComponent::Multi_StartShockwave(const struct FVector& InStartLocation)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Damagers.ShockwaveDamagerComponent.Multi_StartShockwave"));
+
+	struct
+	{
+		struct FVector                 InStartLocation;
+	} params;
+
+	params.InStartLocation = InStartLocation;
 
 	UObject::ProcessEvent(fn, &params);
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -21,9 +21,10 @@ namespace SDK
 enum class EWwiseEventDurationType : uint8_t
 {
 	EWwiseEventDurationType__OneShot = 0,
-	EWwiseEventDurationType__Infinite = 1,
-	EWwiseEventDurationType__Unknown = 2,
-	EWwiseEventDurationType__EWwiseEventDurationType_MAX = 3
+	EWwiseEventDurationType__Mixed = 1,
+	EWwiseEventDurationType__Infinite = 2,
+	EWwiseEventDurationType__Unknown = 3,
+	EWwiseEventDurationType__EWwiseEventDurationType_MAX = 4
 };
 
 
@@ -31,9 +32,10 @@ enum class EWwiseEventDurationType : uint8_t
 enum class EWwiseAsyncIOPriorityDisplay : uint8_t
 {
 	EWwiseAsyncIOPriorityDisplay__Low = 0,
-	EWwiseAsyncIOPriorityDisplay__Normal = 1,
-	EWwiseAsyncIOPriorityDisplay__High = 2,
-	EWwiseAsyncIOPriorityDisplay__EWwiseAsyncIOPriorityDisplay_MAX = 3
+	EWwiseAsyncIOPriorityDisplay__BelowNormal = 1,
+	EWwiseAsyncIOPriorityDisplay__Normal = 2,
+	EWwiseAsyncIOPriorityDisplay__High = 3,
+	EWwiseAsyncIOPriorityDisplay__EWwiseAsyncIOPriorityDisplay_MAX = 4
 };
 
 
@@ -41,12 +43,15 @@ enum class EWwiseAsyncIOPriorityDisplay : uint8_t
 enum class EWwiseLanguageOrder : uint8_t
 {
 	EWwiseLanguageOrder__English   = 0,
-	EWwiseLanguageOrder__Italian   = 1,
-	EWwiseLanguageOrder__German    = 2,
-	EWwiseLanguageOrder__Spanish   = 3,
-	EWwiseLanguageOrder__Brazil    = 4,
-	EWwiseLanguageOrder__Russian   = 5,
-	EWwiseLanguageOrder__Japanese  = 6
+	EWwiseLanguageOrder__French    = 1,
+	EWwiseLanguageOrder__Italian   = 2,
+	EWwiseLanguageOrder__German    = 3,
+	EWwiseLanguageOrder__Spanish   = 4,
+	EWwiseLanguageOrder__Mexican   = 5,
+	EWwiseLanguageOrder__Brazil    = 6,
+	EWwiseLanguageOrder__Russian   = 7,
+	EWwiseLanguageOrder__Japanese  = 8,
+	EWwiseLanguageOrder__EWwiseLanguageOrder_MAX = 9
 };
 
 
@@ -54,12 +59,15 @@ enum class EWwiseLanguageOrder : uint8_t
 enum class EWwise7Point1Order : uint8_t
 {
 	EWwise7Point1Order__Front_Left = 0,
-	EWwise7Point1Order__Center     = 1,
-	EWwise7Point1Order__Left_Surround = 2,
-	EWwise7Point1Order__Right_Surround = 3,
-	EWwise7Point1Order__Right_Side = 4,
-	EWwise7Point1Order__LFE        = 5,
-	EWwise7Point1Order__Null_Channel = 6
+	EWwise7Point1Order__Front_Right = 1,
+	EWwise7Point1Order__Center     = 2,
+	EWwise7Point1Order__Left_Surround = 3,
+	EWwise7Point1Order__Right_Surround = 4,
+	EWwise7Point1Order__Left_Side  = 5,
+	EWwise7Point1Order__Right_Side = 6,
+	EWwise7Point1Order__LFE        = 7,
+	EWwise7Point1Order__Null_Channel = 8,
+	EWwise7Point1Order__EWwise7Point1Order_MAX = 9
 };
 
 

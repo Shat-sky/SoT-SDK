@@ -1,15 +1,15 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_CoreUObject_classes.hpp"
 #include "SoT_SlateCore_classes.hpp"
 #include "SoT_InputCore_classes.hpp"
-#include "SoT_CoreUObject_classes.hpp"
 
 namespace SDK
 {
@@ -21,8 +21,9 @@ namespace SDK
 enum class ETextJustify : uint8_t
 {
 	ETextJustify__Left             = 0,
-	ETextJustify__Right            = 1,
-	ETextJustify__ETextJustify_MAX = 2
+	ETextJustify__Center           = 1,
+	ETextJustify__Right            = 2,
+	ETextJustify__ETextJustify_MAX = 3
 };
 
 
@@ -30,8 +31,9 @@ enum class ETextJustify : uint8_t
 enum class ETableViewMode : uint8_t
 {
 	ETableViewMode__List           = 0,
-	ETableViewMode__Tree           = 1,
-	ETableViewMode__ETableViewMode_MAX = 2
+	ETableViewMode__Tile           = 1,
+	ETableViewMode__Tree           = 2,
+	ETableViewMode__ETableViewMode_MAX = 3
 };
 
 
@@ -39,9 +41,10 @@ enum class ETableViewMode : uint8_t
 enum class ESelectionMode : uint8_t
 {
 	ESelectionMode__None           = 0,
-	ESelectionMode__SingleToggle   = 1,
-	ESelectionMode__Multi          = 2,
-	ESelectionMode__ESelectionMode_MAX = 3
+	ESelectionMode__Single         = 1,
+	ESelectionMode__SingleToggle   = 2,
+	ESelectionMode__Multi          = 3,
+	ESelectionMode__ESelectionMode_MAX = 4
 };
 
 
@@ -49,11 +52,18 @@ enum class ESelectionMode : uint8_t
 enum class EStretch : uint8_t
 {
 	EStretch__None                 = 0,
-	EStretch__ScaleToFit           = 1,
-	EStretch__ScaleToFitX          = 2,
-	EStretch__ScaleToFitY          = 3,
-	EStretch__UserSpecified        = 4,
-	EStretch__EStretch_MAX         = 5
+	EStretch__Fill                 = 1,
+	EStretch__ScaleToFit           = 2,
+	EStretch__ScaleToFitX          = 3,
+	EStretch__ScaleToFitY          = 4,
+	EStretch__ScaleToFill          = 5,
+	EStretch__UserSpecified        = 6,
+	EStretch__EStretch_MAX         = 7,
+	EStretchDirection              = 8,
+	EStretchDirection__Both        = 9,
+	EStretchDirection__DownOnly    = 10,
+	EStretchDirection__UpOnly      = 11,
+	EStretchDirection__EStretchDirection_MAX = 12
 };
 
 
@@ -61,8 +71,9 @@ enum class EStretch : uint8_t
 enum class EStretchDirection : uint8_t
 {
 	EStretchDirection__Both        = 0,
-	EStretchDirection__UpOnly      = 1,
-	EStretchDirection__EStretchDirection_MAX = 2
+	EStretchDirection__DownOnly    = 1,
+	EStretchDirection__UpOnly      = 2,
+	EStretchDirection__EStretchDirection_MAX = 3
 };
 
 
@@ -70,9 +81,11 @@ enum class EStretchDirection : uint8_t
 enum class EProgressBarFillType : uint8_t
 {
 	EProgressBarFillType__LeftToRight = 0,
-	EProgressBarFillType__FillFromCenter = 1,
-	EProgressBarFillType__TopToBottom = 2,
-	EProgressBarFillType__BottomToTop = 3
+	EProgressBarFillType__RightToLeft = 1,
+	EProgressBarFillType__FillFromCenter = 2,
+	EProgressBarFillType__TopToBottom = 3,
+	EProgressBarFillType__BottomToTop = 4,
+	EProgressBarFillType__EProgressBarFillType_MAX = 5
 };
 
 

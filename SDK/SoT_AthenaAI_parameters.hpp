@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -770,6 +770,11 @@ struct APet_OnRep_PerchedInHangout_Params
 
 // Function AthenaAI.Pet.OnRep_MovementRequest
 struct APet_OnRep_MovementRequest_Params
+{
+};
+
+// Function AthenaAI.Pet.OnRep_InHangout
+struct APet_OnRep_InHangout_Params
 {
 };
 

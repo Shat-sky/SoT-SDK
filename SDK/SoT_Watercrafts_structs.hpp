@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -24,9 +24,11 @@ namespace SDK
 enum class EOarState : uint8_t
 {
 	EOarState__Idle                = 0,
-	EOarState__ApexOfStroke        = 1,
-	EOarState__RecoveringFromStroke = 2,
-	EOarState__Braking             = 3
+	EOarState__InStroke            = 1,
+	EOarState__ApexOfStroke        = 2,
+	EOarState__RecoveringFromStroke = 3,
+	EOarState__Braking             = 4,
+	EOarState__EOarState_MAX       = 5
 };
 
 
@@ -34,7 +36,8 @@ enum class EOarState : uint8_t
 enum class EOarIdentifier : uint8_t
 {
 	EOarIdentifier__Left           = 0,
-	EOarIdentifier__EOarIdentifier_MAX = 1
+	EOarIdentifier__Right          = 1,
+	EOarIdentifier__EOarIdentifier_MAX = 2
 };
 
 
@@ -42,8 +45,9 @@ enum class EOarIdentifier : uint8_t
 enum class ERowboatActionTelemetry : uint8_t
 {
 	ERowboatActionTelemetry__None  = 0,
-	ERowboatActionTelemetry__Unmount = 1,
-	ERowboatActionTelemetry__ERowboatActionTelemetry_MAX = 2
+	ERowboatActionTelemetry__Mount = 1,
+	ERowboatActionTelemetry__Unmount = 2,
+	ERowboatActionTelemetry__ERowboatActionTelemetry_MAX = 3
 };
 
 
@@ -51,9 +55,11 @@ enum class ERowboatActionTelemetry : uint8_t
 enum class EWatercraftDespawnReason : uint8_t
 {
 	EWatercraftDespawnReason__Unknown = 0,
-	EWatercraftDespawnReason__ExternalRequest = 1,
-	EWatercraftDespawnReason__Migration = 2,
-	EWatercraftDespawnReason__WorldEnding = 3
+	EWatercraftDespawnReason__Destroyed = 1,
+	EWatercraftDespawnReason__ExternalRequest = 2,
+	EWatercraftDespawnReason__Migration = 3,
+	EWatercraftDespawnReason__WorldEnding = 4,
+	EWatercraftDespawnReason__EWatercraftDespawnReason_MAX = 5
 };
 
 
@@ -61,8 +67,9 @@ enum class EWatercraftDespawnReason : uint8_t
 enum class EOarInputState : uint8_t
 {
 	EOarInputState__Inactive       = 0,
-	EOarInputState__Braking        = 1,
-	EOarInputState__EOarInputState_MAX = 2
+	EOarInputState__Active         = 1,
+	EOarInputState__Braking        = 2,
+	EOarInputState__EOarInputState_MAX = 3
 };
 
 

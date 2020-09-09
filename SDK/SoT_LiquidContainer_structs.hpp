@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -21,8 +21,9 @@ namespace SDK
 enum class ELiquidType : uint8_t
 {
 	ELiquidType__Water             = 0,
-	ELiquidType__BoilingWater      = 1,
-	ELiquidType__ELiquidType_MAX   = 2
+	ELiquidType__Vomit             = 1,
+	ELiquidType__BoilingWater      = 2,
+	ELiquidType__ELiquidType_MAX   = 3
 };
 
 

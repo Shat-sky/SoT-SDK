@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22468,6 +22468,26 @@ void USkinnedMeshComponent::SetMasterPoseComponent(class USkinnedMeshComponent* 
 }
 
 
+// Function Engine.SkinnedMeshComponent.SetCustomDepthMaterial
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UMaterialInterface*      Material                       (Parm, ZeroConstructor, IsPlainOldData)
+
+void USkinnedMeshComponent::SetCustomDepthMaterial(class UMaterialInterface* Material)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Engine.SkinnedMeshComponent.SetCustomDepthMaterial"));
+
+	struct
+	{
+		class UMaterialInterface*      Material;
+	} params;
+
+	params.Material = Material;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function Engine.SkinnedMeshComponent.OnRep_SkeletalMesh
 // (Final, Native, Public)
 // Parameters:
@@ -22576,6 +22596,27 @@ struct FName USkinnedMeshComponent::GetParentBone(const struct FName& BoneName)
 	} params;
 
 	params.BoneName = BoneName;
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Engine.SkinnedMeshComponent.GetCustomDepthMaterial
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UMaterialInterface*      ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class UMaterialInterface* USkinnedMeshComponent::GetCustomDepthMaterial()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Engine.SkinnedMeshComponent.GetCustomDepthMaterial"));
+
+	struct
+	{
+		class UMaterialInterface*      ReturnValue;
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,11 +20,13 @@ namespace SDK
 enum class EGameplayTagQueryExprType : uint8_t
 {
 	EGameplayTagQueryExprType__Undefined = 0,
-	EGameplayTagQueryExprType__AllTagsMatch = 1,
-	EGameplayTagQueryExprType__NoTagsMatch = 2,
-	EGameplayTagQueryExprType__AnyExprMatch = 3,
-	EGameplayTagQueryExprType__NoExprMatch = 4,
-	EGameplayTagQueryExprType__EGameplayTagQueryExprType_MAX = 5
+	EGameplayTagQueryExprType__AnyTagsMatch = 1,
+	EGameplayTagQueryExprType__AllTagsMatch = 2,
+	EGameplayTagQueryExprType__NoTagsMatch = 3,
+	EGameplayTagQueryExprType__AnyExprMatch = 4,
+	EGameplayTagQueryExprType__AllExprMatch = 5,
+	EGameplayTagQueryExprType__NoExprMatch = 6,
+	EGameplayTagQueryExprType__EGameplayTagQueryExprType_MAX = 7
 };
 
 
@@ -32,7 +34,8 @@ enum class EGameplayTagQueryExprType : uint8_t
 enum class EGameplayContainerMatchType : uint8_t
 {
 	EGameplayContainerMatchType__Any = 0,
-	EGameplayContainerMatchType__EGameplayContainerMatchType_MAX = 1
+	EGameplayContainerMatchType__All = 1,
+	EGameplayContainerMatchType__EGameplayContainerMatchType_MAX = 2
 };
 
 
@@ -40,7 +43,8 @@ enum class EGameplayContainerMatchType : uint8_t
 enum class EGameplayTagMatchType : uint8_t
 {
 	EGameplayTagMatchType__Explicit = 0,
-	EGameplayTagMatchType__EGameplayTagMatchType_MAX = 1
+	EGameplayTagMatchType__IncludeParentTags = 1,
+	EGameplayTagMatchType__EGameplayTagMatchType_MAX = 2
 };
 
 

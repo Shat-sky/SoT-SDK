@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,20 +20,29 @@ namespace SDK
 enum class EPlayModeVariant : uint8_t
 {
 	EPlayModeVariant__Normal       = 0,
-	EPlayModeVariant__Invalid      = 1,
-	EPlayModeVariant__MAX          = 2,
-	EPlayModeVariant__EPlayModeVariant_MAX = 3
+	EPlayModeVariant__Creator      = 1,
+	EPlayModeVariant__Invalid      = 2,
+	EPlayModeVariant__MAX          = 3,
+	EPlayModeVariant__EPlayModeVariant_MAX = 4
 };
 
 
 // Enum AthenaEngine.EPlayMode
 enum class EPlayMode : uint8_t
 {
-	EPlayMode__Adventure           = 0,
-	EPlayMode__Tutorial            = 1,
-	EPlayMode__NotSelectedYet      = 2,
-	EPlayMode__MAX                 = 3,
-	EPlayMode__EPlayMode_MAX       = 4
+	EPlayModeVariant               = 0,
+	EPlayModeVariant__Normal       = 1,
+	EPlayModeVariant__Creator      = 2,
+	EPlayModeVariant__Invalid      = 3,
+	EPlayModeVariant__MAX          = 4,
+	EPlayModeVariant__EPlayModeVariant_MAX = 5,
+	EPlayMode__Adventure           = 6,
+	EPlayMode__Contest             = 7,
+	EPlayMode__Tutorial            = 8,
+	EPlayMode__NotSelectedYet      = 9,
+	EPlayMode__MAX                 = 10,
+	EPlayMode__Invalid             = 11,
+	EPlayMode__EPlayMode_MAX       = 12
 };
 
 
@@ -55,8 +64,7 @@ struct FSerialisedRpc
 struct FStringAssetClassPairFeatureOverride
 {
 	struct FName                                       FeatureName;                                              // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	TAssetPtr<class UClass>                            AssetClass;                                               // 0x0008(0x001C) (Edit)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0008(0x0004) FIX WRONG TYPE SIZE OF PREVIOUS PROPERTY
+	TAssetPtr<class UClass>                            AssetClass;                                               // 0x0008(0x0020) (Edit)
 };
 
 // ScriptStruct AthenaEngine.StringAssetClassPair
@@ -64,8 +72,7 @@ struct FStringAssetClassPairFeatureOverride
 struct FStringAssetClassPair
 {
 	class FString                                      String;                                                   // 0x0000(0x0010) (Edit, ZeroConstructor)
-	TAssetPtr<class UClass>                            AssetClass;                                               // 0x0010(0x001C) (Edit)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0010(0x0004) FIX WRONG TYPE SIZE OF PREVIOUS PROPERTY
+	TAssetPtr<class UClass>                            AssetClass;                                               // 0x0010(0x0020) (Edit)
 	TArray<struct FStringAssetClassPairFeatureOverride> FeatureOverrides;                                         // 0x0030(0x0010) (Edit, ZeroConstructor)
 };
 

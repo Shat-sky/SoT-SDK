@@ -1,10 +1,10 @@
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_BP_ItemPreview_Lighting_parameters.hpp"
+#include "SoT_BP_ItemPreview_Lighting_classes.hpp"
 
 namespace SDK
 {

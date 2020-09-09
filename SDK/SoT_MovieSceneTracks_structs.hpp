@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -28,8 +28,9 @@ enum class EMovieScene3DPathSection_Axis : uint8_t
 enum class EShow3DTrajectory : uint8_t
 {
 	EShow3DTrajectory__EST_OnlyWhenSelected = 0,
-	EShow3DTrajectory__EST_Never   = 1,
-	EShow3DTrajectory__EST_MAX     = 2
+	EShow3DTrajectory__EST_Always  = 1,
+	EShow3DTrajectory__EST_Never   = 2,
+	EShow3DTrajectory__EST_MAX     = 3
 };
 
 
@@ -37,7 +38,8 @@ enum class EShow3DTrajectory : uint8_t
 enum class ELevelVisibility : uint8_t
 {
 	ELevelVisibility__Visible      = 0,
-	ELevelVisibility__ELevelVisibility_MAX = 1
+	ELevelVisibility__Hidden       = 1,
+	ELevelVisibility__ELevelVisibility_MAX = 2
 };
 
 
@@ -45,8 +47,9 @@ enum class ELevelVisibility : uint8_t
 enum class EParticleKey : uint8_t
 {
 	EParticleKey__Activate         = 0,
-	EParticleKey__Trigger          = 1,
-	EParticleKey__EParticleKey_MAX = 2
+	EParticleKey__Deactivate       = 1,
+	EParticleKey__Trigger          = 2,
+	EParticleKey__EParticleKey_MAX = 3
 };
 
 

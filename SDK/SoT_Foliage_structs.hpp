@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,9 +20,11 @@ namespace SDK
 enum class EFoliageScaling : uint8_t
 {
 	EFoliageScaling__Uniform       = 0,
-	EFoliageScaling__LockXY        = 1,
-	EFoliageScaling__LockXZ        = 2,
-	EFoliageScaling__LockYZ        = 3
+	EFoliageScaling__Free          = 1,
+	EFoliageScaling__LockXY        = 2,
+	EFoliageScaling__LockXZ        = 3,
+	EFoliageScaling__LockYZ        = 4,
+	EFoliageScaling__EFoliageScaling_MAX = 5
 };
 
 
@@ -37,8 +39,9 @@ enum class EFoliageVertexColorMask : uint8_t
 enum class ESimulationQuery : uint8_t
 {
 	ESimulationQuery__CollisionOverlap = 0,
-	ESimulationQuery__AnyOverlap   = 1,
-	ESimulationQuery__ESimulationQuery_MAX = 2
+	ESimulationQuery__ShadeOverlap = 1,
+	ESimulationQuery__AnyOverlap   = 2,
+	ESimulationQuery__ESimulationQuery_MAX = 3
 };
 
 
@@ -46,8 +49,9 @@ enum class ESimulationQuery : uint8_t
 enum class ESimulationOverlap : uint8_t
 {
 	ESimulationOverlap__CollisionOverlap = 0,
-	ESimulationOverlap__None       = 1,
-	ESimulationOverlap__ESimulationOverlap_MAX = 2
+	ESimulationOverlap__ShadeOverlap = 1,
+	ESimulationOverlap__None       = 2,
+	ESimulationOverlap__ESimulationOverlap_MAX = 3
 };
 
 

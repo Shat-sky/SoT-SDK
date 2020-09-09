@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,8 +22,9 @@ namespace SDK
 enum class EEmitterRelationship : uint8_t
 {
 	EEmitterRelationship__Audio_Remote = 0,
-	EEmitterRelationship__Audio_Default = 1,
-	EEmitterRelationship__Audio_MAX = 2
+	EEmitterRelationship__Audio_Local = 1,
+	EEmitterRelationship__Audio_Default = 2,
+	EEmitterRelationship__Audio_MAX = 3
 };
 
 

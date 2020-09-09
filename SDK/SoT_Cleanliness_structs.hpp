@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,8 +20,9 @@ namespace SDK
 enum class EDirtinessType : uint8_t
 {
 	EDirtinessType__Soot           = 0,
-	EDirtinessType__MAX            = 1,
-	EDirtinessType__EDirtinessType_MAX = 2
+	EDirtinessType__Dust           = 1,
+	EDirtinessType__MAX            = 2,
+	EDirtinessType__EDirtinessType_MAX = 3
 };
 
 

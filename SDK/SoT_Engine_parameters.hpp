@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -6700,6 +6700,12 @@ struct USkinnedMeshComponent_SetMasterPoseComponent_Params
 	class USkinnedMeshComponent*                       NewMasterBoneComponent;                                   // (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
+// Function Engine.SkinnedMeshComponent.SetCustomDepthMaterial
+struct USkinnedMeshComponent_SetCustomDepthMaterial_Params
+{
+	class UMaterialInterface*                          Material;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
+};
+
 // Function Engine.SkinnedMeshComponent.OnRep_SkeletalMesh
 struct USkinnedMeshComponent_OnRep_SkeletalMesh_Params
 {
@@ -6732,6 +6738,12 @@ struct USkinnedMeshComponent_GetParentBone_Params
 {
 	struct FName                                       BoneName;                                                 // (Parm, ZeroConstructor, IsPlainOldData)
 	struct FName                                       ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+};
+
+// Function Engine.SkinnedMeshComponent.GetCustomDepthMaterial
+struct USkinnedMeshComponent_GetCustomDepthMaterial_Params
+{
+	class UMaterialInterface*                          ReturnValue;                                              // (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 };
 
 // Function Engine.SkinnedMeshComponent.GetBoneName

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -9,10 +9,10 @@
 #include "SoT_Basic.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
-#include "SoT_MerchantContracts_classes.hpp"
-#include "SoT_Athena_classes.hpp"
-#include "SoT_EmissaryFramework_classes.hpp"
 #include "SoT_PrioritisedPrompts_classes.hpp"
+#include "SoT_MerchantContracts_classes.hpp"
+#include "SoT_EmissaryFramework_classes.hpp"
+#include "SoT_Athena_classes.hpp"
 
 namespace SDK
 {
@@ -24,7 +24,8 @@ namespace SDK
 enum class ETaleQuestStepBeginMode : uint8_t
 {
 	ETaleQuestStepBeginMode__Cold  = 0,
-	ETaleQuestStepBeginMode__ETaleQuestStepBeginMode_MAX = 1
+	ETaleQuestStepBeginMode__Warm  = 1,
+	ETaleQuestStepBeginMode__ETaleQuestStepBeginMode_MAX = 2
 };
 
 
@@ -32,9 +33,10 @@ enum class ETaleQuestStepBeginMode : uint8_t
 enum class ETaleQuestStepState : uint8_t
 {
 	ETaleQuestStepState__Inactive  = 0,
-	ETaleQuestStepState__PendingCompletion = 1,
-	ETaleQuestStepState__Completed = 2,
-	ETaleQuestStepState__ETaleQuestStepState_MAX = 3
+	ETaleQuestStepState__Active    = 1,
+	ETaleQuestStepState__PendingCompletion = 2,
+	ETaleQuestStepState__Completed = 3,
+	ETaleQuestStepState__ETaleQuestStepState_MAX = 4
 };
 
 
@@ -69,9 +71,37 @@ struct FTaleQuestDeliveryRequest
 	int                                                NumToAllocate;                                            // 0x0034(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct Tales.QuestVariablePrioritisedPrompt
+// ScriptStruct Tales.CriticalActorDelegateData
+// 0x0048
+struct FCriticalActorDelegateData
+{
+	class AActor*                                      CriticalActor;                                            // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	struct FText                                       FailureMessage;                                           // 0x0008(0x0038)
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0040(0x0008) MISSED OFFSET
+};
+
+// ScriptStruct Tales.PhasedActor
+// 0x0018
+struct FPhasedActor
+{
+	class AActor*                                      MapActor;                                                 // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	class AActor*                                      Actor;                                                    // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0010(0x0008) MISSED OFFSET
+};
+
+// ScriptStruct Tales.PhasedItem
+// 0x0028
+struct FPhasedItem
+{
+	class AItemProxy*                                  ItemProxy;                                                // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	class AItemInfo*                                   ItemInfo;                                                 // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
+	bool                                               Tracked;                                                  // 0x0010(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x17];                                      // 0x0011(0x0017) MISSED OFFSET
+};
+
+// ScriptStruct Tales.QuestVariableEQSContextValue
 // 0x0000 (0x0010 - 0x0010)
-struct FQuestVariablePrioritisedPrompt : public FQuestVariable
+struct FQuestVariableEQSContextValue : public FQuestVariable
 {
 
 };
@@ -79,6 +109,13 @@ struct FQuestVariablePrioritisedPrompt : public FQuestVariable
 // ScriptStruct Tales.QuestVariableArray
 // 0x0000 (0x0010 - 0x0010)
 struct FQuestVariableArray : public FQuestVariable
+{
+
+};
+
+// ScriptStruct Tales.QuestVariablePrioritisedPrompt
+// 0x0000 (0x0010 - 0x0010)
+struct FQuestVariablePrioritisedPrompt : public FQuestVariable
 {
 
 };
@@ -119,11 +156,40 @@ struct FQuestVariableMerchantItem : public FQuestVariable
 
 };
 
+// ScriptStruct Tales.CriticalActorWrapper
+// 0x0040
+struct FCriticalActorWrapper
+{
+	class AActor*                                      CriticalActor;                                            // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x38];                                      // 0x0008(0x0038) MISSED OFFSET
+};
+
 // ScriptStruct Tales.ParticpantToolGroup
 // 0x0020
 struct FParticpantToolGroup
 {
 	unsigned char                                      UnknownData00[0x20];                                      // 0x0000(0x0020) MISSED OFFSET
+};
+
+// ScriptStruct Tales.QuestVariableClassArray
+// 0x0000 (0x0010 - 0x0010)
+struct FQuestVariableClassArray : public FQuestVariable
+{
+
+};
+
+// ScriptStruct Tales.ActorSpawnedAutomationEvent
+// 0x0008
+struct FActorSpawnedAutomationEvent
+{
+	TWeakObjectPtr<class AActor>                       Actor;                                                    // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Tales.EventSpawnedTallTaleQuestItem
+// 0x0001
+struct FEventSpawnedTallTaleQuestItem
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
 
 // ScriptStruct Tales.StepMerchantItemDesc

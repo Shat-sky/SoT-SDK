@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -828,6 +828,21 @@ struct UAthenaCheatManager_SpawnAI_Params
 	class FString                                      AIDescString;                                             // (Parm, ZeroConstructor)
 };
 
+// Function AthenaCheat.AthenaCheatManager.SpawnAggressiveGhostShipEncounterSpireTheHellishMermaid
+struct UAthenaCheatManager_SpawnAggressiveGhostShipEncounterSpireTheHellishMermaid_Params
+{
+};
+
+// Function AthenaCheat.AthenaCheatManager.SpawnAggressiveGhostShipEncounterSpireFriendlyFormation
+struct UAthenaCheatManager_SpawnAggressiveGhostShipEncounterSpireFriendlyFormation_Params
+{
+};
+
+// Function AthenaCheat.AthenaCheatManager.SpawnAggressiveGhostShipEncounterSpireEnemyFormation
+struct UAthenaCheatManager_SpawnAggressiveGhostShipEncounterSpireEnemyFormation_Params
+{
+};
+
 // Function AthenaCheat.AthenaCheatManager.SpawnAggressiveGhostShipEncounterSpire
 struct UAthenaCheatManager_SpawnAggressiveGhostShipEncounterSpire_Params
 {
@@ -1550,6 +1565,11 @@ struct UAthenaCheatManager_RequestSmallAggressiveAIShip_Params
 {
 };
 
+// Function AthenaCheat.AthenaCheatManager.RequestMysteriousNotesForPlayer
+struct UAthenaCheatManager_RequestMysteriousNotesForPlayer_Params
+{
+};
+
 // Function AthenaCheat.AthenaCheatManager.RequestLargePassiveAIShip
 struct UAthenaCheatManager_RequestLargePassiveAIShip_Params
 {
@@ -2109,6 +2129,11 @@ struct UAthenaCheatManager_ForceAllPetsDangerWithNoiseEventWithChangingThreatLoc
 struct UAthenaCheatManager_ForceAllPetsDangerWithNoiseEvent_Params
 {
 	class FString                                      ResponseType;                                             // (Parm, ZeroConstructor)
+};
+
+// Function AthenaCheat.AthenaCheatManager.ForceAggressiveGhostShipStartAppearAnimation
+struct UAthenaCheatManager_ForceAggressiveGhostShipStartAppearAnimation_Params
+{
 };
 
 // Function AthenaCheat.AthenaCheatManager.ForceAggressiveGhostShipPortalJump
@@ -2797,6 +2822,15 @@ struct UAthenaCheatManager_AddPetForAllPlayers_Params
 {
 	int                                                PetTypeIndex;                                             // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 	int                                                PetPartIndex;                                             // (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+};
+
+// Function AthenaCheat.AthenaCheatManager.AddMysteriousNote
+struct UAthenaCheatManager_AddMysteriousNote_Params
+{
+	class FString                                      NoteType;                                                 // (Parm, ZeroConstructor)
+	class FString                                      NoteTitle;                                                // (Parm, ZeroConstructor)
+	class FString                                      NoteBody;                                                 // (Parm, ZeroConstructor)
+	class FString                                      CompletionStrings;                                        // (Parm, ZeroConstructor)
 };
 
 // Function AthenaCheat.AthenaCheatManager.AddDrunkenness

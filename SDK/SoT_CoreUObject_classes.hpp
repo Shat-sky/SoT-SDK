@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -211,11 +211,6 @@ public:
 	inline T* CreateDefaultObject()
 	{
 		return static_cast<T*>(CreateDefaultObject());
-	}
-
-    inline UObject* CreateDefaultObject()
-	{
-		return GetVFunction<UObject*(*)(UClass*)>(this, 88)(this);
 	}
 
 	static UClass* StaticClass()

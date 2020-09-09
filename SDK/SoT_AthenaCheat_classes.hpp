@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -172,6 +172,9 @@ public:
 	void SpawnAIAtLocationDelayed(const class FString& AIDescString, float LocationX, float LocationY, float LocationZ, float Yaw, float Delay);
 	void SpawnAIAtCurrentLocationDelayed(const class FString& AIDescString, float Delay);
 	void SpawnAI(const class FString& AIDescString);
+	void SpawnAggressiveGhostShipEncounterSpireTheHellishMermaid();
+	void SpawnAggressiveGhostShipEncounterSpireFriendlyFormation();
+	void SpawnAggressiveGhostShipEncounterSpireEnemyFormation();
 	void SpawnAggressiveGhostShipEncounterSpire();
 	void SpawnAggressiveGhostShipEncounter();
 	void SmoulderClosestShipFire();
@@ -303,6 +306,7 @@ public:
 	void ResetAbilityAlwaysOn();
 	void RequestSmallPassiveAIShip();
 	void RequestSmallAggressiveAIShip();
+	void RequestMysteriousNotesForPlayer();
 	void RequestLargePassiveAIShip();
 	void RequestLargeAggressiveAIShip();
 	void ReplenishShipWithDebugSpawner();
@@ -406,6 +410,7 @@ public:
 	void ForceCloseShop();
 	void ForceAllPetsDangerWithNoiseEventWithChangingThreatLocation(const class FString& ResponseType, float UpdateThreatLocationTime);
 	void ForceAllPetsDangerWithNoiseEvent(const class FString& ResponseType);
+	void ForceAggressiveGhostShipStartAppearAnimation();
 	void ForceAggressiveGhostShipPortalJump();
 	void Fly();
 	void FloodShipWithKeelOverIndex(float NormalisedWaterAmount, int KeelOverConfigIndex);
@@ -526,6 +531,7 @@ public:
 	void AddPlayerToCrew(const class FString& ActorIdString, const class FString& CrewId);
 	void AddPetForPlayer(int PetTypeIndex, int PetPartIndex);
 	void AddPetForAllPlayers(int PetTypeIndex, int PetPartIndex);
+	void AddMysteriousNote(const class FString& NoteType, const class FString& NoteTitle, const class FString& NoteBody, const class FString& CompletionStrings);
 	void AddDrunkenness(int DrunkennessType, float DrunkennessChange);
 	void AddAISpawnContext(const class FString& ContextName);
 	void ActivateSkellyFortOfTheDamned(const class FString& FortName);

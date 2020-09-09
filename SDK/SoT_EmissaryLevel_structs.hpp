@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -9,10 +9,10 @@
 #include "SoT_Basic.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
-#include "SoT_EmissaryFramework_classes.hpp"
 #include "SoT_AthenaEngine_classes.hpp"
-#include "SoT_ItemQuality_classes.hpp"
+#include "SoT_EmissaryFramework_classes.hpp"
 #include "SoT_Athena_classes.hpp"
+#include "SoT_ItemQuality_classes.hpp"
 
 namespace SDK
 {
@@ -24,10 +24,12 @@ namespace SDK
 enum class EBootyRewardType : uint8_t
 {
 	EBootyRewardType__OwnershipChanged = 0,
-	EBootyRewardType__PlayerKilled = 1,
-	EBootyRewardType__GameEventsFinished = 2,
-	EBootyRewardType__Handin       = 3,
-	EBootyRewardType__EBootyRewardType_MAX = 4
+	EBootyRewardType__ItemDroppedOnItem = 1,
+	EBootyRewardType__PlayerKilled = 2,
+	EBootyRewardType__GameEventsFinished = 3,
+	EBootyRewardType__Handin       = 4,
+	EBootyRewardType__MAX          = 5,
+	EBootyRewardType__EBootyRewardType_MAX = 6
 };
 
 
@@ -35,7 +37,8 @@ enum class EBootyRewardType : uint8_t
 enum class EEmissaryDeactivateReason : uint8_t
 {
 	EEmissaryDeactivateReason__DissociateFromShip = 0,
-	EEmissaryDeactivateReason__EEmissaryDeactivateReason_MAX = 1
+	EEmissaryDeactivateReason__Cancelled = 1,
+	EEmissaryDeactivateReason__EEmissaryDeactivateReason_MAX = 2
 };
 
 
@@ -95,8 +98,7 @@ struct FEmissaryLevelData
 	int                                                LevelTarget;                                              // 0x0000(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
 	struct FEmissaryFlagMeshReferences                 EmissaryFlagMeshAssetReferences;                          // 0x0008(0x0020) (Edit, DisableEditOnInstance)
-	TAssetPtr<class UWeightedItemDescSpawnDataAsset>   EmissaryFlotsamSpawnDataAsset;                            // 0x0028(0x001C) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x0028(0x0004) FIX WRONG TYPE SIZE OF PREVIOUS PROPERTY
+	TAssetPtr<class UWeightedItemDescSpawnDataAsset>   EmissaryFlotsamSpawnDataAsset;                            // 0x0028(0x0020) (Edit, DisableEditOnInstance)
 	struct FRewardId                                   EmissaryDeactivationReward;                               // 0x0048(0x0008) (Edit, DisableEditOnInstance)
 	TArray<struct FPlayerStat>                         StatsToFireOnEmissaryLevelReached;                        // 0x0050(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 	struct FStringAssetReference                       TreasureSoldNotificationFlag;                             // 0x0060(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)

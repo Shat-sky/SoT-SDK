@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -61,7 +61,7 @@ public:
 	}
 
 
-	void OnRep_CurrentWatercraft();
+	void OnRep_CurrentWatercraft(class AActor* PreviousWatercraft);
 	void OnCurrentWatercraftDestroyed(class AActor* DestroyedWatercraft);
 };
 
@@ -554,10 +554,9 @@ public:
 class UWatercraftSpawnData : public UItemSpawnData
 {
 public:
-	TAssetPtr<class UClass>                            WatercraftClass;                                          // 0x0058(0x001C) (Edit)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0058(0x0004) FIX WRONG TYPE SIZE OF PREVIOUS PROPERTY
+	TAssetPtr<class UClass>                            WatercraftClass;                                          // 0x0058(0x0020) (Edit)
 	float                                              MinDistanceToNearestWatercraftInMetres;                   // 0x0078(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x007C(0x0004) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x4];                                       // 0x007C(0x0004) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

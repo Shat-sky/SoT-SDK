@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,8 +20,9 @@ namespace SDK
 enum class EEmoteFlourishType : uint8_t
 {
 	EEmoteFlourishType__Invalid    = 0,
-	EEmoteFlourishType__SecondaryWeaponSlotFlourish = 1,
-	EEmoteFlourishType__EEmoteFlourishType_MAX = 2
+	EEmoteFlourishType__PrimaryWeaponSlotFlourish = 1,
+	EEmoteFlourishType__SecondaryWeaponSlotFlourish = 2,
+	EEmoteFlourishType__EEmoteFlourishType_MAX = 3
 };
 
 

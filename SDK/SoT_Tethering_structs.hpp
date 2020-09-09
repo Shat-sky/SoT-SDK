@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,8 +20,9 @@ namespace SDK
 enum class ETetherConstrainMode : uint8_t
 {
 	ETetherConstrainMode__ShrinkLength = 0,
-	ETetherConstrainMode__GrowLength = 1,
-	ETetherConstrainMode__ETetherConstrainMode_MAX = 2
+	ETetherConstrainMode__ConstantLength = 1,
+	ETetherConstrainMode__GrowLength = 2,
+	ETetherConstrainMode__ETetherConstrainMode_MAX = 3
 };
 
 

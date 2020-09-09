@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,22 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function MysteriousNotes.PlayerMysteriousNoteComponent.TriggerNotesReceivedPopup
+// (RequiredAPI, Net, NetReliable, Native, Event, Public, NetClient)
+
+void UPlayerMysteriousNoteComponent::TriggerNotesReceivedPopup()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function MysteriousNotes.PlayerMysteriousNoteComponent.TriggerNotesReceivedPopup"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
 
 // Function MysteriousNotes.PlayerMysteriousNoteComponent.Server_NoteCompletionStepReceived
 // (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
@@ -58,17 +74,69 @@ void UPlayerMysteriousNoteComponent::Server_MarkNoteAsRead(class APlayerControll
 }
 
 
-// Function MysteriousNotes.PlayerMysteriousNoteComponent.OnRep_PendingNotes
+// Function MysteriousNotes.PlayerMysteriousNoteComponent.Server_MarkNoteAsDeleted
+// (Net, NetReliable, Native, Event, Protected, NetServer, HasDefaults, NetValidate)
+// Parameters:
+// class APlayerController*       InPlayerController             (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// struct FGuid                   NoteId                         (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+
+void UPlayerMysteriousNoteComponent::Server_MarkNoteAsDeleted(class APlayerController* InPlayerController, const struct FGuid& NoteId)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function MysteriousNotes.PlayerMysteriousNoteComponent.Server_MarkNoteAsDeleted"));
+
+	struct
+	{
+		class APlayerController*       InPlayerController;
+		struct FGuid                   NoteId;
+	} params;
+
+	params.InPlayerController = InPlayerController;
+	params.NoteId = NoteId;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function MysteriousNotes.PlayerMysteriousNoteComponent.OnRep_NoteData
 // (Final, RequiredAPI, Native, Private)
 
-void UPlayerMysteriousNoteComponent::OnRep_PendingNotes()
+void UPlayerMysteriousNoteComponent::OnRep_NoteData()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function MysteriousNotes.PlayerMysteriousNoteComponent.OnRep_PendingNotes"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function MysteriousNotes.PlayerMysteriousNoteComponent.OnRep_NoteData"));
 
 	struct
 	{
 	} params;
 
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function MysteriousNotes.PlayerMysteriousNoteComponent.AddFakeNote
+// (RequiredAPI, Net, NetReliable, Native, Event, Public, NetClient)
+// Parameters:
+// class FString                  NoteType                       (Parm, ZeroConstructor)
+// class FString                  NoteTitle                      (Parm, ZeroConstructor)
+// class FString                  NoteBody                       (Parm, ZeroConstructor)
+// TArray<class FString>          CompletionStrings              (ConstParm, Parm, ZeroConstructor, ReferenceParm)
+
+void UPlayerMysteriousNoteComponent::AddFakeNote(const class FString& NoteType, const class FString& NoteTitle, const class FString& NoteBody, TArray<class FString> CompletionStrings)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function MysteriousNotes.PlayerMysteriousNoteComponent.AddFakeNote"));
+
+	struct
+	{
+		class FString                  NoteType;
+		class FString                  NoteTitle;
+		class FString                  NoteBody;
+		TArray<class FString>          CompletionStrings;
+	} params;
+
+	params.NoteType = NoteType;
+	params.NoteTitle = NoteTitle;
+	params.NoteBody = NoteBody;
+	params.CompletionStrings = CompletionStrings;
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -95,6 +163,22 @@ void AWieldableMysteriousNote::OnTextCanvasUpdate(class UCanvas* Canvas, int Wid
 	params.Canvas = Canvas;
 	params.Width = Width;
 	params.Height = Height;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function MysteriousNotes.WieldableMysteriousNote.OnRep_NoteLayout
+// (Final, RequiredAPI, Native, Private)
+
+void AWieldableMysteriousNote::OnRep_NoteLayout()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function MysteriousNotes.WieldableMysteriousNote.OnRep_NoteLayout"));
+
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

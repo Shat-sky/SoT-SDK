@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -19,9 +19,10 @@ namespace SDK
 enum class ESessionGrouping : uint8_t
 {
 	ESessionGrouping__Invalid      = 0,
-	ESessionGrouping__MediumLargeShip = 1,
-	ESessionGrouping__Max          = 2,
-	ESessionGrouping__ESessionGrouping_MAX = 3
+	ESessionGrouping__Default      = 1,
+	ESessionGrouping__MediumLargeShip = 2,
+	ESessionGrouping__Max          = 3,
+	ESessionGrouping__ESessionGrouping_MAX = 4
 };
 
 
@@ -29,11 +30,13 @@ enum class ESessionGrouping : uint8_t
 enum class ECrewSessionType : uint8_t
 {
 	ECrewSessionType__Invalid      = 0,
-	ECrewSessionType__MediumShip   = 1,
-	ECrewSessionType__LargeShip    = 2,
-	ECrewSessionType__ServerLarge  = 3,
-	ECrewSessionType__Lobby        = 4,
-	ECrewSessionType__ECrewSessionType_MAX = 5
+	ECrewSessionType__SmallShip    = 1,
+	ECrewSessionType__MediumShip   = 2,
+	ECrewSessionType__LargeShip    = 3,
+	ECrewSessionType__ServerLarge  = 4,
+	ECrewSessionType__SloopSolo    = 5,
+	ECrewSessionType__Lobby        = 6,
+	ECrewSessionType__ECrewSessionType_MAX = 7
 };
 
 
@@ -41,8 +44,9 @@ enum class ECrewSessionType : uint8_t
 enum class ESessionVisibility : uint8_t
 {
 	ESessionVisibility__Invalid    = 0,
-	ESessionVisibility__Closed     = 1,
-	ESessionVisibility__ESessionVisibility_MAX = 2
+	ESessionVisibility__Open       = 1,
+	ESessionVisibility__Closed     = 2,
+	ESessionVisibility__ESessionVisibility_MAX = 3
 };
 
 
@@ -50,9 +54,10 @@ enum class ESessionVisibility : uint8_t
 enum class ECrewSessionQoSServerResolveResult : uint8_t
 {
 	ECrewSessionQoSServerResolveResult__Success = 0,
-	ECrewSessionQoSServerResolveResult__TimedOut = 1,
-	ECrewSessionQoSServerResolveResult__Failed = 2,
-	ECrewSessionQoSServerResolveResult__ECrewSessionQoSServerResolveResult_MAX = 3
+	ECrewSessionQoSServerResolveResult__InvalidLocation = 1,
+	ECrewSessionQoSServerResolveResult__TimedOut = 2,
+	ECrewSessionQoSServerResolveResult__Failed = 3,
+	ECrewSessionQoSServerResolveResult__ECrewSessionQoSServerResolveResult_MAX = 4
 };
 
 

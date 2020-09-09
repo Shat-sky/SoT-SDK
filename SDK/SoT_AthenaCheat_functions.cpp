@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -2668,6 +2668,54 @@ void UAthenaCheatManager::SpawnAI(const class FString& AIDescString)
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.SpawnAggressiveGhostShipEncounterSpireTheHellishMermaid
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::SpawnAggressiveGhostShipEncounterSpireTheHellishMermaid()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.SpawnAggressiveGhostShipEncounterSpireTheHellishMermaid"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.SpawnAggressiveGhostShipEncounterSpireFriendlyFormation
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::SpawnAggressiveGhostShipEncounterSpireFriendlyFormation()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.SpawnAggressiveGhostShipEncounterSpireFriendlyFormation"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.SpawnAggressiveGhostShipEncounterSpireEnemyFormation
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::SpawnAggressiveGhostShipEncounterSpireEnemyFormation()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.SpawnAggressiveGhostShipEncounterSpireEnemyFormation"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.SpawnAggressiveGhostShipEncounterSpire
 // (Final, Exec, Native, Public)
 
@@ -5021,6 +5069,22 @@ void UAthenaCheatManager::RequestSmallAggressiveAIShip()
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.RequestMysteriousNotesForPlayer
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::RequestMysteriousNotesForPlayer()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.RequestMysteriousNotesForPlayer"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.RequestLargePassiveAIShip
 // (Final, Exec, Native, Public)
 
@@ -6836,6 +6900,22 @@ void UAthenaCheatManager::ForceAllPetsDangerWithNoiseEvent(const class FString& 
 	} params;
 
 	params.ResponseType = ResponseType;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.ForceAggressiveGhostShipStartAppearAnimation
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::ForceAggressiveGhostShipStartAppearAnimation()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.ForceAggressiveGhostShipStartAppearAnimation"));
+
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -9071,6 +9151,35 @@ void UAthenaCheatManager::AddPetForAllPlayers(int PetTypeIndex, int PetPartIndex
 
 	params.PetTypeIndex = PetTypeIndex;
 	params.PetPartIndex = PetPartIndex;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.AddMysteriousNote
+// (Final, Exec, Native, Public)
+// Parameters:
+// class FString                  NoteType                       (Parm, ZeroConstructor)
+// class FString                  NoteTitle                      (Parm, ZeroConstructor)
+// class FString                  NoteBody                       (Parm, ZeroConstructor)
+// class FString                  CompletionStrings              (Parm, ZeroConstructor)
+
+void UAthenaCheatManager::AddMysteriousNote(const class FString& NoteType, const class FString& NoteTitle, const class FString& NoteBody, const class FString& CompletionStrings)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.AddMysteriousNote"));
+
+	struct
+	{
+		class FString                  NoteType;
+		class FString                  NoteTitle;
+		class FString                  NoteBody;
+		class FString                  CompletionStrings;
+	} params;
+
+	params.NoteType = NoteType;
+	params.NoteTitle = NoteTitle;
+	params.NoteBody = NoteBody;
+	params.CompletionStrings = CompletionStrings;
 
 	UObject::ProcessEvent(fn, &params);
 }

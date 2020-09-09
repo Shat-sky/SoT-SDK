@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -26,9 +26,11 @@ namespace SDK
 enum class EPetDangerHearingResponseType : uint8_t
 {
 	EPetDangerHearingResponseType__RunAway = 0,
-	EPetDangerHearingResponseType__TurnToward = 1,
-	EPetDangerHearingResponseType__RunToOwner = 2,
-	EPetDangerHearingResponseType__MAX = 3
+	EPetDangerHearingResponseType__RunToHangoutSpot = 1,
+	EPetDangerHearingResponseType__TurnToward = 2,
+	EPetDangerHearingResponseType__RunToOwner = 3,
+	EPetDangerHearingResponseType__MAX = 4,
+	EPetDangerHearingResponseType__EPetDangerHearingResponseType_MAX = 5
 };
 
 
@@ -36,9 +38,10 @@ enum class EPetDangerHearingResponseType : uint8_t
 enum class EPetDangerHearingTarget : uint8_t
 {
 	EPetDangerHearingTarget__None  = 0,
-	EPetDangerHearingTarget__Crew  = 1,
-	EPetDangerHearingTarget__Alliance = 2,
-	EPetDangerHearingTarget__EPetDangerHearingTarget_MAX = 3
+	EPetDangerHearingTarget__Owner = 1,
+	EPetDangerHearingTarget__Crew  = 2,
+	EPetDangerHearingTarget__Alliance = 3,
+	EPetDangerHearingTarget__EPetDangerHearingTarget_MAX = 4
 };
 
 
@@ -46,7 +49,8 @@ enum class EPetDangerHearingTarget : uint8_t
 enum class EHangoutRotationMode : uint8_t
 {
 	EHangoutRotationMode__Match    = 0,
-	EHangoutRotationMode__EHangoutRotationMode_MAX = 1
+	EHangoutRotationMode__Randomise = 1,
+	EHangoutRotationMode__EHangoutRotationMode_MAX = 2
 };
 
 
@@ -54,8 +58,9 @@ enum class EHangoutRotationMode : uint8_t
 enum class EWieldablePetDropRequestReason : uint8_t
 {
 	EWieldablePetDropRequestReason__None = 0,
-	EWieldablePetDropRequestReason__Escaped = 1,
-	EWieldablePetDropRequestReason__EWieldablePetDropRequestReason_MAX = 2
+	EWieldablePetDropRequestReason__Submerged = 1,
+	EWieldablePetDropRequestReason__Escaped = 2,
+	EWieldablePetDropRequestReason__EWieldablePetDropRequestReason_MAX = 3
 };
 
 
@@ -63,8 +68,9 @@ enum class EWieldablePetDropRequestReason : uint8_t
 enum class EPetFeedingReactionType : uint8_t
 {
 	EPetFeedingReactionType__None  = 0,
-	EPetFeedingReactionType__Happy = 1,
-	EPetFeedingReactionType__EPetFeedingReactionType_MAX = 2
+	EPetFeedingReactionType__Sick  = 1,
+	EPetFeedingReactionType__Happy = 2,
+	EPetFeedingReactionType__EPetFeedingReactionType_MAX = 3
 };
 
 
@@ -98,6 +104,14 @@ struct FHangoutSpotParams
 	unsigned char                                      UnknownData00[0x4];                                       // 0x000C(0x0004) MISSED OFFSET
 	TArray<struct FPetHangoutSpotParams>               PetParams;                                                // 0x0010(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 	struct FName                                       FeatureName;                                              // 0x0020(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+};
+
+// ScriptStruct Pets.PetCustomiationOverrideMappingEntry
+// 0x0018
+struct FPetCustomiationOverrideMappingEntry
+{
+	class FString                                      Identifier;                                               // 0x0000(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	class UPetCustomisationOverrideDataAsset*          OverrideAsset;                                            // 0x0010(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 };
 
 // ScriptStruct Pets.PetDangerHearingThreatResponse
@@ -337,6 +351,13 @@ struct FEventPetLeftHangout
 	class AActor*                                      Pet;                                                      // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
+// ScriptStruct Pets.EventPetEnteredHangout
+// 0x0002
+struct FEventPetEnteredHangout
+{
+	unsigned char                                      UnknownData00[0x2];                                       // 0x0000(0x0002) MISSED OFFSET
+};
+
 // ScriptStruct Pets.EventPetSadnessEnd
 // 0x0001
 struct FEventPetSadnessEnd
@@ -380,9 +401,7 @@ struct FEventWieldablePetPutOnPerch
 	struct FName                                       HangoutSpotName;                                          // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
 	uint32_t                                           HangoutSpotIndex;                                         // 0x0010(0x0004) (ZeroConstructor, IsPlainOldData)
 	TWeakObjectPtr<class AActor>                       WieldingActor;                                            // 0x0014(0x0008) (ZeroConstructor, IsPlainOldData)
-	bool                                               ShouldBlockPetEmoteReactions;                             // 0x001C(0x0001) (ZeroConstructor, IsPlainOldData)
-	bool                                               ShouldIgnorePickupFromHangoutTooltipDisplayOffset;        // 0x001D(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x2];                                       // 0x001E(0x0002) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x4];                                       // 0x001C(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct Pets.EventPetDropped

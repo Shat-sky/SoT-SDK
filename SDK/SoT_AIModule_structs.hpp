@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -22,10 +22,12 @@ namespace SDK
 enum class EPathFollowingResult : uint8_t
 {
 	EPathFollowingResult__Success  = 0,
-	EPathFollowingResult__OffPath  = 1,
-	EPathFollowingResult__Aborted  = 2,
-	EPathFollowingResult__Skipped  = 3,
-	EPathFollowingResult__EPathFollowingResult_MAX = 4
+	EPathFollowingResult__Blocked  = 1,
+	EPathFollowingResult__OffPath  = 2,
+	EPathFollowingResult__Aborted  = 3,
+	EPathFollowingResult__Skipped  = 4,
+	EPathFollowingResult__Invalid  = 5,
+	EPathFollowingResult__EPathFollowingResult_MAX = 6
 };
 
 
@@ -33,10 +35,12 @@ enum class EPathFollowingResult : uint8_t
 enum class EEnvQueryStatus : uint8_t
 {
 	EEnvQueryStatus__Processing    = 0,
-	EEnvQueryStatus__Failed        = 1,
-	EEnvQueryStatus__Aborted       = 2,
-	EEnvQueryStatus__OwnerLost     = 3,
-	EEnvQueryStatus__EEnvQueryStatus_MAX = 4
+	EEnvQueryStatus__Success       = 1,
+	EEnvQueryStatus__Failed        = 2,
+	EEnvQueryStatus__Aborted       = 3,
+	EEnvQueryStatus__OwnerLost     = 4,
+	EEnvQueryStatus__MissingParam  = 5,
+	EEnvQueryStatus__EEnvQueryStatus_MAX = 6
 };
 
 
@@ -44,9 +48,11 @@ enum class EEnvQueryStatus : uint8_t
 enum class EAILockSource : uint8_t
 {
 	EAILockSource__Animation       = 0,
-	EAILockSource__Script          = 1,
-	EAILockSource__Gameplay        = 2,
-	EAILockSource__MAX             = 3
+	EAILockSource__Logic           = 1,
+	EAILockSource__Script          = 2,
+	EAILockSource__Gameplay        = 3,
+	EAILockSource__MAX             = 4,
+	EAILockSource__EAILockSource_MAX = 5
 };
 
 
@@ -54,10 +60,12 @@ enum class EAILockSource : uint8_t
 enum class EAIRequestPriority : uint8_t
 {
 	EAIRequestPriority__SoftScript = 0,
-	EAIRequestPriority__HardScript = 1,
-	EAIRequestPriority__Reaction   = 2,
-	EAIRequestPriority__Ultimate   = 3,
-	EAIRequestPriority__EAIRequestPriority_MAX = 4
+	EAIRequestPriority__Logic      = 1,
+	EAIRequestPriority__HardScript = 2,
+	EAIRequestPriority__Reaction   = 3,
+	EAIRequestPriority__Ultimate   = 4,
+	EAIRequestPriority__MAX        = 5,
+	EAIRequestPriority__EAIRequestPriority_MAX = 6
 };
 
 
@@ -65,10 +73,12 @@ enum class EAIRequestPriority : uint8_t
 enum class EPawnActionEventType : uint8_t
 {
 	EPawnActionEventType__Invalid  = 0,
-	EPawnActionEventType__InstantAbort = 1,
-	EPawnActionEventType__FinishedAborting = 2,
-	EPawnActionEventType__FinishedExecution = 3,
-	EPawnActionEventType__EPawnActionEventType_MAX = 4
+	EPawnActionEventType__FailedToStart = 1,
+	EPawnActionEventType__InstantAbort = 2,
+	EPawnActionEventType__FinishedAborting = 3,
+	EPawnActionEventType__FinishedExecution = 4,
+	EPawnActionEventType__Push     = 5,
+	EPawnActionEventType__EPawnActionEventType_MAX = 6
 };
 
 
@@ -76,9 +86,11 @@ enum class EPawnActionEventType : uint8_t
 enum class EPawnActionResult : uint8_t
 {
 	EPawnActionResult__NotStarted  = 0,
-	EPawnActionResult__Success     = 1,
-	EPawnActionResult__Failed      = 2,
-	EPawnActionResult__Aborted     = 3
+	EPawnActionResult__InProgress  = 1,
+	EPawnActionResult__Success     = 2,
+	EPawnActionResult__Failed      = 3,
+	EPawnActionResult__Aborted     = 4,
+	EPawnActionResult__EPawnActionResult_MAX = 5
 };
 
 
@@ -86,10 +98,12 @@ enum class EPawnActionResult : uint8_t
 enum class EPawnActionAbortState : uint8_t
 {
 	EPawnActionAbortState__NeverStarted = 0,
-	EPawnActionAbortState__MarkPendingAbort = 1,
-	EPawnActionAbortState__LatentAbortInProgress = 2,
-	EPawnActionAbortState__AbortDone = 3,
-	EPawnActionAbortState__EPawnActionAbortState_MAX = 4
+	EPawnActionAbortState__NotBeingAborted = 1,
+	EPawnActionAbortState__MarkPendingAbort = 2,
+	EPawnActionAbortState__LatentAbortInProgress = 3,
+	EPawnActionAbortState__AbortDone = 4,
+	EPawnActionAbortState__MAX     = 5,
+	EPawnActionAbortState__EPawnActionAbortState_MAX = 6
 };
 
 
@@ -97,9 +111,10 @@ enum class EPawnActionAbortState : uint8_t
 enum class EAIOptionFlag : uint8_t
 {
 	EAIOptionFlag__Default         = 0,
-	EAIOptionFlag__Disable         = 1,
-	EAIOptionFlag__MAX             = 2,
-	EAIOptionFlag__EAIOptionFlag_MAX = 3
+	EAIOptionFlag__Enable          = 1,
+	EAIOptionFlag__Disable         = 2,
+	EAIOptionFlag__MAX             = 3,
+	EAIOptionFlag__EAIOptionFlag_MAX = 4
 };
 
 
@@ -107,8 +122,9 @@ enum class EAIOptionFlag : uint8_t
 enum class EPathFollowingRequestResult : uint8_t
 {
 	EPathFollowingRequestResult__Failed = 0,
-	EPathFollowingRequestResult__RequestSuccessful = 1,
-	EPathFollowingRequestResult__EPathFollowingRequestResult_MAX = 2
+	EPathFollowingRequestResult__AlreadyAtGoal = 1,
+	EPathFollowingRequestResult__RequestSuccessful = 2,
+	EPathFollowingRequestResult__EPathFollowingRequestResult_MAX = 3
 };
 
 
@@ -116,9 +132,11 @@ enum class EPathFollowingRequestResult : uint8_t
 enum class EPathFollowingAction : uint8_t
 {
 	EPathFollowingAction__Error    = 0,
-	EPathFollowingAction__DirectMove = 1,
-	EPathFollowingAction__PartialPath = 2,
-	EPathFollowingAction__PathToGoal = 3
+	EPathFollowingAction__NoMove   = 1,
+	EPathFollowingAction__DirectMove = 2,
+	EPathFollowingAction__PartialPath = 3,
+	EPathFollowingAction__PathToGoal = 4,
+	EPathFollowingAction__EPathFollowingAction_MAX = 5
 };
 
 
@@ -126,9 +144,10 @@ enum class EPathFollowingAction : uint8_t
 enum class EPathFollowingStatus : uint8_t
 {
 	EPathFollowingStatus__Idle     = 0,
-	EPathFollowingStatus__Paused   = 1,
-	EPathFollowingStatus__Moving   = 2,
-	EPathFollowingStatus__EPathFollowingStatus_MAX = 3
+	EPathFollowingStatus__Waiting  = 1,
+	EPathFollowingStatus__Paused   = 2,
+	EPathFollowingStatus__Moving   = 3,
+	EPathFollowingStatus__EPathFollowingStatus_MAX = 4
 };
 
 
@@ -136,9 +155,10 @@ enum class EPathFollowingStatus : uint8_t
 enum class ETextKeyOperation : uint8_t
 {
 	ETextKeyOperation__Equal       = 0,
-	ETextKeyOperation__Contain     = 1,
-	ETextKeyOperation__NotContain  = 2,
-	ETextKeyOperation__ETextKeyOperation_MAX = 3
+	ETextKeyOperation__NotEqual    = 1,
+	ETextKeyOperation__Contain     = 2,
+	ETextKeyOperation__NotContain  = 3,
+	ETextKeyOperation__ETextKeyOperation_MAX = 4
 };
 
 
@@ -146,10 +166,12 @@ enum class ETextKeyOperation : uint8_t
 enum class EArithmeticKeyOperation : uint8_t
 {
 	EArithmeticKeyOperation__Equal = 0,
-	EArithmeticKeyOperation__Less  = 1,
-	EArithmeticKeyOperation__LessOrEqual = 2,
-	EArithmeticKeyOperation__Greater = 3,
-	EArithmeticKeyOperation__EArithmeticKeyOperation_MAX = 4
+	EArithmeticKeyOperation__NotEqual = 1,
+	EArithmeticKeyOperation__Less  = 2,
+	EArithmeticKeyOperation__LessOrEqual = 3,
+	EArithmeticKeyOperation__Greater = 4,
+	EArithmeticKeyOperation__GreaterOrEqual = 5,
+	EArithmeticKeyOperation__EArithmeticKeyOperation_MAX = 6
 };
 
 
@@ -157,7 +179,8 @@ enum class EArithmeticKeyOperation : uint8_t
 enum class EBasicKeyOperation : uint8_t
 {
 	EBasicKeyOperation__Set        = 0,
-	EBasicKeyOperation__EBasicKeyOperation_MAX = 1
+	EBasicKeyOperation__NotSet     = 1,
+	EBasicKeyOperation__EBasicKeyOperation_MAX = 2
 };
 
 
@@ -165,9 +188,10 @@ enum class EBasicKeyOperation : uint8_t
 enum class EBTFlowAbortMode : uint8_t
 {
 	EBTFlowAbortMode__None         = 0,
-	EBTFlowAbortMode__Self         = 1,
-	EBTFlowAbortMode__Both         = 2,
-	EBTFlowAbortMode__EBTFlowAbortMode_MAX = 3
+	EBTFlowAbortMode__LowerPriority = 1,
+	EBTFlowAbortMode__Self         = 2,
+	EBTFlowAbortMode__Both         = 3,
+	EBTFlowAbortMode__EBTFlowAbortMode_MAX = 4
 };
 
 
@@ -175,9 +199,10 @@ enum class EBTFlowAbortMode : uint8_t
 enum class EBTNodeResult : uint8_t
 {
 	EBTNodeResult__Succeeded       = 0,
-	EBTNodeResult__Aborted         = 1,
-	EBTNodeResult__InProgress      = 2,
-	EBTNodeResult__EBTNodeResult_MAX = 3
+	EBTNodeResult__Failed          = 1,
+	EBTNodeResult__Aborted         = 2,
+	EBTNodeResult__InProgress      = 3,
+	EBTNodeResult__EBTNodeResult_MAX = 4
 };
 
 
@@ -185,9 +210,10 @@ enum class EBTNodeResult : uint8_t
 enum class ETeamAttitude : uint8_t
 {
 	ETeamAttitude__Friendly        = 0,
-	ETeamAttitude__Hostile         = 1,
-	ETeamAttitude__Alliance        = 2,
-	ETeamAttitude__ETeamAttitude_MAX = 3
+	ETeamAttitude__Neutral         = 1,
+	ETeamAttitude__Hostile         = 2,
+	ETeamAttitude__Alliance        = 3,
+	ETeamAttitude__ETeamAttitude_MAX = 4
 };
 
 
@@ -195,7 +221,8 @@ enum class ETeamAttitude : uint8_t
 enum class EAISenseNotifyType : uint8_t
 {
 	EAISenseNotifyType__OnEveryPerception = 0,
-	EAISenseNotifyType__EAISenseNotifyType_MAX = 1
+	EAISenseNotifyType__OnPerceptionChange = 1,
+	EAISenseNotifyType__EAISenseNotifyType_MAX = 2
 };
 
 
@@ -203,9 +230,11 @@ enum class EAISenseNotifyType : uint8_t
 enum class EAITaskPriority : uint8_t
 {
 	EAITaskPriority__Lowest        = 0,
-	EAITaskPriority__AutonomousAI  = 1,
-	EAITaskPriority__High          = 2,
-	EAITaskPriority__Ultimate      = 3
+	EAITaskPriority__Low           = 1,
+	EAITaskPriority__AutonomousAI  = 2,
+	EAITaskPriority__High          = 3,
+	EAITaskPriority__Ultimate      = 4,
+	EAITaskPriority__EAITaskPriority_MAX = 5
 };
 
 
@@ -213,9 +242,11 @@ enum class EAITaskPriority : uint8_t
 enum class EBTDecoratorLogic : uint8_t
 {
 	EBTDecoratorLogic__Invalid     = 0,
-	EBTDecoratorLogic__And         = 1,
-	EBTDecoratorLogic__Or          = 2,
-	EBTDecoratorLogic__Not         = 3
+	EBTDecoratorLogic__Test        = 1,
+	EBTDecoratorLogic__And         = 2,
+	EBTDecoratorLogic__Or          = 3,
+	EBTDecoratorLogic__Not         = 4,
+	EBTDecoratorLogic__EBTDecoratorLogic_MAX = 5
 };
 
 
@@ -223,7 +254,8 @@ enum class EBTDecoratorLogic : uint8_t
 enum class EBTChildIndex : uint8_t
 {
 	EBTChildIndex__FirstNode       = 0,
-	EBTChildIndex__EBTChildIndex_MAX = 1
+	EBTChildIndex__TaskNode        = 1,
+	EBTChildIndex__EBTChildIndex_MAX = 2
 };
 
 
@@ -231,7 +263,8 @@ enum class EBTChildIndex : uint8_t
 enum class EBTBlackboardRestart : uint8_t
 {
 	EBTBlackboardRestart__ValueChange = 0,
-	EBTBlackboardRestart__EBTBlackboardRestart_MAX = 1
+	EBTBlackboardRestart__ResultChange = 1,
+	EBTBlackboardRestart__EBTBlackboardRestart_MAX = 2
 };
 
 
@@ -239,7 +272,8 @@ enum class EBTBlackboardRestart : uint8_t
 enum class EBlackBoardEntryComparison : uint8_t
 {
 	EBlackBoardEntryComparison__Equal = 0,
-	EBlackBoardEntryComparison__EBlackBoardEntryComparison_MAX = 1
+	EBlackBoardEntryComparison__NotEqual = 1,
+	EBlackBoardEntryComparison__EBlackBoardEntryComparison_MAX = 2
 };
 
 
@@ -247,8 +281,9 @@ enum class EBlackBoardEntryComparison : uint8_t
 enum class EPathExistanceQueryType : uint8_t
 {
 	EPathExistanceQueryType__NavmeshRaycast2D = 0,
-	EPathExistanceQueryType__RegularPathFinding = 1,
-	EPathExistanceQueryType__EPathExistanceQueryType_MAX = 2
+	EPathExistanceQueryType__HierarchicalQuery = 1,
+	EPathExistanceQueryType__RegularPathFinding = 2,
+	EPathExistanceQueryType__EPathExistanceQueryType_MAX = 3
 };
 
 
@@ -256,7 +291,8 @@ enum class EPathExistanceQueryType : uint8_t
 enum class EBTParallelMode : uint8_t
 {
 	EBTParallelMode__AbortBackground = 0,
-	EBTParallelMode__EBTParallelMode_MAX = 1
+	EBTParallelMode__WaitForBackground = 1,
+	EBTParallelMode__EBTParallelMode_MAX = 2
 };
 
 
@@ -264,8 +300,9 @@ enum class EBTParallelMode : uint8_t
 enum class EEnvQueryTestClamping : uint8_t
 {
 	EEnvQueryTestClamping__None    = 0,
-	EEnvQueryTestClamping__FilterThreshold = 1,
-	EEnvQueryTestClamping__EEnvQueryTestClamping_MAX = 2
+	EEnvQueryTestClamping__SpecifiedValue = 1,
+	EEnvQueryTestClamping__FilterThreshold = 2,
+	EEnvQueryTestClamping__EEnvQueryTestClamping_MAX = 3
 };
 
 
@@ -273,7 +310,8 @@ enum class EEnvQueryTestClamping : uint8_t
 enum class EEnvDirection : uint8_t
 {
 	EEnvDirection__TwoPoints       = 0,
-	EEnvDirection__EEnvDirection_MAX = 1
+	EEnvDirection__Rotation        = 1,
+	EEnvDirection__EEnvDirection_MAX = 2
 };
 
 
@@ -281,9 +319,10 @@ enum class EEnvDirection : uint8_t
 enum class EEnvTraceShape : uint8_t
 {
 	EEnvTraceShape__Line           = 0,
-	EEnvTraceShape__Sphere         = 1,
-	EEnvTraceShape__Capsule        = 2,
-	EEnvTraceShape__EEnvTraceShape_MAX = 3
+	EEnvTraceShape__Box            = 1,
+	EEnvTraceShape__Sphere         = 2,
+	EEnvTraceShape__Capsule        = 3,
+	EEnvTraceShape__EEnvTraceShape_MAX = 4
 };
 
 
@@ -291,9 +330,10 @@ enum class EEnvTraceShape : uint8_t
 enum class EEnvQueryTrace : uint8_t
 {
 	EEnvQueryTrace__None           = 0,
-	EEnvQueryTrace__Geometry       = 1,
-	EEnvQueryTrace__RejectGeometry = 2,
-	EEnvQueryTrace__EEnvQueryTrace_MAX = 3
+	EEnvQueryTrace__Navigation     = 1,
+	EEnvQueryTrace__Geometry       = 2,
+	EEnvQueryTrace__RejectGeometry = 3,
+	EEnvQueryTrace__EEnvQueryTrace_MAX = 4
 };
 
 
@@ -301,8 +341,9 @@ enum class EEnvQueryTrace : uint8_t
 enum class EEnvQueryParam : uint8_t
 {
 	EEnvQueryParam__Float          = 0,
-	EEnvQueryParam__Bool           = 1,
-	EEnvQueryParam__EEnvQueryParam_MAX = 2
+	EEnvQueryParam__Int            = 1,
+	EEnvQueryParam__Bool           = 2,
+	EEnvQueryParam__EEnvQueryParam_MAX = 3
 };
 
 
@@ -310,9 +351,11 @@ enum class EEnvQueryParam : uint8_t
 enum class EEnvQueryRunMode : uint8_t
 {
 	EEnvQueryRunMode__SingleResult = 0,
-	EEnvQueryRunMode__RandomBest25Pct = 1,
-	EEnvQueryRunMode__AllMatching  = 2,
-	EEnvQueryRunMode__RandomFromAllMatching = 3
+	EEnvQueryRunMode__RandomBest5Pct = 1,
+	EEnvQueryRunMode__RandomBest25Pct = 2,
+	EEnvQueryRunMode__AllMatching  = 3,
+	EEnvQueryRunMode__RandomFromAllMatching = 4,
+	EEnvQueryRunMode__EEnvQueryRunMode_MAX = 5
 };
 
 
@@ -320,8 +363,9 @@ enum class EEnvQueryRunMode : uint8_t
 enum class EEnvTestScoreOperator : uint8_t
 {
 	EEnvTestScoreOperator__AverageScore = 0,
-	EEnvTestScoreOperator__MaxScore = 1,
-	EEnvTestScoreOperator__EEnvTestScoreOperator_MAX = 2
+	EEnvTestScoreOperator__MinScore = 1,
+	EEnvTestScoreOperator__MaxScore = 2,
+	EEnvTestScoreOperator__EEnvTestScoreOperator_MAX = 3
 };
 
 
@@ -329,7 +373,8 @@ enum class EEnvTestScoreOperator : uint8_t
 enum class EEnvTestFilterOperator : uint8_t
 {
 	EEnvTestFilterOperator__AllPass = 0,
-	EEnvTestFilterOperator__EEnvTestFilterOperator_MAX = 1
+	EEnvTestFilterOperator__AnyPass = 1,
+	EEnvTestFilterOperator__EEnvTestFilterOperator_MAX = 2
 };
 
 
@@ -337,8 +382,9 @@ enum class EEnvTestFilterOperator : uint8_t
 enum class EEnvTestCost : uint8_t
 {
 	EEnvTestCost__Low              = 0,
-	EEnvTestCost__High             = 1,
-	EEnvTestCost__EEnvTestCost_MAX = 2
+	EEnvTestCost__Medium           = 1,
+	EEnvTestCost__High             = 2,
+	EEnvTestCost__EEnvTestCost_MAX = 3
 };
 
 
@@ -346,10 +392,12 @@ enum class EEnvTestCost : uint8_t
 enum class EEnvTestWeight : uint8_t
 {
 	EEnvTestWeight__None           = 0,
-	EEnvTestWeight__Inverse        = 1,
-	EEnvTestWeight__Unused         = 2,
-	EEnvTestWeight__Constant       = 3,
-	EEnvTestWeight__EEnvTestWeight_MAX = 4
+	EEnvTestWeight__Square         = 1,
+	EEnvTestWeight__Inverse        = 2,
+	EEnvTestWeight__Unused         = 3,
+	EEnvTestWeight__Constant       = 4,
+	EEnvTestWeight__Skip           = 5,
+	EEnvTestWeight__EEnvTestWeight_MAX = 6
 };
 
 
@@ -357,9 +405,10 @@ enum class EEnvTestWeight : uint8_t
 enum class EEnvTestScoreEquation : uint8_t
 {
 	EEnvTestScoreEquation__Linear  = 0,
-	EEnvTestScoreEquation__InverseLinear = 1,
-	EEnvTestScoreEquation__Constant = 2,
-	EEnvTestScoreEquation__EEnvTestScoreEquation_MAX = 3
+	EEnvTestScoreEquation__Square  = 1,
+	EEnvTestScoreEquation__InverseLinear = 2,
+	EEnvTestScoreEquation__Constant = 3,
+	EEnvTestScoreEquation__EEnvTestScoreEquation_MAX = 4
 };
 
 
@@ -367,9 +416,10 @@ enum class EEnvTestScoreEquation : uint8_t
 enum class EEnvTestFilterType : uint8_t
 {
 	EEnvTestFilterType__Minimum    = 0,
-	EEnvTestFilterType__Range      = 1,
-	EEnvTestFilterType__Match      = 2,
-	EEnvTestFilterType__EEnvTestFilterType_MAX = 3
+	EEnvTestFilterType__Maximum    = 1,
+	EEnvTestFilterType__Range      = 2,
+	EEnvTestFilterType__Match      = 3,
+	EEnvTestFilterType__EEnvTestFilterType_MAX = 4
 };
 
 
@@ -377,8 +427,9 @@ enum class EEnvTestFilterType : uint8_t
 enum class EEnvTestPurpose : uint8_t
 {
 	EEnvTestPurpose__Filter        = 0,
-	EEnvTestPurpose__FilterAndScore = 1,
-	EEnvTestPurpose__EEnvTestPurpose_MAX = 2
+	EEnvTestPurpose__Score         = 1,
+	EEnvTestPurpose__FilterAndScore = 2,
+	EEnvTestPurpose__EEnvTestPurpose_MAX = 3
 };
 
 
@@ -386,7 +437,8 @@ enum class EEnvTestPurpose : uint8_t
 enum class EPawnActionFailHandling : uint8_t
 {
 	EPawnActionFailHandling__RequireSuccess = 0,
-	EPawnActionFailHandling__EPawnActionFailHandling_MAX = 1
+	EPawnActionFailHandling__IgnoreFailure = 1,
+	EPawnActionFailHandling__EPawnActionFailHandling_MAX = 2
 };
 
 
@@ -394,7 +446,8 @@ enum class EPawnActionFailHandling : uint8_t
 enum class EPawnSubActionTriggeringPolicy : uint8_t
 {
 	EPawnSubActionTriggeringPolicy__CopyBeforeTriggering = 0,
-	EPawnSubActionTriggeringPolicy__EPawnSubActionTriggeringPolicy_MAX = 1
+	EPawnSubActionTriggeringPolicy__ReuseInstances = 1,
+	EPawnSubActionTriggeringPolicy__EPawnSubActionTriggeringPolicy_MAX = 2
 };
 
 
@@ -402,8 +455,9 @@ enum class EPawnSubActionTriggeringPolicy : uint8_t
 enum class EEnvTestDistance : uint8_t
 {
 	EEnvTestDistance__Distance3D   = 0,
-	EEnvTestDistance__DistanceZ    = 1,
-	EEnvTestDistance__EEnvTestDistance_MAX = 2
+	EEnvTestDistance__Distance2D   = 1,
+	EEnvTestDistance__DistanceZ    = 2,
+	EEnvTestDistance__EEnvTestDistance_MAX = 3
 };
 
 
@@ -411,7 +465,8 @@ enum class EEnvTestDistance : uint8_t
 enum class EEnvTestDot : uint8_t
 {
 	EEnvTestDot__Dot3D             = 0,
-	EEnvTestDot__EEnvTestDot_MAX   = 1
+	EEnvTestDot__Dot2D             = 1,
+	EEnvTestDot__EEnvTestDot_MAX   = 2
 };
 
 
@@ -419,8 +474,9 @@ enum class EEnvTestDot : uint8_t
 enum class EEnvTestPathfinding : uint8_t
 {
 	EEnvTestPathfinding__PathExist = 0,
-	EEnvTestPathfinding__PathLength = 1,
-	EEnvTestPathfinding__EEnvTestPathfinding_MAX = 2
+	EEnvTestPathfinding__PathCost  = 1,
+	EEnvTestPathfinding__PathLength = 2,
+	EEnvTestPathfinding__EEnvTestPathfinding_MAX = 3
 };
 
 
@@ -428,8 +484,9 @@ enum class EEnvTestPathfinding : uint8_t
 enum class EEnvQueryHightlightMode : uint8_t
 {
 	EEnvQueryHightlightMode__All   = 0,
-	EEnvQueryHightlightMode__Best25Pct = 1,
-	EEnvQueryHightlightMode__EEnvQueryHightlightMode_MAX = 2
+	EEnvQueryHightlightMode__Best5Pct = 1,
+	EEnvQueryHightlightMode__Best25Pct = 2,
+	EEnvQueryHightlightMode__EEnvQueryHightlightMode_MAX = 3
 };
 
 
@@ -437,7 +494,8 @@ enum class EEnvQueryHightlightMode : uint8_t
 enum class EPawnActionMoveMode : uint8_t
 {
 	EPawnActionMoveMode__UsePathfinding = 0,
-	EPawnActionMoveMode__EPawnActionMoveMode_MAX = 1
+	EPawnActionMoveMode__StraightLine = 1,
+	EPawnActionMoveMode__EPawnActionMoveMode_MAX = 2
 };
 
 

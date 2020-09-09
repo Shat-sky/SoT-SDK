@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,7 +20,8 @@ namespace SDK
 enum class EJsonTestEnum : uint8_t
 {
 	EJsonTestEnum__Value0          = 0,
-	EJsonTestEnum__EJsonTestEnum_MAX = 1
+	EJsonTestEnum__Value1          = 1,
+	EJsonTestEnum__EJsonTestEnum_MAX = 2
 };
 
 

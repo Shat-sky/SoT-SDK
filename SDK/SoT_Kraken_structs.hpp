@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,9 +23,10 @@ namespace SDK
 enum class EKrakenBehaviourType : uint8_t
 {
 	EKrakenBehaviourType__Idle     = 0,
-	EKrakenBehaviourType__ShipWrapping = 1,
-	EKrakenBehaviourType__PlayerGrabbing = 2,
-	EKrakenBehaviourType__EKrakenBehaviourType_MAX = 3
+	EKrakenBehaviourType__ShipHitting = 1,
+	EKrakenBehaviourType__ShipWrapping = 2,
+	EKrakenBehaviourType__PlayerGrabbing = 3,
+	EKrakenBehaviourType__EKrakenBehaviourType_MAX = 4
 };
 
 
@@ -33,12 +34,14 @@ enum class EKrakenBehaviourType : uint8_t
 enum class EKrakenShipWrappingTentacleState : uint8_t
 {
 	EKrakenShipWrappingTentacleState__Dormant = 0,
-	EKrakenShipWrappingTentacleState__AmbientWobble = 1,
-	EKrakenShipWrappingTentacleState__EnteringShakeAttack = 2,
-	EKrakenShipWrappingTentacleState__ShakeAttack = 3,
-	EKrakenShipWrappingTentacleState__HeavyAttack = 4,
-	EKrakenShipWrappingTentacleState__Unwrapping = 5,
-	EKrakenShipWrappingTentacleState__EKrakenShipWrappingTentacleState_MAX = 6
+	EKrakenShipWrappingTentacleState__Wrapping = 1,
+	EKrakenShipWrappingTentacleState__AmbientWobble = 2,
+	EKrakenShipWrappingTentacleState__EnteringShakeAttack = 3,
+	EKrakenShipWrappingTentacleState__ShakeAttack = 4,
+	EKrakenShipWrappingTentacleState__ExitingShakeAttack = 5,
+	EKrakenShipWrappingTentacleState__HeavyAttack = 6,
+	EKrakenShipWrappingTentacleState__Unwrapping = 7,
+	EKrakenShipWrappingTentacleState__EKrakenShipWrappingTentacleState_MAX = 8
 };
 
 
@@ -46,14 +49,16 @@ enum class EKrakenShipWrappingTentacleState : uint8_t
 enum class EKrakenDynamicsStateEvent : uint8_t
 {
 	EKrakenDynamicsStateEvent__Damage = 0,
-	EKrakenDynamicsStateEvent__EKrakenDynamicsStateEvent_MAX = 1
+	EKrakenDynamicsStateEvent__Knockback = 1,
+	EKrakenDynamicsStateEvent__EKrakenDynamicsStateEvent_MAX = 2
 };
 
 
 // Enum Kraken.EKrakenEQSLockReason
 enum class EKrakenEQSLockReason : uint8_t
 {
-	EKrakenEQSLockReason__Spawning = 0
+	EKrakenEQSLockReason__Spawning = 0,
+	EKrakenEQSLockReason__EKrakenEQSLockReason_MAX = 1
 };
 
 
@@ -61,9 +66,11 @@ enum class EKrakenEQSLockReason : uint8_t
 enum class EKrakenDespawnReason : uint8_t
 {
 	EKrakenDespawnReason__Invalid  = 0,
-	EKrakenDespawnReason__TimedOutWithNoTargets = 1,
-	EKrakenDespawnReason__TimedOutWithTarget = 2,
-	EKrakenDespawnReason__Dismissed = 3
+	EKrakenDespawnReason__Defeated = 1,
+	EKrakenDespawnReason__TimedOutWithNoTargets = 2,
+	EKrakenDespawnReason__TimedOutWithTarget = 3,
+	EKrakenDespawnReason__Dismissed = 4,
+	EKrakenDespawnReason__EKrakenDespawnReason_MAX = 5
 };
 
 
@@ -71,8 +78,9 @@ enum class EKrakenDespawnReason : uint8_t
 enum class EKrakenState : uint8_t
 {
 	EKrakenState__Spawning         = 0,
-	EKrakenState__Despawning       = 1,
-	EKrakenState__EKrakenState_MAX = 2
+	EKrakenState__Active           = 1,
+	EKrakenState__Despawning       = 2,
+	EKrakenState__EKrakenState_MAX = 3
 };
 
 
@@ -80,8 +88,9 @@ enum class EKrakenState : uint8_t
 enum class EKrakenTentacleBehaviourDamageActions : uint8_t
 {
 	EKrakenTentacleBehaviourDamageActions__StayActive = 0,
-	EKrakenTentacleBehaviourDamageActions__FleeInactive = 1,
-	EKrakenTentacleBehaviourDamageActions__EKrakenTentacleBehaviourDamageActions_MAX = 2
+	EKrakenTentacleBehaviourDamageActions__MoveActive = 1,
+	EKrakenTentacleBehaviourDamageActions__FleeInactive = 2,
+	EKrakenTentacleBehaviourDamageActions__EKrakenTentacleBehaviourDamageActions_MAX = 3
 };
 
 

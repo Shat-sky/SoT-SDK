@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -29,8 +29,9 @@ enum class EInterpCurveMode : uint8_t
 enum class ERangeBoundTypes : uint8_t
 {
 	ERangeBoundTypes__Exclusive    = 0,
-	ERangeBoundTypes__Open         = 1,
-	ERangeBoundTypes__ERangeBoundTypes_MAX = 2
+	ERangeBoundTypes__Inclusive    = 1,
+	ERangeBoundTypes__Open         = 2,
+	ERangeBoundTypes__ERangeBoundTypes_MAX = 3
 };
 
 
@@ -38,42 +39,54 @@ enum class ERangeBoundTypes : uint8_t
 enum class EUnit : uint8_t
 {
 	EUnit__Micrometers             = 0,
-	EUnit__Centimeters             = 1,
-	EUnit__Meters                  = 2,
-	EUnit__Kilometers              = 3,
-	EUnit__Feet                    = 4,
-	EUnit__Yards                   = 5,
-	EUnit__Miles                   = 6,
-	EUnit__Degrees                 = 7,
-	EUnit__Radians                 = 8,
-	EUnit__MetersPerSecond         = 9,
-	EUnit__MilesPerHour            = 10,
-	EUnit__Celsius                 = 11,
-	EUnit__Farenheit               = 12,
-	EUnit__Micrograms              = 13,
-	EUnit__Milligrams              = 14,
-	EUnit__Grams                   = 15,
-	EUnit__MetricTons              = 16,
-	EUnit__Ounces                  = 17,
-	EUnit__Pounds                  = 18,
-	EUnit__Newtons                 = 19,
-	EUnit__PoundsForce             = 20,
-	EUnit__KilogramsForce          = 21,
-	EUnit__Kilohertz               = 22,
-	EUnit__Megahertz               = 23,
-	EUnit__Gigahertz               = 24,
-	EUnit__Bytes                   = 25,
-	EUnit__Kilobytes               = 26,
-	EUnit__Megabytes               = 27,
-	EUnit__Terabytes               = 28,
-	EUnit__Lumens                  = 29,
-	EUnit__Milliseconds            = 30,
-	EUnit__Minutes                 = 31,
-	EUnit__Hours                   = 32,
-	EUnit__Days                    = 33,
-	EUnit__Years                   = 34,
-	EUnit__Unspecified             = 35,
-	EUnit__EUnit_MAX               = 36
+	EUnit__Millimeters             = 1,
+	EUnit__Centimeters             = 2,
+	EUnit__Meters                  = 3,
+	EUnit__Kilometers              = 4,
+	EUnit__Inches                  = 5,
+	EUnit__Feet                    = 6,
+	EUnit__Yards                   = 7,
+	EUnit__Miles                   = 8,
+	EUnit__Lightyears              = 9,
+	EUnit__Degrees                 = 10,
+	EUnit__Radians                 = 11,
+	EUnit__MetersPerSecond         = 12,
+	EUnit__KilometersPerHour       = 13,
+	EUnit__MilesPerHour            = 14,
+	EUnit__Celsius                 = 15,
+	EUnit__Farenheit               = 16,
+	EUnit__Kelvin                  = 17,
+	EUnit__Micrograms              = 18,
+	EUnit__Milligrams              = 19,
+	EUnit__Grams                   = 20,
+	EUnit__Kilograms               = 21,
+	EUnit__MetricTons              = 22,
+	EUnit__Ounces                  = 23,
+	EUnit__Pounds                  = 24,
+	EUnit__Stones                  = 25,
+	EUnit__Newtons                 = 26,
+	EUnit__PoundsForce             = 27,
+	EUnit__KilogramsForce          = 28,
+	EUnit__Hertz                   = 29,
+	EUnit__Kilohertz               = 30,
+	EUnit__Megahertz               = 31,
+	EUnit__Gigahertz               = 32,
+	EUnit__RevolutionsPerMinute    = 33,
+	EUnit__Bytes                   = 34,
+	EUnit__Kilobytes               = 35,
+	EUnit__Megabytes               = 36,
+	EUnit__Gigabytes               = 37,
+	EUnit__Terabytes               = 38,
+	EUnit__Lumens                  = 39,
+	EUnit__Milliseconds            = 40,
+	EUnit__Seconds                 = 41,
+	EUnit__Minutes                 = 42,
+	EUnit__Hours                   = 43,
+	EUnit__Days                    = 44,
+	EUnit__Months                  = 45,
+	EUnit__Years                   = 46,
+	EUnit__Unspecified             = 47,
+	EUnit__EUnit_MAX               = 48
 };
 
 
@@ -81,16 +94,20 @@ enum class EUnit : uint8_t
 enum class EMouseCursor : uint8_t
 {
 	EMouseCursor__None             = 0,
-	EMouseCursor__TextEditBeam     = 1,
-	EMouseCursor__ResizeLeftRight  = 2,
-	EMouseCursor__ResizeUpDown     = 3,
-	EMouseCursor__ResizeSouthWest  = 4,
-	EMouseCursor__CardinalCross    = 5,
-	EMouseCursor__Crosshairs       = 6,
-	EMouseCursor__GrabHand         = 7,
-	EMouseCursor__GrabHandClosed   = 8,
-	EMouseCursor__SlashedCircle    = 9,
-	EMouseCursor__EMouseCursor_MAX = 10
+	EMouseCursor__Default          = 1,
+	EMouseCursor__TextEditBeam     = 2,
+	EMouseCursor__ResizeLeftRight  = 3,
+	EMouseCursor__ResizeUpDown     = 4,
+	EMouseCursor__ResizeSouthEast  = 5,
+	EMouseCursor__ResizeSouthWest  = 6,
+	EMouseCursor__CardinalCross    = 7,
+	EMouseCursor__Crosshairs       = 8,
+	EMouseCursor__Hand             = 9,
+	EMouseCursor__GrabHand         = 10,
+	EMouseCursor__GrabHandClosed   = 11,
+	EMouseCursor__SlashedCircle    = 12,
+	EMouseCursor__EyeDropper       = 13,
+	EMouseCursor__EMouseCursor_MAX = 14
 };
 
 
@@ -152,9 +169,18 @@ enum class EPixelFormat : uint8_t
 enum class EAxis : uint8_t
 {
 	EAxis__None                    = 0,
-	EAxis__Y                       = 1,
-	EAxis__Z                       = 2,
-	EAxis__EAxis_MAX               = 3
+	EAxis__X                       = 1,
+	EAxis__Y                       = 2,
+	EAxis__Z                       = 3,
+	EAxis__EAxis_MAX               = 4,
+	EAxisOption                    = 5,
+	EAxisOption__X                 = 6,
+	EAxisOption__Y                 = 7,
+	EAxisOption__Z                 = 8,
+	EAxisOption__X_Neg             = 9,
+	EAxisOption__Y_Neg             = 10,
+	EAxisOption__Z_Neg             = 11,
+	EAxisOption__EAxisOption_MAX   = 12
 };
 
 
@@ -162,8 +188,9 @@ enum class EAxis : uint8_t
 enum class ELogTimes : uint8_t
 {
 	ELogTimes__None                = 0,
-	ELogTimes__SinceGStartTime     = 1,
-	ELogTimes__ELogTimes_MAX       = 2
+	ELogTimes__UTC                 = 1,
+	ELogTimes__SinceGStartTime     = 2,
+	ELogTimes__ELogTimes_MAX       = 3
 };
 
 
@@ -171,7 +198,8 @@ enum class ELogTimes : uint8_t
 enum class ESearchDir : uint8_t
 {
 	ESearchDir__FromStart          = 0,
-	ESearchDir__ESearchDir_MAX     = 1
+	ESearchDir__FromEnd            = 1,
+	ESearchDir__ESearchDir_MAX     = 2
 };
 
 
@@ -179,7 +207,8 @@ enum class ESearchDir : uint8_t
 enum class ESearchCase : uint8_t
 {
 	ESearchCase__CaseSensitive     = 0,
-	ESearchCase__ESearchCase_MAX   = 1
+	ESearchCase__IgnoreCase        = 1,
+	ESearchCase__ESearchCase_MAX   = 2
 };
 
 

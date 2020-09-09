@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,7 +20,8 @@ namespace SDK
 enum class EHullDamageDeck : uint8_t
 {
 	EHullDamageDeck__Bottom        = 0,
-	EHullDamageDeck__EHullDamageDeck_MAX = 1
+	EHullDamageDeck__Mid           = 1,
+	EHullDamageDeck__EHullDamageDeck_MAX = 2
 };
 
 
@@ -41,8 +42,7 @@ struct FDistanceAndLevelOfDamage
 // 0x0030
 struct FShipPartLevelsOfDamage
 {
-	TAssetPtr<class UClass>                            ActorClass;                                               // 0x0000(0x001C) (Edit)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0000(0x0004) FIX WRONG TYPE SIZE OF PREVIOUS PROPERTY
+	TAssetPtr<class UClass>                            ActorClass;                                               // 0x0000(0x0020) (Edit)
 	TArray<struct FDistanceAndLevelOfDamage>           DamagePerDistance;                                        // 0x0020(0x0010) (Edit, ZeroConstructor)
 };
 

@@ -1,17 +1,17 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_ResourceContentionFramework_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_Maths_classes.hpp"
 #include "SoT_Athena_classes.hpp"
-#include "SoT_ResourceContentionFramework_classes.hpp"
 #include "SoT_Kraken_classes.hpp"
 
 namespace SDK
@@ -24,8 +24,9 @@ namespace SDK
 enum class EAshCloudState : uint8_t
 {
 	EAshCloudState__Spawning       = 0,
-	EAshCloudState__Dissipating    = 1,
-	EAshCloudState__EAshCloudState_MAX = 2
+	EAshCloudState__Active         = 1,
+	EAshCloudState__Dissipating    = 2,
+	EAshCloudState__EAshCloudState_MAX = 3
 };
 
 
@@ -33,8 +34,9 @@ enum class EAshCloudState : uint8_t
 enum class EVolcanoTargetHitType : uint8_t
 {
 	EVolcanoTargetHitType__OnTarget = 0,
-	EVolcanoTargetHitType__Random  = 1,
-	EVolcanoTargetHitType__EVolcanoTargetHitType_MAX = 2
+	EVolcanoTargetHitType__NearMiss = 1,
+	EVolcanoTargetHitType__Random  = 2,
+	EVolcanoTargetHitType__EVolcanoTargetHitType_MAX = 3
 };
 
 
@@ -42,8 +44,9 @@ enum class EVolcanoTargetHitType : uint8_t
 enum class EVolcanoTargetType : uint8_t
 {
 	EVolcanoTargetType__Player     = 0,
-	EVolcanoTargetType__Watercraft = 1,
-	EVolcanoTargetType__EVolcanoTargetType_MAX = 2
+	EVolcanoTargetType__Ship       = 1,
+	EVolcanoTargetType__Watercraft = 2,
+	EVolcanoTargetType__EVolcanoTargetType_MAX = 3
 };
 
 
@@ -51,7 +54,8 @@ enum class EVolcanoTargetType : uint8_t
 enum class EAshenLordWorldEndCloudState : uint8_t
 {
 	EAshenLordWorldEndCloudState__Inactive = 0,
-	EAshenLordWorldEndCloudState__EAshenLordWorldEndCloudState_MAX = 1
+	EAshenLordWorldEndCloudState__Active = 1,
+	EAshenLordWorldEndCloudState__EAshenLordWorldEndCloudState_MAX = 2
 };
 
 
@@ -59,9 +63,10 @@ enum class EAshenLordWorldEndCloudState : uint8_t
 enum class EEarthquakeState : uint8_t
 {
 	EEarthquakeState__Dormant      = 0,
-	EEarthquakeState__Active       = 1,
-	EEarthquakeState__CoolingDown  = 2,
-	EEarthquakeState__EEarthquakeState_MAX = 3
+	EEarthquakeState__WarmingUp    = 1,
+	EEarthquakeState__Active       = 2,
+	EEarthquakeState__CoolingDown  = 3,
+	EEarthquakeState__EEarthquakeState_MAX = 4
 };
 
 
@@ -69,7 +74,8 @@ enum class EEarthquakeState : uint8_t
 enum class EGeyserState : uint8_t
 {
 	EGeyserState__Dormant          = 0,
-	EGeyserState__EGeyserState_MAX = 1
+	EGeyserState__Active           = 1,
+	EGeyserState__EGeyserState_MAX = 2
 };
 
 
@@ -77,7 +83,8 @@ enum class EGeyserState : uint8_t
 enum class EGeyserManagerState : uint8_t
 {
 	EGeyserManagerState__Dormant   = 0,
-	EGeyserManagerState__EGeyserManagerState_MAX = 1
+	EGeyserManagerState__Active    = 1,
+	EGeyserManagerState__EGeyserManagerState_MAX = 2
 };
 
 
@@ -85,8 +92,9 @@ enum class EGeyserManagerState : uint8_t
 enum class EVolcanoState : uint8_t
 {
 	EVolcanoState__Dormant         = 0,
-	EVolcanoState__Erupting        = 1,
-	EVolcanoState__EVolcanoState_MAX = 2
+	EVolcanoState__WarmingUp       = 1,
+	EVolcanoState__Erupting        = 2,
+	EVolcanoState__EVolcanoState_MAX = 3
 };
 
 

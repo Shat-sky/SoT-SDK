@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,7 +20,8 @@ namespace SDK
 enum class ETaskResourceOverlapPolicy : uint8_t
 {
 	ETaskResourceOverlapPolicy__StartOnTop = 0,
-	ETaskResourceOverlapPolicy__ETaskResourceOverlapPolicy_MAX = 1
+	ETaskResourceOverlapPolicy__StartAtEnd = 1,
+	ETaskResourceOverlapPolicy__ETaskResourceOverlapPolicy_MAX = 2
 };
 
 
@@ -28,9 +29,11 @@ enum class ETaskResourceOverlapPolicy : uint8_t
 enum class EGameplayTaskState : uint8_t
 {
 	EGameplayTaskState__Uninitialized = 0,
-	EGameplayTaskState__Paused     = 1,
-	EGameplayTaskState__Active     = 2,
-	EGameplayTaskState__Finished   = 3
+	EGameplayTaskState__AwaitingActivation = 1,
+	EGameplayTaskState__Paused     = 2,
+	EGameplayTaskState__Active     = 3,
+	EGameplayTaskState__Finished   = 4,
+	EGameplayTaskState__EGameplayTaskState_MAX = 5
 };
 
 
@@ -38,9 +41,11 @@ enum class EGameplayTaskState : uint8_t
 enum class EGameplayTaskRunResult : uint8_t
 {
 	EGameplayTaskRunResult__Error  = 0,
-	EGameplayTaskRunResult__Success_Paused = 1,
-	EGameplayTaskRunResult__Success_Active = 2,
-	EGameplayTaskRunResult__Success_Finished = 3
+	EGameplayTaskRunResult__Failed = 1,
+	EGameplayTaskRunResult__Success_Paused = 2,
+	EGameplayTaskRunResult__Success_Active = 3,
+	EGameplayTaskRunResult__Success_Finished = 4,
+	EGameplayTaskRunResult__EGameplayTaskRunResult_MAX = 5
 };
 
 

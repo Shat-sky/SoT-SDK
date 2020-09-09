@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,9 +20,10 @@ namespace SDK
 enum class EIPGEthnicity : uint8_t
 {
 	EIPGEthnicity__UNSPECIFIED     = 0,
-	EIPGEthnicity__BLACK           = 1,
-	EIPGEthnicity__WHITE           = 2,
-	EIPGEthnicity__EIPGEthnicity_MAX = 3
+	EIPGEthnicity__ASIAN           = 1,
+	EIPGEthnicity__BLACK           = 2,
+	EIPGEthnicity__WHITE           = 3,
+	EIPGEthnicity__EIPGEthnicity_MAX = 4
 };
 
 
@@ -30,8 +31,9 @@ enum class EIPGEthnicity : uint8_t
 enum class EIPGGender : uint8_t
 {
 	EIPGGender__UNSPECIFIED        = 0,
-	EIPGGender__FEMALE             = 1,
-	EIPGGender__EIPGGender_MAX     = 2
+	EIPGGender__MALE               = 1,
+	EIPGGender__FEMALE             = 2,
+	EIPGGender__EIPGGender_MAX     = 3
 };
 
 
@@ -39,7 +41,8 @@ enum class EIPGGender : uint8_t
 enum class EIPGPirateType : uint8_t
 {
 	EIPGPirateType__PLAYER         = 0,
-	EIPGPirateType__EIPGPirateType_MAX = 1
+	EIPGPirateType__NPC            = 1,
+	EIPGPirateType__EIPGPirateType_MAX = 2
 };
 
 
@@ -47,7 +50,8 @@ enum class EIPGPirateType : uint8_t
 enum class EIPGTestEnum : uint8_t
 {
 	EIPGTestEnum__RANDOM           = 0,
-	EIPGTestEnum__EIPGTestEnum_MAX = 1
+	EIPGTestEnum__RANDOM_OR_NONE   = 1,
+	EIPGTestEnum__EIPGTestEnum_MAX = 2
 };
 
 
@@ -55,7 +59,8 @@ enum class EIPGTestEnum : uint8_t
 enum class EIPGPartType : uint8_t
 {
 	EIPGPartType__DEFAULT          = 0,
-	EIPGPartType__EIPGPartType_MAX = 1
+	EIPGPartType__INVERSE          = 1,
+	EIPGPartType__EIPGPartType_MAX = 2
 };
 
 
@@ -63,7 +68,8 @@ enum class EIPGPartType : uint8_t
 enum class EIPGSlotType : uint8_t
 {
 	EIPGSlotType__DEFAULT          = 0,
-	EIPGSlotType__EIPGSlotType_MAX = 1
+	EIPGSlotType__DYNAMIC          = 1,
+	EIPGSlotType__EIPGSlotType_MAX = 2
 };
 
 
@@ -71,10 +77,12 @@ enum class EIPGSlotType : uint8_t
 enum class EIPGSetMode : uint8_t
 {
 	EIPGSetMode__RANDOM            = 0,
-	EIPGSetMode__BLEND2_FIRST_ORDER = 1,
-	EIPGSetMode__BLEND2_RANDOM     = 2,
-	EIPGSetMode__NONE              = 3,
-	EIPGSetMode__EIPGSetMode_MAX   = 4
+	EIPGSetMode__RANDOM_OR_NONE    = 1,
+	EIPGSetMode__BLEND2_FIRST_ORDER = 2,
+	EIPGSetMode__BLEND2_RANDOM     = 3,
+	EIPGSetMode__NONE              = 4,
+	EIPGSetMode__BLEND2_LAST_UNDERSCORE = 5,
+	EIPGSetMode__EIPGSetMode_MAX   = 6
 };
 
 
@@ -82,13 +90,16 @@ enum class EIPGSetMode : uint8_t
 enum class EIPGBlendType : uint8_t
 {
 	EIPGBlendType__NIX             = 0,
-	EIPGBlendType__RND             = 1,
-	EIPGBlendType__ONOFF           = 2,
-	EIPGBlendType__POSNEG          = 3,
-	EIPGBlendType__ON              = 4,
-	EIPGBlendType__ONOFF_NEAREST   = 5,
-	EIPGBlendType__ONOFF_BIAS      = 6,
-	EIPGBlendType__EIPGBlendType_MAX = 7
+	EIPGBlendType__NIL             = 1,
+	EIPGBlendType__RND             = 2,
+	EIPGBlendType__ONOFF           = 3,
+	EIPGBlendType__POSNEG          = 4,
+	EIPGBlendType__MAP             = 5,
+	EIPGBlendType__ON              = 6,
+	EIPGBlendType__ONOFF_NEAREST   = 7,
+	EIPGBlendType__ONOFF_BIAS      = 8,
+	EIPGBlendType__ONOFF_BIAS_NEAREST = 9,
+	EIPGBlendType__EIPGBlendType_MAX = 10
 };
 
 
@@ -96,12 +107,14 @@ enum class EIPGBlendType : uint8_t
 enum class EPirateBakeFlags : uint8_t
 {
 	EPirateBakeFlags__None         = 0,
-	EPirateBakeFlags__NoObjectFading = 1,
-	EPirateBakeFlags__NoLODs       = 2,
-	EPirateBakeFlags__StripTopLOD  = 3,
-	EPirateBakeFlags__DiscardImmediately = 4,
-	EPirateBakeFlags__HighPriority = 5,
-	EPirateBakeFlags__EPirateBakeFlags_MAX = 6
+	EPirateBakeFlags__FirstPerson  = 1,
+	EPirateBakeFlags__NoObjectFading = 2,
+	EPirateBakeFlags__NoLODs       = 3,
+	EPirateBakeFlags__StripTopLOD  = 4,
+	EPirateBakeFlags__KeepCPUData  = 5,
+	EPirateBakeFlags__DiscardImmediately = 6,
+	EPirateBakeFlags__HighPriority = 7,
+	EPirateBakeFlags__EPirateBakeFlags_MAX = 8
 };
 
 
@@ -109,7 +122,8 @@ enum class EPirateBakeFlags : uint8_t
 enum class EFileAccessAsyncResult : uint8_t
 {
 	EFileAccessAsyncResult__Succeeded = 0,
-	EFileAccessAsyncResult__EFileAccessAsyncResult_MAX = 1
+	EFileAccessAsyncResult__Failed = 1,
+	EFileAccessAsyncResult__EFileAccessAsyncResult_MAX = 2
 };
 
 

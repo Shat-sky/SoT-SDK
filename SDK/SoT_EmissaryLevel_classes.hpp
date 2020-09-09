@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -261,12 +261,11 @@ class UEmissaryShipAffiliationTrackerComponent : public USceneComponent
 {
 public:
 	class UClass*                                      TrackedCompany;                                           // 0x0290(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	TAssetPtr<class UClass>                            EmissaryRepresentationMesh;                               // 0x0298(0x001C) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0298(0x0004) FIX WRONG TYPE SIZE OF PREVIOUS PROPERTY
+	TAssetPtr<class UClass>                            EmissaryRepresentationMesh;                               // 0x0298(0x0020) (Edit, DisableEditOnInstance)
 	TArray<struct FTransform>                          EmissaryRepresentationTransforms;                         // 0x02B8(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 	TArray<class UStaticMeshComponent*>                EmissaryRepresentationMeshes;                             // 0x02C8(0x0010) (ExportObject, ZeroConstructor, Transient)
 	class UClass*                                      LoadedEmissaryRepresentationMesh;                         // 0x02D8(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x20];                                      // 0x02E0(0x0020) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x20];                                      // 0x02E0(0x0020) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

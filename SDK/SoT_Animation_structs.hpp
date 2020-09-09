@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -21,9 +21,11 @@ namespace SDK
 enum class ECharacterIKLimb : uint8_t
 {
 	ECharacterIKLimb__None         = 0,
-	ECharacterIKLimb__RightHand    = 1,
-	ECharacterIKLimb__LeftFoot     = 2,
-	ECharacterIKLimb__RightFoot    = 3
+	ECharacterIKLimb__LeftHand     = 1,
+	ECharacterIKLimb__RightHand    = 2,
+	ECharacterIKLimb__LeftFoot     = 3,
+	ECharacterIKLimb__RightFoot    = 4,
+	ECharacterIKLimb__ECharacterIKLimb_MAX = 5
 };
 
 
@@ -31,8 +33,9 @@ enum class ECharacterIKLimb : uint8_t
 enum class ELimbIKSpace : uint8_t
 {
 	ELimbIKSpace__Local            = 0,
-	ELimbIKSpace__Character        = 1,
-	ELimbIKSpace__ELimbIKSpace_MAX = 2
+	ELimbIKSpace__World            = 1,
+	ELimbIKSpace__Character        = 2,
+	ELimbIKSpace__ELimbIKSpace_MAX = 3
 };
 
 
@@ -40,8 +43,9 @@ enum class ELimbIKSpace : uint8_t
 enum class ECustomAnimationMontageType : uint8_t
 {
 	ECustomAnimationMontageType__OneShot = 0,
-	ECustomAnimationMontageType__LoopingStaged = 1,
-	ECustomAnimationMontageType__ECustomAnimationMontageType_MAX = 2
+	ECustomAnimationMontageType__LoopingOneShot = 1,
+	ECustomAnimationMontageType__LoopingStaged = 2,
+	ECustomAnimationMontageType__ECustomAnimationMontageType_MAX = 3
 };
 
 
@@ -49,7 +53,8 @@ enum class ECustomAnimationMontageType : uint8_t
 enum class EDockableSocketOverlapUpdates : uint8_t
 {
 	EDockableSocketOverlapUpdates__AllowUpdate = 0,
-	EDockableSocketOverlapUpdates__EDockableSocketOverlapUpdates_MAX = 1
+	EDockableSocketOverlapUpdates__BlockUpdate = 1,
+	EDockableSocketOverlapUpdates__EDockableSocketOverlapUpdates_MAX = 2
 };
 
 
@@ -89,11 +94,12 @@ struct FAnimDataEntryStructWrapper
 };
 
 // ScriptStruct Animation.AnimationDataStoreEntry
-// 0x0010
+// 0x0018
 struct FAnimationDataStoreEntry
 {
 	class UClass*                                      AnimDataId;                                               // 0x0000(0x0008) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
 	class UAnimationData*                              AnimData;                                                 // 0x0008(0x0008) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
+	class UAnimationServerData*                        AnimServerData;                                           // 0x0010(0x0008) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
 };
 
 // ScriptStruct Animation.AnimationDataStoreLoadingEntry
@@ -105,11 +111,12 @@ struct FAnimationDataStoreLoadingEntry
 };
 
 // ScriptStruct Animation.AnimationDataStoreAssetEntry
-// 0x0010
+// 0x0018
 struct FAnimationDataStoreAssetEntry
 {
 	class UClass*                                      AnimDataId;                                               // 0x0000(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	class UClass*                                      AnimDataTypeCooked;                                       // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
+	class UAnimationServerData*                        AnimServerData;                                           // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Animation.AnimationDataStoreAssetWeakReferenceEntry
@@ -117,8 +124,7 @@ struct FAnimationDataStoreAssetEntry
 struct FAnimationDataStoreAssetWeakReferenceEntry
 {
 	class UClass*                                      AnimDataId;                                               // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	TAssetPtr<class UClass>                            AnimData;                                                 // 0x0008(0x001C) (Edit)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0008(0x0004) FIX WRONG TYPE SIZE OF PREVIOUS PROPERTY
+	TAssetPtr<class UClass>                            AnimData;                                                 // 0x0008(0x0020) (Edit)
 };
 
 // ScriptStruct Animation.CosmeticItems

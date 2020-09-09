@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -27,7 +27,8 @@ enum class ELandscapeGizmoType : uint8_t
 enum class ELandscapeLODFalloff : uint8_t
 {
 	ELandscapeLODFalloff__Linear   = 0,
-	ELandscapeLODFalloff__ELandscapeLODFalloff_MAX = 1
+	ELandscapeLODFalloff__SquareRoot = 1,
+	ELandscapeLODFalloff__ELandscapeLODFalloff_MAX = 2
 };
 
 
@@ -35,8 +36,9 @@ enum class ELandscapeLODFalloff : uint8_t
 enum class ELandscapeLayerPaintingRestriction : uint8_t
 {
 	ELandscapeLayerPaintingRestriction__None = 0,
-	ELandscapeLayerPaintingRestriction__ExistingOnly = 1,
-	ELandscapeLayerPaintingRestriction__ELandscapeLayerPaintingRestriction_MAX = 2
+	ELandscapeLayerPaintingRestriction__UseMaxLayers = 1,
+	ELandscapeLayerPaintingRestriction__ExistingOnly = 2,
+	ELandscapeLayerPaintingRestriction__ELandscapeLayerPaintingRestriction_MAX = 3
 };
 
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -19,10 +19,9 @@ namespace SDK
 // 0x0028
 struct FPoolableCollectionMapConfigurationEntry
 {
-	TAssetPtr<class UClass>                            Type;                                                     // 0x0000(0x001C) (Edit)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0000(0x0004) FIX WRONG TYPE SIZE OF PREVIOUS PROPERTY
+	TAssetPtr<class UClass>                            Type;                                                     // 0x0000(0x0020) (Edit)
 	int                                                Size;                                                     // 0x0020(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x0024(0x0004) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0024(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct ResourceContentionFramework.PoolableCollectionMapConfiguration

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,17 +11,28 @@
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Athena_classes.hpp"
-#include "SoT_ActionStateMachine_classes.hpp"
-#include "SoT_Maths_classes.hpp"
-#include "SoT_AthenaEngine_classes.hpp"
-#include "SoT_Pets_classes.hpp"
 #include "SoT_Animation_classes.hpp"
+#include "SoT_Maths_classes.hpp"
+#include "SoT_Pets_classes.hpp"
+#include "SoT_AthenaEngine_classes.hpp"
+#include "SoT_ActionStateMachine_classes.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------
 //Enums
 //---------------------------------------------------------------------------
+
+// Enum AthenaAI.EAthenaAISpawnType
+enum class EAthenaAISpawnType : uint8_t
+{
+	EAthenaAISpawnType__SpawnOnLand = 0,
+	EAthenaAISpawnType__SpawnOnShip = 1,
+	EAthenaAISpawnType__SpawnSummoned = 2,
+	EAthenaAISpawnType__Num        = 3,
+	EAthenaAISpawnType__EAthenaAISpawnType_MAX = 4
+};
+
 
 // Enum AthenaAI.EAIAbilityDamageIntervalCounterMode
 enum class EAIAbilityDamageIntervalCounterMode : uint8_t
@@ -34,10 +45,12 @@ enum class EAIAbilityDamageIntervalCounterMode : uint8_t
 enum class EAIDebugColour : uint8_t
 {
 	EAIDebugColour__Red            = 0,
-	EAIDebugColour__Blue           = 1,
-	EAIDebugColour__White          = 2,
-	EAIDebugColour__Yellow         = 3,
-	EAIDebugColour__EAIDebugColour_MAX = 4
+	EAIDebugColour__Green          = 1,
+	EAIDebugColour__Blue           = 2,
+	EAIDebugColour__White          = 3,
+	EAIDebugColour__Yellow         = 4,
+	EAIDebugColour__Black          = 5,
+	EAIDebugColour__EAIDebugColour_MAX = 6
 };
 
 
@@ -45,9 +58,10 @@ enum class EAIDebugColour : uint8_t
 enum class EAIDialogueState : uint8_t
 {
 	EAIDialogueState__Inactive     = 0,
-	EAIDialogueState__Alerted      = 1,
-	EAIDialogueState__Dead         = 2,
-	EAIDialogueState__EAIDialogueState_MAX = 3
+	EAIDialogueState__Passive      = 1,
+	EAIDialogueState__Alerted      = 2,
+	EAIDialogueState__Dead         = 3,
+	EAIDialogueState__EAIDialogueState_MAX = 4
 };
 
 
@@ -55,15 +69,6 @@ enum class EAIDialogueState : uint8_t
 enum class EAISpawnRequestResult : uint8_t
 {
 
-};
-
-
-// Enum AthenaAI.EAthenaAISpawnType
-enum class EAthenaAISpawnType : uint8_t
-{
-	EAthenaAISpawnType__SpawnOnLand = 0,
-	EAthenaAISpawnType__SpawnSummoned = 1,
-	EAthenaAISpawnType__EAthenaAISpawnType_MAX = 2
 };
 
 
@@ -92,8 +97,9 @@ enum class EAISpawnRequestState : uint8_t
 enum class EBountySpawnerAudioState : uint8_t
 {
 	EBountySpawnerAudioState__None = 0,
-	EBountySpawnerAudioState__Anticipation = 1,
-	EBountySpawnerAudioState__EBountySpawnerAudioState_MAX = 2
+	EBountySpawnerAudioState__Action = 1,
+	EBountySpawnerAudioState__Anticipation = 2,
+	EBountySpawnerAudioState__EBountySpawnerAudioState_MAX = 3
 };
 
 
@@ -101,8 +107,9 @@ enum class EBountySpawnerAudioState : uint8_t
 enum class EBountySpawnerType : uint8_t
 {
 	EBountySpawnerType__Default    = 0,
-	EBountySpawnerType__BountyFort = 1,
-	EBountySpawnerType__EBountySpawnerType_MAX = 2
+	EBountySpawnerType__BountyQuest = 1,
+	EBountySpawnerType__BountyFort = 2,
+	EBountySpawnerType__EBountySpawnerType_MAX = 3
 };
 
 
@@ -110,7 +117,8 @@ enum class EBountySpawnerType : uint8_t
 enum class EBountyTargetRank : uint8_t
 {
 	EBountyTargetRank__Captain     = 0,
-	EBountyTargetRank__EBountyTargetRank_MAX = 1
+	EBountyTargetRank__Crew        = 1,
+	EBountyTargetRank__EBountyTargetRank_MAX = 2
 };
 
 
@@ -118,7 +126,8 @@ enum class EBountyTargetRank : uint8_t
 enum class EBountyTargetGender : uint8_t
 {
 	EBountyTargetGender__Male      = 0,
-	EBountyTargetGender__EBountyTargetGender_MAX = 1
+	EBountyTargetGender__Female    = 1,
+	EBountyTargetGender__EBountyTargetGender_MAX = 2
 };
 
 
@@ -133,10 +142,12 @@ enum class EAITargetWeaponFiringArcResult : uint8_t
 enum class EBlackboardIntValueComparisonType : uint8_t
 {
 	EBlackboardIntValueComparisonType__Equal = 0,
-	EBlackboardIntValueComparisonType__GreaterThan = 1,
-	EBlackboardIntValueComparisonType__LessThan = 2,
-	EBlackboardIntValueComparisonType__GreaterThanEquals = 3,
-	EBlackboardIntValueComparisonType__EBlackboardIntValueComparisonType_MAX = 4
+	EBlackboardIntValueComparisonType__NotEqual = 1,
+	EBlackboardIntValueComparisonType__GreaterThan = 2,
+	EBlackboardIntValueComparisonType__LessThan = 3,
+	EBlackboardIntValueComparisonType__GreaterThanEquals = 4,
+	EBlackboardIntValueComparisonType__LessThanEquals = 5,
+	EBlackboardIntValueComparisonType__EBlackboardIntValueComparisonType_MAX = 6
 };
 
 
@@ -144,7 +155,8 @@ enum class EBlackboardIntValueComparisonType : uint8_t
 enum class EBlackboardValueCompositeType : uint8_t
 {
 	EBlackboardValueCompositeType__And = 0,
-	EBlackboardValueCompositeType__EBlackboardValueCompositeType_MAX = 1
+	EBlackboardValueCompositeType__Or = 1,
+	EBlackboardValueCompositeType__EBlackboardValueCompositeType_MAX = 2
 };
 
 
@@ -152,10 +164,12 @@ enum class EBlackboardValueCompositeType : uint8_t
 enum class EBlackboardValueComparisonType : uint8_t
 {
 	EBlackboardValueComparisonType__NearlyEqual = 0,
-	EBlackboardValueComparisonType__GreaterThan = 1,
-	EBlackboardValueComparisonType__LessThan = 2,
-	EBlackboardValueComparisonType__GreaterThanEquals = 3,
-	EBlackboardValueComparisonType__EBlackboardValueComparisonType_MAX = 4
+	EBlackboardValueComparisonType__NotNearlyEqual = 1,
+	EBlackboardValueComparisonType__GreaterThan = 2,
+	EBlackboardValueComparisonType__LessThan = 3,
+	EBlackboardValueComparisonType__GreaterThanEquals = 4,
+	EBlackboardValueComparisonType__LessThanEquals = 5,
+	EBlackboardValueComparisonType__EBlackboardValueComparisonType_MAX = 6
 };
 
 
@@ -163,10 +177,12 @@ enum class EBlackboardValueComparisonType : uint8_t
 enum class EFloatValueComparisonType : uint8_t
 {
 	EFloatValueComparisonType__NearlyEqual = 0,
-	EFloatValueComparisonType__GreaterThan = 1,
-	EFloatValueComparisonType__LessThan = 2,
-	EFloatValueComparisonType__GreaterThanEquals = 3,
-	EFloatValueComparisonType__EFloatValueComparisonType_MAX = 4
+	EFloatValueComparisonType__NotNearlyEqual = 1,
+	EFloatValueComparisonType__GreaterThan = 2,
+	EFloatValueComparisonType__LessThan = 3,
+	EFloatValueComparisonType__GreaterThanEquals = 4,
+	EFloatValueComparisonType__LessThanEquals = 5,
+	EFloatValueComparisonType__EFloatValueComparisonType_MAX = 6
 };
 
 
@@ -174,7 +190,8 @@ enum class EFloatValueComparisonType : uint8_t
 enum class ETraceDirection : uint8_t
 {
 	ETraceDirection__ItemToContext = 0,
-	ETraceDirection__ETraceDirection_MAX = 1
+	ETraceDirection__ContextToItem = 1,
+	ETraceDirection__ETraceDirection_MAX = 2
 };
 
 
@@ -182,8 +199,9 @@ enum class ETraceDirection : uint8_t
 enum class EAIKnockbackStrengthType : uint8_t
 {
 	EAIKnockbackStrengthType__Low  = 0,
-	EAIKnockbackStrengthType__High = 1,
-	EAIKnockbackStrengthType__EAIKnockbackStrengthType_MAX = 2
+	EAIKnockbackStrengthType__Medium = 1,
+	EAIKnockbackStrengthType__High = 2,
+	EAIKnockbackStrengthType__EAIKnockbackStrengthType_MAX = 3
 };
 
 
@@ -191,9 +209,10 @@ enum class EAIKnockbackStrengthType : uint8_t
 enum class EAIThreatLevel : uint8_t
 {
 	EAIThreatLevel__NoDanger       = 0,
-	EAIThreatLevel__Threatened     = 1,
-	EAIThreatLevel__Calm           = 2,
-	EAIThreatLevel__EAIThreatLevel_MAX = 3
+	EAIThreatLevel__Nervous        = 1,
+	EAIThreatLevel__Threatened     = 2,
+	EAIThreatLevel__Calm           = 3,
+	EAIThreatLevel__EAIThreatLevel_MAX = 4
 };
 
 
@@ -201,8 +220,9 @@ enum class EAIThreatLevel : uint8_t
 enum class EFaunaInWaterState : uint8_t
 {
 	EFaunaInWaterState__NotInWater = 0,
-	EFaunaInWaterState__Underwater = 1,
-	EFaunaInWaterState__EFaunaInWaterState_MAX = 2
+	EFaunaInWaterState__FloatingOnSurface = 1,
+	EFaunaInWaterState__Underwater = 2,
+	EFaunaInWaterState__EFaunaInWaterState_MAX = 3
 };
 
 
@@ -210,8 +230,9 @@ enum class EFaunaInWaterState : uint8_t
 enum class EFaunaCratedState : uint8_t
 {
 	EFaunaCratedState__NotInCrate  = 0,
-	EFaunaCratedState__InWieldedCrate = 1,
-	EFaunaCratedState__EFaunaCratedState_MAX = 2
+	EFaunaCratedState__InProxyCrate = 1,
+	EFaunaCratedState__InWieldedCrate = 2,
+	EFaunaCratedState__EFaunaCratedState_MAX = 3
 };
 
 
@@ -219,8 +240,9 @@ enum class EFaunaCratedState : uint8_t
 enum class ESwimRotationMode : uint8_t
 {
 	ESwimRotationMode__FaceMovement = 0,
-	ESwimRotationMode__LongwaysStrafe = 1,
-	ESwimRotationMode__ESwimRotationMode_MAX = 2
+	ESwimRotationMode__UprightStrafe = 1,
+	ESwimRotationMode__LongwaysStrafe = 2,
+	ESwimRotationMode__ESwimRotationMode_MAX = 3
 };
 
 
@@ -228,7 +250,8 @@ enum class ESwimRotationMode : uint8_t
 enum class EArcFollowingMode : uint8_t
 {
 	EArcFollowingMode__SharkArc    = 0,
-	EArcFollowingMode__EArcFollowingMode_MAX = 1
+	EArcFollowingMode__Simple3DArc = 1,
+	EArcFollowingMode__EArcFollowingMode_MAX = 2
 };
 
 
@@ -236,8 +259,9 @@ enum class EArcFollowingMode : uint8_t
 enum class ESwimmingLineOfSightTest : uint8_t
 {
 	ESwimmingLineOfSightTest__None = 0,
-	ESwimmingLineOfSightTest__Immediate = 1,
-	ESwimmingLineOfSightTest__ESwimmingLineOfSightTest_MAX = 2
+	ESwimmingLineOfSightTest__Lazy = 1,
+	ESwimmingLineOfSightTest__Immediate = 2,
+	ESwimmingLineOfSightTest__ESwimmingLineOfSightTest_MAX = 3
 };
 
 
@@ -245,7 +269,8 @@ enum class ESwimmingLineOfSightTest : uint8_t
 enum class ESwimmingSyncMode : uint8_t
 {
 	ESwimmingSyncMode__Synchronous = 0,
-	ESwimmingSyncMode__ESwimmingSyncMode_MAX = 1
+	ESwimmingSyncMode__Asynchronous = 1,
+	ESwimmingSyncMode__ESwimmingSyncMode_MAX = 2
 };
 
 
@@ -253,7 +278,8 @@ enum class ESwimmingSyncMode : uint8_t
 enum class ESwimmingArcMode : uint8_t
 {
 	ESwimmingArcMode__ArcToTarget  = 0,
-	ESwimmingArcMode__ESwimmingArcMode_MAX = 1
+	ESwimmingArcMode__SwimDirectlyToTarget = 1,
+	ESwimmingArcMode__ESwimmingArcMode_MAX = 2
 };
 
 
@@ -261,7 +287,8 @@ enum class ESwimmingArcMode : uint8_t
 enum class ESwimmingGoalCheckMode : uint8_t
 {
 	ESwimmingGoalCheckMode__Goal2D = 0,
-	ESwimmingGoalCheckMode__ESwimmingGoalCheckMode_MAX = 1
+	ESwimmingGoalCheckMode__Goal3D = 1,
+	ESwimmingGoalCheckMode__ESwimmingGoalCheckMode_MAX = 2
 };
 
 
@@ -269,8 +296,9 @@ enum class ESwimmingGoalCheckMode : uint8_t
 enum class ETinySharkDespawnReason : uint8_t
 {
 	ETinySharkDespawnReason__Invalid = 0,
-	ETinySharkDespawnReason__TimedOut = 1,
-	ETinySharkDespawnReason__ETinySharkDespawnReason_MAX = 2
+	ETinySharkDespawnReason__Defeated = 1,
+	ETinySharkDespawnReason__TimedOut = 2,
+	ETinySharkDespawnReason__ETinySharkDespawnReason_MAX = 3
 };
 
 
@@ -278,9 +306,10 @@ enum class ETinySharkDespawnReason : uint8_t
 enum class ETinySharkActiveState : uint8_t
 {
 	ETinySharkActiveState__TrackingTarget = 0,
-	ETinySharkActiveState__RepositionToTarget = 1,
-	ETinySharkActiveState__WaitingForRespawn = 2,
-	ETinySharkActiveState__ETinySharkActiveState_MAX = 3
+	ETinySharkActiveState__WaitingForTarget = 1,
+	ETinySharkActiveState__RepositionToTarget = 2,
+	ETinySharkActiveState__WaitingForRespawn = 3,
+	ETinySharkActiveState__ETinySharkActiveState_MAX = 4
 };
 
 
@@ -288,9 +317,11 @@ enum class ETinySharkActiveState : uint8_t
 enum class ETinySharkState : uint8_t
 {
 	ETinySharkState__Inactive      = 0,
-	ETinySharkState__Active        = 1,
-	ETinySharkState__Defeated      = 2,
-	ETinySharkState__Despawning    = 3
+	ETinySharkState__Spawning      = 1,
+	ETinySharkState__Active        = 2,
+	ETinySharkState__Defeated      = 3,
+	ETinySharkState__Despawning    = 4,
+	ETinySharkState__ETinySharkState_MAX = 5
 };
 
 
@@ -298,13 +329,16 @@ enum class ETinySharkState : uint8_t
 enum class EDebugPetStateDescriptor : uint8_t
 {
 	EDebugPetStateDescriptor__NoState = 0,
-	EDebugPetStateDescriptor__Hangout_MoveToLocation = 1,
-	EDebugPetStateDescriptor__Reacting = 2,
-	EDebugPetStateDescriptor__Pursuit = 3,
-	EDebugPetStateDescriptor__Follow = 4,
-	EDebugPetStateDescriptor__Eating = 5,
-	EDebugPetStateDescriptor__Scared = 6,
-	EDebugPetStateDescriptor__EDebugPetStateDescriptor_MAX = 7
+	EDebugPetStateDescriptor__Hangout_Attached = 1,
+	EDebugPetStateDescriptor__Hangout_MoveToLocation = 2,
+	EDebugPetStateDescriptor__Reacting = 3,
+	EDebugPetStateDescriptor__Pursuit = 4,
+	EDebugPetStateDescriptor__Idle = 5,
+	EDebugPetStateDescriptor__Follow = 6,
+	EDebugPetStateDescriptor__Eating = 7,
+	EDebugPetStateDescriptor__Scared = 8,
+	EDebugPetStateDescriptor__ForcedIdle = 9,
+	EDebugPetStateDescriptor__EDebugPetStateDescriptor_MAX = 10
 };
 
 
@@ -312,8 +346,9 @@ enum class EDebugPetStateDescriptor : uint8_t
 enum class EPetSize : uint8_t
 {
 	EPetSize__Small                = 0,
-	EPetSize__Large                = 1,
-	EPetSize__EPetSize_MAX         = 2
+	EPetSize__Medium               = 1,
+	EPetSize__Large                = 2,
+	EPetSize__EPetSize_MAX         = 3
 };
 
 
@@ -343,19 +378,17 @@ struct FAIPartId
 // 0x00E8
 struct FAISpawnTypeParams
 {
-	TAssetPtr<class UClass>                            AIClass;                                                  // 0x0000(0x001C) (Edit)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0000(0x0004) FIX WRONG TYPE SIZE OF PREVIOUS PROPERTY
+	TAssetPtr<class UClass>                            AIClass;                                                  // 0x0000(0x0020) (Edit)
 	struct FStringAssetReference                       SkillsetOverride;                                         // 0x0020(0x0010) (Edit, ZeroConstructor)
 	struct FStringAssetReference                       LoadoutOverride;                                          // 0x0030(0x0010) (Edit, ZeroConstructor)
 	struct FStringAssetReference                       FormOverride;                                             // 0x0040(0x0010) (Edit, ZeroConstructor)
 	struct FStringAssetReference                       AmmoOverride;                                             // 0x0050(0x0010) (Edit, ZeroConstructor)
-	TAssetPtr<class UClass>                            ItemDropComponentClassOverride;                           // 0x0060(0x001C) (Edit)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x0060(0x0004) FIX WRONG TYPE SIZE OF PREVIOUS PROPERTY
+	TAssetPtr<class UClass>                            ItemDropComponentClassOverride;                           // 0x0060(0x0020) (Edit)
 	class UClass*                                      AIClassIdOverride;                                        // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	struct FStringAssetReference                       TeamColorOverride;                                        // 0x0088(0x0010) (Edit, ZeroConstructor)
 	struct FEncounterParams                            EncounterTrackingParams;                                  // 0x0098(0x000C) (Edit)
 	struct FName                                       DioramaRole;                                              // 0x00A4(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x4];                                       // 0x00AC(0x0004) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x4];                                       // 0x00AC(0x0004) MISSED OFFSET
 	struct FText                                       LocalisableName;                                          // 0x00B0(0x0038) (Edit)
 };
 
@@ -571,11 +604,10 @@ struct FAthenaAICharacterControllerItemCategoryNamedParams
 // 0x0030
 struct FAthenaAIItemParamValue
 {
-	TAssetPtr<class UClass>                            ItemClass;                                                // 0x0000(0x001C) (Edit)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0000(0x0004) FIX WRONG TYPE SIZE OF PREVIOUS PROPERTY
+	TAssetPtr<class UClass>                            ItemClass;                                                // 0x0000(0x0020) (Edit)
 	struct FName                                       ParamName;                                                // 0x0020(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	float                                              Value;                                                    // 0x0028(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x002C(0x0004) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x4];                                       // 0x002C(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct AthenaAI.AthenaAICharacterControllerSpawnItemDescForItemCategory
@@ -752,8 +784,7 @@ struct FAISkillsetRankMapping
 // 0x0030
 struct FAIDropSpawnerRankMapping
 {
-	TAssetPtr<class UClass>                            SpawnerClass;                                             // 0x0000(0x001C) (Edit, BlueprintVisible)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0000(0x0004) FIX WRONG TYPE SIZE OF PREVIOUS PROPERTY
+	TAssetPtr<class UClass>                            SpawnerClass;                                             // 0x0000(0x0020) (Edit, BlueprintVisible)
 	TArray<float>                                      Weights;                                                  // 0x0020(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
 };
 
@@ -873,7 +904,7 @@ struct FAIBountySpawnerWave : public FAIPersistentSpawnerWave
 	class UPostBountyAIPawnSpawnedAction*              PostSpawnAction;                                          // 0x0120(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x38];                                      // 0x0128(0x0038) MISSED OFFSET
 	class UClass*                                      BountyReward;                                             // 0x0160(0x0008) (ZeroConstructor, IsPlainOldData)
-	TWeakObjectPtr<class UItemDescSpawnData>           BountyRewardSpawnData;                                    // 0x0168(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	TWeakObjectPtr<class UItemSpawnData>               BountyRewardSpawnData;                                    // 0x0168(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 };
 
 // ScriptStruct AthenaAI.AIBountySpawnerWaveGroup
@@ -1031,23 +1062,21 @@ struct FDioramaCategoryEntries
 // 0x00C8
 struct FAIEncounterSpecification
 {
-	TAssetPtr<class UClass>                            PawnClass;                                                // 0x0000(0x001C) (Edit, BlueprintVisible, BlueprintReadOnly)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0000(0x0004) FIX WRONG TYPE SIZE OF PREVIOUS PROPERTY
+	TAssetPtr<class UClass>                            PawnClass;                                                // 0x0000(0x0020) (Edit, BlueprintVisible, BlueprintReadOnly)
 	class UAthenaAIControllerParamsDataAsset*          Skillset;                                                 // 0x0020(0x0008) (ZeroConstructor, IsPlainOldData)
 	class ULoadoutAsset*                               Loadout;                                                  // 0x0028(0x0008) (ZeroConstructor, IsPlainOldData)
 	class UAthenaAIFormDataAsset*                      Form;                                                     // 0x0030(0x0008) (ZeroConstructor, IsPlainOldData)
 	class UAthenaAIAmmoDataAsset*                      Ammo;                                                     // 0x0038(0x0008) (ZeroConstructor, IsPlainOldData)
 	class UClass*                                      AIClass;                                                  // 0x0040(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData)
 	class UAIPartsCategory*                            PartsCategory;                                            // 0x0048(0x0008) (ZeroConstructor, IsPlainOldData)
-	TAssetPtr<class UClass>                            ItemDropComponentClass;                                   // 0x0050(0x001C)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x0050(0x0004) FIX WRONG TYPE SIZE OF PREVIOUS PROPERTY
+	TAssetPtr<class UClass>                            ItemDropComponentClass;                                   // 0x0050(0x0020)
 	int                                                TeamColorIndex;                                           // 0x0070(0x0004) (ZeroConstructor, IsPlainOldData)
 	struct FName                                       DioramaRole;                                              // 0x0074(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x4];                                       // 0x007C(0x0004) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x4];                                       // 0x007C(0x0004) MISSED OFFSET
 	struct FText                                       LocalisableName;                                          // 0x0080(0x0038)
 	struct FEncounterParams                            EncounterTrackingParams;                                  // 0x00B8(0x000C)
 	bool                                               ShowNameplate;                                            // 0x00C4(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData03[0x3];                                       // 0x00C5(0x0003) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x3];                                       // 0x00C5(0x0003) MISSED OFFSET
 };
 
 // ScriptStruct AthenaAI.AIFaunaSpawnerWave
@@ -1073,12 +1102,9 @@ struct FTinySharkParams
 	class UClass*                                      TinySharkType;                                            // 0x0000(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	float                                              TargetRadius;                                             // 0x0008(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	struct FVector                                     SpawnOffset;                                              // 0x000C(0x000C) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	TAssetPtr<class UClass>                            TinySharkAIType;                                          // 0x0018(0x001C) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0018(0x0004) FIX WRONG TYPE SIZE OF PREVIOUS PROPERTY
-	TAssetPtr<class UAthenaAIControllerParamsDataAsset> TinySharkSkillset;                                        // 0x0038(0x001C) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x0038(0x0004) FIX WRONG TYPE SIZE OF PREVIOUS PROPERTY
-	TAssetPtr<class ULoadoutAsset>                     TinySharkLoadout;                                         // 0x0058(0x001C) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData02[0x4];                                       // 0x0058(0x0004) FIX WRONG TYPE SIZE OF PREVIOUS PROPERTY
+	TAssetPtr<class UClass>                            TinySharkAIType;                                          // 0x0018(0x0020) (Edit, DisableEditOnInstance)
+	TAssetPtr<class UAthenaAIControllerParamsDataAsset> TinySharkSkillset;                                        // 0x0038(0x0020) (Edit, DisableEditOnInstance)
+	TAssetPtr<class ULoadoutAsset>                     TinySharkLoadout;                                         // 0x0058(0x0020) (Edit, DisableEditOnInstance)
 	class UClass*                                      TinySharkClassID;                                         // 0x0078(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	struct FWeightedProbabilityRangeOfRanges           LifetimeTimeout;                                          // 0x0080(0x0030) (Edit, DisableEditOnInstance)
 	float                                              TrackedShipDistanceThreshold;                             // 0x00B0(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)

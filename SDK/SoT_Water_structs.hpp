@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -21,9 +21,10 @@ namespace SDK
 enum class EWaterQueryResult : uint8_t
 {
 	EWaterQueryResult__Success     = 0,
-	EWaterQueryResult__NoWater     = 1,
-	EWaterQueryResult__Count       = 2,
-	EWaterQueryResult__EWaterQueryResult_MAX = 3
+	EWaterQueryResult__Failed      = 1,
+	EWaterQueryResult__NoWater     = 2,
+	EWaterQueryResult__Count       = 3,
+	EWaterQueryResult__EWaterQueryResult_MAX = 4
 };
 
 
@@ -31,7 +32,8 @@ enum class EWaterQueryResult : uint8_t
 enum class EBuoyancyDragSampleType : uint8_t
 {
 	EBuoyancyDragSampleType__Spherical = 0,
-	EBuoyancyDragSampleType__EBuoyancyDragSampleType_MAX = 1
+	EBuoyancyDragSampleType__Planar = 1,
+	EBuoyancyDragSampleType__EBuoyancyDragSampleType_MAX = 2
 };
 
 
@@ -39,8 +41,9 @@ enum class EBuoyancyDragSampleType : uint8_t
 enum class EBuoyancySampleType : uint8_t
 {
 	EBuoyancySampleType__Spherical = 0,
-	EBuoyancySampleType__ProbeCurve = 1,
-	EBuoyancySampleType__EBuoyancySampleType_MAX = 2
+	EBuoyancySampleType__Cuboidal  = 1,
+	EBuoyancySampleType__ProbeCurve = 2,
+	EBuoyancySampleType__EBuoyancySampleType_MAX = 3
 };
 
 
@@ -48,9 +51,11 @@ enum class EBuoyancySampleType : uint8_t
 enum class EWaterSplashProbeType : uint8_t
 {
 	EWaterSplashProbeType__ThresholdedRateOfChange = 0,
-	EWaterSplashProbeType__StateChangeAirToWater = 1,
-	EWaterSplashProbeType__StateChangeAny = 2,
-	EWaterSplashProbeType__Continuous = 3
+	EWaterSplashProbeType__StateChangeWaterToAir = 1,
+	EWaterSplashProbeType__StateChangeAirToWater = 2,
+	EWaterSplashProbeType__StateChangeAny = 3,
+	EWaterSplashProbeType__Continuous = 4,
+	EWaterSplashProbeType__EWaterSplashProbeType_MAX = 5
 };
 
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.0.18) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,8 +12,8 @@
 #include "SoT_AthenaEngine_classes.hpp"
 #include "SoT_Athena_classes.hpp"
 #include "SoT_Interaction_classes.hpp"
-#include "SoT_StatusEffects_classes.hpp"
 #include "SoT_ActionStateMachine_classes.hpp"
+#include "SoT_StatusEffects_classes.hpp"
 #include "SoT_RareAudio_classes.hpp"
 
 namespace SDK
@@ -26,9 +26,10 @@ namespace SDK
 enum class EReviveState : uint8_t
 {
 	EReviveState__Revivable        = 0,
-	EReviveState__BeingRevived     = 1,
-	EReviveState__Revived          = 2,
-	EReviveState__EReviveState_MAX = 3
+	EReviveState__NotRevivable     = 1,
+	EReviveState__BeingRevived     = 2,
+	EReviveState__Revived          = 3,
+	EReviveState__EReviveState_MAX = 4
 };
 
 
@@ -75,6 +76,13 @@ struct FPlayerInReviveableStateTelemetryEvent
 struct FPlayerRevivalTelemetryEvent
 {
 	bool                                               Success;                                                  // 0x0000(0x0001) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Reviving.PostReviveLocomotionActionStateConstructionInfo
+// 0x0000 (0x0030 - 0x0030)
+struct FPostReviveLocomotionActionStateConstructionInfo : public FActorActionStateConstructionInfo
+{
+
 };
 
 // ScriptStruct Reviving.EventRevivableRepresentationSpawnCompleted
