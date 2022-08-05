@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -172,6 +172,104 @@ void UStatusEffectManagerComponent::MultiCast_ApplyOneShotStatus(TArray<struct F
 
 	params.AddedEffects = AddedEffects;
 	params.RemovedEffects = RemovedEffects;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function StatusEffects.StatusEffectVolumeComponent.UnaffectActor
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                  Actor                          (Parm, ZeroConstructor, IsPlainOldData)
+
+void UStatusEffectVolumeComponent::UnaffectActor(class AActor* Actor)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StatusEffects.StatusEffectVolumeComponent.UnaffectActor"));
+
+	struct
+	{
+		class AActor*                  Actor;
+	} params;
+
+	params.Actor = Actor;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function StatusEffects.StatusEffectVolumeComponent.OnParentComponentEndOverlap
+// (Final, Native, Private)
+// Parameters:
+// class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
+// class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// int                            OtherBodyIndex                 (Parm, ZeroConstructor, IsPlainOldData)
+
+void UStatusEffectVolumeComponent::OnParentComponentEndOverlap(class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StatusEffects.StatusEffectVolumeComponent.OnParentComponentEndOverlap"));
+
+	struct
+	{
+		class AActor*                  OtherActor;
+		class UPrimitiveComponent*     OtherComp;
+		int                            OtherBodyIndex;
+	} params;
+
+	params.OtherActor = OtherActor;
+	params.OtherComp = OtherComp;
+	params.OtherBodyIndex = OtherBodyIndex;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function StatusEffects.StatusEffectVolumeComponent.OnParentComponentBeginOverlap
+// (Final, Native, Private, HasOutParms)
+// Parameters:
+// class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
+// class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+// int                            OtherBodyIndex                 (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           bFromSweep                     (Parm, ZeroConstructor, IsPlainOldData)
+// struct FHitResult              SweepResult                    (ConstParm, Parm, OutParm, ReferenceParm)
+
+void UStatusEffectVolumeComponent::OnParentComponentBeginOverlap(class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StatusEffects.StatusEffectVolumeComponent.OnParentComponentBeginOverlap"));
+
+	struct
+	{
+		class AActor*                  OtherActor;
+		class UPrimitiveComponent*     OtherComp;
+		int                            OtherBodyIndex;
+		bool                           bFromSweep;
+		struct FHitResult              SweepResult;
+	} params;
+
+	params.OtherActor = OtherActor;
+	params.OtherComp = OtherComp;
+	params.OtherBodyIndex = OtherBodyIndex;
+	params.bFromSweep = bFromSweep;
+	params.SweepResult = SweepResult;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function StatusEffects.StatusEffectVolumeComponent.AffectActor
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                  Actor                          (Parm, ZeroConstructor, IsPlainOldData)
+
+void UStatusEffectVolumeComponent::AffectActor(class AActor* Actor)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StatusEffects.StatusEffectVolumeComponent.AffectActor"));
+
+	struct
+	{
+		class AActor*                  Actor;
+	} params;
+
+	params.Actor = Actor;
 
 	UObject::ProcessEvent(fn, &params);
 }

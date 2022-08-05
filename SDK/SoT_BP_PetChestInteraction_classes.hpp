@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,11 +15,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_PetChestInteraction.BP_PetChestInteraction_C
-// 0x0008 (0x06B0 - 0x06A8)
+// 0x0008 (0x0668 - 0x0660)
 class ABP_PetChestInteraction_C : public APetChestInteraction
 {
 public:
-	class USceneComponent*                             DefaultSceneRoot;                                         // 0x06A8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class USceneComponent*                             DefaultSceneRoot;                                         // 0x0660(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

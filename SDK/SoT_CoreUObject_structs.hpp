@@ -1,218 +1,16 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_CoreUObject_enums.hpp"
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum CoreUObject.EInterpCurveMode
-enum class EInterpCurveMode : uint8_t
-{
-	CIM_Linear                     = 0,
-	CIM_Constant                   = 1,
-	CIM_CurveUser                  = 2,
-	CIM_CurveBreak                 = 3,
-	CIM_MAX                        = 4
-};
-
-
-// Enum CoreUObject.ERangeBoundTypes
-enum class ERangeBoundTypes : uint8_t
-{
-	ERangeBoundTypes__Exclusive    = 0,
-	ERangeBoundTypes__Inclusive    = 1,
-	ERangeBoundTypes__Open         = 2,
-	ERangeBoundTypes__ERangeBoundTypes_MAX = 3
-};
-
-
-// Enum CoreUObject.EUnit
-enum class EUnit : uint8_t
-{
-	EUnit__Micrometers             = 0,
-	EUnit__Millimeters             = 1,
-	EUnit__Centimeters             = 2,
-	EUnit__Meters                  = 3,
-	EUnit__Kilometers              = 4,
-	EUnit__Inches                  = 5,
-	EUnit__Feet                    = 6,
-	EUnit__Yards                   = 7,
-	EUnit__Miles                   = 8,
-	EUnit__Lightyears              = 9,
-	EUnit__Degrees                 = 10,
-	EUnit__Radians                 = 11,
-	EUnit__MetersPerSecond         = 12,
-	EUnit__KilometersPerHour       = 13,
-	EUnit__MilesPerHour            = 14,
-	EUnit__Celsius                 = 15,
-	EUnit__Farenheit               = 16,
-	EUnit__Kelvin                  = 17,
-	EUnit__Micrograms              = 18,
-	EUnit__Milligrams              = 19,
-	EUnit__Grams                   = 20,
-	EUnit__Kilograms               = 21,
-	EUnit__MetricTons              = 22,
-	EUnit__Ounces                  = 23,
-	EUnit__Pounds                  = 24,
-	EUnit__Stones                  = 25,
-	EUnit__Newtons                 = 26,
-	EUnit__PoundsForce             = 27,
-	EUnit__KilogramsForce          = 28,
-	EUnit__Hertz                   = 29,
-	EUnit__Kilohertz               = 30,
-	EUnit__Megahertz               = 31,
-	EUnit__Gigahertz               = 32,
-	EUnit__RevolutionsPerMinute    = 33,
-	EUnit__Bytes                   = 34,
-	EUnit__Kilobytes               = 35,
-	EUnit__Megabytes               = 36,
-	EUnit__Gigabytes               = 37,
-	EUnit__Terabytes               = 38,
-	EUnit__Lumens                  = 39,
-	EUnit__Milliseconds            = 40,
-	EUnit__Seconds                 = 41,
-	EUnit__Minutes                 = 42,
-	EUnit__Hours                   = 43,
-	EUnit__Days                    = 44,
-	EUnit__Months                  = 45,
-	EUnit__Years                   = 46,
-	EUnit__Unspecified             = 47,
-	EUnit__EUnit_MAX               = 48
-};
-
-
-// Enum CoreUObject.EMouseCursor
-enum class EMouseCursor : uint8_t
-{
-	EMouseCursor__None             = 0,
-	EMouseCursor__Default          = 1,
-	EMouseCursor__TextEditBeam     = 2,
-	EMouseCursor__ResizeLeftRight  = 3,
-	EMouseCursor__ResizeUpDown     = 4,
-	EMouseCursor__ResizeSouthEast  = 5,
-	EMouseCursor__ResizeSouthWest  = 6,
-	EMouseCursor__CardinalCross    = 7,
-	EMouseCursor__Crosshairs       = 8,
-	EMouseCursor__Hand             = 9,
-	EMouseCursor__GrabHand         = 10,
-	EMouseCursor__GrabHandClosed   = 11,
-	EMouseCursor__SlashedCircle    = 12,
-	EMouseCursor__EyeDropper       = 13,
-	EMouseCursor__EMouseCursor_MAX = 14
-};
-
-
-// Enum CoreUObject.EPixelFormat
-enum class EPixelFormat : uint8_t
-{
-	PF_Unknown                     = 0,
-	PF_B8G8R8A8                    = 1,
-	PF_G8                          = 2,
-	PF_G16                         = 3,
-	PF_DXT3                        = 4,
-	PF_DXT5                        = 5,
-	PF_UYVY                        = 6,
-	PF_FloatRGBA                   = 7,
-	PF_DepthStencil                = 8,
-	PF_ShadowDepth                 = 9,
-	PF_G16R16                      = 10,
-	PF_G16R16F                     = 11,
-	PF_G16R16F_FILTER              = 12,
-	PF_A2B10G10R10                 = 13,
-	PF_A16B16G16R16                = 14,
-	PF_D24                         = 15,
-	PF_R16F_FILTER                 = 16,
-	PF_BC5                         = 17,
-	PF_V8U8                        = 18,
-	PF_FloatR11G11B10              = 19,
-	PF_A8                          = 20,
-	PF_R32_UINT                    = 21,
-	PF_PVRTC2                      = 22,
-	PF_PVRTC4                      = 23,
-	PF_R16_UINT                    = 24,
-	PF_R16G16B16A16_UINT           = 25,
-	PF_R16G16B16A16_SINT           = 26,
-	PF_R5G6B5_UNORM                = 27,
-	PF_A8R8G8B8                    = 28,
-	PF_BC4                         = 29,
-	PF_R8G8                        = 30,
-	PF_ATC_RGBA_E                  = 31,
-	PF_ATC_RGBA_I                  = 32,
-	PF_X24_G8                      = 33,
-	PF_ETC2_RGB                    = 34,
-	PF_ETC2_RGBA                   = 35,
-	PF_R32G32B32A32_UINT           = 36,
-	PF_ASTC_4x4                    = 37,
-	PF_ASTC_6x6                    = 38,
-	PF_ASTC_8x8                    = 39,
-	PF_ASTC_12x12                  = 40,
-	PF_BC6H                        = 41,
-	PF_BC7                         = 42,
-	PF_BC6H_SF16                   = 43,
-	PF_BC6H_UF16                   = 44,
-	PF_R32G32_SINT                 = 45,
-	PF_Depth                       = 46,
-	PF_MAX                         = 47
-};
-
-
-// Enum CoreUObject.EAxis
-enum class EAxis : uint8_t
-{
-	EAxis__None                    = 0,
-	EAxis__X                       = 1,
-	EAxis__Y                       = 2,
-	EAxis__Z                       = 3,
-	EAxis__EAxis_MAX               = 4,
-	EAxisOption                    = 5,
-	EAxisOption__X                 = 6,
-	EAxisOption__Y                 = 7,
-	EAxisOption__Z                 = 8,
-	EAxisOption__X_Neg             = 9,
-	EAxisOption__Y_Neg             = 10,
-	EAxisOption__Z_Neg             = 11,
-	EAxisOption__EAxisOption_MAX   = 12
-};
-
-
-// Enum CoreUObject.ELogTimes
-enum class ELogTimes : uint8_t
-{
-	ELogTimes__None                = 0,
-	ELogTimes__UTC                 = 1,
-	ELogTimes__SinceGStartTime     = 2,
-	ELogTimes__ELogTimes_MAX       = 3
-};
-
-
-// Enum CoreUObject.ESearchDir
-enum class ESearchDir : uint8_t
-{
-	ESearchDir__FromStart          = 0,
-	ESearchDir__FromEnd            = 1,
-	ESearchDir__ESearchDir_MAX     = 2
-};
-
-
-// Enum CoreUObject.ESearchCase
-enum class ESearchCase : uint8_t
-{
-	ESearchCase__CaseSensitive     = 0,
-	ESearchCase__IgnoreCase        = 1,
-	ESearchCase__ESearchCase_MAX   = 2
-};
-
-
-
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
@@ -226,26 +24,26 @@ struct FGuid
 	int                                                C;                                                        // 0x0008(0x0004) (Edit, ZeroConstructor, SaveGame, IsPlainOldData)
 	int                                                D;                                                        // 0x000C(0x0004) (Edit, ZeroConstructor, SaveGame, IsPlainOldData)
 
-	FGuid() : A(0), B(0), C(0), D(0) { }
+    FGuid() : A(0), B(0), C(0), D(0) {}
 
-	FGuid(int a, int b, int c, int d) : A(a), B(b), C(c), D(d) { }
+    FGuid(int a, int b, int c, int d) : A(a), B(b), C(c), D(d) {}
 
-	std::size_t operator()(const FGuid& guid) const
-	{
-		return std::hash<int>()(guid.A) ^ std::hash<int>()(guid.B) ^ std::hash<int>()(guid.C) ^ std::hash<int>()(guid.D);
-	}
+   std::size_t operator()(const FGuid& guid) const
+    {
+      return std::hash<int>()(guid.A) ^ std::hash<int>()(guid.B) ^ std::hash<int>()(guid.C) ^ std::hash<int>()(guid.D);
+    }
 
-	friend bool operator==( const FGuid& X, const FGuid& Y )
+    friend bool operator==( const FGuid& X, const FGuid& Y )
 	{
 		return ((X.A ^ Y.A) | (X.B ^ Y.B) | (X.C ^ Y.C) | (X.D ^ Y.D)) == 0;
 	}
 
-	friend bool operator!=( const FGuid& X, const FGuid& Y )
+   friend bool operator!=( const FGuid& X, const FGuid& Y )
 	{
 		return ((X.A ^ Y.A) | (X.B ^ Y.B) | (X.C ^ Y.C) | (X.D ^ Y.D)) != 0;
 	}
 
-	friend bool operator<( const FGuid& X, const FGuid& Y )
+   friend bool operator<( const FGuid& X, const FGuid& Y )
 	{
 		return	((X.A < Y.A) ? true : ((X.A > Y.A) ? false :
 				((X.B < Y.B) ? true : ((X.B > Y.B) ? false :
@@ -253,7 +51,7 @@ struct FGuid
 				((X.D < Y.D) ? true : ((X.D > Y.D) ? false : false )))))))); //-V583
 	}
 
-	int& operator[](int Index)
+   int& operator[](int Index)
 	{
 		switch(Index)
 		{
@@ -266,7 +64,7 @@ struct FGuid
 		return A;
 	}
 
-	const int& operator[](int Index) const
+   const int& operator[](int Index) const
 	{
 		switch(Index)
 		{
@@ -307,12 +105,12 @@ struct FVector
 
     inline FVector& operator*= (const float other)    { X *= other;   Y *= other;   Z *= other;   return *this; }
 
-	friend bool operator==(const FVector& first, const FVector& second)
+   friend bool operator==(const FVector& first, const FVector& second)
 	{
 		return first.X == second.X && first.Y == second.Y && first.Z == second.Z;
 	}
 
-	friend bool operator!=(const FVector& first, const FVector& second)
+   friend bool operator!=(const FVector& first, const FVector& second)
 	{
 		return !(first == second);
 	}
@@ -345,65 +143,65 @@ struct FVector2D
 		  Y(y)
 	{ }
 
-	inline FVector2D operator + (const FVector2D& other) const
-	{
-		return FVector2D(X + other.X, Y + other.Y);
+    inline FVector2D operator + (const FVector2D& other) const 
+	{ 
+		return FVector2D(X + other.X, Y + other.Y); 
 	}
 
-	inline FVector2D operator - (const FVector2D& other) const
-	{
+    inline FVector2D operator - (const FVector2D& other) const 
+	{ 
 		return FVector2D(X - other.X, Y - other.Y);
+	 }
+
+    inline FVector2D operator * (float scalar) const 
+	{ 
+		return FVector2D(X * scalar, Y * scalar); 
 	}
 
-	inline FVector2D operator * (float scalar) const
-	{
-		return FVector2D(X * scalar, Y * scalar);
-	}
-
-	inline FVector2D& operator=  (const FVector2D& other)
-	{
+    inline FVector2D& operator=  (const FVector2D& other) 
+	{	
 		X  = other.X;
 		Y  = other.Y;
 		return *this;
 	}
 
-	inline FVector2D& operator+= (const FVector2D& other)
-	{
+    inline FVector2D& operator+= (const FVector2D& other) 
+	{ 
 		X += other.X;
 		Y += other.Y;
 		return *this;
 	}
 
-	inline FVector2D& operator-= (const FVector2D& other)
+    inline FVector2D& operator-= (const FVector2D& other)
 	{
 		X -= other.X;
 		Y -= other.Y;
 		return *this;
 	}
 
-	inline FVector2D& operator*= (const float other)
+    inline FVector2D& operator*= (const float other)
 	{
 		X *= other;
 		Y *= other;
 		return *this;
 	}
 
-	friend bool operator==(const FVector2D& one, const FVector2D& two)
+    friend bool operator==(const FVector2D& one, const FVector2D& two)
 	{
 		return one.X == two.X && one.Y == two.Y;
 	}
 
-	friend bool operator!=(const FVector2D& one, const FVector2D& two)
+    friend bool operator!=(const FVector2D& one, const FVector2D& two)
 	{
 		return !(one == two);
 	}
 
-	friend bool operator>(const FVector2D& one, const FVector2D& two)
+    friend bool operator>(const FVector2D& one, const FVector2D& two)
 	{
 		return one.X > two.X && one.Y > two.Y;
 	}
 
-	friend bool operator<(const FVector2D& one, const FVector2D& two)
+    friend bool operator<(const FVector2D& one, const FVector2D& two)
 	{
 		return one.X < two.X && one.Y < two.Y;
 	}
@@ -433,30 +231,30 @@ struct FRotator
 	float                                              Yaw;                                                      // 0x0004(0x0004) (Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData)
 	float                                              Roll;                                                     // 0x0008(0x0004) (Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData)
 
-	inline FRotator() {}
+    inline FRotator() {}
 
-	inline FRotator(float pitch, float yaw, float roll) : Pitch(pitch), Yaw(yaw), Roll(roll) {}
+    inline FRotator(float pitch, float yaw, float roll) : Pitch(pitch), Yaw(yaw), Roll(roll) {}
 
-	inline FRotator operator + (const FRotator& other) const { return FRotator(Pitch + other.Pitch, Yaw + other.Yaw, Roll + other.Roll); }
+    inline FRotator operator + (const FRotator& other) const { return FRotator(Pitch + other.Pitch, Yaw + other.Yaw, Roll + other.Roll); }
 
-	inline FRotator operator - (const FRotator& other) const { return FRotator(Pitch - other.Pitch,Yaw - other.Yaw, Roll - other.Roll); }
+    inline FRotator operator - (const FRotator& other) const { return FRotator(Pitch - other.Pitch,Yaw - other.Yaw, Roll - other.Roll); }
 
-	inline FRotator operator * (float scalar) const { return FRotator(Pitch * scalar,Yaw * scalar, Roll * scalar); }
+    inline FRotator operator * (float scalar) const { return FRotator(Pitch * scalar,Yaw * scalar, Roll * scalar); }
 
-	inline FRotator& operator=  (const FRotator& other) { Pitch = other.Pitch; Yaw = other.Yaw; Roll = other.Roll; return *this; }
+    inline FRotator& operator=  (const FRotator& other) { Pitch = other.Pitch; Yaw = other.Yaw; Roll = other.Roll; return *this; }
 
-	inline FRotator& operator+= (const FRotator& other) { Pitch += other.Pitch; Yaw += other.Yaw; Roll += other.Roll; return *this; }
+    inline FRotator& operator+= (const FRotator& other) { Pitch += other.Pitch; Yaw += other.Yaw; Roll += other.Roll; return *this; }
 
-	inline FRotator& operator-= (const FRotator& other) { Pitch -= other.Pitch; Yaw -= other.Yaw; Roll -= other.Roll; return *this; }
+    inline FRotator& operator-= (const FRotator& other) { Pitch -= other.Pitch; Yaw -= other.Yaw; Roll -= other.Roll; return *this; }
 
-	inline FRotator& operator*= (const float other) { Yaw *= other; Pitch *= other; Roll *= other; return *this; }
+    inline FRotator& operator*= (const float other)    { Yaw *= other; Pitch *= other; Roll *= other; return *this; }
 
-	friend bool operator==(const FRotator& first, const FRotator& second)
-	{ 
+   friend bool operator==(const FRotator& first, const FRotator& second)
+	{
 		return first.Pitch == second.Pitch && first.Yaw == second.Yaw && first.Roll == second.Roll;
 	}
 
-	friend bool operator!=(const FRotator& first, const FRotator& second)
+    friend bool operator!=(const FRotator& first, const FRotator& second)
 	{
 		return !(first == second);
 	}
@@ -472,11 +270,11 @@ struct alignas(16) FQuat
 	float                                              Z;                                                        // 0x0008(0x0004) (Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData)
 	float                                              W;                                                        // 0x000C(0x0004) (Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData)
 
-	inline FQuat() {}
+    inline FQuat() {}
 
-	inline FQuat( float InX, float InY, float InZ, float InW ) : X(InX) , Y(InY) , Z(InZ) , W(InW) {}
+    inline FQuat( float InX, float InY, float InZ, float InW ) : X(InX) , Y(InY) , Z(InZ) , W(InW) {}
 
-	inline FQuat( const FQuat& Q ) : X(Q.X), Y(Q.Y), Z(Q.Z), W(Q.W) {}
+    inline FQuat( const FQuat& Q ) : X(Q.X), Y(Q.Y), Z(Q.Z), W(Q.W) {}
 
 };
 
@@ -542,16 +340,16 @@ struct FLinearColor
 		  G(g),
 		  B(b),
 		  A(1.f)
-	{ }
+		{ }
 
 	bool operator!=(const FLinearColor& other)
-	{ 
-		return R != other.R || G != other.G || B != other.B || A != other.A;
+	{
+	    return R != other.R || G != other.G || B != other.B || A != other.A;
 	}
 
 	bool operator==(const FLinearColor& other)
 	{
-		return R == other.R && G == other.G && B == other.B && A == other.A;
+	    return R == other.R && G == other.G && B == other.B && A == other.A;
 	}
 
 };
@@ -575,9 +373,9 @@ struct FBox2D
 	unsigned char                                      IsValid;                                                  // 0x0010(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x3];                                       // 0x0011(0x0003) MISSED OFFSET
 
-	FBox2D() : Min(FVector2D(0,0)), Max(FVector2D(0,0)), IsValid(1), UnknownData00{} {}
+    FBox2D() : Min(FVector2D(0,0)), Max(FVector2D(0,0)), IsValid(1), UnknownData00{} {}
 
-	FBox2D(FVector2D min, FVector2D max) : Min(min), Max(max), IsValid(1), UnknownData00{} {}
+    FBox2D(FVector2D min, FVector2D max) : Min(min), Max(max), IsValid(1), UnknownData00{} {}
 
 };
 

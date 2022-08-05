@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_MapTableControlPoint.BP_MapTableControlPoint_C
-// 0x0000 (0x0568 - 0x0568)
+// 0x0000 (0x0520 - 0x0520)
 class ABP_MapTableControlPoint_C : public AMapTableControlPoint
 {
 public:

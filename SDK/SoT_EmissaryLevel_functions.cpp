@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -84,12 +84,12 @@ void UEmissaryShipAffiliationTrackerComponent::OnRep_EmissaryCount()
 }
 
 
-// Function EmissaryLevel.EmissaryVotingService.OnRep_Votes
-// (Final, RequiredAPI, Native, Private)
+// Function EmissaryLevel.EmissaryVoyageInlineVoteConsumerBase.OnRep_Votes
+// (Final, Native, Private)
 
-void AEmissaryVotingService::OnRep_Votes()
+void UEmissaryVoyageInlineVoteConsumerBase::OnRep_Votes()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function EmissaryLevel.EmissaryVotingService.OnRep_Votes"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function EmissaryLevel.EmissaryVoyageInlineVoteConsumerBase.OnRep_Votes"));
 
 	struct
 	{

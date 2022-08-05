@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Cannon_PlayerLoadingInteractionPoint.BP_Cannon_PlayerLoadingInteractionPoint_C
-// 0x0000 (0x0590 - 0x0590)
+// 0x0000 (0x05C8 - 0x05C8)
 class ABP_Cannon_PlayerLoadingInteractionPoint_C : public APlayerLoadingInteractionPoint
 {
 public:

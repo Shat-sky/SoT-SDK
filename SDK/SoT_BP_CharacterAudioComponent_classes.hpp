@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_CharacterAudioComponent.BP_CharacterAudioComponent_C
-// 0x0000 (0x1048 - 0x1048)
+// 0x0000 (0x1338 - 0x1338)
 class UBP_CharacterAudioComponent_C : public UCharacterAudioComponent
 {
 public:

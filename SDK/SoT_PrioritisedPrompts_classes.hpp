@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -72,14 +72,30 @@ public:
 };
 
 
+// Class PrioritisedPrompts.PrioritisedPromptsManagerInterface
+// 0x0000 (0x0028 - 0x0028)
+class UPrioritisedPromptsManagerInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class PrioritisedPrompts.PrioritisedPromptsManagerInterface"));
+		return ptr;
+	}
+
+};
+
+
 // Class PrioritisedPrompts.PrioritisedPromptsManager
-// 0x0040 (0x0068 - 0x0028)
+// 0x0050 (0x0078 - 0x0028)
 class UPrioritisedPromptsManager : public UObject
 {
 public:
-	TArray<struct FPrioritisedPromptWithHandle>        AllPrompts;                                               // 0x0028(0x0010) (ZeroConstructor)
-	class APlayerController*                           PlayerController;                                         // 0x0038(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x28];                                      // 0x0040(0x0028) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0028(0x0008) MISSED OFFSET
+	TArray<struct FPrioritisedPromptWithHandle>        AllPrompts;                                               // 0x0030(0x0010) (ZeroConstructor)
+	class APlayerController*                           PlayerController;                                         // 0x0040(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x30];                                      // 0x0048(0x0030) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

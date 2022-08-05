@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_LoversChest_Desc.BP_LoversChest_Desc_C
-// 0x0000 (0x0130 - 0x0130)
+// 0x0000 (0x0120 - 0x0120)
 class UBP_LoversChest_Desc_C : public UBootyItemDesc
 {
 public:

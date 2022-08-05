@@ -1,10 +1,10 @@
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_BP_Cannon_parameters.hpp"
+#include "SoT_BP_Cannon_classes.hpp"
 
 namespace SDK
 {
@@ -44,46 +44,6 @@ void ABP_Cannon_C::UserConstructionScript()
 	{
 	} params;
 
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
-// Function BP_Cannon.BP_Cannon_C.OnCannonDescLoaded
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class UCannonDescAsset*        CannonDesc                     (Parm, ZeroConstructor, IsPlainOldData)
-
-void ABP_Cannon_C::OnCannonDescLoaded(class UCannonDescAsset* CannonDesc)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Cannon.BP_Cannon_C.OnCannonDescLoaded"));
-
-	struct
-	{
-		class UCannonDescAsset*        CannonDesc;
-	} params;
-
-	params.CannonDesc = CannonDesc;
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
-// Function BP_Cannon.BP_Cannon_C.ExecuteUbergraph_BP_Cannon
-// ()
-// Parameters:
-// int                            EntryPoint                     (Parm, ZeroConstructor, IsPlainOldData)
-
-void ABP_Cannon_C::ExecuteUbergraph_BP_Cannon(int EntryPoint)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Cannon.BP_Cannon_C.ExecuteUbergraph_BP_Cannon"));
-
-	struct
-	{
-		int                            EntryPoint;
-	} params;
-
-	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);
 }

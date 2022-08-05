@@ -1,10 +1,10 @@
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_BP_Prompt_ProposeVoyage_parameters.hpp"
+#include "SoT_BP_Prompt_ProposeVoyage_classes.hpp"
 
 namespace SDK
 {
@@ -31,15 +31,15 @@ void UBP_Prompt_ProposeVoyage_C::PostInitialize()
 // Function BP_Prompt_ProposeVoyage.BP_Prompt_ProposeVoyage_C.Prompt_OfferPurchased
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FOfferPurchasedEvent    Ev                             (Parm)
+// struct FAthena_FOfferPurchasedEvent Ev                             (Parm)
 
-void UBP_Prompt_ProposeVoyage_C::Prompt_OfferPurchased(const struct FOfferPurchasedEvent& Ev)
+void UBP_Prompt_ProposeVoyage_C::Prompt_OfferPurchased(const struct FAthena_FOfferPurchasedEvent& Ev)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_ProposeVoyage.BP_Prompt_ProposeVoyage_C.Prompt_OfferPurchased"));
 
 	struct
 	{
-		struct FOfferPurchasedEvent    Ev;
+		struct FAthena_FOfferPurchasedEvent Ev;
 	} params;
 
 	params.Ev = Ev;

@@ -1,31 +1,18 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_Time_enums.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum Time.ETimeOfDay
-enum class ETimeOfDay : uint8_t
-{
-	ETimeOfDay__Day                = 0,
-	ETimeOfDay__Night              = 1,
-	ETimeOfDay__ETimeOfDay_MAX     = 2
-};
-
-
-
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
@@ -50,6 +37,21 @@ struct FReplicatedAuthoritativeTime
 {
 	struct FReplicatedDateTime                         WorldTime;                                                // 0x0000(0x0008)
 	struct FReplicatedDateTime                         SyncTime;                                                 // 0x0008(0x0008)
+};
+
+// ScriptStruct Time.GameTimeRange
+// 0x0010
+struct FGameTimeRange
+{
+	struct FGameTime                                   Start;                                                    // 0x0000(0x0008) (Edit)
+	struct FGameTime                                   End;                                                      // 0x0008(0x0008) (Edit)
+};
+
+// ScriptStruct Time.ReplicatedTimespan
+// 0x0008
+struct FReplicatedTimespan
+{
+	int64_t                                            Ticks;                                                    // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Time.EventSetDateTime

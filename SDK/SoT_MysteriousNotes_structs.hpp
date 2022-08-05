@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -8,6 +8,7 @@
 
 #include "SoT_Basic.hpp"
 #include "SoT_Athena_classes.hpp"
+#include "SoT_AthenaInputMkII_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
 
@@ -25,17 +26,17 @@ struct FMysteriousNotesCompletionEventsModel
 };
 
 // ScriptStruct MysteriousNotes.WieldableMysteriousNoteLayoutItem
-// 0x0098
+// 0x00D0
 struct FWieldableMysteriousNoteLayoutItem
 {
 	class FString                                      Theme;                                                    // 0x0000(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 	class UFont*                                       Font;                                                     // 0x0010(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FTreasureMapWidgetTexture                   Image;                                                    // 0x0018(0x0028) (Edit, DisableEditOnInstance)
-	struct FStringAssetReference                       RadialIcon;                                               // 0x0040(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
-	struct FTreasureMapWidgetText                      NoteTitleWidgetText;                                      // 0x0050(0x0020) (Edit, DisableEditOnInstance)
-	struct FTreasureMapWidgetText                      NoteBodyWidgetText;                                       // 0x0070(0x0020) (Edit, DisableEditOnInstance)
-	float                                              NoteWidth;                                                // 0x0090(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0094(0x0004) MISSED OFFSET
+	struct FTreasureMapWidgetStreamedTexture           Image;                                                    // 0x0018(0x0030) (Edit, DisableEditOnInstance)
+	struct FStringAssetReference                       RadialIcon;                                               // 0x0048(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	struct FTreasureMapWidgetText                      NoteTitleWidgetText;                                      // 0x0058(0x0038) (Edit, DisableEditOnInstance)
+	struct FTreasureMapWidgetText                      NoteBodyWidgetText;                                       // 0x0090(0x0038) (Edit, DisableEditOnInstance)
+	float                                              NoteWidth;                                                // 0x00C8(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              NoteLineSpacingMultiplier;                                // 0x00CC(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 };
 
 // ScriptStruct MysteriousNotes.MysteriousNoteInfo
@@ -57,6 +58,13 @@ struct FClientNoteData
 	TArray<struct FMysteriousNoteInfo>                 PendingNotes;                                             // 0x0008(0x0010) (ZeroConstructor)
 };
 
+// ScriptStruct MysteriousNotes.MysteriousNotesCompletionEventsModelEntry
+// 0x0008
+struct FMysteriousNotesCompletionEventsModelEntry
+{
+	struct FName                                       CompletionIdent;                                          // 0x0000(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+};
+
 // ScriptStruct MysteriousNotes.EventListenForCinematicEndEvent
 // 0x0001
 struct FEventListenForCinematicEndEvent
@@ -65,10 +73,12 @@ struct FEventListenForCinematicEndEvent
 };
 
 // ScriptStruct MysteriousNotes.EventTriggerMysteriousNotesPopup
-// 0x0008
+// 0x0010
 struct FEventTriggerMysteriousNotesPopup
 {
 	class APlayerController*                           PlayerController;                                         // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	bool                                               CinematicSkipped;                                         // 0x0008(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0009(0x0007) MISSED OFFSET
 };
 
 // ScriptStruct MysteriousNotes.EventMarkNoteDeleted
@@ -110,9 +120,9 @@ struct FEventMarkNoteRead
 	struct FGuid                                       NoteId;                                                   // 0x0008(0x0010) (ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct MysteriousNotes.EventPlayerControllerUnpossessed
+// ScriptStruct MysteriousNotes.EventOnlineAthenaPlayerControllerUnpossessed
 // 0x0008
-struct FEventPlayerControllerUnpossessed
+struct FEventOnlineAthenaPlayerControllerUnpossessed
 {
 	class APlayerController*                           PlayerController;                                         // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
 };
@@ -134,6 +144,13 @@ struct FEventMysteriousNoteContentUpdated
 // ScriptStruct MysteriousNotes.EventMysteriousNoteSettingsLoaded
 // 0x0001
 struct FEventMysteriousNoteSettingsLoaded
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct MysteriousNotes.EventMysteriousNoteCustomContentUpdate
+// 0x0001
+struct FEventMysteriousNoteCustomContentUpdate
 {
 	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
@@ -170,11 +187,11 @@ struct FActiveNoteData
 };
 
 // ScriptStruct MysteriousNotes.MysteriousNoteRequest
-// 0x0030
+// 0x0080
 struct FMysteriousNoteRequest
 {
 	class APlayerController*                           PlayerController;                                         // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
-	struct FPirateIdentity                             PirateIdentity;                                           // 0x0008(0x0028)
+	struct FPirateIdentity                             PirateIdentity;                                           // 0x0008(0x0078)
 };
 
 // ScriptStruct MysteriousNotes.PlayerMysteriousNoteItem
@@ -195,9 +212,9 @@ struct FPlayerSentNotesTelemetryEvent
 	int                                                NoteCount;                                                // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct MysteriousNotes.NoteStateTelemetryEvent
+// ScriptStruct MysteriousNotes.PlayerNoteStateChangeTelemetryEvent
 // 0x0020
-struct FNoteStateTelemetryEvent
+struct FPlayerNoteStateChangeTelemetryEvent
 {
 	struct FGuid                                       NoteId;                                                   // 0x0000(0x0010) (ZeroConstructor, IsPlainOldData)
 	class FString                                      NoteState;                                                // 0x0010(0x0010) (ZeroConstructor)

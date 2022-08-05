@@ -1,40 +1,17 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_EmissaryFramework_enums.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum EmissaryFramework.EEmisaryCompanyActionType
-enum class EEmisaryCompanyActionType : uint8_t
-{
-	EEmisaryCompanyActionType__CompleteRiddleStep = 0,
-	EEmisaryCompanyActionType__CompleteRiddleQuest = 1,
-	EEmisaryCompanyActionType__CompleteXMarksTheSpotQuest = 2,
-	EEmisaryCompanyActionType__DefeatNamedSkeleton = 3,
-	EEmisaryCompanyActionType__CompleteBountyQuest = 4,
-	EEmisaryCompanyActionType__CompleteCargoRunStep = 5,
-	EEmisaryCompanyActionType__CompleteCargoRunQuest = 6,
-	EEmisaryCompanyActionType__CompleteMerchantStep = 7,
-	EEmisaryCompanyActionType__CompleteMerchantQuest = 8,
-	EEmisaryCompanyActionType__CompleteGhostShipQuest = 9,
-	EEmisaryCompanyActionType__MapPieceFound = 10,
-	EEmisaryCompanyActionType__CompleteWayfinderVoyage = 11,
-	EEmisaryCompanyActionType__EEmisaryCompanyActionType_MAX = 12
-};
-
-
-
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
@@ -85,6 +62,13 @@ struct FEmissaryQuestCompanyActionRewardBoostEvent
 struct FEmissaryCompanyChangedEvent
 {
 	unsigned char                                      UnknownData00[0x10];                                      // 0x0000(0x0010) MISSED OFFSET
+};
+
+// ScriptStruct EmissaryFramework.EmissaryLedgerVisited
+// 0x0010
+struct FEmissaryLedgerVisited
+{
+	class FString                                      CompanyId;                                                // 0x0000(0x0010) (ZeroConstructor)
 };
 
 }

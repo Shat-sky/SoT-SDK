@@ -1,52 +1,18 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_AthenaEngine_enums.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum AthenaEngine.EPlayModeVariant
-enum class EPlayModeVariant : uint8_t
-{
-	EPlayModeVariant__Normal       = 0,
-	EPlayModeVariant__Creator      = 1,
-	EPlayModeVariant__Invalid      = 2,
-	EPlayModeVariant__MAX          = 3,
-	EPlayModeVariant__EPlayModeVariant_MAX = 4
-};
-
-
-// Enum AthenaEngine.EPlayMode
-enum class EPlayMode : uint8_t
-{
-	EPlayModeVariant               = 0,
-	EPlayModeVariant__Normal       = 1,
-	EPlayModeVariant__Creator      = 2,
-	EPlayModeVariant__Invalid      = 3,
-	EPlayModeVariant__MAX          = 4,
-	EPlayModeVariant__EPlayModeVariant_MAX = 5,
-	EPlayMode__Adventure           = 6,
-	EPlayMode__Contest             = 7,
-	EPlayMode__Tutorial            = 8,
-	EPlayMode__NotSelectedYet      = 9,
-	EPlayMode__MAX                 = 10,
-	EPlayMode__Invalid             = 11,
-	EPlayMode__EPlayMode_MAX       = 12
-};
-
-
-
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
@@ -92,6 +58,13 @@ struct FPlayModeDefiniton
 	TArray<class FString>                              States;                                                   // 0x0010(0x0010) (ZeroConstructor)
 	int                                                CrewMin;                                                  // 0x0020(0x0004) (ZeroConstructor, IsPlainOldData)
 	int                                                CrewMax;                                                  // 0x0024(0x0004) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct AthenaEngine.ServicesStampId
+// 0x0010
+struct FServicesStampId
+{
+	class FString                                      StampId;                                                  // 0x0000(0x0010) (ZeroConstructor)
 };
 
 // ScriptStruct AthenaEngine.ActorComponentSelector
@@ -142,6 +115,20 @@ struct FAthenaAsyncAssetLoaderWrapper
 struct FEventMeshAssigned
 {
 	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct AthenaEngine.InlineUserDefinedStructDetails
+// 0x0008
+struct FInlineUserDefinedStructDetails
+{
+	class UScriptStruct*                               Struct;                                                   // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct AthenaEngine.NativeAndUserDefinedStructSelector
+// 0x0008
+struct FNativeAndUserDefinedStructSelector
+{
+	class UScriptStruct*                               Struct;                                                   // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 };
 
 }

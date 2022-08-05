@@ -1,14 +1,16 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_StatusEffects_enums.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
+#include "SoT_Athena_classes.hpp"
 
 namespace SDK
 {
@@ -71,11 +73,12 @@ struct FActiveStatusEffect
 };
 
 // ScriptStruct StatusEffects.EventAppliedStatusToTargets
-// 0x0020
+// 0x0028
 struct FEventAppliedStatusToTargets
 {
 	TArray<class UClass*>                              StatusApplied;                                            // 0x0000(0x0010) (ZeroConstructor)
 	TArray<class AActor*>                              Targets;                                                  // 0x0010(0x0010) (ZeroConstructor)
+	class AActor*                                      StatusSource;                                             // 0x0020(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct StatusEffects.StatusEffectPersistenceKey
@@ -83,6 +86,21 @@ struct FEventAppliedStatusToTargets
 struct FStatusEffectPersistenceKey
 {
 	struct FStatus                                     AppliedStatuses;                                          // 0x0000(0x0018)
+};
+
+// ScriptStruct StatusEffects.ApplyStatusEvent
+// 0x0018
+struct FApplyStatusEvent
+{
+	struct FStatus                                     StatusToApply;                                            // 0x0000(0x0018)
+};
+
+// ScriptStruct StatusEffects.BuffedTargetData
+// 0x0018
+struct FBuffedTargetData
+{
+	TWeakObjectPtr<class AActor>                       ActorBuffed;                                              // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	TScriptInterface<class UStatusEffectRecipientInterface> StatusEffectRecipient;                                    // 0x0008(0x0010) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct StatusEffects.StatusDeactivatedEvent

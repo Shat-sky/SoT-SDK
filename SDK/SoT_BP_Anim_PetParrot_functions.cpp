@@ -1,10 +1,10 @@
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_BP_Anim_PetParrot_parameters.hpp"
+#include "SoT_BP_Anim_PetParrot_classes.hpp"
 
 namespace SDK
 {
@@ -924,22 +924,6 @@ void UBP_Anim_PetParrot_C::EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Anim_P
 }
 
 
-// Function BP_Anim_PetParrot.BP_Anim_PetParrot_C.BlueprintInitializeAnimation
-// (Event, Public, BlueprintEvent)
-
-void UBP_Anim_PetParrot_C::BlueprintInitializeAnimation()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Anim_PetParrot.BP_Anim_PetParrot_C.BlueprintInitializeAnimation"));
-
-	struct
-	{
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
 // Function BP_Anim_PetParrot.BP_Anim_PetParrot_C.AnimNotify_UnEquipCompleted
 // (BlueprintCallable, BlueprintEvent)
 
@@ -1058,6 +1042,22 @@ void UBP_Anim_PetParrot_C::AnimNotify_StaticBaseOn()
 void UBP_Anim_PetParrot_C::AnimNotify_StaticBaseOff()
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Anim_PetParrot.BP_Anim_PetParrot_C.AnimNotify_StaticBaseOff"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function BP_Anim_PetParrot.BP_Anim_PetParrot_C.InitialiseAnimationData
+// (Event, Protected, BlueprintEvent)
+
+void UBP_Anim_PetParrot_C::InitialiseAnimationData()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Anim_PetParrot.BP_Anim_PetParrot_C.InitialiseAnimationData"));
 
 	struct
 	{

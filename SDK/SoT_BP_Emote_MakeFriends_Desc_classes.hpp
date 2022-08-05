@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Emote_MakeFriends_Desc.BP_Emote_MakeFriends_Desc_C
-// 0x0000 (0x0110 - 0x0110)
+// 0x0000 (0x0100 - 0x0100)
 class UBP_Emote_MakeFriends_Desc_C : public UEmoteDesc
 {
 public:

@@ -1,32 +1,18 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_Repair_enums.hpp"
 #include "SoT_CoreUObject_classes.hpp"
+#include "SoT_Athena_classes.hpp"
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum Repair.ERepairableState
-enum class ERepairableState : uint8_t
-{
-	ERepairableState__NeverDamaged = 0,
-	ERepairableState__Repairable   = 1,
-	ERepairableState__Repairing    = 2,
-	ERepairableState__Repaired     = 3,
-	ERepairableState__ERepairableState_MAX = 4
-};
-
-
-
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
@@ -48,6 +34,35 @@ struct FEventRepairableObjectRepairEndedEvent
 struct FEventRepairableObjectDestroyed
 {
 	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Repair.EventPlayerUndoRepairEnd
+// 0x0008
+struct FEventPlayerUndoRepairEnd
+{
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0000(0x0008) MISSED OFFSET
+};
+
+// ScriptStruct Repair.EventPlayerUndoRepairCompleted
+// 0x0008
+struct FEventPlayerUndoRepairCompleted
+{
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0000(0x0008) MISSED OFFSET
+};
+
+// ScriptStruct Repair.EventPlayerUndoRepairStart
+// 0x0008
+struct FEventPlayerUndoRepairStart
+{
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0000(0x0008) MISSED OFFSET
+};
+
+// ScriptStruct Repair.ShipPartDamagePersistenceModel
+// 0x001F (0x0020 - 0x0001)
+struct FShipPartDamagePersistenceModel : public FPersistenceModel
+{
+	TArray<TEnumAsByte<ERepairableState>>              ComponentRepairableStates;                                // 0x0000(0x0010) (ZeroConstructor)
+	class FString                                      Identifier;                                               // 0x0010(0x0010) (ZeroConstructor)
 };
 
 }

@@ -1,12 +1,13 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_PrioritisedPrompts_enums.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_ObjectMessaging_classes.hpp"
@@ -14,39 +15,6 @@
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum PrioritisedPrompts.EPromptPriority
-enum class EPromptPriority : uint8_t
-{
-	EPromptPriority__Low           = 0,
-	EPromptPriority__High          = 1,
-	EPromptPriority__EPromptPriority_MAX = 2
-};
-
-
-// Enum PrioritisedPrompts.EPromptEvaluatedType
-enum class EPromptEvaluatedType : uint8_t
-{
-	EPromptEvaluatedType__ShowPrompt = 0,
-	EPromptEvaluatedType__ShowNoPrompt = 1,
-	EPromptEvaluatedType__CompleteCoordinator = 2,
-	EPromptEvaluatedType__EPromptEvaluatedType_MAX = 3
-};
-
-
-// Enum PrioritisedPrompts.EPromptStartStop
-enum class EPromptStartStop : uint8_t
-{
-	EPromptStartStop__Start        = 0,
-	EPromptStartStop__Stop         = 1,
-	EPromptStartStop__EPromptStartStop_MAX = 2
-};
-
-
-
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
@@ -66,7 +34,8 @@ struct FPrioritisedPrompt
 	class FString                                      Key;                                                      // 0x0038(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
 	class UPopUpMessageDesc*                           PopUpMessageDesc;                                         // 0x0048(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<EPromptPriority>                       BasePriority;                                             // 0x0050(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0051(0x0007) MISSED OFFSET
+	TEnumAsByte<EMenuNavigationAction>                 MenuNavigation;                                           // 0x0051(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x6];                                       // 0x0052(0x0006) MISSED OFFSET
 };
 
 // ScriptStruct PrioritisedPrompts.PrioritisedPromptWithHandle

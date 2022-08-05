@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,14 +15,14 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass wsp_audio.wsp_audio_C
-// 0x0030 (0x0448 - 0x0418)
+// 0x0030 (0x0400 - 0x03D0)
 class Awsp_audio_C : public ALevelScriptActor
 {
 public:
-	float                                              PreviousFrameTime;                                        // 0x0418(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x041C(0x0004) MISSED OFFSET
-	struct FWwiseEmitter                               WSP_Audio_2D_Emitter;                                     // 0x0420(0x0020) (Edit, BlueprintVisible, DisableEditOnInstance)
-	class UObject*                                     TimeInterface;                                            // 0x0440(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              PreviousFrameTime;                                        // 0x03D0(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x03D4(0x0004) MISSED OFFSET
+	struct FWwiseEmitter                               WSP_Audio_2D_Emitter;                                     // 0x03D8(0x0020) (Edit, BlueprintVisible, DisableEditOnInstance)
+	class UObject*                                     TimeInterface;                                            // 0x03F8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

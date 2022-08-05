@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,12 +15,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Figurehead.BP_Figurehead_C
-// 0x0010 (0x0428 - 0x0418)
-class ABP_Figurehead_C : public AGenericPart
+// 0x0010 (0x03F8 - 0x03E8)
+class ABP_Figurehead_C : public AGenericPartWithVFX
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0418(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
-	class UStaticMeshComponent*                        Figurehead;                                               // 0x0420(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UParticleSystemComponent*                    ParticleSystem;                                           // 0x03E8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UStaticMeshComponent*                        Figurehead;                                               // 0x03F0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -29,10 +29,9 @@ public:
 	}
 
 
+	class UParticleSystemComponent* GetVFXComponent();
+	class UStaticMeshComponent* GetMeshComponent();
 	void UserConstructionScript();
-	void OnPartMeshLoaded(class UStaticMesh* Mesh);
-	void OnPartDescLoaded(class UGenericPartDescAsset* Desc);
-	void ExecuteUbergraph_BP_Figurehead(int EntryPoint);
 };
 
 

@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,6 +49,47 @@ void UOcclusionService::OnIgnoredActorEndPlay(class AActor* InActor)
 	params.InActor = InActor;
 
 	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Occlusion.OcclusionService.AutomationSetShouldDisableAsync
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           InShouldDisableAsync           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UOcclusionService::AutomationSetShouldDisableAsync(bool InShouldDisableAsync)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Occlusion.OcclusionService.AutomationSetShouldDisableAsync"));
+
+	struct
+	{
+		bool                           InShouldDisableAsync;
+	} params;
+
+	params.InShouldDisableAsync = InShouldDisableAsync;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Occlusion.OcclusionService.AutomationGetShouldDisableAsync
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UOcclusionService::AutomationGetShouldDisableAsync()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Occlusion.OcclusionService.AutomationGetShouldDisableAsync"));
+
+	struct
+	{
+		bool                           ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
 }
 
 

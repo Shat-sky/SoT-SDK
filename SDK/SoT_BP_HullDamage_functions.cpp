@@ -1,10 +1,10 @@
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_BP_HullDamage_parameters.hpp"
+#include "SoT_BP_HullDamage_classes.hpp"
 
 namespace SDK
 {
@@ -17,11 +17,10 @@ namespace SDK
 // Parameters:
 // struct FVector                 HitPosition                    (Parm, ZeroConstructor, IsPlainOldData)
 // struct FVector                 HitNormal                      (Parm, ZeroConstructor, IsPlainOldData)
-// float                          HitStrength                    (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           Has_Decal                      (Parm, ZeroConstructor, IsPlainOldData)
 // class UDecalComponent*         Decal                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void ABP_HullDamage_C::Apply_Hit(const struct FVector& HitPosition, const struct FVector& HitNormal, float HitStrength, bool Has_Decal, class UDecalComponent** Decal)
+void ABP_HullDamage_C::Apply_Hit(const struct FVector& HitPosition, const struct FVector& HitNormal, bool Has_Decal, class UDecalComponent** Decal)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_HullDamage.BP_HullDamage_C.Apply Hit"));
 
@@ -29,20 +28,41 @@ void ABP_HullDamage_C::Apply_Hit(const struct FVector& HitPosition, const struct
 	{
 		struct FVector                 HitPosition;
 		struct FVector                 HitNormal;
-		float                          HitStrength;
 		bool                           Has_Decal;
 		class UDecalComponent*         Decal;
 	} params;
 
 	params.HitPosition = HitPosition;
 	params.HitNormal = HitNormal;
-	params.HitStrength = HitStrength;
 	params.Has_Decal = Has_Decal;
 
 	UObject::ProcessEvent(fn, &params);
 
 	if (Decal != nullptr)
 		*Decal = params.Decal;
+}
+
+
+// Function BP_HullDamage.BP_HullDamage_C.AddBakedDecal
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FVector                 Position                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector                 Normal                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void ABP_HullDamage_C::AddBakedDecal(const struct FVector& Position, const struct FVector& Normal)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_HullDamage.BP_HullDamage_C.AddBakedDecal"));
+
+	struct
+	{
+		struct FVector                 Position;
+		struct FVector                 Normal;
+	} params;
+
+	params.Position = Position;
+	params.Normal = Normal;
+
+	UObject::ProcessEvent(fn, &params);
 }
 
 
@@ -74,11 +94,10 @@ void ABP_HullDamage_C::PlayHitSFX(const struct FVector& HitLocation, float HitSt
 // Parameters:
 // struct FVector                 HitPosition                    (Parm, ZeroConstructor, IsPlainOldData)
 // struct FVector                 HitNormal                      (Parm, ZeroConstructor, IsPlainOldData)
-// float                          HitStrength                    (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           HasDecal                       (Parm, ZeroConstructor, IsPlainOldData)
 // class UDecalComponent*         Decal                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void ABP_HullDamage_C::Apply_Visual_Hit(const struct FVector& HitPosition, const struct FVector& HitNormal, float HitStrength, bool HasDecal, class UDecalComponent** Decal)
+void ABP_HullDamage_C::Apply_Visual_Hit(const struct FVector& HitPosition, const struct FVector& HitNormal, bool HasDecal, class UDecalComponent** Decal)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_HullDamage.BP_HullDamage_C.Apply Visual Hit"));
 
@@ -86,14 +105,12 @@ void ABP_HullDamage_C::Apply_Visual_Hit(const struct FVector& HitPosition, const
 	{
 		struct FVector                 HitPosition;
 		struct FVector                 HitNormal;
-		float                          HitStrength;
 		bool                           HasDecal;
 		class UDecalComponent*         Decal;
 	} params;
 
 	params.HitPosition = HitPosition;
 	params.HitNormal = HitNormal;
-	params.HitStrength = HitStrength;
 	params.HasDecal = HasDecal;
 
 	UObject::ProcessEvent(fn, &params);
@@ -273,6 +290,26 @@ void ABP_HullDamage_C::BndEvt__ShipDamageComponent_K2Node_ComponentBoundEvent_6_
 	} params;
 
 	params.ImpactDamageEvent = ImpactDamageEvent;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function BP_HullDamage.BP_HullDamage_C.ResetDecals
+// (Event, Protected, HasOutParms, BlueprintEvent)
+// Parameters:
+// TArray<unsigned char>          DamageZoneDecalsToBeReapplied  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+
+void ABP_HullDamage_C::ResetDecals(TArray<unsigned char> DamageZoneDecalsToBeReapplied)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_HullDamage.BP_HullDamage_C.ResetDecals"));
+
+	struct
+	{
+		TArray<unsigned char>          DamageZoneDecalsToBeReapplied;
+	} params;
+
+	params.DamageZoneDecalsToBeReapplied = DamageZoneDecalsToBeReapplied;
 
 	UObject::ProcessEvent(fn, &params);
 }

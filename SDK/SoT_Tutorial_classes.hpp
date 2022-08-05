@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,21 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Classes
 //---------------------------------------------------------------------------
+
+// Class Tutorial.CaptaincyTutorialDesc
+// 0x0000 (0x00C8 - 0x00C8)
+class UCaptaincyTutorialDesc : public UEntitlementDesc
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tutorial.CaptaincyTutorialDesc"));
+		return ptr;
+	}
+
+};
+
 
 // Class Tutorial.CompanyTutorialVoyageProgress
 // 0x00B8 (0x00E0 - 0x0028)
@@ -47,6 +62,23 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tutorial.ContextualTutorialComponent"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tutorial.HasTutorialStarterBegunNPCDialogConditional
+// 0x0008 (0x0038 - 0x0030)
+class UHasTutorialStarterBegunNPCDialogConditional : public UNPCDialogConditional
+{
+public:
+	TEnumAsByte<ETutorialType>                         TutorialStarterType;                                      // 0x0030(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0031(0x0007) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tutorial.HasTutorialStarterBegunNPCDialogConditional"));
 		return ptr;
 	}
 
@@ -142,20 +174,42 @@ public:
 };
 
 
+// Class Tutorial.TutorialManagerInterface
+// 0x0000 (0x0028 - 0x0028)
+class UTutorialManagerInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tutorial.TutorialManagerInterface"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tutorial.TutorialManager
-// 0x0040 (0x0108 - 0x00C8)
+// 0x0060 (0x0128 - 0x00C8)
 class UTutorialManager : public UActorComponent
 {
 public:
-	class UClass*                                      CompanyOnboardingStarterClass;                            // 0x00C8(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UClass*                                      MaidenVoyageStarterClass;                                 // 0x00D0(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UClass*                                      SelectedTutorialClass;                                    // 0x00D8(0x0008) (Net, ZeroConstructor, IsPlainOldData)
-	class UTutorialStarter*                            SelectedTutorial;                                         // 0x00E0(0x0008) (ZeroConstructor, IsPlainOldData)
-	bool                                               HasEverPlayedFirstPersonAnimation;                        // 0x00E8(0x0001) (Net, ZeroConstructor, IsPlainOldData)
-	bool                                               HasStartedTutorial;                                       // 0x00E9(0x0001) (ZeroConstructor, IsPlainOldData)
-	bool                                               HasReceivedEntitlements;                                  // 0x00EA(0x0001) (ZeroConstructor, IsPlainOldData)
-	bool                                               HasPosessedPawn;                                          // 0x00EB(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x1C];                                      // 0x00EC(0x001C) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x00C8(0x0008) MISSED OFFSET
+	class UClass*                                      CompanyOnboardingStarterClass;                            // 0x00D0(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UClass*                                      MaidenVoyageStarterClass;                                 // 0x00D8(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UClass*                                      BeachNPCSpawnFlowStarterClass;                            // 0x00E0(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UClass*                                      CaptaincyStarterClass;                                    // 0x00E8(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UClass*                                      CaptaincyNewShipStarterClass;                             // 0x00F0(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UClass*                                      SelectedTutorialClass;                                    // 0x00F8(0x0008) (Net, ZeroConstructor, IsPlainOldData)
+	class UTutorialStarter*                            SelectedTutorial;                                         // 0x0100(0x0008) (ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ETutorialType>                         TutorialType;                                             // 0x0108(0x0001) (Net, ZeroConstructor, IsPlainOldData)
+	bool                                               HasEverPlayedFirstPersonAnimation;                        // 0x0109(0x0001) (Net, ZeroConstructor, IsPlainOldData)
+	bool                                               HasStartedTutorial;                                       // 0x010A(0x0001) (Net, ZeroConstructor, IsPlainOldData)
+	bool                                               HasReceivedEntitlements;                                  // 0x010B(0x0001) (ZeroConstructor, IsPlainOldData)
+	bool                                               HasPosessedPawn;                                          // 0x010C(0x0001) (ZeroConstructor, IsPlainOldData)
+	bool                                               HasPlayerFinshedSpawning;                                 // 0x010D(0x0001) (ZeroConstructor, IsPlainOldData)
+	bool                                               IsPlayerWaitingForCaptaincySessionResponse;               // 0x010E(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x19];                                      // 0x010F(0x0019) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -164,6 +218,7 @@ public:
 	}
 
 
+	void OnRep_TutorialType();
 	void OnRep_SelectedTutorialClass();
 };
 
@@ -175,12 +230,57 @@ class UTutorialStarter : public UObject
 public:
 	class AAthenaPlayerController*                     AthenaPlayerController;                                   // 0x0028(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	bool                                               ShouldPlayIntroAnimatic;                                  // 0x0030(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x0031(0x0003) MISSED OFFSET
+	bool                                               ShouldDisableAllIntroBehaviour;                           // 0x0031(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x2];                                       // 0x0032(0x0002) MISSED OFFSET
 	struct FFirstPersonAnimaticSettings                IntroAnimationSettings;                                   // 0x0034(0x002C) (Edit, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tutorial.TutorialStarter"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tutorial.BeachNPCSpawnFlowStarter
+// 0x0000 (0x0060 - 0x0060)
+class UBeachNPCSpawnFlowStarter : public UTutorialStarter
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tutorial.BeachNPCSpawnFlowStarter"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tutorial.CaptaincyStarter
+// 0x0098 (0x00F8 - 0x0060)
+class UCaptaincyStarter : public UTutorialStarter
+{
+public:
+	class UVoyageDescDataAsset*                        TutorialTale;                                             // 0x0060(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               CheckIfShipNeverSetSail;                                  // 0x0068(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               CheckIfPlayerInOutpost;                                   // 0x0069(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               CheckIfPlayerIsInCaptain;                                 // 0x006A(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x5];                                       // 0x006B(0x0005) MISSED OFFSET
+	class UClass*                                      CheckIfEntitlementIsOwned;                                // 0x0070(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               CheckIfCaptainingANewShip;                                // 0x0078(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x3];                                       // 0x0079(0x0003) MISSED OFFSET
+	struct FName                                       FeatureToggle;                                            // 0x007C(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               CheckIfPlayerHasMadeAttempts;                             // 0x0084(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x3];                                       // 0x0085(0x0003) MISSED OFFSET
+	class UClass*                                      PromptCounterKey;                                         // 0x0088(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	int                                                MaxAttemptCount;                                          // 0x0090(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData03[0x64];                                      // 0x0094(0x0064) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tutorial.CaptaincyStarter"));
 		return ptr;
 	}
 

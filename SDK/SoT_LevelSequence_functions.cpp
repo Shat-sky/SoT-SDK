@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -47,17 +47,20 @@ class ULevelSequencePlayer* ULevelSequencePlayer::CreateLevelSequencePlayer(clas
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class ULevelSequence*          InSequence                     (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           LoadSequence                   (Parm, ZeroConstructor, IsPlainOldData)
 
-void ALevelSequenceActor::SetSequence(class ULevelSequence* InSequence)
+void ALevelSequenceActor::SetSequence(class ULevelSequence* InSequence, bool LoadSequence)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function LevelSequence.LevelSequenceActor.SetSequence"));
 
 	struct
 	{
 		class ULevelSequence*          InSequence;
+		bool                           LoadSequence;
 	} params;
 
 	params.InSequence = InSequence;
+	params.LoadSequence = LoadSequence;
 
 	UObject::ProcessEvent(fn, &params);
 }

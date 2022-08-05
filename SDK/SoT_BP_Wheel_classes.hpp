@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,19 +15,18 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Wheel.BP_Wheel_C
-// 0x0119 (0x0A29 - 0x0910)
+// 0x0111 (0x0B09 - 0x09F8)
 class ABP_Wheel_C : public AWheel
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0910(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
-	class USkeletalMeshComponent*                      Wheel;                                                    // 0x0918(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class USphereComponent*                            ProjectileCollision;                                      // 0x0920(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UInteractableComponent*                      Interactable;                                             // 0x0928(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	struct FObjectMessagingHandle                      Wheel_Centered;                                           // 0x0930(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FObjectMessagingHandle                      Wheel_Movement_Started;                                   // 0x0978(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FObjectMessagingHandle                      Wheel_Movement_Stopped;                                   // 0x09C0(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FWwiseEmitter                               AudioEmitter;                                             // 0x0A08(0x0020) (Edit, BlueprintVisible, DisableEditOnInstance)
-	bool                                               ShipWheelTurning;                                         // 0x0A28(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x09F8(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
+	class USphereComponent*                            ProjectileCollision;                                      // 0x0A00(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UInteractableComponent*                      Interactable;                                             // 0x0A08(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	struct FObjectMessagingHandle                      Wheel_Centered;                                           // 0x0A10(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FObjectMessagingHandle                      Wheel_Movement_Started;                                   // 0x0A58(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FObjectMessagingHandle                      Wheel_Movement_Stopped;                                   // 0x0AA0(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FWwiseEmitter                               AudioEmitter;                                             // 0x0AE8(0x0020) (Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                               ShipWheelTurning;                                         // 0x0B08(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -38,7 +37,6 @@ public:
 
 	struct FDockableInfo GetDockableInfo();
 	struct FVector GetClosestInteractionPoint(const struct FVector& ReferencePosition, float* OutInteractionPointRadius);
-	class USkeletalMeshComponent* GetWheelMesh();
 	void UserConstructionScript();
 	void Receive_Animation_State(const struct FRotator& WheelRotation, float WheelAnimationTime, TEnumAsByte<EWheel> EWheel, float Direction, float WheelRate);
 	void StickInput(float StickInputX);
@@ -52,7 +50,6 @@ public:
 	void IK_Limb_Active(TEnumAsByte<EIKLimbName> LimbId, bool Active, TEnumAsByte<ELimbIKSpace> CoordinateSpace);
 	void IK_Limb_Stretch(float ArmStretch, float SpineStretch, float LegStretch);
 	void RequestStateChange(class AActor* Controller);
-	void OnWheelDescLoaded(class UWheelDescAsset* WheelDesc);
 	void ExecuteUbergraph_BP_Wheel(int EntryPoint);
 };
 

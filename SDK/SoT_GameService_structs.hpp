@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,10 +32,11 @@ struct FGameServiceCoordinatorUnit
 };
 
 // ScriptStruct GameService.GameServiceCoordinator
-// 0x0010
+// 0x0020
 struct FGameServiceCoordinator
 {
 	TArray<struct FGameServiceCoordinatorUnit>         Services;                                                 // 0x0000(0x0010) (ZeroConstructor)
+	unsigned char                                      UnknownData00[0x10];                                      // 0x0010(0x0010) MISSED OFFSET
 };
 
 }

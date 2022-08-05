@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,14 +15,13 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class AthenaRigging.InstancedRopeComponent
-// 0x00D0 (0x0640 - 0x0570)
+// 0x00C0 (0x0680 - 0x05C0)
 class UInstancedRopeComponent : public UPrimitiveComponent
 {
 public:
-	class UStaticMesh*                                 StaticMesh;                                               // 0x0570(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	TArray<struct FInstancedRopeParams>                Ropes;                                                    // 0x0578(0x0010) (Edit, ZeroConstructor, EditConst)
-	int                                                ShadowLOD;                                                // 0x0588(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0xB4];                                      // 0x058C(0x00B4) MISSED OFFSET
+	TArray<struct FInstancedRopeParams>                Ropes;                                                    // 0x05C0(0x0010) (Edit, ZeroConstructor, EditConst)
+	int                                                ShadowLOD;                                                // 0x05D0(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0xAC];                                      // 0x05D4(0x00AC) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -54,20 +53,20 @@ public:
 
 
 // Class AthenaRigging.RiggingSystem
-// 0x0150 (0x05A8 - 0x0458)
+// 0x0150 (0x0518 - 0x03C8)
 class ARiggingSystem : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0458(0x0008) MISSED OFFSET
-	class USceneComponent*                             Root;                                                     // 0x0460(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	class UInstancedRopeComponent*                     InstancedRopes;                                           // 0x0468(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	TArray<struct FRiggingSystemLine>                  Lines;                                                    // 0x0470(0x0010) (ZeroConstructor)
-	TArray<struct FInstancedRopeParams>                Ropes;                                                    // 0x0480(0x0010) (ZeroConstructor)
-	TArray<class UMobileInstancedStaticMeshComponent*> PulleyInstances;                                          // 0x0490(0x0010) (ExportObject, ZeroConstructor)
-	struct FRiggingSystemPulleyData                    Pulleys;                                                  // 0x04A0(0x0060)
-	TArray<struct FSocketId>                           Sockets;                                                  // 0x0500(0x0010) (ZeroConstructor)
-	TArray<float>                                      InitialMainRopeLengths;                                   // 0x0510(0x0010) (ZeroConstructor)
-	unsigned char                                      UnknownData01[0x88];                                      // 0x0520(0x0088) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x03C8(0x0008) MISSED OFFSET
+	class USceneComponent*                             Root;                                                     // 0x03D0(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UInstancedRopeComponent*                     InstancedRopes;                                           // 0x03D8(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	TArray<struct FRiggingSystemLine>                  Lines;                                                    // 0x03E0(0x0010) (ZeroConstructor)
+	TArray<struct FInstancedRopeParams>                Ropes;                                                    // 0x03F0(0x0010) (ZeroConstructor)
+	TArray<class UMobileInstancedStaticMeshComponent*> PulleyInstances;                                          // 0x0400(0x0010) (ExportObject, ZeroConstructor)
+	struct FRiggingSystemPulleyData                    Pulleys;                                                  // 0x0410(0x0060)
+	TArray<struct FSocketId>                           Sockets;                                                  // 0x0470(0x0010) (ZeroConstructor)
+	TArray<float>                                      InitialMainRopeLengths;                                   // 0x0480(0x0010) (ZeroConstructor)
+	unsigned char                                      UnknownData01[0x88];                                      // 0x0490(0x0088) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -79,14 +78,14 @@ public:
 
 
 // Class AthenaRigging.RiggingSystemComponent
-// 0x0040 (0x02D0 - 0x0290)
+// 0x0040 (0x0320 - 0x02E0)
 class URiggingSystemComponent : public USceneComponent
 {
 public:
-	unsigned char                                      UnknownData00[0x18];                                      // 0x0290(0x0018) MISSED OFFSET
-	TArray<struct FRiggingSystemLineGroup>             LineGroups;                                               // 0x02A8(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	class ARiggingSystem*                              Impl;                                                     // 0x02B8(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x10];                                      // 0x02C0(0x0010) MISSED OFFSET
+	struct FRopeStyleParams                            RopeStyle;                                                // 0x02E0(0x0020) (Edit, BlueprintVisible, BlueprintReadOnly)
+	TArray<struct FRiggingSystemLineGroup>             LineGroups;                                               // 0x0300(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	class ARiggingSystem*                              Impl;                                                     // 0x0310(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0318(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -101,7 +100,7 @@ public:
 
 
 // Class AthenaRigging.RopeCatenaryRenderComponent
-// 0x0000 (0x0610 - 0x0610)
+// 0x0000 (0x0660 - 0x0660)
 class URopeCatenaryRenderComponent : public UCordRenderComponent
 {
 public:

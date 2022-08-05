@@ -1,16 +1,32 @@
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_BP_Prompt_CTPurchaseVoyageSequence_parameters.hpp"
+#include "SoT_BP_Prompt_CTPurchaseVoyageSequence_classes.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.ShowAppropriateSignpostPrompt
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UBP_Prompt_CTPurchaseVoyageSequence_C::ShowAppropriateSignpostPrompt()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.ShowAppropriateSignpostPrompt"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
 
 // Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.ShowAppropriateMerchantPrompt
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -211,15 +227,15 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::OnPlayerProposedVoyageFunc(const str
 // Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnOfferPurchasedFunc
 // (Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FOfferPurchasedEvent    OfferPurchasedEvent            (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FAthena_FOfferPurchasedEvent OfferPurchasedEvent            (ConstParm, Parm, OutParm, ReferenceParm)
 
-void UBP_Prompt_CTPurchaseVoyageSequence_C::OnOfferPurchasedFunc(const struct FOfferPurchasedEvent& OfferPurchasedEvent)
+void UBP_Prompt_CTPurchaseVoyageSequence_C::OnOfferPurchasedFunc(const struct FAthena_FOfferPurchasedEvent& OfferPurchasedEvent)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnOfferPurchasedFunc"));
 
 	struct
 	{
-		struct FOfferPurchasedEvent    OfferPurchasedEvent;
+		struct FAthena_FOfferPurchasedEvent OfferPurchasedEvent;
 	} params;
 
 	params.OfferPurchasedEvent = OfferPurchasedEvent;
@@ -750,15 +766,15 @@ void UBP_Prompt_CTPurchaseVoyageSequence_C::Unregister_HUD_Events()
 // Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnOfferPurchased
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FOfferPurchasedEvent    Event                          (Parm)
+// struct FAthena_FOfferPurchasedEvent Event                          (Parm)
 
-void UBP_Prompt_CTPurchaseVoyageSequence_C::OnOfferPurchased(const struct FOfferPurchasedEvent& Event)
+void UBP_Prompt_CTPurchaseVoyageSequence_C::OnOfferPurchased(const struct FAthena_FOfferPurchasedEvent& Event)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C.OnOfferPurchased"));
 
 	struct
 	{
-		struct FOfferPurchasedEvent    Event;
+		struct FAthena_FOfferPurchasedEvent Event;
 	} params;
 
 	params.Event = Event;

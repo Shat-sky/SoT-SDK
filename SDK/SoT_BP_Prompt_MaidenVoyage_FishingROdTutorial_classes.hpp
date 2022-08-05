@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -66,14 +66,14 @@ public:
 	void OnFishBiteFunc();
 	void OnCastRodFunc(const struct FEventSetFishingAnimationState& EventSetFishingAnimationState);
 	void OnStowFunc(const struct FEventStartStow& EventStartStow);
-	void OnWieldFunc(const struct FEventObjectWielded& EventObjectWielded);
+	void OnWieldFunc(const struct FAthena_FEventObjectWielded& EventObjectWielded);
 	void ResetPromptState();
 	void Evaluate();
 	void RegisterCharacterEvents_Implementable(const struct FObjectMessagingDispatcherHandle& CharacterDispatcher);
 	void UnregisterCharacterEvents_Implementable(const struct FObjectMessagingDispatcherHandle& CharacterDispatcher);
 	void PostInitialize();
 	void UnregisterOtherEvents_Implementable();
-	void OnWield(const struct FEventObjectWielded& Event);
+	void OnWield(const struct FAthena_FEventObjectWielded& Event);
 	void OnFishTired(const struct FEventFishingFishBecameTired& Event);
 	void OnCastRod(const struct FEventSetFishingAnimationState& Event);
 	void OnFishCaught(const struct FEventFishingFishCaught& Event);

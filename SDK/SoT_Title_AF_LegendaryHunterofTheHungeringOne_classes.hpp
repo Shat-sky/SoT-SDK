@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass Title_AF_LegendaryHunterofTheHungeringOne.Title_AF_LegendaryHunterofTheHungeringOne_C
-// 0x0000 (0x00E0 - 0x00E0)
+// 0x0000 (0x00D0 - 0x00D0)
 class UTitle_AF_LegendaryHunterofTheHungeringOne_C : public UTitleDesc
 {
 public:

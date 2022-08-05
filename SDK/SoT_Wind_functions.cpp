@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -213,6 +213,26 @@ void UWindInterface::SetGlobalWindAngle(float InAngle)
 	} params;
 
 	params.InAngle = InAngle;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Wind.WindInterface.SetCustomMode
+// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           InCustomMode                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UWindInterface::SetCustomMode(bool InCustomMode)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Wind.WindInterface.SetCustomMode"));
+
+	struct
+	{
+		bool                           InCustomMode;
+	} params;
+
+	params.InCustomMode = InCustomMode;
 
 	UObject::ProcessEvent(fn, &params);
 }

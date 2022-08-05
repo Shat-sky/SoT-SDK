@@ -1,15 +1,16 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
-#include "SoT_AIModule_classes.hpp"
+#include "SoT_AIShips_enums.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
+#include "SoT_AIModule_classes.hpp"
 #include "SoT_Athena_classes.hpp"
 #include "SoT_AthenaAI_classes.hpp"
 #include "SoT_Maths_classes.hpp"
@@ -17,82 +18,6 @@
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum AIShips.EAIShipEncounterType
-enum class EAIShipEncounterType : uint8_t
-{
-	EAIShipEncounterType__Battle   = 0,
-	EAIShipEncounterType__Passive  = 1,
-	EAIShipEncounterType__Aggressive = 2,
-	EAIShipEncounterType__MAX      = 3,
-	EAIShipEncounterType__EAIShipEncounterType_MAX = 4
-};
-
-
-// Enum AIShips.ECannonballIconType
-enum class ECannonballIconType : uint8_t
-{
-	ECannonballIconType__Normal    = 0,
-	ECannonballIconType__Anchor    = 1,
-	ECannonballIconType__Ballast   = 2,
-	ECannonballIconType__Barrel    = 3,
-	ECannonballIconType__Boogie    = 4,
-	ECannonballIconType__Grog      = 5,
-	ECannonballIconType__Limp      = 6,
-	ECannonballIconType__Passive   = 7,
-	ECannonballIconType__Rigging   = 8,
-	ECannonballIconType__Rudder    = 9,
-	ECannonballIconType__Silence   = 10,
-	ECannonballIconType__Snake     = 11,
-	ECannonballIconType__Snooze    = 12,
-	ECannonballIconType__None      = 13,
-	ECannonballIconType__Max       = 14,
-	ECannonballIconType__ECannonballIconType_MAX = 15
-};
-
-
-// Enum AIShips.ESkellyFormIconType
-enum class ESkellyFormIconType : uint8_t
-{
-	ESkellyFormIconType__Normal    = 0,
-	ESkellyFormIconType__Metal     = 1,
-	ESkellyFormIconType__Plant     = 2,
-	ESkellyFormIconType__Shadow    = 3,
-	ESkellyFormIconType__None      = 4,
-	ESkellyFormIconType__Max       = 5,
-	ESkellyFormIconType__ESkellyFormIconType_MAX = 6
-};
-
-
-// Enum AIShips.EAIShipType
-enum class EAIShipType : uint8_t
-{
-	EAIShipType__Normal            = 0,
-	EAIShipType__Hard              = 1,
-	EAIShipType__EAIShipType_MAX   = 2
-};
-
-
-// Enum AIShips.EAIShipPlayerTrackerType
-enum class EAIShipPlayerTrackerType : uint8_t
-{
-	EAIShipPlayerTrackerType_MAX   = 0
-};
-
-
-// Enum AIShips.EAIShipDestructionReason
-enum class EAIShipDestructionReason : uint8_t
-{
-	EAIShipDestructionReason__Defeated = 0,
-	EAIShipDestructionReason__Despawn = 1,
-	EAIShipDestructionReason__EAIShipDestructionReason_MAX = 2
-};
-
-
-
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
@@ -416,7 +341,7 @@ struct FCursedSailsBattleParams
 {
 	struct FText                                       Name;                                                     // 0x0000(0x0038) (Edit, DisableEditOnInstance)
 	struct FText                                       SkellyCrewName;                                           // 0x0038(0x0038) (Edit, DisableEditOnInstance)
-	TEnumAsByte<ECannonballIconType>                   CannonballType;                                           // 0x0070(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	TEnumAsByte<ECannonballIconType>                   CannonBallType;                                           // 0x0070(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	TEnumAsByte<ESkellyFormIconType>                   SkellyType;                                               // 0x0071(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x6];                                       // 0x0072(0x0006) MISSED OFFSET
 	class UAIShipEncounterDesc*                        EncounterDescription;                                     // 0x0078(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnTemplate, InstancedReference, IsPlainOldData)
@@ -485,7 +410,7 @@ struct FAIShipEncounterNotification
 	struct FText                                       BattleName;                                               // 0x0000(0x0038)
 	struct FName                                       SeaName;                                                  // 0x0038(0x0008) (ZeroConstructor, IsPlainOldData)
 	struct FText                                       SkellyCrewName;                                           // 0x0040(0x0038)
-	TEnumAsByte<ECannonballIconType>                   CannonballType;                                           // 0x0078(0x0001) (ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ECannonballIconType>                   CannonBallType;                                           // 0x0078(0x0001) (ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<ESkellyFormIconType>                   SkellyType;                                               // 0x0079(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x6];                                       // 0x007A(0x0006) MISSED OFFSET
 };
@@ -507,20 +432,20 @@ struct FAIShipEncounterZoneEnteredNetworkEvent : public FNetworkEventStruct
 	unsigned char                                      UnknownData00[0x4];                                       // 0x001C(0x0004) MISSED OFFSET
 };
 
-// ScriptStruct AIShips.FeatureLockedCampaignParams
+// ScriptStruct AIShips.FeatureLockedAIShipBattles
 // 0x0010
-struct FFeatureLockedCampaignParams
+struct FFeatureLockedAIShipBattles
 {
-	struct FName                                       Feature;                                                  // 0x0000(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UCursedSailsCampaignDataAsset*               CampaignDataAsset;                                        // 0x0008(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FFeatureFlag                                Feature;                                                  // 0x0000(0x0008) (Edit, DisableEditOnInstance)
+	class UAIShipBattlesDataAsset*                     BattlesData;                                              // 0x0008(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 };
 
 // ScriptStruct AIShips.AIShipWorldSettings
 // 0x0018
 struct FAIShipWorldSettings
 {
-	TArray<struct FFeatureLockedCampaignParams>        CampaignParams;                                           // 0x0000(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
-	class UAIShipBattlesDataAsset*                     BattlesData;                                              // 0x0010(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	TArray<struct FFeatureLockedAIShipBattles>         FeatureToggledBattlesData;                                // 0x0000(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	class UAIShipBattlesDataAsset*                     DefaultBattlesData;                                       // 0x0010(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 };
 
 // ScriptStruct AIShips.AIShipDamagedTelemetryEvent

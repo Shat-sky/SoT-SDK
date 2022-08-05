@@ -1,33 +1,19 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_LiquidContainer_enums.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Interaction_classes.hpp"
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum LiquidContainer.ELiquidType
-enum class ELiquidType : uint8_t
-{
-	ELiquidType__Water             = 0,
-	ELiquidType__Vomit             = 1,
-	ELiquidType__BoilingWater      = 2,
-	ELiquidType__ELiquidType_MAX   = 3
-};
-
-
-
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------

@@ -1,10 +1,10 @@
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_BP_Prompt_MaidenVoyage_FishingROdTutorial_parameters.hpp"
+#include "SoT_BP_Prompt_MaidenVoyage_FishingROdTutorial_classes.hpp"
 
 namespace SDK
 {
@@ -155,15 +155,15 @@ void UBP_Prompt_MaidenVoyage_FishingRodTutorial_C::OnStowFunc(const struct FEven
 // Function BP_Prompt_MaidenVoyage_FishingROdTutorial.BP_Prompt_MaidenVoyage_FishingRodTutorial_C.OnWieldFunc
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FEventObjectWielded     EventObjectWielded             (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FAthena_FEventObjectWielded EventObjectWielded             (ConstParm, Parm, OutParm, ReferenceParm)
 
-void UBP_Prompt_MaidenVoyage_FishingRodTutorial_C::OnWieldFunc(const struct FEventObjectWielded& EventObjectWielded)
+void UBP_Prompt_MaidenVoyage_FishingRodTutorial_C::OnWieldFunc(const struct FAthena_FEventObjectWielded& EventObjectWielded)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_MaidenVoyage_FishingROdTutorial.BP_Prompt_MaidenVoyage_FishingRodTutorial_C.OnWieldFunc"));
 
 	struct
 	{
-		struct FEventObjectWielded     EventObjectWielded;
+		struct FAthena_FEventObjectWielded EventObjectWielded;
 	} params;
 
 	params.EventObjectWielded = EventObjectWielded;
@@ -279,15 +279,15 @@ void UBP_Prompt_MaidenVoyage_FishingRodTutorial_C::UnregisterOtherEvents_Impleme
 // Function BP_Prompt_MaidenVoyage_FishingROdTutorial.BP_Prompt_MaidenVoyage_FishingRodTutorial_C.OnWield
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FEventObjectWielded     Event                          (Parm)
+// struct FAthena_FEventObjectWielded Event                          (Parm)
 
-void UBP_Prompt_MaidenVoyage_FishingRodTutorial_C::OnWield(const struct FEventObjectWielded& Event)
+void UBP_Prompt_MaidenVoyage_FishingRodTutorial_C::OnWield(const struct FAthena_FEventObjectWielded& Event)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_MaidenVoyage_FishingROdTutorial.BP_Prompt_MaidenVoyage_FishingRodTutorial_C.OnWield"));
 
 	struct
 	{
-		struct FEventObjectWielded     Event;
+		struct FAthena_FEventObjectWielded Event;
 	} params;
 
 	params.Event = Event;
@@ -339,7 +339,7 @@ void UBP_Prompt_MaidenVoyage_FishingRodTutorial_C::OnCastRod(const struct FEvent
 // Function BP_Prompt_MaidenVoyage_FishingROdTutorial.BP_Prompt_MaidenVoyage_FishingRodTutorial_C.OnFishCaught
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FEventFishingFishCaught Event                          (Parm, ZeroConstructor, IsPlainOldData)
+// struct FEventFishingFishCaught Event                          (Parm)
 
 void UBP_Prompt_MaidenVoyage_FishingRodTutorial_C::OnFishCaught(const struct FEventFishingFishCaught& Event)
 {

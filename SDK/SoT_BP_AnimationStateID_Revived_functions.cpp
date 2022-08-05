@@ -1,10 +1,10 @@
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_BP_AnimationStateID_Revived_parameters.hpp"
+#include "SoT_BP_AnimationStateID_Revived_classes.hpp"
 
 namespace SDK
 {

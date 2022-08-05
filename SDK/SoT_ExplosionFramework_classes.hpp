@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -25,6 +25,21 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ExplosionFramework.CreateActorInstanceOnExplodeComponent"));
+		return ptr;
+	}
+
+};
+
+
+// Class ExplosionFramework.ExplosionInterface
+// 0x0000 (0x0028 - 0x0028)
+class UExplosionInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ExplosionFramework.ExplosionInterface"));
 		return ptr;
 	}
 
@@ -61,6 +76,23 @@ public:
 };
 
 
+// Class ExplosionFramework.FuseInterface
+// 0x0000 (0x0028 - 0x0028)
+class UFuseInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ExplosionFramework.FuseInterface"));
+		return ptr;
+	}
+
+
+	bool GetIsActive();
+};
+
+
 // Class ExplosionFramework.StatusResponseExplodeAfterTime
 // 0x0018 (0x0048 - 0x0030)
 class UStatusResponseExplodeAfterTime : public UStatusResponse
@@ -77,6 +109,23 @@ public:
 		return ptr;
 	}
 
+};
+
+
+// Class ExplosionFramework.TaleQuestFuseFunctionLibrary
+// 0x0000 (0x0170 - 0x0170)
+class UTaleQuestFuseFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ExplosionFramework.TaleQuestFuseFunctionLibrary"));
+		return ptr;
+	}
+
+
+	static void TriggerFuse(class AActor* InFuseActor);
 };
 
 

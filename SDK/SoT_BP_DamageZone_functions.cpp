@@ -1,10 +1,10 @@
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_BP_DamageZone_parameters.hpp"
+#include "SoT_BP_DamageZone_classes.hpp"
 
 namespace SDK
 {
@@ -31,22 +31,6 @@ void ABP_DamageZone_C::GetNumExternalHits(int* NumExternalHits)
 
 	if (NumExternalHits != nullptr)
 		*NumExternalHits = params.NumExternalHits;
-}
-
-
-// Function BP_DamageZone.BP_DamageZone_C.OnRep_Rep_ExternalHitList
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_DamageZone_C::OnRep_Rep_ExternalHitList()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_DamageZone.BP_DamageZone_C.OnRep_Rep_ExternalHitList"));
-
-	struct
-	{
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
 }
 
 
@@ -333,6 +317,42 @@ void ABP_DamageZone_C::OnDecalMaterialUpdatedToRepaired()
 	{
 	} params;
 
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function BP_DamageZone.BP_DamageZone_C.OnReppedExternalHitList
+// (Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void ABP_DamageZone_C::OnReppedExternalHitList()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_DamageZone.BP_DamageZone_C.OnReppedExternalHitList"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function BP_DamageZone.BP_DamageZone_C.LoadExternalHit
+// (Event, Public, HasOutParms, BlueprintEvent)
+// Parameters:
+// struct FHullDamageHit          InExternalHit                  (ConstParm, Parm, OutParm, ReferenceParm)
+
+void ABP_DamageZone_C::LoadExternalHit(const struct FHullDamageHit& InExternalHit)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_DamageZone.BP_DamageZone_C.LoadExternalHit"));
+
+	struct
+	{
+		struct FHullDamageHit          InExternalHit;
+	} params;
+
+	params.InExternalHit = InExternalHit;
 
 	UObject::ProcessEvent(fn, &params);
 }

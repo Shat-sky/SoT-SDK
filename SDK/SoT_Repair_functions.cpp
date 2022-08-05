@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -25,6 +25,30 @@ void URepairableInterface::HandleDestroy()
 
 
 	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Repair.RepairableInterface.GetUndoRepairTime
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class AActor*                  Interactor                     (Parm, ZeroConstructor, IsPlainOldData)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float URepairableInterface::GetUndoRepairTime(class AActor* Interactor)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Repair.RepairableInterface.GetUndoRepairTime"));
+
+	struct
+	{
+		class AActor*                  Interactor;
+		float                          ReturnValue;
+	} params;
+
+	params.Interactor = Interactor;
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
 }
 
 

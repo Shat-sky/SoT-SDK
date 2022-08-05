@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -173,6 +173,7 @@ public:
 	static float MoveTowards(float From, float To, float Speed, float Time);
 	static float Map(float ValueToMapFrom, float FromRangeStart, float FromRangeEnd, float ToRangeStart, float ToRangeEnd, bool Clamp);
 	static bool IncrementCounter(float Delta, float CounterMax, float* Counter);
+	static float GetShortestSignedDistanceBetweenPointsInWrappedRange(float FromValue, float ToValue, float LowerLimit, float UpperLimit);
 	static float FindMidpointInWrappedRange(float Value1, float Value2, float LowerLimit, float UpperLimit);
 	static float Bound(float ValueToBound, float Bound1, float Bound2);
 };
@@ -192,6 +193,23 @@ public:
 
 
 	static float Earth();
+};
+
+
+// Class Maths.OrientedPointBlueprintFunctionLibrary
+// 0x0000 (0x0028 - 0x0028)
+class UOrientedPointBlueprintFunctionLibrary : public UBlueprintFunctionLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Maths.OrientedPointBlueprintFunctionLibrary"));
+		return ptr;
+	}
+
+
+	static struct FTransform GetPointAsTransform(const struct FOrientedPoint& Point);
 };
 
 
@@ -247,7 +265,10 @@ public:
 
 	static struct FTransform TransformAroundArbitraryPivot(const struct FTransform& TargetTransform, const struct FTransform& BaseTransform, const struct FTransform& TransformToApply, bool LockFinalOrientation);
 	static struct FQuat RotatorToQuat(const struct FRotator& Rotation);
+	static struct FVector RotateDirectionInterpConstantTo(const struct FVector& CurrentDirectionNormalised, const struct FVector& TargetDirectionNormalised, float DeltaTime, float InterpSpeedRadPerSec);
+	static void FindRotationAxisAndRadAngleBetweenVectors(const struct FVector& FromVectorNormalised, const struct FVector& ToVectorNormalised, struct FVector* OutRotationAxis, float* OutRotationAngleRadians);
 	static bool AreRotatorsTheSameRotation(const struct FRotator& Rotator1, const struct FRotator& Rotator2, float ErrorTolerance);
+	static struct FRotationUpdateResult AdvanceRotationBySpinAndTiltSynced(const struct FRotator& StartRotation, const struct FRotator& TargetRotation, float RotationRateDegrees, float DeltaTime);
 };
 
 

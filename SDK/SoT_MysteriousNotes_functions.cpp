@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,15 +14,19 @@ namespace SDK
 
 // Function MysteriousNotes.PlayerMysteriousNoteComponent.TriggerNotesReceivedPopup
 // (RequiredAPI, Net, NetReliable, Native, Event, Public, NetClient)
+// Parameters:
+// bool                           InCinematicSkipped             (Parm, ZeroConstructor, IsPlainOldData)
 
-void UPlayerMysteriousNoteComponent::TriggerNotesReceivedPopup()
+void UPlayerMysteriousNoteComponent::TriggerNotesReceivedPopup(bool InCinematicSkipped)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function MysteriousNotes.PlayerMysteriousNoteComponent.TriggerNotesReceivedPopup"));
 
 	struct
 	{
+		bool                           InCinematicSkipped;
 	} params;
 
+	params.InCinematicSkipped = InCinematicSkipped;
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -108,6 +112,42 @@ void UPlayerMysteriousNoteComponent::OnRep_NoteData()
 	{
 	} params;
 
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function MysteriousNotes.PlayerMysteriousNoteComponent.OnRep_BeenPossessed
+// (Final, RequiredAPI, Native, Private)
+
+void UPlayerMysteriousNoteComponent::OnRep_BeenPossessed()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function MysteriousNotes.PlayerMysteriousNoteComponent.OnRep_BeenPossessed"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function MysteriousNotes.PlayerMysteriousNoteComponent.CustomServerUpdateDetailNotes
+// (RequiredAPI, Net, NetReliable, Native, Event, Public, NetClient)
+// Parameters:
+// TArray<struct FNotesRemoteServiceNoteDetailModel> InNotes                        (ConstParm, Parm, ZeroConstructor, ReferenceParm)
+
+void UPlayerMysteriousNoteComponent::CustomServerUpdateDetailNotes(TArray<struct FNotesRemoteServiceNoteDetailModel> InNotes)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function MysteriousNotes.PlayerMysteriousNoteComponent.CustomServerUpdateDetailNotes"));
+
+	struct
+	{
+		TArray<struct FNotesRemoteServiceNoteDetailModel> InNotes;
+	} params;
+
+	params.InNotes = InNotes;
 
 	UObject::ProcessEvent(fn, &params);
 }

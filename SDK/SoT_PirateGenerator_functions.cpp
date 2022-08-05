@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -729,6 +729,36 @@ struct FPirateDescription UPirateGeneratorFunctionLibrary::GenerateRandomPirate(
 }
 
 
+// Function PirateGenerator.PirateGeneratorFunctionLibrary.BakeMeshWithNewMaterial
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FName                   InMaterialName                 (Parm, ZeroConstructor, IsPlainOldData)
+// struct FPirateDescription      InPirateDesc                   (Parm)
+// bool                           InFirstPerson                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// struct FScriptDelegate         Result                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+
+void UPirateGeneratorFunctionLibrary::BakeMeshWithNewMaterial(const struct FName& InMaterialName, const struct FPirateDescription& InPirateDesc, bool InFirstPerson, const struct FScriptDelegate& Result)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PirateGenerator.PirateGeneratorFunctionLibrary.BakeMeshWithNewMaterial"));
+
+	struct
+	{
+		struct FName                   InMaterialName;
+		struct FPirateDescription      InPirateDesc;
+		bool                           InFirstPerson;
+		struct FScriptDelegate         Result;
+	} params;
+
+	params.InMaterialName = InMaterialName;
+	params.InPirateDesc = InPirateDesc;
+	params.InFirstPerson = InFirstPerson;
+	params.Result = Result;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+}
+
+
 // Function PirateGenerator.PirateGeneratorFunctionLibrary.BakeFromDescriptionAsync
 // (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
 // Parameters:
@@ -825,6 +855,51 @@ void UPreparePirateMeshBakeTestFunctionLibrary::PopulateBlendedSubMeshesInCharac
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);
+}
+
+
+// Function PirateGenerator.WardrobeDataAsset.Rebuild
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           LoadAllAssets                  (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UWardrobeDataAsset::Rebuild(bool LoadAllAssets)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PirateGenerator.WardrobeDataAsset.Rebuild"));
+
+	struct
+	{
+		bool                           LoadAllAssets;
+		bool                           ReturnValue;
+	} params;
+
+	params.LoadAllAssets = LoadAllAssets;
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function PirateGenerator.WardrobeDataAsset.GetNumNewAssets
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UWardrobeDataAsset::GetNumNewAssets()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PirateGenerator.WardrobeDataAsset.GetNumNewAssets"));
+
+	struct
+	{
+		int                            ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
 }
 
 

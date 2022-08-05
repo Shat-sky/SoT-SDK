@@ -1,65 +1,21 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_Water_enums.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
+#include "SoT_Athena_classes.hpp"
+#include "SoT_AthenaEngine_classes.hpp"
 #include "SoT_Maths_classes.hpp"
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum Water.EWaterQueryResult
-enum class EWaterQueryResult : uint8_t
-{
-	EWaterQueryResult__Success     = 0,
-	EWaterQueryResult__Failed      = 1,
-	EWaterQueryResult__NoWater     = 2,
-	EWaterQueryResult__Count       = 3,
-	EWaterQueryResult__EWaterQueryResult_MAX = 4
-};
-
-
-// Enum Water.EBuoyancyDragSampleType
-enum class EBuoyancyDragSampleType : uint8_t
-{
-	EBuoyancyDragSampleType__Spherical = 0,
-	EBuoyancyDragSampleType__Planar = 1,
-	EBuoyancyDragSampleType__EBuoyancyDragSampleType_MAX = 2
-};
-
-
-// Enum Water.EBuoyancySampleType
-enum class EBuoyancySampleType : uint8_t
-{
-	EBuoyancySampleType__Spherical = 0,
-	EBuoyancySampleType__Cuboidal  = 1,
-	EBuoyancySampleType__ProbeCurve = 2,
-	EBuoyancySampleType__EBuoyancySampleType_MAX = 3
-};
-
-
-// Enum Water.EWaterSplashProbeType
-enum class EWaterSplashProbeType : uint8_t
-{
-	EWaterSplashProbeType__ThresholdedRateOfChange = 0,
-	EWaterSplashProbeType__StateChangeWaterToAir = 1,
-	EWaterSplashProbeType__StateChangeAirToWater = 2,
-	EWaterSplashProbeType__StateChangeAny = 3,
-	EWaterSplashProbeType__Continuous = 4,
-	EWaterSplashProbeType__EWaterSplashProbeType_MAX = 5
-};
-
-
-
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
@@ -71,6 +27,47 @@ struct FWaterInformation
 	class UClass*                                      WaterType;                                                // 0x0000(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData)
 	bool                                               CanSwim;                                                  // 0x0008(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x0009(0x0007) MISSED OFFSET
+};
+
+// ScriptStruct Water.WaterSplashProbe
+// 0x00D8
+struct FWaterSplashProbe
+{
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0000(0x0008) MISSED OFFSET
+	class FString                                      ProbeDebugName;                                           // 0x0008(0x0010) (Edit, ZeroConstructor)
+	struct FVector                                     LocalOffset;                                              // 0x0018(0x000C) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              Height;                                                   // 0x0024(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              Pitch;                                                    // 0x0028(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              Yaw;                                                      // 0x002C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              Roll;                                                     // 0x0030(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              RateOfChangeThreshold;                                    // 0x0034(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     LocalOffsetAdjustment;                                    // 0x0038(0x000C) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              LocalOffsetAdjustmentDuration;                            // 0x0044(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EWaterSplashProbeType>                 Type;                                                     // 0x0048(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EWaterHeightType>                      WaterHeightType;                                          // 0x0049(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x2];                                       // 0x004A(0x0002) MISSED OFFSET
+	float                                              StaticWaterHeightValue;                                   // 0x004C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x88];                                      // 0x0050(0x0088) MISSED OFFSET
+};
+
+// ScriptStruct Water.SplashProbe
+// 0x0128
+struct FSplashProbe
+{
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0000(0x0008) MISSED OFFSET
+	struct FWaterSplashProbe                           Probe;                                                    // 0x0008(0x00D8) (Edit, DisableEditOnInstance)
+	float                                              ProbeSamplingTime;                                        // 0x00E0(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              TimeBetweenProbeVfx;                                      // 0x00E4(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	class UObject*                                     ParticleSystem;                                           // 0x00E8(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EVfxUnderwaterUsage>                   UnderwaterUsage;                                          // 0x00F0(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	bool                                               SpawnAttached;                                            // 0x00F1(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	bool                                               AttachToWaterSurface;                                     // 0x00F2(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EAttachLocation>                       SplashAttachType;                                         // 0x00F3(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     VfxSpawnOffset;                                           // 0x00F4(0x000C) (Edit, ZeroConstructor, IsPlainOldData)
+	bool                                               Enabled;                                                  // 0x0100(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x7];                                       // 0x0101(0x0007) MISSED OFFSET
+	class UParticleSystemComponent*                    CurrentlyPlayingVFX;                                      // 0x0108(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x18];                                      // 0x0110(0x0018) MISSED OFFSET
 };
 
 // ScriptStruct Water.BuoyancyVolumeSample
@@ -157,24 +154,6 @@ struct FBuoyancySampleMovement
 	unsigned char                                      UnknownData01[0x8];                                       // 0x0060(0x0008) MISSED OFFSET
 };
 
-// ScriptStruct Water.WaterSplashProbe
-// 0x00D8
-struct FWaterSplashProbe
-{
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0000(0x0008) MISSED OFFSET
-	class FString                                      ProbeDebugName;                                           // 0x0008(0x0010) (Edit, ZeroConstructor)
-	struct FVector                                     LocalOffset;                                              // 0x0018(0x000C) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              Height;                                                   // 0x0024(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              Pitch;                                                    // 0x0028(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              Yaw;                                                      // 0x002C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              Roll;                                                     // 0x0030(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              RateOfChangeThreshold;                                    // 0x0034(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     LocalOffsetAdjustment;                                    // 0x0038(0x000C) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              LocalOffsetAdjustmentDuration;                            // 0x0044(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EWaterSplashProbeType>                 Type;                                                     // 0x0048(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x8F];                                      // 0x0049(0x008F) MISSED OFFSET
-};
-
 // ScriptStruct Water.WaterSpout
 // 0x0070
 struct FWaterSpout
@@ -225,13 +204,6 @@ struct FFFTWaterQueryResult
 	struct FVector                                     Normal;                                                   // 0x000C(0x000C) (ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<EWaterQueryResult>                     WaterQueryResult;                                         // 0x0018(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x3];                                       // 0x0019(0x0003) MISSED OFFSET
-};
-
-// ScriptStruct Water.FFTWaterTickFunction
-// 0x0020 (0x0068 - 0x0048)
-struct FFFTWaterTickFunction : public FTickFunction
-{
-	unsigned char                                      UnknownData00[0x20];                                      // 0x0048(0x0020) MISSED OFFSET
 };
 
 }

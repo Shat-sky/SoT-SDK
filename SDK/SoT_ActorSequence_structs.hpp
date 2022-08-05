@@ -1,33 +1,19 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_ActorSequence_enums.hpp"
 #include "SoT_MovieScene_classes.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum ActorSequence.EActorSequenceObjectReferenceType
-enum class EActorSequenceObjectReferenceType : uint8_t
-{
-	EActorSequenceObjectReferenceType__ContextActor = 0,
-	EActorSequenceObjectReferenceType__ExternalActor = 1,
-	EActorSequenceObjectReferenceType__Component = 2,
-	EActorSequenceObjectReferenceType__EActorSequenceObjectReferenceType_MAX = 3
-};
-
-
-
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------

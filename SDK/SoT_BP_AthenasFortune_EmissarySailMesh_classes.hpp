@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_AthenasFortune_EmissarySailMesh.BP_AthenasFortune_EmissarySailMesh_C
-// 0x0000 (0x05D0 - 0x05D0)
+// 0x0000 (0x0620 - 0x0620)
 class UBP_AthenasFortune_EmissarySailMesh_C : public UEmissaryRepresentationMeshComponent
 {
 public:

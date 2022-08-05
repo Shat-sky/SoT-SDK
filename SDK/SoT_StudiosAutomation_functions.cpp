@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,54 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function StudiosAutomation.TestablePlayerController.YieldToServer
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-
-void ATestablePlayerController::YieldToServer()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StudiosAutomation.TestablePlayerController.YieldToServer"));
-
-	struct
-	{
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
-// Function StudiosAutomation.TestablePlayerController.PerformPostTestCleanup
-// (Net, NetReliable, Native, Event, Public, NetClient)
-
-void ATestablePlayerController::PerformPostTestCleanup()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StudiosAutomation.TestablePlayerController.PerformPostTestCleanup"));
-
-	struct
-	{
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
-// Function StudiosAutomation.TestablePlayerController.DisconnectClientFromTest
-// (Net, NetReliable, Native, Event, Public, NetClient)
-
-void ATestablePlayerController::DisconnectClientFromTest()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StudiosAutomation.TestablePlayerController.DisconnectClientFromTest"));
-
-	struct
-	{
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-}
-
 
 // Function StudiosAutomation.TestLevelScriptActor.YieldToServer
 // (Final, BlueprintCosmetic, Native, Static, Public, BlueprintCallable)
@@ -1228,6 +1180,28 @@ bool UAutomationBlueprintFunctionLibrary::IsEditor()
 }
 
 
+// Function StudiosAutomation.AutomationBlueprintFunctionLibrary.IsAutomationBuild
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UAutomationBlueprintFunctionLibrary::IsAutomationBuild()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StudiosAutomation.AutomationBlueprintFunctionLibrary.IsAutomationBuild"));
+
+	struct
+	{
+		bool                           ReturnValue;
+	} params;
+
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
 // Function StudiosAutomation.AutomationBlueprintFunctionLibrary.HasPerformanceDataBeenCaptured
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -1651,6 +1625,36 @@ void UAutomationBlueprintFunctionLibrary::AssertTrue(bool Condition, const class
 
 	params.Condition = Condition;
 	params.Message = Message;
+	params.ContextObject = ContextObject;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+}
+
+
+// Function StudiosAutomation.AutomationBlueprintFunctionLibrary.AssertObjectMatchesStringAssetReference
+// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UObject*                 Object                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// struct FStringAssetReference   Reference                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// class FString                  What                           (Parm, ZeroConstructor)
+// class UObject*                 ContextObject                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UAutomationBlueprintFunctionLibrary::AssertObjectMatchesStringAssetReference(class UObject* Object, const struct FStringAssetReference& Reference, const class FString& What, class UObject* ContextObject)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StudiosAutomation.AutomationBlueprintFunctionLibrary.AssertObjectMatchesStringAssetReference"));
+
+	struct
+	{
+		class UObject*                 Object;
+		struct FStringAssetReference   Reference;
+		class FString                  What;
+		class UObject*                 ContextObject;
+	} params;
+
+	params.Object = Object;
+	params.Reference = Reference;
+	params.What = What;
 	params.ContextObject = ContextObject;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
@@ -2105,6 +2109,54 @@ void UAutomationLatentActionCallback::LatentCallback(int Linkage)
 	} params;
 
 	params.Linkage = Linkage;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function StudiosAutomation.TestablePlayerControllerComponent.YieldToServer
+// (Final, Net, NetReliable, Native, Event, Private, NetServer, NetValidate)
+
+void UTestablePlayerControllerComponent::YieldToServer()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StudiosAutomation.TestablePlayerControllerComponent.YieldToServer"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function StudiosAutomation.TestablePlayerControllerComponent.PerformPostTestCleanup
+// (Final, Net, NetReliable, Native, Event, Private, NetClient)
+
+void UTestablePlayerControllerComponent::PerformPostTestCleanup()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StudiosAutomation.TestablePlayerControllerComponent.PerformPostTestCleanup"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function StudiosAutomation.TestablePlayerControllerComponent.DisconnectClientFromTest
+// (Final, Net, NetReliable, Native, Event, Private, NetClient)
+
+void UTestablePlayerControllerComponent::DisconnectClientFromTest()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StudiosAutomation.TestablePlayerControllerComponent.DisconnectClientFromTest"));
+
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

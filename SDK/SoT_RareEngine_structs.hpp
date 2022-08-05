@@ -1,47 +1,18 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_RareEngine_enums.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum RareEngine.EMemoryUsageVisualiserInstanceType
-enum class EMemoryUsageVisualiserInstanceType : uint8_t
-{
-	EMemoryUsageVisualiserInstanceType__Server = 0,
-	EMemoryUsageVisualiserInstanceType__Client = 1,
-	EMemoryUsageVisualiserInstanceType__EMemoryUsageVisualiserInstanceType_MAX = 2
-};
-
-
-// Enum RareEngine.EMemoryGatheringMode
-enum class EMemoryGatheringMode : uint8_t
-{
-	EMemoryGatheringMode__Exclusive = 0,
-	EMemoryGatheringMode__Inclusive = 1,
-	EMemoryGatheringMode__EMemoryGatheringMode_MAX = 2
-};
-
-
-// Enum RareEngine.ETestEnum
-enum class ETestEnum : uint8_t
-{
-	ETestEnum_MAX                  = 0
-};
-
-
-
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------

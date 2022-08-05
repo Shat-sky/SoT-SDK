@@ -1,34 +1,21 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_RareAudio_enums.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
-#include "SoT_WwiseAudio_classes.hpp"
 #include "SoT_RareEngine_classes.hpp"
+#include "SoT_WwiseAudio_classes.hpp"
+#include "SoT_AthenaAudio_classes.hpp"
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum RareAudio.EEmitterRelationship
-enum class EEmitterRelationship : uint8_t
-{
-	EEmitterRelationship__Audio_Remote = 0,
-	EEmitterRelationship__Audio_Local = 1,
-	EEmitterRelationship__Audio_Default = 2,
-	EEmitterRelationship__Audio_MAX = 3
-};
-
-
-
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
@@ -49,16 +36,29 @@ struct FEventToComponentMapping
 	TArray<class UWwiseEmitterComponent*>              WwiseEmitterComponents;                                   // 0x0010(0x0010) (Edit, BlueprintVisible, ExportObject, ZeroConstructor)
 };
 
+// ScriptStruct RareAudio.WWiseEmitterCreationRTPCSetting
+// 0x000C
+struct FWWiseEmitterCreationRTPCSetting
+{
+	struct FName                                       RTPCName;                                                 // 0x0000(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	float                                              RTPCValue;                                                // 0x0008(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct RareAudio.WWiseEmitterCreationSwitchSetting
+// 0x0010
+struct FWWiseEmitterCreationSwitchSetting
+{
+	struct FName                                       SwitchGroup;                                              // 0x0000(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	struct FName                                       SwitchValue;                                              // 0x0008(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+};
+
 // ScriptStruct RareAudio.WwiseEmitterCreationParams
 // 0x0028
 struct FWwiseEmitterCreationParams
 {
 	class UWwiseEvent*                                 Event;                                                    // 0x0000(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	struct FName                                       RTPCName;                                                 // 0x0008(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              RTPCValue;                                                // 0x0010(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	struct FName                                       SwitchGroup;                                              // 0x0014(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	struct FName                                       SwitchValue;                                              // 0x001C(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0024(0x0004) MISSED OFFSET
+	TArray<struct FWWiseEmitterCreationRTPCSetting>    RTPCs;                                                    // 0x0008(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+	TArray<struct FWWiseEmitterCreationSwitchSetting>  Switches;                                                 // 0x0018(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
 };
 
 // ScriptStruct RareAudio.StaticMeshWwiseEmitterData

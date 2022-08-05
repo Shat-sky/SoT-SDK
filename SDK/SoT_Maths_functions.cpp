@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -939,6 +939,40 @@ bool UFloatMaths::IncrementCounter(float Delta, float CounterMax, float* Counter
 }
 
 
+// Function Maths.FloatMaths.GetShortestSignedDistanceBetweenPointsInWrappedRange
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// float                          FromValue                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// float                          ToValue                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// float                          LowerLimit                     (Parm, ZeroConstructor, IsPlainOldData)
+// float                          UpperLimit                     (Parm, ZeroConstructor, IsPlainOldData)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UFloatMaths::GetShortestSignedDistanceBetweenPointsInWrappedRange(float FromValue, float ToValue, float LowerLimit, float UpperLimit)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.FloatMaths.GetShortestSignedDistanceBetweenPointsInWrappedRange"));
+
+	struct
+	{
+		float                          FromValue;
+		float                          ToValue;
+		float                          LowerLimit;
+		float                          UpperLimit;
+		float                          ReturnValue;
+	} params;
+
+	params.FromValue = FromValue;
+	params.ToValue = ToValue;
+	params.LowerLimit = LowerLimit;
+	params.UpperLimit = UpperLimit;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
 // Function Maths.FloatMaths.FindMidpointInWrappedRange
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -1018,6 +1052,31 @@ float UGravity::Earth()
 		float                          ReturnValue;
 	} params;
 
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Maths.OrientedPointBlueprintFunctionLibrary.GetPointAsTransform
+// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FOrientedPoint          Point                          (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FTransform              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+
+struct FTransform UOrientedPointBlueprintFunctionLibrary::GetPointAsTransform(const struct FOrientedPoint& Point)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.OrientedPointBlueprintFunctionLibrary.GetPointAsTransform"));
+
+	struct
+	{
+		struct FOrientedPoint          Point;
+		struct FTransform              ReturnValue;
+	} params;
+
+	params.Point = Point;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);
@@ -1287,6 +1346,73 @@ struct FQuat URotationMaths::RotatorToQuat(const struct FRotator& Rotation)
 }
 
 
+// Function Maths.RotationMaths.RotateDirectionInterpConstantTo
+// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FVector                 CurrentDirectionNormalised     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FVector                 TargetDirectionNormalised      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// float                          DeltaTime                      (Parm, ZeroConstructor, IsPlainOldData)
+// float                          InterpSpeedRadPerSec           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+struct FVector URotationMaths::RotateDirectionInterpConstantTo(const struct FVector& CurrentDirectionNormalised, const struct FVector& TargetDirectionNormalised, float DeltaTime, float InterpSpeedRadPerSec)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.RotationMaths.RotateDirectionInterpConstantTo"));
+
+	struct
+	{
+		struct FVector                 CurrentDirectionNormalised;
+		struct FVector                 TargetDirectionNormalised;
+		float                          DeltaTime;
+		float                          InterpSpeedRadPerSec;
+		struct FVector                 ReturnValue;
+	} params;
+
+	params.CurrentDirectionNormalised = CurrentDirectionNormalised;
+	params.TargetDirectionNormalised = TargetDirectionNormalised;
+	params.DeltaTime = DeltaTime;
+	params.InterpSpeedRadPerSec = InterpSpeedRadPerSec;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Maths.RotationMaths.FindRotationAxisAndRadAngleBetweenVectors
+// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FVector                 FromVectorNormalised           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FVector                 ToVectorNormalised             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FVector                 OutRotationAxis                (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// float                          OutRotationAngleRadians        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void URotationMaths::FindRotationAxisAndRadAngleBetweenVectors(const struct FVector& FromVectorNormalised, const struct FVector& ToVectorNormalised, struct FVector* OutRotationAxis, float* OutRotationAngleRadians)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.RotationMaths.FindRotationAxisAndRadAngleBetweenVectors"));
+
+	struct
+	{
+		struct FVector                 FromVectorNormalised;
+		struct FVector                 ToVectorNormalised;
+		struct FVector                 OutRotationAxis;
+		float                          OutRotationAngleRadians;
+	} params;
+
+	params.FromVectorNormalised = FromVectorNormalised;
+	params.ToVectorNormalised = ToVectorNormalised;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (OutRotationAxis != nullptr)
+		*OutRotationAxis = params.OutRotationAxis;
+	if (OutRotationAngleRadians != nullptr)
+		*OutRotationAngleRadians = params.OutRotationAngleRadians;
+}
+
+
 // Function Maths.RotationMaths.AreRotatorsTheSameRotation
 // (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -1310,6 +1436,40 @@ bool URotationMaths::AreRotatorsTheSameRotation(const struct FRotator& Rotator1,
 	params.Rotator1 = Rotator1;
 	params.Rotator2 = Rotator2;
 	params.ErrorTolerance = ErrorTolerance;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Maths.RotationMaths.AdvanceRotationBySpinAndTiltSynced
+// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FRotator                StartRotation                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FRotator                TargetRotation                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// float                          RotationRateDegrees            (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// float                          DeltaTime                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// struct FRotationUpdateResult   ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FRotationUpdateResult URotationMaths::AdvanceRotationBySpinAndTiltSynced(const struct FRotator& StartRotation, const struct FRotator& TargetRotation, float RotationRateDegrees, float DeltaTime)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.RotationMaths.AdvanceRotationBySpinAndTiltSynced"));
+
+	struct
+	{
+		struct FRotator                StartRotation;
+		struct FRotator                TargetRotation;
+		float                          RotationRateDegrees;
+		float                          DeltaTime;
+		struct FRotationUpdateResult   ReturnValue;
+	} params;
+
+	params.StartRotation = StartRotation;
+	params.TargetRotation = TargetRotation;
+	params.RotationRateDegrees = RotationRateDegrees;
+	params.DeltaTime = DeltaTime;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);

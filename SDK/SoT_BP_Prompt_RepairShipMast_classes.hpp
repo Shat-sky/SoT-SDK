@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Prompt_RepairShipMast.BP_Prompt_RepairShipMast_C
-// 0x01AC (0x02C4 - 0x0118)
+// 0x01B0 (0x02C8 - 0x0118)
 class UBP_Prompt_RepairShipMast_C : public UBP_PromptCoordinator_Base_C
 {
 public:
@@ -31,6 +31,7 @@ public:
 	struct FObjectMessagingHandle                      Handle_OnMastDamaged2;                                    // 0x0230(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FObjectMessagingHandle                      Handle_OnMastDamaged3;                                    // 0x0278(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
 	int                                                NumMastsRegistered;                                       // 0x02C0(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	int                                                MastIndex;                                                // 0x02C4(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

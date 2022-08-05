@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_VoiceChatRenderer.BP_VoiceChatRenderer_C
-// 0x0000 (0x0170 - 0x0170)
+// 0x0000 (0x0180 - 0x0180)
 class UBP_VoiceChatRenderer_C : public UVoiceChatRenderer
 {
 public:

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -36,6 +36,13 @@ struct FServiceMessagingUnsubscribedEvent
 struct FServiceMessagingSubscribedEvent
 {
 	class FString                                      RoutingKey;                                               // 0x0000(0x0010) (ZeroConstructor)
+};
+
+// ScriptStruct ServiceMessaging.TestStructWithNetId
+// 0x0018
+struct FTestStructWithNetId
+{
+	struct FUniqueNetIdRepl                            NetId;                                                    // 0x0000(0x0018)
 };
 
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Shipwreck_01_a_NetProxy.BP_Shipwreck_01_a_NetProxy_C
-// 0x0000 (0x0438 - 0x0438)
+// 0x0000 (0x03F8 - 0x03F8)
 class ABP_Shipwreck_01_a_NetProxy_C : public ANetProxy
 {
 public:

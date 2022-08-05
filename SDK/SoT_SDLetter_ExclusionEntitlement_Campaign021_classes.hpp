@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass SDLetter_ExclusionEntitlement_Campaign021.SDLetter_ExclusionEntitlement_Campaign021_C
-// 0x0000 (0x00D8 - 0x00D8)
+// 0x0000 (0x00C8 - 0x00C8)
 class USDLetter_ExclusionEntitlement_Campaign021_C : public UEntitlementDesc
 {
 public:

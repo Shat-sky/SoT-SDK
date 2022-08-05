@@ -1,75 +1,34 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_MovieScene_enums.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum MovieScene.ESpawnOwnership
-enum class ESpawnOwnership : uint8_t
-{
-	ESpawnOwnership__InnerSequence = 0,
-	ESpawnOwnership__MasterSequence = 1,
-	ESpawnOwnership__External      = 2,
-	ESpawnOwnership__ESpawnOwnership_MAX = 3
-};
-
-
-// Enum MovieScene.EMovieSceneKeyInterpolation
-enum class EMovieSceneKeyInterpolation : uint8_t
-{
-	EMovieSceneKeyInterpolation__Auto = 0,
-	EMovieSceneKeyInterpolation__User = 1,
-	EMovieSceneKeyInterpolation__Break = 2,
-	EMovieSceneKeyInterpolation__Linear = 3,
-	EMovieSceneKeyInterpolation__Constant = 4,
-	EMovieSceneKeyInterpolation__EMovieSceneKeyInterpolation_MAX = 5
-};
-
-
-// Enum MovieScene.EMovieSceneCompletionMode
-enum class EMovieSceneCompletionMode : uint8_t
-{
-	EMovieSceneCompletionMode__KeepState = 0,
-	EMovieSceneCompletionMode__RestoreState = 1,
-	EMovieSceneCompletionMode__EMovieSceneCompletionMode_MAX = 2
-};
-
-
-// Enum MovieScene.EEvaluationMethod
-enum class EEvaluationMethod : uint8_t
-{
-	EEvaluationMethod__Static      = 0,
-	EEvaluationMethod__Swept       = 1,
-	EEvaluationMethod__EEvaluationMethod_MAX = 2
-};
-
-
-
-//---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
 
 // ScriptStruct MovieScene.MovieSceneSpawnable
-// 0x0040
+// 0x0048
 struct FMovieSceneSpawnable
 {
-	struct FGuid                                       Guid;                                                     // 0x0000(0x0010) (ZeroConstructor, IsPlainOldData)
-	class FString                                      Name;                                                     // 0x0010(0x0010) (ZeroConstructor)
-	class UObject*                                     ObjectTemplate;                                           // 0x0020(0x0008) (ZeroConstructor, IsPlainOldData)
-	TArray<struct FGuid>                               ChildPossessables;                                        // 0x0028(0x0010) (ZeroConstructor)
-	TEnumAsByte<ESpawnOwnership>                       OWNERSHIP;                                                // 0x0038(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0039(0x0007) MISSED OFFSET
+	bool                                               IsCameraDockable;                                         // 0x0000(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0001(0x0003) MISSED OFFSET
+	struct FGuid                                       Guid;                                                     // 0x0004(0x0010) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x0014(0x0004) MISSED OFFSET
+	class FString                                      Name;                                                     // 0x0018(0x0010) (ZeroConstructor)
+	class UObject*                                     ObjectTemplate;                                           // 0x0028(0x0008) (ZeroConstructor, IsPlainOldData)
+	TArray<struct FGuid>                               ChildPossessables;                                        // 0x0030(0x0010) (ZeroConstructor)
+	TEnumAsByte<ESpawnOwnership>                       Ownership;                                                // 0x0040(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x7];                                       // 0x0041(0x0007) MISSED OFFSET
 };
 
 // ScriptStruct MovieScene.MovieScenePossessable
@@ -208,7 +167,7 @@ struct FMovieSceneTrackIdentifier
 // 0x0008
 struct FMovieSceneEvaluationFieldTrackPtr
 {
-	struct FMovieSceneSequenceID                       SequenceId;                                               // 0x0000(0x0004)
+	struct FMovieSceneSequenceID                       SequenceID;                                               // 0x0000(0x0004)
 	struct FMovieSceneTrackIdentifier                  TrackIdentifier;                                          // 0x0004(0x0004)
 };
 
@@ -283,8 +242,7 @@ struct FMovieSceneSequenceHierarchy
 // 0x00A8
 struct FMovieSceneGenerationLedger
 {
-	struct FMovieSceneTrackIdentifier                  LastTrackIdentifier;                                      // 0x0000(0x0004)
-	unsigned char                                      UnknownData00[0xA4];                                      // 0x0004(0x00A4) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xA8];                                      // 0x0000(0x00A8) MISSED OFFSET
 };
 
 // ScriptStruct MovieScene.MovieSceneEvaluationTemplate

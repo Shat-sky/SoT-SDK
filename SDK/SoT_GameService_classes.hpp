@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,11 +15,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class GameService.ServiceProviderGameState
-// 0x0120 (0x05D0 - 0x04B0)
+// 0x0120 (0x0540 - 0x0420)
 class AServiceProviderGameState : public AGameState
 {
 public:
-	unsigned char                                      UnknownData00[0x120];                                     // 0x04B0(0x0120) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x120];                                     // 0x0420(0x0120) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

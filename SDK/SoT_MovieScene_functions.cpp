@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -107,6 +107,26 @@ void UMovieSceneSequencePlayer::SetPlaybackPosition(float NewPlaybackPosition)
 }
 
 
+// Function MovieScene.MovieSceneSequencePlayer.SetOverridePlaybackSettings
+// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneSequencePlaybackSettings InSettings                     (ConstParm, Parm, OutParm, ReferenceParm)
+
+void UMovieSceneSequencePlayer::SetOverridePlaybackSettings(const struct FMovieSceneSequencePlaybackSettings& InSettings)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function MovieScene.MovieSceneSequencePlayer.SetOverridePlaybackSettings"));
+
+	struct
+	{
+		struct FMovieSceneSequencePlaybackSettings InSettings;
+	} params;
+
+	params.InSettings = InSettings;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function MovieScene.MovieSceneSequencePlayer.PlayReverse
 // (Final, Native, Public, BlueprintCallable)
 
@@ -145,15 +165,19 @@ void UMovieSceneSequencePlayer::PlayLooping(int NumLoops)
 
 // Function MovieScene.MovieSceneSequencePlayer.Play
 // (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ACharacter*              OptionalInteractingCharacter   (Parm, ZeroConstructor, IsPlainOldData)
 
-void UMovieSceneSequencePlayer::Play()
+void UMovieSceneSequencePlayer::Play(class ACharacter* OptionalInteractingCharacter)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function MovieScene.MovieSceneSequencePlayer.Play"));
 
 	struct
 	{
+		class ACharacter*              OptionalInteractingCharacter;
 	} params;
 
+	params.OptionalInteractingCharacter = OptionalInteractingCharacter;
 
 	UObject::ProcessEvent(fn, &params);
 }

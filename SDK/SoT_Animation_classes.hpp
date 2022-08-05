@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -47,6 +47,21 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimationData"));
+		return ptr;
+	}
+
+};
+
+
+// Class Animation.AnimationServerData
+// 0x0000 (0x0028 - 0x0028)
+class UAnimationServerData : public UObject
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimationServerData"));
 		return ptr;
 	}
 
@@ -160,21 +175,6 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimationDataStore"));
-		return ptr;
-	}
-
-};
-
-
-// Class Animation.AnimationServerData
-// 0x0000 (0x0028 - 0x0028)
-class UAnimationServerData : public UObject
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimationServerData"));
 		return ptr;
 	}
 
@@ -313,7 +313,7 @@ public:
 
 
 // Class Animation.AnimNotify_DestroyAllCosmeticItems
-// 0x0000 (0x0030 - 0x0030)
+// 0x0000 (0x0038 - 0x0038)
 class UAnimNotify_DestroyAllCosmeticItems : public UAnimNotify
 {
 public:
@@ -328,12 +328,12 @@ public:
 
 
 // Class Animation.AnimNotify_DestroyCosmeticItem
-// 0x0008 (0x0038 - 0x0030)
+// 0x0008 (0x0040 - 0x0038)
 class UAnimNotify_DestroyCosmeticItem : public UAnimNotify
 {
 public:
-	TEnumAsByte<EWieldAnimationLocation>               DestroyLocation;                                          // 0x0030(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0031(0x0007) MISSED OFFSET
+	TEnumAsByte<EWieldAnimationLocation>               DestroyLocation;                                          // 0x0038(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0039(0x0007) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -344,16 +344,36 @@ public:
 };
 
 
+// Class Animation.AnimNotify_DetachAndMaintainWorldPosition
+// 0x0018 (0x0050 - 0x0038)
+class UAnimNotify_DetachAndMaintainWorldPosition : public UAnimNotify
+{
+public:
+	TEnumAsByte<EWieldAnimationLocation>               CurrentLocation;                                          // 0x0038(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0039(0x0003) MISSED OFFSET
+	struct FVector                                     PreviewLocationOffset;                                    // 0x003C(0x000C) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	float                                              PreviewScaleMultiplier;                                   // 0x0048(0x0004) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x004C(0x0004) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotify_DetachAndMaintainWorldPosition"));
+		return ptr;
+	}
+
+};
+
+
 // Class Animation.AnimNotify_PlayAnimationForCosmetic
-// 0x0018 (0x0048 - 0x0030)
+// 0x0018 (0x0050 - 0x0038)
 class UAnimNotify_PlayAnimationForCosmetic : public UAnimNotify
 {
 public:
-	TEnumAsByte<EWieldAnimationLocation>               CosmeticLocation;                                         // 0x0030(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0031(0x0007) MISSED OFFSET
-	class UAnimSequenceBase*                           CosmeticItemAnimation;                                    // 0x0038(0x0008) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               Looping;                                                  // 0x0040(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x7];                                       // 0x0041(0x0007) MISSED OFFSET
+	TEnumAsByte<EWieldAnimationLocation>               CosmeticLocation;                                         // 0x0038(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0039(0x0007) MISSED OFFSET
+	class UAnimSequenceBase*                           CosmeticItemAnimation;                                    // 0x0040(0x0008) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               Looping;                                                  // 0x0048(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x7];                                       // 0x0049(0x0007) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -365,11 +385,11 @@ public:
 
 
 // Class Animation.AnimNotify_PlayMontage
-// 0x0008 (0x0038 - 0x0030)
+// 0x0008 (0x0040 - 0x0038)
 class UAnimNotify_PlayMontage : public UAnimNotify
 {
 public:
-	class UAnimMontage*                                MontageToPlay;                                            // 0x0030(0x0008) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	class UAnimMontage*                                MontageToPlay;                                            // 0x0038(0x0008) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -381,17 +401,17 @@ public:
 
 
 // Class Animation.AnimNotify_SetCosmeticItemVisibility
-// 0x0008 (0x0038 - 0x0030)
+// 0x0008 (0x0040 - 0x0038)
 class UAnimNotify_SetCosmeticItemVisibility : public UAnimNotify
 {
 public:
-	TEnumAsByte<EWieldAnimationLocation>               ItemLocation;                                             // 0x0030(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               Visible;                                                  // 0x0031(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               RenderShadow;                                             // 0x0032(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               RenderShadowWhenHidden;                                   // 0x0033(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               UpdateForRole;                                            // 0x0034(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ENetRole>                              UpdateRole;                                               // 0x0035(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x2];                                       // 0x0036(0x0002) MISSED OFFSET
+	TEnumAsByte<EWieldAnimationLocation>               ItemLocation;                                             // 0x0038(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               Visible;                                                  // 0x0039(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               RenderShadow;                                             // 0x003A(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               RenderShadowWhenHidden;                                   // 0x003B(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               UpdateForRole;                                            // 0x003C(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ENetRole>                              UpdateRole;                                               // 0x003D(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x2];                                       // 0x003E(0x0002) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -403,12 +423,12 @@ public:
 
 
 // Class Animation.AnimNotify_SetLookAtEnabled
-// 0x0008 (0x0038 - 0x0030)
+// 0x0008 (0x0040 - 0x0038)
 class UAnimNotify_SetLookAtEnabled : public UAnimNotify
 {
 public:
-	bool                                               Enabled;                                                  // 0x0030(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0031(0x0007) MISSED OFFSET
+	bool                                               Enabled;                                                  // 0x0038(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0039(0x0007) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -420,18 +440,18 @@ public:
 
 
 // Class Animation.AnimNotify_SpawnCosmeticItem
-// 0x0020 (0x0050 - 0x0030)
+// 0x0020 (0x0058 - 0x0038)
 class UAnimNotify_SpawnCosmeticItem : public UAnimNotify
 {
 public:
-	class UClass*                                      ItemSpawnClass;                                           // 0x0030(0x0008) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EWieldAnimationLocation>               SpawnLocation;                                            // 0x0038(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0039(0x0007) MISSED OFFSET
-	class UCosmeticItemAnimationSetDataAsset*          CosmeticItemAnimationDataSet;                             // 0x0040(0x0008) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               SpawnHidden;                                              // 0x0048(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	bool                                               SpawnForRole;                                             // 0x0049(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ENetRole>                              SpawnRole;                                                // 0x004A(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x5];                                       // 0x004B(0x0005) MISSED OFFSET
+	class UClass*                                      ItemSpawnClass;                                           // 0x0038(0x0008) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EWieldAnimationLocation>               SpawnLocation;                                            // 0x0040(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0041(0x0007) MISSED OFFSET
+	class UCosmeticItemAnimationSetDataAsset*          CosmeticItemAnimationDataSet;                             // 0x0048(0x0008) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               SpawnHidden;                                              // 0x0050(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	bool                                               SpawnForRole;                                             // 0x0051(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ENetRole>                              SpawnRole;                                                // 0x0052(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x5];                                       // 0x0053(0x0005) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -443,11 +463,11 @@ public:
 
 
 // Class Animation.AnimNotify_StateComplete
-// 0x0008 (0x0038 - 0x0030)
+// 0x0008 (0x0040 - 0x0038)
 class UAnimNotify_StateComplete : public UAnimNotify
 {
 public:
-	class UClass*                                      CompletedStateId;                                         // 0x0030(0x0008) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      CompletedStateId;                                         // 0x0038(0x0008) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -459,13 +479,13 @@ public:
 
 
 // Class Animation.AnimNotify_SwitchCosmeticItemAttachment
-// 0x0008 (0x0038 - 0x0030)
+// 0x0008 (0x0040 - 0x0038)
 class UAnimNotify_SwitchCosmeticItemAttachment : public UAnimNotify
 {
 public:
-	TEnumAsByte<EWieldAnimationLocation>               PreviousLocation;                                         // 0x0030(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EWieldAnimationLocation>               NewLocation;                                              // 0x0031(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x6];                                       // 0x0032(0x0006) MISSED OFFSET
+	TEnumAsByte<EWieldAnimationLocation>               PreviousLocation;                                         // 0x0038(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EWieldAnimationLocation>               NewLocation;                                              // 0x0039(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x6];                                       // 0x003A(0x0006) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -477,13 +497,13 @@ public:
 
 
 // Class Animation.AnimNotify_ToggleIK
-// 0x0018 (0x0048 - 0x0030)
+// 0x0018 (0x0050 - 0x0038)
 class UAnimNotify_ToggleIK : public UAnimNotify
 {
 public:
-	TArray<TEnumAsByte<ECharacterIKLimb>>              IKLimbsToAdjust;                                          // 0x0030(0x0010) (Edit, BlueprintReadOnly, ZeroConstructor)
-	bool                                               Enabled;                                                  // 0x0040(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0041(0x0007) MISSED OFFSET
+	TArray<TEnumAsByte<ECharacterIKLimb>>              IKLimbsToAdjust;                                          // 0x0038(0x0010) (Edit, BlueprintReadOnly, ZeroConstructor)
+	bool                                               Enabled;                                                  // 0x0048(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0049(0x0007) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -506,6 +526,40 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotifyCondition_FeatureConfigValidation"));
+		return ptr;
+	}
+
+};
+
+
+// Class Animation.AnimNotifyState_HideMeshByBoneForDuration
+// 0x0008 (0x0030 - 0x0028)
+class UAnimNotifyState_HideMeshByBoneForDuration : public UAnimNotifyState
+{
+public:
+	struct FName                                       BoneName;                                                 // 0x0028(0x0008) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotifyState_HideMeshByBoneForDuration"));
+		return ptr;
+	}
+
+};
+
+
+// Class Animation.AnimNotifyState_PropagateCurveValuesToMaterials
+// 0x0028 (0x0050 - 0x0028)
+class UAnimNotifyState_PropagateCurveValuesToMaterials : public UAnimNotifyState
+{
+public:
+	TArray<struct FCurveUpdateValues>                  CurveValues;                                              // 0x0028(0x0010) (Edit, BlueprintReadOnly, ZeroConstructor)
+	bool                                               DoNotPropagteCurveValues;                                 // 0x0038(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x17];                                      // 0x0039(0x0017) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotifyState_PropagateCurveValuesToMaterials"));
 		return ptr;
 	}
 
@@ -542,6 +596,21 @@ public:
 };
 
 
+// Class Animation.AnimNotifyState_SetMeshInvisibleForDuration
+// 0x0000 (0x0028 - 0x0028)
+class UAnimNotifyState_SetMeshInvisibleForDuration : public UAnimNotifyState
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotifyState_SetMeshInvisibleForDuration"));
+		return ptr;
+	}
+
+};
+
+
 // Class Animation.AnimNotifyState_SpawnCosmeticItem
 // 0x0020 (0x0048 - 0x0028)
 class UAnimNotifyState_SpawnCosmeticItem : public UAnimNotifyState
@@ -560,6 +629,39 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotifyState_SpawnCosmeticItem"));
+		return ptr;
+	}
+
+};
+
+
+// Class Animation.AnimNotifyState_ToggleIK
+// 0x0068 (0x0090 - 0x0028)
+class UAnimNotifyState_ToggleIK : public UAnimNotifyState
+{
+public:
+	TArray<TEnumAsByte<ECharacterIKLimb>>              IKLimbsToAdjust;                                          // 0x0028(0x0010) (Edit, BlueprintReadOnly, ZeroConstructor)
+	bool                                               Enabled;                                                  // 0x0038(0x0001) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x57];                                      // 0x0039(0x0057) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AnimNotifyState_ToggleIK"));
+		return ptr;
+	}
+
+};
+
+
+// Class Animation.AthenaAnimationControllableSocketsInterface
+// 0x0000 (0x0028 - 0x0028)
+class UAthenaAnimationControllableSocketsInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.AthenaAnimationControllableSocketsInterface"));
 		return ptr;
 	}
 
@@ -599,7 +701,7 @@ public:
 
 
 // Class Animation.ClientSkeletalMeshComponent
-// 0x0000 (0x0970 - 0x0970)
+// 0x0000 (0x09C0 - 0x09C0)
 class UClientSkeletalMeshComponent : public USkeletalMeshComponent
 {
 public:
@@ -614,13 +716,13 @@ public:
 
 
 // Class Animation.CosmeticItemActor
-// 0x00B0 (0x0508 - 0x0458)
+// 0x00B0 (0x0478 - 0x03C8)
 class ACosmeticItemActor : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0458(0x0008) MISSED OFFSET
-	class USkeletalMeshComponent*                      MeshComponent;                                            // 0x0460(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData)
-	unsigned char                                      UnknownData01[0xA0];                                      // 0x0468(0x00A0) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x03C8(0x0008) MISSED OFFSET
+	class USkeletalMeshComponent*                      MeshComponent;                                            // 0x03D0(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData)
+	unsigned char                                      UnknownData01[0xA0];                                      // 0x03D8(0x00A0) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -647,13 +749,14 @@ public:
 
 
 // Class Animation.CosmeticItemAnimationComponent
-// 0x0060 (0x0128 - 0x00C8)
+// 0x0068 (0x0130 - 0x00C8)
 class UCosmeticItemAnimationComponent : public UActorComponent
 {
 public:
 	unsigned char                                      UnknownData00[0x8];                                       // 0x00C8(0x0008) MISSED OFFSET
 	TMap<class USkeletalMeshComponent*, struct FCosmeticItems> CosmeticItems;                                            // 0x00D0(0x0050) (ZeroConstructor)
 	class UCosmeticItemAnimationDataAsset*             DataAsset;                                                // 0x0120(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x8];                                       // 0x0128(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -699,14 +802,14 @@ public:
 
 
 // Class Animation.CosmeticItemAnimationInstance
-// 0x00A0 (0x04E0 - 0x0440)
+// 0x00B0 (0x04F0 - 0x0440)
 class UCosmeticItemAnimationInstance : public UAnimInstance
 {
 public:
 	unsigned char                                      UnknownData00[0x8];                                       // 0x0440(0x0008) MISSED OFFSET
 	class UCosmeticItemAnimationSetDataAsset*          AnimationDataSet;                                         // 0x0448(0x0008) (ZeroConstructor, IsPlainOldData)
 	class UAnimMontage*                                ActiveMontage;                                            // 0x0450(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x88];                                      // 0x0458(0x0088) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x98];                                      // 0x0458(0x0098) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -714,16 +817,18 @@ public:
 		return ptr;
 	}
 
+
+	void UnregisterEvents();
 };
 
 
 // Class Animation.CosmeticItemAnimationSetDataAsset
-// 0x0028 (0x0050 - 0x0028)
+// 0x0030 (0x0058 - 0x0028)
 class UCosmeticItemAnimationSetDataAsset : public UDataAsset
 {
 public:
-	struct FCosmeticItemAnimationSetLoopData           LoopData;                                                 // 0x0028(0x0018) (Edit, DisableEditOnInstance)
-	TArray<class UAnimSequenceBase*>                   OneShotSequences;                                         // 0x0040(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	struct FCosmeticItemAnimationSetLoopData           LoopData;                                                 // 0x0028(0x0020) (Edit, DisableEditOnInstance)
+	TArray<class UAnimSequenceBase*>                   OneShotSequences;                                         // 0x0048(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{
@@ -779,8 +884,43 @@ public:
 };
 
 
+// Class Animation.CustomAnimationMontageInterface
+// 0x0000 (0x0028 - 0x0028)
+class UCustomAnimationMontageInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.CustomAnimationMontageInterface"));
+		return ptr;
+	}
+
+};
+
+
+// Class Animation.CustomAnimationMontageComponent
+// 0x0070 (0x0138 - 0x00C8)
+class UCustomAnimationMontageComponent : public UActorComponent
+{
+public:
+	unsigned char                                      UnknownData00[0x8];                                       // 0x00C8(0x0008) MISSED OFFSET
+	struct FCustomAnimationMontageComponentReplicatedData ReplicatedData;                                           // 0x00D0(0x000C) (Net)
+	unsigned char                                      UnknownData01[0x5C];                                      // 0x00DC(0x005C) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.CustomAnimationMontageComponent"));
+		return ptr;
+	}
+
+
+	void OnRep_ReplicatedData(const struct FCustomAnimationMontageComponentReplicatedData& PriorData);
+};
+
+
 // Class Animation.CustomAnimationMontageDefinitionDataAsset
-// 0x0030 (0x0058 - 0x0028)
+// 0x0048 (0x0070 - 0x0028)
 class UCustomAnimationMontageDefinitionDataAsset : public UDataAsset
 {
 public:
@@ -788,7 +928,9 @@ public:
 	TEnumAsByte<ECustomAnimationMontageType>           MontageType;                                              // 0x0030(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x0031(0x0007) MISSED OFFSET
 	class UAnimMontage*                                MontageData;                                              // 0x0038(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FCustomAnimationMontageStagedLoopingData    LoopingData;                                              // 0x0040(0x0018) (Edit, DisableEditOnInstance)
+	struct FCustomAnimationMontageStagedLoopingData    LoopingData;                                              // 0x0040(0x0028) (Edit, DisableEditOnInstance)
+	bool                                               Interrupts;                                               // 0x0068(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x7];                                       // 0x0069(0x0007) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -831,61 +973,6 @@ public:
 };
 
 
-// Class Animation.DockableInterface
-// 0x0000 (0x0028 - 0x0028)
-class UDockableInterface : public UInterface
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.DockableInterface"));
-		return ptr;
-	}
-
-
-	void HandleDestroy();
-	struct FDockableInfo GetDockableInfo();
-};
-
-
-// Class Animation.DockerBlueprintFunctions
-// 0x0000 (0x0028 - 0x0028)
-class UDockerBlueprintFunctions : public UBlueprintFunctionLibrary
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.DockerBlueprintFunctions"));
-		return ptr;
-	}
-
-
-	static void UpdateDock(float DeltaTime, struct FDocker* Docker);
-	static void StartDockingWithActor(class AActor* Owner, class AActor* Target, float DockDuration, float DelayAfterDocking, struct FDocker* Docker);
-	static bool IsFullyDocked(struct FDocker* Docker);
-	static bool IsDocking(struct FDocker* Docker);
-	static struct FVector GetTargetLocalOffset(const struct FDocker& Docker);
-	static void EndDock(struct FDocker* Docker);
-};
-
-
-// Class Animation.DockerInterface
-// 0x0000 (0x0028 - 0x0028)
-class UDockerInterface : public UInterface
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.DockerInterface"));
-		return ptr;
-	}
-
-};
-
-
 // Class Animation.DockingAnimationInterface
 // 0x0000 (0x0028 - 0x0028)
 class UDockingAnimationInterface : public UInterface
@@ -895,6 +982,21 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.DockingAnimationInterface"));
+		return ptr;
+	}
+
+};
+
+
+// Class Animation.EmotePropDataInterface
+// 0x0000 (0x0028 - 0x0028)
+class UEmotePropDataInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.EmotePropDataInterface"));
 		return ptr;
 	}
 
@@ -952,6 +1054,21 @@ public:
 };
 
 
+// Class Animation.LoadableAnimationsInterface
+// 0x0000 (0x0028 - 0x0028)
+class ULoadableAnimationsInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.LoadableAnimationsInterface"));
+		return ptr;
+	}
+
+};
+
+
 // Class Animation.LocomotionFunctionLib
 // 0x0000 (0x0028 - 0x0028)
 class ULocomotionFunctionLib : public UBlueprintFunctionLibrary
@@ -966,7 +1083,7 @@ public:
 
 
 	static float UpdateControllerSpineRotation(const struct FRotator& CharacterRotation, float AngleSpeedMax, float AngleSpeedMin);
-	static struct FActorVelocityData UpdateCharacterSpeed(const struct FVector& Velocity, float CurrentMaxWalkSpeed, float WantedMovementSpeed, float BaseMaxWalkSpeed, float SpeedBlendValue, bool IsSwimming);
+	static struct FActorVelocityData UpdateCharacterSpeed(const struct FVector& Velocity, float CurrentMaxWalkSpeed, float WantedMovementSpeed, float BaseMaxWalkSpeed, float SpeedBlendValue, bool IsSwimming, float DeadZone);
 	static float UpdateCalculateRateAndCurrentYaw(const struct FRotator& CharacterRotation, float LargeRate, float DeltaSeconds, float* CurrentCharacterYaw);
 };
 
@@ -1028,6 +1145,37 @@ public:
 };
 
 
+// Class Animation.ServerAnimationDataStoreInterface
+// 0x0000 (0x0028 - 0x0028)
+class UServerAnimationDataStoreInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.ServerAnimationDataStoreInterface"));
+		return ptr;
+	}
+
+};
+
+
+// Class Animation.SyncGroupAnimMetaData
+// 0x0008 (0x0030 - 0x0028)
+class USyncGroupAnimMetaData : public UAnimMetaData
+{
+public:
+	struct FName                                       SyncGroup;                                                // 0x0028(0x0008) (Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.SyncGroupAnimMetaData"));
+		return ptr;
+	}
+
+};
+
+
 // Class Animation.TransformBlendCurveComponent
 // 0x0508 (0x05D0 - 0x00C8)
 class UTransformBlendCurveComponent : public UActorComponent
@@ -1063,12 +1211,12 @@ public:
 
 
 // Class Animation.WaitForAnimationStateEntryProxy
-// 0x0020 (0x0048 - 0x0028)
+// 0x0028 (0x0050 - 0x0028)
 class UWaitForAnimationStateEntryProxy : public UObject
 {
 public:
 	struct FScriptMulticastDelegate                    OnReachedState;                                           // 0x0028(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0038(0x0010) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x18];                                      // 0x0038(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -1136,6 +1284,27 @@ public:
 		return ptr;
 	}
 
+
+	void Initialise(class UWeightedAnimationLoadOnDemandDataAsset* InAnimationData);
+	static class UWeightedAnimSequenceLoadOnDemand* CreateNewWeightedAnimSequenceLoadOnDemand();
+};
+
+
+// Class Animation.DockableInterface
+// 0x0000 (0x0028 - 0x0028)
+class UDockableInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Animation.DockableInterface"));
+		return ptr;
+	}
+
+
+	void HandleDestroy();
+	struct FDockableInfo GetDockableInfo();
 };
 
 

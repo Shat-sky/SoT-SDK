@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass AD_ThirdPerson_PlayerPirate_Female_Large.AD_ThirdPerson_PlayerPirate_Female_Large_C
-// 0x0000 (0x0740 - 0x0740)
+// 0x0000 (0x0780 - 0x0780)
 class UAD_ThirdPerson_PlayerPirate_Female_Large_C : public UAD_ThirdPerson_PlayerPirate_Female_Default_C
 {
 public:

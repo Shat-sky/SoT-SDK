@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -246,12 +246,12 @@ void UCosmeticItemAnimationComponent::DestroyAllCosmeticItems()
 }
 
 
-// Function Animation.DockableInterface.HandleDestroy
-// (Native, Public)
+// Function Animation.CosmeticItemAnimationInstance.UnregisterEvents
+// (Final, Native, Private)
 
-void UDockableInterface::HandleDestroy()
+void UCosmeticItemAnimationInstance::UnregisterEvents()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Animation.DockableInterface.HandleDestroy"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Animation.CosmeticItemAnimationInstance.UnregisterEvents"));
 
 	struct
 	{
@@ -262,187 +262,23 @@ void UDockableInterface::HandleDestroy()
 }
 
 
-// Function Animation.DockableInterface.GetDockableInfo
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Function Animation.CustomAnimationMontageComponent.OnRep_ReplicatedData
+// (Final, Native, Private, HasOutParms)
 // Parameters:
-// struct FDockableInfo           ReturnValue                    (Parm, OutParm, ReturnParm)
+// struct FCustomAnimationMontageComponentReplicatedData PriorData                      (ConstParm, Parm, OutParm, ReferenceParm)
 
-struct FDockableInfo UDockableInterface::GetDockableInfo()
+void UCustomAnimationMontageComponent::OnRep_ReplicatedData(const struct FCustomAnimationMontageComponentReplicatedData& PriorData)
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Animation.DockableInterface.GetDockableInfo"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Animation.CustomAnimationMontageComponent.OnRep_ReplicatedData"));
 
 	struct
 	{
-		struct FDockableInfo           ReturnValue;
+		struct FCustomAnimationMontageComponentReplicatedData PriorData;
 	} params;
 
+	params.PriorData = PriorData;
 
 	UObject::ProcessEvent(fn, &params);
-
-	return params.ReturnValue;
-}
-
-
-// Function Animation.DockerBlueprintFunctions.UpdateDock
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// struct FDocker                 Docker                         (Parm, OutParm, ReferenceParm)
-// float                          DeltaTime                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-
-void UDockerBlueprintFunctions::UpdateDock(float DeltaTime, struct FDocker* Docker)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Animation.DockerBlueprintFunctions.UpdateDock"));
-
-	struct
-	{
-		struct FDocker                 Docker;
-		float                          DeltaTime;
-	} params;
-
-	params.DeltaTime = DeltaTime;
-
-	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
-
-	if (Docker != nullptr)
-		*Docker = params.Docker;
-}
-
-
-// Function Animation.DockerBlueprintFunctions.StartDockingWithActor
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// struct FDocker                 Docker                         (Parm, OutParm, ReferenceParm)
-// class AActor*                  Owner                          (Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  Target                         (Parm, ZeroConstructor, IsPlainOldData)
-// float                          DockDuration                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-// float                          DelayAfterDocking              (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-
-void UDockerBlueprintFunctions::StartDockingWithActor(class AActor* Owner, class AActor* Target, float DockDuration, float DelayAfterDocking, struct FDocker* Docker)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Animation.DockerBlueprintFunctions.StartDockingWithActor"));
-
-	struct
-	{
-		struct FDocker                 Docker;
-		class AActor*                  Owner;
-		class AActor*                  Target;
-		float                          DockDuration;
-		float                          DelayAfterDocking;
-	} params;
-
-	params.Owner = Owner;
-	params.Target = Target;
-	params.DockDuration = DockDuration;
-	params.DelayAfterDocking = DelayAfterDocking;
-
-	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
-
-	if (Docker != nullptr)
-		*Docker = params.Docker;
-}
-
-
-// Function Animation.DockerBlueprintFunctions.IsFullyDocked
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FDocker                 Docker                         (Parm, OutParm, ReferenceParm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UDockerBlueprintFunctions::IsFullyDocked(struct FDocker* Docker)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Animation.DockerBlueprintFunctions.IsFullyDocked"));
-
-	struct
-	{
-		struct FDocker                 Docker;
-		bool                           ReturnValue;
-	} params;
-
-
-	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
-
-	if (Docker != nullptr)
-		*Docker = params.Docker;
-
-	return params.ReturnValue;
-}
-
-
-// Function Animation.DockerBlueprintFunctions.IsDocking
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FDocker                 Docker                         (Parm, OutParm, ReferenceParm)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UDockerBlueprintFunctions::IsDocking(struct FDocker* Docker)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Animation.DockerBlueprintFunctions.IsDocking"));
-
-	struct
-	{
-		struct FDocker                 Docker;
-		bool                           ReturnValue;
-	} params;
-
-
-	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
-
-	if (Docker != nullptr)
-		*Docker = params.Docker;
-
-	return params.ReturnValue;
-}
-
-
-// Function Animation.DockerBlueprintFunctions.GetTargetLocalOffset
-// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FDocker                 Docker                         (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FVector                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-struct FVector UDockerBlueprintFunctions::GetTargetLocalOffset(const struct FDocker& Docker)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Animation.DockerBlueprintFunctions.GetTargetLocalOffset"));
-
-	struct
-	{
-		struct FDocker                 Docker;
-		struct FVector                 ReturnValue;
-	} params;
-
-	params.Docker = Docker;
-
-	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
-
-	return params.ReturnValue;
-}
-
-
-// Function Animation.DockerBlueprintFunctions.EndDock
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// struct FDocker                 Docker                         (Parm, OutParm, ReferenceParm)
-
-void UDockerBlueprintFunctions::EndDock(struct FDocker* Docker)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Animation.DockerBlueprintFunctions.EndDock"));
-
-	struct
-	{
-		struct FDocker                 Docker;
-	} params;
-
-
-	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
-
-	if (Docker != nullptr)
-		*Docker = params.Docker;
 }
 
 
@@ -1020,9 +856,10 @@ float ULocomotionFunctionLib::UpdateControllerSpineRotation(const struct FRotato
 // float                          BaseMaxWalkSpeed               (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // float                          SpeedBlendValue                (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           IsSwimming                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// float                          DeadZone                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // struct FActorVelocityData      ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FActorVelocityData ULocomotionFunctionLib::UpdateCharacterSpeed(const struct FVector& Velocity, float CurrentMaxWalkSpeed, float WantedMovementSpeed, float BaseMaxWalkSpeed, float SpeedBlendValue, bool IsSwimming)
+struct FActorVelocityData ULocomotionFunctionLib::UpdateCharacterSpeed(const struct FVector& Velocity, float CurrentMaxWalkSpeed, float WantedMovementSpeed, float BaseMaxWalkSpeed, float SpeedBlendValue, bool IsSwimming, float DeadZone)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Animation.LocomotionFunctionLib.UpdateCharacterSpeed"));
 
@@ -1034,6 +871,7 @@ struct FActorVelocityData ULocomotionFunctionLib::UpdateCharacterSpeed(const str
 		float                          BaseMaxWalkSpeed;
 		float                          SpeedBlendValue;
 		bool                           IsSwimming;
+		float                          DeadZone;
 		struct FActorVelocityData      ReturnValue;
 	} params;
 
@@ -1043,6 +881,7 @@ struct FActorVelocityData ULocomotionFunctionLib::UpdateCharacterSpeed(const str
 	params.BaseMaxWalkSpeed = BaseMaxWalkSpeed;
 	params.SpeedBlendValue = SpeedBlendValue;
 	params.IsSwimming = IsSwimming;
+	params.DeadZone = DeadZone;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);
@@ -1289,6 +1128,85 @@ class UWaitForAnimationStateExitProxy* UWaitForAnimationStateExitProxy::CreatePr
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Animation.WeightedAnimSequenceLoadOnDemand.Initialise
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UWeightedAnimationLoadOnDemandDataAsset* InAnimationData                (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UWeightedAnimSequenceLoadOnDemand::Initialise(class UWeightedAnimationLoadOnDemandDataAsset* InAnimationData)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Animation.WeightedAnimSequenceLoadOnDemand.Initialise"));
+
+	struct
+	{
+		class UWeightedAnimationLoadOnDemandDataAsset* InAnimationData;
+	} params;
+
+	params.InAnimationData = InAnimationData;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Animation.WeightedAnimSequenceLoadOnDemand.CreateNewWeightedAnimSequenceLoadOnDemand
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UWeightedAnimSequenceLoadOnDemand* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class UWeightedAnimSequenceLoadOnDemand* UWeightedAnimSequenceLoadOnDemand::CreateNewWeightedAnimSequenceLoadOnDemand()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Animation.WeightedAnimSequenceLoadOnDemand.CreateNewWeightedAnimSequenceLoadOnDemand"));
+
+	struct
+	{
+		class UWeightedAnimSequenceLoadOnDemand* ReturnValue;
+	} params;
+
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Animation.DockableInterface.HandleDestroy
+// (Native, Public)
+
+void UDockableInterface::HandleDestroy()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Animation.DockableInterface.HandleDestroy"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Animation.DockableInterface.GetDockableInfo
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FDockableInfo           ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FDockableInfo UDockableInterface::GetDockableInfo()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Animation.DockableInterface.GetDockableInfo"));
+
+	struct
+	{
+		struct FDockableInfo           ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
 }

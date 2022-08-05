@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,23 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Classes
 //---------------------------------------------------------------------------
-
-// Class SimpleOverlaps.OverlapTestActor
-// 0x0018 (0x0470 - 0x0458)
-class AOverlapTestActor : public AActor
-{
-public:
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0458(0x0010) MISSED OFFSET
-	class UPrimitiveComponent*                         PrimitiveComponent;                                       // 0x0468(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class SimpleOverlaps.OverlapTestActor"));
-		return ptr;
-	}
-
-};
-
 
 // Class SimpleOverlaps.SimpleOverlapCollectionKey
 // 0x0000 (0x0028 - 0x0028)
@@ -56,73 +39,6 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class SimpleOverlaps.SimpleOverlapComponent"));
-		return ptr;
-	}
-
-};
-
-
-// Class SimpleOverlaps.TestObjectMessagingDispatcherInterface
-// 0x00A8 (0x0500 - 0x0458)
-class ATestObjectMessagingDispatcherInterface : public AActor
-{
-public:
-	unsigned char                                      UnknownData00[0xA8];                                      // 0x0458(0x00A8) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class SimpleOverlaps.TestObjectMessagingDispatcherInterface"));
-		return ptr;
-	}
-
-};
-
-
-// Class SimpleOverlaps.TestOverlapBroadcasterActor
-// 0x0120 (0x0578 - 0x0458)
-class ATestOverlapBroadcasterActor : public AActor
-{
-public:
-	unsigned char                                      UnknownData00[0x30];                                      // 0x0458(0x0030) MISSED OFFSET
-	class UPrimitiveComponent*                         PrimitiveComponent;                                       // 0x0488(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	unsigned char                                      UnknownData01[0xE8];                                      // 0x0490(0x00E8) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class SimpleOverlaps.TestOverlapBroadcasterActor"));
-		return ptr;
-	}
-
-};
-
-
-// Class SimpleOverlaps.TestOverlapShapeActor
-// 0x0010 (0x0468 - 0x0458)
-class ATestOverlapShapeActor : public AActor
-{
-public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0458(0x0008) MISSED OFFSET
-	class UPrimitiveComponent*                         PrimitiveComponent;                                       // 0x0460(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class SimpleOverlaps.TestOverlapShapeActor"));
-		return ptr;
-	}
-
-};
-
-
-// Class SimpleOverlaps.TestSimpleOverlapsGameState
-// 0x0060 (0x0510 - 0x04B0)
-class ATestSimpleOverlapsGameState : public AGameState
-{
-public:
-	unsigned char                                      UnknownData00[0x60];                                      // 0x04B0(0x0060) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class SimpleOverlaps.TestSimpleOverlapsGameState"));
 		return ptr;
 	}
 

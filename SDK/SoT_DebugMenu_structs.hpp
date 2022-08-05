@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -48,6 +48,13 @@ struct FDebugMenuUserItem
 {
 	class FString                                      path;                                                     // 0x0000(0x0010) (ZeroConstructor)
 	class FString                                      Command;                                                  // 0x0010(0x0010) (ZeroConstructor)
+};
+
+// ScriptStruct DebugMenu.DebugErrorHappeningEvent
+// 0x0001
+struct FDebugErrorHappeningEvent
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
 
 // ScriptStruct DebugMenu.DebugMenuOptionExecutedEvent

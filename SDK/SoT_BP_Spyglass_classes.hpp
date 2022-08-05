@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Spyglass.BP_Spyglass_C
-// 0x0000 (0x08A0 - 0x08A0)
+// 0x0000 (0x0870 - 0x0870)
 class ABP_Spyglass_C : public ASpyglass
 {
 public:

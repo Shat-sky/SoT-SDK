@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -108,6 +108,21 @@ public:
 };
 
 
+// Class MovieScene.MovieSceneCameraDockingInterface
+// 0x0000 (0x0028 - 0x0028)
+class UMovieSceneCameraDockingInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class MovieScene.MovieSceneCameraDockingInterface"));
+		return ptr;
+	}
+
+};
+
+
 // Class MovieScene.MovieSceneFolder
 // 0x0048 (0x0070 - 0x0028)
 class UMovieSceneFolder : public UObject
@@ -129,26 +144,28 @@ public:
 
 
 // Class MovieScene.MovieSceneSequencePlayer
-// 0x0630 (0x0658 - 0x0028)
+// 0x05E0 (0x0608 - 0x0028)
 class UMovieSceneSequencePlayer : public UObject
 {
 public:
-	unsigned char                                      UnknownData00[0x360];                                     // 0x0028(0x0360) MISSED OFFSET
-	struct FScriptMulticastDelegate                    OnPlay;                                                   // 0x0388(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
-	struct FScriptMulticastDelegate                    OnStop;                                                   // 0x0398(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
-	struct FScriptMulticastDelegate                    OnPause;                                                  // 0x03A8(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
-	unsigned char                                      bIsPlaying : 1;                                           // 0x03B8(0x0001)
-	unsigned char                                      bReversePlayback : 1;                                     // 0x03B8(0x0001)
-	unsigned char                                      bPendingFirstUpdate : 1;                                  // 0x03B8(0x0001)
-	unsigned char                                      UnknownData01[0x7];                                       // 0x03B9(0x0007) MISSED OFFSET
-	class UMovieSceneSequence*                         Sequence;                                                 // 0x03C0(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	float                                              TimeCursorPosition;                                       // 0x03C8(0x0004) (ZeroConstructor, IsPlainOldData)
-	float                                              StartTime;                                                // 0x03CC(0x0004) (ZeroConstructor, IsPlainOldData)
-	float                                              EndTime;                                                  // 0x03D0(0x0004) (ZeroConstructor, IsPlainOldData)
-	int                                                CurrentNumLoops;                                          // 0x03D4(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x10];                                      // 0x03D8(0x0010) MISSED OFFSET
-	struct FMovieSceneSequencePlaybackSettings         PlaybackSettings;                                         // 0x03E8(0x0028)
-	unsigned char                                      UnknownData03[0x248];                                     // 0x0410(0x0248) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x368];                                     // 0x0028(0x0368) MISSED OFFSET
+	struct FScriptMulticastDelegate                    OnPlay;                                                   // 0x0390(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
+	struct FScriptMulticastDelegate                    OnStop;                                                   // 0x03A0(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
+	struct FScriptMulticastDelegate                    OnPause;                                                  // 0x03B0(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
+	unsigned char                                      bIsPlaying : 1;                                           // 0x03C0(0x0001)
+	unsigned char                                      bReversePlayback : 1;                                     // 0x03C0(0x0001)
+	unsigned char                                      bPendingFirstUpdate : 1;                                  // 0x03C0(0x0001)
+	unsigned char                                      UnknownData01[0x7];                                       // 0x03C1(0x0007) MISSED OFFSET
+	class UMovieSceneSequence*                         Sequence;                                                 // 0x03C8(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	float                                              TimeCursorPosition;                                       // 0x03D0(0x0004) (ZeroConstructor, IsPlainOldData)
+	float                                              StartTime;                                                // 0x03D4(0x0004) (ZeroConstructor, IsPlainOldData)
+	float                                              EndTime;                                                  // 0x03D8(0x0004) (ZeroConstructor, IsPlainOldData)
+	int                                                CurrentNumLoops;                                          // 0x03DC(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x10];                                      // 0x03E0(0x0010) MISSED OFFSET
+	struct FMovieSceneSequencePlaybackSettings         PlaybackSettings;                                         // 0x03F0(0x0028)
+	unsigned char                                      UnknownData03[0x1D0];                                     // 0x0418(0x01D0) MISSED OFFSET
+	class ACharacter*                                  InteractingCharacter;                                     // 0x05E8(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData04[0x18];                                      // 0x05F0(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -162,9 +179,10 @@ public:
 	void SetPlayRate(float PlayRate);
 	void SetPlaybackRange(float NewStartTime, float NewEndTime);
 	void SetPlaybackPosition(float NewPlaybackPosition);
+	void SetOverridePlaybackSettings(const struct FMovieSceneSequencePlaybackSettings& InSettings);
 	void PlayReverse();
 	void PlayLooping(int NumLoops);
-	void Play();
+	void Play(class ACharacter* OptionalInteractingCharacter);
 	void Pause();
 	bool IsPlaying();
 	float GetPlayRate();

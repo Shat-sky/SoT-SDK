@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -38,21 +38,6 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryFramework.EmissaryParticipantInterface"));
-		return ptr;
-	}
-
-};
-
-
-// Class EmissaryFramework.EmissaryVotingServiceInterface
-// 0x0000 (0x0028 - 0x0028)
-class UEmissaryVotingServiceInterface : public UInterface
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryFramework.EmissaryVotingServiceInterface"));
 		return ptr;
 	}
 

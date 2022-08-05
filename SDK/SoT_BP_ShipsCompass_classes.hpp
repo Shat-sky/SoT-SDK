@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_ShipsCompass.BP_ShipsCompass_C
-// 0x0000 (0x0480 - 0x0480)
+// 0x0000 (0x0438 - 0x0438)
 class ABP_ShipsCompass_C : public AShipCompass
 {
 public:

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,11 +15,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class RareEngine.RareGameEngine
-// 0x0058 (0x0B00 - 0x0AA8)
+// 0x0058 (0x0A40 - 0x09E8)
 class URareGameEngine : public UGameEngine
 {
 public:
-	unsigned char                                      UnknownData00[0x58];                                      // 0x0AA8(0x0058) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x58];                                      // 0x09E8(0x0058) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -30,12 +30,28 @@ public:
 };
 
 
+// Class RareEngine.AssetReferencer
+// 0x0010 (0x0038 - 0x0028)
+class UAssetReferencer : public UDataAsset
+{
+public:
+	TArray<TAssetPtr<class UObject>>                   AssetsToReference;                                        // 0x0028(0x0010) (Edit, ZeroConstructor)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class RareEngine.AssetReferencer"));
+		return ptr;
+	}
+
+};
+
+
 // Class RareEngine.AudioHardwareDeviceService
-// 0x01F0 (0x0218 - 0x0028)
+// 0x0018 (0x0040 - 0x0028)
 class UAudioHardwareDeviceService : public UObject
 {
 public:
-	unsigned char                                      UnknownData00[0x1F0];                                     // 0x0028(0x01F0) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x18];                                      // 0x0028(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -84,7 +100,7 @@ public:
 
 
 // Class RareEngine.RareHUD
-// 0x0000 (0x0550 - 0x0550)
+// 0x0000 (0x04C0 - 0x04C0)
 class ARareHUD : public AHUD
 {
 public:

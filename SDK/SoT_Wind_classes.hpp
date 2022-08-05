@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -53,6 +53,7 @@ public:
 	void SetGlobalWindMagnitude(float InWindMagnitude);
 	void SetGlobalWindDirection(const struct FVector& InWindDirection);
 	void SetGlobalWindAngle(float InAngle);
+	void SetCustomMode(bool InCustomMode);
 	void RegisterWindZone(const TScriptInterface<class UWindZoneInterface>& InWindZone);
 	TScriptInterface<class UWindZoneInterface> GetWindZoneAtLocation(const struct FVector& SamplePosition);
 	struct FVector GetWindVector(const struct FVector& SamplePosition);
@@ -148,17 +149,18 @@ public:
 
 
 // Class Wind.WindService
-// 0x0120 (0x0578 - 0x0458)
+// 0x0138 (0x0500 - 0x03C8)
 class AWindService : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0458(0x0010) MISSED OFFSET
-	class AWindDirectionalSource*                      GlobalWindSource;                                         // 0x0468(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x10];                                      // 0x0470(0x0010) MISSED OFFSET
-	float                                              CurrentWindAngle;                                         // 0x0480(0x0004) (Net, ZeroConstructor, IsPlainOldData)
-	float                                              CurrentWindMagnitude;                                     // 0x0484(0x0004) (Net, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0xE0];                                      // 0x0488(0x00E0) MISSED OFFSET
-	TArray<TScriptInterface<class UWindZoneInterface>> WindZones;                                                // 0x0568(0x0010) (ZeroConstructor, Transient)
+	unsigned char                                      UnknownData00[0x10];                                      // 0x03C8(0x0010) MISSED OFFSET
+	class AWindDirectionalSource*                      GlobalWindSource;                                         // 0x03D8(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x10];                                      // 0x03E0(0x0010) MISSED OFFSET
+	float                                              CurrentWindAngle;                                         // 0x03F0(0x0004) (Net, ZeroConstructor, IsPlainOldData)
+	float                                              CurrentWindMagnitude;                                     // 0x03F4(0x0004) (Net, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0xE8];                                      // 0x03F8(0x00E8) MISSED OFFSET
+	TArray<TScriptInterface<class UWindZoneInterface>> WindZones;                                                // 0x04E0(0x0010) (ZeroConstructor, Transient)
+	TArray<struct FExtraWind>                          ExtraWind;                                                // 0x04F0(0x0010) (ZeroConstructor)
 
 	static UClass* StaticClass()
 	{
@@ -174,11 +176,11 @@ public:
 
 
 // Class Wind.DebugWindService
-// 0x0010 (0x0588 - 0x0578)
+// 0x0010 (0x0510 - 0x0500)
 class ADebugWindService : public AWindService
 {
 public:
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0578(0x0010) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x10];                                      // 0x0500(0x0010) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -207,13 +209,14 @@ public:
 
 
 // Class Wind.WindZoneComponent
-// 0x0090 (0x0320 - 0x0290)
+// 0x0090 (0x0370 - 0x02E0)
 class UWindZoneComponent : public USceneComponent
 {
 public:
-	struct FWindTurbulenceParameters                   TurbulenceParams;                                         // 0x0290(0x0070) (Edit, BlueprintVisible)
-	struct FWindZoneParams                             WindZoneParams;                                           // 0x0300(0x0010) (Edit, BlueprintVisible)
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0310(0x0010) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x02E0(0x0008) MISSED OFFSET
+	struct FWindTurbulenceParameters                   TurbulenceParams;                                         // 0x02E8(0x0070) (Edit, BlueprintVisible)
+	struct FWindZoneParams                             WindZoneParams;                                           // 0x0358(0x0010) (Edit, BlueprintVisible)
+	unsigned char                                      UnknownData01[0x8];                                       // 0x0368(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -225,7 +228,7 @@ public:
 
 
 // Class Wind.TestWindZoneComponent
-// 0x0000 (0x0320 - 0x0320)
+// 0x0000 (0x0370 - 0x0370)
 class UTestWindZoneComponent : public UWindZoneComponent
 {
 public:

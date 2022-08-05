@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -31,7 +31,7 @@ public:
 
 
 // Class ServerMigration.MigrationRelevancyClusterActor
-// 0x0000 (0x0458 - 0x0458)
+// 0x0000 (0x03C8 - 0x03C8)
 class AMigrationRelevancyClusterActor : public AActor
 {
 public:
@@ -129,11 +129,11 @@ public:
 
 
 // Class ServerMigration.ServerMigrationSerialisationDetailsTestsActorThatMovesOnBeginPlay
-// 0x0008 (0x0460 - 0x0458)
+// 0x0008 (0x03D0 - 0x03C8)
 class AServerMigrationSerialisationDetailsTestsActorThatMovesOnBeginPlay : public AActor
 {
 public:
-	class UPrimitiveComponent*                         PrimitiveComponent;                                       // 0x0458(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UPrimitiveComponent*                         PrimitiveComponent;                                       // 0x03C8(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -145,11 +145,11 @@ public:
 
 
 // Class ServerMigration.ServerMigrationSerialisationDetailsTestsActorWithChild
-// 0x0008 (0x0460 - 0x0458)
+// 0x0008 (0x03D0 - 0x03C8)
 class AServerMigrationSerialisationDetailsTestsActorWithChild : public AActor
 {
 public:
-	class UChildActorComponent*                        ChildActorComponent;                                      // 0x0458(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UChildActorComponent*                        ChildActorComponent;                                      // 0x03C8(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -160,14 +160,30 @@ public:
 };
 
 
+// Class ServerMigration.ServerMigrationSerialisationDetailsTestsActorWithReplicatedChild
+// 0x0008 (0x03D0 - 0x03C8)
+class AServerMigrationSerialisationDetailsTestsActorWithReplicatedChild : public AActor
+{
+public:
+	class UChildActorComponent*                        ChildActorComponent;                                      // 0x03C8(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ServerMigration.ServerMigrationSerialisationDetailsTestsActorWithReplicatedChild"));
+		return ptr;
+	}
+
+};
+
+
 // Class ServerMigration.ServerMigrationSerialisationDetailsTestsActorWithDynamicComponent
-// 0x0018 (0x0470 - 0x0458)
+// 0x0018 (0x03E0 - 0x03C8)
 class AServerMigrationSerialisationDetailsTestsActorWithDynamicComponent : public AActor
 {
 public:
-	class UServerMigrationSerialisationDetailsTestsMigratableComponent* SubObject;                                                // 0x0458(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	class UServerMigrationSerialisationDetailsTestsMigratableComponent* ActorComponent;                                           // 0x0460(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	class UServerMigrationSerialisationDetailsTestsMigratableComponent* Subobject2;                                               // 0x0468(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UServerMigrationSerialisationDetailsTestsMigratableComponent* SubObject;                                                // 0x03C8(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UServerMigrationSerialisationDetailsTestsMigratableComponent* ActorComponent;                                           // 0x03D0(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UServerMigrationSerialisationDetailsTestsMigratableComponent* Subobject2;                                               // 0x03D8(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -179,12 +195,12 @@ public:
 
 
 // Class ServerMigration.ServerMigrationSerialisationDetailsTestsActorWithNetActorPtr
-// 0x0018 (0x0470 - 0x0458)
+// 0x0018 (0x03E0 - 0x03C8)
 class AServerMigrationSerialisationDetailsTestsActorWithNetActorPtr : public AActor
 {
 public:
-	struct FNetActorPtr                                ActorPtr;                                                 // 0x0458(0x0014)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x046C(0x0004) MISSED OFFSET
+	struct FNetActorPtr                                ActorPtr;                                                 // 0x03C8(0x0014)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x03DC(0x0004) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -196,11 +212,11 @@ public:
 
 
 // Class ServerMigration.ServerMigrationSerialisationDetailsTestsActorWithUniqueNetId
-// 0x0018 (0x0470 - 0x0458)
+// 0x0018 (0x03E0 - 0x03C8)
 class AServerMigrationSerialisationDetailsTestsActorWithUniqueNetId : public AActor
 {
 public:
-	struct FUniqueNetIdRepl                            UniqueId;                                                 // 0x0458(0x0018)
+	struct FUniqueNetIdRepl                            UniqueId;                                                 // 0x03C8(0x0018)
 
 	static UClass* StaticClass()
 	{
@@ -229,11 +245,11 @@ public:
 
 
 // Class ServerMigration.ServerMigrationSerialisationDetailsTestsMigratableComponentActor
-// 0x0008 (0x0460 - 0x0458)
+// 0x0008 (0x03D0 - 0x03C8)
 class AServerMigrationSerialisationDetailsTestsMigratableComponentActor : public AActor
 {
 public:
-	class UServerMigrationSerialisationDetailsTestsMigratableComponent* ComponentWithMigrationMarkup;                             // 0x0458(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UServerMigrationSerialisationDetailsTestsMigratableComponent* ComponentWithMigrationMarkup;                             // 0x03C8(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -245,11 +261,11 @@ public:
 
 
 // Class ServerMigration.ServerMigrationSerialisationDetailsTestsMigratableDefaultComponentActor
-// 0x0008 (0x0460 - 0x0458)
+// 0x0008 (0x03D0 - 0x03C8)
 class AServerMigrationSerialisationDetailsTestsMigratableDefaultComponentActor : public AActor
 {
 public:
-	class UServerMigrationSerialisationDetailsTestsMigratableComponent* ComponentWithMigrationMarkup;                             // 0x0458(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UServerMigrationSerialisationDetailsTestsMigratableComponent* ComponentWithMigrationMarkup;                             // 0x03C8(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -261,11 +277,11 @@ public:
 
 
 // Class ServerMigration.ServerMigrationSerialisationDetailsTestsMigrationActorCallsOrderingTestActor
-// 0x0008 (0x0460 - 0x0458)
+// 0x0008 (0x03D0 - 0x03C8)
 class AServerMigrationSerialisationDetailsTestsMigrationActorCallsOrderingTestActor : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0458(0x0008) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x03C8(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -277,7 +293,7 @@ public:
 
 
 // Class ServerMigration.ServerMigrationSerialisationDetailsTestsMigrationActorWithRootComponentSimulatePhysicsEnabledByDefault
-// 0x0000 (0x0458 - 0x0458)
+// 0x0000 (0x03C8 - 0x03C8)
 class AServerMigrationSerialisationDetailsTestsMigrationActorWithRootComponentSimulatePhysicsEnabledByDefault : public AActor
 {
 public:
@@ -292,11 +308,11 @@ public:
 
 
 // Class ServerMigration.ServerMigrationSerialisationDetailsTestsMigrationChildActorLinkedActor
-// 0x0008 (0x0460 - 0x0458)
+// 0x0008 (0x03D0 - 0x03C8)
 class AServerMigrationSerialisationDetailsTestsMigrationChildActorLinkedActor : public AActor
 {
 public:
-	class UChildActorComponent*                        Component;                                                // 0x0458(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UChildActorComponent*                        Component;                                                // 0x03C8(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -308,12 +324,12 @@ public:
 
 
 // Class ServerMigration.ServerMigrationSerialisationDetailsTestsMigrationCustomSerialiseActor
-// 0x0008 (0x0460 - 0x0458)
+// 0x0008 (0x03D0 - 0x03C8)
 class AServerMigrationSerialisationDetailsTestsMigrationCustomSerialiseActor : public AActor
 {
 public:
-	struct FServerMigrationCustomMigrationSerialisationStruct TestStruct;                                               // 0x0458(0x0004)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x045C(0x0004) MISSED OFFSET
+	struct FServerMigrationCustomMigrationSerialisationStruct TestStruct;                                               // 0x03C8(0x0004)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x03CC(0x0004) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -324,12 +340,27 @@ public:
 };
 
 
+// Class ServerMigration.ServerMigrationSerialisationDetailsTestsMigrationCustomSerialiseReplicatingActor
+// 0x0000 (0x03D0 - 0x03D0)
+class AServerMigrationSerialisationDetailsTestsMigrationCustomSerialiseReplicatingActor : public AServerMigrationSerialisationDetailsTestsMigrationCustomSerialiseActor
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ServerMigration.ServerMigrationSerialisationDetailsTestsMigrationCustomSerialiseReplicatingActor"));
+		return ptr;
+	}
+
+};
+
+
 // Class ServerMigration.ServerMigrationSerialisationDetailsTestsMigrationGetLinkedActor
-// 0x0008 (0x0460 - 0x0458)
+// 0x0008 (0x03D0 - 0x03C8)
 class AServerMigrationSerialisationDetailsTestsMigrationGetLinkedActor : public AActor
 {
 public:
-	class AActor*                                      DependentActor;                                           // 0x0458(0x0008) (ZeroConstructor, IsPlainOldData)
+	class AActor*                                      DependentActor;                                           // 0x03C8(0x0008) (ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -341,12 +372,12 @@ public:
 
 
 // Class ServerMigration.ServerMigrationSerialisationDetailsTestsMigrationReferenceActor
-// 0x0010 (0x0468 - 0x0458)
+// 0x0010 (0x03D8 - 0x03C8)
 class AServerMigrationSerialisationDetailsTestsMigrationReferenceActor : public AActor
 {
 public:
-	class AActor*                                      ActorReferenceWithMigrationMarkup;                        // 0x0458(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0460(0x0008) MISSED OFFSET
+	class AActor*                                      ActorReferenceWithMigrationMarkup;                        // 0x03C8(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x8];                                       // 0x03D0(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -432,6 +463,38 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ServerMigration.ServerMigrationSettings"));
+		return ptr;
+	}
+
+};
+
+
+// Class ServerMigration.TestActorWithUObjectProperty
+// 0x0008 (0x03D0 - 0x03C8)
+class ATestActorWithUObjectProperty : public AActor
+{
+public:
+	class UObject*                                     ObjectProperty;                                           // 0x03C8(0x0008) (ZeroConstructor, IsPlainOldData)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ServerMigration.TestActorWithUObjectProperty"));
+		return ptr;
+	}
+
+};
+
+
+// Class ServerMigration.TestUObjectWithObjectProperty
+// 0x0008 (0x0030 - 0x0028)
+class UTestUObjectWithObjectProperty : public UObject
+{
+public:
+	class UObject*                                     ObjectProperty;                                           // 0x0028(0x0008) (ZeroConstructor, IsPlainOldData)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ServerMigration.TestUObjectWithObjectProperty"));
 		return ptr;
 	}
 

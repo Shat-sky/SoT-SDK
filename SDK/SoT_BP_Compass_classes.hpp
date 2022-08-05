@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,11 +15,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Compass.BP_Compass_C
-// 0x0008 (0x0888 - 0x0880)
+// 0x0008 (0x0868 - 0x0860)
 class ABP_Compass_C : public ACompass
 {
 public:
-	class UInventoryItemComponent*                     InventoryItem;                                            // 0x0880(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UInventoryItemComponent*                     InventoryItem;                                            // 0x0860(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

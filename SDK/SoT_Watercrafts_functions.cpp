@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,26 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function Watercrafts.FakeShip.OnAttachedItemEndPlay
+// (Final, Native, Private)
+// Parameters:
+// class AActor*                  Actor                          (Parm, ZeroConstructor, IsPlainOldData)
+
+void AFakeShip::OnAttachedItemEndPlay(class AActor* Actor)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.FakeShip.OnAttachedItemEndPlay"));
+
+	struct
+	{
+		class AActor*                  Actor;
+	} params;
+
+	params.Actor = Actor;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
 
 // Function Watercrafts.ItemProxyWatercraftTrackerComponent.OnRep_CurrentWatercraft
 // (Final, Native, Private)
@@ -128,18 +148,18 @@ void ARowboat::OnRep_IsSinking()
 }
 
 
-// Function Watercrafts.RowingCompositeInputHandler.OnUseRightOar
-// (Final, Native, Private)
+// Function Watercrafts.TaleQuestWatercraftFunctionLibrary.GetFirstSpawnedWatercraft
+// (Final, Native, Public)
 // Parameters:
-// TEnumAsByte<EInputHandlerResult> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// class AWatercraft*             ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-TEnumAsByte<EInputHandlerResult> URowingCompositeInputHandler::OnUseRightOar()
+class AWatercraft* UTaleQuestWatercraftFunctionLibrary::GetFirstSpawnedWatercraft()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.RowingCompositeInputHandler.OnUseRightOar"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.TaleQuestWatercraftFunctionLibrary.GetFirstSpawnedWatercraft"));
 
 	struct
 	{
-		TEnumAsByte<EInputHandlerResult> ReturnValue;
+		class AWatercraft*             ReturnValue;
 	} params;
 
 
@@ -149,108 +169,28 @@ TEnumAsByte<EInputHandlerResult> URowingCompositeInputHandler::OnUseRightOar()
 }
 
 
-// Function Watercrafts.RowingCompositeInputHandler.OnUseLeftOar
-// (Final, Native, Private)
+// Function Watercrafts.TaleQuestWatercraftFunctionLibrary.FilterPointsByDistanceFromWatercraft
+// (Final, Native, Public, HasOutParms, Const)
 // Parameters:
-// TEnumAsByte<EInputHandlerResult> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+// float                          MinDistance                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// TArray<struct FOrientedPoint>  Points                         (Parm, OutParm, ZeroConstructor, ReferenceParm)
 
-TEnumAsByte<EInputHandlerResult> URowingCompositeInputHandler::OnUseLeftOar()
+void UTaleQuestWatercraftFunctionLibrary::FilterPointsByDistanceFromWatercraft(float MinDistance, TArray<struct FOrientedPoint>* Points)
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.RowingCompositeInputHandler.OnUseLeftOar"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.TaleQuestWatercraftFunctionLibrary.FilterPointsByDistanceFromWatercraft"));
 
 	struct
 	{
-		TEnumAsByte<EInputHandlerResult> ReturnValue;
+		float                          MinDistance;
+		TArray<struct FOrientedPoint>  Points;
 	} params;
 
+	params.MinDistance = MinDistance;
 
 	UObject::ProcessEvent(fn, &params);
 
-	return params.ReturnValue;
-}
-
-
-// Function Watercrafts.RowingCompositeInputHandler.OnStopUseRightOar
-// (Final, Native, Private)
-// Parameters:
-// TEnumAsByte<EInputHandlerResult> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-TEnumAsByte<EInputHandlerResult> URowingCompositeInputHandler::OnStopUseRightOar()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.RowingCompositeInputHandler.OnStopUseRightOar"));
-
-	struct
-	{
-		TEnumAsByte<EInputHandlerResult> ReturnValue;
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-
-	return params.ReturnValue;
-}
-
-
-// Function Watercrafts.RowingCompositeInputHandler.OnStopUseLeftOar
-// (Final, Native, Private)
-// Parameters:
-// TEnumAsByte<EInputHandlerResult> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-TEnumAsByte<EInputHandlerResult> URowingCompositeInputHandler::OnStopUseLeftOar()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.RowingCompositeInputHandler.OnStopUseLeftOar"));
-
-	struct
-	{
-		TEnumAsByte<EInputHandlerResult> ReturnValue;
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-
-	return params.ReturnValue;
-}
-
-
-// Function Watercrafts.RowingCompositeInputHandler.OnBrakeRightOar
-// (Final, Native, Private)
-// Parameters:
-// TEnumAsByte<EInputHandlerResult> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-TEnumAsByte<EInputHandlerResult> URowingCompositeInputHandler::OnBrakeRightOar()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.RowingCompositeInputHandler.OnBrakeRightOar"));
-
-	struct
-	{
-		TEnumAsByte<EInputHandlerResult> ReturnValue;
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-
-	return params.ReturnValue;
-}
-
-
-// Function Watercrafts.RowingCompositeInputHandler.OnBrakeLeftOar
-// (Final, Native, Private)
-// Parameters:
-// TEnumAsByte<EInputHandlerResult> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-TEnumAsByte<EInputHandlerResult> URowingCompositeInputHandler::OnBrakeLeftOar()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.RowingCompositeInputHandler.OnBrakeLeftOar"));
-
-	struct
-	{
-		TEnumAsByte<EInputHandlerResult> ReturnValue;
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-
-	return params.ReturnValue;
+	if (Points != nullptr)
+		*Points = params.Points;
 }
 
 

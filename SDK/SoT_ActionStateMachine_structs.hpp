@@ -1,54 +1,18 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_ActionStateMachine_enums.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum ActionStateMachine.EActionStateMachineTrackId
-enum class EActionStateMachineTrackId : uint8_t
-{
-	EActionStateMachineTrackId__Locomotion = 0,
-	EActionStateMachineTrackId__Overlay = 1,
-	EActionStateMachineTrackId__ItemUse = 2,
-	EActionStateMachineTrackId__ForcedMovement = 3,
-	EActionStateMachineTrackId__Migration = 4,
-	EActionStateMachineTrackId__Count = 5,
-	EActionStateMachineTrackId__Invalid = 6,
-	EActionStateMachineTrackId__EActionStateMachineTrackId_MAX = 7
-};
-
-
-// Enum ActionStateMachine.EActionPredictionType
-enum class EActionPredictionType : uint8_t
-{
-	EActionPredictionType__Predicted = 0,
-	EActionPredictionType__NotPredicted = 1,
-	EActionPredictionType__EActionPredictionType_MAX = 2
-};
-
-
-// Enum ActionStateMachine.EActionStatePriority
-enum class EActionStatePriority : uint8_t
-{
-	EActionStatePriority__Overrides = 0,
-	EActionStatePriority__Overriden = 1,
-	EActionStatePriority__EActionStatePriority_MAX = 2
-};
-
-
-
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
@@ -197,6 +161,20 @@ struct FTestActionStateConstructionInfoWithObjPointers : public FActionStateCons
 	class UObject*                                     ObjPointer;                                               // 0x0028(0x0008) (ZeroConstructor, IsPlainOldData)
 	struct FInnerWithObjTestStruct                     Inner;                                                    // 0x0030(0x0008)
 	TArray<class UObject*>                             Array;                                                    // 0x0038(0x0010) (ZeroConstructor)
+};
+
+// ScriptStruct ActionStateMachine.EventWaitingToSpawnActionStateEndedClient
+// 0x0001
+struct FEventWaitingToSpawnActionStateEndedClient
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct ActionStateMachine.EventWaitingToSpawnActionStateStartedClient
+// 0x0001
+struct FEventWaitingToSpawnActionStateStartedClient
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
 
 // ScriptStruct ActionStateMachine.EventFirstPersonAnimaticActionStateEndedClient

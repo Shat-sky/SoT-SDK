@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_LightingController.BP_LightingController_C
-// 0x0000 (0x0E30 - 0x0E30)
+// 0x0000 (0x0E70 - 0x0E70)
 class ABP_LightingController_C : public ALightingController
 {
 public:

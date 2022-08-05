@@ -1,32 +1,17 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_AthenaProjectiles_enums.hpp"
 #include "SoT_Engine_classes.hpp"
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum AthenaProjectiles.EProjectileFiredFrom
-enum class EProjectileFiredFrom : uint8_t
-{
-	EProjectileFiredFrom__Cannon   = 0,
-	EProjectileFiredFrom__Character = 1,
-	EProjectileFiredFrom__DeepSeaCannon = 2,
-	EProjectileFiredFrom__DeepSeaCharacter = 3,
-	EProjectileFiredFrom__EProjectileFiredFrom_MAX = 4
-};
-
-
-
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
@@ -41,12 +26,14 @@ struct FThrottledProjectileTickPool
 };
 
 // ScriptStruct AthenaProjectiles.GlobalProjectileSettings
-// 0x0008
+// 0x0010
 struct FGlobalProjectileSettings
 {
 	TEnumAsByte<EProjectileFiredFrom>                  SettingsFor;                                              // 0x0000(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x3];                                       // 0x0001(0x0003) MISSED OFFSET
 	float                                              ProjectileDestroyDepth;                                   // 0x0004(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              ProjectileOceanFloorDestroyDepth;                         // 0x0008(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              ProjectileMinimumFallDistance;                            // 0x000C(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 };
 
 }

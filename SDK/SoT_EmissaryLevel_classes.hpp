@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -70,7 +70,7 @@ public:
 
 
 // Class EmissaryLevel.EmissaryEntitlementDesc
-// 0x0000 (0x00D8 - 0x00D8)
+// 0x0000 (0x00C8 - 0x00C8)
 class UEmissaryEntitlementDesc : public UEntitlementDesc
 {
 public:
@@ -84,12 +84,30 @@ public:
 };
 
 
+// Class EmissaryLevel.EmissaryFlotsamDuplicationInterface
+// 0x0000 (0x0028 - 0x0028)
+class UEmissaryFlotsamDuplicationInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryFlotsamDuplicationInterface"));
+		return ptr;
+	}
+
+};
+
+
 // Class EmissaryLevel.EmissaryFlotsamItemInfo
-// 0x0018 (0x07B0 - 0x0798)
+// 0x0028 (0x0748 - 0x0720)
 class AEmissaryFlotsamItemInfo : public ABootyItemInfo
 {
 public:
-	struct FCompanySpecificBootyReward                 HandInOwnFlotsamReward;                                   // 0x0798(0x0018) (Edit, DisableEditOnInstance)
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0720(0x0008) MISSED OFFSET
+	struct FCompanySpecificBootyReward                 HandInOwnFlotsamReward;                                   // 0x0728(0x0018) (Edit, DisableEditOnInstance)
+	bool                                               FlotsamCanBeDuplicated;                                   // 0x0740(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x7];                                       // 0x0741(0x0007) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -101,11 +119,11 @@ public:
 
 
 // Class EmissaryLevel.EmissaryFlotsamItemSpawnComponent
-// 0x0080 (0x04B0 - 0x0430)
+// 0x0090 (0x04D0 - 0x0440)
 class UEmissaryFlotsamItemSpawnComponent : public UItemSpawnComponent
 {
 public:
-	unsigned char                                      UnknownData00[0x80];                                      // 0x0430(0x0080) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x90];                                      // 0x0440(0x0090) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -156,14 +174,14 @@ public:
 
 
 // Class EmissaryLevel.EmissaryLevelService
-// 0x02B0 (0x0708 - 0x0458)
+// 0x0338 (0x0700 - 0x03C8)
 class AEmissaryLevelService : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0x68];                                      // 0x0458(0x0068) MISSED OFFSET
-	class UEmissaryLevelSettingsAsset*                 Settings;                                                 // 0x04C0(0x0008) (ZeroConstructor, IsPlainOldData)
-	class UEmissaryRewardSettingsAsset*                RewardSettings;                                           // 0x04C8(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x238];                                     // 0x04D0(0x0238) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xA0];                                      // 0x03C8(0x00A0) MISSED OFFSET
+	class UEmissaryLevelSettingsAsset*                 Settings;                                                 // 0x0468(0x0008) (ZeroConstructor, IsPlainOldData)
+	class UEmissaryRewardSettingsAsset*                RewardSettings;                                           // 0x0470(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x288];                                     // 0x0478(0x0288) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -197,7 +215,7 @@ public:
 
 
 // Class EmissaryLevel.EmissaryParticipantComponent
-// 0x0038 (0x0100 - 0x00C8)
+// 0x0048 (0x0110 - 0x00C8)
 class UEmissaryParticipantComponent : public UActorComponent
 {
 public:
@@ -207,8 +225,10 @@ public:
 	struct FName                                       AffiliatedCompany;                                        // 0x00D8(0x0008) (Net, ZeroConstructor, IsPlainOldData)
 	bool                                               IsAtMaxRank;                                              // 0x00E0(0x0001) (ZeroConstructor, IsPlainOldData)
 	bool                                               IsEmissaryMaxRankQuestBeenActivatedThisSession;           // 0x00E1(0x0001) (Net, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x16];                                      // 0x00E2(0x0016) MISSED OFFSET
-	struct FName                                       VotedCompany;                                             // 0x00F8(0x0008) (Net, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x6];                                       // 0x00E2(0x0006) MISSED OFFSET
+	TArray<struct FMysteriousNotesCompletionEventsModelEntry> NoteCompletionIdents;                                     // 0x00E8(0x0010) (Edit, ZeroConstructor)
+	unsigned char                                      UnknownData02[0x10];                                      // 0x00F8(0x0010) MISSED OFFSET
+	struct FName                                       VotedCompany;                                             // 0x0108(0x0008) (Net, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -223,7 +243,7 @@ public:
 
 
 // Class EmissaryLevel.EmissaryRepresentationMeshComponent
-// 0x0000 (0x05D0 - 0x05D0)
+// 0x0000 (0x0620 - 0x0620)
 class UEmissaryRepresentationMeshComponent : public UStaticMeshComponent
 {
 public:
@@ -237,14 +257,31 @@ public:
 };
 
 
+// Class EmissaryLevel.EmissaryRewardCampaignSettingsAsset
+// 0x0010 (0x0038 - 0x0028)
+class UEmissaryRewardCampaignSettingsAsset : public UDataAsset
+{
+public:
+	TArray<struct FEmissaryCompanyCampaignSettings>    Companies;                                                // 0x0028(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryRewardCampaignSettingsAsset"));
+		return ptr;
+	}
+
+};
+
+
 // Class EmissaryLevel.EmissaryRewardSettingsAsset
-// 0x0018 (0x0040 - 0x0028)
+// 0x0020 (0x0048 - 0x0028)
 class UEmissaryRewardSettingsAsset : public UDataAsset
 {
 public:
 	TArray<struct FEmissaryRewardEntry>                EmissaryRewardData;                                       // 0x0028(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 	float                                              PlayerKilledExpiryTime;                                   // 0x0038(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x003C(0x0004) MISSED OFFSET
+	class UEmissaryRewardCampaignSettingsAsset*        CampaignSettings;                                         // 0x0040(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -256,16 +293,18 @@ public:
 
 
 // Class EmissaryLevel.EmissaryShipAffiliationTrackerComponent
-// 0x0070 (0x0300 - 0x0290)
+// 0x0070 (0x0350 - 0x02E0)
 class UEmissaryShipAffiliationTrackerComponent : public USceneComponent
 {
 public:
-	class UClass*                                      TrackedCompany;                                           // 0x0290(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	TAssetPtr<class UClass>                            EmissaryRepresentationMesh;                               // 0x0298(0x0020) (Edit, DisableEditOnInstance)
-	TArray<struct FTransform>                          EmissaryRepresentationTransforms;                         // 0x02B8(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
-	TArray<class UStaticMeshComponent*>                EmissaryRepresentationMeshes;                             // 0x02C8(0x0010) (ExportObject, ZeroConstructor, Transient)
-	class UClass*                                      LoadedEmissaryRepresentationMesh;                         // 0x02D8(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x20];                                      // 0x02E0(0x0020) MISSED OFFSET
+	int                                                EmissaryCount;                                            // 0x02E0(0x0004) (Net, ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x02E4(0x0004) MISSED OFFSET
+	class UClass*                                      TrackedCompany;                                           // 0x02E8(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	TAssetPtr<class UClass>                            EmissaryRepresentationMesh;                               // 0x02F0(0x0020) (Edit, DisableEditOnInstance)
+	TArray<struct FTransform>                          EmissaryRepresentationTransforms;                         // 0x0310(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	TArray<class UStaticMeshComponent*>                EmissaryRepresentationMeshes;                             // 0x0320(0x0010) (ExportObject, ZeroConstructor, Transient)
+	class UClass*                                      LoadedEmissaryRepresentationMesh;                         // 0x0330(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x18];                                      // 0x0338(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -278,19 +317,25 @@ public:
 };
 
 
-// Class EmissaryLevel.EmissaryVotingService
-// 0x00F8 (0x0550 - 0x0458)
-class AEmissaryVotingService : public AActor
+// Class EmissaryLevel.EmissaryVoyageInlineVoteConsumerBase
+// 0x00F8 (0x0128 - 0x0030)
+class UEmissaryVoyageInlineVoteConsumerBase : public UVoteConsumerInlineBase
 {
 public:
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0458(0x0010) MISSED OFFSET
-	TArray<struct FCrewMemberVotes>                    Votes;                                                    // 0x0468(0x0010) (Net, ZeroConstructor, Transient)
-	class UBoxedRpcDispatcherComponent*                RpcDispatcher;                                            // 0x0478(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
-	unsigned char                                      UnknownData01[0xD0];                                      // 0x0480(0x00D0) MISSED OFFSET
+	class UEmissaryVoyageVoteValidatorBase*            Validator;                                                // 0x0030(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x48];                                      // 0x0038(0x0048) MISSED OFFSET
+	struct FText                                       VoyageCinematicHeader;                                    // 0x0080(0x0038) (Edit, DisableEditOnInstance)
+	struct FName                                       VoyageCinematicTag;                                       // 0x00B8(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x20];                                      // 0x00C0(0x0020) MISSED OFFSET
+	TArray<struct FCrewMemberVotes>                    Votes;                                                    // 0x00E0(0x0010) (Net, ZeroConstructor)
+	class UBoxedRpcDispatcherComponent*                RpcDispatcher;                                            // 0x00F0(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x20];                                      // 0x00F8(0x0020) MISSED OFFSET
+	class AActor*                                      OwningActor;                                              // 0x0118(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData03[0x8];                                       // 0x0120(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryVotingService"));
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryVoyageInlineVoteConsumerBase"));
 		return ptr;
 	}
 
@@ -299,40 +344,19 @@ public:
 };
 
 
-// Class EmissaryLevel.EmissaryVoyageInlineVoteConsumerBase
-// 0x00C8 (0x00F8 - 0x0030)
-class UEmissaryVoyageInlineVoteConsumerBase : public UVoteConsumerInlineBase
-{
-public:
-	class UEmissaryVoyageVoteValidatorBase*            Validator;                                                // 0x0030(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x30];                                      // 0x0038(0x0030) MISSED OFFSET
-	struct FText                                       VoyageCinematicHeader;                                    // 0x0068(0x0038) (Edit, DisableEditOnInstance)
-	struct FName                                       VoyageCinematicTag;                                       // 0x00A0(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x48];                                      // 0x00A8(0x0048) MISSED OFFSET
-	class AActor*                                      OwningActor;                                              // 0x00F0(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.EmissaryVoyageInlineVoteConsumerBase"));
-		return ptr;
-	}
-
-};
-
-
 // Class EmissaryLevel.StartEmissaryVoyageInlineVoteConsumer
-// 0x01A0 (0x0298 - 0x00F8)
+// 0x01A0 (0x02C8 - 0x0128)
 class UStartEmissaryVoyageInlineVoteConsumer : public UEmissaryVoyageInlineVoteConsumerBase
 {
 public:
-	struct FText                                       EmissaryVotingCastVote;                                   // 0x00F8(0x0038) (Edit, DisableEditOnInstance)
-	struct FText                                       EmissaryVotingCantVote;                                   // 0x0130(0x0038) (Edit, DisableEditOnInstance)
-	struct FText                                       EmissaryVotingCantVoteReasonCrewShipOutsideRange;         // 0x0168(0x0038) (Edit, DisableEditOnInstance)
-	struct FText                                       EmissaryVotingCantVoteReasonNoEmissaryEntitlement;        // 0x01A0(0x0038) (Edit, DisableEditOnInstance)
-	struct FText                                       EmissaryVotingCantVoteReasonHasActiveVoteForDifferentCompany;// 0x01D8(0x0038) (Edit, DisableEditOnInstance)
-	struct FText                                       EmissaryVotingRemoveVote;                                 // 0x0210(0x0038) (Edit, DisableEditOnInstance)
-	struct FText                                       EmissaryVotingCantRemoveVote;                             // 0x0248(0x0038) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData00[0x18];                                      // 0x0280(0x0018) MISSED OFFSET
+	struct FText                                       EmissaryVotingCastVote;                                   // 0x0128(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       EmissaryVotingCantVote;                                   // 0x0160(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       EmissaryVotingCantVoteReasonCrewShipOutsideRange;         // 0x0198(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       EmissaryVotingCantVoteReasonNoEmissaryEntitlement;        // 0x01D0(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       EmissaryVotingCantVoteReasonHasActiveVoteForDifferentCompany;// 0x0208(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       EmissaryVotingRemoveVote;                                 // 0x0240(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       EmissaryVotingCantRemoveVote;                             // 0x0278(0x0038) (Edit, DisableEditOnInstance)
+	unsigned char                                      UnknownData00[0x18];                                      // 0x02B0(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -344,17 +368,17 @@ public:
 
 
 // Class EmissaryLevel.StopEmissaryVoyageInlineVoteConsumer
-// 0x0168 (0x0260 - 0x00F8)
+// 0x0168 (0x0290 - 0x0128)
 class UStopEmissaryVoyageInlineVoteConsumer : public UEmissaryVoyageInlineVoteConsumerBase
 {
 public:
-	struct FText                                       EmissaryVotingCastVote;                                   // 0x00F8(0x0038) (Edit, DisableEditOnInstance)
-	struct FText                                       EmissaryVotingCantVote;                                   // 0x0130(0x0038) (Edit, DisableEditOnInstance)
-	struct FText                                       EmissaryVotingCantVoteReasonCrewShipOutsideRange;         // 0x0168(0x0038) (Edit, DisableEditOnInstance)
-	struct FText                                       EmissaryVotingCantVoteReasonActiveForDifferentCompany;    // 0x01A0(0x0038) (Edit, DisableEditOnInstance)
-	struct FText                                       EmissaryVotingRemoveVote;                                 // 0x01D8(0x0038) (Edit, DisableEditOnInstance)
-	struct FText                                       EmissaryVotingCantRemoveVote;                             // 0x0210(0x0038) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData00[0x18];                                      // 0x0248(0x0018) MISSED OFFSET
+	struct FText                                       EmissaryVotingCastVote;                                   // 0x0128(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       EmissaryVotingCantVote;                                   // 0x0160(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       EmissaryVotingCantVoteReasonCrewShipOutsideRange;         // 0x0198(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       EmissaryVotingCantVoteReasonActiveForDifferentCompany;    // 0x01D0(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       EmissaryVotingRemoveVote;                                 // 0x0208(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       EmissaryVotingCantRemoveVote;                             // 0x0240(0x0038) (Edit, DisableEditOnInstance)
+	unsigned char                                      UnknownData00[0x18];                                      // 0x0278(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -370,9 +394,9 @@ public:
 class UEmissaryVoyageVoteValidatorBase : public UVoteValidatorInlineBase
 {
 public:
-	class UClass*                                      TargetCompany;                                            // 0x0030(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	class UClass*                                      RequiredEntitlement;                                      // 0x0038(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x60];                                      // 0x0040(0x0060) MISSED OFFSET
+	class UClass*                                      RequiredEntitlement;                                      // 0x0030(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x60];                                      // 0x0038(0x0060) MISSED OFFSET
+	class UClass*                                      TargetCompany;                                            // 0x0098(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	class UEmissaryVoyageInlineVoteConsumerBase*       Consumer;                                                 // 0x00A0(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
 
 	static UClass* StaticClass()
@@ -408,6 +432,21 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.StopEmissaryVoyageInlineVoteValidator"));
+		return ptr;
+	}
+
+};
+
+
+// Class EmissaryLevel.IsAnEmissaryStatCondition
+// 0x0000 (0x0030 - 0x0030)
+class UIsAnEmissaryStatCondition : public UTargetedStatCondition
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class EmissaryLevel.IsAnEmissaryStatCondition"));
 		return ptr;
 	}
 

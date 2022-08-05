@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -30,18 +30,20 @@ public:
 
 
 // Class AthenaDebug.DrawDebugService
-// 0x0078 (0x04D0 - 0x0458)
+// 0x00F8 (0x04C0 - 0x03C8)
 class ADrawDebugService : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0458(0x0008) MISSED OFFSET
-	TArray<struct FDrawDebugItemMessage>               MessagesReplicated;                                       // 0x0460(0x0010) (Net, ZeroConstructor)
-	TArray<struct FDrawDebugItemSphere>                SpheresReplicated;                                        // 0x0470(0x0010) (Net, ZeroConstructor)
-	TArray<struct FDrawDebugItemBox>                   BoxesReplicated;                                          // 0x0480(0x0010) (Net, ZeroConstructor)
-	TArray<struct FDrawDebugItemCapsule>               CapsulesReplicated;                                       // 0x0490(0x0010) (Net, ZeroConstructor)
-	TArray<struct FDrawDebugItemLine>                  LinesReplicated;                                          // 0x04A0(0x0010) (Net, ZeroConstructor)
-	TArray<struct FDrawDebugItemSector>                SectorsReplicated;                                        // 0x04B0(0x0010) (Net, ZeroConstructor)
-	TArray<struct FDrawDebugItemString>                StringsReplicated;                                        // 0x04C0(0x0010) (Net, ZeroConstructor)
+	unsigned char                                      UnknownData00[0x8];                                       // 0x03C8(0x0008) MISSED OFFSET
+	TArray<struct FDrawDebugItemMessage>               MessagesReplicated;                                       // 0x03D0(0x0010) (Net, ZeroConstructor)
+	TArray<struct FDrawDebugItemSphere>                SpheresReplicated;                                        // 0x03E0(0x0010) (Net, ZeroConstructor)
+	TArray<struct FDrawDebugItemBox>                   BoxesReplicated;                                          // 0x03F0(0x0010) (Net, ZeroConstructor)
+	TArray<struct FDrawDebugItemCapsule>               CapsulesReplicated;                                       // 0x0400(0x0010) (Net, ZeroConstructor)
+	TArray<struct FDrawDebugItemLine>                  LinesReplicated;                                          // 0x0410(0x0010) (Net, ZeroConstructor)
+	TArray<struct FDrawDebugItemSector>                SectorsReplicated;                                        // 0x0420(0x0010) (Net, ZeroConstructor)
+	TArray<struct FDrawDebugItemString>                StringsReplicated;                                        // 0x0430(0x0010) (Net, ZeroConstructor)
+	bool                                               IsDrawDebugActive;                                        // 0x0440(0x0001) (Net, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x7F];                                      // 0x0441(0x007F) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -51,6 +53,7 @@ public:
 
 
 	void OnRep_PersistentShapeChanged();
+	void OnRep_IsDrawDebugActiveChanged();
 	void Multicast_ClearGroup(const struct FName& GroupName);
 	void Multicast_AddStrings(TArray<struct FDrawDebugItemString> Strings);
 	void Multicast_AddSpheres(TArray<struct FDrawDebugItemSphere> Spheres);
@@ -58,6 +61,22 @@ public:
 	void Multicast_AddLines(TArray<struct FDrawDebugItemLine> Lines);
 	void Multicast_AddCapsules(TArray<struct FDrawDebugItemCapsule> Capsules);
 	void Multicast_AddBoxes(TArray<struct FDrawDebugItemBox> Boxes);
+};
+
+
+// Class AthenaDebug.ShippingDebugActorSphereCollection
+// 0x0010 (0x03D8 - 0x03C8)
+class AShippingDebugActorSphereCollection : public AActor
+{
+public:
+	TArray<struct FSphereData>                         SphereList;                                               // 0x03C8(0x0010) (Net, ZeroConstructor)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaDebug.ShippingDebugActorSphereCollection"));
+		return ptr;
+	}
+
 };
 
 
@@ -77,14 +96,14 @@ public:
 
 
 // Class AthenaDebug.Videprinter
-// 0x0028 (0x0480 - 0x0458)
+// 0x0028 (0x03F0 - 0x03C8)
 class AVideprinter : public AActor
 {
 public:
-	TArray<class FString>                              OutputRingBuffer;                                         // 0x0458(0x0010) (Net, ZeroConstructor)
-	int                                                AddAt;                                                    // 0x0468(0x0004) (Net, ZeroConstructor, IsPlainOldData)
-	struct FName                                       Id;                                                       // 0x046C(0x0008) (Net, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0xC];                                       // 0x0474(0x000C) MISSED OFFSET
+	TArray<class FString>                              OutputRingBuffer;                                         // 0x03C8(0x0010) (Net, ZeroConstructor)
+	int                                                AddAt;                                                    // 0x03D8(0x0004) (Net, ZeroConstructor, IsPlainOldData)
+	struct FName                                       Id;                                                       // 0x03DC(0x0008) (Net, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0xC];                                       // 0x03E4(0x000C) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

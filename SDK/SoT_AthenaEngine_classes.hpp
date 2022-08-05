@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,6 +13,23 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Classes
 //---------------------------------------------------------------------------
+
+// Class AthenaEngine.ForceFeedbackCondition
+// 0x0000 (0x0028 - 0x0028)
+class UForceFeedbackCondition : public UObject
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.ForceFeedbackCondition"));
+		return ptr;
+	}
+
+
+	bool CanPlayForceFeedback(class AActor* InOwner);
+};
+
 
 // Class AthenaEngine.AthenaEngineInterface
 // 0x0000 (0x0028 - 0x0028)
@@ -65,13 +82,13 @@ public:
 
 
 // Class AthenaEngine.DynamicColourPointLightComponent
-// 0x0130 (0x0580 - 0x0450)
+// 0x0130 (0x05E0 - 0x04B0)
 class UDynamicColourPointLightComponent : public UPointLightComponent
 {
 public:
-	unsigned char                                      UnknownData00[0x78];                                      // 0x0450(0x0078) MISSED OFFSET
-	struct FRuntimeFloatCurve                          DeactivationCurve;                                        // 0x04C8(0x0080) (Edit)
-	unsigned char                                      UnknownData01[0x38];                                      // 0x0548(0x0038) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x78];                                      // 0x04B0(0x0078) MISSED OFFSET
+	struct FRuntimeFloatCurve                          DeactivationCurve;                                        // 0x0528(0x0080) (Edit)
+	unsigned char                                      UnknownData01[0x38];                                      // 0x05A8(0x0038) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -100,23 +117,6 @@ public:
 };
 
 
-// Class AthenaEngine.ForceFeedbackCondition
-// 0x0000 (0x0028 - 0x0028)
-class UForceFeedbackCondition : public UObject
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.ForceFeedbackCondition"));
-		return ptr;
-	}
-
-
-	bool CanPlayForceFeedback(class AActor* InOwner);
-};
-
-
 // Class AthenaEngine.GameInstanceSessionIdProviderInterface
 // 0x0000 (0x0028 - 0x0028)
 class UGameInstanceSessionIdProviderInterface : public UInterface
@@ -133,12 +133,11 @@ public:
 
 
 // Class AthenaEngine.NestedWorldRootDataAsset
-// 0x0020 (0x0048 - 0x0028)
+// 0x0010 (0x0038 - 0x0028)
 class UNestedWorldRootDataAsset : public UDataAsset
 {
 public:
-	TArray<TAssetPtr<class UWorld>>                    WorldRoots;                                               // 0x0028(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0038(0x0010) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x10];                                      // 0x0028(0x0010) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -158,6 +157,22 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.OnlinePlayerPermissionsRetrieverInterface"));
+		return ptr;
+	}
+
+};
+
+
+// Class AthenaEngine.PersistentAssetCollectionDataAsset
+// 0x0010 (0x0038 - 0x0028)
+class UPersistentAssetCollectionDataAsset : public UDataAsset
+{
+public:
+	TArray<class UObject*>                             Assets;                                                   // 0x0028(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.PersistentAssetCollectionDataAsset"));
 		return ptr;
 	}
 
@@ -284,16 +299,22 @@ public:
 
 
 // Class AthenaEngine.RotateMeshToActorComponent
-// 0x0020 (0x00E8 - 0x00C8)
+// 0x0030 (0x00F8 - 0x00C8)
 class URotateMeshToActorComponent : public UActorComponent
 {
 public:
 	class UMeshComponent*                              MeshToRotate;                                             // 0x00C8(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
 	class AActor*                                      ActorToRotateTo;                                          // 0x00D0(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
 	float                                              CloseProximityRadius;                                     // 0x00D8(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              RotationSpeed;                                            // 0x00DC(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              MaxPitch;                                                 // 0x00E0(0x0004) (Net, ZeroConstructor, IsPlainOldData)
-	float                                              CloseProximityYawRotation;                                // 0x00E4(0x0004) (Net, ZeroConstructor, IsPlainOldData)
+	bool                                               Use2DDistanceForCloseProximityRadius;                     // 0x00DC(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               WhenInCloseProximityKeepLastYaw;                          // 0x00DD(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x2];                                       // 0x00DE(0x0002) MISSED OFFSET
+	float                                              RotationSpeed;                                            // 0x00E0(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               PreventPitchModification;                                 // 0x00E4(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x3];                                       // 0x00E5(0x0003) MISSED OFFSET
+	float                                              MaxPitch;                                                 // 0x00E8(0x0004) (Net, ZeroConstructor, IsPlainOldData)
+	float                                              CloseProximityYawRotation;                                // 0x00EC(0x0004) (Net, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x8];                                       // 0x00F0(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -308,7 +329,7 @@ public:
 
 
 // Class AthenaEngine.RotateMeshToLocalPlayerComponent
-// 0x0000 (0x00E8 - 0x00E8)
+// 0x0000 (0x00F8 - 0x00F8)
 class URotateMeshToLocalPlayerComponent : public URotateMeshToActorComponent
 {
 public:
@@ -316,6 +337,21 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.RotateMeshToLocalPlayerComponent"));
+		return ptr;
+	}
+
+};
+
+
+// Class AthenaEngine.ServicesStampIdInterface
+// 0x0000 (0x0028 - 0x0028)
+class UServicesStampIdInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.ServicesStampIdInterface"));
 		return ptr;
 	}
 

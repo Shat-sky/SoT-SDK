@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -275,7 +275,7 @@ public:
 
 
 // Class AIModule.PathFollowingComponent
-// 0x01C8 (0x0290 - 0x00C8)
+// 0x01F0 (0x02B8 - 0x00C8)
 class UPathFollowingComponent : public UActorComponent
 {
 public:
@@ -285,7 +285,7 @@ public:
 	class ANavigationData*                             MyNavData;                                                // 0x0130(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
 	unsigned char                                      UnknownData02[0xBC];                                      // 0x0138(0x00BC) MISSED OFFSET
 	unsigned char                                      bUseVisibilityTestsSimplification : 1;                    // 0x01F4(0x0001) (Config)
-	unsigned char                                      UnknownData03[0x9B];                                      // 0x01F5(0x009B) MISSED OFFSET
+	unsigned char                                      UnknownData03[0xC3];                                      // 0x01F5(0x00C3) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -433,26 +433,26 @@ public:
 
 
 // Class AIModule.AIController
-// 0x0090 (0x0548 - 0x04B8)
+// 0x0090 (0x04B8 - 0x0428)
 class AAIController : public AController
 {
 public:
-	unsigned char                                      UnknownData00[0x28];                                      // 0x04B8(0x0028) MISSED OFFSET
-	unsigned char                                      bLOSflag : 1;                                             // 0x04E0(0x0001)
-	unsigned char                                      bSkipExtraLOSChecks : 1;                                  // 0x04E0(0x0001)
-	unsigned char                                      bAllowStrafe : 1;                                         // 0x04E0(0x0001)
-	unsigned char                                      bWantsPlayerState : 1;                                    // 0x04E0(0x0001)
-	unsigned char                                      bDisableControlRotation : 1;                              // 0x04E0(0x0001)
-	unsigned char                                      UnknownData01[0x7];                                       // 0x04E1(0x0007) MISSED OFFSET
-	class UPathFollowingComponent*                     PathFollowingComponent;                                   // 0x04E8(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData)
-	class UBrainComponent*                             BrainComponent;                                           // 0x04F0(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	class UAIPerceptionComponent*                      PerceptionComponent;                                      // 0x04F8(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData)
-	class UPawnActionsComponent*                       ActionsComp;                                              // 0x0500(0x0008) (BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData)
-	class UBlackboardComponent*                        Blackboard;                                               // 0x0508(0x0008) (BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData)
-	class UGameplayTasksComponent*                     CachedGameplayTasksComponent;                             // 0x0510(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x10];                                      // 0x0518(0x0010) MISSED OFFSET
-	struct FScriptMulticastDelegate                    ReceiveMoveCompleted;                                     // 0x0528(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
-	unsigned char                                      UnknownData03[0x10];                                      // 0x0538(0x0010) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x28];                                      // 0x0428(0x0028) MISSED OFFSET
+	unsigned char                                      bLOSflag : 1;                                             // 0x0450(0x0001)
+	unsigned char                                      bSkipExtraLOSChecks : 1;                                  // 0x0450(0x0001)
+	unsigned char                                      bAllowStrafe : 1;                                         // 0x0450(0x0001)
+	unsigned char                                      bWantsPlayerState : 1;                                    // 0x0450(0x0001)
+	unsigned char                                      bDisableControlRotation : 1;                              // 0x0450(0x0001)
+	unsigned char                                      UnknownData01[0x7];                                       // 0x0451(0x0007) MISSED OFFSET
+	class UPathFollowingComponent*                     PathFollowingComponent;                                   // 0x0458(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData)
+	class UBrainComponent*                             BrainComponent;                                           // 0x0460(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UAIPerceptionComponent*                      PerceptionComponent;                                      // 0x0468(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData)
+	class UPawnActionsComponent*                       ActionsComp;                                              // 0x0470(0x0008) (BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UBlackboardComponent*                        Blackboard;                                               // 0x0478(0x0008) (BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UGameplayTasksComponent*                     CachedGameplayTasksComponent;                             // 0x0480(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x10];                                      // 0x0488(0x0010) MISSED OFFSET
+	struct FScriptMulticastDelegate                    ReceiveMoveCompleted;                                     // 0x0498(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
+	unsigned char                                      UnknownData03[0x10];                                      // 0x04A8(0x0010) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -484,7 +484,7 @@ public:
 
 
 // Class AIModule.DetourCrowdAIController
-// 0x0000 (0x0548 - 0x0548)
+// 0x0000 (0x04B8 - 0x04B8)
 class ADetourCrowdAIController : public AAIController
 {
 public:
@@ -1177,13 +1177,13 @@ public:
 
 
 // Class AIModule.BehaviorTreeComponent
-// 0x0138 (0x0260 - 0x0128)
+// 0x0160 (0x0288 - 0x0128)
 class UBehaviorTreeComponent : public UBrainComponent
 {
 public:
 	unsigned char                                      UnknownData00[0x20];                                      // 0x0128(0x0020) MISSED OFFSET
 	TArray<class UBTNode*>                             NodeInstances;                                            // 0x0148(0x0010) (ZeroConstructor, Transient)
-	unsigned char                                      UnknownData01[0x108];                                     // 0x0158(0x0108) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x130];                                     // 0x0158(0x0130) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -2881,11 +2881,11 @@ public:
 
 
 // Class AIModule.EQSRenderingComponent
-// 0x0020 (0x0590 - 0x0570)
+// 0x0010 (0x05D0 - 0x05C0)
 class UEQSRenderingComponent : public UPrimitiveComponent
 {
 public:
-	unsigned char                                      UnknownData00[0x20];                                      // 0x0570(0x0020) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x10];                                      // 0x05C0(0x0010) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -2897,23 +2897,24 @@ public:
 
 
 // Class AIModule.EQSTestingPawn
-// 0x0060 (0x06C0 - 0x0660)
+// 0x0060 (0x0640 - 0x05E0)
 class AEQSTestingPawn : public ACharacter
 {
 public:
-	class UEnvQuery*                                   QueryTemplate;                                            // 0x0660(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	TArray<struct FEnvNamedValue>                      QueryParams;                                              // 0x0668(0x0010) (Edit, ZeroConstructor)
-	float                                              TimeLimitPerStep;                                         // 0x0678(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	int                                                StepToDebugDraw;                                          // 0x067C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EEnvQueryHightlightMode>               HighlightMode;                                            // 0x0680(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x0681(0x0003) MISSED OFFSET
-	unsigned char                                      bDrawLabels : 1;                                          // 0x0684(0x0001) (Edit)
-	unsigned char                                      bDrawFailedItems : 1;                                     // 0x0684(0x0001) (Edit)
-	unsigned char                                      bReRunQueryOnlyOnFinishedMove : 1;                        // 0x0684(0x0001) (Edit)
-	unsigned char                                      bShouldBeVisibleInGame : 1;                               // 0x0684(0x0001) (Edit)
-	unsigned char                                      UnknownData01[0x3];                                       // 0x0685(0x0003) MISSED OFFSET
-	TEnumAsByte<EEnvQueryRunMode>                      QueryingMode;                                             // 0x0688(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x37];                                      // 0x0689(0x0037) MISSED OFFSET
+	class UEnvQuery*                                   QueryTemplate;                                            // 0x05E0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	TArray<struct FEnvNamedValue>                      QueryParams;                                              // 0x05E8(0x0010) (Edit, ZeroConstructor)
+	class UClass*                                      ContextToLinkWithThis;                                    // 0x05F8(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              TimeLimitPerStep;                                         // 0x0600(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	int                                                StepToDebugDraw;                                          // 0x0604(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EEnvQueryHightlightMode>               HighlightMode;                                            // 0x0608(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0609(0x0003) MISSED OFFSET
+	unsigned char                                      bDrawLabels : 1;                                          // 0x060C(0x0001) (Edit)
+	unsigned char                                      bDrawFailedItems : 1;                                     // 0x060C(0x0001) (Edit)
+	unsigned char                                      bReRunQueryOnlyOnFinishedMove : 1;                        // 0x060C(0x0001) (Edit)
+	unsigned char                                      bShouldBeVisibleInGame : 1;                               // 0x060C(0x0001) (Edit)
+	unsigned char                                      UnknownData01[0x3];                                       // 0x060D(0x0003) MISSED OFFSET
+	TEnumAsByte<EEnvQueryRunMode>                      QueryingMode;                                             // 0x0610(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x2F];                                      // 0x0611(0x002F) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -2925,18 +2926,18 @@ public:
 
 
 // Class AIModule.CrowdFollowingComponent
-// 0x0050 (0x02E0 - 0x0290)
+// 0x0050 (0x0308 - 0x02B8)
 class UCrowdFollowingComponent : public UPathFollowingComponent
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0290(0x0008) MISSED OFFSET
-	struct FVector                                     CrowdAgentMoveDirection;                                  // 0x0298(0x000C) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x02A4(0x0004) MISSED OFFSET
-	class UCharacterMovementComponent*                 CharacterMovement;                                        // 0x02A8(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
-	struct FNavAvoidanceMask                           AvoidanceGroup;                                           // 0x02B0(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FNavAvoidanceMask                           GroupsToAvoid;                                            // 0x02B4(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FNavAvoidanceMask                           GroupsToIgnore;                                           // 0x02B8(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x24];                                      // 0x02BC(0x0024) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x02B8(0x0008) MISSED OFFSET
+	struct FVector                                     CrowdAgentMoveDirection;                                  // 0x02C0(0x000C) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x02CC(0x0004) MISSED OFFSET
+	class UCharacterMovementComponent*                 CharacterMovement;                                        // 0x02D0(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
+	struct FNavAvoidanceMask                           AvoidanceGroup;                                           // 0x02D8(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FNavAvoidanceMask                           GroupsToAvoid;                                            // 0x02DC(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FNavAvoidanceMask                           GroupsToIgnore;                                           // 0x02E0(0x0004) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x24];                                      // 0x02E4(0x0024) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

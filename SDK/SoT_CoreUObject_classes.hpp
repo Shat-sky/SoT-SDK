@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -26,6 +26,12 @@ public:
 	class UClass*                                      Class;                                                    // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 	FName                                              Name;                                                     // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 	class UObject*                                     Outer;                                                    // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoreUObject.Object"));
+		return ptr;
+	}
 
 	static inline TUObjectArray& GetGlobalObjects()
 	{
@@ -69,15 +75,9 @@ public:
 
 	bool IsA(UClass* cmp) const;
 
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoreUObject.Object"));
-		return ptr;
-	}
-
 	inline void ProcessEvent(class UFunction* function, void* parms)
 	{
-		return GetVFunction<void(*)(UObject*, class UFunction*, void*)>(this, 59)(this, function, parms);
+		return GetVFunction<void(*)(UObject*, class UFunction*, void*)>(this, 55)(this, function, parms);
 	}
 
 
@@ -207,16 +207,21 @@ class UClass : public UStruct
 public:
 	unsigned char                                      UnknownData00[0x138];                                     // 0x0088(0x0138) MISSED OFFSET
 
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoreUObject.Class"));
+		return ptr;
+	}
+
 	template<typename T>
 	inline T* CreateDefaultObject()
 	{
 		return static_cast<T*>(CreateDefaultObject());
 	}
 
-	static UClass* StaticClass()
+	inline UObject* CreateDefaultObject()
 	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoreUObject.Class"));
-		return ptr;
+		return GetVFunction<UObject*(*)(UClass*)>(this, 86)(this);
 	}
 
 };
@@ -257,6 +262,22 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoreUObject.DelegateFunction"));
+		return ptr;
+	}
+
+};
+
+
+// Class CoreUObject.SparseDelegateFunction
+// 0x0010 (0x00C8 - 0x00B8)
+class USparseDelegateFunction : public UDelegateFunction
+{
+public:
+	unsigned char                                      UnknownData00[0x10];                                      // 0x00B8(0x0010) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoreUObject.SparseDelegateFunction"));
 		return ptr;
 	}
 
@@ -695,6 +716,21 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoreUObject.MulticastDelegateProperty"));
+		return ptr;
+	}
+
+};
+
+
+// Class CoreUObject.MulticastInlineDelegateProperty
+// 0x0000 (0x0078 - 0x0078)
+class UMulticastInlineDelegateProperty : public UMulticastDelegateProperty
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CoreUObject.MulticastInlineDelegateProperty"));
 		return ptr;
 	}
 

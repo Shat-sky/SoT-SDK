@@ -1,104 +1,24 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
-#include "SoT_ResourceContentionFramework_classes.hpp"
+#include "SoT_NaturalDisasters_enums.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_Maths_classes.hpp"
+#include "SoT_ResourceContentionFramework_classes.hpp"
 #include "SoT_Athena_classes.hpp"
+#include "SoT_StoryFramework_classes.hpp"
 #include "SoT_Kraken_classes.hpp"
+#include "SoT_StatusEffects_classes.hpp"
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum NaturalDisasters.EAshCloudState
-enum class EAshCloudState : uint8_t
-{
-	EAshCloudState__Spawning       = 0,
-	EAshCloudState__Active         = 1,
-	EAshCloudState__Dissipating    = 2,
-	EAshCloudState__EAshCloudState_MAX = 3
-};
-
-
-// Enum NaturalDisasters.EVolcanoTargetHitType
-enum class EVolcanoTargetHitType : uint8_t
-{
-	EVolcanoTargetHitType__OnTarget = 0,
-	EVolcanoTargetHitType__NearMiss = 1,
-	EVolcanoTargetHitType__Random  = 2,
-	EVolcanoTargetHitType__EVolcanoTargetHitType_MAX = 3
-};
-
-
-// Enum NaturalDisasters.EVolcanoTargetType
-enum class EVolcanoTargetType : uint8_t
-{
-	EVolcanoTargetType__Player     = 0,
-	EVolcanoTargetType__Ship       = 1,
-	EVolcanoTargetType__Watercraft = 2,
-	EVolcanoTargetType__EVolcanoTargetType_MAX = 3
-};
-
-
-// Enum NaturalDisasters.EAshenLordWorldEndCloudState
-enum class EAshenLordWorldEndCloudState : uint8_t
-{
-	EAshenLordWorldEndCloudState__Inactive = 0,
-	EAshenLordWorldEndCloudState__Active = 1,
-	EAshenLordWorldEndCloudState__EAshenLordWorldEndCloudState_MAX = 2
-};
-
-
-// Enum NaturalDisasters.EEarthquakeState
-enum class EEarthquakeState : uint8_t
-{
-	EEarthquakeState__Dormant      = 0,
-	EEarthquakeState__WarmingUp    = 1,
-	EEarthquakeState__Active       = 2,
-	EEarthquakeState__CoolingDown  = 3,
-	EEarthquakeState__EEarthquakeState_MAX = 4
-};
-
-
-// Enum NaturalDisasters.EGeyserState
-enum class EGeyserState : uint8_t
-{
-	EGeyserState__Dormant          = 0,
-	EGeyserState__Active           = 1,
-	EGeyserState__EGeyserState_MAX = 2
-};
-
-
-// Enum NaturalDisasters.EGeyserManagerState
-enum class EGeyserManagerState : uint8_t
-{
-	EGeyserManagerState__Dormant   = 0,
-	EGeyserManagerState__Active    = 1,
-	EGeyserManagerState__EGeyserManagerState_MAX = 2
-};
-
-
-// Enum NaturalDisasters.EVolcanoState
-enum class EVolcanoState : uint8_t
-{
-	EVolcanoState__Dormant         = 0,
-	EVolcanoState__WarmingUp       = 1,
-	EVolcanoState__Erupting        = 2,
-	EVolcanoState__EVolcanoState_MAX = 3
-};
-
-
-
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
@@ -190,6 +110,14 @@ struct FPlayerFeedback
 	struct FWeightedProbabilityRangeOfRanges           StaggerStrength;                                          // 0x0050(0x0030) (Edit, DisableEditOnInstance)
 };
 
+// ScriptStruct NaturalDisasters.EarthquakeStoryCustomisationData
+// 0x0010
+struct FEarthquakeStoryCustomisationData
+{
+	struct FStoryFlag                                  StoryFlag;                                                // 0x0000(0x0008) (Edit)
+	class UEarthquakeSetupDataAsset*                   EarthquakeSetupData;                                      // 0x0008(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+};
+
 // ScriptStruct NaturalDisasters.GeyserSpawnAngleOption
 // 0x000C
 struct FGeyserSpawnAngleOption
@@ -207,6 +135,15 @@ struct FVolcanoStateData
 	unsigned char                                      UnknownData00[0x3];                                       // 0x0001(0x0003) MISSED OFFSET
 	float                                              StateDuration;                                            // 0x0004(0x0004) (ZeroConstructor, IsPlainOldData)
 	float                                              PercentageOfMaxTargetingRange;                            // 0x0008(0x0004) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct NaturalDisasters.VolcanoProjectileData
+// 0x001C
+struct FVolcanoProjectileData
+{
+	int                                                WeightedVolcanoProjectileIndex;                           // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
+	struct FVector                                     LaunchVelocity;                                           // 0x0004(0x000C) (ZeroConstructor, IsPlainOldData)
+	struct FVector                                     RotationRate;                                             // 0x0010(0x000C) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct NaturalDisasters.VolcanoTarget
@@ -227,6 +164,13 @@ struct FVolcanoTargetCoolDown
 {
 	class AActor*                                      Target;                                                   // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x8];                                       // 0x0008(0x0008) MISSED OFFSET
+};
+
+// ScriptStruct NaturalDisasters.EventVolcanoStateChanged
+// 0x0001
+struct FEventVolcanoStateChanged
+{
+	TEnumAsByte<EVolcanoState>                         State;                                                    // 0x0000(0x0001) (ZeroConstructor, IsPlainOldData)
 };
 
 }

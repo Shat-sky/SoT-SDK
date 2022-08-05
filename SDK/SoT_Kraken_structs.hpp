@@ -1,103 +1,79 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_Kraken_enums.hpp"
 #include "SoT_CoreUObject_classes.hpp"
-#include "SoT_AIModule_classes.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_Athena_classes.hpp"
+#include "SoT_AIModule_classes.hpp"
 #include "SoT_Maths_classes.hpp"
+#include "SoT_StatusEffects_classes.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum Kraken.EKrakenBehaviourType
-enum class EKrakenBehaviourType : uint8_t
-{
-	EKrakenBehaviourType__Idle     = 0,
-	EKrakenBehaviourType__ShipHitting = 1,
-	EKrakenBehaviourType__ShipWrapping = 2,
-	EKrakenBehaviourType__PlayerGrabbing = 3,
-	EKrakenBehaviourType__EKrakenBehaviourType_MAX = 4
-};
-
-
-// Enum Kraken.EKrakenShipWrappingTentacleState
-enum class EKrakenShipWrappingTentacleState : uint8_t
-{
-	EKrakenShipWrappingTentacleState__Dormant = 0,
-	EKrakenShipWrappingTentacleState__Wrapping = 1,
-	EKrakenShipWrappingTentacleState__AmbientWobble = 2,
-	EKrakenShipWrappingTentacleState__EnteringShakeAttack = 3,
-	EKrakenShipWrappingTentacleState__ShakeAttack = 4,
-	EKrakenShipWrappingTentacleState__ExitingShakeAttack = 5,
-	EKrakenShipWrappingTentacleState__HeavyAttack = 6,
-	EKrakenShipWrappingTentacleState__Unwrapping = 7,
-	EKrakenShipWrappingTentacleState__EKrakenShipWrappingTentacleState_MAX = 8
-};
-
-
-// Enum Kraken.EKrakenDynamicsStateEvent
-enum class EKrakenDynamicsStateEvent : uint8_t
-{
-	EKrakenDynamicsStateEvent__Damage = 0,
-	EKrakenDynamicsStateEvent__Knockback = 1,
-	EKrakenDynamicsStateEvent__EKrakenDynamicsStateEvent_MAX = 2
-};
-
-
-// Enum Kraken.EKrakenEQSLockReason
-enum class EKrakenEQSLockReason : uint8_t
-{
-	EKrakenEQSLockReason__Spawning = 0,
-	EKrakenEQSLockReason__EKrakenEQSLockReason_MAX = 1
-};
-
-
-// Enum Kraken.EKrakenDespawnReason
-enum class EKrakenDespawnReason : uint8_t
-{
-	EKrakenDespawnReason__Invalid  = 0,
-	EKrakenDespawnReason__Defeated = 1,
-	EKrakenDespawnReason__TimedOutWithNoTargets = 2,
-	EKrakenDespawnReason__TimedOutWithTarget = 3,
-	EKrakenDespawnReason__Dismissed = 4,
-	EKrakenDespawnReason__EKrakenDespawnReason_MAX = 5
-};
-
-
-// Enum Kraken.EKrakenState
-enum class EKrakenState : uint8_t
-{
-	EKrakenState__Spawning         = 0,
-	EKrakenState__Active           = 1,
-	EKrakenState__Despawning       = 2,
-	EKrakenState__EKrakenState_MAX = 3
-};
-
-
-// Enum Kraken.EKrakenTentacleBehaviourDamageActions
-enum class EKrakenTentacleBehaviourDamageActions : uint8_t
-{
-	EKrakenTentacleBehaviourDamageActions__StayActive = 0,
-	EKrakenTentacleBehaviourDamageActions__MoveActive = 1,
-	EKrakenTentacleBehaviourDamageActions__FleeInactive = 2,
-	EKrakenTentacleBehaviourDamageActions__EKrakenTentacleBehaviourDamageActions_MAX = 3
-};
-
-
-
-//---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
+
+// ScriptStruct Kraken.CoordinatedKrakenSpecialEvent
+// 0x000C
+struct FCoordinatedKrakenSpecialEvent
+{
+	TEnumAsByte<ECoordinatedKrakenSpecialEventTypes>   Type;                                                     // 0x0000(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0001(0x0003) MISSED OFFSET
+	float                                              TimeOffset;                                               // 0x0004(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x0008(0x0004) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.CoordinatedKrakenTentacleAction
+// 0x0018
+struct FCoordinatedKrakenTentacleAction
+{
+	class UClass*                                      State;                                                    // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	int                                                TentacleIndex;                                            // 0x0008(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              TimeOffset;                                               // 0x000C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0010(0x0008) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.CoordinatedKrakenHeadAction
+// 0x0010
+struct FCoordinatedKrakenHeadAction
+{
+	class UClass*                                      State;                                                    // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              TimeOffset;                                               // 0x0008(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x000C(0x0004) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.CoordinatedKrakenExplosionEvent
+// 0x000C
+struct FCoordinatedKrakenExplosionEvent
+{
+	int                                                ExplosionPointIndex;                                      // 0x0000(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              TimeOffset;                                               // 0x0004(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0008(0x0004) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.CoordinatedKrakenAction
+// 0x0330
+struct FCoordinatedKrakenAction
+{
+	struct FName                                       ActionName;                                               // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              ActionLength;                                             // 0x0008(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ECoordinatedKrakenActionType>          ActionType;                                               // 0x000C(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x000D(0x0003) MISSED OFFSET
+	TArray<struct FCoordinatedKrakenSpecialEvent>      SpecialEvents;                                            // 0x0010(0x0010) (Edit, ZeroConstructor)
+	TArray<struct FCoordinatedKrakenTentacleAction>    TentacleActions;                                          // 0x0020(0x0010) (Edit, ZeroConstructor)
+	TArray<struct FCoordinatedKrakenHeadAction>        HeadActions;                                              // 0x0030(0x0010) (Edit, ZeroConstructor)
+	TArray<struct FCoordinatedKrakenExplosionEvent>    ExplosionEvents;                                          // 0x0040(0x0010) (Edit, ZeroConstructor)
+	struct FRuntimeVectorCurve                         TargetActorLocationAnimation;                             // 0x0050(0x0170) (Edit)
+	struct FRuntimeVectorCurve                         TargetActorRotationAnimation;                             // 0x01C0(0x0170) (Edit)
+};
 
 // ScriptStruct Kraken.KrakenShipWrappingTentacleAnimationStateParams
 // 0x0010
@@ -294,6 +270,50 @@ struct FKrakenAnimatedTentacleStateAnimationMapping
 	bool                                               Loop;                                                     // 0x0010(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x0011(0x0007) MISSED OFFSET
 	TArray<struct FKrakenAnimatedTentacleTransitionAnimation> Transitions;                                              // 0x0018(0x0010) (Edit, ZeroConstructor)
+};
+
+// ScriptStruct Kraken.KrakenHeadTransitionAnimation
+// 0x0010
+struct FKrakenHeadTransitionAnimation
+{
+	class UClass*                                      FromState;                                                // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UAnimSequence*                               TransitionAnimation;                                      // 0x0008(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Kraken.KrakenHeadStateAnimationMapping
+// 0x0028
+struct FKrakenHeadStateAnimationMapping
+{
+	class UClass*                                      State;                                                    // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UAnimSequence*                               Animation;                                                // 0x0008(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	bool                                               Loop;                                                     // 0x0010(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0011(0x0007) MISSED OFFSET
+	TArray<struct FKrakenHeadTransitionAnimation>      Transitions;                                              // 0x0018(0x0010) (Edit, ZeroConstructor)
+};
+
+// ScriptStruct Kraken.HeadStateChangeRequest
+// 0x0018
+struct FHeadStateChangeRequest
+{
+	class UClass*                                      RequestedState;                                           // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	struct FGuid                                       StateChangeID;                                            // 0x0008(0x0010) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Kraken.KrakenHeadHealthPair
+// 0x0008
+struct FKrakenHeadHealthPair
+{
+	int                                                PlayerCount;                                              // 0x0000(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              KrakenHeadHealth;                                         // 0x0004(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+};
+
+// ScriptStruct Kraken.KrakenHeadHitReactAnimations
+// 0x0010
+struct FKrakenHeadHitReactAnimations
+{
+	float                                              Weight;                                                   // 0x0000(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
+	class UAnimSequence*                               HitReactAnimation;                                        // 0x0008(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 };
 
 // ScriptStruct Kraken.KrakenTentacleBehaviourActionChances
@@ -559,14 +579,14 @@ struct FKrakenShipWrappingBehaviourShakeAttackParams
 };
 
 // ScriptStruct Kraken.KrakenShipWrappingBehaviourHeavyAttackParams
-// 0x00C0
+// 0x00D8
 struct FKrakenShipWrappingBehaviourHeavyAttackParams
 {
 	struct FWeightedProbabilityRangeOfRanges           AttackDuration;                                           // 0x0000(0x0030) (Edit, DisableEditOnInstance)
 	float                                              ChanceOfEnteringHeavyAttack;                              // 0x0030(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FKnockBackInfo                              ExteriorKnockbackParams;                                  // 0x0034(0x0044) (Edit, DisableEditOnInstance)
-	struct FKnockBackInfo                              InteriorKnockbackParams;                                  // 0x0078(0x0044) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x00BC(0x0004) MISSED OFFSET
+	struct FKnockBackInfo                              ExteriorKnockbackParams;                                  // 0x0034(0x0050) (Edit, DisableEditOnInstance)
+	struct FKnockBackInfo                              InteriorKnockbackParams;                                  // 0x0084(0x0050) (Edit, DisableEditOnInstance)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x00D4(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct Kraken.KrakenShipWrappingBehaviourDamageParams
@@ -590,7 +610,7 @@ struct FKrakenShipWrappingBehaviourHealthParams
 };
 
 // ScriptStruct Kraken.KrakenShipWrappingBehaviourParams
-// 0x0410
+// 0x0420
 struct FKrakenShipWrappingBehaviourParams
 {
 	class UClass*                                      ShipSize;                                                 // 0x0000(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
@@ -599,10 +619,9 @@ struct FKrakenShipWrappingBehaviourParams
 	struct FKrakenShipWrappingBehaviourWrapParams      WrapParams;                                               // 0x00B0(0x0140) (Edit, DisableEditOnInstance)
 	struct FKrakenShipWrappingBehaviourTentacleHeadParams TentacleHeadParams;                                       // 0x01F0(0x0048) (Edit, DisableEditOnInstance)
 	struct FKrakenShipWrappingBehaviourShakeAttackParams ShakeAttackParams;                                        // 0x0238(0x0068) (Edit, DisableEditOnInstance)
-	struct FKrakenShipWrappingBehaviourHeavyAttackParams HeavyAttackParams;                                        // 0x02A0(0x00C0) (Edit, DisableEditOnInstance)
-	struct FKrakenShipWrappingBehaviourDamageParams    DamageParams;                                             // 0x0360(0x0070) (Edit, DisableEditOnInstance)
-	struct FKrakenShipWrappingBehaviourHealthParams    HealthParams;                                             // 0x03D0(0x0038) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData01[0x8];                                       // 0x0408(0x0008) MISSED OFFSET
+	struct FKrakenShipWrappingBehaviourHeavyAttackParams HeavyAttackParams;                                        // 0x02A0(0x00D8) (Edit, DisableEditOnInstance)
+	struct FKrakenShipWrappingBehaviourDamageParams    DamageParams;                                             // 0x0378(0x0070) (Edit, DisableEditOnInstance)
+	struct FKrakenShipWrappingBehaviourHealthParams    HealthParams;                                             // 0x03E8(0x0038) (Edit, DisableEditOnInstance)
 };
 
 // ScriptStruct Kraken.KrakenWorldSettingsParams
@@ -610,6 +629,173 @@ struct FKrakenShipWrappingBehaviourParams
 struct FKrakenWorldSettingsParams
 {
 	bool                                               KrakenEnabled;                                            // 0x0000(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+};
+
+// ScriptStruct Kraken.CoordinatedKrakenPhaseAssetEntry
+// 0x0040
+struct FCoordinatedKrakenPhaseAssetEntry
+{
+	struct FTransform                                  RelativeAnimationOrigin;                                  // 0x0000(0x0030) (Edit, IsPlainOldData)
+	class UCoordinatedKrakenPhaseActionsDataAsset*     Asset;                                                    // 0x0030(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0038(0x0008) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.EventKrakenAnimatedTentacleTriggerHitReaction
+// 0x0004
+struct FEventKrakenAnimatedTentacleTriggerHitReaction
+{
+	int                                                CollisionBoneIndex;                                       // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Kraken.EventKrakenAnimatedTentacleTentacleDead
+// 0x0004
+struct FEventKrakenAnimatedTentacleTentacleDead
+{
+	int                                                TentacleIndex;                                            // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Kraken.EventKrakenAnimatedTentacleTakenDamage
+// 0x0004
+struct FEventKrakenAnimatedTentacleTakenDamage
+{
+	int                                                TentacleIndex;                                            // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Kraken.EventKrakenAnimatedTentacleTargetVomit
+// 0x0004
+struct FEventKrakenAnimatedTentacleTargetVomit
+{
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0000(0x0004) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.EventKrakenAnimatedTentaclePlayerInMouthEnd
+// 0x0001
+struct FEventKrakenAnimatedTentaclePlayerInMouthEnd
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.EventKrakenAnimatedTentaclePlayerInMouthBegin
+// 0x0001
+struct FEventKrakenAnimatedTentaclePlayerInMouthBegin
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.EventKrakenAnimatedTentacleSuckingEnd
+// 0x0001
+struct FEventKrakenAnimatedTentacleSuckingEnd
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.EventKrakenAnimatedTentacleSuckingStart
+// 0x0001
+struct FEventKrakenAnimatedTentacleSuckingStart
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.EventKrakenWrappingTentacleTellEnd
+// 0x0001
+struct FEventKrakenWrappingTentacleTellEnd
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.EventKrakenWrappingTentacleTellBegin
+// 0x0001
+struct FEventKrakenWrappingTentacleTellBegin
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.EventKrakenAnimatedTentacleSuckingTellEnd
+// 0x0001
+struct FEventKrakenAnimatedTentacleSuckingTellEnd
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.EventKrakenAnimatedTentacleSuckingTellBegin
+// 0x0001
+struct FEventKrakenAnimatedTentacleSuckingTellBegin
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.EventKrakenAnimatedTentacleSuckingTell
+// 0x0001
+struct FEventKrakenAnimatedTentacleSuckingTell
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.EventKrakenAnimatedTentacleSubmerge
+// 0x0001
+struct FEventKrakenAnimatedTentacleSubmerge
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.EventKrakenAnimatedTentacleEmerge
+// 0x0001
+struct FEventKrakenAnimatedTentacleEmerge
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.EventKrakenTentacleEndPlay
+// 0x0001
+struct FEventKrakenTentacleEndPlay
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.EventKrakenAnimatedTentacleAnimationStopped
+// 0x0001
+struct FEventKrakenAnimatedTentacleAnimationStopped
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.EventKrakenAnimatedTentacleAnimationStarted
+// 0x0010
+struct FEventKrakenAnimatedTentacleAnimationStarted
+{
+	class UAnimSequence*                               Animation;                                                // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0008(0x0008) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.EventKrakenAnimatedTentacleAuthoritativeAnimationTime
+// 0x0004
+struct FEventKrakenAnimatedTentacleAuthoritativeAnimationTime
+{
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0000(0x0004) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.EventKrakenAnimatedTentacleStateEntered
+// 0x0018
+struct FEventKrakenAnimatedTentacleStateEntered
+{
+	class UClass*                                      State;                                                    // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	class UClass*                                      PreviousState;                                            // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
+	bool                                               SkipTransitions;                                          // 0x0010(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0011(0x0007) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.EventKrakenHeadHit
+// 0x0001
+struct FEventKrakenHeadHit
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Kraken.EventCoordinatedKrakenPhaseEnded
+// 0x0001
+struct FEventCoordinatedKrakenPhaseEnded
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
 
 // ScriptStruct Kraken.EventKrakenTentacleDestroyed

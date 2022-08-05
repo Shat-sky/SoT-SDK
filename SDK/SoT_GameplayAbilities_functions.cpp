@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -5881,9 +5881,9 @@ float UGameplayModMagnitudeCalculation::CalculateBaseMagnitude(const struct FGam
 // struct FGameplayTag            Tag                            (ConstParm, Parm)
 // int                            NewCount                       (Parm, ZeroConstructor, IsPlainOldData)
 // class UAbilitySystemComponent* ASC                            (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-// int                            idx                            (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Idx                            (Parm, ZeroConstructor, IsPlainOldData)
 
-void UGameplayTagReponseTable::TagResponseEvent(const struct FGameplayTag& Tag, int NewCount, class UAbilitySystemComponent* ASC, int idx)
+void UGameplayTagReponseTable::TagResponseEvent(const struct FGameplayTag& Tag, int NewCount, class UAbilitySystemComponent* ASC, int Idx)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function GameplayAbilities.GameplayTagReponseTable.TagResponseEvent"));
 
@@ -5892,13 +5892,13 @@ void UGameplayTagReponseTable::TagResponseEvent(const struct FGameplayTag& Tag, 
 		struct FGameplayTag            Tag;
 		int                            NewCount;
 		class UAbilitySystemComponent* ASC;
-		int                            idx;
+		int                            Idx;
 	} params;
 
 	params.Tag = Tag;
 	params.NewCount = NewCount;
 	params.ASC = ASC;
-	params.idx = idx;
+	params.Idx = Idx;
 
 	UObject::ProcessEvent(fn, &params);
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -16,10 +16,10 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // AnimDataEntryStruct ADS_IKFootPlantingNative.ADS_IKFootPlantingNative
-// 0x0028
+// 0x001C
 struct FADS_IKFootPlantingNative
 {
-	struct FAthenaAnimationIKFootplantingAnimData      FootPlanting_21_5703FA524DD23FC26BA7869E0D50FD1F;         // 0x0000(0x0028) (Edit, BlueprintVisible)
+	struct FAthenaAnimationIKFootplantingAnimData      FootPlanting_21_5703FA524DD23FC26BA7869E0D50FD1F;         // 0x0000(0x001C) (Edit, BlueprintVisible)
 };
 
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -33,11 +33,11 @@ public:
 
 
 // Class CalmWaterMapping.AthenaCalmWaterZone
-// 0x0020 (0x0480 - 0x0460)
+// 0x0020 (0x03F0 - 0x03D0)
 class AAthenaCalmWaterZone : public ACalmWaterZone
 {
 public:
-	unsigned char                                      UnknownData00[0x20];                                      // 0x0460(0x0020) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x20];                                      // 0x03D0(0x0020) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

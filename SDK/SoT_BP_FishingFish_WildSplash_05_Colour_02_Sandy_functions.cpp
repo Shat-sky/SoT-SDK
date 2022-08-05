@@ -1,10 +1,10 @@
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_BP_FishingFish_WildSplash_05_Colour_02_Sandy_parameters.hpp"
+#include "SoT_BP_FishingFish_WildSplash_05_Colour_02_Sandy_classes.hpp"
 
 namespace SDK
 {

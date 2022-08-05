@@ -1,10 +1,10 @@
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_BP_Wheel_parameters.hpp"
+#include "SoT_BP_Wheel_classes.hpp"
 
 namespace SDK
 {
@@ -57,27 +57,6 @@ struct FVector ABP_Wheel_C::GetClosestInteractionPoint(const struct FVector& Ref
 
 	if (OutInteractionPointRadius != nullptr)
 		*OutInteractionPointRadius = params.OutInteractionPointRadius;
-
-	return params.ReturnValue;
-}
-
-
-// Function BP_Wheel.BP_Wheel_C.GetWheelMesh
-// (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// class USkeletalMeshComponent*  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class USkeletalMeshComponent* ABP_Wheel_C::GetWheelMesh()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Wheel.BP_Wheel_C.GetWheelMesh"));
-
-	struct
-	{
-		class USkeletalMeshComponent*  ReturnValue;
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
 }
@@ -382,26 +361,6 @@ void ABP_Wheel_C::RequestStateChange(class AActor* Controller)
 	} params;
 
 	params.Controller = Controller;
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
-// Function BP_Wheel.BP_Wheel_C.OnWheelDescLoaded
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class UWheelDescAsset*         WheelDesc                      (Parm, ZeroConstructor, IsPlainOldData)
-
-void ABP_Wheel_C::OnWheelDescLoaded(class UWheelDescAsset* WheelDesc)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Wheel.BP_Wheel_C.OnWheelDescLoaded"));
-
-	struct
-	{
-		class UWheelDescAsset*         WheelDesc;
-	} params;
-
-	params.WheelDesc = WheelDesc;
 
 	UObject::ProcessEvent(fn, &params);
 }

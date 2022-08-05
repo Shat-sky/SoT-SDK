@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -224,29 +224,33 @@ public:
 	static TArray<class FString> GetAllDescriptions();
 	static struct FPirateDescription GenerateRandomPirateWithVersion(int Seed, int Version, bool bOverrideBodyShape, const struct FRadialCoordinate& BodyShapeOverride, TEnumAsByte<EIPGGender> SpecificGender, TEnumAsByte<EIPGEthnicity> SpecificEthnicity, TArray<struct FIPGDynamicSlider> DynamicSliders, TArray<struct FName> TextureReferences, TArray<struct FIPGScalarParameter> ScalarParameters);
 	static struct FPirateDescription GenerateRandomPirate(int Seed, bool bOverrideBodyShape, const struct FRadialCoordinate& BodyShapeOverride, TEnumAsByte<EIPGGender> SpecificGender, TEnumAsByte<EIPGEthnicity> SpecificEthnicity, TArray<struct FIPGDynamicSlider> DynamicSliders, TArray<struct FName> TextureReferences, TArray<struct FIPGScalarParameter> ScalarParameters);
+	static void BakeMeshWithNewMaterial(const struct FName& InMaterialName, const struct FPirateDescription& InPirateDesc, bool InFirstPerson, const struct FScriptDelegate& Result);
 	static void BakeFromDescriptionAsync(const struct FPirateDescription& Desc, TEnumAsByte<EPirateBakeFlags> Flags, const struct FScriptDelegate& AsyncResult);
 };
 
 
 // Class PirateGenerator.PirateGeneratorSettings
-// 0x00E0 (0x0108 - 0x0028)
-class UPirateGeneratorSettings : public UObject
+// 0x00F8 (0x0130 - 0x0038)
+class UPirateGeneratorSettings : public UDeveloperSettings
 {
 public:
-	class FString                                      ConfigJson;                                               // 0x0028(0x0010) (Edit, ZeroConstructor, Config)
-	class FString                                      PiratesFolder;                                            // 0x0038(0x0010) (Edit, ZeroConstructor, Config)
-	class FString                                      WardrobeFolder;                                           // 0x0048(0x0010) (Edit, ZeroConstructor, Config)
-	struct FStringAssetReference                       WardrobeDataAsset;                                        // 0x0058(0x0010) (Edit, ZeroConstructor, Config)
-	TArray<struct FName>                               DefaultWardrobeItems;                                     // 0x0068(0x0010) (Edit, ZeroConstructor, Config)
-	struct FStringAssetReference                       MaterialReferencesDataAsset;                              // 0x0078(0x0010) (Edit, ZeroConstructor, Config)
-	struct FStringAssetReference                       SkeletonsDataAsset;                                       // 0x0088(0x0010) (Edit, ZeroConstructor, Config)
-	TArray<struct FStringAssetReference>               BaseSkeletonMeshes;                                       // 0x0098(0x0010) (Edit, ZeroConstructor, Config)
-	TArray<struct FStringAssetReference>               Characterization;                                         // 0x00A8(0x0010) (Edit, ZeroConstructor, Config)
-	TArray<class FString>                              SkeletonMeshFormats;                                      // 0x00B8(0x0010) (Edit, ZeroConstructor, Config)
-	struct FStringAssetReference                       FirstPersonAnimations;                                    // 0x00C8(0x0010) (Edit, ZeroConstructor, Config)
-	struct FStringAssetReference                       ThirdPersonAnimations;                                    // 0x00D8(0x0010) (Edit, ZeroConstructor, Config)
-	TArray<float>                                      LODScreenSizes;                                           // 0x00E8(0x0010) (Edit, ZeroConstructor, Config)
-	TArray<float>                                      LODHysteresis;                                            // 0x00F8(0x0010) (Edit, ZeroConstructor, Config)
+	class FString                                      ConfigJson;                                               // 0x0038(0x0010) (Edit, ZeroConstructor, Config)
+	class FString                                      PiratesFolder;                                            // 0x0048(0x0010) (Edit, ZeroConstructor, Config)
+	class FString                                      WardrobeFolder;                                           // 0x0058(0x0010) (Edit, ZeroConstructor, Config)
+	struct FStringAssetReference                       WardrobeDataAsset;                                        // 0x0068(0x0010) (Edit, ZeroConstructor, Config)
+	TArray<struct FName>                               DefaultWardrobeItems;                                     // 0x0078(0x0010) (Edit, ZeroConstructor, Config)
+	struct FStringAssetReference                       MaterialReferencesDataAsset;                              // 0x0088(0x0010) (Edit, ZeroConstructor, Config)
+	struct FStringAssetReference                       SkeletonsDataAsset;                                       // 0x0098(0x0010) (Edit, ZeroConstructor, Config)
+	TArray<struct FStringAssetReference>               BaseSkeletonMeshes;                                       // 0x00A8(0x0010) (Edit, ZeroConstructor, Config)
+	TArray<struct FStringAssetReference>               Characterization;                                         // 0x00B8(0x0010) (Edit, ZeroConstructor, Config)
+	TArray<class FString>                              SkeletonMeshFormats;                                      // 0x00C8(0x0010) (Edit, ZeroConstructor, Config)
+	struct FStringAssetReference                       FirstPersonAnimations;                                    // 0x00D8(0x0010) (Edit, ZeroConstructor, Config)
+	struct FStringAssetReference                       ThirdPersonAnimations;                                    // 0x00E8(0x0010) (Edit, ZeroConstructor, Config)
+	TArray<float>                                      LODScreenSizes;                                           // 0x00F8(0x0010) (Edit, ZeroConstructor, Config)
+	TArray<float>                                      LODHysteresis;                                            // 0x0108(0x0010) (Edit, ZeroConstructor, Config)
+	TArray<struct FStringAssetReference>               ExcludeDataAssets;                                        // 0x0118(0x0010) (Edit, ZeroConstructor, Config)
+	int                                                DefaultPirateGenerationSeed;                              // 0x0128(0x0004) (ZeroConstructor, Config, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x012C(0x0004) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -414,13 +418,12 @@ public:
 
 
 // Class PirateGenerator.WardrobeDataAsset
-// 0x00C0 (0x00E8 - 0x0028)
+// 0x00B0 (0x00D8 - 0x0028)
 class UWardrobeDataAsset : public UDataAsset
 {
 public:
 	unsigned char                                      UnknownData00[0xA0];                                      // 0x0028(0x00A0) MISSED OFFSET
-	TArray<class UWardrobeExcludeDataAsset*>           ExcludeDataAssets;                                        // 0x00C8(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	TArray<struct FMeshPatchEntry>                     AssetMap;                                                 // 0x00D8(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	TArray<struct FMeshPatchEntry>                     AssetMap;                                                 // 0x00C8(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, EditConst)
 
 	static UClass* StaticClass()
 	{
@@ -428,6 +431,9 @@ public:
 		return ptr;
 	}
 
+
+	bool Rebuild(bool LoadAllAssets);
+	int GetNumNewAssets();
 };
 
 

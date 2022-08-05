@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,12 +15,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_RotatableSignalCloud.BP_RotatableSignalCloud_C
-// 0x0010 (0x04E0 - 0x04D0)
+// 0x0010 (0x04B8 - 0x04A8)
 class ABP_RotatableSignalCloud_C : public AGameplayEventSignal_StaticMesh
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x04D0(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
-	class URotateMeshToLocalPlayerComponent*           RotateMeshToLocalPlayer;                                  // 0x04D8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x04A8(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
+	class URotateMeshToLocalPlayerComponent*           RotateMeshToLocalPlayer;                                  // 0x04B0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

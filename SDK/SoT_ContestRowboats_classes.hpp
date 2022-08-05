@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -30,13 +30,13 @@ public:
 
 
 // Class ContestRowboats.ContestRowboatsService
-// 0x0060 (0x04B8 - 0x0458)
+// 0x0060 (0x0428 - 0x03C8)
 class AContestRowboatsService : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0458(0x0008) MISSED OFFSET
-	class UClass*                                      RowboatClass;                                             // 0x0460(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x50];                                      // 0x0468(0x0050) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x03C8(0x0008) MISSED OFFSET
+	class UClass*                                      RowboatClass;                                             // 0x03D0(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x50];                                      // 0x03D8(0x0050) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

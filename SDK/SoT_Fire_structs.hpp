@@ -1,49 +1,20 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_Fire_enums.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
-#include "SoT_Athena_classes.hpp"
 #include "SoT_StatusEffects_classes.hpp"
+#include "SoT_Athena_classes.hpp"
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum Fire.EFireCellState
-enum class EFireCellState : uint8_t
-{
-	EFireCellState__Deactivated    = 0,
-	EFireCellState__Flooded        = 1,
-	EFireCellState__Wet            = 2,
-	EFireCellState__Kindled        = 3,
-	EFireCellState__Smouldering    = 4,
-	EFireCellState__Steaming       = 5,
-	EFireCellState__Burning        = 6,
-	EFireCellState__MAX            = 7,
-	EFireCellState__EFireCellState_MAX = 8
-};
-
-
-// Enum Fire.ELastIgnitionState
-enum class ELastIgnitionState : uint8_t
-{
-	ELastIgnitionState__None       = 0,
-	ELastIgnitionState__Success    = 1,
-	ELastIgnitionState__Failure    = 2,
-	ELastIgnitionState__ELastIgnitionState_MAX = 3
-};
-
-
-
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
@@ -298,7 +269,7 @@ struct FShipFireLight
 };
 
 // ScriptStruct Fire.ShipFireLightManager
-// 0x0140
+// 0x0150
 struct FShipFireLightManager
 {
 	TArray<struct FShipFireLightRelativeSpawnDesc>     LightSpawnDescs;                                          // 0x0000(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
@@ -314,7 +285,7 @@ struct FShipFireLightManager
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0114(0x0004) MISSED OFFSET
 	class UShipFireLightParamsDataAsset*               LightParams;                                              // 0x0118(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class UPostProcessComponent*                       ShipPostProcessComponent;                                 // 0x0120(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x18];                                      // 0x0128(0x0018) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x28];                                      // 0x0128(0x0028) MISSED OFFSET
 };
 
 // ScriptStruct Fire.FireGridCharringManager
@@ -365,6 +336,13 @@ struct FShipOnFireBeginEvent
 	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
 
+// ScriptStruct Fire.OnShipIgnitedEvent
+// 0x0001
+struct FOnShipIgnitedEvent
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
 // ScriptStruct Fire.FireExtinguishedEvent
 // 0x000C
 struct FFireExtinguishedEvent
@@ -384,6 +362,15 @@ struct FOnFireChangedEvent
 struct FFireCellStateData
 {
 	unsigned char                                      UnknownData00[0x30];                                      // 0x0000(0x0030) MISSED OFFSET
+};
+
+// ScriptStruct Fire.HullCharringPersistenceModel
+// 0x0017 (0x0018 - 0x0001)
+struct FHullCharringPersistenceModel : public FPersistenceModel
+{
+	TArray<float>                                      TimeSpentCharring;                                        // 0x0000(0x0010) (ZeroConstructor)
+	int                                                TotalCellsOnFire;                                         // 0x0010(0x0004) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0014(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct Fire.PlayerFireGridTickParams

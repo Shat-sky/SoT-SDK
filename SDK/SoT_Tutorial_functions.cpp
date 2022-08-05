@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -189,6 +189,22 @@ void UTutorialHelpersBlueprintLibrary::FirePromptCompleted(class UClass* AccessK
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);
+}
+
+
+// Function Tutorial.TutorialManager.OnRep_TutorialType
+// (Final, Native, Private)
+
+void UTutorialManager::OnRep_TutorialType()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tutorial.TutorialManager.OnRep_TutorialType"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
 }
 
 

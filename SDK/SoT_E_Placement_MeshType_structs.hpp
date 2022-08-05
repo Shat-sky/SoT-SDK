@@ -1,31 +1,16 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_E_Placement_MeshType_enums.hpp"
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// UserDefinedEnum E_Placement_MeshType.E_Placement_MeshType
-enum class E_Placement_MeshType : uint8_t
-{
-	E_Placement_MeshType__NewEnumerator5 = 0,
-	None                           = 1,
-	E_Placement_MeshType__NewEnumerator3 = 2,
-	None01                         = 3,
-	NameProperty                   = 4
-};
-
-
-
 }
 
 #ifdef _MSC_VER

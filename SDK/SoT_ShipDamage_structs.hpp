@@ -1,31 +1,21 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_ShipDamage_enums.hpp"
+#include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Athena_classes.hpp"
+#include "SoT_Repair_classes.hpp"
+#include "SoT_AthenaEngine_classes.hpp"
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum ShipDamage.EHullDamageDeck
-enum class EHullDamageDeck : uint8_t
-{
-	EHullDamageDeck__Bottom        = 0,
-	EHullDamageDeck__Mid           = 1,
-	EHullDamageDeck__EHullDamageDeck_MAX = 2
-};
-
-
-
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
@@ -39,11 +29,12 @@ struct FDistanceAndLevelOfDamage
 };
 
 // ScriptStruct ShipDamage.ShipPartLevelsOfDamage
-// 0x0030
+// 0x0038
 struct FShipPartLevelsOfDamage
 {
 	TAssetPtr<class UClass>                            ActorClass;                                               // 0x0000(0x0020) (Edit)
 	TArray<struct FDistanceAndLevelOfDamage>           DamagePerDistance;                                        // 0x0020(0x0010) (Edit, ZeroConstructor)
+	struct FFeatureFlag                                FeatureName;                                              // 0x0030(0x0008) (Edit)
 };
 
 // ScriptStruct ShipDamage.ShipDamageParams
@@ -54,15 +45,32 @@ struct FShipDamageParams
 };
 
 // ScriptStruct ShipDamage.HullDamageHit
-// 0x0024
+// 0x001C
 struct FHullDamageHit
 {
 	struct FVector                                     HitPosition;                                              // 0x0000(0x000C) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	struct FVector                                     HitNormal;                                                // 0x000C(0x000C) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              HitStrength;                                              // 0x0018(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	int                                                HitLevel;                                                 // 0x001C(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	bool                                               HasDecal;                                                 // 0x0020(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x0021(0x0003) MISSED OFFSET
+	bool                                               HasDecal;                                                 // 0x0018(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0019(0x0003) MISSED OFFSET
+};
+
+// ScriptStruct ShipDamage.HullDamageZoneInfo
+// 0x0030
+struct FHullDamageZoneInfo
+{
+	class FString                                      DamageZoneId;                                             // 0x0000(0x0010) (ZeroConstructor)
+	int                                                DamageLevel;                                              // 0x0010(0x0004) (ZeroConstructor, IsPlainOldData)
+	int                                                RepairedDamageLevel;                                      // 0x0014(0x0004) (ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ERepairableState>                      RepairableState;                                          // 0x0018(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0019(0x0007) MISSED OFFSET
+	TArray<struct FHullDamageHit>                      ExternalHitList;                                          // 0x0020(0x0010) (ZeroConstructor)
+};
+
+// ScriptStruct ShipDamage.HullDamagePersistenceModel
+// 0x000F (0x0010 - 0x0001)
+struct FHullDamagePersistenceModel : public FPersistenceModel
+{
+	TArray<struct FHullDamageZoneInfo>                 DamageZones;                                              // 0x0000(0x0010) (ZeroConstructor)
 };
 
 // ScriptStruct ShipDamage.EventShipDamageApplied
@@ -99,6 +107,27 @@ struct FAppliedDamageToShipEvent
 {
 	class UClass*                                      ShipType;                                                 // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
 	class AActor*                                      Ship;                                                     // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct ShipDamage.ShipRestoredNetworkEvent
+// 0x0000 (0x0010 - 0x0010)
+struct FShipRestoredNetworkEvent : public FNetworkEventStruct
+{
+
+};
+
+// ScriptStruct ShipDamage.SendShipRestoredRpc
+// 0x0010 (0x0020 - 0x0010)
+struct FSendShipRestoredRpc : public FBoxedRpc
+{
+	struct FGuid                                       CrewId;                                                   // 0x0010(0x0010) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct ShipDamage.EventRestoreShip
+// 0x0001
+struct FEventRestoreShip
+{
+	bool                                               OnlyRepaired;                                             // 0x0000(0x0001) (ZeroConstructor, IsPlainOldData)
 };
 
 }

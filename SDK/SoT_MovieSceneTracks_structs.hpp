@@ -1,59 +1,19 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_MovieSceneTracks_enums.hpp"
 #include "SoT_MovieScene_classes.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum MovieSceneTracks.MovieScene3DPathSection_Axis
-enum class EMovieScene3DPathSection_Axis : uint8_t
-{
-
-};
-
-
-// Enum MovieSceneTracks.EShow3DTrajectory
-enum class EShow3DTrajectory : uint8_t
-{
-	EShow3DTrajectory__EST_OnlyWhenSelected = 0,
-	EShow3DTrajectory__EST_Always  = 1,
-	EShow3DTrajectory__EST_Never   = 2,
-	EShow3DTrajectory__EST_MAX     = 3
-};
-
-
-// Enum MovieSceneTracks.ELevelVisibility
-enum class ELevelVisibility : uint8_t
-{
-	ELevelVisibility__Visible      = 0,
-	ELevelVisibility__Hidden       = 1,
-	ELevelVisibility__ELevelVisibility_MAX = 2
-};
-
-
-// Enum MovieSceneTracks.EParticleKey
-enum class EParticleKey : uint8_t
-{
-	EParticleKey__Activate         = 0,
-	EParticleKey__Deactivate       = 1,
-	EParticleKey__Trigger          = 2,
-	EParticleKey__EParticleKey_MAX = 3
-};
-
-
-
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
@@ -91,11 +51,16 @@ struct FMovieSceneEventParameters
 };
 
 // ScriptStruct MovieSceneTracks.EventPayload
-// 0x0020
+// 0x0030
 struct FEventPayload
 {
 	struct FName                                       EventName;                                                // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FMovieSceneEventParameters                  Parameters;                                               // 0x0008(0x0018) (Edit)
+	bool                                               IsSubtitleEvent;                                          // 0x0008(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0009(0x0003) MISSED OFFSET
+	int                                                ActorNumber;                                              // 0x000C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	int                                                SubtitleIndex;                                            // 0x0010(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x0014(0x0004) MISSED OFFSET
+	struct FMovieSceneEventParameters                  Parameters;                                               // 0x0018(0x0018) (Edit)
 };
 
 // ScriptStruct MovieSceneTracks.MovieSceneEventSectionData
@@ -486,10 +451,12 @@ struct FMovieSceneSkeletalAnimationSectionTemplateParameters : public FMovieScen
 };
 
 // ScriptStruct MovieSceneTracks.MovieSceneSkeletalAnimationSectionTemplate
-// 0x00A0 (0x00B8 - 0x0018)
+// 0x00A8 (0x00C0 - 0x0018)
 struct FMovieSceneSkeletalAnimationSectionTemplate : public FMovieSceneEvalTemplate
 {
 	struct FMovieSceneSkeletalAnimationSectionTemplateParameters Params;                                                   // 0x0018(0x00A0)
+	TEnumAsByte<EAnimationTrackSubtype>                AnimationSubtype;                                         // 0x00B8(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x00B9(0x0007) MISSED OFFSET
 };
 
 // ScriptStruct MovieSceneTracks.MovieSceneSlomoSectionTemplate

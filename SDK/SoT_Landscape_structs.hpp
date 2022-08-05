@@ -1,83 +1,18 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_Landscape_enums.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// Enum Landscape.ELandscapeGizmoType
-enum class ELandscapeGizmoType : uint8_t
-{
-
-};
-
-
-// Enum Landscape.ELandscapeLODFalloff
-enum class ELandscapeLODFalloff : uint8_t
-{
-	ELandscapeLODFalloff__Linear   = 0,
-	ELandscapeLODFalloff__SquareRoot = 1,
-	ELandscapeLODFalloff__ELandscapeLODFalloff_MAX = 2
-};
-
-
-// Enum Landscape.ELandscapeLayerPaintingRestriction
-enum class ELandscapeLayerPaintingRestriction : uint8_t
-{
-	ELandscapeLayerPaintingRestriction__None = 0,
-	ELandscapeLayerPaintingRestriction__UseMaxLayers = 1,
-	ELandscapeLayerPaintingRestriction__ExistingOnly = 2,
-	ELandscapeLayerPaintingRestriction__ELandscapeLayerPaintingRestriction_MAX = 3
-};
-
-
-// Enum Landscape.ELandscapeSetupErrors
-enum class ELandscapeSetupErrors : uint8_t
-{
-
-};
-
-
-// Enum Landscape.LandscapeSplineMeshOrientation
-enum class ELandscapeSplineMeshOrientation : uint8_t
-{
-
-};
-
-
-// Enum Landscape.ELandscapeLayerBlendType
-enum class ELandscapeLayerBlendType : uint8_t
-{
-
-};
-
-
-// Enum Landscape.ELandscapeCustomizedCoordType
-enum class ELandscapeCustomizedCoordType : uint8_t
-{
-
-};
-
-
-// Enum Landscape.ETerrainCoordMappingType
-enum class ETerrainCoordMappingType : uint8_t
-{
-
-};
-
-
-
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------

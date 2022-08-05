@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,26 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function Interaction.InteractableComponent.SetBoxRotation
+// (Final, Native, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FRotator                InBoxRotation                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+
+void UInteractableComponent::SetBoxRotation(const struct FRotator& InBoxRotation)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Interaction.InteractableComponent.SetBoxRotation"));
+
+	struct
+	{
+		struct FRotator                InBoxRotation;
+	} params;
+
+	params.InBoxRotation = InBoxRotation;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
 
 // Function Interaction.InteractableComponent.SetBoxOrigin
 // (Final, Native, Public, HasOutParms, HasDefaults, BlueprintCallable)
@@ -106,6 +126,27 @@ float UInteractableComponent::GetBoxSphereRadius()
 	struct
 	{
 		float                          ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Interaction.InteractableComponent.GetBoxRotation
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FRotator                ReturnValue                    (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, IsPlainOldData)
+
+struct FRotator UInteractableComponent::GetBoxRotation()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Interaction.InteractableComponent.GetBoxRotation"));
+
+	struct
+	{
+		struct FRotator                ReturnValue;
 	} params;
 
 
@@ -717,6 +758,30 @@ bool UInteractableInterface::CanInteract(class AActor* InInteractor)
 	UObject::ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
+}
+
+
+// Function Interaction.InteractableBlueprintFunctionLibrary.SetInteractionState
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                  InteractableActor              (Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EInteractableState> NewInteractableState           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UInteractableBlueprintFunctionLibrary::SetInteractionState(class AActor* InteractableActor, TEnumAsByte<EInteractableState> NewInteractableState)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Interaction.InteractableBlueprintFunctionLibrary.SetInteractionState"));
+
+	struct
+	{
+		class AActor*                  InteractableActor;
+		TEnumAsByte<EInteractableState> NewInteractableState;
+	} params;
+
+	params.InteractableActor = InteractableActor;
+	params.NewInteractableState = NewInteractableState;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 }
 
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Seagulls_Barrels.BP_Seagulls_Barrels_C
-// 0x0000 (0x0460 - 0x0460)
+// 0x0000 (0x0488 - 0x0488)
 class ABP_Seagulls_Barrels_C : public ABP_Seagull01_8POI_C
 {
 public:
@@ -26,8 +26,6 @@ public:
 		return ptr;
 	}
 
-
-	void UserConstructionScript();
 };
 
 

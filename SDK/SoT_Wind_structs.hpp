@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,6 +49,15 @@ struct FWindServiceParams
 	float                                              AbsoluteMaxWindMagnitude;                                 // 0x0018(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	float                                              MinBlendTimeBetweenChanges;                               // 0x001C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	float                                              MaxBlendTimeBetweenChanges;                               // 0x0020(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Wind.ExtraWind
+// 0x0038
+struct FExtraWind
+{
+	class UObject*                                     Source;                                                   // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	class AActor*                                      Basis;                                                    // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x28];                                      // 0x0010(0x0028) MISSED OFFSET
 };
 
 // ScriptStruct Wind.WindTurbulenceParameters

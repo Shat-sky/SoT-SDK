@@ -1,10 +1,10 @@
-// Sea of Thieves (1.4.16) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
-#include "SoT_BP_audio_trn_shop_bsp_parameters.hpp"
+#include "SoT_BP_audio_trn_shop_bsp_classes.hpp"
 
 namespace SDK
 {

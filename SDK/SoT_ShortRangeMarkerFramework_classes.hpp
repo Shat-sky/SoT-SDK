@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -14,6 +14,30 @@ namespace SDK
 //Classes
 //---------------------------------------------------------------------------
 
+// Class ShortRangeMarkerFramework.ShortRangeMarker
+// 0x0058 (0x0420 - 0x03C8)
+class AShortRangeMarker : public AActor
+{
+public:
+	unsigned char                                      UnknownData00[0x10];                                      // 0x03C8(0x0010) MISSED OFFSET
+	TArray<class UMaterialInstanceDynamic*>            DynamicMaterials;                                         // 0x03D8(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient)
+	float                                              LifetimerTimer;                                           // 0x03E8(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              FadeTimer;                                                // 0x03EC(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FScriptMulticastDelegate                    TriggerFadeIn;                                            // 0x03F0(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
+	struct FScriptMulticastDelegate                    TriggerFadeOut;                                           // 0x0400(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
+	TArray<TWeakObjectPtr<class AActor>>               CachedActors;                                             // 0x0410(0x0010) (ZeroConstructor, Transient)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ShortRangeMarkerFramework.ShortRangeMarker"));
+		return ptr;
+	}
+
+
+	void Multicast_OnCleanUp();
+};
+
+
 // Class ShortRangeMarkerFramework.ShortRangeMarkerInterface
 // 0x0000 (0x0028 - 0x0028)
 class UShortRangeMarkerInterface : public UInterface
@@ -26,30 +50,6 @@ public:
 		return ptr;
 	}
 
-};
-
-
-// Class ShortRangeMarkerFramework.ShortRangeMarker
-// 0x0058 (0x04B0 - 0x0458)
-class AShortRangeMarker : public AActor
-{
-public:
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0458(0x0010) MISSED OFFSET
-	TArray<class UMaterialInstanceDynamic*>            DynamicMaterials;                                         // 0x0468(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient)
-	float                                              LifetimerTimer;                                           // 0x0478(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              FadeTimer;                                                // 0x047C(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FScriptMulticastDelegate                    TriggerFadeIn;                                            // 0x0480(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
-	struct FScriptMulticastDelegate                    TriggerFadeOut;                                           // 0x0490(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
-	TArray<TWeakObjectPtr<class AActor>>               CachedActors;                                             // 0x04A0(0x0010) (ZeroConstructor, Transient)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ShortRangeMarkerFramework.ShortRangeMarker"));
-		return ptr;
-	}
-
-
-	void Multicast_OnCleanUp();
 };
 
 
@@ -67,6 +67,24 @@ public:
 
 
 	static void RegisterActorsWithShortRangeMarker(class UObject* WorldContextObject, class AActor* InMarker, TArray<class AActor*>* InActors);
+};
+
+
+// Class ShortRangeMarkerFramework.ShortRangeMarkerDataAsset
+// 0x0010 (0x0038 - 0x0028)
+class UShortRangeMarkerDataAsset : public UDataAsset
+{
+public:
+	class UActorSpawnData*                             RewardMarker;                                             // 0x0028(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+	float                                              RewardMarkerHeight;                                       // 0x0030(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0034(0x0004) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ShortRangeMarkerFramework.ShortRangeMarkerDataAsset"));
+		return ptr;
+	}
+
 };
 
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -35,7 +35,7 @@ public:
 
 
 	void PostInitialize();
-	void Prompt_OfferPurchased(const struct FOfferPurchasedEvent& Ev);
+	void Prompt_OfferPurchased(const struct FAthena_FOfferPurchasedEvent& Ev);
 	void UnregisterOtherEvents_Implementable();
 	void Evaluate();
 	void ExecuteUbergraph_BP_Prompt_ProposeVoyage(int EntryPoint);

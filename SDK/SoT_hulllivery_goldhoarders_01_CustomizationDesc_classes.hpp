@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass hulllivery_goldhoarders_01_CustomizationDesc.hulllivery_goldhoarders_01_CustomizationDesc_C
-// 0x0000 (0x0108 - 0x0108)
+// 0x0000 (0x00F8 - 0x00F8)
 class Uhulllivery_goldhoarders_01_CustomizationDesc_C : public UShipCustomizationDesc
 {
 public:

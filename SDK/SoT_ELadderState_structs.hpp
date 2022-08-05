@@ -1,30 +1,16 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_ELadderState_enums.hpp"
 
 namespace SDK
 {
-//---------------------------------------------------------------------------
-//Enums
-//---------------------------------------------------------------------------
-
-// UserDefinedEnum ELadderState.ELadderState
-enum class ELadderState : uint8_t
-{
-	ELadderState__NewEnumerator5   = 0,
-	None                           = 1,
-	IntProperty                    = 2,
-	ELadderState__ELadderState_MAX = 3
-};
-
-
-
 }
 
 #ifdef _MSC_VER

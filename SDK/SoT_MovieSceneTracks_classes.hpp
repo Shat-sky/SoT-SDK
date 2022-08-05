@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -896,11 +896,13 @@ public:
 
 
 // Class MovieSceneTracks.MovieSceneSkeletalAnimationTrack
-// 0x0010 (0x0098 - 0x0088)
+// 0x0018 (0x00A0 - 0x0088)
 class UMovieSceneSkeletalAnimationTrack : public UMovieSceneNameableTrack
 {
 public:
-	TArray<class UMovieSceneSection*>                  AnimationSections;                                        // 0x0088(0x0010) (ExportObject, ZeroConstructor)
+	TEnumAsByte<EAnimationTrackSubtype>                TrackSubtype;                                             // 0x0088(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0089(0x0007) MISSED OFFSET
+	TArray<class UMovieSceneSection*>                  AnimationSections;                                        // 0x0090(0x0010) (ExportObject, ZeroConstructor)
 
 	static UClass* StaticClass()
 	{

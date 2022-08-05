@@ -1,4 +1,4 @@
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,54 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function AthenaAIAbilities.BurrowHealVFXComponent.OnRep_IsVFXActive
+// (Final, Native, Private)
+
+void UBurrowHealVFXComponent::OnRep_IsVFXActive()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaAIAbilities.BurrowHealVFXComponent.OnRep_IsVFXActive"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaAIAbilities.ElectricShieldBuffComponent.OnRep_IsShieldActive
+// (Final, Native, Public)
+
+void UElectricShieldBuffComponent::OnRep_IsShieldActive()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaAIAbilities.ElectricShieldBuffComponent.OnRep_IsShieldActive"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaAIAbilities.ElectricShieldBuffComponent.DeactivateShield
+// (Native, Public)
+
+void UElectricShieldBuffComponent::DeactivateShield()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaAIAbilities.ElectricShieldBuffComponent.DeactivateShield"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
 
 }
 

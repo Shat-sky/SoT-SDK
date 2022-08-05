@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass Title_MA_MerchantofForsakenFlora.Title_MA_MerchantofForsakenFlora_C
-// 0x0000 (0x00E0 - 0x00E0)
+// 0x0000 (0x00D0 - 0x00D0)
 class UTitle_MA_MerchantofForsakenFlora_C : public UTitleDesc
 {
 public:

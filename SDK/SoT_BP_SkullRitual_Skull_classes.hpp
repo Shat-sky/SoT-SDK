@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,11 +15,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_SkullRitual_Skull.BP_SkullRitual_Skull_C
-// 0x0008 (0x0418 - 0x0410)
+// 0x0008 (0x03D0 - 0x03C8)
 class ABP_SkullRitual_Skull_C : public AActor
 {
 public:
-	class UStaticMeshComponent*                        trs_briggsys_skull_01_c;                                  // 0x0410(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UStaticMeshComponent*                        trs_briggsys_skull_01_c;                                  // 0x03C8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

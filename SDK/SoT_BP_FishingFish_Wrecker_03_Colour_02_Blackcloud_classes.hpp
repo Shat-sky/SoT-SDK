@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.17) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_FishingFish_Wrecker_03_Colour_02_Blackcloud.BP_FishingFish_Wrecker_03_Colour_02_Blackcloud_C
-// 0x0000 (0x0900 - 0x0900)
+// 0x0000 (0x0920 - 0x0920)
 class ABP_FishingFish_Wrecker_03_Colour_02_Blackcloud_C : public ABP_FishingFish_Wrecker_03_C
 {
 public:

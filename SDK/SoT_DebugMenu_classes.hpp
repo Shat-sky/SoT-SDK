@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.0.18) SDK
+// Sea of Thieves (2.6.0) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -67,11 +67,11 @@ public:
 
 
 // Class DebugMenu.DebugMenu
-// 0x0060 (0x04B8 - 0x0458)
+// 0x00B0 (0x0478 - 0x03C8)
 class ADebugMenu : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0x60];                                      // 0x0458(0x0060) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xB0];                                      // 0x03C8(0x00B0) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
