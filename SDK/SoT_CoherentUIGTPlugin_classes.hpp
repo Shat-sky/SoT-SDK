@@ -27,7 +27,7 @@ public:
 	struct FScriptMulticastDelegate                    NavigateTo;                                               // 0x0118(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
 	struct FScriptMulticastDelegate                    JavaScriptEvent;                                          // 0x0128(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
 	struct FScriptMulticastDelegate                    UIGTScriptingReady;                                       // 0x0138(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
-	struct FScriptDelegate                             LiveViewSizeRequested;                                    // 0x0148(0x0014) (ZeroConstructor, InstancedReference)
+	struct FScriptDelegate                             LiveViewSizeRequested;                                    // 0x0148(0x0010) (ZeroConstructor, InstancedReference)
 	unsigned char                                      UnknownData00[0x18];                                      // 0x0158(0x0018) MISSED OFFSET
 	class UTextureRenderTarget2D*                      Texture;                                                  // 0x0170(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<ETextureFilter>                        Filter;                                                   // 0x0178(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)

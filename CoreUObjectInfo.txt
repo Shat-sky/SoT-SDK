@@ -39,6 +39,7 @@ class ULazyObjectProperty                : public UObjectPropertyBase       // 0
 class UMapProperty                       : public UProperty                 // 0x38 (0x70 - 0xA8) 
 class UMulticastDelegateProperty         : public UProperty                 // 0x08 (0x70 - 0x78) 
 class UMulticastInlineDelegateProperty   : public UMulticastDelegateProperty // 0x00 (0x78 - 0x78) 
+class UMulticastSparseDelegateProperty   : public UMulticastDelegateProperty // 0x00 (0x78 - 0x78) 
 class UNameProperty                      : public UProperty                 // 0x00 (0x70 - 0x70) 
 class UStrProperty                       : public UProperty                 // 0x00 (0x70 - 0x70) 
 class UStructProperty                    : public UProperty                 // 0x08 (0x70 - 0x78) 

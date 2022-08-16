@@ -31485,7 +31485,7 @@ class AProjectileWeapon : public ASkeletalMeshWieldableItem
 public:
 	unsigned char                                      UnknownData00[0x30];                                      // 0x0780(0x0030) MISSED OFFSET
 	class UInventoryItemComponent*                     InventoryItem;                                            // 0x07B0(0x0008) (Edit, BlueprintVisible, ExportObject, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData)
-	struct FScriptDelegate                             ProjectileAimValidator;                                   // 0x07B8(0x0014) (ZeroConstructor, Config, InstancedReference)
+	struct FScriptDelegate                             ProjectileAimValidator;                                   // 0x07B8(0x0010) (ZeroConstructor, Config, InstancedReference)
 	struct FProjectileWeaponParameters                 WeaponParameters;                                         // 0x07C8(0x01E8) (Edit, BlueprintVisible)
 	TEnumAsByte<EProjectileWeaponState>                State;                                                    // 0x09B0(0x0001) (Net, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x3];                                       // 0x09B1(0x0003) MISSED OFFSET

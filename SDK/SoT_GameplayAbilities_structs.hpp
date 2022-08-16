@@ -674,7 +674,7 @@ struct FActiveGameplayEffectQuery
 struct FGameplayEffectQuery
 {
 	unsigned char                                      UnknownData00[0x8];                                       // 0x0000(0x0008) MISSED OFFSET
-	struct FScriptDelegate                             CustomMatchDelegate_BP;                                   // 0x0008(0x0014) (Edit, BlueprintVisible, ZeroConstructor, InstancedReference)
+	struct FScriptDelegate                             CustomMatchDelegate_BP;                                   // 0x0008(0x0010) (Edit, BlueprintVisible, ZeroConstructor, InstancedReference)
 	struct FGameplayTagQuery                           OwningTagQuery;                                           // 0x0018(0x0048) (Edit, BlueprintVisible)
 	struct FGameplayTagQuery                           EffectTagQuery;                                           // 0x0060(0x0048) (Edit, BlueprintVisible)
 	struct FGameplayAttribute                          ModifyingAttribute;                                       // 0x00A8(0x0008) (Edit, BlueprintVisible)
