@@ -23,8 +23,8 @@ void ABP_Merchant_Mollie_C::UserConstructionScript()
 	{
 	} params;
 
-	UObject::ProcessEvent(fn, &params);
 
+	UObject::ProcessEvent(fn, &params);
 }
 
 

@@ -38,8 +38,8 @@ public:
 	void CollectRippleGenerators();
 	void UserConstructionScript();
 	void ReceiveBeginPlay();
-	void ReceiveActorBeginOverlap(class AActor** OtherActor);
-	void ReceiveActorEndOverlap(class AActor** OtherActor);
+	void ReceiveActorBeginOverlap(class AActor* OtherActor);
+	void ReceiveActorEndOverlap(class AActor* OtherActor);
 	void ExecuteUbergraph_BP_WaterVolume_Optimized(int EntryPoint);
 };
 

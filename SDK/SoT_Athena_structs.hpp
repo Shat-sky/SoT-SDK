@@ -26573,10 +26573,11 @@ struct FRequestTrinketBoxActionEvent
 };
 
 // ScriptStruct Athena.BoxedRpcDiscardTinVoyage
-// 0x0020 (0x0030 - 0x0010)
+// 0x0008 (0x0018 - 0x0010)
 struct FBoxedRpcDiscardTinVoyage : public FBoxedRpc
 {
-	TAssetPtr<class UClass>                            VoyageToDiscard;                                          // 0x0010(0x0020)
+	int                                                IndexOfVoyageToDiscard;                                   // 0x0010(0x0004) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0014(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct Athena.VoyageProposedTelemetryEvent
@@ -33145,6 +33146,13 @@ struct FEventNewPlayerStartedPlayingShanty
 	class AActor*                                      Player;                                                   // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
 	class AActor*                                      Instrument;                                               // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
 	class AActor*                                      Ensemble;                                                 // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Athena.HuntersCryDisableTimedFail
+// 0x0001
+struct FAthena_FHuntersCryDisableTimedFail
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
 
 // ScriptStruct Athena.HuntersCryFailEvent

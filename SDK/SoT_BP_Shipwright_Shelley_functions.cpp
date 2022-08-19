@@ -23,8 +23,8 @@ void ABP_Shipwright_Shelley_C::UserConstructionScript()
 	{
 	} params;
 
-	UObject::ProcessEvent(fn, &params);
 
+	UObject::ProcessEvent(fn, &params);
 }
 
 

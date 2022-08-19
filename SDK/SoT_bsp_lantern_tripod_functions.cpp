@@ -23,8 +23,8 @@ void Absp_lantern_tripod_C::UserConstructionScript()
 	{
 	} params;
 
-	UObject::ProcessEvent(fn, &params);
 
+	UObject::ProcessEvent(fn, &params);
 }
 
 

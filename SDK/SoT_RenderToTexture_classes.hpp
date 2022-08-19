@@ -28,7 +28,7 @@ public:
 
 
 	static class URenderToTextureSceneDetails* GetRenderToTexture(const struct FName& Identifier);
-	static class URenderToTextureSceneDetails* CreateRenderToTexture(const struct FName& Identifier, class UClass* ClassToSpawn, const struct FIntPoint& Resolution, bool bForceLinearGamma, bool bCaptureAlpha);
+	static class URenderToTextureSceneDetails* CreateRenderToTexture(class UObject* WorldContext, const struct FName& Identifier, class UClass* ClassToSpawn, const struct FIntPoint& Resolution, bool bForceLinearGamma, bool bCaptureAlpha);
 };
 
 

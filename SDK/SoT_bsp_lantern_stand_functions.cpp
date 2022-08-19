@@ -23,8 +23,8 @@ void Absp_lantern_stand_C::UserConstructionScript()
 	{
 	} params;
 
-	UObject::ProcessEvent(fn, &params);
 
+	UObject::ProcessEvent(fn, &params);
 }
 
 

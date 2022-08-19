@@ -14643,7 +14643,8 @@ public:
 	bool                                               IsCaptained;                                              // 0x08D6(0x0001) (Net, ZeroConstructor, IsPlainOldData)
 	bool                                               IsShipAssociated;                                         // 0x08D7(0x0001) (ZeroConstructor, IsPlainOldData)
 	bool                                               IsPendingExCaptainedShipDissociation;                     // 0x08D8(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData11[0x2F];                                      // 0x08D9(0x002F) MISSED OFFSET
+	bool                                               ShouldForceSpawnOnShip;                                   // 0x08D9(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData11[0x2E];                                      // 0x08DA(0x002E) MISSED OFFSET
 	int64_t                                            TimeOfLastRepair;                                         // 0x0908(0x0008) (Net, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
@@ -39132,6 +39133,38 @@ public:
 };
 
 
+// Class Athena.TaleQuestSpawnOnShipService
+// 0x0050 (0x00B0 - 0x0060)
+class UTaleQuestSpawnOnShipService : public UTaleQuestService
+{
+public:
+	class UTaleQuestSpawnOnShipServiceDesc*            ServiceDesc;                                              // 0x0060(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x48];                                      // 0x0068(0x0048) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Athena.TaleQuestSpawnOnShipService"));
+		return ptr;
+	}
+
+};
+
+
+// Class Athena.TaleQuestSpawnOnShipServiceDesc
+// 0x0000 (0x0028 - 0x0028)
+class UTaleQuestSpawnOnShipServiceDesc : public UTaleQuestServiceDesc
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Athena.TaleQuestSpawnOnShipServiceDesc"));
+		return ptr;
+	}
+
+};
+
+
 // Class Athena.TaleQuestStartingBannerStep
 // 0x0000 (0x0098 - 0x0098)
 class UTaleQuestStartingBannerStep : public UTaleQuestStep
@@ -56910,12 +56943,12 @@ public:
 
 
 // Class Athena.GlobalVoyageTriggerActor
-// 0x0048 (0x0410 - 0x03C8)
+// 0x0050 (0x0418 - 0x03C8)
 class AGlobalVoyageTriggerActor : public AActor
 {
 public:
 	class UVoyageDescDataAsset*                        VoyageDesc;                                               // 0x03C8(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x40];                                      // 0x03D0(0x0040) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x48];                                      // 0x03D0(0x0048) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -57593,7 +57626,7 @@ class UNamedNPCComponent : public UActorComponent
 {
 public:
 	unsigned char                                      UnknownData00[0x8];                                       // 0x00C8(0x0008) MISSED OFFSET
-	struct FName                                       NPCName;                                                  // 0x00D0(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FName                                       NPCName;                                                  // 0x00D0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -67053,6 +67086,23 @@ public:
 	void StopTakingLighthouseBeamDamage();
 	void StartTakingLighthouseBeamDamage(class AActor* Instigator);
 	void Multi_CauseDamage(const struct FVector& InstigatorLocation);
+};
+
+
+// Class Athena.RequestHuntersCryTaleRemoteConfigDurationFunctionLibrary
+// 0x0000 (0x0170 - 0x0170)
+class URequestHuntersCryTaleRemoteConfigDurationFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Athena.RequestHuntersCryTaleRemoteConfigDurationFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void RequestHuntersCryTaleRemoteConfigDuration(float* FirstPortalWarningInterval, float* SecondPortalWarningInterval, float* FinalPortalWarningInterval, float* PreFailureInterval);
 };
 
 

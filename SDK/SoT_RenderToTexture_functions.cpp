@@ -40,6 +40,7 @@ class URenderToTextureSceneDetails* URenderToTextureFunctionLibrary::GetRenderTo
 // Function RenderToTexture.RenderToTextureFunctionLibrary.CreateRenderToTexture
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
+// class UObject*                 WorldContext                   (Parm, ZeroConstructor, IsPlainOldData)
 // struct FName                   Identifier                     (Parm, ZeroConstructor, IsPlainOldData)
 // class UClass*                  ClassToSpawn                   (Parm, ZeroConstructor, IsPlainOldData)
 // struct FIntPoint               Resolution                     (Parm, ZeroConstructor, IsPlainOldData)
@@ -47,12 +48,13 @@ class URenderToTextureSceneDetails* URenderToTextureFunctionLibrary::GetRenderTo
 // bool                           bCaptureAlpha                  (Parm, ZeroConstructor, IsPlainOldData)
 // class URenderToTextureSceneDetails* ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-class URenderToTextureSceneDetails* URenderToTextureFunctionLibrary::CreateRenderToTexture(const struct FName& Identifier, class UClass* ClassToSpawn, const struct FIntPoint& Resolution, bool bForceLinearGamma, bool bCaptureAlpha)
+class URenderToTextureSceneDetails* URenderToTextureFunctionLibrary::CreateRenderToTexture(class UObject* WorldContext, const struct FName& Identifier, class UClass* ClassToSpawn, const struct FIntPoint& Resolution, bool bForceLinearGamma, bool bCaptureAlpha)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function RenderToTexture.RenderToTextureFunctionLibrary.CreateRenderToTexture"));
 
 	struct
 	{
+		class UObject*                 WorldContext;
 		struct FName                   Identifier;
 		class UClass*                  ClassToSpawn;
 		struct FIntPoint               Resolution;
@@ -61,6 +63,7 @@ class URenderToTextureSceneDetails* URenderToTextureFunctionLibrary::CreateRende
 		class URenderToTextureSceneDetails* ReturnValue;
 	} params;
 
+	params.WorldContext = WorldContext;
 	params.Identifier = Identifier;
 	params.ClassToSpawn = ClassToSpawn;
 	params.Resolution = Resolution;

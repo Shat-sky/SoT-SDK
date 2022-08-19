@@ -61425,6 +61425,40 @@ void UGhostShipLighthouseBeamDamageComponent::Multi_CauseDamage(const struct FVe
 }
 
 
+// Function Athena.RequestHuntersCryTaleRemoteConfigDurationFunctionLibrary.RequestHuntersCryTaleRemoteConfigDuration
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// float                          FirstPortalWarningInterval     (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// float                          SecondPortalWarningInterval    (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// float                          FinalPortalWarningInterval     (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// float                          PreFailureInterval             (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+
+void URequestHuntersCryTaleRemoteConfigDurationFunctionLibrary::RequestHuntersCryTaleRemoteConfigDuration(float* FirstPortalWarningInterval, float* SecondPortalWarningInterval, float* FinalPortalWarningInterval, float* PreFailureInterval)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.RequestHuntersCryTaleRemoteConfigDurationFunctionLibrary.RequestHuntersCryTaleRemoteConfigDuration"));
+
+	struct
+	{
+		float                          FirstPortalWarningInterval;
+		float                          SecondPortalWarningInterval;
+		float                          FinalPortalWarningInterval;
+		float                          PreFailureInterval;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	if (FirstPortalWarningInterval != nullptr)
+		*FirstPortalWarningInterval = params.FirstPortalWarningInterval;
+	if (SecondPortalWarningInterval != nullptr)
+		*SecondPortalWarningInterval = params.SecondPortalWarningInterval;
+	if (FinalPortalWarningInterval != nullptr)
+		*FinalPortalWarningInterval = params.FinalPortalWarningInterval;
+	if (PreFailureInterval != nullptr)
+		*PreFailureInterval = params.PreFailureInterval;
+}
+
+
 // Function Athena.RegionMapSetAsset.Select
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:

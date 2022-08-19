@@ -23,8 +23,8 @@ void Awsp_tree_cluster_03_c_C::UserConstructionScript()
 	{
 	} params;
 
-	UObject::ProcessEvent(fn, &params);
 
+	UObject::ProcessEvent(fn, &params);
 }
 
 

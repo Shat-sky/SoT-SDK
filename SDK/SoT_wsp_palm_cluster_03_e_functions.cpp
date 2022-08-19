@@ -23,8 +23,8 @@ void Awsp_palm_cluster_03_e_C::UserConstructionScript()
 	{
 	} params;
 
-	UObject::ProcessEvent(fn, &params);
 
+	UObject::ProcessEvent(fn, &params);
 }
 
 

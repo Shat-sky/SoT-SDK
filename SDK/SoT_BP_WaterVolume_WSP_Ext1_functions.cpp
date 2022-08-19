@@ -23,8 +23,8 @@ void ABP_WaterVolume_WSP_Ext1_C::UserConstructionScript()
 	{
 	} params;
 
-	UObject::ProcessEvent(fn, &params);
 
+	UObject::ProcessEvent(fn, &params);
 }
 
 

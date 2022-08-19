@@ -23,8 +23,8 @@ void Awsp_torch_a_a_C::UserConstructionScript()
 	{
 	} params;
 
-	UObject::ProcessEvent(fn, &params);
 
+	UObject::ProcessEvent(fn, &params);
 }
 
 
@@ -39,8 +39,8 @@ void Awsp_torch_a_a_C::ReceiveBeginPlay()
 	{
 	} params;
 
-	UObject::ProcessEvent(fn, &params);
 
+	UObject::ProcessEvent(fn, &params);
 }
 
 
@@ -57,10 +57,10 @@ void Awsp_torch_a_a_C::ExecuteUbergraph_wsp_torch_a_a(int EntryPoint)
 	{
 		int                            EntryPoint;
 	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);
-
 }
 
 

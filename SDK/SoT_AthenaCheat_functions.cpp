@@ -8641,6 +8641,22 @@ void UAthenaCheatManager::HuntersCryForceRescueFail()
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.HuntersCryDisableTimedFail
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::HuntersCryDisableTimedFail()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.HuntersCryDisableTimedFail"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.HitRegSnapshotsToggleOnScreenStatus
 // (Final, Exec, Native, Public)
 

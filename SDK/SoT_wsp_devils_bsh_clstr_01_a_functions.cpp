@@ -23,8 +23,8 @@ void Awsp_devils_bsh_clstr_01_a_C::UserConstructionScript()
 	{
 	} params;
 
-	UObject::ProcessEvent(fn, &params);
 
+	UObject::ProcessEvent(fn, &params);
 }
 
 

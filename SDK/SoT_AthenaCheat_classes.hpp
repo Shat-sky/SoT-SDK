@@ -506,6 +506,7 @@ public:
 	void IgniteAllShipFires();
 	void HuntersCryForceRescueSuccess();
 	void HuntersCryForceRescueFail();
+	void HuntersCryDisableTimedFail();
 	void HitRegSnapshotsToggleOnScreenStatus();
 	void HitRegSnapshotsSetShowPreCorrectedCapsules(bool ShowPreCorrectedCapsules, bool AffectAllSnapshots, bool LocalClientOnly);
 	void HitRegSnapshotsSetShowFullRewindData(bool ShowFullRewindData, bool AffectAllSnapshots, bool LocalClientOnly);

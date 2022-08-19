@@ -23,8 +23,8 @@ void ABP_WaterVolume_Optimized_C::CollectRippleGenerators()
 	{
 	} params;
 
-	UObject::ProcessEvent(fn, &params);
 
+	UObject::ProcessEvent(fn, &params);
 }
 
 
@@ -39,8 +39,8 @@ void ABP_WaterVolume_Optimized_C::UserConstructionScript()
 	{
 	} params;
 
-	UObject::ProcessEvent(fn, &params);
 
+	UObject::ProcessEvent(fn, &params);
 }
 
 
@@ -55,48 +55,48 @@ void ABP_WaterVolume_Optimized_C::ReceiveBeginPlay()
 	{
 	} params;
 
-	UObject::ProcessEvent(fn, &params);
 
+	UObject::ProcessEvent(fn, &params);
 }
 
 
 // Function BP_WaterVolume_Optimized.BP_WaterVolume_Optimized_C.ReceiveActorBeginOverlap
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class AActor**                 OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
 
-void ABP_WaterVolume_Optimized_C::ReceiveActorBeginOverlap(class AActor** OtherActor)
+void ABP_WaterVolume_Optimized_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_WaterVolume_Optimized.BP_WaterVolume_Optimized_C.ReceiveActorBeginOverlap"));
 
 	struct
 	{
-		class AActor**                 OtherActor;
+		class AActor*                  OtherActor;
 	} params;
+
 	params.OtherActor = OtherActor;
 
 	UObject::ProcessEvent(fn, &params);
-
 }
 
 
 // Function BP_WaterVolume_Optimized.BP_WaterVolume_Optimized_C.ReceiveActorEndOverlap
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class AActor**                 OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
+// class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
 
-void ABP_WaterVolume_Optimized_C::ReceiveActorEndOverlap(class AActor** OtherActor)
+void ABP_WaterVolume_Optimized_C::ReceiveActorEndOverlap(class AActor* OtherActor)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_WaterVolume_Optimized.BP_WaterVolume_Optimized_C.ReceiveActorEndOverlap"));
 
 	struct
 	{
-		class AActor**                 OtherActor;
+		class AActor*                  OtherActor;
 	} params;
+
 	params.OtherActor = OtherActor;
 
 	UObject::ProcessEvent(fn, &params);
-
 }
 
 
@@ -113,10 +113,10 @@ void ABP_WaterVolume_Optimized_C::ExecuteUbergraph_BP_WaterVolume_Optimized(int 
 	{
 		int                            EntryPoint;
 	} params;
+
 	params.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(fn, &params);
-
 }
 
 
