@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -46,13 +46,13 @@ public:
 
 
 // Class Reviving.DeathSelfInteractionComponent
-// 0x0060 (0x0178 - 0x0118)
+// 0x0060 (0x0188 - 0x0128)
 class UDeathSelfInteractionComponent : public UInteractableComponent
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0118(0x0008) MISSED OFFSET
-	bool                                               HasGivenUp;                                               // 0x0120(0x0001) (Net, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x57];                                      // 0x0121(0x0057) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0128(0x0008) MISSED OFFSET
+	bool                                               HasGivenUp;                                               // 0x0130(0x0001) (Net, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x57];                                      // 0x0131(0x0057) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -174,22 +174,22 @@ public:
 
 
 // Class Reviving.ReviveComponent
-// 0x0148 (0x0260 - 0x0118)
+// 0x0148 (0x0270 - 0x0128)
 class UReviveComponent : public UInteractableComponent
 {
 public:
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0118(0x0010) MISSED OFFSET
-	class ACharacter*                                  OwningCharacter;                                          // 0x0128(0x0008) (ZeroConstructor, IsPlainOldData)
-	class AActor*                                      ReviveableRepresentationActor;                            // 0x0130(0x0008) (ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EReviveState>                          ReviveState;                                              // 0x0138(0x0001) (Net, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EInteractableState>                    InteractionState;                                         // 0x0139(0x0001) (Net, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x6];                                       // 0x013A(0x0006) MISSED OFFSET
-	class UClass*                                      ReviveableRepresentationClass;                            // 0x0140(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x12];                                      // 0x0148(0x0012) MISSED OFFSET
-	bool                                               ReviveWindowIsOpen;                                       // 0x015A(0x0001) (Net, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData03[0xD5];                                      // 0x015B(0x00D5) MISSED OFFSET
-	struct FStatus                                     RevivableStatus;                                          // 0x0230(0x0018) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData04[0x18];                                      // 0x0248(0x0018) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x10];                                      // 0x0128(0x0010) MISSED OFFSET
+	class ACharacter*                                  OwningCharacter;                                          // 0x0138(0x0008) (ZeroConstructor, IsPlainOldData)
+	class AActor*                                      ReviveableRepresentationActor;                            // 0x0140(0x0008) (ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EReviveState>                          ReviveState;                                              // 0x0148(0x0001) (Net, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EInteractableState>                    InteractionState;                                         // 0x0149(0x0001) (Net, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x6];                                       // 0x014A(0x0006) MISSED OFFSET
+	class UClass*                                      ReviveableRepresentationClass;                            // 0x0150(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x12];                                      // 0x0158(0x0012) MISSED OFFSET
+	bool                                               ReviveWindowIsOpen;                                       // 0x016A(0x0001) (Net, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData03[0xD5];                                      // 0x016B(0x00D5) MISSED OFFSET
+	struct FStatus                                     RevivableStatus;                                          // 0x0240(0x0018) (Edit, DisableEditOnInstance)
+	unsigned char                                      UnknownData04[0x18];                                      // 0x0258(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

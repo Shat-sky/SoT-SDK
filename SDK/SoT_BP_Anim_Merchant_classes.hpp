@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,11 +15,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // AnimBlueprintGeneratedClass BP_Anim_Merchant.BP_Anim_Merchant_C
-// 0x000C (0x1DD0 - 0x1DC4)
+// 0x000A (0x1DD0 - 0x1DC6)
 class UBP_Anim_Merchant_C : public UBP_Anim_NPC_C
 {
 public:
-	unsigned char                                      UnknownData00[0x4];                                       // 0x1DC4(0x0004) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x2];                                       // 0x1DC6(0x0002) MISSED OFFSET
 	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x1DC8(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
 
 	static UClass* StaticClass()

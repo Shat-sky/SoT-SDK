@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -9,8 +9,8 @@
 #include "SoT_Basic.hpp"
 #include "SoT_Engine_enums.hpp"
 #include "SoT_Slate_classes.hpp"
-#include "SoT_CoreUObject_classes.hpp"
 #include "SoT_SlateCore_classes.hpp"
+#include "SoT_CoreUObject_classes.hpp"
 #include "SoT_InputCore_classes.hpp"
 
 namespace SDK
@@ -2978,6 +2978,13 @@ struct FTableRowBase
 	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
 
+// ScriptStruct Engine.FeatureFlag
+// 0x0008
+struct FFeatureFlag
+{
+	struct FName                                       FeatureName;                                              // 0x0000(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+};
+
 // ScriptStruct Engine.DialogueContext
 // 0x0018
 struct FDialogueContext
@@ -4522,13 +4529,6 @@ struct FPacketDiscardStats
 {
 	int                                                DiscardCounts[0x7];                                       // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 	int                                                BytesDiscarded;                                           // 0x001C(0x0004) (ZeroConstructor, IsPlainOldData)
-};
-
-// ScriptStruct Engine.FeatureFlag
-// 0x0008
-struct FFeatureFlag
-{
-	struct FName                                       FeatureName;                                              // 0x0000(0x0008) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
 };
 
 // ScriptStruct Engine.RuntimeVectorCurve

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -30,11 +30,11 @@ public:
 
 
 // Class AsyncLoadingMonitoring.AsyncLoadingMonitoringService
-// 0x0080 (0x00A8 - 0x0028)
+// 0x00D0 (0x00F8 - 0x0028)
 class UAsyncLoadingMonitoringService : public UObject
 {
 public:
-	unsigned char                                      UnknownData00[0x80];                                      // 0x0028(0x0080) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xD0];                                      // 0x0028(0x00D0) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

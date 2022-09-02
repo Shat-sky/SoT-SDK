@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -779,18 +779,18 @@ public:
 
 
 // Class Pets.PetItemInfo
-// 0x0060 (0x0570 - 0x0510)
+// 0x0070 (0x0580 - 0x0510)
 class APetItemInfo : public ANonStorableItemInfo
 {
 public:
 	unsigned char                                      UnknownData00[0x18];                                      // 0x0510(0x0018) MISSED OFFSET
-	struct FPetCustomisation                           PetCustomisation;                                         // 0x0528(0x0018) (Net)
-	class AActor*                                      PetOwner;                                                 // 0x0540(0x0008) (Net, ZeroConstructor, Transient, IsPlainOldData)
-	class AActor*                                      SpawnedForShip;                                           // 0x0548(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	float                                              DropTraceDistance;                                        // 0x0550(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              PointSearchRadius;                                        // 0x0554(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	TEnumAsByte<ECollisionChannel>                     DropChannel;                                              // 0x0558(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x17];                                      // 0x0559(0x0017) MISSED OFFSET
+	struct FPetCustomisation                           PetCustomisation;                                         // 0x0528(0x0028) (Net)
+	class AActor*                                      PetOwner;                                                 // 0x0550(0x0008) (Net, ZeroConstructor, Transient, IsPlainOldData)
+	class AActor*                                      SpawnedForShip;                                           // 0x0558(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	float                                              DropTraceDistance;                                        // 0x0560(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              PointSearchRadius;                                        // 0x0564(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	TEnumAsByte<ECollisionChannel>                     DropChannel;                                              // 0x0568(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x17];                                      // 0x0569(0x0017) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -882,19 +882,19 @@ public:
 
 
 // Class Pets.PetPerchComponent
-// 0x0048 (0x0160 - 0x0118)
+// 0x0048 (0x0170 - 0x0128)
 class UPetPerchComponent : public UInteractableComponent
 {
 public:
-	unsigned char                                      UnknownData00[0x18];                                      // 0x0118(0x0018) MISSED OFFSET
-	TArray<class UClass*>                              AllowedPetTypes;                                          // 0x0130(0x0010) (ZeroConstructor, Transient)
-	int                                                HangoutSpotIndex;                                         // 0x0140(0x0004) (ZeroConstructor, IsPlainOldData)
-	struct FName                                       HangoutSpotName;                                          // 0x0144(0x0008) (ZeroConstructor, IsPlainOldData)
-	struct FVector                                     InteractionPointLocation;                                 // 0x014C(0x000C) (ZeroConstructor, IsPlainOldData)
-	bool                                               Enabled;                                                  // 0x0158(0x0001) (ZeroConstructor, IsPlainOldData)
-	bool                                               BlocksPetEmoteReactions;                                  // 0x0159(0x0001) (ZeroConstructor, IsPlainOldData)
-	bool                                               IgnorePickupFromHangoutTooltipDisplayOffset;              // 0x015A(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x5];                                       // 0x015B(0x0005) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x18];                                      // 0x0128(0x0018) MISSED OFFSET
+	TArray<class UClass*>                              AllowedPetTypes;                                          // 0x0140(0x0010) (ZeroConstructor, Transient)
+	int                                                HangoutSpotIndex;                                         // 0x0150(0x0004) (ZeroConstructor, IsPlainOldData)
+	struct FName                                       HangoutSpotName;                                          // 0x0154(0x0008) (ZeroConstructor, IsPlainOldData)
+	struct FVector                                     InteractionPointLocation;                                 // 0x015C(0x000C) (ZeroConstructor, IsPlainOldData)
+	bool                                               Enabled;                                                  // 0x0168(0x0001) (ZeroConstructor, IsPlainOldData)
+	bool                                               BlocksPetEmoteReactions;                                  // 0x0169(0x0001) (ZeroConstructor, IsPlainOldData)
+	bool                                               IgnorePickupFromHangoutTooltipDisplayOffset;              // 0x016A(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x5];                                       // 0x016B(0x0005) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

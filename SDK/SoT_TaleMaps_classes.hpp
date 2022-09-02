@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -36,7 +36,7 @@ public:
 class UAddMarkToTornMapStepDescBase : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableGuid                          MapId;                                                    // 0x0080(0x0020) (Edit)
+	struct FQuestVariableGuid                          MapID;                                                    // 0x0080(0x0020) (Edit)
 	struct FTaleQuestVariableMapMarkType               MapMark;                                                  // 0x00A0(0x0020) (Edit)
 
 	static UClass* StaticClass()
@@ -101,7 +101,7 @@ public:
 class UGetNumberOfCollectedTornMapPiecesStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableGuid                          MapId;                                                    // 0x0080(0x0020) (Edit)
+	struct FQuestVariableGuid                          MapID;                                                    // 0x0080(0x0020) (Edit)
 	struct FQuestVariableInt                           NumPieces;                                                // 0x00A0(0x0020) (Edit)
 
 	static UClass* StaticClass()
@@ -251,11 +251,11 @@ public:
 
 
 // Class TaleMaps.TaleQuestCustomMapFunctionLibrary
-// 0x0018 (0x0188 - 0x0170)
+// 0x0018 (0x0190 - 0x0178)
 class UTaleQuestCustomMapFunctionLibrary : public UTaleQuestFunctionStepLibrary
 {
 public:
-	unsigned char                                      UnknownData00[0x18];                                      // 0x0170(0x0018) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x18];                                      // 0x0178(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -264,6 +264,7 @@ public:
 	}
 
 
+	void UpdateStrikeThoughTextElement(const struct FGuid& MapGuid, const struct FGuid& ElementGuid, bool StrikeThroughEnabled);
 	void AddCustomMap(TAssetPtr<class UCustomMapData> Data, struct FGuid* MapGuid);
 };
 
@@ -304,7 +305,7 @@ public:
 class UTaleQuestAddLocationMapStepDesc : public UTaleQuestMapStepDescBase
 {
 public:
-	struct FName                                       MapId;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FName                                       MapID;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	struct FQuestVariableInt                           NumberOfChests;                                           // 0x0088(0x0020) (Edit)
 	struct FQuestVariableDataAsset                     RegionMapData;                                            // 0x00A8(0x0020) (Edit)
 	struct FQuestVariableDataAsset                     VaultData;                                                // 0x00C8(0x0020) (Edit)
@@ -327,7 +328,7 @@ public:
 	struct FQuestVariableName                          IslandName;                                               // 0x0080(0x0020) (Edit)
 	struct FQuestVariableInt                           NumberOfPieces;                                           // 0x00A0(0x0020) (Edit)
 	struct FQuestVariableDataAsset                     MapParams;                                                // 0x00C0(0x0020) (Edit)
-	struct FQuestVariableGuid                          MapId;                                                    // 0x00E0(0x0020) (Edit)
+	struct FQuestVariableGuid                          MapID;                                                    // 0x00E0(0x0020) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -345,7 +346,7 @@ class UTaleQuestAddTradeRouteMapStepDesc : public UTaleQuestMapStepDescBase
 public:
 	struct FQuestVariableDataAsset                     TradeRouteData;                                           // 0x0080(0x0020) (Edit)
 	struct FQuestVariableText                          VesselName;                                               // 0x00A0(0x0020) (Edit)
-	struct FQuestVariableGuid                          MapId;                                                    // 0x00C0(0x0020) (Edit)
+	struct FQuestVariableGuid                          MapID;                                                    // 0x00C0(0x0020) (Edit)
 	class UClueSiteTypeToMapMarkIdDataAsset*           ClueSiteToMapMarkIdMap;                                   // 0x00E0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
@@ -362,7 +363,7 @@ public:
 class UTaleQuestLocationMapChestFoundStepDesc : public UTaleQuestMapStepDescBase
 {
 public:
-	struct FName                                       MapId;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FName                                       MapID;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -852,11 +852,13 @@ struct FKrakenDespawnTelemetryEvent
 };
 
 // ScriptStruct Kraken.KrakenSpawnTelemetryEvent
-// 0x0020
+// 0x0030
 struct FKrakenSpawnTelemetryEvent
 {
 	class FString                                      KrakenId;                                                 // 0x0000(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	struct FGuid                                       ConfigSpawnId;                                            // 0x0010(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     SpawnLocation;                                            // 0x0010(0x000C) (ZeroConstructor, IsPlainOldData)
+	struct FGuid                                       ConfigSpawnId;                                            // 0x001C(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x002C(0x0004) MISSED OFFSET
 };
 
 }

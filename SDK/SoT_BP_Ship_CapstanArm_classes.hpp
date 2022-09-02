@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Ship_CapstanArm.BP_Ship_CapstanArm_C
-// 0x0000 (0x0560 - 0x0560)
+// 0x0000 (0x0570 - 0x0570)
 class ABP_Ship_CapstanArm_C : public ABP_CapstanArm_C
 {
 public:

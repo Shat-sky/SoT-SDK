@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,6 +15,13 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
+
+// ScriptStruct WarMap.EventLocalPlayerOpenedWarMap
+// 0x0001
+struct FEventLocalPlayerOpenedWarMap
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
 
 // ScriptStruct WarMap.EventWarMapStateChanged
 // 0x0010

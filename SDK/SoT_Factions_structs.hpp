@@ -1,48 +1,23 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
-#include "SoT_Engine_classes.hpp"
-#include "SoT_CoreUObject_classes.hpp"
-#include "SoT_Athena_classes.hpp"
-#include "SoT_FactionsFramework_classes.hpp"
 #include "SoT_EmissaryLevel_classes.hpp"
+#include "SoT_CoreUObject_classes.hpp"
+#include "SoT_Engine_classes.hpp"
+#include "SoT_FactionsFramework_classes.hpp"
+#include "SoT_Athena_classes.hpp"
 
 namespace SDK
 {
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
-
-// ScriptStruct Factions.SandsOfFateData
-// 0x000C
-struct FSandsOfFateData
-{
-	int                                                SinkingCrewStreak;                                        // 0x0000(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	int                                                SunkCrewStreak;                                           // 0x0004(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	int                                                SandsOfFateReward;                                        // 0x0008(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-};
-
-// ScriptStruct Factions.FactionStreakLevelData
-// 0x0008
-struct FFactionStreakLevelData
-{
-	int                                                StreakLevel;                                              // 0x0000(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	int                                                StreakCountThreshold;                                     // 0x0004(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-};
-
-// ScriptStruct Factions.CrewFactionEntry
-// 0x0018
-struct FCrewFactionEntry
-{
-	struct FGuid                                       CrewId;                                                   // 0x0000(0x0010) (ZeroConstructor, IsPlainOldData)
-	class UClass*                                      Faction;                                                  // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
-};
 
 // ScriptStruct Factions.CinematicFactionEvent
 // 0x0088
@@ -100,22 +75,11 @@ struct FFactionVoteAddedEvent
 	struct FName                                       Company;                                                  // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct Factions.FactionLeftTelemetryEvent
-// 0x001C
-struct FFactionLeftTelemetryEvent
+// ScriptStruct Factions.CrewJoinedFactionPopupEvent
+// 0x0008 (0x0018 - 0x0010)
+struct FCrewJoinedFactionPopupEvent : public FNetworkEventStruct
 {
-	struct FGuid                                       FactionSessionId;                                         // 0x0000(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FName                                       AlignedFactionName;                                       // 0x0010(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EFactionLeftReason>                    LeftReason;                                               // 0x0018(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x0019(0x0003) MISSED OFFSET
-};
-
-// ScriptStruct Factions.FactionJoinedTelemetryEvent
-// 0x0018
-struct FFactionJoinedTelemetryEvent
-{
-	struct FGuid                                       FactionSessionId;                                         // 0x0000(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FName                                       AlignedFactionName;                                       // 0x0010(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	class UDataAsset*                                  PopUpDesc;                                                // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -87,14 +87,14 @@ struct FEventRevivableRepresentationSpawnStarted
 };
 
 // ScriptStruct Reviving.ReviveableActionStateConstructionInfo
-// 0x0038 (0x0068 - 0x0030)
+// 0x0040 (0x0070 - 0x0030)
 struct FReviveableActionStateConstructionInfo : public FActorActionStateConstructionInfo
 {
 	class UClass*                                      ActionStateId;                                            // 0x0030(0x0008) (ZeroConstructor, IsPlainOldData)
-	struct FDamageInstance                             DamageInstance;                                           // 0x0038(0x0028)
-	TEnumAsByte<ECharacterDeathType>                   CharacterDeathType;                                       // 0x0060(0x0001) (ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ECharacterType>                        CharacterType;                                            // 0x0061(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x6];                                       // 0x0062(0x0006) MISSED OFFSET
+	struct FDamageInstance                             DamageInstance;                                           // 0x0038(0x0030)
+	TEnumAsByte<ECharacterDeathType>                   CharacterDeathType;                                       // 0x0068(0x0001) (ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ECharacterType>                        CharacterType;                                            // 0x0069(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x6];                                       // 0x006A(0x0006) MISSED OFFSET
 };
 
 // ScriptStruct Reviving.RevivedActionStateConstructionInfo
@@ -198,13 +198,13 @@ struct FRevivingWindowEnd
 };
 
 // ScriptStruct Reviving.RevivingWindowStart
-// 0x0038
+// 0x0040
 struct FRevivingWindowStart
 {
-	struct FDamageInstance                             DamageInstance;                                           // 0x0000(0x0028)
-	TEnumAsByte<ECharacterDeathType>                   CharacterDeathType;                                       // 0x0028(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0029(0x0007) MISSED OFFSET
-	class ACharacter*                                  RevivableCharacter;                                       // 0x0030(0x0008) (ZeroConstructor, IsPlainOldData)
+	struct FDamageInstance                             DamageInstance;                                           // 0x0000(0x0030)
+	TEnumAsByte<ECharacterDeathType>                   CharacterDeathType;                                       // 0x0030(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0031(0x0007) MISSED OFFSET
+	class ACharacter*                                  RevivableCharacter;                                       // 0x0038(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Reviving.RevivePlayerActionStateConstructionInfo

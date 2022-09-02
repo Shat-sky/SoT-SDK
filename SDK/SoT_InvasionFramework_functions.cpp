@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,28 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function InvasionFramework.InvasionBlueprintFunctionLibrary.ShouldEmergentBattleDisplayBanners
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UInvasionBlueprintFunctionLibrary::ShouldEmergentBattleDisplayBanners()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function InvasionFramework.InvasionBlueprintFunctionLibrary.ShouldEmergentBattleDisplayBanners"));
+
+	struct
+	{
+		bool                           ReturnValue;
+	} params;
+
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
 
 // Function InvasionFramework.InvasionBlueprintFunctionLibrary.ShouldAggressivePassiveTeleportUseEQS
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
@@ -51,90 +73,6 @@ float UInvasionBlueprintFunctionLibrary::GetAggressivePassiveTeleportOffsetDista
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);
-
-	return params.ReturnValue;
-}
-
-
-// Function InvasionFramework.TaleQuestInvasionService.GetPassiveShip
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class AActor*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class AActor* UTaleQuestInvasionService::GetPassiveShip()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function InvasionFramework.TaleQuestInvasionService.GetPassiveShip"));
-
-	struct
-	{
-		class AActor*                  ReturnValue;
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-
-	return params.ReturnValue;
-}
-
-
-// Function InvasionFramework.TaleQuestInvasionService.GetPassiveCrewId
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FGuid                   ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-struct FGuid UTaleQuestInvasionService::GetPassiveCrewId()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function InvasionFramework.TaleQuestInvasionService.GetPassiveCrewId"));
-
-	struct
-	{
-		struct FGuid                   ReturnValue;
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-
-	return params.ReturnValue;
-}
-
-
-// Function InvasionFramework.TaleQuestInvasionService.GetAggressiveShips
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<class AActor*>          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
-
-TArray<class AActor*> UTaleQuestInvasionService::GetAggressiveShips()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function InvasionFramework.TaleQuestInvasionService.GetAggressiveShips"));
-
-	struct
-	{
-		TArray<class AActor*>          ReturnValue;
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-
-	return params.ReturnValue;
-}
-
-
-// Function InvasionFramework.TaleQuestInvasionService.GetAggressiveCrewIds
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<struct FGuid>           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
-
-TArray<struct FGuid> UTaleQuestInvasionService::GetAggressiveCrewIds()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function InvasionFramework.TaleQuestInvasionService.GetAggressiveCrewIds"));
-
-	struct
-	{
-		TArray<struct FGuid>           ReturnValue;
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
 }

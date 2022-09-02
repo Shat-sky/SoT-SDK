@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -1125,31 +1125,6 @@ bool UAutomationBlueprintFunctionLibrary::IsTravelFinished(class UObject* WorldC
 	} params;
 
 	params.WorldContextObject = WorldContextObject;
-
-	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
-
-	return params.ReturnValue;
-}
-
-
-// Function StudiosAutomation.AutomationBlueprintFunctionLibrary.IsFeatureToggleEnabled
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// struct FName                   FeatureToggleName              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UAutomationBlueprintFunctionLibrary::IsFeatureToggleEnabled(const struct FName& FeatureToggleName)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StudiosAutomation.AutomationBlueprintFunctionLibrary.IsFeatureToggleEnabled"));
-
-	struct
-	{
-		struct FName                   FeatureToggleName;
-		bool                           ReturnValue;
-	} params;
-
-	params.FeatureToggleName = FeatureToggleName;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);

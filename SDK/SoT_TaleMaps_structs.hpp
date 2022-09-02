@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -38,6 +38,13 @@ struct FTaleQuestChecklistItem
 {
 	TArray<struct FChecklistActionProgressTracker>     ChecklistActions;                                         // 0x0000(0x0010) (ZeroConstructor)
 	unsigned char                                      UnknownData00[0x40];                                      // 0x0010(0x0040) MISSED OFFSET
+};
+
+// ScriptStruct TaleMaps.TaleQuestVariableTreasureMapItemDescType
+// 0x0000 (0x0020 - 0x0020)
+struct FTaleQuestVariableTreasureMapItemDescType : public FQuestVariable
+{
+
 };
 
 }

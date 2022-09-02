@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -543,6 +543,26 @@ void UAthenaCheatManager::TriggerFogManagerAtNearestIsland()
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.TriggerEmergentInvasion
+// (Final, Exec, Native, Public)
+// Parameters:
+// class FString                  InCrewId                       (Parm, ZeroConstructor)
+
+void UAthenaCheatManager::TriggerEmergentInvasion(const class FString& InCrewId)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.TriggerEmergentInvasion"));
+
+	struct
+	{
+		class FString                  InCrewId;
+	} params;
+
+	params.InCrewId = InCrewId;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.TriggerEmblemUnlockedMessage
 // (Final, Exec, Native, Public)
 // Parameters:
@@ -563,14 +583,34 @@ void UAthenaCheatManager::TriggerEmblemUnlockedMessage(const class FString& Embl
 }
 
 
-// Function AthenaCheat.AthenaCheatManager.TriggerDebugInvasion
+// Function AthenaCheat.AthenaCheatManager.TriggerDebugAggressivePassiveInvasion
 // (Final, Exec, Native, Public)
 // Parameters:
 // class FString                  InCrewId                       (Parm, ZeroConstructor)
 
-void UAthenaCheatManager::TriggerDebugInvasion(const class FString& InCrewId)
+void UAthenaCheatManager::TriggerDebugAggressivePassiveInvasion(const class FString& InCrewId)
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.TriggerDebugInvasion"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.TriggerDebugAggressivePassiveInvasion"));
+
+	struct
+	{
+		class FString                  InCrewId;
+	} params;
+
+	params.InCrewId = InCrewId;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.TriggerDebugAggressiveAggressiveInvasion
+// (Final, Exec, Native, Public)
+// Parameters:
+// class FString                  InCrewId                       (Parm, ZeroConstructor)
+
+void UAthenaCheatManager::TriggerDebugAggressiveAggressiveInvasion(const class FString& InCrewId)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.TriggerDebugAggressiveAggressiveInvasion"));
 
 	struct
 	{
@@ -776,17 +816,20 @@ void UAthenaCheatManager::ToggleStoryRefresh()
 // Function AthenaCheat.AthenaCheatManager.ToggleStoryDisplayFilter
 // (Final, Exec, Native, Public)
 // Parameters:
+// bool                           IsIncludeFilter                (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // class FString                  Filter                         (Parm, ZeroConstructor)
 
-void UAthenaCheatManager::ToggleStoryDisplayFilter(const class FString& Filter)
+void UAthenaCheatManager::ToggleStoryDisplayFilter(bool IsIncludeFilter, const class FString& Filter)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.ToggleStoryDisplayFilter"));
 
 	struct
 	{
+		bool                           IsIncludeFilter;
 		class FString                  Filter;
 	} params;
 
+	params.IsIncludeFilter = IsIncludeFilter;
 	params.Filter = Filter;
 
 	UObject::ProcessEvent(fn, &params);
@@ -1021,6 +1064,22 @@ void UAthenaCheatManager::ToggleDisplayStories()
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.ToggleDisplayEmergentBattleBanners
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::ToggleDisplayEmergentBattleBanners()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.ToggleDisplayEmergentBattleBanners"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.ToggleDisplayCannonAISpawnerZones
 // (Final, Exec, Native, Public)
 
@@ -1080,6 +1139,26 @@ void UAthenaCheatManager::ToggleDamageAllowedToPlayerShip()
 	{
 	} params;
 
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.ToggleCrewIdToBeBlockedFromBeingInvaded
+// (Final, Exec, Native, Public)
+// Parameters:
+// class FString                  InCrewId                       (Parm, ZeroConstructor)
+
+void UAthenaCheatManager::ToggleCrewIdToBeBlockedFromBeingInvaded(const class FString& InCrewId)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.ToggleCrewIdToBeBlockedFromBeingInvaded"));
+
+	struct
+	{
+		class FString                  InCrewId;
+	} params;
+
+	params.InCrewId = InCrewId;
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -5331,6 +5410,35 @@ void UAthenaCheatManager::SetDeathPenaltyRespawnTimer(float InSpawnTimer)
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.SetDeathPenaltyCrewBasedRespawnTimes
+// (Final, Exec, Native, Public)
+// Parameters:
+// float                          CrewOfOne                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// float                          CrewOfTwo                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// float                          CrewOfThree                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// float                          CrewOfFour                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaCheatManager::SetDeathPenaltyCrewBasedRespawnTimes(float CrewOfOne, float CrewOfTwo, float CrewOfThree, float CrewOfFour)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.SetDeathPenaltyCrewBasedRespawnTimes"));
+
+	struct
+	{
+		float                          CrewOfOne;
+		float                          CrewOfTwo;
+		float                          CrewOfThree;
+		float                          CrewOfFour;
+	} params;
+
+	params.CrewOfOne = CrewOfOne;
+	params.CrewOfTwo = CrewOfTwo;
+	params.CrewOfThree = CrewOfThree;
+	params.CrewOfFour = CrewOfFour;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.SetDamageAllowedToPlayerShip
 // (Final, Exec, Native, Public)
 // Parameters:
@@ -6027,22 +6135,6 @@ void UAthenaCheatManager::ReviveLocalPlayerInstantly()
 void UAthenaCheatManager::ReviveLocalPlayerAccordingToReviveTime()
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.ReviveLocalPlayerAccordingToReviveTime"));
-
-	struct
-	{
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
-// Function AthenaCheat.AthenaCheatManager.ReviveAllPlayerCharactersAccordingToReviveTime
-// (Final, Exec, Native, Public)
-
-void UAthenaCheatManager::ReviveAllPlayerCharactersAccordingToReviveTime()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.ReviveAllPlayerCharactersAccordingToReviveTime"));
 
 	struct
 	{
@@ -10147,12 +10239,12 @@ void UAthenaCheatManager::EnableVoiceChatMeteringForIncomingSignals(bool Enabled
 }
 
 
-// Function AthenaCheat.AthenaCheatManager.EnableStorySpawnedActorsCheat
+// Function AthenaCheat.AthenaCheatManager.EnableStoryServiceCheat
 // (Final, Exec, Native, Public)
 
-void UAthenaCheatManager::EnableStorySpawnedActorsCheat()
+void UAthenaCheatManager::EnableStoryServiceCheat()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.EnableStorySpawnedActorsCheat"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.EnableStoryServiceCheat"));
 
 	struct
 	{
@@ -10786,22 +10878,6 @@ void UAthenaCheatManager::DisplayLoadingScreenTeleport()
 void UAthenaCheatManager::DisplayLoadingScreenBoot()
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.DisplayLoadingScreenBoot"));
-
-	struct
-	{
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
-// Function AthenaCheat.AthenaCheatManager.DisplayLoadingScreenArena
-// (Final, Exec, Native, Public)
-
-void UAthenaCheatManager::DisplayLoadingScreenArena()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.DisplayLoadingScreenArena"));
 
 	struct
 	{

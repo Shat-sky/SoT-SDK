@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,6 +32,7 @@ public:
 	void SetGameModeDeathPenaltyRespawnTimer(const struct FGameModeDeathPenaltyRespawnTimerData& GameModeDeathPenaltyRespawnTimerData);
 	bool SetCustomPlayerStart(const struct FSetCustomPlayerStartData& SetCustomPlayerStartData);
 	void SetCustomConfigForPlayer(int PlayerId, const struct FCustomDeathConfiguration& CustomDeathConfiguration);
+	void SetCrewBasedDeathPenaltyRespawnTimes(const struct FCrewBasedRespawnTimes& CrewBasedRespawnTimes);
 	void ResetCustomConfigForPlayer(const struct FResetCustomConfigForPlayerData& ResetCustomConfigForPlayerData);
 	void KillPlayer(const struct FKillPlayerData& KillPlayerData);
 	void KillCrew(const struct FKillCrewData& KillCrewData);

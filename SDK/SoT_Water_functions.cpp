@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,199 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function Water.SplashProbeVFXComponent.IsProbeEnabled
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool USplashProbeVFXComponent::IsProbeEnabled()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Water.SplashProbeVFXComponent.IsProbeEnabled"));
+
+	struct
+	{
+		bool                           ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Water.SplashProbeVFXComponent.EnableSplashProbe
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           Enable                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void USplashProbeVFXComponent::EnableSplashProbe(bool Enable)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Water.SplashProbeVFXComponent.EnableSplashProbe"));
+
+	struct
+	{
+		bool                           Enable;
+	} params;
+
+	params.Enable = Enable;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Water.WaterSplashProbeFunctionLibrary.TickProbes
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// class AActor*                  InOwner                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// TArray<struct FWaterSplashProbe> InSplashProbes                 (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// float                          InDeltaTime                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UWaterSplashProbeFunctionLibrary::TickProbes(class AActor* InOwner, float InDeltaTime, TArray<struct FWaterSplashProbe>* InSplashProbes)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Water.WaterSplashProbeFunctionLibrary.TickProbes"));
+
+	struct
+	{
+		class AActor*                  InOwner;
+		TArray<struct FWaterSplashProbe> InSplashProbes;
+		float                          InDeltaTime;
+	} params;
+
+	params.InOwner = InOwner;
+	params.InDeltaTime = InDeltaTime;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (InSplashProbes != nullptr)
+		*InSplashProbes = params.InSplashProbes;
+}
+
+
+// Function Water.WaterSplashProbeFunctionLibrary.TickProbe
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// class AActor*                  InOwner                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// struct FWaterSplashProbe       InSplashProbe                  (Parm, OutParm, ReferenceParm)
+// float                          InDeltaTime                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UWaterSplashProbeFunctionLibrary::TickProbe(class AActor* InOwner, float InDeltaTime, struct FWaterSplashProbe* InSplashProbe)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Water.WaterSplashProbeFunctionLibrary.TickProbe"));
+
+	struct
+	{
+		class AActor*                  InOwner;
+		struct FWaterSplashProbe       InSplashProbe;
+		float                          InDeltaTime;
+	} params;
+
+	params.InOwner = InOwner;
+	params.InDeltaTime = InDeltaTime;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (InSplashProbe != nullptr)
+		*InSplashProbe = params.InSplashProbe;
+}
+
+
+// Function Water.WaterSplashProbeFunctionLibrary.SetSamplingTime
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// TArray<struct FWaterSplashProbe> InSplashProbes                 (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// float                          SamplingTime                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UWaterSplashProbeFunctionLibrary::SetSamplingTime(float SamplingTime, TArray<struct FWaterSplashProbe>* InSplashProbes)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Water.WaterSplashProbeFunctionLibrary.SetSamplingTime"));
+
+	struct
+	{
+		TArray<struct FWaterSplashProbe> InSplashProbes;
+		float                          SamplingTime;
+	} params;
+
+	params.SamplingTime = SamplingTime;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (InSplashProbes != nullptr)
+		*InSplashProbes = params.InSplashProbes;
+}
+
+
+// Function Water.WaterSplashProbeFunctionLibrary.GetRelativeWaterHeightChangeSpd
+// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// Parameters:
+// TArray<struct FWaterSplashProbe> InSplashProbes                 (Parm, OutParm, ZeroConstructor, ReferenceParm)
+// int                            ProbeIndex                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// struct FVector                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+struct FVector UWaterSplashProbeFunctionLibrary::GetRelativeWaterHeightChangeSpd(int ProbeIndex, TArray<struct FWaterSplashProbe>* InSplashProbes)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Water.WaterSplashProbeFunctionLibrary.GetRelativeWaterHeightChangeSpd"));
+
+	struct
+	{
+		TArray<struct FWaterSplashProbe> InSplashProbes;
+		int                            ProbeIndex;
+		struct FVector                 ReturnValue;
+	} params;
+
+	params.ProbeIndex = ProbeIndex;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (InSplashProbes != nullptr)
+		*InSplashProbes = params.InSplashProbes;
+
+	return params.ReturnValue;
+}
+
+
+// Function Water.WaterSpoutVFXComponent.AddSplashVFXSpawnerWithLocation
+// (Final, Native, Private, HasOutParms)
+// Parameters:
+// struct FWaterSpout             WaterSplashLocator             (Parm, OutParm)
+
+void UWaterSpoutVFXComponent::AddSplashVFXSpawnerWithLocation(struct FWaterSpout* WaterSplashLocator)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Water.WaterSpoutVFXComponent.AddSplashVFXSpawnerWithLocation"));
+
+	struct
+	{
+		struct FWaterSpout             WaterSplashLocator;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	if (WaterSplashLocator != nullptr)
+		*WaterSplashLocator = params.WaterSplashLocator;
+}
+
+
+// Function Water.WaterSpoutVFXComponent.ActivateSplashVFXWithDelay
+// (Final, Native, Private)
+
+void UWaterSpoutVFXComponent::ActivateSplashVFXWithDelay()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Water.WaterSpoutVFXComponent.ActivateSplashVFXWithDelay"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
 
 // Function Water.FFTWaterInterface.SetExtendedPlaneComponent
 // (Native, Public, BlueprintCallable)
@@ -991,158 +1184,6 @@ void UWaterPlaneExclusionComponent::OnOverlapBegin(class AActor* OtherActor, cla
 	params.OtherBodyIndex = OtherBodyIndex;
 	params.FromSweep = FromSweep;
 	params.SweepResult = SweepResult;
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
-// Function Water.WaterSplashProbeFunctionLibrary.TickProbes
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// class AActor*                  InOwner                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-// TArray<struct FWaterSplashProbe> InSplashProbes                 (Parm, OutParm, ZeroConstructor, ReferenceParm)
-// float                          InDeltaTime                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-
-void UWaterSplashProbeFunctionLibrary::TickProbes(class AActor* InOwner, float InDeltaTime, TArray<struct FWaterSplashProbe>* InSplashProbes)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Water.WaterSplashProbeFunctionLibrary.TickProbes"));
-
-	struct
-	{
-		class AActor*                  InOwner;
-		TArray<struct FWaterSplashProbe> InSplashProbes;
-		float                          InDeltaTime;
-	} params;
-
-	params.InOwner = InOwner;
-	params.InDeltaTime = InDeltaTime;
-
-	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
-
-	if (InSplashProbes != nullptr)
-		*InSplashProbes = params.InSplashProbes;
-}
-
-
-// Function Water.WaterSplashProbeFunctionLibrary.TickProbe
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// class AActor*                  InOwner                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-// struct FWaterSplashProbe       InSplashProbe                  (Parm, OutParm, ReferenceParm)
-// float                          InDeltaTime                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-
-void UWaterSplashProbeFunctionLibrary::TickProbe(class AActor* InOwner, float InDeltaTime, struct FWaterSplashProbe* InSplashProbe)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Water.WaterSplashProbeFunctionLibrary.TickProbe"));
-
-	struct
-	{
-		class AActor*                  InOwner;
-		struct FWaterSplashProbe       InSplashProbe;
-		float                          InDeltaTime;
-	} params;
-
-	params.InOwner = InOwner;
-	params.InDeltaTime = InDeltaTime;
-
-	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
-
-	if (InSplashProbe != nullptr)
-		*InSplashProbe = params.InSplashProbe;
-}
-
-
-// Function Water.WaterSplashProbeFunctionLibrary.SetSamplingTime
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// TArray<struct FWaterSplashProbe> InSplashProbes                 (Parm, OutParm, ZeroConstructor, ReferenceParm)
-// float                          SamplingTime                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-
-void UWaterSplashProbeFunctionLibrary::SetSamplingTime(float SamplingTime, TArray<struct FWaterSplashProbe>* InSplashProbes)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Water.WaterSplashProbeFunctionLibrary.SetSamplingTime"));
-
-	struct
-	{
-		TArray<struct FWaterSplashProbe> InSplashProbes;
-		float                          SamplingTime;
-	} params;
-
-	params.SamplingTime = SamplingTime;
-
-	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
-
-	if (InSplashProbes != nullptr)
-		*InSplashProbes = params.InSplashProbes;
-}
-
-
-// Function Water.WaterSplashProbeFunctionLibrary.GetRelativeWaterHeightChangeSpd
-// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
-// Parameters:
-// TArray<struct FWaterSplashProbe> InSplashProbes                 (Parm, OutParm, ZeroConstructor, ReferenceParm)
-// int                            ProbeIndex                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
-// struct FVector                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-struct FVector UWaterSplashProbeFunctionLibrary::GetRelativeWaterHeightChangeSpd(int ProbeIndex, TArray<struct FWaterSplashProbe>* InSplashProbes)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Water.WaterSplashProbeFunctionLibrary.GetRelativeWaterHeightChangeSpd"));
-
-	struct
-	{
-		TArray<struct FWaterSplashProbe> InSplashProbes;
-		int                            ProbeIndex;
-		struct FVector                 ReturnValue;
-	} params;
-
-	params.ProbeIndex = ProbeIndex;
-
-	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
-
-	if (InSplashProbes != nullptr)
-		*InSplashProbes = params.InSplashProbes;
-
-	return params.ReturnValue;
-}
-
-
-// Function Water.WaterSpoutVFXComponent.AddSplashVFXSpawnerWithLocation
-// (Final, Native, Private, HasOutParms)
-// Parameters:
-// struct FWaterSpout             WaterSplashLocator             (Parm, OutParm)
-
-void UWaterSpoutVFXComponent::AddSplashVFXSpawnerWithLocation(struct FWaterSpout* WaterSplashLocator)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Water.WaterSpoutVFXComponent.AddSplashVFXSpawnerWithLocation"));
-
-	struct
-	{
-		struct FWaterSpout             WaterSplashLocator;
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-
-	if (WaterSplashLocator != nullptr)
-		*WaterSplashLocator = params.WaterSplashLocator;
-}
-
-
-// Function Water.WaterSpoutVFXComponent.ActivateSplashVFXWithDelay
-// (Final, Native, Private)
-
-void UWaterSpoutVFXComponent::ActivateSplashVFXWithDelay()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Water.WaterSpoutVFXComponent.ActivateSplashVFXWithDelay"));
-
-	struct
-	{
-	} params;
-
 
 	UObject::ProcessEvent(fn, &params);
 }

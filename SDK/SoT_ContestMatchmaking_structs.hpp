@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -26,23 +26,52 @@ struct FContestMatchmakingFactionMapEntry
 	unsigned char                                      UnknownData00[0x7];                                       // 0x0009(0x0007) MISSED OFFSET
 };
 
+// ScriptStruct ContestMatchmaking.ServerQueueWaitTimeModel
+// 0x0020
+struct FServerQueueWaitTimeModel
+{
+	class FString                                      QueueScopeId;                                             // 0x0000(0x0010) (ZeroConstructor)
+	struct FTimespan                                   AvgWaitTime;                                              // 0x0010(0x0008) (ZeroConstructor)
+	struct FTimespan                                   MaxWaitTime;                                              // 0x0018(0x0008) (ZeroConstructor)
+};
+
+// ScriptStruct ContestMatchmaking.ServerQueueWaitTimesResponseModel
+// 0x0010
+struct FServerQueueWaitTimesResponseModel
+{
+	TArray<struct FServerQueueWaitTimeModel>           QueueWaitTimes;                                           // 0x0000(0x0010) (ZeroConstructor)
+};
+
+// ScriptStruct ContestMatchmaking.ServerQueueWaitTimesRequestModel
+// 0x0048
+struct FServerQueueWaitTimesRequestModel
+{
+	class FString                                      ServerLocation;                                           // 0x0000(0x0010) (ZeroConstructor)
+	uint32_t                                           FeatureHash;                                              // 0x0010(0x0004) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0014(0x0004) MISSED OFFSET
+	class FString                                      PrivateServerId;                                          // 0x0018(0x0010) (ZeroConstructor)
+	TArray<class FString>                              PlayModeTags;                                             // 0x0028(0x0010) (ZeroConstructor)
+	class FString                                      PlayModeState;                                            // 0x0038(0x0010) (ZeroConstructor)
+};
+
 // ScriptStruct ContestMatchmaking.ServerCrewModel
-// 0x0080
+// 0x0090
 struct FServerCrewModel
 {
 	struct FGuid                                       CrewId;                                                   // 0x0000(0x0010) (ZeroConstructor, IsPlainOldData)
 	struct FUniqueNetIdRepl                            UserId;                                                   // 0x0010(0x0018)
 	struct FGuid                                       ServerId;                                                 // 0x0028(0x0010) (ZeroConstructor, IsPlainOldData)
-	int                                                SessionType;                                              // 0x0038(0x0004) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x003C(0x0004) MISSED OFFSET
-	TArray<struct FVector2D>                           Positions;                                                // 0x0040(0x0010) (ZeroConstructor)
-	TArray<uint32_t>                                   Resources;                                                // 0x0050(0x0010) (ZeroConstructor)
-	TEnumAsByte<EPvPFaction>                           PvPFaction;                                               // 0x0060(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x3];                                       // 0x0061(0x0003) MISSED OFFSET
-	int                                                PvPSkillLevel;                                            // 0x0064(0x0004) (ZeroConstructor, IsPlainOldData)
-	struct FGuid                                       RivalCrewId;                                              // 0x0068(0x0010) (ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EClientMatchmakingRequestReason>       MatchmakingRequestReason;                                 // 0x0078(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x7];                                       // 0x0079(0x0007) MISSED OFFSET
+	class FString                                      ServerAddress;                                            // 0x0038(0x0010) (ZeroConstructor)
+	int                                                SessionType;                                              // 0x0048(0x0004) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x004C(0x0004) MISSED OFFSET
+	TArray<struct FVector2D>                           Positions;                                                // 0x0050(0x0010) (ZeroConstructor)
+	TArray<uint32_t>                                   Resources;                                                // 0x0060(0x0010) (ZeroConstructor)
+	TEnumAsByte<EPvPFaction>                           PvPFaction;                                               // 0x0070(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x3];                                       // 0x0071(0x0003) MISSED OFFSET
+	int                                                PvPSkillLevel;                                            // 0x0074(0x0004) (ZeroConstructor, IsPlainOldData)
+	struct FGuid                                       RivalCrewId;                                              // 0x0078(0x0010) (ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EClientMatchmakingRequestReason>       MatchmakingRequestReason;                                 // 0x0088(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x7];                                       // 0x0089(0x0007) MISSED OFFSET
 };
 
 // ScriptStruct ContestMatchmaking.ContestMatchmakingServerRequestModel

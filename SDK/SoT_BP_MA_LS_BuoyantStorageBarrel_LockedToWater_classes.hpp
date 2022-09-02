@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,14 +15,14 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_MA_LS_BuoyantStorageBarrel_LockedToWater.BP_MA_LS_BuoyantStorageBarrel_LockedToWater_C
-// 0x0020 (0x0708 - 0x06E8)
+// 0x0020 (0x0718 - 0x06F8)
 class ABP_MA_LS_BuoyantStorageBarrel_LockedToWater_C : public ABuoyantStorageContainer
 {
 public:
-	class USphereComponent*                            Sphere;                                                   // 0x06E8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UReplenishableComponent*                     Replenishable;                                            // 0x06F0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UTelemetrySubjectComponent*                  TelemetrySubject;                                         // 0x06F8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UStorageContainerComponent*                  StorageContainer;                                         // 0x0700(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class USphereComponent*                            Sphere;                                                   // 0x06F8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UReplenishableComponent*                     Replenishable;                                            // 0x0700(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UTelemetrySubjectComponent*                  TelemetrySubject;                                         // 0x0708(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UStorageContainerComponent*                  StorageContainer;                                         // 0x0710(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

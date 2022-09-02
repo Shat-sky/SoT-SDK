@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -419,6 +419,7 @@ public:
 	}
 
 
+	void TestSetDamageEnabled(bool InEnabled);
 	void RequestState(class UClass* NewState);
 	void OnRep_IsDamageEnabled();
 	void OnRep_HeadStateRequest();

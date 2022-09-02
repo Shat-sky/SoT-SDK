@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -111,6 +111,26 @@ void AKraken::AddActorToKnownTargets(class AActor* Target)
 	} params;
 
 	params.Target = Target;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Kraken.KrakenHead.TestSetDamageEnabled
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           InEnabled                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void AKrakenHead::TestSetDamageEnabled(bool InEnabled)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Kraken.KrakenHead.TestSetDamageEnabled"));
+
+	struct
+	{
+		bool                           InEnabled;
+	} params;
+
+	params.InEnabled = InEnabled;
 
 	UObject::ProcessEvent(fn, &params);
 }

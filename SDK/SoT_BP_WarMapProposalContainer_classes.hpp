@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,12 +15,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_WarMapProposalContainer.BP_WarMapProposalContainer_C
-// 0x0010 (0x0938 - 0x0928)
+// 0x0010 (0x0A60 - 0x0A50)
 class ABP_WarMapProposalContainer_C : public AWarMapProposalContainer
 {
 public:
-	class UChildActorComponent*                        CancelTale;                                               // 0x0928(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UChildActorComponent*                        TaleSelection;                                            // 0x0930(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UChildActorComponent*                        CancelTale;                                               // 0x0A50(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UChildActorComponent*                        TaleSelection;                                            // 0x0A58(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

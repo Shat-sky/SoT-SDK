@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -59,6 +59,21 @@ public:
 };
 
 
+// Class AthenaServerMigration.ServerMigrationGatherableActorInterface
+// 0x0000 (0x0028 - 0x0028)
+class UServerMigrationGatherableActorInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaServerMigration.ServerMigrationGatherableActorInterface"));
+		return ptr;
+	}
+
+};
+
+
 // Class AthenaServerMigration.RegisterServerMigrationPointOfInterestComponent
 // 0x0020 (0x00E8 - 0x00C8)
 class URegisterServerMigrationPointOfInterestComponent : public UActorComponent
@@ -70,21 +85,6 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaServerMigration.RegisterServerMigrationPointOfInterestComponent"));
-		return ptr;
-	}
-
-};
-
-
-// Class AthenaServerMigration.ServerMigrationGatherableActorInterface
-// 0x0000 (0x0028 - 0x0028)
-class UServerMigrationGatherableActorInterface : public UInterface
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaServerMigration.ServerMigrationGatherableActorInterface"));
 		return ptr;
 	}
 

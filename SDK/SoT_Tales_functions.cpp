@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -556,6 +556,225 @@ struct FPossessableSequence UTaleQuestAnimationStepFunctionLibrary::MakePosseabl
 }
 
 
+// Function Tales.TaleQuestIntMathsFunctionLibrary.Subtract_Int
+// (Final, Native, Static, Public)
+// Parameters:
+// int                            Left                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Right                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UTaleQuestIntMathsFunctionLibrary::Subtract_Int(int Left, int Right)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestIntMathsFunctionLibrary.Subtract_Int"));
+
+	struct
+	{
+		int                            Left;
+		int                            Right;
+		int                            ReturnValue;
+	} params;
+
+	params.Left = Left;
+	params.Right = Right;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Tales.TaleQuestIntMathsFunctionLibrary.NotEquals
+// (Final, Native, Static, Public)
+// Parameters:
+// int                            Left                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Right                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UTaleQuestIntMathsFunctionLibrary::NotEquals(int Left, int Right)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestIntMathsFunctionLibrary.NotEquals"));
+
+	struct
+	{
+		int                            Left;
+		int                            Right;
+		bool                           ReturnValue;
+	} params;
+
+	params.Left = Left;
+	params.Right = Right;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Tales.TaleQuestIntMathsFunctionLibrary.Multiply_Int
+// (Final, Native, Static, Public)
+// Parameters:
+// int                            Left                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Right                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UTaleQuestIntMathsFunctionLibrary::Multiply_Int(int Left, int Right)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestIntMathsFunctionLibrary.Multiply_Int"));
+
+	struct
+	{
+		int                            Left;
+		int                            Right;
+		int                            ReturnValue;
+	} params;
+
+	params.Left = Left;
+	params.Right = Right;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Tales.TaleQuestIntMathsFunctionLibrary.Modulus_Int
+// (Final, Native, Static, Public)
+// Parameters:
+// int                            Left                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Right                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UTaleQuestIntMathsFunctionLibrary::Modulus_Int(int Left, int Right)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestIntMathsFunctionLibrary.Modulus_Int"));
+
+	struct
+	{
+		int                            Left;
+		int                            Right;
+		int                            ReturnValue;
+	} params;
+
+	params.Left = Left;
+	params.Right = Right;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Tales.TaleQuestIntMathsFunctionLibrary.LessThanOrEqual
+// (Final, Native, Static, Public)
+// Parameters:
+// int                            Left                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Right                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UTaleQuestIntMathsFunctionLibrary::LessThanOrEqual(int Left, int Right)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestIntMathsFunctionLibrary.LessThanOrEqual"));
+
+	struct
+	{
+		int                            Left;
+		int                            Right;
+		bool                           ReturnValue;
+	} params;
+
+	params.Left = Left;
+	params.Right = Right;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Tales.TaleQuestIntMathsFunctionLibrary.LessThan
+// (Final, Native, Static, Public)
+// Parameters:
+// int                            Left                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Right                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UTaleQuestIntMathsFunctionLibrary::LessThan(int Left, int Right)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestIntMathsFunctionLibrary.LessThan"));
+
+	struct
+	{
+		int                            Left;
+		int                            Right;
+		bool                           ReturnValue;
+	} params;
+
+	params.Left = Left;
+	params.Right = Right;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Tales.TaleQuestIntMathsFunctionLibrary.Increment_Int
+// (Final, Native, Static, Public, HasOutParms)
+// Parameters:
+// int                            Value                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestIntMathsFunctionLibrary::Increment_Int(int* Value)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestIntMathsFunctionLibrary.Increment_Int"));
+
+	struct
+	{
+		int                            Value;
+	} params;
+
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (Value != nullptr)
+		*Value = params.Value;
+}
+
+
+// Function Tales.TaleQuestIntMathsFunctionLibrary.GreaterThanOrEqual
+// (Final, Native, Static, Public)
+// Parameters:
+// int                            Left                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Right                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UTaleQuestIntMathsFunctionLibrary::GreaterThanOrEqual(int Left, int Right)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestIntMathsFunctionLibrary.GreaterThanOrEqual"));
+
+	struct
+	{
+		int                            Left;
+		int                            Right;
+		bool                           ReturnValue;
+	} params;
+
+	params.Left = Left;
+	params.Right = Right;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
 // Function Tales.TaleQuestIntMathsFunctionLibrary.GreaterThan
 // (Final, Native, Static, Public)
 // Parameters:
@@ -572,6 +791,113 @@ bool UTaleQuestIntMathsFunctionLibrary::GreaterThan(int Left, int Right)
 		int                            Left;
 		int                            Right;
 		bool                           ReturnValue;
+	} params;
+
+	params.Left = Left;
+	params.Right = Right;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Tales.TaleQuestIntMathsFunctionLibrary.Equals
+// (Final, Native, Static, Public)
+// Parameters:
+// int                            Left                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Right                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UTaleQuestIntMathsFunctionLibrary::Equals(int Left, int Right)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestIntMathsFunctionLibrary.Equals"));
+
+	struct
+	{
+		int                            Left;
+		int                            Right;
+		bool                           ReturnValue;
+	} params;
+
+	params.Left = Left;
+	params.Right = Right;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Tales.TaleQuestIntMathsFunctionLibrary.Divide_Int
+// (Final, Native, Static, Public)
+// Parameters:
+// int                            Left                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Right                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UTaleQuestIntMathsFunctionLibrary::Divide_Int(int Left, int Right)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestIntMathsFunctionLibrary.Divide_Int"));
+
+	struct
+	{
+		int                            Left;
+		int                            Right;
+		int                            ReturnValue;
+	} params;
+
+	params.Left = Left;
+	params.Right = Right;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Tales.TaleQuestIntMathsFunctionLibrary.Decrement_Int
+// (Final, Native, Static, Public, HasOutParms)
+// Parameters:
+// int                            Value                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestIntMathsFunctionLibrary::Decrement_Int(int* Value)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestIntMathsFunctionLibrary.Decrement_Int"));
+
+	struct
+	{
+		int                            Value;
+	} params;
+
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (Value != nullptr)
+		*Value = params.Value;
+}
+
+
+// Function Tales.TaleQuestIntMathsFunctionLibrary.Add_Int
+// (Final, Native, Static, Public)
+// Parameters:
+// int                            Left                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Right                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UTaleQuestIntMathsFunctionLibrary::Add_Int(int Left, int Right)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestIntMathsFunctionLibrary.Add_Int"));
+
+	struct
+	{
+		int                            Left;
+		int                            Right;
+		int                            ReturnValue;
 	} params;
 
 	params.Left = Left;
@@ -651,6 +977,73 @@ void UTaleQuestNPCHideFunctionLibrary::FadeIn(class AActor* InActor)
 	} params;
 
 	params.InActor = InActor;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Tales.TaleQuestStoryFunctionLibrary.WaitForStory
+// (Final, RequiredAPI, Native, Public, HasOutParms)
+// Parameters:
+// struct FName                   StoryName                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// bool                           ShouldBeActive                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestStoryFunctionLibrary::WaitForStory(const struct FName& StoryName, bool ShouldBeActive)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestStoryFunctionLibrary.WaitForStory"));
+
+	struct
+	{
+		struct FName                   StoryName;
+		bool                           ShouldBeActive;
+	} params;
+
+	params.StoryName = StoryName;
+	params.ShouldBeActive = ShouldBeActive;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Tales.TaleQuestStoryFunctionLibrary.IsStoryActive
+// (Final, RequiredAPI, Native, Public, HasOutParms, Const)
+// Parameters:
+// struct FName                   StoryName                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UTaleQuestStoryFunctionLibrary::IsStoryActive(const struct FName& StoryName)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestStoryFunctionLibrary.IsStoryActive"));
+
+	struct
+	{
+		struct FName                   StoryName;
+		bool                           ReturnValue;
+	} params;
+
+	params.StoryName = StoryName;
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Tales.TaleQuestStoryBranchFunctionLibrary.BranchOnStory
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// struct FName                   StoryName                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+
+void UTaleQuestStoryBranchFunctionLibrary::BranchOnStory(const struct FName& StoryName)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestStoryBranchFunctionLibrary.BranchOnStory"));
+
+	struct
+	{
+		struct FName                   StoryName;
+	} params;
+
+	params.StoryName = StoryName;
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -760,7 +1153,7 @@ bool UTaleQuestUObjectFunctionLibrary::IsValid(class UObject* Object)
 
 
 // Function Tales.TaleQuestUtilityFunctionLibrary.FailTale
-// (Final, RequiredAPI, Native, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FText                   FailureMessage                 (ConstParm, Parm, OutParm, ReferenceParm)
 
@@ -875,22 +1268,22 @@ void UTaleQuestWaterVolumeFunctionLibrary::AddWaterAmount(class AWaterVolume* Wa
 // Function Tales.TaleQuestMapService.UpdateMerchantMap
 // (Final, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
-// struct FName                   MapId                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FName                   MapID                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 // int                            Index                          (Parm, ZeroConstructor, IsPlainOldData)
 // struct FTaleQuestDeliverableItem Deliverable                    (Parm)
 
-void UTaleQuestMapService::UpdateMerchantMap(const struct FName& MapId, int Index, const struct FTaleQuestDeliverableItem& Deliverable)
+void UTaleQuestMapService::UpdateMerchantMap(const struct FName& MapID, int Index, const struct FTaleQuestDeliverableItem& Deliverable)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestMapService.UpdateMerchantMap"));
 
 	struct
 	{
-		struct FName                   MapId;
+		struct FName                   MapID;
 		int                            Index;
 		struct FTaleQuestDeliverableItem Deliverable;
 	} params;
 
-	params.MapId = MapId;
+	params.MapID = MapID;
 	params.Index = Index;
 	params.Deliverable = Deliverable;
 
@@ -901,18 +1294,18 @@ void UTaleQuestMapService::UpdateMerchantMap(const struct FName& MapId, int Inde
 // Function Tales.TaleQuestMapService.AdvanceRiddleMap
 // (Final, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
-// struct FName                   MapId                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FName                   MapID                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
-void UTaleQuestMapService::AdvanceRiddleMap(const struct FName& MapId)
+void UTaleQuestMapService::AdvanceRiddleMap(const struct FName& MapID)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestMapService.AdvanceRiddleMap"));
 
 	struct
 	{
-		struct FName                   MapId;
+		struct FName                   MapID;
 	} params;
 
-	params.MapId = MapId;
+	params.MapID = MapID;
 
 	UObject::ProcessEvent(fn, &params);
 }

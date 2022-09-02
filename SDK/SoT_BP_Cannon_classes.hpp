@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,13 +15,13 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Cannon.BP_Cannon_C
-// 0x0018 (0x0CC0 - 0x0CA8)
+// 0x0018 (0x0CD8 - 0x0CC0)
 class ABP_Cannon_C : public ACannon
 {
 public:
-	class UGroupedInteractableAreaComponent*           GroupedInteractableArea;                                  // 0x0CA8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UInteractableComponent*                      Interactable;                                             // 0x0CB0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UStaticMeshComponent*                        Collision;                                                // 0x0CB8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UGroupedInteractableAreaComponent*           GroupedInteractableArea;                                  // 0x0CC0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UInteractableComponent*                      Interactable;                                             // 0x0CC8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UStaticMeshComponent*                        Collision;                                                // 0x0CD0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,32 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function TaleMaps.TaleQuestCustomMapFunctionLibrary.UpdateStrikeThoughTextElement
+// (Final, Native, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FGuid                   MapGuid                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FGuid                   ElementGuid                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// bool                           StrikeThroughEnabled           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+
+void UTaleQuestCustomMapFunctionLibrary::UpdateStrikeThoughTextElement(const struct FGuid& MapGuid, const struct FGuid& ElementGuid, bool StrikeThroughEnabled)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function TaleMaps.TaleQuestCustomMapFunctionLibrary.UpdateStrikeThoughTextElement"));
+
+	struct
+	{
+		struct FGuid                   MapGuid;
+		struct FGuid                   ElementGuid;
+		bool                           StrikeThroughEnabled;
+	} params;
+
+	params.MapGuid = MapGuid;
+	params.ElementGuid = ElementGuid;
+	params.StrikeThroughEnabled = StrikeThroughEnabled;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
 
 // Function TaleMaps.TaleQuestCustomMapFunctionLibrary.AddCustomMap
 // (Final, Native, Public, HasOutParms, HasDefaults, BlueprintCallable)

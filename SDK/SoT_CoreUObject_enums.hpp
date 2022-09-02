@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -178,7 +178,8 @@ enum class EPixelFormat : uint8_t
 	PF_Stencil                     = 61,
 	PF_Depth                       = 62,
 	PF_R32G32_UINT                 = 63,
-	PF_MAX                         = 64
+	PF_NV12                        = 64,
+	PF_MAX                         = 65
 };
 
 

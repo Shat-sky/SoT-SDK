@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,17 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Enums
 //---------------------------------------------------------------------------
-
-// Enum Water.EWaterQueryResult
-enum class EWaterQueryResult : uint8_t
-{
-	EWaterQueryResult__Success     = 0,
-	EWaterQueryResult__Failed      = 1,
-	EWaterQueryResult__NoWater     = 2,
-	EWaterQueryResult__Count       = 3,
-	EWaterQueryResult__EWaterQueryResult_MAX = 4
-};
-
 
 // Enum Water.EWaterHeightType
 enum class EWaterHeightType : uint8_t
@@ -41,6 +30,17 @@ enum class EWaterSplashProbeType : uint8_t
 	EWaterSplashProbeType__StateChangeAny = 3,
 	EWaterSplashProbeType__Continuous = 4,
 	EWaterSplashProbeType__EWaterSplashProbeType_MAX = 5
+};
+
+
+// Enum Water.EWaterQueryResult
+enum class EWaterQueryResult : uint8_t
+{
+	EWaterQueryResult__Success     = 0,
+	EWaterQueryResult__Failed      = 1,
+	EWaterQueryResult__NoWater     = 2,
+	EWaterQueryResult__Count       = 3,
+	EWaterQueryResult__EWaterQueryResult_MAX = 4
 };
 
 

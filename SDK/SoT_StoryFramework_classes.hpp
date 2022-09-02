@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -81,14 +81,13 @@ public:
 
 
 // Class StoryFramework.StoryClaimedResourcesService
-// 0x00D0 (0x0498 - 0x03C8)
+// 0x00C0 (0x0488 - 0x03C8)
 class AStoryClaimedResourcesService : public AActor
 {
 public:
 	unsigned char                                      UnknownData00[0x60];                                      // 0x03C8(0x0060) MISSED OFFSET
 	TArray<TWeakObjectPtr<class UStoryClaimableResourceComponent>> PendingClaims;                                            // 0x0428(0x0010) (ExportObject, ZeroConstructor, Transient)
 	TMap<struct FName, struct FStoryClaimableResourcesList> StoriesToClaimableResourcesMap;                           // 0x0438(0x0050) (ZeroConstructor, Transient)
-	unsigned char                                      UnknownData01[0x10];                                      // 0x0488(0x0010) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -217,12 +216,12 @@ public:
 
 
 // Class StoryFramework.StorySpawnedActorsComponent
-// 0x0030 (0x00F8 - 0x00C8)
+// 0x0040 (0x0108 - 0x00C8)
 class UStorySpawnedActorsComponent : public UActorComponent
 {
 public:
 	class UStorySpawnedActorsComponentCollectionDataAsset* AssetsCollection;                                         // 0x00C8(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x28];                                      // 0x00D0(0x0028) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x38];                                      // 0x00D0(0x0038) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -256,7 +255,7 @@ class UStorySpawnedActorsComponentDataAsset : public UDataAsset
 {
 public:
 	struct FFeatureFlag                                Feature;                                                  // 0x0028(0x0008) (Edit)
-	TArray<struct FStorySpawnedNamedPointsList>        StorySpawnedActorsList;                                   // 0x0030(0x0010) (Edit, ZeroConstructor)
+	TArray<struct FStorySpawnedActorsComponentList>    StorySpawnedActorsList;                                   // 0x0030(0x0010) (Edit, ZeroConstructor)
 
 	static UClass* StaticClass()
 	{
@@ -300,14 +299,14 @@ public:
 
 
 // Class StoryFramework.StorySpawnedActorsService
-// 0x0138 (0x0500 - 0x03C8)
+// 0x0128 (0x04F0 - 0x03C8)
 class AStorySpawnedActorsService : public AActor
 {
 public:
 	unsigned char                                      UnknownData00[0x18];                                      // 0x03C8(0x0018) MISSED OFFSET
 	TArray<class UStorySpawnedActorsComponent*>        EarlyRegisteredComponents;                                // 0x03E0(0x0010) (ExportObject, ZeroConstructor)
 	class UStorySpawnedActorsCollectionDataAsset*      Asset;                                                    // 0x03F0(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x108];                                     // 0x03F8(0x0108) MISSED OFFSET
+	unsigned char                                      UnknownData01[0xF8];                                      // 0x03F8(0x00F8) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -350,14 +349,15 @@ public:
 
 
 // Class StoryFramework.DebugStoryServiceCheat
-// 0x0048 (0x0410 - 0x03C8)
+// 0x0058 (0x0420 - 0x03C8)
 class ADebugStoryServiceCheat : public AActor
 {
 public:
 	unsigned char                                      UnknownData00[0x8];                                       // 0x03C8(0x0008) MISSED OFFSET
 	TArray<struct FStoryInfo>                          AllStories;                                               // 0x03D0(0x0010) (Net, ZeroConstructor)
-	TArray<class FString>                              AllFilters;                                               // 0x03E0(0x0010) (Net, ZeroConstructor)
-	unsigned char                                      UnknownData01[0x20];                                      // 0x03F0(0x0020) MISSED OFFSET
+	TArray<class FString>                              AllIncludeFilters;                                        // 0x03E0(0x0010) (Net, ZeroConstructor)
+	TArray<class FString>                              AllExcludeFilters;                                        // 0x03F0(0x0010) (Net, ZeroConstructor)
+	unsigned char                                      UnknownData01[0x20];                                      // 0x0400(0x0020) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -417,14 +417,14 @@ public:
 
 
 // Class StoryFramework.StoryService
-// 0x00E8 (0x04B0 - 0x03C8)
+// 0x00D8 (0x04A0 - 0x03C8)
 class AStoryService : public AActor
 {
 public:
 	unsigned char                                      UnknownData00[0x28];                                      // 0x03C8(0x0028) MISSED OFFSET
 	TArray<struct FStoryInfo>                          Stories;                                                  // 0x03F0(0x0010) (ZeroConstructor)
 	TArray<struct FStoryInfo>                          ActiveStories;                                            // 0x0400(0x0010) (Net, ZeroConstructor)
-	unsigned char                                      UnknownData01[0xA0];                                      // 0x0410(0x00A0) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x90];                                      // 0x0410(0x0090) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

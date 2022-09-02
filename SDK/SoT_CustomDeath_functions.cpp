@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -114,6 +114,26 @@ void UCustomDeathInterface::SetCustomConfigForPlayer(int PlayerId, const struct 
 
 	params.PlayerId = PlayerId;
 	params.CustomDeathConfiguration = CustomDeathConfiguration;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function CustomDeath.CustomDeathInterface.SetCrewBasedDeathPenaltyRespawnTimes
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FCrewBasedRespawnTimes  CrewBasedRespawnTimes          (ConstParm, Parm, OutParm, ReferenceParm)
+
+void UCustomDeathInterface::SetCrewBasedDeathPenaltyRespawnTimes(const struct FCrewBasedRespawnTimes& CrewBasedRespawnTimes)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function CustomDeath.CustomDeathInterface.SetCrewBasedDeathPenaltyRespawnTimes"));
+
+	struct
+	{
+		struct FCrewBasedRespawnTimes  CrewBasedRespawnTimes;
+	} params;
+
+	params.CrewBasedRespawnTimes = CrewBasedRespawnTimes;
 
 	UObject::ProcessEvent(fn, &params);
 }

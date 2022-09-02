@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,42 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function Factions.FactionFlipMeshComponent.OnRep_IsFlipping
+// (Final, Native, Public)
+
+void UFactionFlipMeshComponent::OnRep_IsFlipping()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Factions.FactionFlipMeshComponent.OnRep_IsFlipping"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Factions.FactionService.OnRep_FactionAlignedCrews
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// TArray<struct FCrewFactionEntry> PreviousCrews                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
+
+void AFactionService::OnRep_FactionAlignedCrews(TArray<struct FCrewFactionEntry> PreviousCrews)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Factions.FactionService.OnRep_FactionAlignedCrews"));
+
+	struct
+	{
+		TArray<struct FCrewFactionEntry> PreviousCrews;
+	} params;
+
+	params.PreviousCrews = PreviousCrews;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
 
 // Function Factions.FactionVoteConsumerBase.OnRep_Votes
 // (Final, Native, Private)

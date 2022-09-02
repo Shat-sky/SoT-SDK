@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -2748,6 +2748,17 @@ enum class EFullyLoadPackageType : uint8_t
 };
 
 
+// Enum Engine.ECustomTimeStepSynchronizationState
+enum class ECustomTimeStepSynchronizationState : uint8_t
+{
+	ECustomTimeStepSynchronizationState__Closed = 0,
+	ECustomTimeStepSynchronizationState__Error = 1,
+	ECustomTimeStepSynchronizationState__Synchronized = 2,
+	ECustomTimeStepSynchronizationState__Synchronizing = 3,
+	ECustomTimeStepSynchronizationState__ECustomTimeStepSynchronizationState_MAX = 4
+};
+
+
 // Enum Engine.EFontImportCharacterSet
 enum class EFontImportCharacterSet : uint8_t
 {
@@ -4423,6 +4434,17 @@ enum class EModulationParamMode : uint8_t
 };
 
 
+// Enum Engine.ETimecodeProviderSynchronizationState
+enum class ETimecodeProviderSynchronizationState : uint8_t
+{
+	ETimecodeProviderSynchronizationState__Closed = 0,
+	ETimecodeProviderSynchronizationState__Error = 1,
+	ETimecodeProviderSynchronizationState__Synchronized = 2,
+	ETimecodeProviderSynchronizationState__Synchronizing = 3,
+	ETimecodeProviderSynchronizationState__ETimecodeProviderSynchronizationState_MAX = 4
+};
+
+
 // Enum Engine.EUserDefinedStructureStatus
 enum class EUserDefinedStructureStatus : uint8_t
 {
@@ -4496,6 +4518,17 @@ enum class ECameraAlphaBlendMode : uint8_t
 	ECameraAlphaBlendMode__CABM_Linear = 0,
 	ECameraAlphaBlendMode__CABM_Cubic = 1,
 	ECameraAlphaBlendMode__CABM_MAX = 2
+};
+
+
+// Enum Engine.EShippingStatCategory
+enum class EShippingStatCategory : uint8_t
+{
+	EShippingStatCategory__FrameSegment = 0,
+	EShippingStatCategory__Game    = 1,
+	EShippingStatCategory__Engine  = 2,
+	EShippingStatCategory__Blueprint = 3,
+	EShippingStatCategory__EShippingStatCategory_MAX = 4
 };
 
 

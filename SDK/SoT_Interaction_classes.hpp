@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class Interaction.InteractableComponent
-// 0x0050 (0x0118 - 0x00C8)
+// 0x0060 (0x0128 - 0x00C8)
 class UInteractableComponent : public UActorComponent
 {
 public:
@@ -32,9 +32,10 @@ public:
 	unsigned char                                      UnknownData01[0x3];                                       // 0x00FD(0x0003) MISSED OFFSET
 	float                                              InteractionRadius;                                        // 0x0100(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData02[0x4];                                       // 0x0104(0x0004) MISSED OFFSET
-	class UInteractableArea*                           InteractableArea;                                         // 0x0108(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	TEnumAsByte<EInteractableState>                    CurrentInteractionState;                                  // 0x0110(0x0001) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData03[0x7];                                       // 0x0111(0x0007) MISSED OFFSET
+	TArray<class UInteractionPrerequisiteBase*>        InteractionPrerequisites;                                 // 0x0108(0x0010) (Edit, ExportObject, ZeroConstructor)
+	class UInteractableArea*                           InteractableArea;                                         // 0x0118(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	TEnumAsByte<EInteractableState>                    CurrentInteractionState;                                  // 0x0120(0x0001) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData03[0x7];                                       // 0x0121(0x0007) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

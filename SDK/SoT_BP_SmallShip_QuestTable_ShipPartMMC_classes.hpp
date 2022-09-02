@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_SmallShip_QuestTable_ShipPartMMC.BP_SmallShip_QuestTable_ShipPartMMC_C
-// 0x0000 (0x08B8 - 0x08B8)
+// 0x0000 (0x08C8 - 0x08C8)
 class ABP_SmallShip_QuestTable_ShipPartMMC_C : public ABP_SmallShip_QuestTable_C
 {
 public:

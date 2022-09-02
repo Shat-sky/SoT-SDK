@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,28 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function BP_VotableCancelAdventure.BP_VotableCancelAdventure_C.GetVoteCount
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int                            Count                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void ABP_VotableCancelAdventure_C::GetVoteCount(int* Count)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_VotableCancelAdventure.BP_VotableCancelAdventure_C.GetVoteCount"));
+
+	struct
+	{
+		int                            Count;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	if (Count != nullptr)
+		*Count = params.Count;
+}
+
 
 // Function BP_VotableCancelAdventure.BP_VotableCancelAdventure_C.PlayShowTokenAnimation
 // (Public, BlueprintCallable, BlueprintEvent)

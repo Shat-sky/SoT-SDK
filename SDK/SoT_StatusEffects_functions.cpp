@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,61 +11,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
-
-// Function StatusEffects.StatusEffectOverlapZone.OnStatusDelayEnd
-// (Final, Native, Private)
-// Parameters:
-// int                            InStatusIndex                  (Parm, ZeroConstructor, IsPlainOldData)
-// class AActor*                  ActorRef                       (Parm, ZeroConstructor, IsPlainOldData)
-
-void AStatusEffectOverlapZone::OnStatusDelayEnd(int InStatusIndex, class AActor* ActorRef)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StatusEffects.StatusEffectOverlapZone.OnStatusDelayEnd"));
-
-	struct
-	{
-		int                            InStatusIndex;
-		class AActor*                  ActorRef;
-	} params;
-
-	params.InStatusIndex = InStatusIndex;
-	params.ActorRef = ActorRef;
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
-// Function StatusEffects.DebugStatusEffectOverlapZoneVisualizerComponent.OnRep_SetDebugDrawColour
-// (Final, Native, Private)
-
-void UDebugStatusEffectOverlapZoneVisualizerComponent::OnRep_SetDebugDrawColour()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StatusEffects.DebugStatusEffectOverlapZoneVisualizerComponent.OnRep_SetDebugDrawColour"));
-
-	struct
-	{
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
-// Function StatusEffects.DebugStatusEffectOverlapZoneVisualizerComponent.OnRep_DebugBoxDimensions
-// (Final, Native, Private)
-
-void UDebugStatusEffectOverlapZoneVisualizerComponent::OnRep_DebugBoxDimensions()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StatusEffects.DebugStatusEffectOverlapZoneVisualizerComponent.OnRep_DebugBoxDimensions"));
-
-	struct
-	{
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-}
-
 
 // Function StatusEffects.LightWeightStatusEffectManagerComponent.OnRep_ActiveEffects
 // (Final, Native, Private, HasOutParms)

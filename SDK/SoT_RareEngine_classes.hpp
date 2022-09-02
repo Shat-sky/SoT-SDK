@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,11 +15,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class RareEngine.RareGameEngine
-// 0x0058 (0x0A40 - 0x09E8)
+// 0x0058 (0x0A98 - 0x0A40)
 class URareGameEngine : public UGameEngine
 {
 public:
-	unsigned char                                      UnknownData00[0x58];                                      // 0x09E8(0x0058) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x58];                                      // 0x0A40(0x0058) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

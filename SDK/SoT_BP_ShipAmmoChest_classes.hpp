@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,12 +15,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_ShipAmmoChest.BP_ShipAmmoChest_C
-// 0x0010 (0x04B0 - 0x04A0)
+// 0x0010 (0x04C0 - 0x04B0)
 class ABP_ShipAmmoChest_C : public ABP_AmmoChest_C
 {
 public:
-	class UAddCrewLockableActionRuleComponent*         AddCrewLockableActionRule;                                // 0x04A0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UHitRegSnapshotRedirectImpactToReplicatedMovementAttachParentComponent* HitRegSnapshotRedirectImpactToReplicatedMovementAttachParent;// 0x04A8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UAddCrewLockableActionRuleComponent*         AddCrewLockableActionRule;                                // 0x04B0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UHitRegSnapshotRedirectImpactToReplicatedMovementAttachParentComponent* HitRegSnapshotRedirectImpactToReplicatedMovementAttachParent;// 0x04B8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

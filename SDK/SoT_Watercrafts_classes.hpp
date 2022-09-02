@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -516,13 +516,13 @@ public:
 
 
 // Class Watercrafts.StorageSeat
-// 0x0030 (0x06A0 - 0x0670)
+// 0x0030 (0x06B0 - 0x0680)
 class AStorageSeat : public ASeat
 {
 public:
-	class UClass*                                      StorageInteractionInput;                                  // 0x0670(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UStorageContainerComponent*                  StorageContainerComponent;                                // 0x0678(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x20];                                      // 0x0680(0x0020) MISSED OFFSET
+	class UClass*                                      StorageInteractionInput;                                  // 0x0680(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UStorageContainerComponent*                  StorageContainerComponent;                                // 0x0688(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x20];                                      // 0x0690(0x0020) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -629,7 +629,7 @@ public:
 
 
 // Class Watercrafts.TaleQuestWatercraftFunctionLibrary
-// 0x0000 (0x0170 - 0x0170)
+// 0x0000 (0x0178 - 0x0178)
 class UTaleQuestWatercraftFunctionLibrary : public UTaleQuestFunctionStepLibrary
 {
 public:

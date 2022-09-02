@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,13 +15,13 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Orderofsouls_TallTales.BP_Orderofsouls_TallTales_C
-// 0x0018 (0x06A0 - 0x0688)
+// 0x0018 (0x06B0 - 0x0698)
 class ABP_Orderofsouls_TallTales_C : public ACompanyShopkeeper
 {
 public:
-	class UCapsuleComponent*                           SolidHits;                                                // 0x0688(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UNPCDialogComponent*                         NPCDialog;                                                // 0x0690(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UAnimNotifyWwiseEmitterComponent*            AnimNotifyWwiseEmitter;                                   // 0x0698(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UCapsuleComponent*                           SolidHits;                                                // 0x0698(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UNPCDialogComponent*                         NPCDialog;                                                // 0x06A0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UAnimNotifyWwiseEmitterComponent*            AnimNotifyWwiseEmitter;                                   // 0x06A8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

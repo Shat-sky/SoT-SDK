@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,13 +15,13 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_SmallShipLadderMainMast.BP_SmallShipLadderMainMast_C
-// 0x0028 (0x05D8 - 0x05B0)
+// 0x0028 (0x05E8 - 0x05C0)
 class ABP_SmallShipLadderMainMast_C : public ALadder
 {
 public:
-	class UInteractableComponent*                      Interactable;                                             // 0x05B0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	TArray<struct FVector>                             OnTopSplinePositions;                                     // 0x05B8(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
-	TArray<struct FVector>                             OffTopSplinePositions;                                    // 0x05C8(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	class UInteractableComponent*                      Interactable;                                             // 0x05C0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	TArray<struct FVector>                             OnTopSplinePositions;                                     // 0x05C8(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	TArray<struct FVector>                             OffTopSplinePositions;                                    // 0x05D8(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{

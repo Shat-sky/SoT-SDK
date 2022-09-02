@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,19 +15,19 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_PlayerPirate_Ghost.BP_PlayerPirate_Ghost_C
-// 0x0044 (0x1C34 - 0x1BF0)
+// 0x0044 (0x1C94 - 0x1C50)
 class ABP_PlayerPirate_Ghost_C : public AAthenaGhostPlayerCharacter
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x1BF0(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
-	class UBP_GhostCharacterAudioComponent_C*          BP_GhostCharacterAudioComponent;                          // 0x1BF8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UWaterInteractionComponent*                  WaterInteraction;                                         // 0x1C00(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UPlayerNameplateComponent*                   PlayerNameplate;                                          // 0x1C08(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UBodyLightControllerComponent*               BodyLightController;                                      // 0x1C10(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UAnimNotifyWwiseEmitterComponent*            AnimNotifyWwiseEmitter;                                   // 0x1C18(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UAmbientLightSourceComponent*                BodyLight;                                                // 0x1C20(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UCharacterFootImpactComponent*               CharacterFootImpact;                                      // 0x1C28(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              Default_Ghost_Parameter;                                  // 0x1C30(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x1C50(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
+	class UBP_GhostCharacterAudioComponent_C*          BP_GhostCharacterAudioComponent;                          // 0x1C58(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UWaterInteractionComponent*                  WaterInteraction;                                         // 0x1C60(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UPlayerNameplateComponent*                   PlayerNameplate;                                          // 0x1C68(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UBodyLightControllerComponent*               BodyLightController;                                      // 0x1C70(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UAnimNotifyWwiseEmitterComponent*            AnimNotifyWwiseEmitter;                                   // 0x1C78(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UAmbientLightSourceComponent*                BodyLight;                                                // 0x1C80(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UCharacterFootImpactComponent*               CharacterFootImpact;                                      // 0x1C88(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	float                                              Default_Ghost_Parameter;                                  // 0x1C90(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,17 +12,21 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function ShantyPuzzle.ShantyPuzzleCompletionComponent.OnRep_ReactionState
-// (Final, RequiredAPI, Native, Private)
+// Function ShantyPuzzle.ShantyPuzzleCompletionComponent.PlayReactions_Net
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// Parameters:
+// TEnumAsByte<EShantyPuzzleCompletionReactionState> State                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
-void UShantyPuzzleCompletionComponent::OnRep_ReactionState()
+void UShantyPuzzleCompletionComponent::PlayReactions_Net(TEnumAsByte<EShantyPuzzleCompletionReactionState> State)
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function ShantyPuzzle.ShantyPuzzleCompletionComponent.OnRep_ReactionState"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function ShantyPuzzle.ShantyPuzzleCompletionComponent.PlayReactions_Net"));
 
 	struct
 	{
+		TEnumAsByte<EShantyPuzzleCompletionReactionState> State;
 	} params;
 
+	params.State = State;
 
 	UObject::ProcessEvent(fn, &params);
 }

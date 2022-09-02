@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Cannon_ShipPartMMC.BP_Cannon_ShipPartMMC_C
-// 0x0000 (0x0CC0 - 0x0CC0)
+// 0x0000 (0x0CD8 - 0x0CD8)
 class ABP_Cannon_ShipPartMMC_C : public ABP_Cannon_C
 {
 public:

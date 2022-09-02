@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -10,6 +10,7 @@
 #include "SoT_InvasionFramework_enums.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
+#include "SoT_AIModule_classes.hpp"
 #include "SoT_Tales_classes.hpp"
 #include "SoT_Athena_classes.hpp"
 #include "SoT_FactionsFramework_classes.hpp"
@@ -26,16 +27,17 @@ struct FInvasionCrewData
 {
 	struct FGuid                                       CrewId;                                                   // 0x0000(0x0010) (ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<EInvasionStatus>                       InvasionStatus;                                           // 0x0010(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x0011(0x0003) MISSED OFFSET
+	bool                                               ReadyForInvasion;                                         // 0x0011(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x2];                                       // 0x0012(0x0002) MISSED OFFSET
 };
 
 // ScriptStruct InvasionFramework.InvasionParticipatingCrewData
-// 0x0038
+// 0x0070
 struct FInvasionParticipatingCrewData
 {
 	TArray<struct FInvasionCrewData>                   CrewIds;                                                  // 0x0000(0x0010) (ZeroConstructor)
 	TArray<class UCrewVoyageParticipant*>              Participants;                                             // 0x0010(0x0010) (ZeroConstructor)
-	unsigned char                                      UnknownData00[0x18];                                      // 0x0020(0x0018) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x50];                                      // 0x0020(0x0050) MISSED OFFSET
 };
 
 // ScriptStruct InvasionFramework.InvasionEndedTelemetryEvent

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -242,66 +242,6 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class RareAudio.AudioIslandStaticMeshAssociatorBase"));
-		return ptr;
-	}
-
-};
-
-
-// Class RareAudio.AudioPortalComponent
-// 0x0030 (0x0310 - 0x02E0)
-class UAudioPortalComponent : public USceneComponent
-{
-public:
-	class UAudioSpaceDataAsset*                        AudioInsideSpace;                                         // 0x02E0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	class UAudioSpaceDataAsset*                        AudioOutsideSpace;                                        // 0x02E8(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              PortalTriggerDistance;                                    // 0x02F0(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              InsideRtpcUpdateDistance;                                 // 0x02F4(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              OutsideRtpcUpdateDistance;                                // 0x02F8(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	bool                                               TrackAttachmentToActor;                                   // 0x02FC(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x13];                                      // 0x02FD(0x0013) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class RareAudio.AudioPortalComponent"));
-		return ptr;
-	}
-
-
-	void SetParentShip(class AActor* ParentShip);
-};
-
-
-// Class RareAudio.AudioPortalInterface
-// 0x0000 (0x0028 - 0x0028)
-class UAudioPortalInterface : public UInterface
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class RareAudio.AudioPortalInterface"));
-		return ptr;
-	}
-
-
-	void UnregisterPortal(class UAudioPortalComponent* AudioPortal);
-	void RegisterPortal(class UAudioPortalComponent* AudioPortal, class AActor* OwningActor);
-	TArray<TWeakObjectPtr<class UAudioPortalComponent>> GetAllRegisteredPortalsInSpecificSpace(class UAudioSpaceDataAsset* AudioSpace, class AActor* OwningActor);
-	TArray<TWeakObjectPtr<class UAudioPortalComponent>> GetAllRegisteredPortals();
-};
-
-
-// Class RareAudio.AudioPortalService
-// 0x00B0 (0x00D8 - 0x0028)
-class UAudioPortalService : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[0xB0];                                      // 0x0028(0x00B0) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class RareAudio.AudioPortalService"));
 		return ptr;
 	}
 

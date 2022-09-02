@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -30,15 +30,15 @@ public:
 
 
 // Class WarMap.WarMapInteractionComponent
-// 0x00A0 (0x01B8 - 0x0118)
+// 0x00A0 (0x01C8 - 0x0128)
 class UWarMapInteractionComponent : public UInteractableComponent
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0118(0x0008) MISSED OFFSET
-	struct FText                                       OpenMapInteractionText;                                   // 0x0120(0x0038) (Edit)
-	struct FText                                       CannotOpenMapInteractionText;                             // 0x0158(0x0038) (Edit)
-	class UClass*                                      OpenMapInputId;                                           // 0x0190(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x20];                                      // 0x0198(0x0020) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0128(0x0008) MISSED OFFSET
+	struct FText                                       OpenMapInteractionText;                                   // 0x0130(0x0038) (Edit)
+	struct FText                                       CannotOpenMapInteractionText;                             // 0x0168(0x0038) (Edit)
+	class UClass*                                      OpenMapInputId;                                           // 0x01A0(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x20];                                      // 0x01A8(0x0020) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

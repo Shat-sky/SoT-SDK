@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -86,11 +86,11 @@ public:
 
 
 // Class GlitterBeard.GlitterbeardSlidingDoor
-// 0x0008 (0x0538 - 0x0530)
+// 0x0008 (0x0548 - 0x0540)
 class AGlitterbeardSlidingDoor : public ASlidingDoor
 {
 public:
-	class UEffectBlendControllerComponent*             DecalBlendComponent;                                      // 0x0530(0x0008) (Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, InstancedReference, IsPlainOldData)
+	class UEffectBlendControllerComponent*             DecalBlendComponent;                                      // 0x0540(0x0008) (Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

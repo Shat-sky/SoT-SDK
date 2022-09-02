@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -30752,28 +30752,74 @@ void UDeformablesBlueprintFunctionLibrary::ApplyWorldForceToDeformables(class US
 }
 
 
-// Function Engine.FeatureConfigBlueprintFunctionLibrary.IsFeatureEnabled
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Function Engine.FeatureConfigBlueprintFunctionLibrary.MakeFeatureFlag
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FName                   FeatureName                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// struct FFeatureFlag            Flag                           (Parm, OutParm)
+
+void UFeatureConfigBlueprintFunctionLibrary::MakeFeatureFlag(struct FFeatureFlag* Flag)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Engine.FeatureConfigBlueprintFunctionLibrary.MakeFeatureFlag"));
+
+	struct
+	{
+		struct FFeatureFlag            Flag;
+	} params;
+
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (Flag != nullptr)
+		*Flag = params.Flag;
+}
+
+
+// Function Engine.FeatureConfigBlueprintFunctionLibrary.IsFeatureEnabled
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FFeatureFlag            Flag                           (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UFeatureConfigBlueprintFunctionLibrary::IsFeatureEnabled(const struct FName& FeatureName)
+bool UFeatureConfigBlueprintFunctionLibrary::IsFeatureEnabled(const struct FFeatureFlag& Flag)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Engine.FeatureConfigBlueprintFunctionLibrary.IsFeatureEnabled"));
 
 	struct
 	{
-		struct FName                   FeatureName;
+		struct FFeatureFlag            Flag;
 		bool                           ReturnValue;
 	} params;
 
-	params.FeatureName = FeatureName;
+	params.Flag = Flag;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
+}
+
+
+// Function Engine.FeatureConfigBlueprintFunctionLibrary.BreakFeatureFlag
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FFeatureFlag            Flag                           (Parm, OutParm)
+
+void UFeatureConfigBlueprintFunctionLibrary::BreakFeatureFlag(struct FFeatureFlag* Flag)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Engine.FeatureConfigBlueprintFunctionLibrary.BreakFeatureFlag"));
+
+	struct
+	{
+		struct FFeatureFlag            Flag;
+	} params;
+
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (Flag != nullptr)
+		*Flag = params.Flag;
 }
 
 
@@ -56918,6 +56964,43 @@ struct FVector USkeletalMeshSocket::GetSocketLocation(class USkeletalMeshCompone
 	UObject::ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
+}
+
+
+// Function Engine.TimecodeProvider.GetSynchronizationState
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TEnumAsByte<ETimecodeProviderSynchronizationState> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+TEnumAsByte<ETimecodeProviderSynchronizationState> UTimecodeProvider::GetSynchronizationState()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Engine.TimecodeProvider.GetSynchronizationState"));
+
+	struct
+	{
+		TEnumAsByte<ETimecodeProviderSynchronizationState> ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Engine.TimecodeProvider.FetchAndUpdate
+// (Native, Public, BlueprintCallable)
+
+void UTimecodeProvider::FetchAndUpdate()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Engine.TimecodeProvider.FetchAndUpdate"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
 }
 
 

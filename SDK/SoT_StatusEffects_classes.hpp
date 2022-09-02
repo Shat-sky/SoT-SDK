@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -126,51 +126,6 @@ public:
 		return ptr;
 	}
 
-};
-
-
-// Class StatusEffects.StatusEffectOverlapZone
-// 0x00C8 (0x0490 - 0x03C8)
-class AStatusEffectOverlapZone : public AActor
-{
-public:
-	unsigned char                                      UnknownData00[0xA8];                                      // 0x03C8(0x00A8) MISSED OFFSET
-	class UBoxComponent*                               CollisionMesh;                                            // 0x0470(0x0008) (Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	TArray<struct FDelayedStatusEffect>                StatusesToApplyOnOverlap;                                 // 0x0478(0x0010) (Edit, ZeroConstructor)
-	bool                                               StartActive;                                              // 0x0488(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x7];                                       // 0x0489(0x0007) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusEffectOverlapZone"));
-		return ptr;
-	}
-
-
-	void OnStatusDelayEnd(int InStatusIndex, class AActor* ActorRef);
-};
-
-
-// Class StatusEffects.DebugStatusEffectOverlapZoneVisualizerComponent
-// 0x0020 (0x00E8 - 0x00C8)
-class UDebugStatusEffectOverlapZoneVisualizerComponent : public UActorComponent
-{
-public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x00C8(0x0008) MISSED OFFSET
-	struct FVector                                     BoxCollisionDimensions;                                   // 0x00D0(0x000C) (Net, ZeroConstructor, IsPlainOldData)
-	struct FColor                                      DebugColour;                                              // 0x00DC(0x0004) (Net, ZeroConstructor, IsPlainOldData)
-	bool                                               VisibleState;                                             // 0x00E0(0x0001) (Net, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x7];                                       // 0x00E1(0x0007) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.DebugStatusEffectOverlapZoneVisualizerComponent"));
-		return ptr;
-	}
-
-
-	void OnRep_SetDebugDrawColour();
-	void OnRep_DebugBoxDimensions();
 };
 
 
@@ -458,6 +413,23 @@ public:
 
 	void OnRep_ActiveEffects(TArray<struct FActiveStatusEffect> OldEffects);
 	void MultiCast_ApplyOneShotStatus(TArray<struct FActiveStatusEffect> AddedEffects, TArray<struct FActiveStatusEffect> RemovedEffects);
+};
+
+
+// Class StatusEffects.StatusEffectOverlapZone
+// 0x0020 (0x04C0 - 0x04A0)
+class AStatusEffectOverlapZone : public ASimpleOverlapZone
+{
+public:
+	TArray<struct FDelayedStatusEffect>                StatusesToApplyOnOverlap;                                 // 0x04A0(0x0010) (Edit, ZeroConstructor)
+	unsigned char                                      UnknownData00[0x10];                                      // 0x04B0(0x0010) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StatusEffects.StatusEffectOverlapZone"));
+		return ptr;
+	}
+
 };
 
 

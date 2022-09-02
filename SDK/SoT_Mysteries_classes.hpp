@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -54,18 +54,18 @@ public:
 
 
 // Class Mysteries.OneShotRewardableObjectBase
-// 0x0080 (0x04D8 - 0x0458)
+// 0x0080 (0x04E8 - 0x0468)
 class AOneShotRewardableObjectBase : public AInteractableObject
 {
 public:
-	class UInteractableComponent*                      InteractableComponent;                                    // 0x0458(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
-	class UStaticMeshComponent*                        StaticMeshComponent;                                      // 0x0460(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
-	struct FRewardId                                   Reward;                                                   // 0x0468(0x0008) (Edit, DisableEditOnInstance)
-	class UClass*                                      RewardEntitlement;                                        // 0x0470(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              InteractionHoldTime;                                      // 0x0478(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              InteractionRadius;                                        // 0x047C(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FText                                       DisplayName;                                              // 0x0480(0x0038) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData00[0x20];                                      // 0x04B8(0x0020) MISSED OFFSET
+	class UInteractableComponent*                      InteractableComponent;                                    // 0x0468(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+	class UStaticMeshComponent*                        StaticMeshComponent;                                      // 0x0470(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+	struct FRewardId                                   Reward;                                                   // 0x0478(0x0008) (Edit, DisableEditOnInstance)
+	class UClass*                                      RewardEntitlement;                                        // 0x0480(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              InteractionHoldTime;                                      // 0x0488(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              InteractionRadius;                                        // 0x048C(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FText                                       DisplayName;                                              // 0x0490(0x0038) (Edit, DisableEditOnInstance)
+	unsigned char                                      UnknownData00[0x20];                                      // 0x04C8(0x0020) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

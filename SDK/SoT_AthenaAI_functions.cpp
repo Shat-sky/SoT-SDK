@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -1156,6 +1156,70 @@ struct FVector UAthenaAIDebugFunctionLibrary::CanProjectPointToNavigation(class 
 }
 
 
+// Function AthenaAI.AINameplateComponent.OnRep_Title
+// (Final, Native, Private)
+
+void UAINameplateComponent::OnRep_Title()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaAI.AINameplateComponent.OnRep_Title"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaAI.AINameplateComponent.OnRep_DisplayNameAsString
+// (Final, Native, Private)
+
+void UAINameplateComponent::OnRep_DisplayNameAsString()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaAI.AINameplateComponent.OnRep_DisplayNameAsString"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaAI.AINameplateComponent.OnRep_DisplayName
+// (Final, Native, Private)
+
+void UAINameplateComponent::OnRep_DisplayName()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaAI.AINameplateComponent.OnRep_DisplayName"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaAI.AINameplateComponent.OnRep_DebugDisplayText
+// (Final, Native, Private)
+
+void UAINameplateComponent::OnRep_DebugDisplayText()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaAI.AINameplateComponent.OnRep_DebugDisplayText"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function AthenaAI.Pet.SetExitTakeOffFlag
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -1394,70 +1458,6 @@ float APet::GetFloorMeshOffsetZ()
 	UObject::ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
-}
-
-
-// Function AthenaAI.AINameplateComponent.OnRep_Title
-// (Final, Native, Private)
-
-void UAINameplateComponent::OnRep_Title()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaAI.AINameplateComponent.OnRep_Title"));
-
-	struct
-	{
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
-// Function AthenaAI.AINameplateComponent.OnRep_DisplayNameAsString
-// (Final, Native, Private)
-
-void UAINameplateComponent::OnRep_DisplayNameAsString()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaAI.AINameplateComponent.OnRep_DisplayNameAsString"));
-
-	struct
-	{
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
-// Function AthenaAI.AINameplateComponent.OnRep_DisplayName
-// (Final, Native, Private)
-
-void UAINameplateComponent::OnRep_DisplayName()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaAI.AINameplateComponent.OnRep_DisplayName"));
-
-	struct
-	{
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
-// Function AthenaAI.AINameplateComponent.OnRep_DebugDisplayText
-// (Final, Native, Private)
-
-void UAINameplateComponent::OnRep_DebugDisplayText()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaAI.AINameplateComponent.OnRep_DebugDisplayText"));
-
-	struct
-	{
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
 }
 
 

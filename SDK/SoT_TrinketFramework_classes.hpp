@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,6 +23,21 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TrinketFramework.TrinketLoadoutFinderPolicyBase"));
+		return ptr;
+	}
+
+};
+
+
+// Class TrinketFramework.TrinketAudioInterface
+// 0x0000 (0x0028 - 0x0028)
+class UTrinketAudioInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TrinketFramework.TrinketAudioInterface"));
 		return ptr;
 	}
 
@@ -150,6 +165,25 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TrinketFramework.TrinketSetControlInterface"));
+		return ptr;
+	}
+
+};
+
+
+// Class TrinketFramework.TrinketSfxDataAsset
+// 0x0020 (0x0048 - 0x0028)
+class UTrinketSfxDataAsset : public UDataAsset
+{
+public:
+	class UWwiseEvent*                                 MountSfx;                                                 // 0x0028(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UWwiseEvent*                                 RemoveSfx;                                                // 0x0030(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UWwiseEvent*                                 NudgeSfx;                                                 // 0x0038(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UWwiseEvent*                                 StraightenSfx;                                            // 0x0040(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TrinketFramework.TrinketSfxDataAsset"));
 		return ptr;
 	}
 

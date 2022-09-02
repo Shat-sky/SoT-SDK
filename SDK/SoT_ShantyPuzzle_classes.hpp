@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class ShantyPuzzle.ShantyPuzzleCompletionComponent
-// 0x0048 (0x0110 - 0x00C8)
+// 0x0040 (0x0108 - 0x00C8)
 class UShantyPuzzleCompletionComponent : public UActorComponent
 {
 public:
@@ -25,8 +25,6 @@ public:
 	TArray<struct FLandmarkReactionKeyFrame>           AbortCompletionReaction;                                  // 0x00E0(0x0010) (Edit, ZeroConstructor)
 	TArray<struct FLandmarkReactionKeyFrame>           PuzzleCompletedReaction;                                  // 0x00F0(0x0010) (Edit, ZeroConstructor)
 	class ALandmarkReactionPlayer*                     ReactionPlayer;                                           // 0x0100(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	TEnumAsByte<EShantyPuzzleCompletionReactionState>  ReactionState;                                            // 0x0108(0x0001) (Net, ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x7];                                       // 0x0109(0x0007) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -35,7 +33,7 @@ public:
 	}
 
 
-	void OnRep_ReactionState();
+	void PlayReactions_Net(TEnumAsByte<EShantyPuzzleCompletionReactionState> State);
 };
 
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -43,32 +43,12 @@ struct FTrinketLoadout
 	TArray<struct FTrinketLoadoutEntry>                TrinketEntries;                                           // 0x0000(0x0010) (ZeroConstructor)
 };
 
-// ScriptStruct TrinketFramework.EquipTrinketOnServerLoadoutRpc
-// 0x0028 (0x0038 - 0x0010)
-struct FEquipTrinketOnServerLoadoutRpc : public FBoxedRpc
-{
-	struct FNetSubObjectPtr                            TrinketLoadoutComponent;                                  // 0x0010(0x0014)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0024(0x0004) MISSED OFFSET
-	class UClass*                                      TrinketToEquip;                                           // 0x0028(0x0008) (ZeroConstructor, IsPlainOldData)
-	int                                                LocationIndex;                                            // 0x0030(0x0004) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x0034(0x0004) MISSED OFFSET
-};
-
 // ScriptStruct TrinketFramework.RemoveInteractingPlayerFromTrinketMountpointRpc
 // 0x0018 (0x0028 - 0x0010)
 struct FRemoveInteractingPlayerFromTrinketMountpointRpc : public FBoxedRpc
 {
 	struct FNetSubObjectPtr                            TrinketMountpointManager;                                 // 0x0010(0x0014)
 	int                                                MountpointIndex;                                          // 0x0024(0x0004) (ZeroConstructor, IsPlainOldData)
-};
-
-// ScriptStruct TrinketFramework.UnequipAllTrinketsOfClassOnServerLoadoutRpc
-// 0x0020 (0x0030 - 0x0010)
-struct FUnequipAllTrinketsOfClassOnServerLoadoutRpc : public FBoxedRpc
-{
-	struct FNetSubObjectPtr                            TrinketLoadoutComponent;                                  // 0x0010(0x0014)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0024(0x0004) MISSED OFFSET
-	class UClass*                                      TrinketToUnequip;                                         // 0x0028(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct TrinketFramework.TrinketLoadoutUpdatedEvent

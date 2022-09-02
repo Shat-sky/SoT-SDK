@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -51,12 +51,13 @@ struct FNamedPointsGroupActorLocation
 	TAssetPtr<class UClass>                            ActorToSpawn;                                             // 0x0008(0x0020) (Edit)
 };
 
-// ScriptStruct StoryFramework.StorySpawnedNamedPointsList
-// 0x0018
-struct FStorySpawnedNamedPointsList
+// ScriptStruct StoryFramework.StorySpawnedActorsComponentList
+// 0x0020
+struct FStorySpawnedActorsComponentList
 {
 	struct FStoryFlag                                  StoryFlag;                                                // 0x0000(0x0008) (Edit)
 	TArray<struct FNamedPointsGroupActorLocation>      GroupLocations;                                           // 0x0008(0x0010) (Edit, ZeroConstructor)
+	class ULayerActorsDataAsset*                       LayerToSpawn;                                             // 0x0018(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct StoryFramework.ActorLocationPair
@@ -77,13 +78,23 @@ struct FNamedPointsActorLocation
 	TArray<struct FNamedPointsGroupActorLocation>      GroupLocations;                                           // 0x0020(0x0010) (Edit, ZeroConstructor)
 };
 
-// ScriptStruct StoryFramework.StorySpawnedActorsList
+// ScriptStruct StoryFramework.InstancedLayerLocation
 // 0x0028
+struct FInstancedLayerLocation
+{
+	struct FStringAssetReference                       ActorWithInstancedLayerComponent;                         // 0x0000(0x0010) (Edit, ZeroConstructor)
+	struct FStringAssetReference                       DevActorWithInstancedLayerComponent;                      // 0x0010(0x0010) (Edit, ZeroConstructor)
+	class ULayerActorsDataAsset*                       LayerToSpawn;                                             // 0x0020(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct StoryFramework.StorySpawnedActorsList
+// 0x0038
 struct FStorySpawnedActorsList
 {
 	struct FStoryFlag                                  StoryFlag;                                                // 0x0000(0x0008) (Edit)
 	TArray<struct FActorLocationPair>                  ActorLocations;                                           // 0x0008(0x0010) (Edit, ZeroConstructor)
 	TArray<struct FNamedPointsActorLocation>           NamedPointsActorLocations;                                // 0x0018(0x0010) (Edit, ZeroConstructor)
+	TArray<struct FInstancedLayerLocation>             InstancedLayerLocations;                                  // 0x0028(0x0010) (Edit, ZeroConstructor)
 };
 
 // ScriptStruct StoryFramework.StoryInfo

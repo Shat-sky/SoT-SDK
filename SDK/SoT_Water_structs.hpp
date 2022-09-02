@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -19,15 +19,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
-
-// ScriptStruct Water.WaterInformation
-// 0x0010
-struct FWaterInformation
-{
-	class UClass*                                      WaterType;                                                // 0x0000(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData)
-	bool                                               CanSwim;                                                  // 0x0008(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0009(0x0007) MISSED OFFSET
-};
 
 // ScriptStruct Water.WaterSplashProbe
 // 0x00D8
@@ -68,6 +59,25 @@ struct FSplashProbe
 	unsigned char                                      UnknownData01[0x7];                                       // 0x0101(0x0007) MISSED OFFSET
 	class UParticleSystemComponent*                    CurrentlyPlayingVFX;                                      // 0x0108(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 	unsigned char                                      UnknownData02[0x18];                                      // 0x0110(0x0018) MISSED OFFSET
+};
+
+// ScriptStruct Water.WaterSpout
+// 0x0070
+struct FWaterSpout
+{
+	struct FTransform                                  SpoutLocatorTransform;                                    // 0x0000(0x0030) (Edit, IsPlainOldData)
+	class UParticleSystemComponent*                    SpoutParticleSystem;                                      // 0x0030(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UParticleSystemComponent*                    SplashParticleSystem;                                     // 0x0038(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x30];                                      // 0x0040(0x0030) MISSED OFFSET
+};
+
+// ScriptStruct Water.WaterInformation
+// 0x0010
+struct FWaterInformation
+{
+	class UClass*                                      WaterType;                                                // 0x0000(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData)
+	bool                                               CanSwim;                                                  // 0x0008(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0009(0x0007) MISSED OFFSET
 };
 
 // ScriptStruct Water.BuoyancyVolumeSample
@@ -152,16 +162,6 @@ struct FBuoyancySampleMovement
 	class UCurveFloat*                                 BuoyancyScalarCurve;                                      // 0x0050(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
 	class UCurveFloat*                                 ProbeMovementCurve;                                       // 0x0058(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x8];                                       // 0x0060(0x0008) MISSED OFFSET
-};
-
-// ScriptStruct Water.WaterSpout
-// 0x0070
-struct FWaterSpout
-{
-	struct FTransform                                  SpoutLocatorTransform;                                    // 0x0000(0x0030) (Edit, IsPlainOldData)
-	class UParticleSystemComponent*                    SpoutParticleSystem;                                      // 0x0030(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	class UParticleSystemComponent*                    SplashParticleSystem;                                     // 0x0038(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x30];                                      // 0x0040(0x0030) MISSED OFFSET
 };
 
 // ScriptStruct Water.WaterSplashProbesContainer

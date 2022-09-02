@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -123,11 +123,12 @@ struct FHangoutSpotPosition
 };
 
 // ScriptStruct Pets.PetCustomisation
-// 0x0018
+// 0x0028
 struct FPetCustomisation
 {
-	class FString                                      PetName;                                                  // 0x0000(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
-	struct FAIPartId                                   PetPartId;                                                // 0x0010(0x0008) (Edit, DisableEditOnInstance)
+	class FString                                      DefaultPetName;                                           // 0x0000(0x0010) (ZeroConstructor)
+	class FString                                      PetName;                                                  // 0x0010(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	struct FAIPartId                                   PetPartId;                                                // 0x0020(0x0008) (Edit, DisableEditOnInstance)
 };
 
 // ScriptStruct Pets.PetListingTypeEntry

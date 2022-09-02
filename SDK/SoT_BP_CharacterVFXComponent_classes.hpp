@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_CharacterVFXComponent.BP_CharacterVFXComponent_C
-// 0x0250 (0x0330 - 0x00E0)
+// 0x0258 (0x0338 - 0x00E0)
 class UBP_CharacterVFXComponent_C : public UCharacterVfxComponent
 {
 public:
@@ -40,6 +40,7 @@ public:
 	struct FObjectMessagingHandle                      WindDirectionChangedHandle;                               // 0x02D8(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
 	class UParticleSystemComponent*                    vfx_particle_underwater_ambient;                          // 0x0320(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class UParticleSystemComponent*                    vfx_player_underwater_ambient;                            // 0x0328(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FFeatureFlag                                FeatureName;                                              // 0x0330(0x0008) (Edit, BlueprintVisible, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{

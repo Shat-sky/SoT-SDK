@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -44,7 +44,7 @@ public:
 	class UStaticMeshComponent*                        StaticMesh2;                                              // 0x06E8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	class UStaticMeshComponent*                        StaticMesh1;                                              // 0x06F0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	class UStaticMeshComponent*                        StaticMesh;                                               // 0x06F8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	struct FName                                       ToggleName;                                               // 0x0700(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FFeatureFlag                                FeatureName;                                              // 0x0700(0x0008) (Edit, BlueprintVisible, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{

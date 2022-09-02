@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,22 +15,22 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_MediumMapTable.BP_MediumMapTable_C
-// 0x0055 (0x07DD - 0x0788)
+// 0x0055 (0x07F5 - 0x07A0)
 class ABP_MediumMapTable_C : public AMapTable
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0788(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
-	class UHitRegSnapshotRedirectImpactToReplicatedMovementAttachParentComponent* HitRegSnapshotRedirectImpactToReplicatedMovementAttachParent;// 0x0790(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UBoxComponent*                               NavBlocker;                                               // 0x0798(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UChildActorComponent*                        ControlPoint_4;                                           // 0x07A0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UChildActorComponent*                        ControlPoint_3;                                           // 0x07A8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UChildActorComponent*                        ControlPoint_2;                                           // 0x07B0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UChildActorComponent*                        ControlPoint_1;                                           // 0x07B8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UTextureFeedbackComponent*                   TextureFeedback;                                          // 0x07C0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UStaticMeshComponent*                        Cube;                                                     // 0x07C8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UStaticMeshComponent*                        Map;                                                      // 0x07D0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              ActiveRange;                                              // 0x07D8(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	bool                                               IsActive;                                                 // 0x07DC(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x07A0(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
+	class UHitRegSnapshotRedirectImpactToReplicatedMovementAttachParentComponent* HitRegSnapshotRedirectImpactToReplicatedMovementAttachParent;// 0x07A8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UBoxComponent*                               NavBlocker;                                               // 0x07B0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UChildActorComponent*                        ControlPoint_4;                                           // 0x07B8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UChildActorComponent*                        ControlPoint_3;                                           // 0x07C0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UChildActorComponent*                        ControlPoint_2;                                           // 0x07C8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UChildActorComponent*                        ControlPoint_1;                                           // 0x07D0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UTextureFeedbackComponent*                   TextureFeedback;                                          // 0x07D8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UStaticMeshComponent*                        Cube;                                                     // 0x07E0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UStaticMeshComponent*                        Map;                                                      // 0x07E8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	float                                              ActiveRange;                                              // 0x07F0(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               IsActive;                                                 // 0x07F4(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Crest.BP_Crest_C
-// 0x00F4 (0x0554 - 0x0460)
+// 0x00FC (0x055C - 0x0460)
 class ABP_Crest_C : public ACrest
 {
 public:
@@ -40,6 +40,7 @@ public:
 	struct FSlateFontInfo                              FontInfo;                                                 // 0x0500(0x0040) (Edit, BlueprintVisible, DisableEditOnInstance)
 	TArray<class UParticleSystem*>                     VFXSizeVariants;                                          // 0x0540(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
 	int                                                NameSizeIndex;                                            // 0x0550(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FFeatureFlag                                FeatureName;                                              // 0x0554(0x0008) (Edit, BlueprintVisible, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{

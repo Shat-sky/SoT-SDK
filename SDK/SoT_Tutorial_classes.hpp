@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -190,7 +190,7 @@ public:
 
 
 // Class Tutorial.TutorialManager
-// 0x0060 (0x0128 - 0x00C8)
+// 0x0068 (0x0130 - 0x00C8)
 class UTutorialManager : public UActorComponent
 {
 public:
@@ -200,16 +200,17 @@ public:
 	class UClass*                                      BeachNPCSpawnFlowStarterClass;                            // 0x00E0(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class UClass*                                      CaptaincyStarterClass;                                    // 0x00E8(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class UClass*                                      CaptaincyNewShipStarterClass;                             // 0x00F0(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UClass*                                      SelectedTutorialClass;                                    // 0x00F8(0x0008) (Net, ZeroConstructor, IsPlainOldData)
-	class UTutorialStarter*                            SelectedTutorial;                                         // 0x0100(0x0008) (ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ETutorialType>                         TutorialType;                                             // 0x0108(0x0001) (Net, ZeroConstructor, IsPlainOldData)
-	bool                                               HasEverPlayedFirstPersonAnimation;                        // 0x0109(0x0001) (Net, ZeroConstructor, IsPlainOldData)
-	bool                                               HasStartedTutorial;                                       // 0x010A(0x0001) (Net, ZeroConstructor, IsPlainOldData)
-	bool                                               HasReceivedEntitlements;                                  // 0x010B(0x0001) (ZeroConstructor, IsPlainOldData)
-	bool                                               HasPosessedPawn;                                          // 0x010C(0x0001) (ZeroConstructor, IsPlainOldData)
-	bool                                               HasPlayerFinshedSpawning;                                 // 0x010D(0x0001) (ZeroConstructor, IsPlainOldData)
-	bool                                               IsPlayerWaitingForCaptaincySessionResponse;               // 0x010E(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x19];                                      // 0x010F(0x0019) MISSED OFFSET
+	class UClass*                                      CaptaincyWithBeachNPCSpawnStarterClass;                   // 0x00F8(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UClass*                                      SelectedTutorialClass;                                    // 0x0100(0x0008) (Net, ZeroConstructor, IsPlainOldData)
+	class UTutorialStarter*                            SelectedTutorial;                                         // 0x0108(0x0008) (ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ETutorialType>                         TutorialType;                                             // 0x0110(0x0001) (Net, ZeroConstructor, IsPlainOldData)
+	bool                                               HasEverPlayedFirstPersonAnimation;                        // 0x0111(0x0001) (Net, ZeroConstructor, IsPlainOldData)
+	bool                                               HasStartedTutorial;                                       // 0x0112(0x0001) (Net, ZeroConstructor, IsPlainOldData)
+	bool                                               HasReceivedEntitlements;                                  // 0x0113(0x0001) (ZeroConstructor, IsPlainOldData)
+	bool                                               HasPosessedPawn;                                          // 0x0114(0x0001) (ZeroConstructor, IsPlainOldData)
+	bool                                               HasPlayerFinshedSpawning;                                 // 0x0115(0x0001) (ZeroConstructor, IsPlainOldData)
+	bool                                               IsPlayerWaitingForCaptaincySessionResponse;               // 0x0116(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x19];                                      // 0x0117(0x0019) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

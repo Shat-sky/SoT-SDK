@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -345,7 +345,7 @@ public:
 
 
 // Class EmissaryLevel.StartEmissaryVoyageInlineVoteConsumer
-// 0x01A0 (0x02C8 - 0x0128)
+// 0x01D8 (0x0300 - 0x0128)
 class UStartEmissaryVoyageInlineVoteConsumer : public UEmissaryVoyageInlineVoteConsumerBase
 {
 public:
@@ -354,9 +354,10 @@ public:
 	struct FText                                       EmissaryVotingCantVoteReasonCrewShipOutsideRange;         // 0x0198(0x0038) (Edit, DisableEditOnInstance)
 	struct FText                                       EmissaryVotingCantVoteReasonNoEmissaryEntitlement;        // 0x01D0(0x0038) (Edit, DisableEditOnInstance)
 	struct FText                                       EmissaryVotingCantVoteReasonHasActiveVoteForDifferentCompany;// 0x0208(0x0038) (Edit, DisableEditOnInstance)
-	struct FText                                       EmissaryVotingRemoveVote;                                 // 0x0240(0x0038) (Edit, DisableEditOnInstance)
-	struct FText                                       EmissaryVotingCantRemoveVote;                             // 0x0278(0x0038) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData00[0x18];                                      // 0x02B0(0x0018) MISSED OFFSET
+	struct FText                                       EmissaryVotingCantVoteReasonOnOpposingFaction;            // 0x0240(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       EmissaryVotingRemoveVote;                                 // 0x0278(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       EmissaryVotingCantRemoveVote;                             // 0x02B0(0x0038) (Edit, DisableEditOnInstance)
+	unsigned char                                      UnknownData00[0x18];                                      // 0x02E8(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -390,14 +391,14 @@ public:
 
 
 // Class EmissaryLevel.EmissaryVoyageVoteValidatorBase
-// 0x0078 (0x00A8 - 0x0030)
+// 0x0090 (0x00C0 - 0x0030)
 class UEmissaryVoyageVoteValidatorBase : public UVoteValidatorInlineBase
 {
 public:
 	class UClass*                                      RequiredEntitlement;                                      // 0x0030(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x60];                                      // 0x0038(0x0060) MISSED OFFSET
-	class UClass*                                      TargetCompany;                                            // 0x0098(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	class UEmissaryVoyageInlineVoteConsumerBase*       Consumer;                                                 // 0x00A0(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x78];                                      // 0x0038(0x0078) MISSED OFFSET
+	class UClass*                                      TargetCompany;                                            // 0x00B0(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	class UEmissaryVoyageInlineVoteConsumerBase*       Consumer;                                                 // 0x00B8(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -409,7 +410,7 @@ public:
 
 
 // Class EmissaryLevel.StartEmissaryVoyageInlineVoteValidator
-// 0x0000 (0x00A8 - 0x00A8)
+// 0x0000 (0x00C0 - 0x00C0)
 class UStartEmissaryVoyageInlineVoteValidator : public UEmissaryVoyageVoteValidatorBase
 {
 public:
@@ -424,7 +425,7 @@ public:
 
 
 // Class EmissaryLevel.StopEmissaryVoyageInlineVoteValidator
-// 0x0000 (0x00A8 - 0x00A8)
+// 0x0000 (0x00C0 - 0x00C0)
 class UStopEmissaryVoyageInlineVoteValidator : public UEmissaryVoyageVoteValidatorBase
 {
 public:

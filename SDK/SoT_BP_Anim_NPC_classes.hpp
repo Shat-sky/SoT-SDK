@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // AnimBlueprintGeneratedClass BP_Anim_NPC.BP_Anim_NPC_C
-// 0x17A4 (0x1DC4 - 0x0620)
+// 0x17A6 (0x1DC6 - 0x0620)
 class UBP_Anim_NPC_C : public UNPCAnimInstance
 {
 public:
@@ -95,6 +95,8 @@ public:
 	bool                                               Is_Playing_Sequencer_Anim;                                // 0x1DBC(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData02[0x3];                                       // 0x1DBD(0x0003) MISSED OFFSET
 	float                                              SequencerBlendWeight;                                     // 0x1DC0(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	bool                                               NewVar_1;                                                 // 0x1DC4(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               OverrideHeadLookAtOnOff;                                  // 0x1DC5(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -116,6 +118,7 @@ public:
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Anim_NPC_AnimGraphNode_TransitionResult_A291661E44C69BA0E4EF43964E4A6942();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Anim_NPC_AnimGraphNode_TransitionResult_BC0AAFE64F928C6D83C3CD845DE4392F();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Anim_NPC_AnimGraphNode_TransitionResult_AEFCE8034CC275366AE4CDA1DE42244B();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Anim_NPC_AnimGraphNode_BlendListByBool_38A355404EEEE5988EB14899B8FB3045();
 	void AnimNotify_StartLookat();
 	void AnimNotify_StopLookAt();
 	void AnimNotify_IdleVariantChange();

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,14 +15,14 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class PirateLegendQuest.VeilOfTheAncients
-// 0x0018 (0x0408 - 0x03F0)
+// 0x0018 (0x0418 - 0x0400)
 class AVeilOfTheAncients : public AInteractableBase
 {
 public:
-	float                                              NumberOfGems;                                             // 0x03F0(0x0004) (Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x03F4(0x0004) MISSED OFFSET
-	class ULockComponent*                              LockComponent;                                            // 0x03F8(0x0008) (Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData)
-	class UStaticMeshComponent*                        StaticMeshComponent;                                      // 0x0400(0x0008) (Edit, BlueprintVisible, ExportObject, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData)
+	float                                              NumberOfGems;                                             // 0x0400(0x0004) (Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0404(0x0004) MISSED OFFSET
+	class ULockComponent*                              LockComponent;                                            // 0x0408(0x0008) (Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData)
+	class UStaticMeshComponent*                        StaticMeshComponent;                                      // 0x0410(0x0008) (Edit, BlueprintVisible, ExportObject, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

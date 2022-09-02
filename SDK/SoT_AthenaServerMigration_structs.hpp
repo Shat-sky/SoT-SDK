@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -44,13 +44,6 @@ struct FServerMigrationSetupRequestEvent
 struct FServerMigrationReadyToTransferActors
 {
 	unsigned char                                      UnknownData00[0x90];                                      // 0x0000(0x0090) MISSED OFFSET
-};
-
-// ScriptStruct AthenaServerMigration.PrepareForWorldSwitchRpc
-// 0x0000 (0x0010 - 0x0010)
-struct FPrepareForWorldSwitchRpc : public FBoxedRpc
-{
-
 };
 
 // ScriptStruct AthenaServerMigration.ServerMigrationAboutToStartEvent
@@ -120,6 +113,21 @@ struct FServerMigrationRequestEvent
 	TArray<struct FGuid>                               CrewIds;                                                  // 0x0020(0x0010) (ZeroConstructor)
 	class FString                                      SubMode;                                                  // 0x0030(0x0010) (ZeroConstructor)
 	TArray<TEnumAsByte<EClientMatchmakingRequestReason>> MatchmakingReasons;                                       // 0x0040(0x0010) (ZeroConstructor)
+};
+
+// ScriptStruct AthenaServerMigration.ServerMigrationRequestBroadcastEvent
+// 0x0020
+struct FServerMigrationRequestBroadcastEvent
+{
+	class FString                                      DestinationAddress;                                       // 0x0000(0x0010) (ZeroConstructor)
+	struct FGuid                                       CrewId;                                                   // 0x0010(0x0010) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct AthenaServerMigration.PrepareForWorldSwitchRpc
+// 0x0000 (0x0010 - 0x0010)
+struct FPrepareForWorldSwitchRpc : public FBoxedRpc
+{
+
 };
 
 // ScriptStruct AthenaServerMigration.AthenaServerMigrationClientContext

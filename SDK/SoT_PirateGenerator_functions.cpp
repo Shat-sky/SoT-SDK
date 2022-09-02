@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -473,6 +473,28 @@ struct FRadialCoordinate UPirateGeneratorFunctionLibrary::RandomBodyShape(int Se
 }
 
 
+// Function PirateGenerator.PirateGeneratorFunctionLibrary.LoadWardrobeDataAsset
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UWardrobeDataAsset*      ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class UWardrobeDataAsset* UPirateGeneratorFunctionLibrary::LoadWardrobeDataAsset()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PirateGenerator.PirateGeneratorFunctionLibrary.LoadWardrobeDataAsset"));
+
+	struct
+	{
+		class UWardrobeDataAsset*      ReturnValue;
+	} params;
+
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
 // Function PirateGenerator.PirateGeneratorFunctionLibrary.LoadPirateDescription
 // (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
 // Parameters:
@@ -509,9 +531,10 @@ bool UPirateGeneratorFunctionLibrary::LoadPirateDescription(const class FString&
 // struct FPirateDescription      Desc                           (ConstParm, Parm, OutParm, ReferenceParm)
 // TEnumAsByte<EPirateBakeFlags>  Flags                          (Parm, ZeroConstructor, IsPlainOldData)
 // class USkeletalMesh*           OutMesh                        (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// struct FPirateGeneratorAdditionalBakeInfo OutAdditionalBakeInfo          (Parm, OutParm)
 // struct FPirateDescription      OutDesc                        (Parm, OutParm)
 
-void UPirateGeneratorFunctionLibrary::K2_BakeFromDescriptionGameThread(const struct FPirateDescription& Desc, TEnumAsByte<EPirateBakeFlags> Flags, class USkeletalMesh** OutMesh, struct FPirateDescription* OutDesc)
+void UPirateGeneratorFunctionLibrary::K2_BakeFromDescriptionGameThread(const struct FPirateDescription& Desc, TEnumAsByte<EPirateBakeFlags> Flags, class USkeletalMesh** OutMesh, struct FPirateGeneratorAdditionalBakeInfo* OutAdditionalBakeInfo, struct FPirateDescription* OutDesc)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PirateGenerator.PirateGeneratorFunctionLibrary.K2_BakeFromDescriptionGameThread"));
 
@@ -520,6 +543,7 @@ void UPirateGeneratorFunctionLibrary::K2_BakeFromDescriptionGameThread(const str
 		struct FPirateDescription      Desc;
 		TEnumAsByte<EPirateBakeFlags>  Flags;
 		class USkeletalMesh*           OutMesh;
+		struct FPirateGeneratorAdditionalBakeInfo OutAdditionalBakeInfo;
 		struct FPirateDescription      OutDesc;
 	} params;
 
@@ -531,6 +555,8 @@ void UPirateGeneratorFunctionLibrary::K2_BakeFromDescriptionGameThread(const str
 
 	if (OutMesh != nullptr)
 		*OutMesh = params.OutMesh;
+	if (OutAdditionalBakeInfo != nullptr)
+		*OutAdditionalBakeInfo = params.OutAdditionalBakeInfo;
 	if (OutDesc != nullptr)
 		*OutDesc = params.OutDesc;
 }
@@ -786,6 +812,51 @@ void UPirateGeneratorFunctionLibrary::BakeFromDescriptionAsync(const struct FPir
 }
 
 
+// Function PirateGenerator.WardrobeDataAsset.Rebuild
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           LoadAllAssets                  (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UWardrobeDataAsset::Rebuild(bool LoadAllAssets)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PirateGenerator.WardrobeDataAsset.Rebuild"));
+
+	struct
+	{
+		bool                           LoadAllAssets;
+		bool                           ReturnValue;
+	} params;
+
+	params.LoadAllAssets = LoadAllAssets;
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function PirateGenerator.WardrobeDataAsset.GetNumNewAssets
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UWardrobeDataAsset::GetNumNewAssets()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PirateGenerator.WardrobeDataAsset.GetNumNewAssets"));
+
+	struct
+	{
+		int                            ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
 // Function PirateGenerator.PreparePirateMeshBakeTestFunctionLibrary.PopulateSkeletonBlendsInCharacterMeshBakeSpecification
 // (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
 // Parameters:
@@ -855,51 +926,6 @@ void UPreparePirateMeshBakeTestFunctionLibrary::PopulateBlendedSubMeshesInCharac
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);
-}
-
-
-// Function PirateGenerator.WardrobeDataAsset.Rebuild
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                           LoadAllAssets                  (Parm, ZeroConstructor, IsPlainOldData)
-// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-bool UWardrobeDataAsset::Rebuild(bool LoadAllAssets)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PirateGenerator.WardrobeDataAsset.Rebuild"));
-
-	struct
-	{
-		bool                           LoadAllAssets;
-		bool                           ReturnValue;
-	} params;
-
-	params.LoadAllAssets = LoadAllAssets;
-
-	UObject::ProcessEvent(fn, &params);
-
-	return params.ReturnValue;
-}
-
-
-// Function PirateGenerator.WardrobeDataAsset.GetNumNewAssets
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-int UWardrobeDataAsset::GetNumNewAssets()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PirateGenerator.WardrobeDataAsset.GetNumNewAssets"));
-
-	struct
-	{
-		int                            ReturnValue;
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-
-	return params.ReturnValue;
 }
 
 

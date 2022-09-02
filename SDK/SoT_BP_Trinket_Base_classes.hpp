@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Trinket_Base.BP_Trinket_Base_C
-// 0x0000 (0x03F8 - 0x03F8)
+// 0x0000 (0x0408 - 0x0408)
 class ABP_Trinket_Base_C : public ATrinketActor
 {
 public:

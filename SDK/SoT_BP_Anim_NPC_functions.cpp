@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -210,6 +210,22 @@ void UBP_Anim_NPC_C::EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Anim_NPC_Ani
 void UBP_Anim_NPC_C::EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Anim_NPC_AnimGraphNode_TransitionResult_AEFCE8034CC275366AE4CDA1DE42244B()
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Anim_NPC.BP_Anim_NPC_C.EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Anim_NPC_AnimGraphNode_TransitionResult_AEFCE8034CC275366AE4CDA1DE42244B"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function BP_Anim_NPC.BP_Anim_NPC_C.EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Anim_NPC_AnimGraphNode_BlendListByBool_38A355404EEEE5988EB14899B8FB3045
+// (BlueprintEvent)
+
+void UBP_Anim_NPC_C::EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Anim_NPC_AnimGraphNode_BlendListByBool_38A355404EEEE5988EB14899B8FB3045()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Anim_NPC.BP_Anim_NPC_C.EvaluateGraphExposedInputs_ExecuteUbergraph_BP_Anim_NPC_AnimGraphNode_BlendListByBool_38A355404EEEE5988EB14899B8FB3045"));
 
 	struct
 	{

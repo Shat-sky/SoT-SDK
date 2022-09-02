@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -110,12 +110,28 @@ struct FMaterialReferencesEntry
 	TArray<struct FMaterialReferenceEntry>             References;                                               // 0x0008(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
 };
 
+// ScriptStruct PirateGenerator.PirateGeneratorAdditionalBakeInfo
+// 0x0020
+struct FPirateGeneratorAdditionalBakeInfo
+{
+	TArray<class UParticleSystem*>                     VFXParticles;                                             // 0x0000(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+	TArray<struct FName>                               VFXSockets;                                               // 0x0010(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+};
+
 // ScriptStruct PirateGenerator.PirateGeneratorTextureReference
 // 0x0018
 struct FPirateGeneratorTextureReference
 {
 	struct FName                                       Name;                                                     // 0x0000(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	TArray<struct FName>                               References;                                               // 0x0008(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+};
+
+// ScriptStruct PirateGenerator.MeshPatchEntry
+// 0x0018
+struct FMeshPatchEntry
+{
+	struct FName                                       Name;                                                     // 0x0000(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FStringAssetReference                       Reference;                                                // 0x0008(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
 };
 
 // ScriptStruct PirateGenerator.TextureSwitchParameters
@@ -187,14 +203,6 @@ struct FColorTextureSwitchSeedEntry
 	struct FLinearColor                                Color;                                                    // 0x0008(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct PirateGenerator.MeshPatchEntry
-// 0x0018
-struct FMeshPatchEntry
-{
-	struct FName                                       Name;                                                     // 0x0000(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	struct FStringAssetReference                       Reference;                                                // 0x0008(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-};
-
 // ScriptStruct PirateGenerator.WardrobeOutfitCategoryBias
 // 0x000C
 struct FWardrobeOutfitCategoryBias
@@ -204,12 +212,14 @@ struct FWardrobeOutfitCategoryBias
 };
 
 // ScriptStruct PirateGenerator.WardrobeOutfitResult
-// 0x0030
+// 0x0050
 struct FWardrobeOutfitResult
 {
 	TArray<class USkeletalMesh*>                       Meshes;                                                   // 0x0000(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
 	TArray<struct FIPGScalarParameter>                 ScalarParameters;                                         // 0x0010(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
 	TArray<struct FName>                               MaterialReferences;                                       // 0x0020(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	TArray<class UParticleSystem*>                     VFXParticles;                                             // 0x0030(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
+	TArray<struct FName>                               VFXSockets;                                               // 0x0040(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
 };
 
 // ScriptStruct PirateGenerator.ClothingCreatorSlotItem
@@ -386,14 +396,24 @@ struct FWardrobeConfig
 	TArray<struct FName>                               Priority;                                                 // 0x0010(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
 };
 
+// ScriptStruct PirateGenerator.ClothingVFX
+// 0x0028
+struct FClothingVFX
+{
+	struct FName                                       Name;                                                     // 0x0000(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	TArray<struct FName>                               Sockets;                                                  // 0x0008(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+	TArray<struct FName>                               Slots;                                                    // 0x0018(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+};
+
 // ScriptStruct PirateGenerator.Outfit
-// 0x0040
+// 0x0050
 struct FOutfit
 {
 	TArray<struct FName>                               PartNames;                                                // 0x0000(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
 	TArray<struct FName>                               FreeSlots;                                                // 0x0010(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
 	TArray<struct FIPGScalarParameter>                 ScalarParameters;                                         // 0x0020(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
 	TArray<struct FName>                               MaterialReferences;                                       // 0x0030(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+	TArray<struct FClothingVFX>                        VFXs;                                                     // 0x0040(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
 };
 
 // ScriptStruct PirateGenerator.ClothingPart
@@ -408,7 +428,7 @@ struct FClothingPart
 };
 
 // ScriptStruct PirateGenerator.ClothingItem
-// 0x0078
+// 0x0088
 struct FClothingItem
 {
 	struct FName                                       Type;                                                     // 0x0000(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
@@ -418,8 +438,9 @@ struct FClothingItem
 	TArray<struct FName>                               NewSlots;                                                 // 0x0030(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
 	struct FName                                       Parent;                                                   // 0x0040(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	TArray<struct FClothingPart>                       Parts;                                                    // 0x0048(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
-	TArray<struct FIPGScalarParameter>                 ScalarParameters;                                         // 0x0058(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
-	TArray<struct FName>                               MaterialReferences;                                       // 0x0068(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+	TArray<struct FClothingVFX>                        VFXs;                                                     // 0x0058(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+	TArray<struct FIPGScalarParameter>                 ScalarParameters;                                         // 0x0068(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+	TArray<struct FName>                               MaterialReferences;                                       // 0x0078(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
 };
 
 }

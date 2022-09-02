@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.0) SDK
+// Sea of Thieves (2.6.1) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -64,8 +64,10 @@ public:
 	void TriggerRewardNotification(struct FName* Identifier);
 	void TriggerLandmarkReaction(int ActionType);
 	void TriggerFogManagerAtNearestIsland();
+	void TriggerEmergentInvasion(const class FString& InCrewId);
 	void TriggerEmblemUnlockedMessage(const class FString& EmblemFriendlyName);
-	void TriggerDebugInvasion(const class FString& InCrewId);
+	void TriggerDebugAggressivePassiveInvasion(const class FString& InCrewId);
+	void TriggerDebugAggressiveAggressiveInvasion(const class FString& InCrewId);
 	void TriggerControllerConnectionChange(bool IsConnect, int UserId, int ControllerId);
 	void TriggerContestMatchmakingPvPMigration();
 	void TriggerContestMatchmakingMigration();
@@ -77,7 +79,7 @@ public:
 	void ToggleVideprinter(const class FString& Id);
 	void ToggleThirdPerson();
 	void ToggleStoryRefresh();
-	void ToggleStoryDisplayFilter(const class FString& Filter);
+	void ToggleStoryDisplayFilter(bool IsIncludeFilter, const class FString& Filter);
 	void ToggleSeaClueLocationQueryDebugDisplay();
 	void ToggleRetailDrawDebug();
 	void ToggleNoClip();
@@ -92,10 +94,12 @@ public:
 	void ToggleDrawShipSpeed();
 	void ToggleDrawAboveIslandBounds();
 	void ToggleDisplayStories();
+	void ToggleDisplayEmergentBattleBanners();
 	void ToggleDisplayCannonAISpawnerZones();
 	void ToggleDebugFlying();
 	void ToggleDeathCamera();
 	void ToggleDamageAllowedToPlayerShip();
+	void ToggleCrewIdToBeBlockedFromBeingInvaded(const class FString& InCrewId);
 	void ToggleContestScoreDebug();
 	void ToggleCinematicCamera();
 	void ToggleAttributeOverride();
@@ -317,6 +321,7 @@ public:
 	void SetDebugHealthStage(int InStage);
 	void SetDebugCameraUseProjectileCollisionChannel(bool bUseProjectileChannel);
 	void SetDeathPenaltyRespawnTimer(float InSpawnTimer);
+	void SetDeathPenaltyCrewBasedRespawnTimes(float CrewOfOne, float CrewOfTwo, float CrewOfThree, float CrewOfFour);
 	void SetDamageAllowedToPlayerShip(bool InAllowDamage);
 	void SetCutsceneResponseCoordinatorDebug(bool Value);
 	void SetCurrentCulture(const class FString& Culture);
@@ -356,7 +361,6 @@ public:
 	void RewindPhysicsSceneBy(float SecondsToRewindBy);
 	void ReviveLocalPlayerInstantly();
 	void ReviveLocalPlayerAccordingToReviveTime();
-	void ReviveAllPlayerCharactersAccordingToReviveTime();
 	void RetrieveItemsFromBootyStorageInCurrentIsland();
 	void RetrieveItemsFromBootyStorage(const class FString& IslandName);
 	void ResurfaceShipByActorId(const class FString& ShipActorIdString);
@@ -582,7 +586,7 @@ public:
 	void EndCurrentCaptainedSession();
 	void EnableVoiceChatMeteringForOutgoingSignals(bool Enabled);
 	void EnableVoiceChatMeteringForIncomingSignals(bool Enabled);
-	void EnableStorySpawnedActorsCheat();
+	void EnableStoryServiceCheat();
 	void EnableStormEffects(unsigned char LockReason);
 	void EnableSelectShipwreckLocationFromValidCandidatesDebugDisplay(int TrueFalse);
 	void EnableNTP(bool Enable);
@@ -618,7 +622,6 @@ public:
 	void DisplayNonVagueNonUniqueLandmarksForIsland(bool Enabled);
 	void DisplayLoadingScreenTeleport();
 	void DisplayLoadingScreenBoot();
-	void DisplayLoadingScreenArena();
 	void DisplayLoadingScreenAdventure();
 	void DisplayLandmarkValidTreasureLocationsForPlayer();
 	void DisplayLandmarkRegions();
