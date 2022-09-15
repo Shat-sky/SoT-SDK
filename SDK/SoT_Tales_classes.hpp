@@ -1591,6 +1591,21 @@ public:
 };
 
 
+// Class Tales.TaleQuestGetParticipatingCrewsInRadiusStep
+// 0x0000 (0x0098 - 0x0098)
+class UTaleQuestGetParticipatingCrewsInRadiusStep : public UTaleQuestStep
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestGetParticipatingCrewsInRadiusStep"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleQuestGetParticipatingCrewsStep
 // 0x0000 (0x0098 - 0x0098)
 class UTaleQuestGetParticipatingCrewsStep : public UTaleQuestStep
@@ -2869,6 +2884,25 @@ public:
 };
 
 
+// Class Tales.TaleQuestGetParticipatingCrewsInRadiusStepDesc
+// 0x0048 (0x00C8 - 0x0080)
+class UTaleQuestGetParticipatingCrewsInRadiusStepDesc : public UTaleQuestStepDesc
+{
+public:
+	struct FQuestVariableGuidArray                     CrewIds;                                                  // 0x0080(0x0020) (Edit)
+	struct FQuestVariableVector                        Location;                                                 // 0x00A0(0x0020) (Edit)
+	float                                              Radius;                                                   // 0x00C0(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x00C4(0x0004) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestGetParticipatingCrewsInRadiusStepDesc"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleQuestGetParticipatingCrewsStepDesc
 // 0x0020 (0x00A0 - 0x0080)
 class UTaleQuestGetParticipatingCrewsStepDesc : public UTaleQuestStepDesc
@@ -3784,19 +3818,19 @@ public:
 
 
 // Class Tales.TaleQuestAddChecklistMapStepDesc
-// 0x00C0 (0x0140 - 0x0080)
+// 0x00D0 (0x0150 - 0x0080)
 class UTaleQuestAddChecklistMapStepDesc : public UTaleQuestMapStepDescBase
 {
 public:
 	struct FName                                       MapID;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FStringAssetReference                       OverrideTreasureMapItemDesc;                              // 0x0088(0x0010) (Edit, ZeroConstructor)
-	struct FQuestVariableText                          Title;                                                    // 0x0098(0x0020) (Edit)
-	struct FQuestVariableText                          Description;                                              // 0x00B8(0x0020) (Edit)
-	struct FQuestVariableDataAsset                     ChecklistItemsData;                                       // 0x00D8(0x0020) (Edit)
-	struct FQuestVariableText                          Afternote;                                                // 0x00F8(0x0020) (Edit)
-	struct FQuestVariableDataAsset                     Layout;                                                   // 0x0118(0x0020) (Edit)
-	TEnumAsByte<EQuestMapIcon>                         RadialMiniIcon;                                           // 0x0138(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0139(0x0007) MISSED OFFSET
+	TAssetPtr<class UClass>                            OverrideTreasureMapItemDesc;                              // 0x0088(0x0020) (Edit)
+	struct FQuestVariableText                          Title;                                                    // 0x00A8(0x0020) (Edit)
+	struct FQuestVariableText                          Description;                                              // 0x00C8(0x0020) (Edit)
+	struct FQuestVariableDataAsset                     ChecklistItemsData;                                       // 0x00E8(0x0020) (Edit)
+	struct FQuestVariableText                          Afternote;                                                // 0x0108(0x0020) (Edit)
+	struct FQuestVariableDataAsset                     Layout;                                                   // 0x0128(0x0020) (Edit)
+	TEnumAsByte<EQuestMapIcon>                         RadialMiniIcon;                                           // 0x0148(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0149(0x0007) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

@@ -7,11 +7,11 @@
 #endif
 
 #include "SoT_Basic.hpp"
-#include "SoT_ADS_IdlesNative_classes.hpp"
+#include "SoT_ADS_CameraAdditiveNative_classes.hpp"
 #include "SoT_Athena_classes.hpp"
+#include "SoT_ADS_IdlesNative_classes.hpp"
 #include "SoT_ADS_WheelNative_classes.hpp"
 #include "SoT_ADS_LocomotionNative_classes.hpp"
-#include "SoT_ADS_CameraAdditiveNative_classes.hpp"
 #include "SoT_ADS_JumpingNative_classes.hpp"
 #include "SoT_ADS_SwimmingNative_classes.hpp"
 #include "SoT_ADS_CapstanNative_classes.hpp"

@@ -24650,13 +24650,15 @@ public:
 
 
 // Class Athena.LightningManagerComponent
-// 0x0010 (0x00D8 - 0x00C8)
+// 0x0018 (0x00E0 - 0x00C8)
 class ULightningManagerComponent : public UActorComponent
 {
 public:
-	class ULightningManagerDataAsset*                  LightningManagerDataAsset;                                // 0x00C8(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              Radius;                                                   // 0x00D0(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x00D4(0x0004) MISSED OFFSET
+	bool                                               QueueLightningStrikeOnStart;                              // 0x00C8(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x00C9(0x0007) MISSED OFFSET
+	class ULightningManagerDataAsset*                  LightningManagerDataAsset;                                // 0x00D0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              Radius;                                                   // 0x00D8(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x00DC(0x0004) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -24668,6 +24670,7 @@ public:
 	void SetIntensity(float InIntensity);
 	void ForceTargetPointStop();
 	void ForceTargetPointStart(const struct FVector& Location);
+	void ForceLightningStrike(float TimeTillStrike);
 };
 
 

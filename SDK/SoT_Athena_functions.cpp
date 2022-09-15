@@ -29767,6 +29767,26 @@ void ULightningManagerComponent::ForceTargetPointStart(const struct FVector& Loc
 }
 
 
+// Function Athena.LightningManagerComponent.ForceLightningStrike
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                          TimeTillStrike                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void ULightningManagerComponent::ForceLightningStrike(float TimeTillStrike)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.LightningManagerComponent.ForceLightningStrike"));
+
+	struct
+	{
+		float                          TimeTillStrike;
+	} params;
+
+	params.TimeTillStrike = TimeTillStrike;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function Athena.LimpingComponent.TestForceLimpingOffLocally
 // (Final, Native, Public, BlueprintCallable)
 

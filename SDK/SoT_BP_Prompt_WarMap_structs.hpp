@@ -7,10 +7,10 @@
 #endif
 
 #include "SoT_Basic.hpp"
-#include "SoT_WarMap_classes.hpp"
+#include "SoT_ObjectMessaging_classes.hpp"
 #include "SoT_BP_PromptCoordinator_Base_classes.hpp"
 #include "SoT_Engine_classes.hpp"
-#include "SoT_ObjectMessaging_classes.hpp"
+#include "SoT_WarMap_classes.hpp"
 #include "SoT_PrioritisedPrompts_classes.hpp"
 
 namespace SDK
