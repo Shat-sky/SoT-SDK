@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,12 +12,44 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
+// Function Factions.FactionFlipMeshComponent.OnRep_StreakData
+// (Final, Native, Public)
+
+void UFactionFlipMeshComponent::OnRep_StreakData()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Factions.FactionFlipMeshComponent.OnRep_StreakData"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function Factions.FactionFlipMeshComponent.OnRep_IsFlipping
 // (Final, Native, Public)
 
 void UFactionFlipMeshComponent::OnRep_IsFlipping()
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Factions.FactionFlipMeshComponent.OnRep_IsFlipping"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Factions.FactionParticleComponent.OnRep_StreakData
+// (Final, Native, Public)
+
+void UFactionParticleComponent::OnRep_StreakData()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Factions.FactionParticleComponent.OnRep_StreakData"));
 
 	struct
 	{
@@ -80,28 +112,12 @@ void UFactionVoteValidatorBase::OnRep_CurrentCompany()
 }
 
 
-// Function Factions.ShipFactionCustomisation.OnLeavingFightEndVFX
-// (Final, Native, Public)
+// Function Factions.ShipFactionCustomisation.OnRep_FactionStreakData
+// (Final, Native, Private)
 
-void UShipFactionCustomisation::OnLeavingFightEndVFX()
+void UShipFactionCustomisation::OnRep_FactionStreakData()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Factions.ShipFactionCustomisation.OnLeavingFightEndVFX"));
-
-	struct
-	{
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
-// Function Factions.ShipFactionCustomisation.OnJoiningFightStartVFX
-// (Final, Native, Public)
-
-void UShipFactionCustomisation::OnJoiningFightStartVFX()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Factions.ShipFactionCustomisation.OnJoiningFightStartVFX"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Factions.ShipFactionCustomisation.OnRep_FactionStreakData"));
 
 	struct
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -254,7 +254,7 @@ public:
 
 
 // Class Kraken.Kraken
-// 0x0568 (0x0930 - 0x03C8)
+// 0x0578 (0x0940 - 0x03C8)
 class AKraken : public AActor
 {
 public:
@@ -266,15 +266,15 @@ public:
 	TEnumAsByte<EKrakenState>                          CurrentState;                                             // 0x0400(0x0001) (Net, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData02[0x1B7];                                     // 0x0401(0x01B7) MISSED OFFSET
 	class AMurk*                                       MurkActor;                                                // 0x05B8(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData03[0xA8];                                      // 0x05C0(0x00A8) MISSED OFFSET
-	class UKrakenAICharacterAudioComponent*            KrakenAudioComponent;                                     // 0x0668(0x0008) (Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	class UKrakenTelemetryComponent*                   KrakenTelemetryComponent;                                 // 0x0670(0x0008) (Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	struct FEncounterParams                            SightingEncounterParams;                                  // 0x0678(0x000C) (Edit, DisableEditOnInstance)
-	struct FEncounterParams                            CloseEncounterParams;                                     // 0x0684(0x000C) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData04[0x10];                                      // 0x0690(0x0010) MISSED OFFSET
-	struct FKrakenParams                               Params;                                                   // 0x06A0(0x0160) (Transient)
-	int                                                NumTentaclesRemaining;                                    // 0x0800(0x0004) (Net, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData05[0x12C];                                     // 0x0804(0x012C) MISSED OFFSET
+	unsigned char                                      UnknownData03[0xB8];                                      // 0x05C0(0x00B8) MISSED OFFSET
+	class UKrakenAICharacterAudioComponent*            KrakenAudioComponent;                                     // 0x0678(0x0008) (Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UKrakenTelemetryComponent*                   KrakenTelemetryComponent;                                 // 0x0680(0x0008) (Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	struct FEncounterParams                            SightingEncounterParams;                                  // 0x0688(0x000C) (Edit, DisableEditOnInstance)
+	struct FEncounterParams                            CloseEncounterParams;                                     // 0x0694(0x000C) (Edit, DisableEditOnInstance)
+	unsigned char                                      UnknownData04[0x10];                                      // 0x06A0(0x0010) MISSED OFFSET
+	struct FKrakenParams                               Params;                                                   // 0x06B0(0x0160) (Transient)
+	int                                                NumTentaclesRemaining;                                    // 0x0810(0x0004) (Net, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData05[0x12C];                                     // 0x0814(0x012C) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

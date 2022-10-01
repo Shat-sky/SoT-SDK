@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -190,7 +190,7 @@ public:
 
 
 // Class Tutorial.TutorialManager
-// 0x0068 (0x0130 - 0x00C8)
+// 0x0070 (0x0138 - 0x00C8)
 class UTutorialManager : public UActorComponent
 {
 public:
@@ -210,7 +210,8 @@ public:
 	bool                                               HasPosessedPawn;                                          // 0x0114(0x0001) (ZeroConstructor, IsPlainOldData)
 	bool                                               HasPlayerFinshedSpawning;                                 // 0x0115(0x0001) (ZeroConstructor, IsPlainOldData)
 	bool                                               IsPlayerWaitingForCaptaincySessionResponse;               // 0x0116(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x19];                                      // 0x0117(0x0019) MISSED OFFSET
+	bool                                               HasPlayerPromptsServiceSetup;                             // 0x0117(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x20];                                      // 0x0118(0x0020) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,6 +15,15 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
+
+// ScriptStruct EmissaryFramework.EmissaryFactionActionRewardBoostServiceEvent
+// 0x0014
+struct FEmissaryFactionActionRewardBoostServiceEvent
+{
+	TEnumAsByte<EEmisaryFactionActionType>             FactionActionType;                                        // 0x0000(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0001(0x0003) MISSED OFFSET
+	struct FGuid                                       AssociatedCrew;                                           // 0x0004(0x0010) (ZeroConstructor, IsPlainOldData)
+};
 
 // ScriptStruct EmissaryFramework.EmissaryGlobalActionRewardBoostServiceEvent
 // 0x0018

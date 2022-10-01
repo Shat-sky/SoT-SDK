@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -760,10 +760,11 @@ struct FPirateDescription UPirateGeneratorFunctionLibrary::GenerateRandomPirate(
 // Parameters:
 // struct FName                   InMaterialName                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FPirateDescription      InPirateDesc                   (Parm)
+// TArray<struct FName>           ClothingWardrobeKeys           (Parm, ZeroConstructor)
 // bool                           InFirstPerson                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // struct FScriptDelegate         Result                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
-void UPirateGeneratorFunctionLibrary::BakeMeshWithNewMaterial(const struct FName& InMaterialName, const struct FPirateDescription& InPirateDesc, bool InFirstPerson, const struct FScriptDelegate& Result)
+void UPirateGeneratorFunctionLibrary::BakeMeshWithNewMaterial(const struct FName& InMaterialName, const struct FPirateDescription& InPirateDesc, TArray<struct FName> ClothingWardrobeKeys, bool InFirstPerson, const struct FScriptDelegate& Result)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function PirateGenerator.PirateGeneratorFunctionLibrary.BakeMeshWithNewMaterial"));
 
@@ -771,12 +772,14 @@ void UPirateGeneratorFunctionLibrary::BakeMeshWithNewMaterial(const struct FName
 	{
 		struct FName                   InMaterialName;
 		struct FPirateDescription      InPirateDesc;
+		TArray<struct FName>           ClothingWardrobeKeys;
 		bool                           InFirstPerson;
 		struct FScriptDelegate         Result;
 	} params;
 
 	params.InMaterialName = InMaterialName;
 	params.InPirateDesc = InPirateDesc;
+	params.ClothingWardrobeKeys = ClothingWardrobeKeys;
 	params.InFirstPerson = InFirstPerson;
 	params.Result = Result;
 

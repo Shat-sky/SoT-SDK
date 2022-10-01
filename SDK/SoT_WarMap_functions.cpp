@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,22 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function WarMap.WarMapVoteConsumerBase.OnRep_Votes
+// (Final, Native, Private)
+
+void UWarMapVoteConsumerBase::OnRep_Votes()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function WarMap.WarMapVoteConsumerBase.OnRep_Votes"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
 
 }
 

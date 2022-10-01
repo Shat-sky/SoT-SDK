@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -66,11 +66,11 @@ public:
 
 
 // Class BarrelsOfPlenty.SpawnBarrelsOfPlentyStepDesc
-// 0x0020 (0x00A0 - 0x0080)
+// 0x0030 (0x00B0 - 0x0080)
 class USpawnBarrelsOfPlentyStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableVector                        LocatorVar;                                               // 0x0080(0x0020) (Edit)
+	struct FQuestVariableVector                        LocatorVar;                                               // 0x0080(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{

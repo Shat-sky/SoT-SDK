@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -95,12 +95,12 @@ public:
 
 
 // Class EnchantedCompass.TaleQuestMultiTargetCompassAddTrackedLocationStepDesc
-// 0x0040 (0x00C0 - 0x0080)
+// 0x0060 (0x00E0 - 0x0080)
 class UTaleQuestMultiTargetCompassAddTrackedLocationStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableVector                        Location;                                                 // 0x0080(0x0020)
-	struct FQuestVariableGuid                          TargetID;                                                 // 0x00A0(0x0020)
+	struct FQuestVariableVector                        Location;                                                 // 0x0080(0x0030)
+	struct FQuestVariableGuid                          TargetID;                                                 // 0x00B0(0x0030)
 
 	static UClass* StaticClass()
 	{
@@ -128,11 +128,11 @@ public:
 
 
 // Class EnchantedCompass.TaleQuestMultiTargetCompassRemoveTrackedLocationStepDesc
-// 0x0020 (0x00A0 - 0x0080)
+// 0x0030 (0x00B0 - 0x0080)
 class UTaleQuestMultiTargetCompassRemoveTrackedLocationStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableGuid                          TargetID;                                                 // 0x0080(0x0020) (Edit, DisableEditOnInstance)
+	struct FQuestVariableGuid                          TargetID;                                                 // 0x0080(0x0030) (Edit, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{
@@ -176,11 +176,11 @@ public:
 
 
 // Class EnchantedCompass.TaleQuestSetCompassTargetToTargetStep
-// 0x0040 (0x00D8 - 0x0098)
+// 0x0060 (0x00F8 - 0x0098)
 class UTaleQuestSetCompassTargetToTargetStep : public UTaleQuestStep
 {
 public:
-	unsigned char                                      UnknownData00[0x40];                                      // 0x0098(0x0040) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x60];                                      // 0x0098(0x0060) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -209,11 +209,11 @@ public:
 
 
 // Class EnchantedCompass.TaleQuestSetCompassTargetToActorStepDesc
-// 0x0020 (0x00A8 - 0x0088)
+// 0x0030 (0x00B8 - 0x0088)
 class UTaleQuestSetCompassTargetToActorStepDesc : public UTaleQuestSetCompassTargetBaseStepDesc
 {
 public:
-	struct FQuestVariableActor                         TargetActor;                                              // 0x0088(0x0020) (Edit)
+	struct FQuestVariableActor                         TargetActor;                                              // 0x0088(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -225,11 +225,11 @@ public:
 
 
 // Class EnchantedCompass.TaleQuestSetCompassTargetToPointStepDesc
-// 0x0020 (0x00A8 - 0x0088)
+// 0x0030 (0x00B8 - 0x0088)
 class UTaleQuestSetCompassTargetToPointStepDesc : public UTaleQuestSetCompassTargetBaseStepDesc
 {
 public:
-	struct FQuestVariableOrientedPoint                 TargetPoint;                                              // 0x0088(0x0020) (Edit)
+	struct FQuestVariableOrientedPoint                 TargetPoint;                                              // 0x0088(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{

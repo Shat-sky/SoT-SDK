@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -135,11 +135,11 @@ public:
 
 
 // Class Siren.SirenController
-// 0x0008 (0x09D8 - 0x09D0)
+// 0x0008 (0x09E8 - 0x09E0)
 class ASirenController : public AAthenaSwimmingAIController
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x09D0(0x0008) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x09E0(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

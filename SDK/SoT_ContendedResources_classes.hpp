@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -53,6 +53,21 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ContendedResources.ReservableContendedResourceInterface"));
+		return ptr;
+	}
+
+};
+
+
+// Class ContendedResources.ReservableContendedResourceStateInterface
+// 0x0000 (0x0028 - 0x0028)
+class UReservableContendedResourceStateInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ContendedResources.ReservableContendedResourceStateInterface"));
 		return ptr;
 	}
 

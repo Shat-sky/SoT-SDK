@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -31,6 +31,14 @@ enum class EEmisaryCompanyActionType : uint8_t
 	EEmisaryCompanyActionType__CompleteLostShipmentsVoyage = 13,
 	EEmisaryCompanyActionType__CompleteLegendOfTheVeilVoyage = 14,
 	EEmisaryCompanyActionType__EEmisaryCompanyActionType_MAX = 15
+};
+
+
+// Enum EmissaryFramework.EEmisaryFactionActionType
+enum class EEmisaryFactionActionType : uint8_t
+{
+	EEmisaryFactionActionType__SinkOpposingShip = 0,
+	EEmisaryFactionActionType__EEmisaryFactionActionType_MAX = 1
 };
 
 

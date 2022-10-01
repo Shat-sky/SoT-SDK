@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -69,6 +69,13 @@ struct FPermanentPromptNetworkEvent : public FNetworkEventStruct
 struct FPromptsCounterIncrementEvent
 {
 	class UClass*                                      AccessKey;                                                // 0x0000(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct PrioritisedPrompts.PromptsServiceSetupEvent
+// 0x0001
+struct FPromptsServiceSetupEvent
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
 
 // ScriptStruct PrioritisedPrompts.PlayerPromptTelemetryEvent

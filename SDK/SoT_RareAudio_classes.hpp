@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -248,26 +248,6 @@ public:
 };
 
 
-// Class RareAudio.AudioSpaceComponent
-// 0x0010 (0x0630 - 0x0620)
-class UAudioSpaceComponent : public UStaticMeshComponent
-{
-public:
-	class UAudioSpaceDataAsset*                        AudioSpace;                                               // 0x0620(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0628(0x0008) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class RareAudio.AudioSpaceComponent"));
-		return ptr;
-	}
-
-
-	void OnOverlapEnd(class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
-	void OnOverlapBegin(class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool FromSweep, const struct FHitResult& SweepResult);
-};
-
-
 // Class RareAudio.AudioSpaceDataAsset
 // 0x0018 (0x0040 - 0x0028)
 class UAudioSpaceDataAsset : public UDataAsset
@@ -285,24 +265,6 @@ public:
 
 
 	struct FName GetRtpcName();
-};
-
-
-// Class RareAudio.AudioSpaceTrackerComponent
-// 0x0010 (0x00D8 - 0x00C8)
-class UAudioSpaceTrackerComponent : public UActorComponent
-{
-public:
-	TArray<class UAudioSpaceComponent*>                CurrentSpaces;                                            // 0x00C8(0x0010) (ExportObject, ZeroConstructor, Transient)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class RareAudio.AudioSpaceTrackerComponent"));
-		return ptr;
-	}
-
-
-	class UAudioSpaceDataAsset* GetCurrentSpace();
 };
 
 
@@ -392,7 +354,7 @@ public:
 
 
 // Class RareAudio.TritonService
-// 0x0108 (0x0130 - 0x0028)
+// 0x0128 (0x0150 - 0x0028)
 class UTritonService : public UObject
 {
 public:
@@ -400,7 +362,7 @@ public:
 	TArray<class UTritonComponent*>                    RegisteredTritonComponents;                               // 0x0038(0x0010) (ExportObject, ZeroConstructor, Transient)
 	unsigned char                                      UnknownData01[0xA8];                                      // 0x0048(0x00A8) MISSED OFFSET
 	class UTritonComponent*                            CachedListenerInfo;                                       // 0x00F0(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x38];                                      // 0x00F8(0x0038) MISSED OFFSET
+	unsigned char                                      UnknownData02[0x58];                                      // 0x00F8(0x0058) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

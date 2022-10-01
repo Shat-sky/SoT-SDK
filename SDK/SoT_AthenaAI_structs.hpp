@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,14 +12,14 @@
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Athena_classes.hpp"
-#include "SoT_StatusEffects_classes.hpp"
-#include "SoT_Tales_classes.hpp"
-#include "SoT_StoryFramework_classes.hpp"
 #include "SoT_Pets_classes.hpp"
+#include "SoT_StoryFramework_classes.hpp"
 #include "SoT_AIModule_classes.hpp"
 #include "SoT_Maths_classes.hpp"
-#include "SoT_AthenaEngine_classes.hpp"
+#include "SoT_Tales_classes.hpp"
 #include "SoT_ActionStateMachine_classes.hpp"
+#include "SoT_StatusEffects_classes.hpp"
+#include "SoT_AthenaEngine_classes.hpp"
 
 namespace SDK
 {
@@ -225,17 +225,6 @@ struct FSwimAttackTargetShipImpulseData
 	float                                              RollForceScalingFactorForeAndAftOfShipUpperBound;         // 0x0034(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct AthenaAI.AIStrategyMovementProperties
-// 0x0018
-struct FAIStrategyMovementProperties
-{
-	class UClass*                                      AIStrategy;                                               // 0x0000(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              MaxSpeedAmp;                                              // 0x0008(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              MaxAccelAmp;                                              // 0x000C(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              OverrideRVOAvoidanceRadius;                               // 0x0010(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              OverrideBlendSpeed;                                       // 0x0014(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-};
-
 // ScriptStruct AthenaAI.AIPersistentSpawnerWave
 // 0x0028 (0x0128 - 0x0100)
 struct FAIPersistentSpawnerWave : public FAISpawnerWave
@@ -312,6 +301,17 @@ struct FAIStategyControllerMovementMod
 	class UClass*                                      AIStrategy;                                               // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	float                                              OverrideControlRotationInterpSpeed;                       // 0x0008(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x000C(0x0004) MISSED OFFSET
+};
+
+// ScriptStruct AthenaAI.AIStrategyMovementProperties
+// 0x0018
+struct FAIStrategyMovementProperties
+{
+	class UClass*                                      AIStrategy;                                               // 0x0000(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	float                                              MaxSpeedAmp;                                              // 0x0008(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	float                                              MaxAccelAmp;                                              // 0x000C(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	float                                              OverrideRVOAvoidanceRadius;                               // 0x0010(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              OverrideBlendSpeed;                                       // 0x0014(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct AthenaAI.AthenaAIDebugCostDisplay
@@ -509,7 +509,7 @@ struct FAthenaAIControllerWeightedRangesParamValue
 };
 
 // ScriptStruct AthenaAI.QuestVariableSharkPawn
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableSharkPawn : public FQuestVariable
 {
 
@@ -540,7 +540,7 @@ struct FTinySharkParams
 };
 
 // ScriptStruct AthenaAI.QuestVariableTinySharkExperience
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableTinySharkExperience : public FQuestVariable
 {
 
@@ -1271,6 +1271,14 @@ struct FEventFaunaAgitationBegun
 	class AActor*                                      SourceActor;                                              // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
+// ScriptStruct AthenaAI.EventFaunaPickedup
+// 0x0010
+struct FEventFaunaPickedup
+{
+	class AActor*                                      Interactor;                                               // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	class AActor*                                      PickedUpFauna;                                            // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
+};
+
 // ScriptStruct AthenaAI.AthenaAIDebugCostData
 // 0x0001
 struct FAthenaAIDebugCostData
@@ -1337,11 +1345,13 @@ struct FEventTinySharkDespawned
 };
 
 // ScriptStruct AthenaAI.EventTinySharkSpawned
-// 0x0020
+// 0x0030
 struct FEventTinySharkSpawned
 {
 	class FString                                      TinySharkPartTag;                                         // 0x0000(0x0010) (ZeroConstructor)
 	struct FGuid                                       SpawnConfigId;                                            // 0x0010(0x0010) (ZeroConstructor, IsPlainOldData)
+	struct FVector                                     SpawnLocation;                                            // 0x0020(0x000C) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x002C(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct AthenaAI.TinySharkCollidedTelemetryEvent
@@ -1367,12 +1377,14 @@ struct FTinySharkDespawnTelemetryEvent
 };
 
 // ScriptStruct AthenaAI.TinySharkSpawnTelemetryEvent
-// 0x0030
+// 0x0040
 struct FTinySharkSpawnTelemetryEvent
 {
 	class FString                                      TinySharkId;                                              // 0x0000(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
 	class FString                                      TinySharkType;                                            // 0x0010(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
 	struct FGuid                                       ConfigSpawnId;                                            // 0x0020(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     SpawnLocation;                                            // 0x0030(0x000C) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x003C(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct AthenaAI.AIExclusionZone

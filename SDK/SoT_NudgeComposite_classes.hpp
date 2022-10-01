@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -48,14 +48,14 @@ public:
 
 
 // Class NudgeComposite.NudgeFromStormPolicy
-// 0x0098 (0x0160 - 0x00C8)
+// 0x0090 (0x0158 - 0x00C8)
 class UNudgeFromStormPolicy : public UNudgePolicy
 {
 public:
 	float                                              ChanceOfNudge;                                            // 0x00C8(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x00CC(0x0004) MISSED OFFSET
 	struct FWeightedProbabilityRangeOfRanges           WeightedTimers;                                           // 0x00D0(0x0030) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData01[0x60];                                      // 0x0100(0x0060) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x58];                                      // 0x0100(0x0058) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -64,18 +64,20 @@ public:
 	}
 
 
-	void IncrementTimer();
+	void OnTimerCompleted();
 };
 
 
 // Class NudgeComposite.NudgeFromWaterLevelPolicy
-// 0x0010 (0x00D8 - 0x00C8)
+// 0x0028 (0x00F0 - 0x00C8)
 class UNudgeFromWaterLevelPolicy : public UNudgePolicy
 {
 public:
-	float                                              WaterLevelDifferenceBetweenUpdates;                       // 0x00C8(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              ZOffsetFromWaterToMountpoint;                             // 0x00CC(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x8];                                       // 0x00D0(0x0008) MISSED OFFSET
+	float                                              ChanceOfNudge;                                            // 0x00C8(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x14];                                      // 0x00CC(0x0014) MISSED OFFSET
+	float                                              WaterLevelDifferenceBetweenUpdates;                       // 0x00E0(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              ZOffsetFromWaterToMountpoint;                             // 0x00E4(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x8];                                       // 0x00E8(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

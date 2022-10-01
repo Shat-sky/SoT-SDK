@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -8,14 +8,14 @@
 
 #include "SoT_Basic.hpp"
 #include "SoT_NaturalDisasters_enums.hpp"
+#include "SoT_ResourceContentionFramework_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
-#include "SoT_Maths_classes.hpp"
-#include "SoT_Athena_classes.hpp"
 #include "SoT_Kraken_classes.hpp"
 #include "SoT_StatusEffects_classes.hpp"
+#include "SoT_Maths_classes.hpp"
+#include "SoT_Athena_classes.hpp"
 #include "SoT_StoryFramework_classes.hpp"
-#include "SoT_ResourceContentionFramework_classes.hpp"
 
 namespace SDK
 {
@@ -84,6 +84,14 @@ struct FAshenLordWorldEndCloudAnimation
 {
 	float                                              ServerStartTime;                                          // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 	float                                              ServerLifeTime;                                           // 0x0004(0x0004) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct NaturalDisasters.GeyserStoryCustomisationData
+// 0x0010
+struct FGeyserStoryCustomisationData
+{
+	struct FStoryFlag                                  StoryFlag;                                                // 0x0000(0x0008) (Edit)
+	class UGeyserSetupDataAsset*                       GeyserSetupData;                                          // 0x0008(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct NaturalDisasters.EarthquakeForceFeedbackOption

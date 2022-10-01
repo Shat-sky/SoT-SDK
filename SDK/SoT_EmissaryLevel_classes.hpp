@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -100,14 +100,14 @@ public:
 
 
 // Class EmissaryLevel.EmissaryFlotsamItemInfo
-// 0x0028 (0x0748 - 0x0720)
+// 0x0028 (0x0750 - 0x0728)
 class AEmissaryFlotsamItemInfo : public ABootyItemInfo
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0720(0x0008) MISSED OFFSET
-	struct FCompanySpecificBootyReward                 HandInOwnFlotsamReward;                                   // 0x0728(0x0018) (Edit, DisableEditOnInstance)
-	bool                                               FlotsamCanBeDuplicated;                                   // 0x0740(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x7];                                       // 0x0741(0x0007) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0728(0x0008) MISSED OFFSET
+	struct FCompanySpecificBootyReward                 HandInOwnFlotsamReward;                                   // 0x0730(0x0018) (Edit, DisableEditOnInstance)
+	bool                                               FlotsamCanBeDuplicated;                                   // 0x0748(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x7];                                       // 0x0749(0x0007) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -174,14 +174,14 @@ public:
 
 
 // Class EmissaryLevel.EmissaryLevelService
-// 0x0338 (0x0700 - 0x03C8)
+// 0x0350 (0x0718 - 0x03C8)
 class AEmissaryLevelService : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0xA0];                                      // 0x03C8(0x00A0) MISSED OFFSET
-	class UEmissaryLevelSettingsAsset*                 Settings;                                                 // 0x0468(0x0008) (ZeroConstructor, IsPlainOldData)
-	class UEmissaryRewardSettingsAsset*                RewardSettings;                                           // 0x0470(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x288];                                     // 0x0478(0x0288) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xB8];                                      // 0x03C8(0x00B8) MISSED OFFSET
+	class UEmissaryLevelSettingsAsset*                 Settings;                                                 // 0x0480(0x0008) (ZeroConstructor, IsPlainOldData)
+	class UEmissaryRewardSettingsAsset*                RewardSettings;                                           // 0x0488(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x288];                                     // 0x0490(0x0288) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

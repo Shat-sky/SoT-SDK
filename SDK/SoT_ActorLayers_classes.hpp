@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -30,13 +30,13 @@ public:
 
 
 // Class ActorLayers.InstancedLayerComponent
-// 0x0030 (0x00F8 - 0x00C8)
-class UInstancedLayerComponent : public UActorComponent
+// 0x0030 (0x0310 - 0x02E0)
+class UInstancedLayerComponent : public USceneComponent
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x00C8(0x0008) MISSED OFFSET
-	TArray<struct FInstancedLayer>                     InstancedLayers;                                          // 0x00D0(0x0010) (Edit, ZeroConstructor)
-	unsigned char                                      UnknownData01[0x18];                                      // 0x00E0(0x0018) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x02E0(0x0008) MISSED OFFSET
+	TArray<struct FInstancedLayer>                     InstancedLayers;                                          // 0x02E8(0x0010) (Edit, ZeroConstructor)
+	unsigned char                                      UnknownData01[0x18];                                      // 0x02F8(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -16,6 +16,24 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
+
+// ScriptStruct Repair.DamageZoneRepairableStateChangedEvent
+// 0x0010
+struct FDamageZoneRepairableStateChangedEvent
+{
+	class AActor*                                      DamageZoneActor;                                          // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ERepairableState>                      RepairableState;                                          // 0x0008(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0009(0x0007) MISSED OFFSET
+};
+
+// ScriptStruct Repair.RepairableComponentRepairableStateChangedEvent
+// 0x0010
+struct FRepairableComponentRepairableStateChangedEvent
+{
+	class UActorComponent*                             RepairableComponent;                                      // 0x0000(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	TEnumAsByte<ERepairableState>                      RepairableState;                                          // 0x0008(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0009(0x0007) MISSED OFFSET
+};
 
 // ScriptStruct Repair.EventRepairableObjectRepairEndedEvent
 // 0x0028

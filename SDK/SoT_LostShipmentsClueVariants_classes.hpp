@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -966,12 +966,12 @@ public:
 
 
 // Class LostShipmentsClueVariants.TaleQuestGetNPCActorFromClueSiteStepDesc
-// 0x0040 (0x00C0 - 0x0080)
+// 0x0060 (0x00E0 - 0x0080)
 class UTaleQuestGetNPCActorFromClueSiteStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableClueSite                      ClueSite;                                                 // 0x0080(0x0020) (Edit)
-	struct FQuestVariableActor                         NPCFromClueSite;                                          // 0x00A0(0x0020) (Edit)
+	struct FQuestVariableClueSite                      ClueSite;                                                 // 0x0080(0x0030) (Edit)
+	struct FQuestVariableActor                         NPCFromClueSite;                                          // 0x00B0(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -999,14 +999,14 @@ public:
 
 
 // Class LostShipmentsClueVariants.TaleQuestGetPhasedVersionOfActorFromAssetMapStepDesc
-// 0x0068 (0x00E8 - 0x0080)
+// 0x0098 (0x0118 - 0x0080)
 class UTaleQuestGetPhasedVersionOfActorFromAssetMapStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableActor                         ExistingNPCActor;                                         // 0x0080(0x0020) (Edit)
-	struct FQuestVariableActorAssetType                ObtainedPhasedNPCActorType;                               // 0x00A0(0x0020) (Edit)
-	struct FQuestVariableActor                         PhasingSourceActor;                                       // 0x00C0(0x0020) (Edit)
-	class UExistingToPhasedNPCIndexAssetMap*           IndexAssetMap;                                            // 0x00E0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariableActor                         ExistingNPCActor;                                         // 0x0080(0x0030) (Edit)
+	struct FQuestVariableActorAssetType                ObtainedPhasedNPCActorType;                               // 0x00B0(0x0030) (Edit)
+	struct FQuestVariableActor                         PhasingSourceActor;                                       // 0x00E0(0x0030) (Edit)
+	class UExistingToPhasedNPCIndexAssetMap*           IndexAssetMap;                                            // 0x0110(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -1033,12 +1033,12 @@ public:
 
 
 // Class LostShipmentsClueVariants.TaleQuestRetrieveSpawnedMerchantCaptainFromShipwreckStepDesc
-// 0x0040 (0x00C0 - 0x0080)
+// 0x0060 (0x00E0 - 0x0080)
 class UTaleQuestRetrieveSpawnedMerchantCaptainFromShipwreckStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableShipwreck                     ShipwreckSpawnedOn;                                       // 0x0080(0x0020) (Edit)
-	struct FQuestVariableActor                         SpawnedMerchantCaptain;                                   // 0x00A0(0x0020) (Edit)
+	struct FQuestVariableShipwreck                     ShipwreckSpawnedOn;                                       // 0x0080(0x0030) (Edit)
+	struct FQuestVariableActor                         SpawnedMerchantCaptain;                                   // 0x00B0(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -1065,13 +1065,13 @@ public:
 
 
 // Class LostShipmentsClueVariants.TaleQuestSpawnWashedUpMessageInABottleClueStepDesc
-// 0x0060 (0x00E0 - 0x0080)
+// 0x0090 (0x0110 - 0x0080)
 class UTaleQuestSpawnWashedUpMessageInABottleClueStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableClueSite                      ClueSite;                                                 // 0x0080(0x0020) (Edit)
-	struct FQuestVariableClueDescriptor                ClueDescriptor;                                           // 0x00A0(0x0020) (Edit)
-	struct FQuestVariableActor                         MessageInABottle;                                         // 0x00C0(0x0020) (Edit)
+	struct FQuestVariableClueSite                      ClueSite;                                                 // 0x0080(0x0030) (Edit)
+	struct FQuestVariableClueDescriptor                ClueDescriptor;                                           // 0x00B0(0x0030) (Edit)
+	struct FQuestVariableActor                         MessageInABottle;                                         // 0x00E0(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -1098,15 +1098,15 @@ public:
 
 
 // Class LostShipmentsClueVariants.TaleQuestSpawnWashedUpSkeletonClueStepDesc
-// 0x0088 (0x0108 - 0x0080)
+// 0x00C8 (0x0148 - 0x0080)
 class UTaleQuestSpawnWashedUpSkeletonClueStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableClueSite                      ClueSite;                                                 // 0x0080(0x0020) (Edit)
-	struct FQuestVariableClueDescriptor                ClueDescriptor;                                           // 0x00A0(0x0020) (Edit)
-	struct FQuestVariableActor                         SkeletonActor;                                            // 0x00C0(0x0020) (Edit)
-	struct FQuestVariableItemInfo                      ClueItem;                                                 // 0x00E0(0x0020) (Edit)
-	struct FName                                       SkeletonClueSocketName;                                   // 0x0100(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariableClueSite                      ClueSite;                                                 // 0x0080(0x0030) (Edit)
+	struct FQuestVariableClueDescriptor                ClueDescriptor;                                           // 0x00B0(0x0030) (Edit)
+	struct FQuestVariableActor                         SkeletonActor;                                            // 0x00E0(0x0030) (Edit)
+	struct FQuestVariableItemInfo                      ClueItem;                                                 // 0x0110(0x0030) (Edit)
+	struct FName                                       SkeletonClueSocketName;                                   // 0x0140(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -1118,13 +1118,13 @@ public:
 
 
 // Class LostShipmentsClueVariants.WaitForClueCollectedStep
-// 0x0078 (0x0110 - 0x0098)
+// 0x00A8 (0x0140 - 0x0098)
 class UWaitForClueCollectedStep : public UTaleQuestStep
 {
 public:
 	class UClueDescriptor*                             ClueDesc;                                                 // 0x0098(0x0008) (ZeroConstructor, IsPlainOldData)
 	class AActor*                                      ClueActor;                                                // 0x00A0(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x68];                                      // 0x00A8(0x0068) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x98];                                      // 0x00A8(0x0098) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -1136,13 +1136,13 @@ public:
 
 
 // Class LostShipmentsClueVariants.WaitForClueCollectedStepDesc
-// 0x0060 (0x00E0 - 0x0080)
+// 0x0090 (0x0110 - 0x0080)
 class UWaitForClueCollectedStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableClueDescriptor                Clue;                                                     // 0x0080(0x0020) (Edit)
-	struct FQuestVariableActor                         ClueActor;                                                // 0x00A0(0x0020) (Edit)
-	struct FQuestVariableActor                         Discoverer;                                               // 0x00C0(0x0020) (Edit)
+	struct FQuestVariableClueDescriptor                Clue;                                                     // 0x0080(0x0030) (Edit)
+	struct FQuestVariableActor                         ClueActor;                                                // 0x00B0(0x0030) (Edit)
+	struct FQuestVariableActor                         Discoverer;                                               // 0x00E0(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{

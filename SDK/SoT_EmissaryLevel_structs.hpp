@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,10 +11,10 @@
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_AthenaEngine_classes.hpp"
-#include "SoT_EmissaryFramework_classes.hpp"
-#include "SoT_MysteriousNotes_classes.hpp"
-#include "SoT_Athena_classes.hpp"
 #include "SoT_ItemQuality_classes.hpp"
+#include "SoT_Athena_classes.hpp"
+#include "SoT_MysteriousNotes_classes.hpp"
+#include "SoT_EmissaryFramework_classes.hpp"
 
 namespace SDK
 {
@@ -192,8 +192,17 @@ struct FEmissaryCompanyActionReward
 	float                                              Amount;                                                   // 0x0004(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 };
 
+// ScriptStruct EmissaryLevel.EmissaryFactionActionReward
+// 0x0008
+struct FEmissaryFactionActionReward
+{
+	TEnumAsByte<EEmisaryFactionActionType>             FactionActionType;                                        // 0x0000(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0001(0x0003) MISSED OFFSET
+	float                                              Amount;                                                   // 0x0004(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+};
+
 // ScriptStruct EmissaryLevel.EmissaryActionRewardData
-// 0x0078
+// 0x0088
 struct FEmissaryActionRewardData
 {
 	TArray<struct FEmissaryEventAward>                 OwnershipChangedRewards;                                  // 0x0000(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
@@ -202,14 +211,15 @@ struct FEmissaryActionRewardData
 	TArray<struct FEmissaryGameEventsReward>           GameEventsRewards;                                        // 0x0048(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 	TArray<struct FEmissaryEventAward>                 HandinRewards;                                            // 0x0058(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 	TArray<struct FEmissaryCompanyActionReward>        CompanyActionRewards;                                     // 0x0068(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	TArray<struct FEmissaryFactionActionReward>        FactionActionRewards;                                     // 0x0078(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 };
 
 // ScriptStruct EmissaryLevel.EmissaryRewardEntry
-// 0x0080
+// 0x0090
 struct FEmissaryRewardEntry
 {
 	class UClass*                                      Company;                                                  // 0x0000(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FEmissaryActionRewardData                   ActionRewardData;                                         // 0x0008(0x0078) (Edit, DisableEditOnInstance)
+	struct FEmissaryActionRewardData                   ActionRewardData;                                         // 0x0008(0x0088) (Edit, DisableEditOnInstance)
 };
 
 // ScriptStruct EmissaryLevel.PerCompanyVotes

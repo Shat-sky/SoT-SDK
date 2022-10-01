@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,12 +12,12 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function NudgeComposite.NudgeFromStormPolicy.IncrementTimer
+// Function NudgeComposite.NudgeFromStormPolicy.OnTimerCompleted
 // (Final, Native, Private)
 
-void UNudgeFromStormPolicy::IncrementTimer()
+void UNudgeFromStormPolicy::OnTimerCompleted()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function NudgeComposite.NudgeFromStormPolicy.IncrementTimer"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function NudgeComposite.NudgeFromStormPolicy.OnTimerCompleted"));
 
 	struct
 	{

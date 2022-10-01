@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -19,6 +19,16 @@ enum class EInvasionStatus : uint8_t
 	EInvasionStatus__Aggressive    = 1,
 	EInvasionStatus__Passive       = 2,
 	EInvasionStatus__EInvasionStatus_MAX = 3
+};
+
+
+// Enum InvasionFramework.EInvasionMusicState
+enum class EInvasionMusicState : uint8_t
+{
+	EInvasionMusicState__None      = 0,
+	EInvasionMusicState__EnteringDive = 1,
+	EInvasionMusicState__Emerging  = 2,
+	EInvasionMusicState__EInvasionMusicState_MAX = 3
 };
 
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,7 +20,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // ScriptStruct TradeRouteFramework.QuestVariableTradeRouteData
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableTradeRouteData : public FQuestVariable
 {
 

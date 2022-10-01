@@ -1,14 +1,17 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
+#include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Interaction_classes.hpp"
+#include "SoT_Athena_classes.hpp"
+#include "SoT_Factions_classes.hpp"
 
 namespace SDK
 {
@@ -17,10 +20,10 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // ScriptStruct WarMap.EventLocalPlayerOpenedWarMap
-// 0x0001
+// 0x0008
 struct FEventLocalPlayerOpenedWarMap
 {
-	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+	class UClass*                                      Faction;                                                  // 0x0000(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct WarMap.EventWarMapStateChanged

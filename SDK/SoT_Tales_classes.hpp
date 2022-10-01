@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -176,6 +176,21 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.IslandTypeWeightsDataAsset"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestExpressionInterface
+// 0x0000 (0x0028 - 0x0028)
+class UTaleQuestExpressionInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestExpressionInterface"));
 		return ptr;
 	}
 
@@ -473,6 +488,22 @@ public:
 };
 
 
+// Class Tales.GameEventBlockingTaleService
+// 0x0038 (0x0098 - 0x0060)
+class UGameEventBlockingTaleService : public UTaleQuestService
+{
+public:
+	unsigned char                                      UnknownData00[0x38];                                      // 0x0060(0x0038) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.GameEventBlockingTaleService"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.GameEventExclusionZoneTaleService
 // 0x0028 (0x0088 - 0x0060)
 class UGameEventExclusionZoneTaleService : public UTaleQuestService
@@ -550,11 +581,11 @@ public:
 
 
 // Class Tales.TaleQuestEQSService
-// 0x00C8 (0x0128 - 0x0060)
+// 0x00D8 (0x0138 - 0x0060)
 class UTaleQuestEQSService : public UTaleQuestService
 {
 public:
-	unsigned char                                      UnknownData00[0xC8];                                      // 0x0060(0x00C8) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xD8];                                      // 0x0060(0x00D8) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -602,6 +633,23 @@ public:
 
 	int GetRandomIntegerInRange(int Minimum, int Maximum);
 	float GetRandomFloatInRange(float Minimum, float Maximum);
+};
+
+
+// Class Tales.TaleQuestShipSetSinkingParamsService
+// 0x0050 (0x00B0 - 0x0060)
+class UTaleQuestShipSetSinkingParamsService : public UTaleQuestService
+{
+public:
+	class UTaleQuestShipSetSinkingParamsServiceDesc*   Desc;                                                     // 0x0060(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x48];                                      // 0x0068(0x0048) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestShipSetSinkingParamsService"));
+		return ptr;
+	}
+
 };
 
 
@@ -653,6 +701,21 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.CutsceneResponsesTaleServiceDesc"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.GameEventBlockingTaleServiceDesc
+// 0x0000 (0x0028 - 0x0028)
+class UGameEventBlockingTaleServiceDesc : public UTaleQuestServiceDesc
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.GameEventBlockingTaleServiceDesc"));
 		return ptr;
 	}
 
@@ -781,6 +844,25 @@ public:
 };
 
 
+// Class Tales.TaleQuestShipSetSinkingParamsServiceDesc
+// 0x0048 (0x0070 - 0x0028)
+class UTaleQuestShipSetSinkingParamsServiceDesc : public UTaleQuestServiceDesc
+{
+public:
+	struct FQuestVariableGuid                          CrewId;                                                   // 0x0028(0x0030) (Edit)
+	class UShipSinkingParametersDataAsset*             SmallShipSinkingData;                                     // 0x0058(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UShipSinkingParametersDataAsset*             MediumShipSinkingData;                                    // 0x0060(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UShipSinkingParametersDataAsset*             LargeShipSinkingData;                                     // 0x0068(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestShipSetSinkingParamsServiceDesc"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleQuestToggleInteractionDescriptionServiceDesc
 // 0x0008 (0x0030 - 0x0028)
 class UTaleQuestToggleInteractionDescriptionServiceDesc : public UTaleQuestServiceDesc
@@ -818,11 +900,10 @@ public:
 
 
 // Class Tales.AddGameEventExclusionZoneStep
-// 0x0008 (0x00A0 - 0x0098)
+// 0x0000 (0x0098 - 0x0098)
 class UAddGameEventExclusionZoneStep : public UTaleQuestStep
 {
 public:
-	class UAddGameEventExclusionZoneStepDesc*          Desc;                                                     // 0x0098(0x0008) (ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -849,14 +930,14 @@ public:
 
 
 // Class Tales.DebugTaleAddInstancedLevelStep
-// 0x0038 (0x00D0 - 0x0098)
+// 0x0040 (0x00D8 - 0x0098)
 class UDebugTaleAddInstancedLevelStep : public UTaleQuestStep
 {
 public:
 	unsigned char                                      UnknownData00[0x8];                                       // 0x0098(0x0008) MISSED OFFSET
 	class UDebugTaleAddInstancedLevelStepDesc*         StepDesc;                                                 // 0x00A0(0x0008) (ZeroConstructor, IsPlainOldData)
 	class FString                                      InstancedLevelPath;                                       // 0x00A8(0x0010) (ZeroConstructor)
-	unsigned char                                      UnknownData01[0x18];                                      // 0x00B8(0x0018) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x20];                                      // 0x00B8(0x0020) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -993,11 +1074,11 @@ public:
 
 
 // Class Tales.ForceCannonLoadStep
-// 0x0040 (0x00D8 - 0x0098)
+// 0x0060 (0x00F8 - 0x0098)
 class UForceCannonLoadStep : public UTaleQuestStep
 {
 public:
-	unsigned char                                      UnknownData00[0x40];                                      // 0x0098(0x0040) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x60];                                      // 0x0098(0x0060) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -1009,11 +1090,11 @@ public:
 
 
 // Class Tales.GenerateDigLocationInRadiusStep
-// 0x0080 (0x0118 - 0x0098)
+// 0x00B0 (0x0148 - 0x0098)
 class UGenerateDigLocationInRadiusStep : public UTaleQuestStep
 {
 public:
-	unsigned char                                      UnknownData00[0x80];                                      // 0x0098(0x0080) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xB0];                                      // 0x0098(0x00B0) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -1040,11 +1121,11 @@ public:
 
 
 // Class Tales.GetVoyageDifficultyFromRankStep
-// 0x0028 (0x00C0 - 0x0098)
+// 0x0038 (0x00D0 - 0x0098)
 class UGetVoyageDifficultyFromRankStep : public UTaleQuestStep
 {
 public:
-	unsigned char                                      UnknownData00[0x28];                                      // 0x0098(0x0028) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x38];                                      // 0x0098(0x0038) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -1203,16 +1284,45 @@ public:
 };
 
 
+// Class Tales.ReleaseGameEventBlockStep
+// 0x0000 (0x0098 - 0x0098)
+class UReleaseGameEventBlockStep : public UTaleQuestStep
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.ReleaseGameEventBlockStep"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.RemoveGameEventExclusionZoneStep
-// 0x0008 (0x00A0 - 0x0098)
+// 0x0000 (0x0098 - 0x0098)
 class URemoveGameEventExclusionZoneStep : public UTaleQuestStep
 {
 public:
-	class URemoveGameEventExclusionZoneStepDesc*       Desc;                                                     // 0x0098(0x0008) (ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.RemoveGameEventExclusionZoneStep"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.RequestGameEventBlockStep
+// 0x0000 (0x0098 - 0x0098)
+class URequestGameEventBlockStep : public UTaleQuestStep
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.RequestGameEventBlockStep"));
 		return ptr;
 	}
 
@@ -1267,11 +1377,11 @@ public:
 
 
 // Class Tales.SpawnPhasedActorWithTransformStep
-// 0x0058 (0x00F0 - 0x0098)
+// 0x0068 (0x0100 - 0x0098)
 class USpawnPhasedActorWithTransformStep : public UTaleQuestStep
 {
 public:
-	unsigned char                                      UnknownData00[0x58];                                      // 0x0098(0x0058) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x68];                                      // 0x0098(0x0068) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -1404,12 +1514,12 @@ public:
 
 
 // Class Tales.TaleQuestChooseIslandFromWeightsStep
-// 0x0068 (0x0100 - 0x0098)
+// 0x0098 (0x0130 - 0x0098)
 class UTaleQuestChooseIslandFromWeightsStep : public UTaleQuestStep
 {
 public:
-	unsigned char                                      UnknownData00[0x60];                                      // 0x0098(0x0060) MISSED OFFSET
-	class UIslandTypeWeightsDataAsset*                 IslandTypeWeights;                                        // 0x00F8(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x90];                                      // 0x0098(0x0090) MISSED OFFSET
+	class UIslandTypeWeightsDataAsset*                 IslandTypeWeights;                                        // 0x0128(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -1670,11 +1780,12 @@ public:
 
 
 // Class Tales.TaleQuestSelectEntryFromArrayStep
-// 0x0040 (0x00D8 - 0x0098)
+// 0x0060 (0x00F8 - 0x0098)
 class UTaleQuestSelectEntryFromArrayStep : public UTaleQuestStep
 {
 public:
-	unsigned char                                      UnknownData00[0x40];                                      // 0x0098(0x0040) MISSED OFFSET
+	struct FQuestVariableArray                         InputArray;                                               // 0x0098(0x0030) (Transient)
+	struct FQuestVariable                              OutputEntry;                                              // 0x00C8(0x0030) (Transient)
 
 	static UClass* StaticClass()
 	{
@@ -1870,6 +1981,23 @@ public:
 };
 
 
+// Class Tales.WaitForGameEventToCompleteStep
+// 0x0010 (0x00A8 - 0x0098)
+class UWaitForGameEventToCompleteStep : public UTaleQuestStep
+{
+public:
+	class AGameEvent*                                  GameEvent;                                                // 0x0098(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x8];                                       // 0x00A0(0x0008) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.WaitForGameEventToCompleteStep"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.WaitForHealthToReachFractionStep
 // 0x0070 (0x0108 - 0x0098)
 class UWaitForHealthToReachFractionStep : public UTaleQuestStep
@@ -1887,11 +2015,11 @@ public:
 
 
 // Class Tales.WaitForItemPickupStep
-// 0x00B0 (0x0148 - 0x0098)
+// 0x00D0 (0x0168 - 0x0098)
 class UWaitForItemPickupStep : public UTaleQuestStep
 {
 public:
-	unsigned char                                      UnknownData00[0xB0];                                      // 0x0098(0x00B0) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xD0];                                      // 0x0098(0x00D0) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -1902,18 +2030,35 @@ public:
 };
 
 
+// Class Tales.WaitForSpawnedPawnBaseStep
+// 0x0018 (0x00B0 - 0x0098)
+class UWaitForSpawnedPawnBaseStep : public UTaleQuestStep
+{
+public:
+	class UAISpawner*                                  AISpawner;                                                // 0x0098(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x10];                                      // 0x00A0(0x0010) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.WaitForSpawnedPawnBaseStep"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.ActorRadiusTrackerStepDesc
-// 0x0070 (0x00F0 - 0x0080)
+// 0x00A0 (0x0120 - 0x0080)
 class UActorRadiusTrackerStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableActor                         TargetActor;                                              // 0x0080(0x0020) (Edit)
-	float                                              DurationBetweenChecks;                                    // 0x00A0(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x00A4(0x0004) MISSED OFFSET
-	struct FQuestVariableVector                        Location;                                                 // 0x00A8(0x0020) (Edit)
-	float                                              Radius;                                                   // 0x00C8(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x00CC(0x0004) MISSED OFFSET
-	struct FQuestVariableBool                          ActorInsideRadius;                                        // 0x00D0(0x0020) (Edit)
+	struct FQuestVariableActor                         TargetActor;                                              // 0x0080(0x0030) (Edit)
+	float                                              DurationBetweenChecks;                                    // 0x00B0(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x00B4(0x0004) MISSED OFFSET
+	struct FQuestVariableVector                        Location;                                                 // 0x00B8(0x0030) (Edit)
+	float                                              Radius;                                                   // 0x00E8(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x00EC(0x0004) MISSED OFFSET
+	struct FQuestVariableBool                          ActorInsideRadius;                                        // 0x00F0(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -1925,13 +2070,15 @@ public:
 
 
 // Class Tales.AddGameEventExclusionZoneStepDesc
-// 0x0028 (0x00A8 - 0x0080)
+// 0x0040 (0x00C0 - 0x0080)
 class UAddGameEventExclusionZoneStepDesc : public UTaleQuestStepDesc
 {
 public:
 	float                                              Radius;                                                   // 0x0080(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0084(0x0004) MISSED OFFSET
-	struct FQuestVariableVector                        Location;                                                 // 0x0088(0x0020) (Edit)
+	bool                                               ShouldGetRadiusFromRemoteConfig;                          // 0x0084(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0085(0x0003) MISSED OFFSET
+	struct FName                                       RemoteConfigKeyRadius;                                    // 0x0088(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariableVector                        Location;                                                 // 0x0090(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -1961,11 +2108,11 @@ public:
 
 
 // Class Tales.DestroySpawnedActorStepDesc
-// 0x0020 (0x00A0 - 0x0080)
+// 0x0030 (0x00B0 - 0x0080)
 class UDestroySpawnedActorStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableActor                         ActorVar;                                                 // 0x0080(0x0020) (Edit)
+	struct FQuestVariableActor                         ActorVar;                                                 // 0x0080(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -1977,12 +2124,12 @@ public:
 
 
 // Class Tales.DoEQSQueryStepDesc
-// 0x0028 (0x00A8 - 0x0080)
+// 0x0038 (0x00B8 - 0x0080)
 class UDoEQSQueryStepDesc : public UTaleQuestStepDesc
 {
 public:
 	class UEnvQuery*                                   EQSQuery;                                                 // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FQuestVariableArray                         OutPoints;                                                // 0x0088(0x0020) (Edit)
+	struct FQuestVariableArray                         OutPoints;                                                // 0x0088(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -1994,11 +2141,11 @@ public:
 
 
 // Class Tales.EnableInteractionWithActorStepDesc
-// 0x0020 (0x00A0 - 0x0080)
+// 0x0030 (0x00B0 - 0x0080)
 class UEnableInteractionWithActorStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableActor                         TargetActor;                                              // 0x0080(0x0020) (Edit)
+	struct FQuestVariableActor                         TargetActor;                                              // 0x0080(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2010,13 +2157,13 @@ public:
 
 
 // Class Tales.FindItemInCollectorsChestStepDesc
-// 0x0048 (0x00C8 - 0x0080)
+// 0x0068 (0x00E8 - 0x0080)
 class UFindItemInCollectorsChestStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableActor                         CollectorsChest;                                          // 0x0080(0x0020) (Edit)
-	struct FQuestVariableActor                         ItemInChest;                                              // 0x00A0(0x0020) (Edit)
-	class UClass*                                      ItemToFind;                                               // 0x00C0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariableActor                         CollectorsChest;                                          // 0x0080(0x0030) (Edit)
+	struct FQuestVariableActor                         ItemInChest;                                              // 0x00B0(0x0030) (Edit)
+	class UClass*                                      ItemToFind;                                               // 0x00E0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -2028,17 +2175,17 @@ public:
 
 
 // Class Tales.FindNamedPointStepDescBase
-// 0x0070 (0x00F0 - 0x0080)
+// 0x0090 (0x0110 - 0x0080)
 class UFindNamedPointStepDescBase : public UTaleQuestStepDesc
 {
 public:
 	unsigned char                                      UnknownData00[0x20];                                      // 0x0080(0x0020) MISSED OFFSET
-	struct FQuestVariableActor                         ActorToSearch;                                            // 0x00A0(0x0020) (Edit)
-	struct FQuestVariableName                          GroupNamePin;                                             // 0x00C0(0x0020) (Edit)
-	struct FName                                       PointGroupName;                                           // 0x00E0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EPointSelectionMethod>                 SearchMethod;                                             // 0x00E8(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ESpaceType>                            ReturnInSpace;                                            // 0x00E9(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x6];                                       // 0x00EA(0x0006) MISSED OFFSET
+	struct FQuestVariableActor                         ActorToSearch;                                            // 0x00A0(0x0030) (Edit)
+	struct FQuestVariableName                          GroupNamePin;                                             // 0x00D0(0x0030) (Edit)
+	struct FName                                       PointGroupName;                                           // 0x0100(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EPointSelectionMethod>                 SearchMethod;                                             // 0x0108(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ESpaceType>                            ReturnInSpace;                                            // 0x0109(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x6];                                       // 0x010A(0x0006) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -2050,11 +2197,11 @@ public:
 
 
 // Class Tales.FindNamedPointStepDesc
-// 0x0020 (0x0110 - 0x00F0)
+// 0x0030 (0x0140 - 0x0110)
 class UFindNamedPointStepDesc : public UFindNamedPointStepDescBase
 {
 public:
-	struct FQuestVariableOrientedPoint                 OutputOrientedPoint;                                      // 0x00F0(0x0020) (Edit)
+	struct FQuestVariableOrientedPoint                 OutputOrientedPoint;                                      // 0x0110(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2066,11 +2213,11 @@ public:
 
 
 // Class Tales.FindNamedPointAsVectorStepDesc
-// 0x0020 (0x0110 - 0x00F0)
+// 0x0030 (0x0140 - 0x0110)
 class UFindNamedPointAsVectorStepDesc : public UFindNamedPointStepDescBase
 {
 public:
-	struct FQuestVariableVector                        OutputVectorLocation;                                     // 0x00F0(0x0020) (Edit)
+	struct FQuestVariableVector                        OutputVectorLocation;                                     // 0x0110(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2082,11 +2229,11 @@ public:
 
 
 // Class Tales.FindNamedPointAsTransformStepDesc
-// 0x0028 (0x0118 - 0x00F0)
+// 0x0038 (0x0148 - 0x0110)
 class UFindNamedPointAsTransformStepDesc : public UFindNamedPointStepDescBase
 {
 public:
-	struct FQuestVariableTransform                     OutputTransform;                                          // 0x00F0(0x0028) (Edit)
+	struct FQuestVariableTransform                     OutputTransform;                                          // 0x0110(0x0038) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2098,12 +2245,12 @@ public:
 
 
 // Class Tales.ForceCannonLoadStepDesc
-// 0x0040 (0x00C0 - 0x0080)
+// 0x0060 (0x00E0 - 0x0080)
 class UForceCannonLoadStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableActor                         Cannon;                                                   // 0x0080(0x0020) (Edit)
-	struct FQuestVariableActor                         Projectile;                                               // 0x00A0(0x0020) (Edit)
+	struct FQuestVariableActor                         Cannon;                                                   // 0x0080(0x0030) (Edit)
+	struct FQuestVariableActor                         Projectile;                                               // 0x00B0(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2115,15 +2262,15 @@ public:
 
 
 // Class Tales.GenerateDigLocationInRadiusStepDesc
-// 0x0068 (0x00E8 - 0x0080)
+// 0x0098 (0x0118 - 0x0080)
 class UGenerateDigLocationInRadiusStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableName                          IslandName;                                               // 0x0080(0x0020) (Edit)
-	struct FQuestVariableVector                        Center;                                                   // 0x00A0(0x0020) (Edit)
-	float                                              RadiusInCm;                                               // 0x00C0(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x00C4(0x0004) MISSED OFFSET
-	struct FQuestVariableVector                        DigLocation;                                              // 0x00C8(0x0020) (Edit)
+	struct FQuestVariableName                          IslandName;                                               // 0x0080(0x0030) (Edit)
+	struct FQuestVariableVector                        Center;                                                   // 0x00B0(0x0030) (Edit)
+	float                                              RadiusInCm;                                               // 0x00E0(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x00E4(0x0004) MISSED OFFSET
+	struct FQuestVariableVector                        DigLocation;                                              // 0x00E8(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2135,12 +2282,12 @@ public:
 
 
 // Class Tales.GetActorOfInterestStepDesc
-// 0x0028 (0x00A8 - 0x0080)
+// 0x0038 (0x00B8 - 0x0080)
 class UGetActorOfInterestStepDesc : public UTaleQuestStepDesc
 {
 public:
 	class UClass*                                      ActorOfInterestId;                                        // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FQuestVariableActor                         ActorOfInterest;                                          // 0x0088(0x0020) (Edit)
+	struct FQuestVariableActor                         ActorOfInterest;                                          // 0x0088(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2152,15 +2299,15 @@ public:
 
 
 // Class Tales.InvokeDamageDesc
-// 0x0030 (0x00B0 - 0x0080)
+// 0x0040 (0x00C0 - 0x0080)
 class UInvokeDamageDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableActor                         ActorToDamage;                                            // 0x0080(0x0020) (Edit)
-	class UClass*                                      DamageType;                                               // 0x00A0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              DamageAmount;                                             // 0x00A8(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EHealthChangedReason>                  DamageReason;                                             // 0x00AC(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x00AD(0x0003) MISSED OFFSET
+	struct FQuestVariableActor                         ActorToDamage;                                            // 0x0080(0x0030) (Edit)
+	class UClass*                                      DamageType;                                               // 0x00B0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              DamageAmount;                                             // 0x00B8(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EHealthChangedReason>                  DamageReason;                                             // 0x00BC(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x00BD(0x0003) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -2172,12 +2319,12 @@ public:
 
 
 // Class Tales.LinkEQSContextWithVariableStepDesc
-// 0x0028 (0x00A8 - 0x0080)
+// 0x0038 (0x00B8 - 0x0080)
 class ULinkEQSContextWithVariableStepDesc : public UTaleQuestStepDesc
 {
 public:
 	class UClass*                                      Context;                                                  // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FQuestVariableSetEQSTaleContextValue        Variable;                                                 // 0x0088(0x0020) (Edit)
+	struct FQuestVariableSetEQSTaleContextValue        Variable;                                                 // 0x0088(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2189,19 +2336,19 @@ public:
 
 
 // Class Tales.LoadSequencerAnimationStepDesc
-// 0x0080 (0x0100 - 0x0080)
+// 0x00B0 (0x0130 - 0x0080)
 class ULoadSequencerAnimationStepDesc : public UTaleQuestStepDesc
 {
 public:
 	TArray<class ULevelSequence*>                      LevelSequencesToLoad;                                     // 0x0080(0x0010) (Edit, ZeroConstructor)
-	struct FQuestVariableActor                         TargetActorToSpawn;                                       // 0x0090(0x0020) (Edit)
-	struct FQuestVariableActor                         LevelSequenceActorSpawnLocation;                          // 0x00B0(0x0020) (Edit)
-	struct FQuestVariableActor                         SequencerCutSceneActor;                                   // 0x00D0(0x0020) (Edit)
-	bool                                               AttachToTargetActor;                                      // 0x00F0(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x00F1(0x0003) MISSED OFFSET
-	struct FName                                       AttachSocketName;                                         // 0x00F4(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	bool                                               PlayGlobally;                                             // 0x00FC(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x3];                                       // 0x00FD(0x0003) MISSED OFFSET
+	struct FQuestVariableActor                         TargetActorToSpawn;                                       // 0x0090(0x0030) (Edit)
+	struct FQuestVariableActor                         LevelSequenceActorSpawnLocation;                          // 0x00C0(0x0030) (Edit)
+	struct FQuestVariableActor                         SequencerCutSceneActor;                                   // 0x00F0(0x0030) (Edit)
+	bool                                               AttachToTargetActor;                                      // 0x0120(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0121(0x0003) MISSED OFFSET
+	struct FName                                       AttachSocketName;                                         // 0x0124(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	bool                                               PlayGlobally;                                             // 0x012C(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x3];                                       // 0x012D(0x0003) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -2213,15 +2360,15 @@ public:
 
 
 // Class Tales.OverrideManagedActorStateStepDesc
-// 0x0060 (0x00E0 - 0x0080)
+// 0x0070 (0x00F0 - 0x0080)
 class UOverrideManagedActorStateStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableActor                         ActorVar;                                                 // 0x0080(0x0020) (Edit)
-	bool                                               TrackActor;                                               // 0x00A0(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	bool                                               MarkAsCritical;                                           // 0x00A1(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x6];                                       // 0x00A2(0x0006) MISSED OFFSET
-	struct FText                                       CriticalActorLostMessage;                                 // 0x00A8(0x0038) (Edit)
+	struct FQuestVariableActor                         ActorVar;                                                 // 0x0080(0x0030) (Edit)
+	bool                                               TrackActor;                                               // 0x00B0(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	bool                                               MarkAsCritical;                                           // 0x00B1(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x6];                                       // 0x00B2(0x0006) MISSED OFFSET
+	struct FText                                       CriticalActorLostMessage;                                 // 0x00B8(0x0038) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2233,14 +2380,14 @@ public:
 
 
 // Class Tales.ParticipantRadiusTrackerStepDesc
-// 0x0048 (0x00C8 - 0x0080)
+// 0x0068 (0x00E8 - 0x0080)
 class UParticipantRadiusTrackerStepDesc : public UTaleQuestStepDesc
 {
 public:
 	float                                              DurationBetweenChecks;                                    // 0x0080(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0084(0x0004) MISSED OFFSET
-	struct FQuestVariableVector                        Location;                                                 // 0x0088(0x0020) (Edit)
-	struct FQuestVariableFloat                         Radius;                                                   // 0x00A8(0x0020) (Edit)
+	struct FQuestVariableVector                        Location;                                                 // 0x0088(0x0030) (Edit)
+	struct FQuestVariableFloat                         Radius;                                                   // 0x00B8(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2252,7 +2399,7 @@ public:
 
 
 // Class Tales.WaitUntilAllParticipantsEnterRadiusStep
-// 0x0000 (0x00C8 - 0x00C8)
+// 0x0000 (0x00E8 - 0x00E8)
 class UWaitUntilAllParticipantsEnterRadiusStep : public UParticipantRadiusTrackerStepDesc
 {
 public:
@@ -2267,7 +2414,7 @@ public:
 
 
 // Class Tales.WaitUntilAllParticipantsLeaveRadiusStep
-// 0x0000 (0x00C8 - 0x00C8)
+// 0x0000 (0x00E8 - 0x00E8)
 class UWaitUntilAllParticipantsLeaveRadiusStep : public UParticipantRadiusTrackerStepDesc
 {
 public:
@@ -2282,7 +2429,7 @@ public:
 
 
 // Class Tales.WaitUntilAnyParticipantEntersRadiusStep
-// 0x0000 (0x00C8 - 0x00C8)
+// 0x0000 (0x00E8 - 0x00E8)
 class UWaitUntilAnyParticipantEntersRadiusStep : public UParticipantRadiusTrackerStepDesc
 {
 public:
@@ -2297,26 +2444,26 @@ public:
 
 
 // Class Tales.PlaySequencerAnimationOnCutsceneActorStepDesc
-// 0x00E8 (0x0168 - 0x0080)
+// 0x0138 (0x01B8 - 0x0080)
 class UPlaySequencerAnimationOnCutsceneActorStepDesc : public UTaleQuestStepDesc
 {
 public:
 	class ULevelSequence*                              LevelSequence;                                            // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	float                                              Delay;                                                    // 0x0088(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x008C(0x0004) MISSED OFFSET
-	struct FQuestVariableActor                         DockableBaseActor;                                        // 0x0090(0x0020) (Edit)
-	struct FQuestVariableActor                         SequencerCutSceneActor;                                   // 0x00B0(0x0020) (Edit)
-	struct FQuestVariableActor                         ActorToPossess;                                           // 0x00D0(0x0020) (Edit)
-	struct FQuestVariableArray                         AdditionalPossessables;                                   // 0x00F0(0x0020) (Edit)
-	struct FQuestVariableActor                         InteractingActor;                                         // 0x0110(0x0020) (Edit)
-	class FString                                      PossessableName;                                          // 0x0130(0x0010) (Edit, ZeroConstructor)
-	class USceneDialogueData*                          DialogueData;                                             // 0x0140(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	TArray<struct FText>                               LocalisableNames;                                         // 0x0148(0x0010) (Edit, ZeroConstructor)
-	bool                                               IsLevelSequenceActorAlwaysRelevant;                       // 0x0158(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	bool                                               IsLooping;                                                // 0x0159(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x2];                                       // 0x015A(0x0002) MISSED OFFSET
-	float                                              SubtitleSphereRadiusInCm;                                 // 0x015C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	class ULevelSequence*                              FemaleLevelSequence;                                      // 0x0160(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariableActor                         DockableBaseActor;                                        // 0x0090(0x0030) (Edit)
+	struct FQuestVariableActor                         SequencerCutSceneActor;                                   // 0x00C0(0x0030) (Edit)
+	struct FQuestVariableActor                         ActorToPossess;                                           // 0x00F0(0x0030) (Edit)
+	struct FQuestVariableArray                         AdditionalPossessables;                                   // 0x0120(0x0030) (Edit)
+	struct FQuestVariableActor                         InteractingActor;                                         // 0x0150(0x0030) (Edit)
+	class FString                                      PossessableName;                                          // 0x0180(0x0010) (Edit, ZeroConstructor)
+	class USceneDialogueData*                          DialogueData;                                             // 0x0190(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	TArray<struct FText>                               LocalisableNames;                                         // 0x0198(0x0010) (Edit, ZeroConstructor)
+	bool                                               IsLevelSequenceActorAlwaysRelevant;                       // 0x01A8(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	bool                                               IsLooping;                                                // 0x01A9(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x2];                                       // 0x01AA(0x0002) MISSED OFFSET
+	float                                              SubtitleSphereRadiusInCm;                                 // 0x01AC(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	class ULevelSequence*                              FemaleLevelSequence;                                      // 0x01B0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -2328,24 +2475,24 @@ public:
 
 
 // Class Tales.PlaySequencerAnimationStepDesc
-// 0x00B8 (0x0138 - 0x0080)
+// 0x00F8 (0x0178 - 0x0080)
 class UPlaySequencerAnimationStepDesc : public UTaleQuestStepDesc
 {
 public:
 	class ULevelSequence*                              LevelSequenceToPlay;                                      // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FQuestVariableActor                         TargetActorToSpawn;                                       // 0x0088(0x0020) (Edit)
-	struct FQuestVariableActor                         LevelSequenceActorSpawnLocation;                          // 0x00A8(0x0020) (Edit)
-	struct FQuestVariableActor                         DockableBaseActor;                                        // 0x00C8(0x0020) (Edit)
-	struct FQuestVariableActor                         InteractingActor;                                         // 0x00E8(0x0020) (Edit)
-	bool                                               PlayGlobally;                                             // 0x0108(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	bool                                               IsLevelSequenceActorAlawaysRelevant;                      // 0x0109(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x6];                                       // 0x010A(0x0006) MISSED OFFSET
-	class USceneDialogueData*                          DialogueData;                                             // 0x0110(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	TArray<struct FText>                               LocalisableNames;                                         // 0x0118(0x0010) (Edit, ZeroConstructor)
-	bool                                               IsLooping;                                                // 0x0128(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x3];                                       // 0x0129(0x0003) MISSED OFFSET
-	float                                              SubtitleSphereRadiusInCm;                                 // 0x012C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	class ULevelSequence*                              FemaleLevelSequenceToPlay;                                // 0x0130(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariableActor                         TargetActorToSpawn;                                       // 0x0088(0x0030) (Edit)
+	struct FQuestVariableActor                         LevelSequenceActorSpawnLocation;                          // 0x00B8(0x0030) (Edit)
+	struct FQuestVariableActor                         DockableBaseActor;                                        // 0x00E8(0x0030) (Edit)
+	struct FQuestVariableActor                         InteractingActor;                                         // 0x0118(0x0030) (Edit)
+	bool                                               PlayGlobally;                                             // 0x0148(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	bool                                               IsLevelSequenceActorAlawaysRelevant;                      // 0x0149(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x6];                                       // 0x014A(0x0006) MISSED OFFSET
+	class USceneDialogueData*                          DialogueData;                                             // 0x0150(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	TArray<struct FText>                               LocalisableNames;                                         // 0x0158(0x0010) (Edit, ZeroConstructor)
+	bool                                               IsLooping;                                                // 0x0168(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x3];                                       // 0x0169(0x0003) MISSED OFFSET
+	float                                              SubtitleSphereRadiusInCm;                                 // 0x016C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	class ULevelSequence*                              FemaleLevelSequenceToPlay;                                // 0x0170(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -2357,11 +2504,11 @@ public:
 
 
 // Class Tales.PreventInteractionWithActorStepDesc
-// 0x0020 (0x00A0 - 0x0080)
+// 0x0030 (0x00B0 - 0x0080)
 class UPreventInteractionWithActorStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableActor                         TargetActor;                                              // 0x0080(0x0020) (Edit)
+	struct FQuestVariableActor                         TargetActor;                                              // 0x0080(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2373,15 +2520,15 @@ public:
 
 
 // Class Tales.ProvokeHitReactionDesc
-// 0x0030 (0x00B0 - 0x0080)
+// 0x0040 (0x00C0 - 0x0080)
 class UProvokeHitReactionDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableActor                         ActorToProvoke;                                           // 0x0080(0x0020) (Edit)
-	class UClass*                                      DamageType;                                               // 0x00A0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              DamageAmount;                                             // 0x00A8(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EHealthChangedReason>                  DamageReason;                                             // 0x00AC(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x00AD(0x0003) MISSED OFFSET
+	struct FQuestVariableActor                         ActorToProvoke;                                           // 0x0080(0x0030) (Edit)
+	class UClass*                                      DamageType;                                               // 0x00B0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              DamageAmount;                                             // 0x00B8(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EHealthChangedReason>                  DamageReason;                                             // 0x00BC(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x00BD(0x0003) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -2392,14 +2539,31 @@ public:
 };
 
 
+// Class Tales.ReleaseGameEventBlockStepDesc
+// 0x0000 (0x0080 - 0x0080)
+class UReleaseGameEventBlockStepDesc : public UTaleQuestStepDesc
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.ReleaseGameEventBlockStepDesc"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.RemoveGameEventExclusionZoneStepDesc
-// 0x0028 (0x00A8 - 0x0080)
+// 0x0040 (0x00C0 - 0x0080)
 class URemoveGameEventExclusionZoneStepDesc : public UTaleQuestStepDesc
 {
 public:
 	float                                              Radius;                                                   // 0x0080(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0084(0x0004) MISSED OFFSET
-	struct FQuestVariableVector                        Location;                                                 // 0x0088(0x0020) (Edit)
+	bool                                               ShouldGetRadiusFromRemoteConfig;                          // 0x0084(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0085(0x0003) MISSED OFFSET
+	struct FName                                       RemoteConfigKeyRadius;                                    // 0x0088(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariableVector                        Location;                                                 // 0x0090(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2410,8 +2574,23 @@ public:
 };
 
 
+// Class Tales.RequestGameEventBlockStepDesc
+// 0x0000 (0x0080 - 0x0080)
+class URequestGameEventBlockStepDesc : public UTaleQuestStepDesc
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.RequestGameEventBlockStepDesc"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.SelectNamedPointStepDesc
-// 0x0050 (0x00D0 - 0x0080)
+// 0x0060 (0x00E0 - 0x0080)
 class USelectNamedPointStepDesc : public UTaleQuestStepDesc
 {
 public:
@@ -2420,7 +2599,7 @@ public:
 	int                                                PointIndex;                                               // 0x00A8(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<ESpaceType>                            ReturnInSpace;                                            // 0x00AC(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x3];                                       // 0x00AD(0x0003) MISSED OFFSET
-	struct FQuestVariableOrientedPoint                 Point;                                                    // 0x00B0(0x0020) (Edit)
+	struct FQuestVariableOrientedPoint                 Point;                                                    // 0x00B0(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2434,12 +2613,12 @@ public:
 
 
 // Class Tales.SetEQSNamedContextStepDesc
-// 0x0028 (0x00A8 - 0x0080)
+// 0x0038 (0x00B8 - 0x0080)
 class USetEQSNamedContextStepDesc : public UTaleQuestStepDesc
 {
 public:
 	struct FName                                       Name;                                                     // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FQuestVariableLinkEQSContext                Value;                                                    // 0x0088(0x0020) (Edit)
+	struct FQuestVariableLinkEQSContext                Value;                                                    // 0x0088(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2451,15 +2630,15 @@ public:
 
 
 // Class Tales.SpawnLayerStepDesc
-// 0x0040 (0x00C0 - 0x0080)
+// 0x0050 (0x00D0 - 0x0080)
 class USpawnLayerStepDesc : public UTaleQuestStepDesc
 {
 public:
 	class ULayerActorsDataAsset*                       LayerAsset;                                               // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	bool                                               SpawnPhased;                                              // 0x0088(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x0089(0x0007) MISSED OFFSET
-	struct FQuestVariableActor                         ActorWithLayers;                                          // 0x0090(0x0020) (Edit)
-	TArray<struct FQuestVariableActor>                 SpawnedActors;                                            // 0x00B0(0x0010) (Edit, ZeroConstructor, EditConst)
+	struct FQuestVariableActor                         ActorWithLayers;                                          // 0x0090(0x0030) (Edit)
+	TArray<struct FQuestVariableActor>                 SpawnedActors;                                            // 0x00C0(0x0010) (Edit, ZeroConstructor, EditConst)
 
 	static UClass* StaticClass()
 	{
@@ -2471,7 +2650,7 @@ public:
 
 
 // Class Tales.SpawnPhasedActorWithTransformStepBaseDesc
-// 0x0080 (0x0100 - 0x0080)
+// 0x0090 (0x0110 - 0x0080)
 class USpawnPhasedActorWithTransformStepBaseDesc : public UTaleQuestStepDesc
 {
 public:
@@ -2479,7 +2658,7 @@ public:
 	bool                                               MarkAsCritical;                                           // 0x00A0(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x00A1(0x0007) MISSED OFFSET
 	struct FText                                       CriticalActorLostMessage;                                 // 0x00A8(0x0038) (Edit)
-	struct FQuestVariableActor                         ActorVar;                                                 // 0x00E0(0x0020) (Edit)
+	struct FQuestVariableActor                         ActorVar;                                                 // 0x00E0(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2491,11 +2670,11 @@ public:
 
 
 // Class Tales.SpawnPhasedActorAtLocationStepDesc
-// 0x0028 (0x0128 - 0x0100)
+// 0x0038 (0x0148 - 0x0110)
 class USpawnPhasedActorAtLocationStepDesc : public USpawnPhasedActorWithTransformStepBaseDesc
 {
 public:
-	struct FQuestVariableTransform                     Location;                                                 // 0x0100(0x0028) (Edit)
+	struct FQuestVariableTransform                     Location;                                                 // 0x0110(0x0038) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2507,7 +2686,7 @@ public:
 
 
 // Class Tales.SpawnPhasedItemStepDesc
-// 0x00A8 (0x0128 - 0x0080)
+// 0x00D8 (0x0158 - 0x0080)
 class USpawnPhasedItemStepDesc : public UTaleQuestStepDesc
 {
 public:
@@ -2516,9 +2695,9 @@ public:
 	unsigned char                                      UnknownData00[0x6];                                       // 0x0082(0x0006) MISSED OFFSET
 	struct FText                                       CriticalActorLostMessage;                                 // 0x0088(0x0038) (Edit)
 	struct FName                                       SocketName;                                               // 0x00C0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FQuestVariableItemDescType                  Item;                                                     // 0x00C8(0x0020) (Edit)
-	struct FQuestVariableActor                         LocatorVar;                                               // 0x00E8(0x0020) (Edit)
-	struct FQuestVariableItemInfo                      SpawnedItemVar;                                           // 0x0108(0x0020) (Edit)
+	struct FQuestVariableItemDescType                  Item;                                                     // 0x00C8(0x0030) (Edit)
+	struct FQuestVariableActor                         LocatorVar;                                               // 0x00F8(0x0030) (Edit)
+	struct FQuestVariableItemInfo                      SpawnedItemVar;                                           // 0x0128(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2592,11 +2771,11 @@ public:
 
 
 // Class Tales.TaleQuestArrayContainsStepDesc
-// 0x0020 (0x00B0 - 0x0090)
+// 0x0030 (0x00C0 - 0x0090)
 class UTaleQuestArrayContainsStepDesc : public UTaleQuestArrayItemStepBaseDesc
 {
 public:
-	struct FQuestVariableBool                          Result;                                                   // 0x0090(0x0020)
+	struct FQuestVariableBool                          Result;                                                   // 0x0090(0x0030)
 
 	static UClass* StaticClass()
 	{
@@ -2656,14 +2835,14 @@ public:
 
 
 // Class Tales.TaleQuestChooseIslandFromWeightsStepDesc
-// 0x0068 (0x00E8 - 0x0080)
+// 0x0098 (0x0118 - 0x0080)
 class UTaleQuestChooseIslandFromWeightsStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableNameArray                     IslandsToChooseFrom;                                      // 0x0080(0x0020) (Edit)
-	struct FQuestVariableInt                           DifficultyRank;                                           // 0x00A0(0x0020) (Edit)
-	struct FQuestVariableName                          ChosenIsland;                                             // 0x00C0(0x0020) (Edit)
-	class UIslandTypeWeightsDataAsset*                 IslandTypeWeights;                                        // 0x00E0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariableNameArray                     IslandsToChooseFrom;                                      // 0x0080(0x0030) (Edit)
+	struct FQuestVariableInt                           DifficultyRank;                                           // 0x00B0(0x0030) (Edit)
+	struct FQuestVariableName                          ChosenIsland;                                             // 0x00E0(0x0030) (Edit)
+	class UIslandTypeWeightsDataAsset*                 IslandTypeWeights;                                        // 0x0110(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -2691,11 +2870,11 @@ public:
 
 
 // Class Tales.TaleQuestDisableInteractionStepDesc
-// 0x0020 (0x00A0 - 0x0080)
+// 0x0030 (0x00B0 - 0x0080)
 class UTaleQuestDisableInteractionStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableActor                         TargetActor;                                              // 0x0080(0x0020) (Edit)
+	struct FQuestVariableActor                         TargetActor;                                              // 0x0080(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2724,11 +2903,11 @@ public:
 
 
 // Class Tales.TaleQuestEnableInteractionStepDesc
-// 0x0020 (0x00A0 - 0x0080)
+// 0x0030 (0x00B0 - 0x0080)
 class UTaleQuestEnableInteractionStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableActor                         TargetActor;                                              // 0x0080(0x0020) (Edit)
+	struct FQuestVariableActor                         TargetActor;                                              // 0x0080(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2868,12 +3047,12 @@ public:
 
 
 // Class Tales.TaleQuestGetCollectionItemCountStepDesc
-// 0x0040 (0x00C0 - 0x0080)
+// 0x0060 (0x00E0 - 0x0080)
 class UTaleQuestGetCollectionItemCountStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableCollection                    Collection;                                               // 0x0080(0x0020) (Edit)
-	struct FQuestVariableInt                           Num;                                                      // 0x00A0(0x0020) (Edit)
+	struct FQuestVariableCollection                    Collection;                                               // 0x0080(0x0030) (Edit)
+	struct FQuestVariableInt                           Num;                                                      // 0x00B0(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2885,14 +3064,14 @@ public:
 
 
 // Class Tales.TaleQuestGetParticipatingCrewsInRadiusStepDesc
-// 0x0048 (0x00C8 - 0x0080)
+// 0x0068 (0x00E8 - 0x0080)
 class UTaleQuestGetParticipatingCrewsInRadiusStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableGuidArray                     CrewIds;                                                  // 0x0080(0x0020) (Edit)
-	struct FQuestVariableVector                        Location;                                                 // 0x00A0(0x0020) (Edit)
-	float                                              Radius;                                                   // 0x00C0(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x00C4(0x0004) MISSED OFFSET
+	struct FQuestVariableGuidArray                     CrewIds;                                                  // 0x0080(0x0030) (Edit)
+	struct FQuestVariableVector                        Location;                                                 // 0x00B0(0x0030) (Edit)
+	float                                              Radius;                                                   // 0x00E0(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x00E4(0x0004) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -2904,11 +3083,11 @@ public:
 
 
 // Class Tales.TaleQuestGetParticipatingCrewsStepDesc
-// 0x0020 (0x00A0 - 0x0080)
+// 0x0030 (0x00B0 - 0x0080)
 class UTaleQuestGetParticipatingCrewsStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableGuidArray                     CrewIds;                                                  // 0x0080(0x0020) (Edit)
+	struct FQuestVariableGuidArray                     CrewIds;                                                  // 0x0080(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -2920,7 +3099,7 @@ public:
 
 
 // Class Tales.TaleQuestGrantRewardStepDesc
-// 0x0050 (0x00D0 - 0x0080)
+// 0x0060 (0x00E0 - 0x0080)
 class UTaleQuestGrantRewardStepDesc : public UTaleQuestStepDesc
 {
 public:
@@ -2929,8 +3108,8 @@ public:
 	struct FGuid                                       Id;                                                       // 0x0090(0x0010) (Edit, ZeroConstructor, IsPlainOldData)
 	bool                                               ShouldGrantToAlliedCrews;                                 // 0x00A0(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x00A1(0x0007) MISSED OFFSET
-	struct FQuestVariablePlayerActor                   SpecificPlayerToAward;                                    // 0x00A8(0x0020) (Edit)
-	struct FName                                       Feature;                                                  // 0x00C8(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariablePlayerActor                   SpecificPlayerToAward;                                    // 0x00A8(0x0030) (Edit)
+	struct FName                                       Feature;                                                  // 0x00D8(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -2942,13 +3121,13 @@ public:
 
 
 // Class Tales.TaleQuestPermanentPromptStepDesc
-// 0x0028 (0x00A8 - 0x0080)
+// 0x0038 (0x00B8 - 0x0080)
 class UTaleQuestPermanentPromptStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariablePrioritisedPrompt             Prompt;                                                   // 0x0080(0x0020) (Edit)
-	TEnumAsByte<EPromptStartStop>                      StartOrStop;                                              // 0x00A0(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x00A1(0x0007) MISSED OFFSET
+	struct FQuestVariablePrioritisedPrompt             Prompt;                                                   // 0x0080(0x0030) (Edit)
+	TEnumAsByte<EPromptStartStop>                      StartOrStop;                                              // 0x00B0(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x00B1(0x0007) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -2976,15 +3155,16 @@ public:
 
 
 // Class Tales.TaleQuestFunctionStepLibrary
-// 0x0090 (0x0178 - 0x00E8)
+// 0x0098 (0x0180 - 0x00E8)
 class UTaleQuestFunctionStepLibrary : public UTaleQuestRunnableStepDesc
 {
 public:
-	class UFunction*                                   Function;                                                 // 0x00E8(0x0008) (ZeroConstructor, IsPlainOldData)
-	TMap<struct FName, struct FQuestVariable>          ParameterMappings;                                        // 0x00F0(0x0050) (Edit, ZeroConstructor, EditConst)
-	unsigned char                                      UnknownData00[0x30];                                      // 0x0140(0x0030) MISSED OFFSET
-	unsigned char                                      FunctionStepFlags;                                        // 0x0170(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x7];                                       // 0x0171(0x0007) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x00E8(0x0008) MISSED OFFSET
+	class UFunction*                                   Function;                                                 // 0x00F0(0x0008) (ZeroConstructor, IsPlainOldData)
+	TMap<struct FName, struct FQuestVariable>          ParameterMappings;                                        // 0x00F8(0x0050) (Edit, ZeroConstructor, EditConst)
+	unsigned char                                      UnknownData01[0x30];                                      // 0x0148(0x0030) MISSED OFFSET
+	unsigned char                                      FunctionStepFlags;                                        // 0x0178(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x7];                                       // 0x0179(0x0007) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -2996,7 +3176,7 @@ public:
 
 
 // Class Tales.TaleQuestActorFunctionLibrary
-// 0x0000 (0x0178 - 0x0178)
+// 0x0000 (0x0180 - 0x0180)
 class UTaleQuestActorFunctionLibrary : public UTaleQuestFunctionStepLibrary
 {
 public:
@@ -3016,7 +3196,7 @@ public:
 
 
 // Class Tales.TaleQuestAnimationStepFunctionLibrary
-// 0x0000 (0x0178 - 0x0178)
+// 0x0000 (0x0180 - 0x0180)
 class UTaleQuestAnimationStepFunctionLibrary : public UTaleQuestFunctionStepLibrary
 {
 public:
@@ -3033,7 +3213,7 @@ public:
 
 
 // Class Tales.TaleQuestIntMathsFunctionLibrary
-// 0x0000 (0x0178 - 0x0178)
+// 0x0000 (0x0180 - 0x0180)
 class UTaleQuestIntMathsFunctionLibrary : public UTaleQuestFunctionStepLibrary
 {
 public:
@@ -3061,8 +3241,27 @@ public:
 };
 
 
+// Class Tales.TaleQuestLogicFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestLogicFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestLogicFunctionLibrary"));
+		return ptr;
+	}
+
+
+	static bool Logic_Or(bool Left, bool Right);
+	static bool Logic_Not(bool Value);
+	static bool Logic_And(bool Left, bool Right);
+};
+
+
 // Class Tales.TaleQuestNamedPointsFunctionLibrary
-// 0x0000 (0x0178 - 0x0178)
+// 0x0000 (0x0180 - 0x0180)
 class UTaleQuestNamedPointsFunctionLibrary : public UTaleQuestFunctionStepLibrary
 {
 public:
@@ -3078,8 +3277,25 @@ public:
 };
 
 
+// Class Tales.TaleQuestNameFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestNameFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestNameFunctionLibrary"));
+		return ptr;
+	}
+
+
+	static bool IsNone(const struct FName& Name);
+};
+
+
 // Class Tales.TaleQuestNPCHideFunctionLibrary
-// 0x0000 (0x0178 - 0x0178)
+// 0x0000 (0x0180 - 0x0180)
 class UTaleQuestNPCHideFunctionLibrary : public UTaleQuestFunctionStepLibrary
 {
 public:
@@ -3097,7 +3313,7 @@ public:
 
 
 // Class Tales.TaleQuestStoryFunctionLibrary
-// 0x0000 (0x0178 - 0x0178)
+// 0x0000 (0x0180 - 0x0180)
 class UTaleQuestStoryFunctionLibrary : public UTaleQuestFunctionStepLibrary
 {
 public:
@@ -3115,15 +3331,15 @@ public:
 
 
 // Class Tales.TaleQuestStoryBranchFunctionLibrary
-// 0x0048 (0x01C0 - 0x0178)
+// 0x0048 (0x01C8 - 0x0180)
 class UTaleQuestStoryBranchFunctionLibrary : public UTaleQuestFunctionStepLibrary
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0178(0x0008) MISSED OFFSET
-	class UTaleQuestStepDesc*                          Active;                                                   // 0x0180(0x0008) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
-	class UTaleQuestStepDesc*                          Inactive;                                                 // 0x0188(0x0008) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
-	TScriptInterface<class UTaleQuestStepInterface>    Step;                                                     // 0x0190(0x0010) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x20];                                      // 0x01A0(0x0020) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0180(0x0008) MISSED OFFSET
+	class UTaleQuestStepDesc*                          Active;                                                   // 0x0188(0x0008) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
+	class UTaleQuestStepDesc*                          Inactive;                                                 // 0x0190(0x0008) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
+	TScriptInterface<class UTaleQuestStepInterface>    Step;                                                     // 0x0198(0x0010) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x20];                                      // 0x01A8(0x0020) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -3137,7 +3353,7 @@ public:
 
 
 // Class Tales.TaleQuestTransformMathsFunctionLibrary
-// 0x0000 (0x0178 - 0x0178)
+// 0x0000 (0x0180 - 0x0180)
 class UTaleQuestTransformMathsFunctionLibrary : public UTaleQuestFunctionStepLibrary
 {
 public:
@@ -3154,7 +3370,7 @@ public:
 
 
 // Class Tales.TaleQuestTransfromConversionFunctionLibrary
-// 0x0000 (0x0178 - 0x0178)
+// 0x0000 (0x0180 - 0x0180)
 class UTaleQuestTransfromConversionFunctionLibrary : public UTaleQuestFunctionStepLibrary
 {
 public:
@@ -3172,7 +3388,7 @@ public:
 
 
 // Class Tales.TaleQuestUObjectFunctionLibrary
-// 0x0000 (0x0178 - 0x0178)
+// 0x0000 (0x0180 - 0x0180)
 class UTaleQuestUObjectFunctionLibrary : public UTaleQuestFunctionStepLibrary
 {
 public:
@@ -3189,7 +3405,7 @@ public:
 
 
 // Class Tales.TaleQuestUtilityFunctionLibrary
-// 0x0000 (0x0178 - 0x0178)
+// 0x0000 (0x0180 - 0x0180)
 class UTaleQuestUtilityFunctionLibrary : public UTaleQuestFunctionStepLibrary
 {
 public:
@@ -3206,7 +3422,7 @@ public:
 
 
 // Class Tales.TaleQuestWaterVolumeFunctionLibrary
-// 0x0000 (0x0178 - 0x0178)
+// 0x0000 (0x0180 - 0x0180)
 class UTaleQuestWaterVolumeFunctionLibrary : public UTaleQuestFunctionStepLibrary
 {
 public:
@@ -3226,13 +3442,13 @@ public:
 
 
 // Class Tales.TaleQuestSelectEntryFromArrayStepDesc
-// 0x0048 (0x00C8 - 0x0080)
+// 0x0068 (0x00E8 - 0x0080)
 class UTaleQuestSelectEntryFromArrayStepDesc : public UTaleQuestStepDesc
 {
 public:
 	class UTaleQuestArrayEntrySelectionStrategy*       SelectionStrategy;                                        // 0x0080(0x0008) (Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	struct FQuestVariableArray                         InputArray;                                               // 0x0088(0x0020) (Edit)
-	struct FQuestVariableAny                           OutputEntry;                                              // 0x00A8(0x0020) (Edit)
+	struct FQuestVariableArray                         InputArray;                                               // 0x0088(0x0030) (Edit)
+	struct FQuestVariableAny                           OutputEntry;                                              // 0x00B8(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -3361,11 +3577,11 @@ public:
 
 
 // Class Tales.TaleQuestCrewTaskStepDesc
-// 0x0020 (0x00A8 - 0x0088)
+// 0x0030 (0x00B8 - 0x0088)
 class UTaleQuestCrewTaskStepDesc : public UTaleQuestTaskStepDescBase
 {
 public:
-	struct FQuestVariableGuid                          CrewId;                                                   // 0x0088(0x0020) (Edit)
+	struct FQuestVariableGuid                          CrewId;                                                   // 0x0088(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -3427,13 +3643,13 @@ public:
 
 
 // Class Tales.TaleQuestWaitForHandInStepDesc
-// 0x0048 (0x00C8 - 0x0080)
+// 0x0068 (0x00E8 - 0x0080)
 class UTaleQuestWaitForHandInStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableActor                         HandInActor;                                              // 0x0080(0x0020) (Edit)
-	class UClass*                                      SpecificItem;                                             // 0x00A0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FQuestVariableItemDescType                  HandInItem;                                               // 0x00A8(0x0020) (Edit)
+	struct FQuestVariableActor                         HandInActor;                                              // 0x0080(0x0030) (Edit)
+	class UClass*                                      SpecificItem;                                             // 0x00B0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariableItemDescType                  HandInItem;                                               // 0x00B8(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -3445,11 +3661,11 @@ public:
 
 
 // Class Tales.TrackResponseCoordinatorStepDesc
-// 0x0020 (0x00A0 - 0x0080)
+// 0x0030 (0x00B0 - 0x0080)
 class UTrackResponseCoordinatorStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableUObject                       CutsceneResponseCoordinator;                              // 0x0080(0x0020) (Edit)
+	struct FQuestVariableUObject                       CutsceneResponseCoordinator;                              // 0x0080(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -3461,12 +3677,12 @@ public:
 
 
 // Class Tales.VisualiseLoggerEQSResultsTaleStepDesc
-// 0x0040 (0x00C0 - 0x0080)
+// 0x0060 (0x00E0 - 0x0080)
 class UVisualiseLoggerEQSResultsTaleStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableArray                         ResultsArray;                                             // 0x0080(0x0020) (Edit)
-	struct FQuestVariableVector                        SelectedResult;                                           // 0x00A0(0x0020) (Edit)
+	struct FQuestVariableArray                         ResultsArray;                                             // 0x0080(0x0030) (Edit)
+	struct FQuestVariableVector                        SelectedResult;                                           // 0x00B0(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -3494,6 +3710,22 @@ public:
 };
 
 
+// Class Tales.WaitForGameEventToCompleteStepDesc
+// 0x0030 (0x00B0 - 0x0080)
+class UWaitForGameEventToCompleteStepDesc : public UTaleQuestStepDesc
+{
+public:
+	struct FQuestVariableGameEvent                     GameEvent;                                                // 0x0080(0x0030) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.WaitForGameEventToCompleteStepDesc"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.WaitForHealthToReachFractionStepDesc
 // 0x0010 (0x0090 - 0x0080)
 class UWaitForHealthToReachFractionStepDesc : public UTaleQuestStepDesc
@@ -3513,12 +3745,12 @@ public:
 
 
 // Class Tales.WaitForItemPickupStepDesc
-// 0x0040 (0x00C0 - 0x0080)
+// 0x0060 (0x00E0 - 0x0080)
 class UWaitForItemPickupStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableActor                         Item;                                                     // 0x0080(0x0020) (Edit)
-	struct FQuestVariableActor                         PickerUpper;                                              // 0x00A0(0x0020) (Edit)
+	struct FQuestVariableActor                         Item;                                                     // 0x0080(0x0030) (Edit)
+	struct FQuestVariableActor                         PickerUpper;                                              // 0x00B0(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -3529,14 +3761,30 @@ public:
 };
 
 
+// Class Tales.WaitForSpawnedPawnBaseStepDesc
+// 0x0030 (0x00B0 - 0x0080)
+class UWaitForSpawnedPawnBaseStepDesc : public UTaleQuestStepDesc
+{
+public:
+	struct FQuestVariableAISpawner                     AISpawner;                                                // 0x0080(0x0030) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.WaitForSpawnedPawnBaseStepDesc"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleQuestSelectShipwreckLocationFromValidCandidatesStep
-// 0x0178 (0x0210 - 0x0098)
+// 0x0198 (0x0230 - 0x0098)
 class UTaleQuestSelectShipwreckLocationFromValidCandidatesStep : public UTaleQuestStep
 {
 public:
-	unsigned char                                      UnknownData00[0x58];                                      // 0x0098(0x0058) MISSED OFFSET
-	class UTaleQuestSelectorService*                   CachedSelectorService;                                    // 0x00F0(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x118];                                     // 0x00F8(0x0118) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x78];                                      // 0x0098(0x0078) MISSED OFFSET
+	class UTaleQuestSelectorService*                   CachedSelectorService;                                    // 0x0110(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x118];                                     // 0x0118(0x0118) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -3548,14 +3796,14 @@ public:
 
 
 // Class Tales.TaleQuestSelectShipwreckLocationFromValidCandidatesStepDesc
-// 0x0068 (0x00E8 - 0x0080)
+// 0x0098 (0x0118 - 0x0080)
 class UTaleQuestSelectShipwreckLocationFromValidCandidatesStepDesc : public UTaleQuestStepDesc
 {
 public:
 	class UTaleQuestArrayEntrySelectionStrategy*       SelectionStrategy;                                        // 0x0080(0x0008) (Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	struct FQuestVariableVectorArray                   InputArray;                                               // 0x0088(0x0020) (Edit)
-	struct FQuestVariableVector                        OutputEntry;                                              // 0x00A8(0x0020) (Edit)
-	struct FQuestVariableBool                          ShuffleLists;                                             // 0x00C8(0x0020) (Edit)
+	struct FQuestVariableVectorArray                   InputArray;                                               // 0x0088(0x0030) (Edit)
+	struct FQuestVariableVector                        OutputEntry;                                              // 0x00B8(0x0030) (Edit)
+	struct FQuestVariableBool                          ShuffleLists;                                             // 0x00E8(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -3636,18 +3884,18 @@ public:
 
 
 // Class Tales.TaleQuestAddBountyMapStepDesc
-// 0x00B8 (0x0138 - 0x0080)
+// 0x0108 (0x0188 - 0x0080)
 class UTaleQuestAddBountyMapStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FName                                       MapID;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FQuestVariableName                          IslandName;                                               // 0x0088(0x0020) (Edit)
-	struct FQuestVariableText                          Location;                                                 // 0x00A8(0x0020) (Edit)
-	struct FQuestVariableTextArray                     Description;                                              // 0x00C8(0x0020) (Edit)
-	struct FQuestVariableBountyTargetArray             CaptainTargets;                                           // 0x00E8(0x0020) (Edit)
-	struct FQuestVariableBountyTargetArray             CrewTargets;                                              // 0x0108(0x0020) (Edit)
-	class UBountyMapLayout*                            CustomLayout;                                             // 0x0128(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	class UClass*                                      OverrideTreasureMapItemDesc;                              // 0x0130(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FName                                       MapId;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariableName                          IslandName;                                               // 0x0088(0x0030) (Edit)
+	struct FQuestVariableText                          Location;                                                 // 0x00B8(0x0030) (Edit)
+	struct FQuestVariableTextArray                     Description;                                              // 0x00E8(0x0030) (Edit)
+	struct FQuestVariableBountyTargetArray             CaptainTargets;                                           // 0x0118(0x0030) (Edit)
+	struct FQuestVariableBountyTargetArray             CrewTargets;                                              // 0x0148(0x0030) (Edit)
+	class UBountyMapLayout*                            CustomLayout;                                             // 0x0178(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      OverrideTreasureMapItemDesc;                              // 0x0180(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -3777,8 +4025,8 @@ public:
 	}
 
 
-	void UpdateMerchantMap(const struct FName& MapID, int Index, const struct FTaleQuestDeliverableItem& Deliverable);
-	void AdvanceRiddleMap(const struct FName& MapID);
+	void UpdateMerchantMap(const struct FName& MapId, int Index, const struct FTaleQuestDeliverableItem& Deliverable);
+	void AdvanceRiddleMap(const struct FName& MapId);
 };
 
 
@@ -3798,15 +4046,15 @@ public:
 
 
 // Class Tales.TaleQuestAddCargoRunMapStepDesc
-// 0x0070 (0x00F0 - 0x0080)
+// 0x00A0 (0x0120 - 0x0080)
 class UTaleQuestAddCargoRunMapStepDesc : public UTaleQuestMapStepDescBase
 {
 public:
-	struct FName                                       MapID;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FQuestVariableName                          IslandName;                                               // 0x0088(0x0020) (Edit)
-	struct FQuestVariableInt                           NumItems;                                                 // 0x00A8(0x0020) (Edit)
-	struct FQuestVariableGuid                          NPCId;                                                    // 0x00C8(0x0020) (Edit)
-	class UCargoRunMapLayout*                          Layout;                                                   // 0x00E8(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FName                                       MapId;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariableName                          IslandName;                                               // 0x0088(0x0030) (Edit)
+	struct FQuestVariableInt                           NumItems;                                                 // 0x00B8(0x0030) (Edit)
+	struct FQuestVariableGuid                          NPCId;                                                    // 0x00E8(0x0030) (Edit)
+	class UCargoRunMapLayout*                          Layout;                                                   // 0x0118(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -3818,19 +4066,19 @@ public:
 
 
 // Class Tales.TaleQuestAddChecklistMapStepDesc
-// 0x00D0 (0x0150 - 0x0080)
+// 0x0120 (0x01A0 - 0x0080)
 class UTaleQuestAddChecklistMapStepDesc : public UTaleQuestMapStepDescBase
 {
 public:
-	struct FName                                       MapID;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FName                                       MapId;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	TAssetPtr<class UClass>                            OverrideTreasureMapItemDesc;                              // 0x0088(0x0020) (Edit)
-	struct FQuestVariableText                          Title;                                                    // 0x00A8(0x0020) (Edit)
-	struct FQuestVariableText                          Description;                                              // 0x00C8(0x0020) (Edit)
-	struct FQuestVariableDataAsset                     ChecklistItemsData;                                       // 0x00E8(0x0020) (Edit)
-	struct FQuestVariableText                          Afternote;                                                // 0x0108(0x0020) (Edit)
-	struct FQuestVariableDataAsset                     Layout;                                                   // 0x0128(0x0020) (Edit)
-	TEnumAsByte<EQuestMapIcon>                         RadialMiniIcon;                                           // 0x0148(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0149(0x0007) MISSED OFFSET
+	struct FQuestVariableText                          Title;                                                    // 0x00A8(0x0030) (Edit)
+	struct FQuestVariableText                          Description;                                              // 0x00D8(0x0030) (Edit)
+	struct FQuestVariableDataAsset                     ChecklistItemsData;                                       // 0x0108(0x0030) (Edit)
+	struct FQuestVariableText                          Afternote;                                                // 0x0138(0x0030) (Edit)
+	struct FQuestVariableDataAsset                     Layout;                                                   // 0x0168(0x0030) (Edit)
+	TEnumAsByte<EQuestMapIcon>                         RadialMiniIcon;                                           // 0x0198(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0199(0x0007) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -3842,16 +4090,16 @@ public:
 
 
 // Class Tales.TaleQuestAddCircleMapStepDesc
-// 0x0050 (0x00D0 - 0x0080)
+// 0x0070 (0x00F0 - 0x0080)
 class UTaleQuestAddCircleMapStepDesc : public UTaleQuestMapStepDescBase
 {
 public:
-	struct FName                                       MapID;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FQuestVariableName                          IslandName;                                               // 0x0088(0x0020) (Edit)
-	struct FQuestVariableVector                        Location;                                                 // 0x00A8(0x0020) (Edit)
-	float                                              CircleScale;                                              // 0x00C8(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EQuestMapIcon>                         RadialMiniIcon;                                           // 0x00CC(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x00CD(0x0003) MISSED OFFSET
+	struct FName                                       MapId;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariableName                          IslandName;                                               // 0x0088(0x0030) (Edit)
+	struct FQuestVariableVector                        Location;                                                 // 0x00B8(0x0030) (Edit)
+	float                                              CircleScale;                                              // 0x00E8(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EQuestMapIcon>                         RadialMiniIcon;                                           // 0x00EC(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x00ED(0x0003) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -3863,16 +4111,16 @@ public:
 
 
 // Class Tales.TaleQuestAddMerchantMapStepDesc
-// 0x0090 (0x0110 - 0x0080)
+// 0x00D0 (0x0150 - 0x0080)
 class UTaleQuestAddMerchantMapStepDesc : public UTaleQuestMapStepDescBase
 {
 public:
-	struct FName                                       MapID;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FQuestVariableName                          IslandName;                                               // 0x0088(0x0020) (Edit)
-	struct FQuestVariableText                          DeliveryLocation;                                         // 0x00A8(0x0020) (Edit)
-	struct FQuestVariableText                          DeliverByTime;                                            // 0x00C8(0x0020) (Edit)
-	struct FQuestVariableMerchantItemArray             Items;                                                    // 0x00E8(0x0020) (Edit)
-	class UMerchantMapLayout*                          Layout;                                                   // 0x0108(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FName                                       MapId;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariableName                          IslandName;                                               // 0x0088(0x0030) (Edit)
+	struct FQuestVariableText                          DeliveryLocation;                                         // 0x00B8(0x0030) (Edit)
+	struct FQuestVariableText                          DeliverByTime;                                            // 0x00E8(0x0030) (Edit)
+	struct FQuestVariableMerchantItemArray             Items;                                                    // 0x0118(0x0030) (Edit)
+	class UMerchantMapLayout*                          Layout;                                                   // 0x0148(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -3884,12 +4132,12 @@ public:
 
 
 // Class Tales.TaleQuestAddRiddleMapBaseStepDesc
-// 0x0028 (0x00A8 - 0x0080)
+// 0x0038 (0x00B8 - 0x0080)
 class UTaleQuestAddRiddleMapBaseStepDesc : public UTaleQuestMapStepDescBase
 {
 public:
-	struct FName                                       MapID;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FQuestVariableName                          IslandName;                                               // 0x0088(0x0020) (Edit)
+	struct FName                                       MapId;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariableName                          IslandName;                                               // 0x0088(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -3901,11 +4149,11 @@ public:
 
 
 // Class Tales.TaleQuestAddRiddleMapStepDesc
-// 0x0010 (0x00B8 - 0x00A8)
+// 0x0010 (0x00C8 - 0x00B8)
 class UTaleQuestAddRiddleMapStepDesc : public UTaleQuestAddRiddleMapBaseStepDesc
 {
 public:
-	TArray<struct FText>                               Text;                                                     // 0x00A8(0x0010) (Edit, ZeroConstructor)
+	TArray<struct FText>                               Text;                                                     // 0x00B8(0x0010) (Edit, ZeroConstructor)
 
 	static UClass* StaticClass()
 	{
@@ -3917,11 +4165,11 @@ public:
 
 
 // Class Tales.TaleQuestAddRiddleMapUsingVariableStepDesc
-// 0x0020 (0x00C8 - 0x00A8)
+// 0x0030 (0x00E8 - 0x00B8)
 class UTaleQuestAddRiddleMapUsingVariableStepDesc : public UTaleQuestAddRiddleMapBaseStepDesc
 {
 public:
-	struct FQuestVariableTextArray                     TextVariable;                                             // 0x00A8(0x0020) (Edit)
+	struct FQuestVariableTextArray                     TextVariable;                                             // 0x00B8(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -3933,15 +4181,15 @@ public:
 
 
 // Class Tales.TaleQuestAddXMarksMapStepDesc
-// 0x0088 (0x0108 - 0x0080)
+// 0x00C8 (0x0148 - 0x0080)
 class UTaleQuestAddXMarksMapStepDesc : public UTaleQuestMapStepDescBase
 {
 public:
-	struct FName                                       MapID;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FQuestVariableName                          IslandName;                                               // 0x0088(0x0020) (Edit)
-	struct FQuestVariableVector                        Location;                                                 // 0x00A8(0x0020) (Edit)
-	struct FQuestVariableBool                          IsUnderground;                                            // 0x00C8(0x0020) (Edit)
-	struct FTaleQuestVariableTreasureMapItemDescType   TreasureMapOverride;                                      // 0x00E8(0x0020) (Edit)
+	struct FName                                       MapId;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariableName                          IslandName;                                               // 0x0088(0x0030) (Edit)
+	struct FQuestVariableVector                        Location;                                                 // 0x00B8(0x0030) (Edit)
+	struct FQuestVariableBool                          IsUnderground;                                            // 0x00E8(0x0030) (Edit)
+	struct FTaleQuestVariableTreasureMapItemDescType   TreasureMapOverride;                                      // 0x0118(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -3957,7 +4205,7 @@ public:
 class UTaleQuestAdvanceRiddleMapStepDesc : public UTaleQuestMapStepDescBase
 {
 public:
-	struct FName                                       MapID;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FName                                       MapId;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -3985,12 +4233,12 @@ public:
 
 
 // Class Tales.TaleQuestRemoveMapStepDesc
-// 0x0028 (0x00A8 - 0x0080)
+// 0x0038 (0x00B8 - 0x0080)
 class UTaleQuestRemoveMapStepDesc : public UTaleQuestMapStepDescBase
 {
 public:
-	struct FName                                       MapID;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FQuestVariableVector                        Location;                                                 // 0x0088(0x0020) (Edit)
+	struct FName                                       MapId;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariableVector                        Location;                                                 // 0x0088(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -4018,13 +4266,13 @@ public:
 
 
 // Class Tales.TaleQuestUpdateMerchantMapStepDesc
-// 0x0048 (0x00C8 - 0x0080)
+// 0x0068 (0x00E8 - 0x0080)
 class UTaleQuestUpdateMerchantMapStepDesc : public UTaleQuestMapStepDescBase
 {
 public:
-	struct FName                                       MapID;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FQuestVariableMerchantItem                  Item;                                                     // 0x0088(0x0020) (Edit)
-	struct FQuestVariableInt                           Index;                                                    // 0x00A8(0x0020) (Edit)
+	struct FName                                       MapId;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariableMerchantItem                  Item;                                                     // 0x0088(0x0030) (Edit)
+	struct FQuestVariableInt                           Index;                                                    // 0x00B8(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -4040,7 +4288,7 @@ public:
 class UTaleQuestWaitForChecklistMapCompletionStepDesc : public UTaleQuestMapStepDescBase
 {
 public:
-	struct FName                                       MapID;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FName                                       MapId;                                                    // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -111,6 +111,46 @@ public:
 };
 
 
+// Class AthenaAudio.AudioSpaceComponent
+// 0x0030 (0x0650 - 0x0620)
+class UAudioSpaceComponent : public UStaticMeshComponent
+{
+public:
+	class UAudioSpaceDataAsset*                        AudioSpace;                                               // 0x0620(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UAudioSpaceDataAsset*                        ActiveAudioSpace;                                         // 0x0628(0x0008) (ZeroConstructor, IsPlainOldData)
+	class UStoryDrivenAudioPortalCollectionDataAsset*  CollectionAsset;                                          // 0x0630(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x18];                                      // 0x0638(0x0018) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaAudio.AudioSpaceComponent"));
+		return ptr;
+	}
+
+
+	void OnOverlapEnd(class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex);
+	void OnOverlapBegin(class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int OtherBodyIndex, bool FromSweep, const struct FHitResult& SweepResult);
+};
+
+
+// Class AthenaAudio.AudioSpaceTrackerComponent
+// 0x0010 (0x00D8 - 0x00C8)
+class UAudioSpaceTrackerComponent : public UActorComponent
+{
+public:
+	TArray<class UAudioSpaceComponent*>                CurrentSpaces;                                            // 0x00C8(0x0010) (ExportObject, ZeroConstructor, Transient)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaAudio.AudioSpaceTrackerComponent"));
+		return ptr;
+	}
+
+
+	class UAudioSpaceDataAsset* GetCurrentSpace();
+};
+
+
 // Class AthenaAudio.MultiEmitter
 // 0x0010 (0x03D8 - 0x03C8)
 class AMultiEmitter : public AActor
@@ -132,12 +172,13 @@ public:
 
 
 // Class AthenaAudio.StoryDrivenAudioPortalDataAsset
-// 0x0018 (0x0040 - 0x0028)
+// 0x0020 (0x0048 - 0x0028)
 class UStoryDrivenAudioPortalDataAsset : public UDataAsset
 {
 public:
-	struct FFeatureFlag                                Feature;                                                  // 0x0028(0x0008) (Edit)
-	TArray<struct FStoryDrivenAudioPortalSetting>      Stories;                                                  // 0x0030(0x0010) (Edit, ZeroConstructor)
+	struct FFeatureFlag                                Feature;                                                  // 0x0028(0x000C) (Edit)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0034(0x0004) MISSED OFFSET
+	TArray<struct FStoryDrivenAudioPortalSetting>      Stories;                                                  // 0x0038(0x0010) (Edit, ZeroConstructor)
 
 	static UClass* StaticClass()
 	{

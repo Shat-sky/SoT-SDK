@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -1460,8 +1460,9 @@ void UAutomationBlueprintFunctionLibrary::BlockAsyncLoading(bool EnableBlock)
 // class FString                  FolderName                     (Parm, ZeroConstructor)
 // bool                           DumpMemReport                  (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           PreventGarbageCollection       (Parm, ZeroConstructor, IsPlainOldData)
+// class FString                  StatGranularity                (Parm, ZeroConstructor)
 
-void UAutomationBlueprintFunctionLibrary::BeginPerformanceCapture(const class FString& FolderName, bool DumpMemReport, bool PreventGarbageCollection)
+void UAutomationBlueprintFunctionLibrary::BeginPerformanceCapture(const class FString& FolderName, bool DumpMemReport, bool PreventGarbageCollection, const class FString& StatGranularity)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function StudiosAutomation.AutomationBlueprintFunctionLibrary.BeginPerformanceCapture"));
 
@@ -1470,11 +1471,13 @@ void UAutomationBlueprintFunctionLibrary::BeginPerformanceCapture(const class FS
 		class FString                  FolderName;
 		bool                           DumpMemReport;
 		bool                           PreventGarbageCollection;
+		class FString                  StatGranularity;
 	} params;
 
 	params.FolderName = FolderName;
 	params.DumpMemReport = DumpMemReport;
 	params.PreventGarbageCollection = PreventGarbageCollection;
+	params.StatGranularity = StatGranularity;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);

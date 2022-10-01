@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,8 +12,8 @@
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_Time_classes.hpp"
-#include "SoT_DeliverableFramework_classes.hpp"
 #include "SoT_AthenaEngine_classes.hpp"
+#include "SoT_DeliverableFramework_classes.hpp"
 
 namespace SDK
 {
@@ -66,6 +66,14 @@ struct FCommodityTypeDataEntry
 {
 	struct FName                                       CommodityType;                                            // 0x0000(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	struct FName                                       DisplayName;                                              // 0x0008(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+};
+
+// ScriptStruct CommodityDemandFramework.CommoditySourceMetaWrapper
+// 0x0010 (0x0028 - 0x0018)
+struct FCommoditySourceMetaWrapper : public FItemMetaBase
+{
+	struct FName                                       NPCIdentifier;                                            // 0x0018(0x0008) (ZeroConstructor, IsPlainOldData)
+	struct FName                                       IslandIdentifier;                                         // 0x0020(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct CommodityDemandFramework.EventCommodityCrateRedeemed

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -580,11 +580,11 @@ public:
 
 
 // Class Watercrafts.TaleQuestSinkWatercraftStepDesc
-// 0x0020 (0x00A0 - 0x0080)
+// 0x0030 (0x00B0 - 0x0080)
 class UTaleQuestSinkWatercraftStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableWatercraft                    Watercraft;                                               // 0x0080(0x0020) (Edit)
+	struct FQuestVariableWatercraft                    Watercraft;                                               // 0x0080(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -611,13 +611,13 @@ public:
 
 
 // Class Watercrafts.TaleQuestSpawnWatercraftStepDesc
-// 0x0068 (0x00E8 - 0x0080)
+// 0x0088 (0x0108 - 0x0080)
 class UTaleQuestSpawnWatercraftStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableTransform                     SpawnLocation;                                            // 0x0080(0x0028) (Edit)
-	TAssetPtr<class UClass>                            WatercraftClass;                                          // 0x00A8(0x0020) (Edit)
-	struct FQuestVariableWatercraft                    Watercraft;                                               // 0x00C8(0x0020) (Edit)
+	struct FQuestVariableTransform                     SpawnLocation;                                            // 0x0080(0x0038) (Edit)
+	TAssetPtr<class UClass>                            WatercraftClass;                                          // 0x00B8(0x0020) (Edit)
+	struct FQuestVariableWatercraft                    Watercraft;                                               // 0x00D8(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -629,7 +629,7 @@ public:
 
 
 // Class Watercrafts.TaleQuestWatercraftFunctionLibrary
-// 0x0000 (0x0178 - 0x0178)
+// 0x0000 (0x0180 - 0x0180)
 class UTaleQuestWatercraftFunctionLibrary : public UTaleQuestFunctionStepLibrary
 {
 public:

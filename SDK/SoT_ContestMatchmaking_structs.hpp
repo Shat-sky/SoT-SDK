@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -54,8 +54,16 @@ struct FServerQueueWaitTimesRequestModel
 	class FString                                      PlayModeState;                                            // 0x0038(0x0010) (ZeroConstructor)
 };
 
+// ScriptStruct ContestMatchmaking.ClientMatchmakingResponseModel
+// 0x0010
+struct FClientMatchmakingResponseModel
+{
+	struct FTimespan                                   EstimatedWaitTime;                                        // 0x0000(0x0008) (ZeroConstructor)
+	struct FTimespan                                   RetryAfter;                                               // 0x0008(0x0008) (ZeroConstructor)
+};
+
 // ScriptStruct ContestMatchmaking.ServerCrewModel
-// 0x0090
+// 0x0098
 struct FServerCrewModel
 {
 	struct FGuid                                       CrewId;                                                   // 0x0000(0x0010) (ZeroConstructor, IsPlainOldData)
@@ -72,6 +80,7 @@ struct FServerCrewModel
 	struct FGuid                                       RivalCrewId;                                              // 0x0078(0x0010) (ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<EClientMatchmakingRequestReason>       MatchmakingRequestReason;                                 // 0x0088(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData02[0x7];                                       // 0x0089(0x0007) MISSED OFFSET
+	struct FTimespan                                   TimeWaitingForMatch;                                      // 0x0090(0x0008) (ZeroConstructor)
 };
 
 // ScriptStruct ContestMatchmaking.ContestMatchmakingServerRequestModel

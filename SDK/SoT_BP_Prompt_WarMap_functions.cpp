@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,28 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function BP_Prompt_WarMap.BP_Prompt_WarMap_C.GetPromptFromCurrentFaction
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FPrioritisedPromptWithHandle Prompt                         (Parm, OutParm)
+
+void UBP_Prompt_WarMap_C::GetPromptFromCurrentFaction(struct FPrioritisedPromptWithHandle* Prompt)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_WarMap.BP_Prompt_WarMap_C.GetPromptFromCurrentFaction"));
+
+	struct
+	{
+		struct FPrioritisedPromptWithHandle Prompt;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	if (Prompt != nullptr)
+		*Prompt = params.Prompt;
+}
+
 
 // Function BP_Prompt_WarMap.BP_Prompt_WarMap_C.Evaluate
 // (Public, BlueprintCallable, BlueprintEvent)

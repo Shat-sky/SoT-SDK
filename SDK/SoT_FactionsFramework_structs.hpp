@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -57,11 +57,12 @@ struct FCrewFactionEntry
 	struct FGuid                                       CrewId;                                                   // 0x0000(0x0010) (ZeroConstructor, IsPlainOldData)
 	class UClass*                                      Faction;                                                  // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<EEnemyFactionShipRangeState>           EnemyFactionShipRangeState;                               // 0x0018(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0019(0x0007) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0019(0x0003) MISSED OFFSET
+	int                                                CurrentLootValue;                                         // 0x001C(0x0004) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct FactionsFramework.CrewFactionEntryData
-// 0x0048
+// 0x0070
 struct FCrewFactionEntryData
 {
 	struct FGuid                                       CrewId;                                                   // 0x0000(0x0010) (ZeroConstructor, IsPlainOldData)
@@ -71,7 +72,12 @@ struct FCrewFactionEntryData
 	int                                                SandsOfFate;                                              // 0x002C(0x0004) (ZeroConstructor, IsPlainOldData)
 	float                                              CooldownTimeStamp;                                        // 0x0030(0x0004) (ZeroConstructor, IsPlainOldData)
 	bool                                               IsInInvasion;                                             // 0x0034(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x13];                                      // 0x0035(0x0013) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0035(0x0003) MISSED OFFSET
+	TArray<struct FGuid>                               EligibleLootBootyIds;                                     // 0x0038(0x0010) (ZeroConstructor)
+	int                                                CurrentLootValue;                                         // 0x0048(0x0004) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x004C(0x0004) MISSED OFFSET
+	TArray<bool>                                       HasDisplayedPromptForLootLevel;                           // 0x0050(0x0010) (ZeroConstructor)
+	unsigned char                                      UnknownData02[0x10];                                      // 0x0060(0x0010) MISSED OFFSET
 };
 
 // ScriptStruct FactionsFramework.CrewFactionTelemetryData
@@ -130,10 +136,11 @@ struct FCrewLeavingFaction
 };
 
 // ScriptStruct FactionsFramework.CrewJoinedFactionSuccess
-// 0x0010
+// 0x0018
 struct FCrewJoinedFactionSuccess
 {
 	struct FGuid                                       JoiningCrewId;                                            // 0x0000(0x0010) (ZeroConstructor, IsPlainOldData)
+	class UClass*                                      FactionJoined;                                            // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct FactionsFramework.CrewJoinedFaction

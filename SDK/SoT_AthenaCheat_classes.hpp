@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -62,16 +62,16 @@ public:
 	void UnBreakLeg();
 	void TutorialAction(const class FString& ActionTypeString);
 	void TriggerRewardNotification(struct FName* Identifier);
+	void TriggerLosingCrewTale(const class FString& InCrewId);
 	void TriggerLandmarkReaction(int ActionType);
 	void TriggerFogManagerAtNearestIsland();
-	void TriggerEmergentInvasion(const class FString& InCrewId);
+	void TriggerFactionBattleLosingBanner();
 	void TriggerEmblemUnlockedMessage(const class FString& EmblemFriendlyName);
 	void TriggerDebugAggressivePassiveInvasion(const class FString& InCrewId);
 	void TriggerDebugAggressiveAggressiveInvasion(const class FString& InCrewId);
 	void TriggerControllerConnectionChange(bool IsConnect, int UserId, int ControllerId);
 	void TriggerContestMatchmakingPvPMigration();
 	void TriggerContestMatchmakingMigration();
-	void TriggerContestBannerUnfurl();
 	void TriggerAIShipTimerBattle();
 	void TriggerAIShipPassive();
 	void TriggerAIShipEncounter();
@@ -146,11 +146,13 @@ public:
 	void StoreShipLocation(float LocationX, float LocationY, float LocationZ, float Yaw);
 	void StopShip();
 	void StopPetHangout();
+	void StopOverridingUGCState();
 	void StopLocalSequences();
 	void StopAllShips();
 	void StopAllPetsHangout();
 	void StockShip(const class FString& EntitlementAndAmountString);
 	void StartVoyage(const class FString& SourceAssetName, bool Development);
+	void StartTimedStatsCapture(float CaptureLengthInSeconds);
 	void StartSicknessOnPlayer();
 	void StartSelectedRomeVoyage(const class FString& RomeVoyageString);
 	void StartNearestVolcano();
@@ -182,7 +184,6 @@ public:
 	void SpawnShipAtIsland(const class FString& IslandName);
 	void SpawnShip(float SpawnLocationX, float SpawnLocationY, float SpawnLocationZ, float SpawnYaw);
 	void SpawnSeagull();
-	void SpawnRomeTreasureChestOfType(const class FString& ChestTypeString);
 	void SpawnRandomSeagull();
 	void SpawnOceanCrawlersOnShip();
 	void SpawnNumberOfAI(const class FString& AIDescString, int NumToSpawn);
@@ -244,7 +245,6 @@ public:
 	void SimulatePetReactRequest(const class FString& Id);
 	void SimulatePetReactCancellation(const class FString& Id);
 	void SignalActiveGlobalVoyageDelaySteps();
-	void ShowTavernBanners();
 	void ShowTaleDebug_WithVariables();
 	void ShowTaleDebug();
 	void ShowShipMilestoneToast(const class FString& MilestoneGuid, const class FString& MilestoneAlignment, uint64_t MilestoneLevel, const class FString& ShipName);
@@ -286,6 +286,7 @@ public:
 	void SetShipCapstanFullyRepaired();
 	void SetShipCapstanFullyDamaged();
 	void SetShipBuoyancyBlend(float UnaryBlend);
+	void SetSeaFortAlignment(int InFort, int InAlignment);
 	void SetSailLoweredProportions(float Proportion);
 	void SetSailAngles(float Angle);
 	void SetRitualTableRequiredPlayersOverride(int RequiredPlayerCount);
@@ -297,6 +298,7 @@ public:
 	void SetPlayerInert(bool IsInert);
 	void SetPhotoMode(bool Enabled);
 	void SetPetMovementTimeWindow(float TimeWindow);
+	void SetOverridenUGCState(bool InOverridenUGCState);
 	void SetNonCrewChatSpatialisation(bool Enabled);
 	void SetMaxNumOfSpawnedAI(int MaxNumOfSpawnedActors);
 	void SetMaxMovingPetsOnShips(int MaxMovingPets);
@@ -325,6 +327,7 @@ public:
 	void SetDamageAllowedToPlayerShip(bool InAllowDamage);
 	void SetCutsceneResponseCoordinatorDebug(bool Value);
 	void SetCurrentCulture(const class FString& Culture);
+	void SetCrewSkill(const class FString& TargetCrew, int Skill);
 	void SetCrestTextVisibility(bool InShouldShowText);
 	void SetCoordinatedKrakenPhaseAsset(int AssetIndex);
 	void SetCoordinatedKrakenCurrentPhaseAssetInactive();
@@ -359,6 +362,7 @@ public:
 	void SailShip();
 	void SailAllShips();
 	void RewindPhysicsSceneBy(float SecondsToRewindBy);
+	void RewardPlayer(const class FString& RewardId);
 	void ReviveLocalPlayerInstantly();
 	void ReviveLocalPlayerAccordingToReviveTime();
 	void RetrieveItemsFromBootyStorageInCurrentIsland();
@@ -732,6 +736,7 @@ public:
 	void AddNoParameterEventLogEntryToCaptainsLog();
 	void AddMysteriousNote(const class FString& NoteType, const class FString& NoteTitle, const class FString& NoteBody, const class FString& CompletionStrings);
 	void AddLongEventLogEntryToCaptainsLog();
+	void AddInvasionBattleBounds();
 	void AddInactiveCampaignOverride(const class FString& CampaignName);
 	void AddDrunkenness(int DrunkennessType, float DrunkennessChange);
 	void AddAISpawnContext(const class FString& ContextName);

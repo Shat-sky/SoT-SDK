@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -53,11 +53,11 @@ public:
 
 
 // Class TradeRouteFramework.TaleQuestGetProjectionPointOnTradeRouteStep
-// 0x0068 (0x0100 - 0x0098)
+// 0x0098 (0x0130 - 0x0098)
 class UTaleQuestGetProjectionPointOnTradeRouteStep : public UTaleQuestStep
 {
 public:
-	unsigned char                                      UnknownData00[0x68];                                      // 0x0098(0x0068) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x98];                                      // 0x0098(0x0098) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -69,15 +69,15 @@ public:
 
 
 // Class TradeRouteFramework.TaleQuestGetProjectionPointOnTradeRouteStepDesc
-// 0x0068 (0x00E8 - 0x0080)
+// 0x0098 (0x0118 - 0x0080)
 class UTaleQuestGetProjectionPointOnTradeRouteStepDesc : public UTaleQuestStepDesc
 {
 public:
 	float                                              ProjectionProportion;                                     // 0x0080(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0084(0x0004) MISSED OFFSET
-	struct FQuestVariableVector                        SourcePoint;                                              // 0x0088(0x0020) (Edit)
-	struct FQuestVariableTradeRouteData                TradeRouteData;                                           // 0x00A8(0x0020) (Edit)
-	struct FQuestVariableVector                        ProjectedPoint;                                           // 0x00C8(0x0020) (Edit)
+	struct FQuestVariableVector                        SourcePoint;                                              // 0x0088(0x0030) (Edit)
+	struct FQuestVariableTradeRouteData                TradeRouteData;                                           // 0x00B8(0x0030) (Edit)
+	struct FQuestVariableVector                        ProjectedPoint;                                           // 0x00E8(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -106,16 +106,16 @@ public:
 
 
 // Class TradeRouteFramework.TaleQuestSelectTradeRouteStepDesc
-// 0x0088 (0x0108 - 0x0080)
+// 0x00C8 (0x0148 - 0x0080)
 class UTaleQuestSelectTradeRouteStepDesc : public UTaleQuestStepDesc
 {
 public:
 	int                                                NumSelectFromClosestIslands;                              // 0x0080(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0084(0x0004) MISSED OFFSET
-	struct FQuestVariableVector                        SelectionOriginPointVar;                                  // 0x0088(0x0020) (Edit)
-	struct FQuestVariableInt                           TradeRouteDifficulty;                                     // 0x00A8(0x0020) (Edit)
-	struct FQuestVariableTradeRouteData                TradeRoute;                                               // 0x00C8(0x0020) (Edit)
-	struct FQuestVariableTaleResourceHandle            AllocatedTradeRouteHandleVar;                             // 0x00E8(0x0020) (Edit)
+	struct FQuestVariableVector                        SelectionOriginPointVar;                                  // 0x0088(0x0030) (Edit)
+	struct FQuestVariableInt                           TradeRouteDifficulty;                                     // 0x00B8(0x0030) (Edit)
+	struct FQuestVariableTradeRouteData                TradeRoute;                                               // 0x00E8(0x0030) (Edit)
+	struct FQuestVariableTaleResourceHandle            AllocatedTradeRouteHandleVar;                             // 0x0118(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{

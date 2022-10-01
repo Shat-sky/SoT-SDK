@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -1647,6 +1647,16 @@ enum class EParticleSystemUpdateMode : uint8_t
 	EPSUM_RealTime                 = 0,
 	EPSUM_FixedTime                = 1,
 	EPSUM_MAX                      = 2
+};
+
+
+// Enum Engine.EWaterKillCondition
+enum class EWaterKillCondition : uint8_t
+{
+	EWaterKillCondition__None      = 0,
+	EWaterKillCondition__AboveWater = 1,
+	EWaterKillCondition__Underwater = 2,
+	EWaterKillCondition__EWaterKillCondition_MAX = 3
 };
 
 
@@ -4518,6 +4528,26 @@ enum class ECameraAlphaBlendMode : uint8_t
 	ECameraAlphaBlendMode__CABM_Linear = 0,
 	ECameraAlphaBlendMode__CABM_Cubic = 1,
 	ECameraAlphaBlendMode__CABM_MAX = 2
+};
+
+
+// Enum Engine.EChannelDormancy
+enum class EChannelDormancy : uint8_t
+{
+	EChannelDormancy__Awake        = 0,
+	EChannelDormancy__PendingDormant = 1,
+	EChannelDormancy__Dormant      = 2,
+	EChannelDormancy__EChannelDormancy_MAX = 3
+};
+
+
+// Enum Engine.EActorChannelState
+enum class EActorChannelState : uint8_t
+{
+	EActorChannelState__NoChannel  = 0,
+	EActorChannelState__ChannelCreated = 1,
+	EActorChannelState__SpawnAcked = 2,
+	EActorChannelState__EActorChannelState_MAX = 3
 };
 
 

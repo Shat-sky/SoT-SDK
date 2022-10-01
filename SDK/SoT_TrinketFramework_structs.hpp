@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -29,18 +29,20 @@ struct FChestEntitlementTrinketItem
 };
 
 // ScriptStruct TrinketFramework.TrinketLoadoutEntry
-// 0x0018
+// 0x0008
 struct FTrinketLoadoutEntry
 {
-	class UClass*                                      Trinket;                                                  // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
-	class FString                                      TrinketOwnerPlayerXuid;                                   // 0x0008(0x0010) (ZeroConstructor)
+	int                                                TrinketEntitlementIndex;                                  // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
+	int                                                TrinketOwnerPlayerXUIDIndex;                              // 0x0004(0x0004) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct TrinketFramework.TrinketLoadout
-// 0x0010
+// 0x0048
 struct FTrinketLoadout
 {
 	TArray<struct FTrinketLoadoutEntry>                TrinketEntries;                                           // 0x0000(0x0010) (ZeroConstructor)
+	TArray<struct FUniqueNetIdRepl>                    TrinketOwnerXUIDs;                                        // 0x0010(0x0010) (ZeroConstructor)
+	unsigned char                                      UnknownData00[0x28];                                      // 0x0020(0x0028) MISSED OFFSET
 };
 
 // ScriptStruct TrinketFramework.RemoveInteractingPlayerFromTrinketMountpointRpc

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,8 +11,8 @@
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Athena_classes.hpp"
-#include "SoT_Repair_classes.hpp"
 #include "SoT_AthenaEngine_classes.hpp"
+#include "SoT_Repair_classes.hpp"
 
 namespace SDK
 {
@@ -29,12 +29,13 @@ struct FDistanceAndLevelOfDamage
 };
 
 // ScriptStruct ShipDamage.ShipPartLevelsOfDamage
-// 0x0038
+// 0x0040
 struct FShipPartLevelsOfDamage
 {
 	TAssetPtr<class UClass>                            ActorClass;                                               // 0x0000(0x0020) (Edit)
 	TArray<struct FDistanceAndLevelOfDamage>           DamagePerDistance;                                        // 0x0020(0x0010) (Edit, ZeroConstructor)
-	struct FFeatureFlag                                FeatureName;                                              // 0x0030(0x0008) (Edit)
+	struct FFeatureFlag                                FeatureName;                                              // 0x0030(0x000C) (Edit)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x003C(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct ShipDamage.ShipDamageParams

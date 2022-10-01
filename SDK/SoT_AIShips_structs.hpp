@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -433,11 +433,12 @@ struct FAIShipEncounterZoneEnteredNetworkEvent : public FNetworkEventStruct
 };
 
 // ScriptStruct AIShips.FeatureLockedAIShipBattles
-// 0x0010
+// 0x0018
 struct FFeatureLockedAIShipBattles
 {
-	struct FFeatureFlag                                Feature;                                                  // 0x0000(0x0008) (Edit, DisableEditOnInstance)
-	class UAIShipBattlesDataAsset*                     BattlesData;                                              // 0x0008(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FFeatureFlag                                Feature;                                                  // 0x0000(0x000C) (Edit, DisableEditOnInstance)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x000C(0x0004) MISSED OFFSET
+	class UAIShipBattlesDataAsset*                     BattlesData;                                              // 0x0010(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 };
 
 // ScriptStruct AIShips.AIShipWorldSettings
@@ -471,7 +472,7 @@ struct FAIShipDespawnTelemetryEvent
 };
 
 // ScriptStruct AIShips.AIShipSpawnTelemetryEvent
-// 0x0068
+// 0x0070
 struct FAIShipSpawnTelemetryEvent
 {
 	class FString                                      AIShipId;                                                 // 0x0000(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
@@ -480,8 +481,8 @@ struct FAIShipSpawnTelemetryEvent
 	class FString                                      AIShipType;                                               // 0x0030(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
 	struct FGuid                                       SpawnConfigId;                                            // 0x0040(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	class FString                                      AIShipSize;                                               // 0x0050(0x0010) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	int                                                AIShipWaveIndex;                                          // 0x0060(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0064(0x0004) MISSED OFFSET
+	struct FVector                                     SpawnLocation;                                            // 0x0060(0x000C) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	int                                                AIShipWaveIndex;                                          // 0x006C(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 };
 
 }

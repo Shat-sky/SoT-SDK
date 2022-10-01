@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,11 +15,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class NudgeFramework.NudgeInterpolationParamsDataAsset
-// 0x0020 (0x0048 - 0x0028)
+// 0x0028 (0x0050 - 0x0028)
 class UNudgeInterpolationParamsDataAsset : public UDataAsset
 {
 public:
 	struct FNudgeInterpolationParams                   NudgeInterpParams;                                        // 0x0028(0x0020) (Edit, DisableEditOnInstance)
+	class UForceFeedbackEffect*                        ControllerForceFeedbackEffect;                            // 0x0048(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

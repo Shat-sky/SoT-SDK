@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_SeatComponent.BP_SeatComponent_C
-// 0x0000 (0x0368 - 0x0368)
+// 0x0000 (0x0370 - 0x0370)
 class UBP_SeatComponent_C : public USeatComponent
 {
 public:

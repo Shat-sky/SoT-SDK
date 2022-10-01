@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -295,14 +295,14 @@ public:
 
 
 // Class SpireFramework.TaleRegisterSpireStepDesc
-// 0x0080 (0x0100 - 0x0080)
+// 0x00C0 (0x0140 - 0x0080)
 class UTaleRegisterSpireStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableVector                        SelectionOriginPoint;                                     // 0x0080(0x0020) (Edit)
-	struct FQuestVariableFloat                         PlayerExclusionSelectionRadius;                           // 0x00A0(0x0020) (Edit)
-	struct FQuestVariableTaleResourceHandle            AllocatedSpireHandle;                                     // 0x00C0(0x0020) (Edit)
-	struct FQuestVariableVector                        AllocatedSpireLocation;                                   // 0x00E0(0x0020) (Edit)
+	struct FQuestVariableVector                        SelectionOriginPoint;                                     // 0x0080(0x0030) (Edit)
+	struct FQuestVariableFloat                         PlayerExclusionSelectionRadius;                           // 0x00B0(0x0030) (Edit)
+	struct FQuestVariableTaleResourceHandle            AllocatedSpireHandle;                                     // 0x00E0(0x0030) (Edit)
+	struct FQuestVariableVector                        AllocatedSpireLocation;                                   // 0x0110(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
@@ -330,11 +330,11 @@ public:
 
 
 // Class SpireFramework.TaleReleaseSpireStepDesc
-// 0x0020 (0x00A0 - 0x0080)
+// 0x0030 (0x00B0 - 0x0080)
 class UTaleReleaseSpireStepDesc : public UTaleQuestStepDesc
 {
 public:
-	struct FQuestVariableTaleResourceHandle            SpireHandle;                                              // 0x0080(0x0020) (Edit)
+	struct FQuestVariableTaleResourceHandle            SpireHandle;                                              // 0x0080(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{

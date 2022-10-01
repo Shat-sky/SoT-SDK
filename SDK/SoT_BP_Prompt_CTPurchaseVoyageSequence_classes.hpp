@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Prompt_CTPurchaseVoyageSequence.BP_Prompt_CTPurchaseVoyageSequence_C
-// 0x0730 (0x0848 - 0x0118)
+// 0x0734 (0x084C - 0x0118)
 class UBP_Prompt_CTPurchaseVoyageSequence_C : public UBP_PromptCoordinator_Base_C
 {
 public:
@@ -55,7 +55,7 @@ public:
 	bool                                               State_SeenSignpostPrompt;                                 // 0x07EF(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class UBP_CT_TutorialProgress_C*                   CompanyTutorialProgress;                                  // 0x07F0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	struct FObjectMessagingHandle                      Handle_CompanyRankPurchased;                              // 0x07F8(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FFeatureFlag                                FeatureName;                                              // 0x0840(0x0008) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FFeatureFlag                                FeatureName;                                              // 0x0840(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{

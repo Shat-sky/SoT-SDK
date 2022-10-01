@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -30,11 +30,11 @@ public:
 
 
 // Class CrewSkillRating.CrewSkillRatingService
-// 0x00A8 (0x00D0 - 0x0028)
+// 0x00F8 (0x0120 - 0x0028)
 class UCrewSkillRatingService : public UObject
 {
 public:
-	unsigned char                                      UnknownData00[0xA8];                                      // 0x0028(0x00A8) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xF8];                                      // 0x0028(0x00F8) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,9 +11,9 @@
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Athena_classes.hpp"
+#include "SoT_TradeRouteFramework_classes.hpp"
 #include "SoT_Maths_classes.hpp"
 #include "SoT_AIModule_classes.hpp"
-#include "SoT_TradeRouteFramework_classes.hpp"
 #include "SoT_Tales_classes.hpp"
 
 namespace SDK
@@ -107,14 +107,14 @@ struct FClueSiteLootHistory
 };
 
 // ScriptStruct LostShipmentsClueFramework.QuestVariableClueSite
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableClueSite : public FQuestVariable
 {
 
 };
 
 // ScriptStruct LostShipmentsClueFramework.QuestVariableClueDescriptor
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableClueDescriptor : public FQuestVariable
 {
 
@@ -148,7 +148,7 @@ struct FSeaClueCreationChoice
 };
 
 // ScriptStruct LostShipmentsClueFramework.QuestVariableClueSiteArray
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableClueSiteArray : public FQuestVariable
 {
 

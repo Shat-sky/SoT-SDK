@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_EmissaryTable_Reapers_01.BP_EmissaryTable_Reapers_01_C
-// 0x00D0 (0x0708 - 0x0638)
+// 0x00D4 (0x070C - 0x0638)
 class ABP_EmissaryTable_Reapers_01_C : public ABP_EmissaryTable_01_C
 {
 public:
@@ -44,7 +44,7 @@ public:
 	class UStaticMeshComponent*                        StaticMesh2;                                              // 0x06E8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	class UStaticMeshComponent*                        StaticMesh1;                                              // 0x06F0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	class UStaticMeshComponent*                        StaticMesh;                                               // 0x06F8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	struct FFeatureFlag                                FeatureName;                                              // 0x0700(0x0008) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FFeatureFlag                                FeatureName;                                              // 0x0700(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{

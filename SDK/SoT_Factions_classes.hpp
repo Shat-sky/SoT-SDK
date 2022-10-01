@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class Factions.FactionSettingsAsset
-// 0x0090 (0x00B8 - 0x0028)
+// 0x0100 (0x0128 - 0x0028)
 class UFactionSettingsAsset : public UDataAsset
 {
 public:
@@ -31,6 +31,8 @@ public:
 	TArray<struct FCompanyFactionAlignment>            AlignedFactionsAndCompanies;                              // 0x0088(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 	TArray<struct FCompanyFactionAlignment>            OpposingFactionsAndCompanies;                             // 0x0098(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 	TArray<struct FFactionServicePopUpData>            JoiningFactionPopUp;                                      // 0x00A8(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	struct FText                                       LosingBattleHeaderText;                                   // 0x00B8(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       LosingBattleMessageText;                                  // 0x00F0(0x0038) (Edit, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{
@@ -57,15 +59,17 @@ public:
 
 
 // Class Factions.FactionFlipMeshComponent
-// 0x0050 (0x0670 - 0x0620)
+// 0x01D0 (0x07F0 - 0x0620)
 class UFactionFlipMeshComponent : public UStaticMeshComponent
 {
 public:
 	class UCurveFloat*                                 FlipCurve;                                                // 0x0620(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x40];                                      // 0x0628(0x0040) MISSED OFFSET
-	bool                                               IsFlipping;                                               // 0x0668(0x0001) (Net, ZeroConstructor, IsPlainOldData)
-	bool                                               Flipped;                                                  // 0x0669(0x0001) (Net, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x6];                                       // 0x066A(0x0006) MISSED OFFSET
+	float                                              FactionJoinedLerpDuration;                                // 0x0628(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x1A4];                                     // 0x062C(0x01A4) MISSED OFFSET
+	TArray<struct FCrewStreakLevelIncreased>           StreakData;                                               // 0x07D0(0x0010) (Net, ZeroConstructor)
+	bool                                               IsFlipping;                                               // 0x07E0(0x0001) (Net, ZeroConstructor, IsPlainOldData)
+	bool                                               Flipped;                                                  // 0x07E1(0x0001) (Net, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0xE];                                       // 0x07E2(0x000E) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -74,6 +78,7 @@ public:
 	}
 
 
+	void OnRep_StreakData();
 	void OnRep_IsFlipping();
 };
 
@@ -111,6 +116,44 @@ public:
 };
 
 
+// Class Factions.FactionLootLevelRewardsAsset
+// 0x0010 (0x0038 - 0x0028)
+class UFactionLootLevelRewardsAsset : public UDataAsset
+{
+public:
+	TArray<struct FLootLevelReward>                    LootLevelRewards;                                         // 0x0028(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Factions.FactionLootLevelRewardsAsset"));
+		return ptr;
+	}
+
+};
+
+
+// Class Factions.FactionParticleComponent
+// 0x0170 (0x0A20 - 0x08B0)
+class UFactionParticleComponent : public UParticleSystemComponent
+{
+public:
+	unsigned char                                      UnknownData00[0x148];                                     // 0x08B0(0x0148) MISSED OFFSET
+	class UClass*                                      Faction;                                                  // 0x09F8(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      JoinedFaction;                                            // 0x0A00(0x0008) (ZeroConstructor, IsPlainOldData)
+	TArray<struct FCrewStreakLevelIncreased>           StreakData;                                               // 0x0A08(0x0010) (Net, ZeroConstructor)
+	unsigned char                                      UnknownData01[0x8];                                       // 0x0A18(0x0008) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Factions.FactionParticleComponent"));
+		return ptr;
+	}
+
+
+	void OnRep_StreakData();
+};
+
+
 // Class Factions.FactionServiceDebugRepActor
 // 0x0020 (0x03E8 - 0x03C8)
 class AFactionServiceDebugRepActor : public AActor
@@ -131,19 +174,20 @@ public:
 
 
 // Class Factions.FactionService
-// 0x0130 (0x04F8 - 0x03C8)
+// 0x01D8 (0x05A0 - 0x03C8)
 class AFactionService : public AActor
 {
 public:
 	unsigned char                                      UnknownData00[0x10];                                      // 0x03C8(0x0010) MISSED OFFSET
 	class UFactionSettingsAsset*                       Settings;                                                 // 0x03D8(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x70];                                      // 0x03E0(0x0070) MISSED OFFSET
-	TArray<struct FCompanyFactionAlignment>            OpposingFactionsAndCompanies;                             // 0x0450(0x0010) (Net, ZeroConstructor)
-	TArray<struct FCrewFactionEntryData>               FactionAlignedCrewData;                                   // 0x0460(0x0010) (ZeroConstructor)
-	TArray<struct FCrewFactionEntry>                   FactionAlignedCrews;                                      // 0x0470(0x0010) (Net, ZeroConstructor)
-	unsigned char                                      UnknownData02[0x58];                                      // 0x0480(0x0058) MISSED OFFSET
-	class AFactionServiceDebugRepActor*                DebugRepActor;                                            // 0x04D8(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData03[0x18];                                      // 0x04E0(0x0018) MISSED OFFSET
+	class UFactionLootLevelRewardsAsset*               LootLevelRewardsAsset;                                    // 0x03E0(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0xC0];                                      // 0x03E8(0x00C0) MISSED OFFSET
+	TArray<struct FCompanyFactionAlignment>            OpposingFactionsAndCompanies;                             // 0x04A8(0x0010) (Net, ZeroConstructor)
+	TArray<struct FCrewFactionEntryData>               FactionAlignedCrewData;                                   // 0x04B8(0x0010) (ZeroConstructor)
+	TArray<struct FCrewFactionEntry>                   FactionAlignedCrews;                                      // 0x04C8(0x0010) (Net, ZeroConstructor)
+	unsigned char                                      UnknownData02[0xA8];                                      // 0x04D8(0x00A8) MISSED OFFSET
+	class AFactionServiceDebugRepActor*                DebugRepActor;                                            // 0x0580(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData03[0x18];                                      // 0x0588(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -153,6 +197,23 @@ public:
 
 
 	void OnRep_FactionAlignedCrews(TArray<struct FCrewFactionEntry> PreviousCrews);
+};
+
+
+// Class Factions.FactionShipStreakDataAsset
+// 0x0020 (0x0048 - 0x0028)
+class UFactionShipStreakDataAsset : public UDataAsset
+{
+public:
+	TArray<struct FStreakMesh>                         StreakMeshes;                                             // 0x0028(0x0010) (Edit, ZeroConstructor)
+	TArray<struct FStreakCompanyParticles>             CompanyParticles;                                         // 0x0038(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Factions.FactionShipStreakDataAsset"));
+		return ptr;
+	}
+
 };
 
 
@@ -224,7 +285,7 @@ public:
 
 
 // Class Factions.StopFactionVoyageVoteConsumer
-// 0x0150 (0x0210 - 0x00C0)
+// 0x01C0 (0x0280 - 0x00C0)
 class UStopFactionVoyageVoteConsumer : public UFactionVoteConsumerBase
 {
 public:
@@ -234,6 +295,8 @@ public:
 	struct FText                                       FactionVotingCantRemoveVote;                              // 0x0168(0x0038) (Edit, DisableEditOnInstance)
 	struct FText                                       FactionVotingCantVoteReasonGoToOutpost;                   // 0x01A0(0x0038) (Edit, DisableEditOnInstance)
 	struct FText                                       FactionVotingCantVoteReasonActiveForDifferentCompany;     // 0x01D8(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       FactionVotingCantVoteReasonEnemyShipNearby;               // 0x0210(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       FactionVotingCantVoteReasonShipNotInHarbour;              // 0x0248(0x0038) (Edit, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{
@@ -268,17 +331,17 @@ public:
 
 
 // Class Factions.FactionVoteValidatorBase
-// 0x0060 (0x0090 - 0x0030)
+// 0x00A0 (0x00D0 - 0x0030)
 class UFactionVoteValidatorBase : public UVoteValidatorInlineBase
 {
 public:
 	TArray<class UClass*>                              TargetCompanies;                                          // 0x0030(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	unsigned char                                      UnknownData00[0x30];                                      // 0x0040(0x0030) MISSED OFFSET
-	class UFactionVoteConsumerBase*                    Consumer;                                                 // 0x0070(0x0008) (ZeroConstructor, IsPlainOldData)
-	int                                                CurrentCompany;                                           // 0x0078(0x0004) (Net, ZeroConstructor, IsPlainOldData)
-	float                                              FlipTime;                                                 // 0x007C(0x0004) (Net, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x8];                                       // 0x0080(0x0008) MISSED OFFSET
-	class AActor*                                      OwningActor;                                              // 0x0088(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x70];                                      // 0x0040(0x0070) MISSED OFFSET
+	class UFactionVoteConsumerBase*                    Consumer;                                                 // 0x00B0(0x0008) (ZeroConstructor, IsPlainOldData)
+	int                                                CurrentCompany;                                           // 0x00B8(0x0004) (Net, ZeroConstructor, IsPlainOldData)
+	float                                              FlipTime;                                                 // 0x00BC(0x0004) (Net, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x8];                                       // 0x00C0(0x0008) MISSED OFFSET
+	class AActor*                                      OwningActor;                                              // 0x00C8(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -292,7 +355,7 @@ public:
 
 
 // Class Factions.StartFactionVoyageVoteValidator
-// 0x0000 (0x0090 - 0x0090)
+// 0x0000 (0x00D0 - 0x00D0)
 class UStartFactionVoyageVoteValidator : public UFactionVoteValidatorBase
 {
 public:
@@ -307,7 +370,7 @@ public:
 
 
 // Class Factions.StopFactionVoyageVoteValidator
-// 0x0000 (0x0090 - 0x0090)
+// 0x0000 (0x00D0 - 0x00D0)
 class UStopFactionVoyageVoteValidator : public UFactionVoteValidatorBase
 {
 public:
@@ -344,15 +407,52 @@ public:
 };
 
 
-// Class Factions.ShipFactionCustomisation
-// 0x0050 (0x0330 - 0x02E0)
-class UShipFactionCustomisation : public USceneComponent
+// Class Factions.IsWearingCursePrerequisite
+// 0x0008 (0x0088 - 0x0080)
+class UIsWearingCursePrerequisite : public UInteractionPrerequisiteBase
 {
 public:
-	struct FFigureheadFactionVFXParams                 FigureheadFactionVFX;                                     // 0x02E0(0x0030) (Edit, DisableEditOnInstance)
-	struct FScriptMulticastDelegate                    GetBPFactionHourglass;                                    // 0x0310(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
-	class UChildActorComponent*                        BPFactionHourglass;                                       // 0x0320(0x0008) (Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	class UParticleSystemComponent*                    SpawnedFigureheadParticles;                               // 0x0328(0x0008) (ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData)
+	bool                                               AnyCurse;                                                 // 0x0080(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               SkeletonCurse;                                            // 0x0081(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               GhostCurse;                                               // 0x0082(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x5];                                       // 0x0083(0x0005) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Factions.IsWearingCursePrerequisite"));
+		return ptr;
+	}
+
+};
+
+
+// Class Factions.StreakMaterialDataAsset
+// 0x0020 (0x0048 - 0x0028)
+class UStreakMaterialDataAsset : public UDataAsset
+{
+public:
+	TArray<struct FStreakMaterialValue>                MaterialValues;                                           // 0x0028(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	TArray<struct FStreakCompanyMaterials>             StreakMaterials;                                          // 0x0038(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Factions.StreakMaterialDataAsset"));
+		return ptr;
+	}
+
+};
+
+
+// Class Factions.ShipFactionCustomisation
+// 0x0078 (0x0140 - 0x00C8)
+class UShipFactionCustomisation : public UActorComponent
+{
+public:
+	class UStreakMaterialDataAsset*                    StreakMaterialData;                                       // 0x00C8(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UFactionShipStreakDataAsset*                 ShipStreakData;                                           // 0x00D0(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	TArray<struct FStreakDynamicMaterials>             CachedDynamicMaterials;                                   // 0x00D8(0x0010) (ZeroConstructor, Transient)
+	unsigned char                                      UnknownData00[0x48];                                      // 0x00E8(0x0048) MISSED OFFSET
+	struct FFactionStreakData                          FactionStreakData;                                        // 0x0130(0x0010) (Net)
 
 	static UClass* StaticClass()
 	{
@@ -361,8 +461,7 @@ public:
 	}
 
 
-	void OnLeavingFightEndVFX();
-	void OnJoiningFightStartVFX();
+	void OnRep_FactionStreakData();
 };
 
 

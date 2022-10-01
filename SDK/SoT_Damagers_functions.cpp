@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,58 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function Damagers.ShipDamagerComponent.SetShape
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UPrimitiveComponent*     InShape                        (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void UShipDamagerComponent::SetShape(class UPrimitiveComponent* InShape)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Damagers.ShipDamagerComponent.SetShape"));
+
+	struct
+	{
+		class UPrimitiveComponent*     InShape;
+	} params;
+
+	params.InShape = InShape;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Damagers.ShipDamagerComponent.EndDamage
+// (Final, Native, Public, BlueprintCallable)
+
+void UShipDamagerComponent::EndDamage()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Damagers.ShipDamagerComponent.EndDamage"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Damagers.ShipDamagerComponent.BeginDamage
+// (Final, Native, Public, BlueprintCallable)
+
+void UShipDamagerComponent::BeginDamage()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Damagers.ShipDamagerComponent.BeginDamage"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
 
 // Function Damagers.RadialDamagerComponent.SetDamageRadius
 // (Final, Native, Public, BlueprintCallable)
@@ -177,58 +229,6 @@ void UShockwaveDamagerComponent::Multi_StartShockwave(const struct FVector& InSt
 	} params;
 
 	params.InStartLocation = InStartLocation;
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
-// Function Damagers.ShipDamagerComponent.SetShape
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UPrimitiveComponent*     InShape                        (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-void UShipDamagerComponent::SetShape(class UPrimitiveComponent* InShape)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Damagers.ShipDamagerComponent.SetShape"));
-
-	struct
-	{
-		class UPrimitiveComponent*     InShape;
-	} params;
-
-	params.InShape = InShape;
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
-// Function Damagers.ShipDamagerComponent.EndDamage
-// (Final, Native, Public, BlueprintCallable)
-
-void UShipDamagerComponent::EndDamage()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Damagers.ShipDamagerComponent.EndDamage"));
-
-	struct
-	{
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
-// Function Damagers.ShipDamagerComponent.BeginDamage
-// (Final, Native, Public, BlueprintCallable)
-
-void UShipDamagerComponent::BeginDamage()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Damagers.ShipDamagerComponent.BeginDamage"));
-
-	struct
-	{
-	} params;
-
 
 	UObject::ProcessEvent(fn, &params);
 }

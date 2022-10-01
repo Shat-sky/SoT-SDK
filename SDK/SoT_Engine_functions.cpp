@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -30776,7 +30776,7 @@ void UFeatureConfigBlueprintFunctionLibrary::MakeFeatureFlag(struct FFeatureFlag
 
 
 // Function Engine.FeatureConfigBlueprintFunctionLibrary.IsFeatureEnabled
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
 // Parameters:
 // struct FFeatureFlag            Flag                           (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)

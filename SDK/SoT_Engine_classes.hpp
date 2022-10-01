@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -1382,13 +1382,13 @@ public:
 
 
 // Class Engine.GameEngine
-// 0x0070 (0x0A40 - 0x09D0)
+// 0x0060 (0x0A30 - 0x09D0)
 class UGameEngine : public UEngine
 {
 public:
 	float                                              MaxDeltaTime;                                             // 0x09D0(0x0004) (ZeroConstructor, Config, IsPlainOldData)
 	float                                              ServerFlushLogInterval;                                   // 0x09D4(0x0004) (ZeroConstructor, Config, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x68];                                      // 0x09D8(0x0068) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x58];                                      // 0x09D8(0x0058) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -2887,7 +2887,7 @@ public:
 
 
 // Class Engine.ParticleSystemComponent
-// 0x02E0 (0x08A0 - 0x05C0)
+// 0x02F0 (0x08B0 - 0x05C0)
 class UParticleSystemComponent : public UPrimitiveComponent
 {
 public:
@@ -2907,32 +2907,32 @@ public:
 	struct FVector                                     PartSysVelocity;                                          // 0x0694(0x000C) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData02[0x18];                                      // 0x06A0(0x0018) MISSED OFFSET
 	struct FVector                                     CustomInheritedVelocity;                                  // 0x06B8(0x000C) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData03[0xC];                                       // 0x06C4(0x000C) MISSED OFFSET
-	float                                              CustomParameterDrivingCurves;                             // 0x06D0(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	struct FLinearColor                                ColourTint;                                               // 0x06D4(0x0010) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              WarmUpTime;                                               // 0x06E4(0x0004) (ZeroConstructor, IsPlainOldData)
-	float                                              WarmupTickRate;                                           // 0x06E8(0x0004) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      bWarmingUp : 1;                                           // 0x06EC(0x0001)
-	unsigned char                                      UnknownData04[0x1B];                                      // 0x06ED(0x001B) MISSED OFFSET
-	float                                              SecondsBeforeInactive;                                    // 0x0708(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData05[0x8];                                       // 0x070C(0x0008) MISSED OFFSET
-	float                                              MaxTimeBeforeForceUpdateTransform;                        // 0x0714(0x0004) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData06[0x4];                                       // 0x0718(0x0004) MISSED OFFSET
-	unsigned char                                      bOverrideLODMethod : 1;                                   // 0x071C(0x0001) (Edit, BlueprintVisible)
-	unsigned char                                      UnknownData07[0x3];                                       // 0x071D(0x0003) MISSED OFFSET
-	TEnumAsByte<EParticleSystemLODMethod>              LODMethod;                                                // 0x0720(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData08[0x3];                                       // 0x0721(0x0003) MISSED OFFSET
-	unsigned char                                      bSkipUpdateDynamicDataDuringTick : 1;                     // 0x0724(0x0001)
-	unsigned char                                      UnknownData09[0x3];                                       // 0x0725(0x0003) MISSED OFFSET
-	TArray<struct FMaterialRelevance>                  CachedViewRelevanceFlags;                                 // 0x0728(0x0010) (ZeroConstructor, Transient)
-	unsigned char                                      UnknownData10[0x8];                                       // 0x0738(0x0008) MISSED OFFSET
-	TArray<class UParticleSystemReplay*>               ReplayClips;                                              // 0x0740(0x0010) (ZeroConstructor)
-	unsigned char                                      UnknownData11[0x60];                                      // 0x0750(0x0060) MISSED OFFSET
-	float                                              CustomTimeDilation;                                       // 0x07B0(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData12[0x4];                                       // 0x07B4(0x0004) MISSED OFFSET
-	struct FScriptMulticastDelegate                    OnSystemFinished;                                         // 0x07B8(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
-	unsigned char                                      bUnbound : 1;                                             // 0x07C8(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
-	unsigned char                                      UnknownData13[0xD7];                                      // 0x07C9(0x00D7) MISSED OFFSET
+	unsigned char                                      UnknownData03[0x14];                                      // 0x06C4(0x0014) MISSED OFFSET
+	float                                              CustomParameterDrivingCurves;                             // 0x06D8(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	struct FLinearColor                                ColourTint;                                               // 0x06DC(0x0010) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	float                                              WarmUpTime;                                               // 0x06EC(0x0004) (ZeroConstructor, IsPlainOldData)
+	float                                              WarmupTickRate;                                           // 0x06F0(0x0004) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      bWarmingUp : 1;                                           // 0x06F4(0x0001)
+	unsigned char                                      UnknownData04[0x1B];                                      // 0x06F5(0x001B) MISSED OFFSET
+	float                                              SecondsBeforeInactive;                                    // 0x0710(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData05[0x8];                                       // 0x0714(0x0008) MISSED OFFSET
+	float                                              MaxTimeBeforeForceUpdateTransform;                        // 0x071C(0x0004) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData06[0x4];                                       // 0x0720(0x0004) MISSED OFFSET
+	unsigned char                                      bOverrideLODMethod : 1;                                   // 0x0724(0x0001) (Edit, BlueprintVisible)
+	unsigned char                                      UnknownData07[0x3];                                       // 0x0725(0x0003) MISSED OFFSET
+	TEnumAsByte<EParticleSystemLODMethod>              LODMethod;                                                // 0x0728(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData08[0x3];                                       // 0x0729(0x0003) MISSED OFFSET
+	unsigned char                                      bSkipUpdateDynamicDataDuringTick : 1;                     // 0x072C(0x0001)
+	unsigned char                                      UnknownData09[0x3];                                       // 0x072D(0x0003) MISSED OFFSET
+	TArray<struct FMaterialRelevance>                  CachedViewRelevanceFlags;                                 // 0x0730(0x0010) (ZeroConstructor, Transient)
+	unsigned char                                      UnknownData10[0x8];                                       // 0x0740(0x0008) MISSED OFFSET
+	TArray<class UParticleSystemReplay*>               ReplayClips;                                              // 0x0748(0x0010) (ZeroConstructor)
+	unsigned char                                      UnknownData11[0x60];                                      // 0x0758(0x0060) MISSED OFFSET
+	float                                              CustomTimeDilation;                                       // 0x07B8(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData12[0x4];                                       // 0x07BC(0x0004) MISSED OFFSET
+	struct FScriptMulticastDelegate                    OnSystemFinished;                                         // 0x07C0(0x0010) (ZeroConstructor, InstancedReference, BlueprintAssignable)
+	unsigned char                                      bUnbound : 1;                                             // 0x07D0(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
+	unsigned char                                      UnknownData13[0xDF];                                      // 0x07D1(0x00DF) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -18684,7 +18684,8 @@ public:
 	unsigned char                                      bKillOnCompleted : 1;                                     // 0x00DC(0x0001) (Edit)
 	unsigned char                                      UnknownData09[0x3];                                       // 0x00DD(0x0003) MISSED OFFSET
 	TEnumAsByte<EParticleSortMode>                     SortMode;                                                 // 0x00E0(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData10[0x3];                                       // 0x00E1(0x0003) MISSED OFFSET
+	TEnumAsByte<EWaterKillCondition>                   WaterKillCondition;                                       // 0x00E1(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData10[0x2];                                       // 0x00E2(0x0002) MISSED OFFSET
 	unsigned char                                      bUseLegacyEmitterTime : 1;                                // 0x00E4(0x0001) (Edit)
 	unsigned char                                      UnknownData11[0x3];                                       // 0x00E5(0x0003) MISSED OFFSET
 	float                                              EmitterDuration;                                          // 0x00E8(0x0004) (Edit, ZeroConstructor, IsPlainOldData)

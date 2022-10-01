@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -118,12 +118,13 @@ public:
 
 
 // Class StoryFramework.StoryDrivenBlendedLightingZoneComponentDataAsset
-// 0x0018 (0x0040 - 0x0028)
+// 0x0020 (0x0048 - 0x0028)
 class UStoryDrivenBlendedLightingZoneComponentDataAsset : public UDataAsset
 {
 public:
-	struct FFeatureFlag                                Feature;                                                  // 0x0028(0x0008) (Edit)
-	TArray<struct FLightingZoneStoryRelatedSettings>   StoryResponses;                                           // 0x0030(0x0010) (Edit, ZeroConstructor)
+	struct FFeatureFlag                                Feature;                                                  // 0x0028(0x000C) (Edit)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0034(0x0004) MISSED OFFSET
+	TArray<struct FLightingZoneStoryRelatedSettings>   StoryResponses;                                           // 0x0038(0x0010) (Edit, ZeroConstructor)
 
 	static UClass* StaticClass()
 	{
@@ -250,12 +251,13 @@ public:
 
 
 // Class StoryFramework.StorySpawnedActorsComponentDataAsset
-// 0x0018 (0x0040 - 0x0028)
+// 0x0020 (0x0048 - 0x0028)
 class UStorySpawnedActorsComponentDataAsset : public UDataAsset
 {
 public:
-	struct FFeatureFlag                                Feature;                                                  // 0x0028(0x0008) (Edit)
-	TArray<struct FStorySpawnedActorsComponentList>    StorySpawnedActorsList;                                   // 0x0030(0x0010) (Edit, ZeroConstructor)
+	struct FFeatureFlag                                Feature;                                                  // 0x0028(0x000C) (Edit)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0034(0x0004) MISSED OFFSET
+	TArray<struct FStorySpawnedActorsComponentList>    StorySpawnedActorsList;                                   // 0x0038(0x0010) (Edit, ZeroConstructor)
 
 	static UClass* StaticClass()
 	{
@@ -267,12 +269,13 @@ public:
 
 
 // Class StoryFramework.StorySpawnedActorsDataAsset
-// 0x0018 (0x0040 - 0x0028)
+// 0x0020 (0x0048 - 0x0028)
 class UStorySpawnedActorsDataAsset : public UDataAsset
 {
 public:
-	struct FFeatureFlag                                Feature;                                                  // 0x0028(0x0008) (Edit)
-	TArray<struct FStorySpawnedActorsList>             StorySpawnedActorsList;                                   // 0x0030(0x0010) (Edit, ZeroConstructor)
+	struct FFeatureFlag                                Feature;                                                  // 0x0028(0x000C) (Edit)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0034(0x0004) MISSED OFFSET
+	TArray<struct FStorySpawnedActorsList>             StorySpawnedActorsList;                                   // 0x0038(0x0010) (Edit, ZeroConstructor)
 
 	static UClass* StaticClass()
 	{

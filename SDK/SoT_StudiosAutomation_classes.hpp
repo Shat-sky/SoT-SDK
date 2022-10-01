@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -106,11 +106,13 @@ public:
 
 
 // Class StudiosAutomation.AssetAuditSettings
-// 0x0010 (0x0048 - 0x0038)
+// 0x0030 (0x0068 - 0x0038)
 class UAssetAuditSettings : public UDeveloperSettings
 {
 public:
 	TArray<class FString>                              PathsToAuditOnSave;                                       // 0x0038(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
+	TArray<TAssetPtr<class UClass>>                    TypesToIgnoreInFeatureToggleAudits;                       // 0x0048(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
+	TArray<class FString>                              AssetAuditorsLoadExceptionList;                           // 0x0058(0x0010) (Edit, ZeroConstructor, Config)
 
 	static UClass* StaticClass()
 	{
@@ -159,7 +161,7 @@ public:
 	static void DelayForFrames(class UObject* WorldContextObject, const struct FLatentActionInfo& LatentInfo, int NumFrames);
 	static void CollectGarbageNow(bool FullPurge);
 	static void BlockAsyncLoading(bool EnableBlock);
-	static void BeginPerformanceCapture(const class FString& FolderName, bool DumpMemReport, bool PreventGarbageCollection);
+	static void BeginPerformanceCapture(const class FString& FolderName, bool DumpMemReport, bool PreventGarbageCollection, const class FString& StatGranularity);
 	static void AssertValue_Int(int Actual, TEnumAsByte<EComparisonMethod> ShouldBe, int Expected, const class FString& What, class UObject* ContextObject);
 	static void AssertValue_Float(float Actual, TEnumAsByte<EComparisonMethod> ShouldBe, float Expected, const class FString& What, class UObject* ContextObject);
 	static void AssertValue_DateTime(const struct FDateTime& Actual, TEnumAsByte<EComparisonMethod> ShouldBe, const struct FDateTime& Expected, const class FString& What, class UObject* ContextObject);

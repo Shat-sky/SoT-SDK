@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -8,14 +8,14 @@
 
 #include "SoT_Basic.hpp"
 #include "SoT_Tales_enums.hpp"
-#include "SoT_MerchantContracts_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
-#include "SoT_EmissaryFramework_classes.hpp"
 #include "SoT_Athena_classes.hpp"
 #include "SoT_AthenaEngine_classes.hpp"
 #include "SoT_AIModule_classes.hpp"
+#include "SoT_MerchantContracts_classes.hpp"
 #include "SoT_PrioritisedPrompts_classes.hpp"
+#include "SoT_EmissaryFramework_classes.hpp"
 #include "SoT_Maths_classes.hpp"
 #include "SoT_TaleMaps_classes.hpp"
 
@@ -26,7 +26,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // ScriptStruct Tales.QuestVariableAny
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableAny : public FQuestVariable
 {
 
@@ -135,63 +135,77 @@ struct FBodyFramePair
 };
 
 // ScriptStruct Tales.QuestVariableArray
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableArray : public FQuestVariable
 {
 
 };
 
 // ScriptStruct Tales.QuestVariableSetEQSTaleContextValue
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableSetEQSTaleContextValue : public FQuestVariable
 {
 
 };
 
 // ScriptStruct Tales.QuestVariableLinkEQSContext
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableLinkEQSContext : public FQuestVariable
 {
 
 };
 
 // ScriptStruct Tales.QuestVariableItemDescType
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableItemDescType : public FQuestVariable
 {
 
 };
 
 // ScriptStruct Tales.QuestVariableItemInfo
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableItemInfo : public FQuestVariable
 {
 
 };
 
 // ScriptStruct Tales.QuestVariableCollection
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableCollection : public FQuestVariable
 {
 
 };
 
 // ScriptStruct Tales.QuestVariableGuidArray
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableGuidArray : public FQuestVariable
 {
 
 };
 
 // ScriptStruct Tales.QuestVariablePrioritisedPrompt
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariablePrioritisedPrompt : public FQuestVariable
 {
 
 };
 
+// ScriptStruct Tales.QuestVariableGameEvent
+// 0x0000 (0x0030 - 0x0030)
+struct FQuestVariableGameEvent : public FQuestVariable
+{
+
+};
+
+// ScriptStruct Tales.QuestVariableAISpawner
+// 0x0000 (0x0030 - 0x0030)
+struct FQuestVariableAISpawner : public FQuestVariable
+{
+
+};
+
 // ScriptStruct Tales.QuestVariableBountyTargetArray
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableBountyTargetArray : public FQuestVariable
 {
 
@@ -206,14 +220,14 @@ struct FTaleQuestDeliverableItem
 };
 
 // ScriptStruct Tales.QuestVariableMerchantItemArray
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableMerchantItemArray : public FQuestVariable
 {
 
 };
 
 // ScriptStruct Tales.QuestVariableMerchantItem
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableMerchantItem : public FQuestVariable
 {
 
@@ -266,21 +280,21 @@ struct FCriticalActorWrapper
 };
 
 // ScriptStruct Tales.QuestVariableActorArray
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableActorArray : public FQuestVariable
 {
 
 };
 
 // ScriptStruct Tales.QuestVariableObjectArray
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableObjectArray : public FQuestVariable
 {
 
 };
 
 // ScriptStruct Tales.QuestVariableClassArray
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableClassArray : public FQuestVariable
 {
 
@@ -294,14 +308,14 @@ struct FParticpantToolGroup
 };
 
 // ScriptStruct Tales.QuestVariableRotator
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableRotator : public FQuestVariable
 {
 
 };
 
 // ScriptStruct Tales.QuestVariableActorAssetType
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableActorAssetType : public FQuestVariable
 {
 
@@ -316,7 +330,7 @@ struct FTaleQuestForEachCrewTask
 };
 
 // ScriptStruct Tales.QuestVariableTaleResourceHandle
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableTaleResourceHandle : public FQuestVariable
 {
 
@@ -375,28 +389,28 @@ struct FStepMerchantItemDesc
 };
 
 // ScriptStruct Tales.QuestVariableActorAssetTypeArray
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableActorAssetTypeArray : public FQuestVariable
 {
 
 };
 
 // ScriptStruct Tales.QuestVariableItemDescTypeArray
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableItemDescTypeArray : public FQuestVariable
 {
 
 };
 
 // ScriptStruct Tales.QuestVariablePageLayout
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariablePageLayout : public FQuestVariable
 {
 
 };
 
 // ScriptStruct Tales.QuestVariableTexture
-// 0x0000 (0x0020 - 0x0020)
+// 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableTexture : public FQuestVariable
 {
 
@@ -416,13 +430,6 @@ struct FTaleQuestContextInvalidTelemetryEvent
 {
 	struct FName                                       StepType;                                                 // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
 	struct FName                                       Tale;                                                     // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
-};
-
-// ScriptStruct Tales.QuestVariableAISpawner
-// 0x0000 (0x0020 - 0x0020)
-struct FQuestVariableAISpawner : public FQuestVariable
-{
-
 };
 
 // ScriptStruct Tales.StepBountyTargetDesc

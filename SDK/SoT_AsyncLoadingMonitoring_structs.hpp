@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.6.2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -16,7 +16,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // ScriptStruct AsyncLoadingMonitoring.AsyncExcessiveLoadTelemetryEvent
-// 0x0028
+// 0x0038
 struct FAsyncExcessiveLoadTelemetryEvent
 {
 	int                                                FrameCounter;                                             // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
@@ -24,6 +24,7 @@ struct FAsyncExcessiveLoadTelemetryEvent
 	double                                             ExpectedAsyncLoadingTime;                                 // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
 	double                                             ActualAsyncLoadingTime;                                   // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
 	TArray<class FString>                              AssetRequestList;                                         // 0x0018(0x0010) (ZeroConstructor)
+	TArray<class FString>                              LoadedAssetList;                                          // 0x0028(0x0010) (ZeroConstructor)
 };
 
 }
