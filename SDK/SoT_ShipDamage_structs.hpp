@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -19,31 +19,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
-
-// ScriptStruct ShipDamage.DistanceAndLevelOfDamage
-// 0x0008
-struct FDistanceAndLevelOfDamage
-{
-	float                                              DistanceLimit;                                            // 0x0000(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	int                                                LevelOfDamage;                                            // 0x0004(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-};
-
-// ScriptStruct ShipDamage.ShipPartLevelsOfDamage
-// 0x0040
-struct FShipPartLevelsOfDamage
-{
-	TAssetPtr<class UClass>                            ActorClass;                                               // 0x0000(0x0020) (Edit)
-	TArray<struct FDistanceAndLevelOfDamage>           DamagePerDistance;                                        // 0x0020(0x0010) (Edit, ZeroConstructor)
-	struct FFeatureFlag                                FeatureName;                                              // 0x0030(0x000C) (Edit)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x003C(0x0004) MISSED OFFSET
-};
-
-// ScriptStruct ShipDamage.ShipDamageParams
-// 0x0010
-struct FShipDamageParams
-{
-	TArray<struct FShipPartLevelsOfDamage>             DamageParams;                                             // 0x0000(0x0010) (Edit, ZeroConstructor)
-};
 
 // ScriptStruct ShipDamage.HullDamageHit
 // 0x001C
@@ -72,6 +47,31 @@ struct FHullDamageZoneInfo
 struct FHullDamagePersistenceModel : public FPersistenceModel
 {
 	TArray<struct FHullDamageZoneInfo>                 DamageZones;                                              // 0x0000(0x0010) (ZeroConstructor)
+};
+
+// ScriptStruct ShipDamage.DistanceAndLevelOfDamage
+// 0x0008
+struct FDistanceAndLevelOfDamage
+{
+	float                                              DistanceLimit;                                            // 0x0000(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	int                                                LevelOfDamage;                                            // 0x0004(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct ShipDamage.ShipPartLevelsOfDamage
+// 0x0040
+struct FShipPartLevelsOfDamage
+{
+	TAssetPtr<class UClass>                            ActorClass;                                               // 0x0000(0x0020) (Edit)
+	TArray<struct FDistanceAndLevelOfDamage>           DamagePerDistance;                                        // 0x0020(0x0010) (Edit, ZeroConstructor)
+	struct FFeatureFlag                                FeatureName;                                              // 0x0030(0x000C) (Edit)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x003C(0x0004) MISSED OFFSET
+};
+
+// ScriptStruct ShipDamage.ShipDamageParams
+// 0x0010
+struct FShipDamageParams
+{
+	TArray<struct FShipPartLevelsOfDamage>             DamageParams;                                             // 0x0000(0x0010) (Edit, ZeroConstructor)
 };
 
 // ScriptStruct ShipDamage.EventShipDamageApplied

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -40,6 +40,21 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.AthenaEngineInterface"));
+		return ptr;
+	}
+
+};
+
+
+// Class AthenaEngine.AthenaGameStateInterface
+// 0x0000 (0x0028 - 0x0028)
+class UAthenaGameStateInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AthenaEngine.AthenaGameStateInterface"));
 		return ptr;
 	}
 

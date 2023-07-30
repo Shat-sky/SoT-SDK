@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -134,7 +134,7 @@ public:
 	void Fade_In_Lights__UpdateFunc();
 	void ReceiveBeginPlay();
 	void ReceiveEndPlay(TEnumAsByte<EEndPlayReason> EndPlayReason);
-	void BndEvt__Default__BP_PL_HauntedForts_Emplacement_C_K2Node_InstancedActorBoundEvent_3_FortTargetEventSignature__DelegateSignature();
+	void BndEvt__Default__BP_PL_HauntedForts_Emplacement_C_K2Node_InstancedActorBoundEvent_15_FortTargetEventSignature__DelegateSignature();
 	void ExecuteUbergraph_BP_PL_HauntedForts_Emplacement(int EntryPoint);
 };
 

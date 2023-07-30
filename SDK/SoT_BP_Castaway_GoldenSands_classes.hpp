@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Castaway_GoldenSands.BP_Castaway_GoldenSands_C
-// 0x0000 (0x06D8 - 0x06D8)
+// 0x0000 (0x06F8 - 0x06F8)
 class ABP_Castaway_GoldenSands_C : public ABP_Castaway_C
 {
 public:

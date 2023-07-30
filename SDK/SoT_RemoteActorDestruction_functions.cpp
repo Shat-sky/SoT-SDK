@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -35,18 +35,18 @@ void URemoteActorDestructionInterface::DestroyExistingActors(TArray<class UClass
 // Function RemoteActorDestruction.RemoteActorDestructionInterface.DestroyActor
 // (Native, Public, HasOutParms)
 // Parameters:
-// struct FDestroyActorData       DestroyActorData               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FDestroyActorGameServerRequestModel DestroyActorGameServerRequestModel (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
-void URemoteActorDestructionInterface::DestroyActor(const struct FDestroyActorData& DestroyActorData)
+void URemoteActorDestructionInterface::DestroyActor(const struct FDestroyActorGameServerRequestModel& DestroyActorGameServerRequestModel)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function RemoteActorDestruction.RemoteActorDestructionInterface.DestroyActor"));
 
 	struct
 	{
-		struct FDestroyActorData       DestroyActorData;
+		struct FDestroyActorGameServerRequestModel DestroyActorGameServerRequestModel;
 	} params;
 
-	params.DestroyActorData = DestroyActorData;
+	params.DestroyActorGameServerRequestModel = DestroyActorGameServerRequestModel;
 
 	UObject::ProcessEvent(fn, &params);
 }

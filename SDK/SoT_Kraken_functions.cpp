@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -208,13 +208,72 @@ void AKrakenHead::OnCoordinatedKrakenSpecialEvent(TEnumAsByte<ECoordinatedKraken
 }
 
 
+// Function Kraken.KrakenService.Test_TrySpawningKraken
+// (Final, Native, Public, BlueprintCallable)
+
+void AKrakenService::Test_TrySpawningKraken()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Kraken.KrakenService.Test_TrySpawningKraken"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Kraken.KrakenService.Test_IsCurrentStateInactive
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool AKrakenService::Test_IsCurrentStateInactive()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Kraken.KrakenService.Test_IsCurrentStateInactive"));
+
+	struct
+	{
+		bool                           ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Kraken.KrakenService.Test_IsCurrentStateActive
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool AKrakenService::Test_IsCurrentStateActive()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Kraken.KrakenService.Test_IsCurrentStateActive"));
+
+	struct
+	{
+		bool                           ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
 // Function Kraken.KrakenService.RequestKrakenWithLocation
 // (Native, Public, HasOutParms, HasDefaults, BlueprintCallable)
 // Parameters:
 // struct FVector                 SpawnLocation                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 // class AActor*                  SpawnedForActor                (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           IsRequestedOnDemand            (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
-void AKrakenService::RequestKrakenWithLocation(const struct FVector& SpawnLocation, class AActor* SpawnedForActor)
+void AKrakenService::RequestKrakenWithLocation(const struct FVector& SpawnLocation, class AActor* SpawnedForActor, bool IsRequestedOnDemand)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Kraken.KrakenService.RequestKrakenWithLocation"));
 
@@ -222,10 +281,12 @@ void AKrakenService::RequestKrakenWithLocation(const struct FVector& SpawnLocati
 	{
 		struct FVector                 SpawnLocation;
 		class AActor*                  SpawnedForActor;
+		bool                           IsRequestedOnDemand;
 	} params;
 
 	params.SpawnLocation = SpawnLocation;
 	params.SpawnedForActor = SpawnedForActor;
+	params.IsRequestedOnDemand = IsRequestedOnDemand;
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -273,19 +334,48 @@ bool AKrakenService::IsKrakenActive()
 }
 
 
+// Function Kraken.KrakenService.DismissOrRemoveCrewFromKraken
+// (Native, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FGuid                   InCrewId                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool AKrakenService::DismissOrRemoveCrewFromKraken(const struct FGuid& InCrewId)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Kraken.KrakenService.DismissOrRemoveCrewFromKraken"));
+
+	struct
+	{
+		struct FGuid                   InCrewId;
+		bool                           ReturnValue;
+	} params;
+
+	params.InCrewId = InCrewId;
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
 // Function Kraken.KrakenService.DismissKraken
 // (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-void AKrakenService::DismissKraken()
+bool AKrakenService::DismissKraken()
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Kraken.KrakenService.DismissKraken"));
 
 	struct
 	{
+		bool                           ReturnValue;
 	} params;
 
 
 	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
 }
 
 

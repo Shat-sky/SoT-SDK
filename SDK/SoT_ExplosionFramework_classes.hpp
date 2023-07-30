@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,12 +15,12 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class ExplosionFramework.CreateActorInstanceOnExplodeComponent
-// 0x0060 (0x0128 - 0x00C8)
+// 0x0070 (0x0138 - 0x00C8)
 class UCreateActorInstanceOnExplodeComponent : public UActorComponent
 {
 public:
 	class UClass*                                      ActorToInstance;                                          // 0x00C8(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x58];                                      // 0x00D0(0x0058) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x68];                                      // 0x00D0(0x0068) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

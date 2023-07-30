@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -55,6 +55,68 @@ struct FName UInvasionServiceInterface::GetCachedFactionIdentifierForInvadingCre
 	params.InCrewId = InCrewId;
 
 	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function InvasionFramework.InvasionServiceInterface.GetAggressivePassiveInvasionTargetLocationOffset
+// (Native, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FGuid                   InCrewId                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FVector                 OutTargetLocation              (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UInvasionServiceInterface::GetAggressivePassiveInvasionTargetLocationOffset(const struct FGuid& InCrewId, struct FVector* OutTargetLocation)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function InvasionFramework.InvasionServiceInterface.GetAggressivePassiveInvasionTargetLocationOffset"));
+
+	struct
+	{
+		struct FGuid                   InCrewId;
+		struct FVector                 OutTargetLocation;
+		bool                           ReturnValue;
+	} params;
+
+	params.InCrewId = InCrewId;
+
+	UObject::ProcessEvent(fn, &params);
+
+	if (OutTargetLocation != nullptr)
+		*OutTargetLocation = params.OutTargetLocation;
+
+	return params.ReturnValue;
+}
+
+
+// Function InvasionFramework.InvasionServiceInterface.GetAggressivePassiveInvasionResurfaceDistanceForCrewId
+// (Native, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FGuid                   InCrewId                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// float                          OutMinDistance                 (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// float                          OutMaxDistance                 (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UInvasionServiceInterface::GetAggressivePassiveInvasionResurfaceDistanceForCrewId(const struct FGuid& InCrewId, float* OutMinDistance, float* OutMaxDistance)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function InvasionFramework.InvasionServiceInterface.GetAggressivePassiveInvasionResurfaceDistanceForCrewId"));
+
+	struct
+	{
+		struct FGuid                   InCrewId;
+		float                          OutMinDistance;
+		float                          OutMaxDistance;
+		bool                           ReturnValue;
+	} params;
+
+	params.InCrewId = InCrewId;
+
+	UObject::ProcessEvent(fn, &params);
+
+	if (OutMinDistance != nullptr)
+		*OutMinDistance = params.OutMinDistance;
+	if (OutMaxDistance != nullptr)
+		*OutMaxDistance = params.OutMaxDistance;
 
 	return params.ReturnValue;
 }

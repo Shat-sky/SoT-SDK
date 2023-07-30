@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,32 +15,32 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_CharacterVFXComponent.BP_CharacterVFXComponent_C
-// 0x025C (0x033C - 0x00E0)
+// 0x02CC (0x03AC - 0x00E0)
 class UBP_CharacterVFXComponent_C : public UCharacterVfxComponent
 {
 public:
 	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x00E0(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
-	struct FObjectMessagingHandle                      EnterWaterEvent;                                          // 0x00E8(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FObjectMessagingHandle                      UnderwaterStateChanged;                                   // 0x0130(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
-	class UParticleSystemComponent*                    Splash_Emitter;                                           // 0x0178(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UParticleSystem*                             Large_Foot_Splash;                                        // 0x0180(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UParticleSystem*                             Small_Foot_Splash;                                        // 0x0188(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              Threshold_for_run;                                        // 0x0190(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              Threshold_for_large_foot_impact;                          // 0x0194(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	struct FObjectMessagingHandle                      FallingIntoWaterHandle;                                   // 0x0198(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
-	class UParticleSystem*                             Large_Falling_Splash;                                     // 0x01E0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FObjectMessagingHandle                      PlayerViewUnderWaterHandle;                               // 0x01E8(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FObjectMessagingHandle                      EnterShipEventHandle;                                     // 0x0230(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FObjectMessagingHandle                      ExitShipEventHandle;                                      // 0x0278(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FVector                                     WindOffsetFromShip;                                       // 0x02C0(0x000C) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	bool                                               DEBUG_WindActive;                                         // 0x02CC(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x02CD(0x0003) MISSED OFFSET
-	float                                              DEBUG_WindToggleTimer;                                    // 0x02D0(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x02D4(0x0004) MISSED OFFSET
-	struct FObjectMessagingHandle                      WindDirectionChangedHandle;                               // 0x02D8(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
-	class UParticleSystemComponent*                    vfx_particle_underwater_ambient;                          // 0x0320(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UParticleSystemComponent*                    vfx_player_underwater_ambient;                            // 0x0328(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FFeatureFlag                                FeatureName;                                              // 0x0330(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FObjectMessagingHandle                      EnterWaterEvent;                                          // 0x00E8(0x0058) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FObjectMessagingHandle                      UnderwaterStateChanged;                                   // 0x0140(0x0058) (Edit, BlueprintVisible, DisableEditOnInstance)
+	class UParticleSystemComponent*                    Splash_Emitter;                                           // 0x0198(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UParticleSystem*                             Large_Foot_Splash;                                        // 0x01A0(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UParticleSystem*                             Small_Foot_Splash;                                        // 0x01A8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              Threshold_for_run;                                        // 0x01B0(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              Threshold_for_large_foot_impact;                          // 0x01B4(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	struct FObjectMessagingHandle                      FallingIntoWaterHandle;                                   // 0x01B8(0x0058) (Edit, BlueprintVisible, DisableEditOnInstance)
+	class UParticleSystem*                             Large_Falling_Splash;                                     // 0x0210(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FObjectMessagingHandle                      PlayerViewUnderWaterHandle;                               // 0x0218(0x0058) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FObjectMessagingHandle                      EnterShipEventHandle;                                     // 0x0270(0x0058) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FObjectMessagingHandle                      ExitShipEventHandle;                                      // 0x02C8(0x0058) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FVector                                     WindOffsetFromShip;                                       // 0x0320(0x000C) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               DEBUG_WindActive;                                         // 0x032C(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x032D(0x0003) MISSED OFFSET
+	float                                              DEBUG_WindToggleTimer;                                    // 0x0330(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x0334(0x0004) MISSED OFFSET
+	struct FObjectMessagingHandle                      WindDirectionChangedHandle;                               // 0x0338(0x0058) (Edit, BlueprintVisible, DisableEditOnInstance)
+	class UParticleSystemComponent*                    vfx_particle_underwater_ambient;                          // 0x0390(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UParticleSystemComponent*                    vfx_player_underwater_ambient;                            // 0x0398(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FFeatureFlag                                FeatureName;                                              // 0x03A0(0x000C) (Edit, BlueprintVisible, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{

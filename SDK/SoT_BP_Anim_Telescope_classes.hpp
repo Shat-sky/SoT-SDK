@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,13 +15,13 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // AnimBlueprintGeneratedClass BP_Anim_Telescope.BP_Anim_Telescope_C
-// 0x00B0 (0x06E0 - 0x0630)
+// 0x00B0 (0x0710 - 0x0660)
 class UBP_Anim_Telescope_C : public UWieldableItemAnimationInstance
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0630(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
-	struct FAnimNode_Root                              AnimGraphNode_Root_1D97B58B48A1400F8187778D2053C701;      // 0x0638(0x0048)
-	struct FAnimNode_Slot                              AnimGraphNode_Slot_859C556A499268A85ED18B90F93B9E6B;      // 0x0680(0x0060)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x0660(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
+	struct FAnimNode_Root                              AnimGraphNode_Root_1D97B58B48A1400F8187778D2053C701;      // 0x0668(0x0048)
+	struct FAnimNode_Slot                              AnimGraphNode_Slot_859C556A499268A85ED18B90F93B9E6B;      // 0x06B0(0x0060)
 
 	static UClass* StaticClass()
 	{

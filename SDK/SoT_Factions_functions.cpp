@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,12 +12,12 @@ namespace SDK
 //Functions
 //---------------------------------------------------------------------------
 
-// Function Factions.FactionFlipMeshComponent.OnRep_StreakData
+// Function Factions.FactionFlipMeshComponent.OnRep_Streak
 // (Final, Native, Public)
 
-void UFactionFlipMeshComponent::OnRep_StreakData()
+void UFactionFlipMeshComponent::OnRep_Streak()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Factions.FactionFlipMeshComponent.OnRep_StreakData"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Factions.FactionFlipMeshComponent.OnRep_Streak"));
 
 	struct
 	{
@@ -28,12 +28,12 @@ void UFactionFlipMeshComponent::OnRep_StreakData()
 }
 
 
-// Function Factions.FactionFlipMeshComponent.OnRep_IsFlipping
+// Function Factions.FactionFlipMeshComponent.OnRep_ServerTargetFlipped
 // (Final, Native, Public)
 
-void UFactionFlipMeshComponent::OnRep_IsFlipping()
+void UFactionFlipMeshComponent::OnRep_ServerTargetFlipped()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Factions.FactionFlipMeshComponent.OnRep_IsFlipping"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Factions.FactionFlipMeshComponent.OnRep_ServerTargetFlipped"));
 
 	struct
 	{
@@ -44,12 +44,28 @@ void UFactionFlipMeshComponent::OnRep_IsFlipping()
 }
 
 
-// Function Factions.FactionParticleComponent.OnRep_StreakData
+// Function Factions.FactionParticleComponent.OnRep_Streak
 // (Final, Native, Public)
 
-void UFactionParticleComponent::OnRep_StreakData()
+void UFactionParticleComponent::OnRep_Streak()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Factions.FactionParticleComponent.OnRep_StreakData"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Factions.FactionParticleComponent.OnRep_Streak"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Factions.FactionParticleComponent.OnRep_ServerMigrationEnded
+// (Final, Native, Public)
+
+void UFactionParticleComponent::OnRep_ServerMigrationEnded()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Factions.FactionParticleComponent.OnRep_ServerMigrationEnded"));
 
 	struct
 	{
@@ -81,16 +97,20 @@ void AFactionService::OnRep_FactionAlignedCrews(TArray<struct FCrewFactionEntry>
 
 
 // Function Factions.FactionVoteConsumerBase.OnRep_Votes
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private, HasOutParms)
+// Parameters:
+// TArray<struct FCrewMemberVotes> PreviousVotes                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
-void UFactionVoteConsumerBase::OnRep_Votes()
+void UFactionVoteConsumerBase::OnRep_Votes(TArray<struct FCrewMemberVotes> PreviousVotes)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Factions.FactionVoteConsumerBase.OnRep_Votes"));
 
 	struct
 	{
+		TArray<struct FCrewMemberVotes> PreviousVotes;
 	} params;
 
+	params.PreviousVotes = PreviousVotes;
 
 	UObject::ProcessEvent(fn, &params);
 }

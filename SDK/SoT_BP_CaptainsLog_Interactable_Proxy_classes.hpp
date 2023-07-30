@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,11 +15,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_CaptainsLog_Interactable_Proxy.BP_CaptainsLog_Interactable_Proxy_C
-// 0x0008 (0x06A8 - 0x06A0)
+// 0x0008 (0x0780 - 0x0778)
 class ABP_CaptainsLog_Interactable_Proxy_C : public ACaptainsLogbookInteractableProxy
 {
 public:
-	class USceneComponent*                             PlayerPosition;                                           // 0x06A0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class USceneComponent*                             PlayerPosition;                                           // 0x0778(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

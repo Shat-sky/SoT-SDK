@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Component_Tutorial2019.BP_Component_Tutorial2019_C
-// 0x00A0 (0x0178 - 0x00D8)
+// 0x00B0 (0x0188 - 0x00D8)
 class UBP_Component_Tutorial2019_C : public UTutorial2019ContextualDelegatingComponent
 {
 public:
@@ -27,7 +27,7 @@ public:
 	TArray<struct FName>                               OutpostNames;                                             // 0x0118(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
 	bool                                               GoldHoarderOnRepPrerequiste;                              // 0x0128(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x0129(0x0007) MISSED OFFSET
-	struct FObjectMessagingHandle                      Handle_PlayerFinishedSpawning;                            // 0x0130(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FObjectMessagingHandle                      Handle_PlayerFinishedSpawning;                            // 0x0130(0x0058) (Edit, BlueprintVisible, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{

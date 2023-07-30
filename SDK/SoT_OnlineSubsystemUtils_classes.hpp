@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -93,11 +93,11 @@ public:
 
 
 // Class OnlineSubsystemUtils.IpConnection
-// 0x0050 (0x345D8 - 0x34588)
+// 0x0050 (0x345F0 - 0x345A0)
 class UIpConnection : public UNetConnection
 {
 public:
-	unsigned char                                      UnknownData00[0x50];                                      // 0x34588(0x0050) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x50];                                      // 0x345A0(0x0050) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

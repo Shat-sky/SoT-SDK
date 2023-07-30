@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -8,16 +8,18 @@
 
 #include "SoT_Basic.hpp"
 #include "SoT_Tales_enums.hpp"
+#include "SoT_MerchantContracts_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
+#include "SoT_PrioritisedPrompts_classes.hpp"
 #include "SoT_Athena_classes.hpp"
 #include "SoT_AthenaEngine_classes.hpp"
 #include "SoT_AIModule_classes.hpp"
-#include "SoT_MerchantContracts_classes.hpp"
-#include "SoT_PrioritisedPrompts_classes.hpp"
 #include "SoT_EmissaryFramework_classes.hpp"
 #include "SoT_Maths_classes.hpp"
 #include "SoT_TaleMaps_classes.hpp"
+#include "SoT_ConditionalFramework_classes.hpp"
+#include "SoT_TaleCore_classes.hpp"
 
 namespace SDK
 {
@@ -67,6 +69,25 @@ struct FTaleQuestDeliveryRequest
 	struct FMerchantContractItemDesc                   Item;                                                     // 0x0008(0x0028) (Edit, BlueprintVisible)
 	int                                                NumToDeliver;                                             // 0x0030(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	int                                                NumToAllocate;                                            // 0x0034(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Tales.TaleQuestQueryableStateDataInfoId
+// 0x0020
+struct FTaleQuestQueryableStateDataInfoId
+{
+	struct FGuid                                       MyTaleId;                                                 // 0x0000(0x0010) (ZeroConstructor, IsPlainOldData)
+	struct FGuid                                       MyScopeId;                                                // 0x0010(0x0010) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Tales.TaleQuestQueryableStateDataInfo
+// 0x0030
+struct FTaleQuestQueryableStateDataInfo
+{
+	struct FTaleQuestQueryableStateDataInfoId          InfoId;                                                   // 0x0000(0x0020)
+	class UClass*                                      DataID;                                                   // 0x0020(0x0008) (ZeroConstructor, IsPlainOldData)
+	bool                                               DataBool;                                                 // 0x0028(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0029(0x0003) MISSED OFFSET
+	int                                                DataInt;                                                  // 0x002C(0x0004) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Tales.TrackedActorData
@@ -144,6 +165,13 @@ struct FQuestVariableArray : public FQuestVariable
 // ScriptStruct Tales.QuestVariableSetEQSTaleContextValue
 // 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableSetEQSTaleContextValue : public FQuestVariable
+{
+
+};
+
+// ScriptStruct Tales.QuestVariableActorArray
+// 0x0000 (0x0030 - 0x0030)
+struct FQuestVariableActorArray : public FQuestVariable
 {
 
 };
@@ -279,13 +307,6 @@ struct FCriticalActorWrapper
 	unsigned char                                      UnknownData00[0x38];                                      // 0x0008(0x0038) MISSED OFFSET
 };
 
-// ScriptStruct Tales.QuestVariableActorArray
-// 0x0000 (0x0030 - 0x0030)
-struct FQuestVariableActorArray : public FQuestVariable
-{
-
-};
-
 // ScriptStruct Tales.QuestVariableObjectArray
 // 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableObjectArray : public FQuestVariable
@@ -329,11 +350,80 @@ struct FTaleQuestForEachCrewTask
 	unsigned char                                      UnknownData00[0x18];                                      // 0x0010(0x0018) MISSED OFFSET
 };
 
+// ScriptStruct Tales.TaleQuestStopPermanentPromptEvent
+// 0x0001
+struct FTaleQuestStopPermanentPromptEvent
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct Tales.TaleQuestQueryableStateCanAllDataBeReadCondition
+// 0x0018 (0x0040 - 0x0028)
+struct FTaleQuestQueryableStateCanAllDataBeReadCondition : public FTargetedPayloadConditionBase
+{
+	TArray<class UClass*>                              AllDataToCheck;                                           // 0x0028(0x0010) (Edit, ZeroConstructor)
+	bool                                               ExpectedValue;                                            // 0x0038(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0039(0x0007) MISSED OFFSET
+};
+
+// ScriptStruct Tales.TaleQuestQueryableStateCanAnyDataBeReadCondition
+// 0x0018 (0x0040 - 0x0028)
+struct FTaleQuestQueryableStateCanAnyDataBeReadCondition : public FTargetedPayloadConditionBase
+{
+	TArray<class UClass*>                              AllDataToCheck;                                           // 0x0028(0x0010) (Edit, ZeroConstructor)
+	bool                                               ExpectedValue;                                            // 0x0038(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0039(0x0007) MISSED OFFSET
+};
+
+// ScriptStruct Tales.TaleQuestQueryableStateReadAllValueBoolCondition
+// 0x0018 (0x0040 - 0x0028)
+struct FTaleQuestQueryableStateReadAllValueBoolCondition : public FTargetedPayloadConditionBase
+{
+	TArray<class UClass*>                              AllDataToCheck;                                           // 0x0028(0x0010) (Edit, ZeroConstructor)
+	bool                                               ExpectedValue;                                            // 0x0038(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0039(0x0007) MISSED OFFSET
+};
+
+// ScriptStruct Tales.TaleQuestQueryableStateReadAnyValueBoolCondition
+// 0x0018 (0x0040 - 0x0028)
+struct FTaleQuestQueryableStateReadAnyValueBoolCondition : public FTargetedPayloadConditionBase
+{
+	TArray<class UClass*>                              AllDataToCheck;                                           // 0x0028(0x0010) (Edit, ZeroConstructor)
+	bool                                               ExpectedValue;                                            // 0x0038(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0039(0x0007) MISSED OFFSET
+};
+
+// ScriptStruct Tales.TaleQuestQueryableStateReadValueIntCondition
+// 0x0010 (0x0038 - 0x0028)
+struct FTaleQuestQueryableStateReadValueIntCondition : public FTargetedPayloadConditionBase
+{
+	class UClass*                                      DataID;                                                   // 0x0028(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	int                                                ExpectedValue;                                            // 0x0030(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ETaleQuestQueryableStateDataIntComparison> ComparisonToExpectedValue;                                // 0x0034(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0035(0x0003) MISSED OFFSET
+};
+
+// ScriptStruct Tales.InteractionOptionSelectedWithQueryableStateNonUI
+// 0x0020
+struct FInteractionOptionSelectedWithQueryableStateNonUI
+{
+	class UClass*                                      DataID;                                                   // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+	struct FGuid                                       InstigatorCrewID;                                         // 0x0008(0x0010) (ZeroConstructor, IsPlainOldData)
+	class AActor*                                      InteractingPlayer;                                        // 0x0018(0x0008) (ZeroConstructor, IsPlainOldData)
+};
+
 // ScriptStruct Tales.QuestVariableTaleResourceHandle
 // 0x0000 (0x0030 - 0x0030)
 struct FQuestVariableTaleResourceHandle : public FQuestVariable
 {
 
+};
+
+// ScriptStruct Tales.QueryableStateChangedEvent
+// 0x0030
+struct FQueryableStateChangedEvent
+{
+	struct FTaleQuestQueryableStateDataInfo            DataValue;                                                // 0x0000(0x0030)
 };
 
 // ScriptStruct Tales.ActorSpawnedAutomationEvent
@@ -362,6 +452,62 @@ struct FTaleQuestSelectorServiceSeedSetTelemetryEvent
 struct FPlaySequencerAutomationEvent
 {
 	unsigned char                                      UnknownData00[0x18];                                      // 0x0000(0x0018) MISSED OFFSET
+};
+
+// ScriptStruct Tales.MontageAnimationCommandBase
+// 0x0010 (0x0018 - 0x0008)
+struct FMontageAnimationCommandBase : public FClientCommandBase
+{
+	class AActor*                                      MyTarget;                                                 // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
+	class UAnimMontage*                                MyMontage;                                                // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Tales.JumpToMontageSectionCommand
+// 0x0008 (0x0020 - 0x0018)
+struct FJumpToMontageSectionCommand : public FMontageAnimationCommandBase
+{
+	struct FName                                       SectionName;                                              // 0x0018(0x0008) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Tales.PlayMontageAnimationCommand
+// 0x0008 (0x0020 - 0x0018)
+struct FPlayMontageAnimationCommand : public FMontageAnimationCommandBase
+{
+	float                                              PlayRate;                                                 // 0x0018(0x0004) (ZeroConstructor, IsPlainOldData)
+	float                                              Position;                                                 // 0x001C(0x0004) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Tales.SetNextMontageSectionCommand
+// 0x0010 (0x0028 - 0x0018)
+struct FSetNextMontageSectionCommand : public FMontageAnimationCommandBase
+{
+	struct FName                                       FromSectionName;                                          // 0x0018(0x0008) (ZeroConstructor, IsPlainOldData)
+	struct FName                                       ToSectionName;                                            // 0x0020(0x0008) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Tales.StopMontageAnimationCommand
+// 0x0008 (0x0020 - 0x0018)
+struct FStopMontageAnimationCommand : public FMontageAnimationCommandBase
+{
+	float                                              BlendOutTime;                                             // 0x0018(0x0004) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x001C(0x0004) MISSED OFFSET
+};
+
+// ScriptStruct Tales.SetDialogueInteractionEnabledClientCommand
+// 0x0010 (0x0018 - 0x0008)
+struct FSetDialogueInteractionEnabledClientCommand : public FClientCommandBase
+{
+	class UObject*                                     DialogueComponentObject;                                  // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
+	bool                                               ShouldBeEnabled;                                          // 0x0010(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0011(0x0007) MISSED OFFSET
+};
+
+// ScriptStruct Tales.SetDialogueInteractionPromptClientCommand
+// 0x0040 (0x0048 - 0x0008)
+struct FSetDialogueInteractionPromptClientCommand : public FClientCommandBase
+{
+	class UNPCDialogComponent*                         DialogueComponent;                                        // 0x0008(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	struct FText                                       Prompt;                                                   // 0x0010(0x0038)
 };
 
 // ScriptStruct Tales.EventModalInteractionStateChanged

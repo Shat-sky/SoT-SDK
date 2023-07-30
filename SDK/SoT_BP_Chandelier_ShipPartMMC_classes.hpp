@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Chandelier_ShipPartMMC.BP_Chandelier_ShipPartMMC_C
-// 0x0000 (0x0450 - 0x0450)
+// 0x0000 (0x0460 - 0x0460)
 class ABP_Chandelier_ShipPartMMC_C : public ABP_Chandelier_C
 {
 public:

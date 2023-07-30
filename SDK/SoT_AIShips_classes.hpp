@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -66,55 +66,53 @@ public:
 
 
 // Class AIShips.AthenaAIShipControllerParamsDataAsset
-// 0x0350 (0x0450 - 0x0100)
+// 0x0358 (0x0490 - 0x0138)
 class UAthenaAIShipControllerParamsDataAsset : public UAthenaAIControllerParamsDataAsset
 {
 public:
-	struct FShipMovementParams                         TrackingMovementParams;                                   // 0x0100(0x0034) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0134(0x0004) MISSED OFFSET
-	struct FWeightedProbabilityRangeOfRanges           TimesToSailBesideTarget;                                  // 0x0138(0x0030) (Edit, DisableEditOnInstance)
-	struct FWeightedProbabilityRangeOfRanges           PerpendicularDistanceOffsets;                             // 0x0168(0x0030) (Edit, DisableEditOnInstance)
-	struct FWeightedProbabilityRangeOfRanges           TimesBeforeDistanceChange;                                // 0x0198(0x0030) (Edit, DisableEditOnInstance)
-	float                                              MaxParallelDistanceOffset;                                // 0x01C8(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              AlignDistanceThreshold;                                   // 0x01CC(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              TimeToProjectIntoFutureForTracking;                       // 0x01D0(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              TargetSpeedThresholdToTrackShip;                          // 0x01D4(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FTrackingNoiseGenerator                     TrackingNoiseGenerator;                                   // 0x01D8(0x0018) (Edit, DisableEditOnInstance)
-	float                                              WheelAngleMonitorDuration;                                // 0x01F0(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              WheelAngleChangeThresholdToBreakTracking;                 // 0x01F4(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              SpeedMonitorDuration;                                     // 0x01F8(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              SpeedChangeThresholdToBreakTrackingInMPS;                 // 0x01FC(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              TargetSpeedToConsiderAnchorLoweredInMPS;                  // 0x0200(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x0204(0x0004) MISSED OFFSET
-	struct FWeightedProbabilityRangeOfRanges           TrackingLatencyTimes;                                     // 0x0208(0x0030) (Edit, DisableEditOnInstance)
-	struct FWeightedProbabilityRangeOfRanges           TrackingLatencyTimesWhenAnchorLowered;                    // 0x0238(0x0030) (Edit, DisableEditOnInstance)
-	class UCurveFloat*                                 DistToTargetShipVSTrackingLatencyCurve;                   // 0x0268(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FShipMovementParams                         CirclingMovementParams;                                   // 0x0270(0x0034) (Edit, DisableEditOnInstance)
-	float                                              TargetSpeedThresholdInKnots;                              // 0x02A4(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              SecondsInFutureToProjectTargetLocation;                   // 0x02A8(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x4];                                       // 0x02AC(0x0004) MISSED OFFSET
-	struct FWeightedProbabilityRangeOfRanges           CircleRadiuses;                                           // 0x02B0(0x0030) (Edit, DisableEditOnInstance)
-	struct FWeightedProbabilityRangeOfRanges           CirclingSpeedsInDegreesPerSecond;                         // 0x02E0(0x0030) (Edit, DisableEditOnInstance)
-	struct FWeightedProbabilityRangeOfRanges           TimesToCircleBeforeChangingRadius;                        // 0x0310(0x0030) (Edit, DisableEditOnInstance)
-	float                                              MinDistanceFromTargetToStartRam;                          // 0x0340(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              MaxDistanceFromTargetToStartRam;                          // 0x0344(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              MaxSpeedToRamTarget;                                      // 0x0348(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              RammingMaxTurnSpeed;                                      // 0x034C(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              RammingTimeDampingScalar;                                 // 0x0350(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              MinAngleToTargetToAttemptRam;                             // 0x0354(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FWeightedProbabilityRangeOfRanges           RammingLocationOffsets;                                   // 0x0358(0x0030) (Edit, DisableEditOnInstance)
-	struct FShipMovementParams                         SailingForwardMovementParams;                             // 0x0388(0x0034) (Edit, DisableEditOnInstance)
-	float                                              MinAllowedDistanceToObstacle;                             // 0x03BC(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              MaxPathAvoidanceDistance;                                 // 0x03C0(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FShipMovementParams                         PassiveSailingMovementParams;                             // 0x03C4(0x0034) (Edit, DisableEditOnInstance)
-	float                                              ChanceToAnchor;                                           // 0x03F8(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData03[0x4];                                       // 0x03FC(0x0004) MISSED OFFSET
-	struct FWeightedProbabilityRangeOfRanges           TimesToStayAnchored;                                      // 0x0400(0x0030) (Edit, DisableEditOnInstance)
-	int                                                NumIslandsToVisitBeforeReturning;                         // 0x0430(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              DistanceFromIslandsToSailTo;                              // 0x0434(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              DistanceToTargetToDropAnchor;                             // 0x0438(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData04[0x4];                                       // 0x043C(0x0004) MISSED OFFSET
-	TArray<class UClass*>                              AggressionOverrideImpactIDs;                              // 0x0440(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	struct FShipMovementParams                         TrackingMovementParams;                                   // 0x0138(0x0038) (Edit, DisableEditOnInstance)
+	struct FWeightedProbabilityRangeOfRanges           TimesToSailBesideTarget;                                  // 0x0170(0x0030) (Edit, DisableEditOnInstance)
+	struct FWeightedProbabilityRangeOfRanges           PerpendicularDistanceOffsets;                             // 0x01A0(0x0030) (Edit, DisableEditOnInstance)
+	struct FWeightedProbabilityRangeOfRanges           TimesBeforeDistanceChange;                                // 0x01D0(0x0030) (Edit, DisableEditOnInstance)
+	float                                              MaxParallelDistanceOffset;                                // 0x0200(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              AlignDistanceThreshold;                                   // 0x0204(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              TimeToProjectIntoFutureForTracking;                       // 0x0208(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              TargetSpeedThresholdToTrackShip;                          // 0x020C(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FTrackingNoiseGenerator                     TrackingNoiseGenerator;                                   // 0x0210(0x0018) (Edit, DisableEditOnInstance)
+	float                                              WheelAngleMonitorDuration;                                // 0x0228(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              WheelAngleChangeThresholdToBreakTracking;                 // 0x022C(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              SpeedMonitorDuration;                                     // 0x0230(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              SpeedChangeThresholdToBreakTrackingInMPS;                 // 0x0234(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              TargetSpeedToConsiderAnchorLoweredInMPS;                  // 0x0238(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x023C(0x0004) MISSED OFFSET
+	struct FWeightedProbabilityRangeOfRanges           TrackingLatencyTimes;                                     // 0x0240(0x0030) (Edit, DisableEditOnInstance)
+	struct FWeightedProbabilityRangeOfRanges           TrackingLatencyTimesWhenAnchorLowered;                    // 0x0270(0x0030) (Edit, DisableEditOnInstance)
+	class UCurveFloat*                                 DistToTargetShipVSTrackingLatencyCurve;                   // 0x02A0(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FShipMovementParams                         CirclingMovementParams;                                   // 0x02A8(0x0038) (Edit, DisableEditOnInstance)
+	float                                              TargetSpeedThresholdInKnots;                              // 0x02E0(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              SecondsInFutureToProjectTargetLocation;                   // 0x02E4(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FWeightedProbabilityRangeOfRanges           CircleRadiuses;                                           // 0x02E8(0x0030) (Edit, DisableEditOnInstance)
+	struct FWeightedProbabilityRangeOfRanges           CirclingSpeedsInDegreesPerSecond;                         // 0x0318(0x0030) (Edit, DisableEditOnInstance)
+	struct FWeightedProbabilityRangeOfRanges           TimesToCircleBeforeChangingRadius;                        // 0x0348(0x0030) (Edit, DisableEditOnInstance)
+	float                                              MinDistanceFromTargetToStartRam;                          // 0x0378(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              MaxDistanceFromTargetToStartRam;                          // 0x037C(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              MaxSpeedToRamTarget;                                      // 0x0380(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              RammingMaxTurnSpeed;                                      // 0x0384(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              RammingTimeDampingScalar;                                 // 0x0388(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              MinAngleToTargetToAttemptRam;                             // 0x038C(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FWeightedProbabilityRangeOfRanges           RammingLocationOffsets;                                   // 0x0390(0x0030) (Edit, DisableEditOnInstance)
+	struct FShipMovementParams                         SailingForwardMovementParams;                             // 0x03C0(0x0038) (Edit, DisableEditOnInstance)
+	float                                              MinAllowedDistanceToObstacle;                             // 0x03F8(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              MaxPathAvoidanceDistance;                                 // 0x03FC(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FShipMovementParams                         PassiveSailingMovementParams;                             // 0x0400(0x0038) (Edit, DisableEditOnInstance)
+	float                                              ChanceToAnchor;                                           // 0x0438(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x043C(0x0004) MISSED OFFSET
+	struct FWeightedProbabilityRangeOfRanges           TimesToStayAnchored;                                      // 0x0440(0x0030) (Edit, DisableEditOnInstance)
+	int                                                NumIslandsToVisitBeforeReturning;                         // 0x0470(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              DistanceFromIslandsToSailTo;                              // 0x0474(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              DistanceToTargetToDropAnchor;                             // 0x0478(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x4];                                       // 0x047C(0x0004) MISSED OFFSET
+	TArray<class UClass*>                              AggressionOverrideImpactIDs;                              // 0x0480(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{
@@ -194,6 +192,24 @@ public:
 };
 
 
+// Class AIShips.AIShipEncounterDynamicDesc
+// 0x0070 (0x0098 - 0x0028)
+class UAIShipEncounterDynamicDesc : public UObject
+{
+public:
+	TArray<struct FAIShipSizeDynamicContexts>          ShipPool;                                                 // 0x0028(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	class UAIShipContextDescDataAsset*                 FinalShip;                                                // 0x0038(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FAIShipEncounterDynamicBalancingDesc        DynamicBalancingDesc;                                     // 0x0040(0x0058) (Edit, DisableEditOnInstance)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AIShips.AIShipEncounterDynamicDesc"));
+		return ptr;
+	}
+
+};
+
+
 // Class AIShips.AIShipEncounterSpawnParamsDataAsset
 // 0x00B0 (0x00D8 - 0x0028)
 class UAIShipEncounterSpawnParamsDataAsset : public UDataAsset
@@ -266,7 +282,7 @@ public:
 
 
 // Class AIShips.AIShipServiceDataAsset
-// 0x01D0 (0x01F8 - 0x0028)
+// 0x0228 (0x0250 - 0x0028)
 class UAIShipServiceDataAsset : public UDataAsset
 {
 public:
@@ -277,20 +293,20 @@ public:
 	float                                              ShipwreckObstacleRadius;                                  // 0x0068(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x006C(0x0004) MISSED OFFSET
 	struct FAIShipContextDescGenerationParams          ContextDescGenerationParams;                              // 0x0070(0x0080) (Edit, DisableEditOnInstance)
-	struct FAIShipBattleEncounterDescGenerationParams  EncounterGenerationParams;                                // 0x00F0(0x0028) (Edit, DisableEditOnInstance)
-	struct FAIShipSingleWaveEncounterDescGenerationParams AggressiveEncounterGenerationParams;                      // 0x0118(0x0010) (Edit, DisableEditOnInstance)
-	struct FAIShipSingleWaveEncounterDescGenerationParams PassiveEncounterGenerationParams;                         // 0x0128(0x0010) (Edit, DisableEditOnInstance)
-	struct FWeightedProbabilityRangeOfRanges           TimerBattleFirstRegenInterval;                            // 0x0138(0x0030) (Edit, DisableEditOnInstance)
-	struct FWeightedProbabilityRangeOfRanges           TimerBattleRegenInterval;                                 // 0x0168(0x0030) (Edit, DisableEditOnInstance)
-	float                                              TimerBattleFinderThrottle;                                // 0x0198(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x019C(0x0004) MISSED OFFSET
-	struct FWeightedProbabilityRangeOfRanges           TimerBattleRetryRegenInterval;                            // 0x01A0(0x0030) (Edit, DisableEditOnInstance)
-	float                                              TimerBattleMinActivationDistanceFromPlayers;              // 0x01D0(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x4];                                       // 0x01D4(0x0004) MISSED OFFSET
-	class UShortRangeMarkerDataAsset*                  RewardMarkerParams;                                       // 0x01D8(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	TArray<struct FName>                               IslandsToAvoid;                                           // 0x01E0(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
-	float                                              AvoidanceRange;                                           // 0x01F0(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData03[0x4];                                       // 0x01F4(0x0004) MISSED OFFSET
+	struct FAIShipBattleEncounterDescGenerationParams  EncounterGenerationParams;                                // 0x00F0(0x0080) (Edit, DisableEditOnInstance)
+	struct FAIShipSingleWaveEncounterDescGenerationParams AggressiveEncounterGenerationParams;                      // 0x0170(0x0010) (Edit, DisableEditOnInstance)
+	struct FAIShipSingleWaveEncounterDescGenerationParams PassiveEncounterGenerationParams;                         // 0x0180(0x0010) (Edit, DisableEditOnInstance)
+	struct FWeightedProbabilityRangeOfRanges           TimerBattleFirstRegenInterval;                            // 0x0190(0x0030) (Edit, DisableEditOnInstance)
+	struct FWeightedProbabilityRangeOfRanges           TimerBattleRegenInterval;                                 // 0x01C0(0x0030) (Edit, DisableEditOnInstance)
+	float                                              TimerBattleFinderThrottle;                                // 0x01F0(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x01F4(0x0004) MISSED OFFSET
+	struct FWeightedProbabilityRangeOfRanges           TimerBattleRetryRegenInterval;                            // 0x01F8(0x0030) (Edit, DisableEditOnInstance)
+	float                                              TimerBattleMinActivationDistanceFromPlayers;              // 0x0228(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x4];                                       // 0x022C(0x0004) MISSED OFFSET
+	class UShortRangeMarkerDataAsset*                  RewardMarkerParams;                                       // 0x0230(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	TArray<struct FName>                               IslandsToAvoid;                                           // 0x0238(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	float                                              AvoidanceRange;                                           // 0x0248(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData03[0x4];                                       // 0x024C(0x0004) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -401,13 +417,13 @@ public:
 
 
 // Class AIShips.AIShipService
-// 0x0330 (0x06F8 - 0x03C8)
+// 0x0350 (0x0718 - 0x03C8)
 class AAIShipService : public AActor
 {
 public:
 	unsigned char                                      UnknownData00[0x20];                                      // 0x03C8(0x0020) MISSED OFFSET
 	class UAIShipServiceDataAsset*                     Params;                                                   // 0x03E8(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x308];                                     // 0x03F0(0x0308) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x328];                                     // 0x03F0(0x0328) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -435,7 +451,7 @@ public:
 
 
 // Class AIShips.AthenaAIShipController
-// 0x0150 (0x0760 - 0x0610)
+// 0x0170 (0x0780 - 0x0610)
 class AAthenaAIShipController : public AAthenaAIControllerBase
 {
 public:
@@ -444,7 +460,7 @@ public:
 	class UAthenaAIShipControllerParamsDataAsset*      ShipParamsDataAsset;                                      // 0x0630(0x0008) (ZeroConstructor, IsPlainOldData)
 	class UStatusEffectManagerComponent*               StatusEffectManagerComponent;                             // 0x0638(0x0008) (Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData)
 	struct FStandardAnchorDynamicsParameters           AnchorDynamicsParams;                                     // 0x0640(0x0028) (Edit)
-	unsigned char                                      UnknownData01[0xF8];                                      // 0x0668(0x00F8) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x118];                                     // 0x0668(0x0118) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -531,11 +547,11 @@ public:
 
 
 // Class AIShips.BTTask_RamTargetShip
-// 0x00C0 (0x0148 - 0x0088)
+// 0x00E0 (0x0168 - 0x0088)
 class UBTTask_RamTargetShip : public UBTTask_BlackboardBase
 {
 public:
-	unsigned char                                      UnknownData00[0xC0];                                      // 0x0088(0x00C0) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xE0];                                      // 0x0088(0x00E0) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

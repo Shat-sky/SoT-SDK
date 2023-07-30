@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,8 +11,8 @@
 #include "SoT_Athena_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
-#include "SoT_Time_classes.hpp"
 #include "SoT_AthenaEngine_classes.hpp"
+#include "SoT_Time_classes.hpp"
 #include "SoT_DeliverableFramework_classes.hpp"
 
 namespace SDK
@@ -20,6 +20,14 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
+
+// ScriptStruct CommodityDemandFramework.MerchantSovereignHandInNameInformation
+// 0x0010
+struct FMerchantSovereignHandInNameInformation
+{
+	struct FName                                       MerchantNPCName;                                          // 0x0000(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FName                                       SovereignNPCName;                                         // 0x0008(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+};
 
 // ScriptStruct CommodityDemandFramework.ActiveCommodityDemands
 // 0x0020

@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -128,12 +128,12 @@ void ABP_PL_HauntedForts_Emplacement_C::ReceiveEndPlay(TEnumAsByte<EEndPlayReaso
 }
 
 
-// Function BP_PL_HauntedForts_Emplacement.BP_PL_HauntedForts_Emplacement_C.BndEvt__Default__BP_PL_HauntedForts_Emplacement_C_K2Node_InstancedActorBoundEvent_3_FortTargetEventSignature__DelegateSignature
+// Function BP_PL_HauntedForts_Emplacement.BP_PL_HauntedForts_Emplacement_C.BndEvt__Default__BP_PL_HauntedForts_Emplacement_C_K2Node_InstancedActorBoundEvent_15_FortTargetEventSignature__DelegateSignature
 // (BlueprintEvent)
 
-void ABP_PL_HauntedForts_Emplacement_C::BndEvt__Default__BP_PL_HauntedForts_Emplacement_C_K2Node_InstancedActorBoundEvent_3_FortTargetEventSignature__DelegateSignature()
+void ABP_PL_HauntedForts_Emplacement_C::BndEvt__Default__BP_PL_HauntedForts_Emplacement_C_K2Node_InstancedActorBoundEvent_15_FortTargetEventSignature__DelegateSignature()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PL_HauntedForts_Emplacement.BP_PL_HauntedForts_Emplacement_C.BndEvt__Default__BP_PL_HauntedForts_Emplacement_C_K2Node_InstancedActorBoundEvent_3_FortTargetEventSignature__DelegateSignature"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_PL_HauntedForts_Emplacement.BP_PL_HauntedForts_Emplacement_C.BndEvt__Default__BP_PL_HauntedForts_Emplacement_C_K2Node_InstancedActorBoundEvent_15_FortTargetEventSignature__DelegateSignature"));
 
 	struct
 	{

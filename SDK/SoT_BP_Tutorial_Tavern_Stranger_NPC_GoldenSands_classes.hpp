@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Tutorial_Tavern_Stranger_NPC_GoldenSands.BP_Tutorial_Tavern_Stranger_NPC_GoldenSands_C
-// 0x0000 (0x0858 - 0x0858)
+// 0x0000 (0x08A8 - 0x08A8)
 class ABP_Tutorial_Tavern_Stranger_NPC_GoldenSands_C : public ABP_Tutorial_Tavern_Stranger_NPC_C
 {
 public:

@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -1085,6 +1085,396 @@ struct FTransform UOrientedPointBlueprintFunctionLibrary::GetPointAsTransform(co
 }
 
 
+// Function Maths.PendulumBlueprintFunctionLibrary.ToggleSwingDirection
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FPendulum               InPendulum                     (Parm, OutParm, ReferenceParm)
+
+void UPendulumBlueprintFunctionLibrary::ToggleSwingDirection(struct FPendulum* InPendulum)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.PendulumBlueprintFunctionLibrary.ToggleSwingDirection"));
+
+	struct
+	{
+		struct FPendulum               InPendulum;
+	} params;
+
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (InPendulum != nullptr)
+		*InPendulum = params.InPendulum;
+}
+
+
+// Function Maths.PendulumBlueprintFunctionLibrary.Tick
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FPendulum               InPendulum                     (Parm, OutParm, ReferenceParm)
+// float                          InDeltaTime                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UPendulumBlueprintFunctionLibrary::Tick(float InDeltaTime, struct FPendulum* InPendulum)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.PendulumBlueprintFunctionLibrary.Tick"));
+
+	struct
+	{
+		struct FPendulum               InPendulum;
+		float                          InDeltaTime;
+	} params;
+
+	params.InDeltaTime = InDeltaTime;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (InPendulum != nullptr)
+		*InPendulum = params.InPendulum;
+}
+
+
+// Function Maths.PendulumBlueprintFunctionLibrary.StopPendulum
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FPendulum               InPendulum                     (Parm, OutParm, ReferenceParm)
+
+void UPendulumBlueprintFunctionLibrary::StopPendulum(struct FPendulum* InPendulum)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.PendulumBlueprintFunctionLibrary.StopPendulum"));
+
+	struct
+	{
+		struct FPendulum               InPendulum;
+	} params;
+
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (InPendulum != nullptr)
+		*InPendulum = params.InPendulum;
+}
+
+
+// Function Maths.PendulumBlueprintFunctionLibrary.StartPendulum
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FPendulum               InPendulum                     (Parm, OutParm, ReferenceParm)
+
+void UPendulumBlueprintFunctionLibrary::StartPendulum(struct FPendulum* InPendulum)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.PendulumBlueprintFunctionLibrary.StartPendulum"));
+
+	struct
+	{
+		struct FPendulum               InPendulum;
+	} params;
+
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (InPendulum != nullptr)
+		*InPendulum = params.InPendulum;
+}
+
+
+// Function Maths.PendulumBlueprintFunctionLibrary.SetRPM
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FPendulum               InPendulum                     (Parm, OutParm, ReferenceParm)
+// float                          InRPM                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UPendulumBlueprintFunctionLibrary::SetRPM(float InRPM, struct FPendulum* InPendulum)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.PendulumBlueprintFunctionLibrary.SetRPM"));
+
+	struct
+	{
+		struct FPendulum               InPendulum;
+		float                          InRPM;
+	} params;
+
+	params.InRPM = InRPM;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (InPendulum != nullptr)
+		*InPendulum = params.InPendulum;
+}
+
+
+// Function Maths.PendulumBlueprintFunctionLibrary.SetMinAngleDegrees
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FPendulum               InPendulum                     (Parm, OutParm, ReferenceParm)
+// float                          InMin                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UPendulumBlueprintFunctionLibrary::SetMinAngleDegrees(float InMin, struct FPendulum* InPendulum)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.PendulumBlueprintFunctionLibrary.SetMinAngleDegrees"));
+
+	struct
+	{
+		struct FPendulum               InPendulum;
+		float                          InMin;
+	} params;
+
+	params.InMin = InMin;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (InPendulum != nullptr)
+		*InPendulum = params.InPendulum;
+}
+
+
+// Function Maths.PendulumBlueprintFunctionLibrary.SetMaxAngleDegrees
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FPendulum               InPendulum                     (Parm, OutParm, ReferenceParm)
+// float                          InMax                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UPendulumBlueprintFunctionLibrary::SetMaxAngleDegrees(float InMax, struct FPendulum* InPendulum)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.PendulumBlueprintFunctionLibrary.SetMaxAngleDegrees"));
+
+	struct
+	{
+		struct FPendulum               InPendulum;
+		float                          InMax;
+	} params;
+
+	params.InMax = InMax;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (InPendulum != nullptr)
+		*InPendulum = params.InPendulum;
+}
+
+
+// Function Maths.PendulumBlueprintFunctionLibrary.SetLength
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FPendulum               InPendulum                     (Parm, OutParm, ReferenceParm)
+// float                          InLength                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UPendulumBlueprintFunctionLibrary::SetLength(float InLength, struct FPendulum* InPendulum)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.PendulumBlueprintFunctionLibrary.SetLength"));
+
+	struct
+	{
+		struct FPendulum               InPendulum;
+		float                          InLength;
+	} params;
+
+	params.InLength = InLength;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (InPendulum != nullptr)
+		*InPendulum = params.InPendulum;
+}
+
+
+// Function Maths.PendulumBlueprintFunctionLibrary.GetRPM
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FPendulum               InPendulum                     (Parm, OutParm, ReferenceParm)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UPendulumBlueprintFunctionLibrary::GetRPM(struct FPendulum* InPendulum)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.PendulumBlueprintFunctionLibrary.GetRPM"));
+
+	struct
+	{
+		struct FPendulum               InPendulum;
+		float                          ReturnValue;
+	} params;
+
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (InPendulum != nullptr)
+		*InPendulum = params.InPendulum;
+
+	return params.ReturnValue;
+}
+
+
+// Function Maths.PendulumBlueprintFunctionLibrary.GetPendulumTransform
+// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FPendulum               InPendulum                     (Parm, OutParm, ReferenceParm)
+// struct FTransform              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
+
+struct FTransform UPendulumBlueprintFunctionLibrary::GetPendulumTransform(struct FPendulum* InPendulum)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.PendulumBlueprintFunctionLibrary.GetPendulumTransform"));
+
+	struct
+	{
+		struct FPendulum               InPendulum;
+		struct FTransform              ReturnValue;
+	} params;
+
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (InPendulum != nullptr)
+		*InPendulum = params.InPendulum;
+
+	return params.ReturnValue;
+}
+
+
+// Function Maths.PendulumBlueprintFunctionLibrary.GetPendulumAngleDegrees
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FPendulum               InPendulum                     (Parm, OutParm, ReferenceParm)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UPendulumBlueprintFunctionLibrary::GetPendulumAngleDegrees(struct FPendulum* InPendulum)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.PendulumBlueprintFunctionLibrary.GetPendulumAngleDegrees"));
+
+	struct
+	{
+		struct FPendulum               InPendulum;
+		float                          ReturnValue;
+	} params;
+
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (InPendulum != nullptr)
+		*InPendulum = params.InPendulum;
+
+	return params.ReturnValue;
+}
+
+
+// Function Maths.PendulumBlueprintFunctionLibrary.GetMinAngleDegrees
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FPendulum               InPendulum                     (Parm, OutParm, ReferenceParm)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UPendulumBlueprintFunctionLibrary::GetMinAngleDegrees(struct FPendulum* InPendulum)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.PendulumBlueprintFunctionLibrary.GetMinAngleDegrees"));
+
+	struct
+	{
+		struct FPendulum               InPendulum;
+		float                          ReturnValue;
+	} params;
+
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (InPendulum != nullptr)
+		*InPendulum = params.InPendulum;
+
+	return params.ReturnValue;
+}
+
+
+// Function Maths.PendulumBlueprintFunctionLibrary.GetMaxAngleDegrees
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FPendulum               InPendulum                     (Parm, OutParm, ReferenceParm)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UPendulumBlueprintFunctionLibrary::GetMaxAngleDegrees(struct FPendulum* InPendulum)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.PendulumBlueprintFunctionLibrary.GetMaxAngleDegrees"));
+
+	struct
+	{
+		struct FPendulum               InPendulum;
+		float                          ReturnValue;
+	} params;
+
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (InPendulum != nullptr)
+		*InPendulum = params.InPendulum;
+
+	return params.ReturnValue;
+}
+
+
+// Function Maths.PendulumBlueprintFunctionLibrary.GetLength
+// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FPendulum               InPendulum                     (Parm, OutParm, ReferenceParm)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UPendulumBlueprintFunctionLibrary::GetLength(struct FPendulum* InPendulum)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.PendulumBlueprintFunctionLibrary.GetLength"));
+
+	struct
+	{
+		struct FPendulum               InPendulum;
+		float                          ReturnValue;
+	} params;
+
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (InPendulum != nullptr)
+		*InPendulum = params.InPendulum;
+
+	return params.ReturnValue;
+}
+
+
+// Function Maths.PendulumBlueprintFunctionLibrary.DebugDrawPendulum
+// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FPendulum               InPendulum                     (Parm, OutParm, ReferenceParm)
+// class AActor*                  WorldContext                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// struct FTransform              PendulumCenter                 (ConstParm, Parm, IsPlainOldData)
+
+void UPendulumBlueprintFunctionLibrary::DebugDrawPendulum(class AActor* WorldContext, const struct FTransform& PendulumCenter, struct FPendulum* InPendulum)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.PendulumBlueprintFunctionLibrary.DebugDrawPendulum"));
+
+	struct
+	{
+		struct FPendulum               InPendulum;
+		class AActor*                  WorldContext;
+		struct FTransform              PendulumCenter;
+	} params;
+
+	params.WorldContext = WorldContext;
+	params.PendulumCenter = PendulumCenter;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (InPendulum != nullptr)
+		*InPendulum = params.InPendulum;
+}
+
+
 // Function Maths.PoissonDiscSampling.GeneratePoissonDiscDistributionAcrossPlane
 // (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -2095,6 +2485,31 @@ float UVectorMaths::Cross_Vector2DVector2D(const struct FVector2D& A, const stru
 
 	params.A = A;
 	params.B = B;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Maths.VectorMaths.ContainsNaN
+// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FVector                 Vector                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UVectorMaths::ContainsNaN(const struct FVector& Vector)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Maths.VectorMaths.ContainsNaN"));
+
+	struct
+	{
+		struct FVector                 Vector;
+		bool                           ReturnValue;
+	} params;
+
+	params.Vector = Vector;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);

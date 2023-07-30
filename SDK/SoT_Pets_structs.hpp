@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -12,10 +12,10 @@
 #include "SoT_AthenaAI_classes.hpp"
 #include "SoT_Interaction_classes.hpp"
 #include "SoT_AIModule_classes.hpp"
-#include "SoT_RareAudio_classes.hpp"
+#include "SoT_ActionStateMachine_classes.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
-#include "SoT_ActionStateMachine_classes.hpp"
+#include "SoT_RareAudio_classes.hpp"
 
 namespace SDK
 {
@@ -317,6 +317,13 @@ struct FEventPetSadnessBegin
 	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
 
+// ScriptStruct Pets.EventPetInfoAssigned
+// 0x0008
+struct FEventPetInfoAssigned
+{
+	class AItemInfo*                                   PetInfo;                                                  // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+};
+
 // ScriptStruct Pets.EventPetOwnerAssigned
 // 0x0008
 struct FEventPetOwnerAssigned
@@ -350,17 +357,19 @@ struct FEventWieldablePetPutOnPerch
 };
 
 // ScriptStruct Pets.EventPetDropped
-// 0x0001
+// 0x0008
 struct FEventPetDropped
 {
-	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+	TWeakObjectPtr<class AActor>                       PetInfo;                                                  // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Pets.EventPetPickedUp
-// 0x0001
+// 0x000C
 struct FEventPetPickedUp
 {
 	bool                                               IsOnPerch;                                                // 0x0000(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0001(0x0003) MISSED OFFSET
+	TWeakObjectPtr<class AActor>                       PetInfo;                                                  // 0x0004(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Pets.EventPetReactBegun
@@ -507,6 +516,13 @@ struct FPetPickedUpTelemetryEvent
 struct FPetControllerSetTickOrderEvent
 {
 	class AActor*                                      Actor;                                                    // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Pets.EventPetUGCBlockStateChanged
+// 0x0001
+struct FEventPetUGCBlockStateChanged
+{
+	bool                                               IsPetUGCBlocked;                                          // 0x0000(0x0001) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Pets.EventPerchHangoutSpotSetEnabledState

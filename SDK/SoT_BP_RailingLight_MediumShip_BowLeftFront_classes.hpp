@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_RailingLight_MediumShip_BowLeftFront.BP_RailingLight_MediumShip_BowLeftFront_C
-// 0x0000 (0x0749 - 0x0749)
+// 0x0000 (0x0779 - 0x0779)
 class ABP_RailingLight_MediumShip_BowLeftFront_C : public ABP_InteractableShipRailingLight_C
 {
 public:

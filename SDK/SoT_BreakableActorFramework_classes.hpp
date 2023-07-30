@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class BreakableActorFramework.BreakableActorAudioComponent
-// 0x00E0 (0x01A8 - 0x00C8)
+// 0x0100 (0x01C8 - 0x00C8)
 class UBreakableActorAudioComponent : public UActorComponent
 {
 public:
@@ -26,7 +26,7 @@ public:
 	class UWwiseEvent*                                 StopMusicEvent;                                           // 0x00E0(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class UWwiseEvent*                                 PlayDamagedEvent;                                         // 0x00E8(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class UWwiseEvent*                                 PlayDestroyedEvent;                                       // 0x00F0(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData01[0xB0];                                      // 0x00F8(0x00B0) MISSED OFFSET
+	unsigned char                                      UnknownData01[0xD0];                                      // 0x00F8(0x00D0) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -38,7 +38,7 @@ public:
 
 
 // Class BreakableActorFramework.BreakableActorBase
-// 0x0180 (0x0548 - 0x03C8)
+// 0x0190 (0x0558 - 0x03C8)
 class ABreakableActorBase : public AActor
 {
 public:
@@ -53,7 +53,7 @@ public:
 	class UBreakableActorVfxComponent*                 VFXComponent;                                             // 0x0428(0x0008) (Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData)
 	class UBreakableActorDynamicMaterialComponent*     DamageMaterialComponent;                                  // 0x0430(0x0008) (Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData)
 	class UActorDamageableComponent*                   DamageableComponent;                                      // 0x0438(0x0008) (Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x108];                                     // 0x0440(0x0108) MISSED OFFSET
+	unsigned char                                      UnknownData02[0x118];                                     // 0x0440(0x0118) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -67,7 +67,7 @@ public:
 
 
 // Class BreakableActorFramework.BreakableSarcophagus
-// 0x0000 (0x0548 - 0x0548)
+// 0x0000 (0x0558 - 0x0558)
 class ABreakableSarcophagus : public ABreakableActorBase
 {
 public:
@@ -82,7 +82,7 @@ public:
 
 
 // Class BreakableActorFramework.BreakableActorDynamicMaterialComponent
-// 0x0128 (0x01F0 - 0x00C8)
+// 0x0158 (0x0220 - 0x00C8)
 class UBreakableActorDynamicMaterialComponent : public UActorComponent
 {
 public:
@@ -96,7 +96,7 @@ public:
 	class UPrimitiveComponent*                         TargetMesh;                                               // 0x00F8(0x0008) (BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 	TArray<class UMaterialInstanceDynamic*>            DynamicMaterials;                                         // 0x0100(0x0010) (BlueprintVisible, ZeroConstructor)
 	class ABreakableActorBase*                         BreakableActor;                                           // 0x0110(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData01[0xD8];                                      // 0x0118(0x00D8) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x108];                                     // 0x0118(0x0108) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -108,11 +108,11 @@ public:
 
 
 // Class BreakableActorFramework.BreakableActorItemSpawnComponent
-// 0x0070 (0x04B0 - 0x0440)
+// 0x0080 (0x04C0 - 0x0440)
 class UBreakableActorItemSpawnComponent : public UItemSpawnComponent
 {
 public:
-	unsigned char                                      UnknownData00[0x70];                                      // 0x0440(0x0070) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x80];                                      // 0x0440(0x0080) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -124,7 +124,7 @@ public:
 
 
 // Class BreakableActorFramework.BreakableActorVfxComponent
-// 0x00D8 (0x01A0 - 0x00C8)
+// 0x00F8 (0x01C0 - 0x00C8)
 class UBreakableActorVfxComponent : public UActorComponent
 {
 public:
@@ -139,7 +139,7 @@ public:
 	float                                              GlowUpdateSpeed;                                          // 0x00F4(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	class ABreakableActorBase*                         BreakableActor;                                           // 0x00F8(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
 	class UMaterialInstanceDynamic*                    GlowMaterial;                                             // 0x0100(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x98];                                      // 0x0108(0x0098) MISSED OFFSET
+	unsigned char                                      UnknownData01[0xB8];                                      // 0x0108(0x00B8) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

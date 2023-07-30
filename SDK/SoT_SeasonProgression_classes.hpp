@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -30,11 +30,11 @@ public:
 
 
 // Class SeasonProgression.PlayerSeasonProgressionComponent
-// 0x00C0 (0x0188 - 0x00C8)
+// 0x00D0 (0x0198 - 0x00C8)
 class UPlayerSeasonProgressionComponent : public UActorComponent
 {
 public:
-	unsigned char                                      UnknownData00[0xC0];                                      // 0x00C8(0x00C0) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xD0];                                      // 0x00C8(0x00D0) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

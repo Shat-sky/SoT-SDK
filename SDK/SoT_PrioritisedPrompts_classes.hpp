@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class PrioritisedPrompts.BasePromptCoordinator
-// 0x00D0 (0x00F8 - 0x0028)
+// 0x00F0 (0x0118 - 0x0028)
 class UBasePromptCoordinator : public UObject
 {
 public:
@@ -23,7 +23,7 @@ public:
 	unsigned char                                      UnknownData00[0x10];                                      // 0x0030(0x0010) MISSED OFFSET
 	class UPrioritisedPromptsManager*                  PrioritisedPromptsManager;                                // 0x0040(0x0008) (ZeroConstructor, IsPlainOldData)
 	class ACharacter*                                  CharacterWithRegisteredEvents;                            // 0x0048(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0xA8];                                      // 0x0050(0x00A8) MISSED OFFSET
+	unsigned char                                      UnknownData01[0xC8];                                      // 0x0050(0x00C8) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -116,6 +116,21 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class PrioritisedPrompts.PromptCounterAccessKey"));
+		return ptr;
+	}
+
+};
+
+
+// Class PrioritisedPrompts.GenericVoyagePrioritisedPrompt_PromptAccessKey
+// 0x0000 (0x0038 - 0x0038)
+class UGenericVoyagePrioritisedPrompt_PromptAccessKey : public UPromptCounterAccessKey
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class PrioritisedPrompts.GenericVoyagePrioritisedPrompt_PromptAccessKey"));
 		return ptr;
 	}
 

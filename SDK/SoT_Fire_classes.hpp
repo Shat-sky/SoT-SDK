@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -466,7 +466,7 @@ public:
 
 
 // Class Fire.ShipFirePropagationComponent
-// 0x03C8 (0x0490 - 0x00C8)
+// 0x03D8 (0x04A0 - 0x00C8)
 class UShipFirePropagationComponent : public UActorComponent
 {
 public:
@@ -485,12 +485,12 @@ public:
 	class UFireGridVFXManager*                         VFXManager;                                               // 0x0150(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
 	struct FFireGridVfxSpawnSettings                   VfxSpawnSettings;                                         // 0x0158(0x0058) (Edit, DisableEditOnInstance)
 	struct FShipFireLightManager                       FireLightManager;                                         // 0x01B0(0x0150) (Edit, DisableEditOnInstance)
-	struct FFireGridCharringManager                    FireCharringManager;                                      // 0x0300(0x00C8) (Edit, DisableEditOnInstance)
-	TArray<struct FReplicatedFireCellData>             ReplicatedCellData;                                       // 0x03C8(0x0010) (Net, ZeroConstructor, Transient)
-	struct FReplicatedFireCellCharringData             ReplicatedCellCharringData;                               // 0x03D8(0x0018) (Net, Transient)
-	class UFireGridAudioManager*                       FireAudioManager;                                         // 0x03F0(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	struct FFireCellAudioParams                        FireAudioParams;                                          // 0x03F8(0x0040) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData03[0x58];                                      // 0x0438(0x0058) MISSED OFFSET
+	struct FFireGridCharringManager                    FireCharringManager;                                      // 0x0300(0x00D8) (Edit, DisableEditOnInstance)
+	TArray<struct FReplicatedFireCellData>             ReplicatedCellData;                                       // 0x03D8(0x0010) (Net, ZeroConstructor, Transient)
+	struct FReplicatedFireCellCharringData             ReplicatedCellCharringData;                               // 0x03E8(0x0018) (Net, Transient)
+	class UFireGridAudioManager*                       FireAudioManager;                                         // 0x0400(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	struct FFireCellAudioParams                        FireAudioParams;                                          // 0x0408(0x0040) (Edit, DisableEditOnInstance)
+	unsigned char                                      UnknownData03[0x58];                                      // 0x0448(0x0058) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

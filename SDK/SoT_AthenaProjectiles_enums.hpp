@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -21,7 +21,8 @@ enum class EProjectileFiredFrom : uint8_t
 	EProjectileFiredFrom__DeepSeaCharacter = 3,
 	EProjectileFiredFrom__RowboatCannon = 4,
 	EProjectileFiredFrom__SeaFortCannon = 5,
-	EProjectileFiredFrom__EProjectileFiredFrom_MAX = 6
+	EProjectileFiredFrom__MAX      = 6,
+	EProjectileFiredFrom__EProjectileFiredFrom_MAX = 7
 };
 
 

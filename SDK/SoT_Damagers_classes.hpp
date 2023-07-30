@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,34 +13,6 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Classes
 //---------------------------------------------------------------------------
-
-// Class Damagers.ShipDamagerComponent
-// 0x0158 (0x0220 - 0x00C8)
-class UShipDamagerComponent : public UActorComponent
-{
-public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x00C8(0x0008) MISSED OFFSET
-	class UPrimitiveComponent*                         Shape;                                                    // 0x00D0(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	TArray<TScriptInterface<class UHullDamageInterface>> ShipHulls;                                                // 0x00D8(0x0010) (ZeroConstructor, Transient)
-	TArray<TScriptInterface<class UHealthInterface>>   WatercraftHealthInterfaces;                               // 0x00E8(0x0010) (ZeroConstructor, Transient)
-	struct FStrainDamage                               ShipStrainDamage;                                         // 0x00F8(0x0028) (Edit)
-	struct FWeightedProbabilityRangeOfRanges           TimeBetweenWatercraftDamage;                              // 0x0120(0x0030) (Edit)
-	float                                              WatercraftDamage;                                         // 0x0150(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	bool                                               StartDamagingOnBeginPlay;                                 // 0x0154(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0xCB];                                      // 0x0155(0x00CB) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Damagers.ShipDamagerComponent"));
-		return ptr;
-	}
-
-
-	void SetShape(class UPrimitiveComponent* InShape);
-	void EndDamage();
-	void BeginDamage();
-};
-
 
 // Class Damagers.RadialDamagerComponent
 // 0x0058 (0x0120 - 0x00C8)
@@ -129,6 +101,34 @@ public:
 
 
 	void Multi_StartShockwave(const struct FVector& InStartLocation);
+};
+
+
+// Class Damagers.ShipDamagerComponent
+// 0x0158 (0x0220 - 0x00C8)
+class UShipDamagerComponent : public UActorComponent
+{
+public:
+	unsigned char                                      UnknownData00[0x8];                                       // 0x00C8(0x0008) MISSED OFFSET
+	class UPrimitiveComponent*                         Shape;                                                    // 0x00D0(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	TArray<TScriptInterface<class UHullDamageInterface>> ShipHulls;                                                // 0x00D8(0x0010) (ZeroConstructor, Transient)
+	TArray<TScriptInterface<class UHealthInterface>>   WatercraftHealthInterfaces;                               // 0x00E8(0x0010) (ZeroConstructor, Transient)
+	struct FStrainDamage                               ShipStrainDamage;                                         // 0x00F8(0x0028) (Edit)
+	struct FWeightedProbabilityRangeOfRanges           TimeBetweenWatercraftDamage;                              // 0x0120(0x0030) (Edit)
+	float                                              WatercraftDamage;                                         // 0x0150(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	bool                                               StartDamagingOnBeginPlay;                                 // 0x0154(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0xCB];                                      // 0x0155(0x00CB) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Damagers.ShipDamagerComponent"));
+		return ptr;
+	}
+
+
+	void SetShape(class UPrimitiveComponent* InShape);
+	void EndDamage();
+	void BeginDamage();
 };
 
 

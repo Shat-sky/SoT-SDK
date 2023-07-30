@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // AnimBlueprintGeneratedClass BP_Anim_Cannon.BP_Anim_Cannon_C
-// 0x0488 (0x08E8 - 0x0460)
+// 0x0498 (0x08F8 - 0x0460)
 class UBP_Anim_Cannon_C : public UCannonAnimInstance
 {
 public:
@@ -30,7 +30,7 @@ public:
 	struct FAnimNode_SequenceEvaluator                 AnimGraphNode_SequenceEvaluator_61FF7DC544AAE8D747E1B7B8E94CA9CE;// 0x0760(0x0050)
 	struct FAnimNode_Root                              AnimGraphNode_StateResult_0AA0EE3C4F3FBFEC36970FAE8D9F81C7;// 0x07B0(0x0048)
 	struct FAnimNode_StateMachine                      AnimGraphNode_StateMachine_F11BDD78417C84D075356DA9724CF142;// 0x07F8(0x00A8)
-	struct FObjectMessagingHandle                      FireEventHandle;                                          // 0x08A0(0x0048) (Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FObjectMessagingHandle                      FireEventHandle;                                          // 0x08A0(0x0058) (Edit, BlueprintVisible, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -72,12 +72,12 @@ public:
 
 
 // Class Interaction.CharacterInteractionComponent
-// 0x00C0 (0x06B0 - 0x05F0)
+// 0x00D0 (0x06C0 - 0x05F0)
 class UCharacterInteractionComponent : public UBoxComponent
 {
 public:
 	class UInteractableArea*                           CurrentOptimalInteractable;                               // 0x05F0(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0xB8];                                      // 0x05F8(0x00B8) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xC8];                                      // 0x05F8(0x00C8) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -162,6 +162,7 @@ public:
 	bool DoesRequireNotSwimming();
 	bool DoesRequireNotBeingAirborne();
 	bool DoesRequireFacingFront();
+	bool DoesRequireBeingAlive();
 	bool CanInteractWithNotificationInputId(class AActor* InInteractor, class UClass* NotificationInputId);
 	bool CanInteract(class AActor* InInteractor);
 };
@@ -294,6 +295,22 @@ public:
 };
 
 
+// Class Interaction.InteractorComponent
+// 0x0008 (0x00D0 - 0x00C8)
+class UInteractorComponent : public UActorComponent
+{
+public:
+	unsigned char                                      UnknownData00[0x8];                                       // 0x00C8(0x0008) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Interaction.InteractorComponent"));
+		return ptr;
+	}
+
+};
+
+
 // Class Interaction.MockActorWithCharacterInteractionComponent
 // 0x00B0 (0x0690 - 0x05E0)
 class AMockActorWithCharacterInteractionComponent : public ACharacter
@@ -342,6 +359,39 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Interaction.MockInteractorActor"));
+		return ptr;
+	}
+
+};
+
+
+// Class Interaction.PlayerInteractionTrackerInterface
+// 0x0000 (0x0028 - 0x0028)
+class UPlayerInteractionTrackerInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Interaction.PlayerInteractionTrackerInterface"));
+		return ptr;
+	}
+
+};
+
+
+// Class Interaction.PlayerInteractionTrackerComponent
+// 0x0028 (0x00F0 - 0x00C8)
+class UPlayerInteractionTrackerComponent : public UActorComponent
+{
+public:
+	unsigned char                                      UnknownData00[0x8];                                       // 0x00C8(0x0008) MISSED OFFSET
+	TArray<struct FUniqueNetIdRepl>                    InteractedPlayers;                                        // 0x00D0(0x0010) (Net, ZeroConstructor)
+	unsigned char                                      UnknownData01[0x10];                                      // 0x00E0(0x0010) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Interaction.PlayerInteractionTrackerComponent"));
 		return ptr;
 	}
 

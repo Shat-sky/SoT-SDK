@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -259,7 +259,7 @@ public:
 
 
 // Class AthenaAIAbilities.ElectricShieldBuffComponent
-// 0x00F0 (0x01B8 - 0x00C8)
+// 0x0108 (0x01D0 - 0x00C8)
 class UElectricShieldBuffComponent : public UActorComponent
 {
 public:
@@ -268,10 +268,9 @@ public:
 	struct FName                                       VfxSocketName;                                            // 0x00D8(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class UWwiseEvent*                                 StartAudioLoopEvent;                                      // 0x00E0(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class UWwiseEvent*                                 StopAudioLoopEvent;                                       // 0x00E8(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	bool                                               IsShieldActive;                                           // 0x00F0(0x0001) (Net, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x7];                                       // 0x00F1(0x0007) MISSED OFFSET
-	class UParticleSystemComponent*                    ShieldEffectComponent;                                    // 0x00F8(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	unsigned char                                      UnknownData02[0xB8];                                      // 0x0100(0x00B8) MISSED OFFSET
+	class UParticleSystemComponent*                    ShieldEffectComponent;                                    // 0x00F0(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	bool                                               IsShieldActive;                                           // 0x00F8(0x0001) (Net, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0xD7];                                      // 0x00F9(0x00D7) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,15 +15,15 @@ namespace SDK
 // Function BP_Prompt_WieldableItemZoom.BP_Prompt_WieldableItemZoom_C.OnWieldFunc
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FAthena_FEventObjectWielded EventObjectWielded             (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FEventObjectWielded     EventObjectWielded             (ConstParm, Parm, OutParm, ReferenceParm)
 
-void UBP_Prompt_WieldableItemZoom_C::OnWieldFunc(const struct FAthena_FEventObjectWielded& EventObjectWielded)
+void UBP_Prompt_WieldableItemZoom_C::OnWieldFunc(const struct FEventObjectWielded& EventObjectWielded)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_WieldableItemZoom.BP_Prompt_WieldableItemZoom_C.OnWieldFunc"));
 
 	struct
 	{
-		struct FAthena_FEventObjectWielded EventObjectWielded;
+		struct FEventObjectWielded     EventObjectWielded;
 	} params;
 
 	params.EventObjectWielded = EventObjectWielded;
@@ -91,15 +91,15 @@ void UBP_Prompt_WieldableItemZoom_C::Evaluate()
 // Function BP_Prompt_WieldableItemZoom.BP_Prompt_WieldableItemZoom_C.OnWieldEvent
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FAthena_FEventObjectWielded OnWieldEvent                   (Parm)
+// struct FEventObjectWielded     OnWieldEvent                   (Parm)
 
-void UBP_Prompt_WieldableItemZoom_C::OnWieldEvent(const struct FAthena_FEventObjectWielded& OnWieldEvent)
+void UBP_Prompt_WieldableItemZoom_C::OnWieldEvent(const struct FEventObjectWielded& OnWieldEvent)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Prompt_WieldableItemZoom.BP_Prompt_WieldableItemZoom_C.OnWieldEvent"));
 
 	struct
 	{
-		struct FAthena_FEventObjectWielded OnWieldEvent;
+		struct FEventObjectWielded     OnWieldEvent;
 	} params;
 
 	params.OnWieldEvent = OnWieldEvent;

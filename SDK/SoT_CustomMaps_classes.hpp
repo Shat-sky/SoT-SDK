@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -31,14 +31,14 @@ public:
 
 
 // Class CustomMaps.CustomMap
-// 0x0030 (0x0860 - 0x0830)
+// 0x0030 (0x08C0 - 0x0890)
 class ACustomMap : public ARenderToTextureMapBase
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0830(0x0008) MISSED OFFSET
-	class UFont*                                       Font;                                                     // 0x0838(0x0008) (Net, ZeroConstructor, IsPlainOldData)
-	TArray<class UCustomMapDisplayObjectBase*>         DisplayItems;                                             // 0x0840(0x0010) (Net, ZeroConstructor)
-	unsigned char                                      UnknownData01[0x10];                                      // 0x0850(0x0010) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0890(0x0008) MISSED OFFSET
+	class UFont*                                       Font;                                                     // 0x0898(0x0008) (Net, ZeroConstructor, IsPlainOldData)
+	TArray<class UCustomMapDisplayObjectBase*>         DisplayItems;                                             // 0x08A0(0x0010) (Net, ZeroConstructor)
+	unsigned char                                      UnknownData01[0x10];                                      // 0x08B0(0x0010) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -16,6 +16,14 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
+
+// ScriptStruct Repair.ShipPartDamagePersistenceModel
+// 0x001F (0x0020 - 0x0001)
+struct FShipPartDamagePersistenceModel : public FPersistenceModel
+{
+	TArray<TEnumAsByte<ERepairableState>>              ComponentRepairableStates;                                // 0x0000(0x0010) (ZeroConstructor)
+	class FString                                      Identifier;                                               // 0x0010(0x0010) (ZeroConstructor)
+};
 
 // ScriptStruct Repair.DamageZoneRepairableStateChangedEvent
 // 0x0010
@@ -73,14 +81,6 @@ struct FEventPlayerUndoRepairCompleted
 struct FEventPlayerUndoRepairStart
 {
 	unsigned char                                      UnknownData00[0x8];                                       // 0x0000(0x0008) MISSED OFFSET
-};
-
-// ScriptStruct Repair.ShipPartDamagePersistenceModel
-// 0x001F (0x0020 - 0x0001)
-struct FShipPartDamagePersistenceModel : public FPersistenceModel
-{
-	TArray<TEnumAsByte<ERepairableState>>              ComponentRepairableStates;                                // 0x0000(0x0010) (ZeroConstructor)
-	class FString                                      Identifier;                                               // 0x0010(0x0010) (ZeroConstructor)
 };
 
 }

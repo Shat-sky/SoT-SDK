@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -59,6 +59,22 @@ class UAthenaAICharacterPathFollowingComponent* APetAIController::GetAthenaAICha
 void UPetHangoutSpotComponent::OnRep_IsOwnerSinking()
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Pets.PetHangoutSpotComponent.OnRep_IsOwnerSinking"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Pets.PetItemInfo.OnRep_PetOwner
+// (Final, Native, Private)
+
+void APetItemInfo::OnRep_PetOwner()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Pets.PetItemInfo.OnRep_PetOwner"));
 
 	struct
 	{

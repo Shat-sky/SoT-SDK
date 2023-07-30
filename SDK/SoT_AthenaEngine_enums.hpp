@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -18,8 +18,9 @@ enum class EPlayModeVariant : uint8_t
 	EPlayModeVariant__Normal       = 0,
 	EPlayModeVariant__Creator      = 1,
 	EPlayModeVariant__Invalid      = 2,
-	EPlayModeVariant__MAX          = 3,
-	EPlayModeVariant__EPlayModeVariant_MAX = 4
+	EPlayModeVariant__SaferSeas    = 3,
+	EPlayModeVariant__MAX          = 4,
+	EPlayModeVariant__EPlayModeVariant_MAX = 5
 };
 
 

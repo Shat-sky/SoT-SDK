@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class Reviving.ReviveSettings
-// 0x0060 (0x0098 - 0x0038)
+// 0x0058 (0x0090 - 0x0038)
 class UReviveSettings : public UDeveloperSettings
 {
 public:
@@ -26,15 +26,13 @@ public:
 	unsigned char                                      UnknownData00[0x3];                                       // 0x0051(0x0003) MISSED OFFSET
 	float                                              ServerWaitTimeBeforeFullyReviving;                        // 0x0054(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
 	float                                              ReviveTime;                                               // 0x0058(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	float                                              ReviveTimeOnEnemyShip;                                    // 0x005C(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	float                                              MaxRevertEvaporateDuration;                               // 0x0060(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x0064(0x0004) MISSED OFFSET
-	TArray<TEnumAsByte<EPlayMode>>                     UnsupportedPlayModes;                                     // 0x0068(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
-	TArray<struct FModeSpecificReviveSettings>         ModeSpecificSettings;                                     // 0x0078(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
-	float                                              GiveUpHoldTime;                                           // 0x0088(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	float                                              GiveUpFadeDuration;                                       // 0x008C(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	float                                              GiveUpEvaporateDuration;                                  // 0x0090(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x4];                                       // 0x0094(0x0004) MISSED OFFSET
+	float                                              MaxRevertEvaporateDuration;                               // 0x005C(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	TArray<TEnumAsByte<EPlayMode>>                     UnsupportedPlayModes;                                     // 0x0060(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
+	TArray<struct FModeSpecificReviveSettings>         ModeSpecificSettings;                                     // 0x0070(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
+	float                                              GiveUpHoldTime;                                           // 0x0080(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	float                                              GiveUpFadeDuration;                                       // 0x0084(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	float                                              GiveUpEvaporateDuration;                                  // 0x0088(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x008C(0x0004) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -46,13 +44,13 @@ public:
 
 
 // Class Reviving.DeathSelfInteractionComponent
-// 0x0060 (0x0188 - 0x0128)
+// 0x0050 (0x0178 - 0x0128)
 class UDeathSelfInteractionComponent : public UInteractableComponent
 {
 public:
 	unsigned char                                      UnknownData00[0x8];                                       // 0x0128(0x0008) MISSED OFFSET
 	bool                                               HasGivenUp;                                               // 0x0130(0x0001) (Net, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x57];                                      // 0x0131(0x0057) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x47];                                      // 0x0131(0x0047) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -174,7 +172,7 @@ public:
 
 
 // Class Reviving.ReviveComponent
-// 0x0148 (0x0270 - 0x0128)
+// 0x0140 (0x0268 - 0x0128)
 class UReviveComponent : public UInteractableComponent
 {
 public:
@@ -185,11 +183,11 @@ public:
 	TEnumAsByte<EInteractableState>                    InteractionState;                                         // 0x0149(0x0001) (Net, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x6];                                       // 0x014A(0x0006) MISSED OFFSET
 	class UClass*                                      ReviveableRepresentationClass;                            // 0x0150(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x12];                                      // 0x0158(0x0012) MISSED OFFSET
-	bool                                               ReviveWindowIsOpen;                                       // 0x016A(0x0001) (Net, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData03[0xD5];                                      // 0x016B(0x00D5) MISSED OFFSET
-	struct FStatus                                     RevivableStatus;                                          // 0x0240(0x0018) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData04[0x18];                                      // 0x0258(0x0018) MISSED OFFSET
+	unsigned char                                      UnknownData02[0xC];                                       // 0x0158(0x000C) MISSED OFFSET
+	bool                                               ReviveWindowIsOpen;                                       // 0x0164(0x0001) (Net, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData03[0xD3];                                      // 0x0165(0x00D3) MISSED OFFSET
+	struct FStatus                                     RevivableStatus;                                          // 0x0238(0x0018) (Edit, DisableEditOnInstance)
+	unsigned char                                      UnknownData04[0x18];                                      // 0x0250(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

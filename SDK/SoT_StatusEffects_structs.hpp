@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -10,8 +10,8 @@
 #include "SoT_StatusEffects_enums.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
-#include "SoT_SimpleOverlaps_classes.hpp"
 #include "SoT_Athena_classes.hpp"
+#include "SoT_SimpleOverlaps_classes.hpp"
 
 namespace SDK
 {
@@ -102,6 +102,20 @@ struct FBuffedTargetData
 {
 	TWeakObjectPtr<class AActor>                       ActorBuffed;                                              // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
 	TScriptInterface<class UStatusEffectRecipientInterface> StatusEffectRecipient;                                    // 0x0008(0x0010) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct StatusEffects.EventStatusSuperSoakerEnded
+// 0x0001
+struct FEventStatusSuperSoakerEnded
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct StatusEffects.EventStatusSuperSoakerStarted
+// 0x0001
+struct FEventStatusSuperSoakerStarted
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
 };
 
 // ScriptStruct StatusEffects.StatusDeactivatedEvent

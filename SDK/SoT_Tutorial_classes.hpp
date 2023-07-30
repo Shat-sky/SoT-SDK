@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -51,13 +51,13 @@ public:
 
 
 // Class Tutorial.ContextualTutorialComponent
-// 0x0058 (0x0120 - 0x00C8)
+// 0x0078 (0x0140 - 0x00C8)
 class UContextualTutorialComponent : public UActorComponent
 {
 public:
 	TArray<struct FContextualTutorialPromptDesc>       ContextualTutorialClasses;                                // 0x00C8(0x0010) (Edit, ZeroConstructor)
-	TArray<class AActor*>                              SpawnedPromptActors;                                      // 0x00D8(0x0010) (ZeroConstructor)
-	unsigned char                                      UnknownData00[0x38];                                      // 0x00E8(0x0038) MISSED OFFSET
+	TArray<class AActor*>                              SpawnedPromptActors;                                      // 0x00D8(0x0010) (ZeroConstructor, Transient)
+	unsigned char                                      UnknownData00[0x58];                                      // 0x00E8(0x0058) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -60,6 +60,40 @@ void UTaleQuestCustomMapFunctionLibrary::AddCustomMap(TAssetPtr<class UCustomMap
 
 	if (MapGuid != nullptr)
 		*MapGuid = params.MapGuid;
+}
+
+
+// Function TaleMaps.TaleQuestTornMapFunctionLibrary.AddTornMap
+// (Final, Native, Public, HasOutParms, HasDefaults, Const)
+// Parameters:
+// struct FName                   IslandName                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// int                            NumPieces                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// class UTornMapParams*          MapParams                      (Parm, ZeroConstructor, IsPlainOldData)
+// float                          MaskRotation                   (Parm, ZeroConstructor, IsPlainOldData)
+// struct FGuid                   OutMapId                       (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestTornMapFunctionLibrary::AddTornMap(const struct FName& IslandName, int NumPieces, class UTornMapParams* MapParams, float MaskRotation, struct FGuid* OutMapId)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function TaleMaps.TaleQuestTornMapFunctionLibrary.AddTornMap"));
+
+	struct
+	{
+		struct FName                   IslandName;
+		int                            NumPieces;
+		class UTornMapParams*          MapParams;
+		float                          MaskRotation;
+		struct FGuid                   OutMapId;
+	} params;
+
+	params.IslandName = IslandName;
+	params.NumPieces = NumPieces;
+	params.MapParams = MapParams;
+	params.MaskRotation = MaskRotation;
+
+	UObject::ProcessEvent(fn, &params);
+
+	if (OutMapId != nullptr)
+		*OutMapId = params.OutMapId;
 }
 
 

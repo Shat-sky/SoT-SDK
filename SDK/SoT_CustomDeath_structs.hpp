@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -17,34 +17,34 @@ namespace SDK
 //Script Structs
 //---------------------------------------------------------------------------
 
-// ScriptStruct CustomDeath.SetShouldUseRevivalFlowData
+// ScriptStruct CustomDeath.SetShouldUseRevivalFlowGameServerRequestModel
 // 0x0008
-struct FSetShouldUseRevivalFlowData
+struct FSetShouldUseRevivalFlowGameServerRequestModel
 {
 	int                                                PlayerNetGUID;                                            // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 	bool                                               bShouldUseRevivalFlow;                                    // 0x0004(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x3];                                       // 0x0005(0x0003) MISSED OFFSET
 };
 
-// ScriptStruct CustomDeath.SetShouldSkipFerryOfTheDamnedData
+// ScriptStruct CustomDeath.SetShouldSkipFerryOfTheDamnedGameServerRequestModel
 // 0x0008
-struct FSetShouldSkipFerryOfTheDamnedData
+struct FSetShouldSkipFerryOfTheDamnedGameServerRequestModel
 {
 	int                                                PlayerNetGUID;                                            // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 	bool                                               bShouldSkipFerryOfTheDamned;                              // 0x0004(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x3];                                       // 0x0005(0x0003) MISSED OFFSET
 };
 
-// ScriptStruct CustomDeath.GameModeDeathPenaltyRespawnTimerData
+// ScriptStruct CustomDeath.GameModeDeathPenaltyRespawnTimerGameServerRequestModel
 // 0x0004
-struct FGameModeDeathPenaltyRespawnTimerData
+struct FGameModeDeathPenaltyRespawnTimerGameServerRequestModel
 {
 	float                                              SpawnTimer;                                               // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct CustomDeath.SetCustomPlayerStartData
+// ScriptStruct CustomDeath.SetCustomPlayerStartGameServerRequestModel
 // 0x0008
-struct FSetCustomPlayerStartData
+struct FSetCustomPlayerStartGameServerRequestModel
 {
 	int                                                PlayerNetGUID;                                            // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 	int                                                PlayerStartActorNetID;                                    // 0x0004(0x0004) (ZeroConstructor, IsPlainOldData)
@@ -57,48 +57,48 @@ struct FCustomDeathConfiguration
 	unsigned char                                      UnknownData00[0x18];                                      // 0x0000(0x0018) MISSED OFFSET
 };
 
-// ScriptStruct CustomDeath.ResetCustomConfigForPlayerData
+// ScriptStruct CustomDeath.ResetCustomConfigForPlayerGameServerRequestModel
 // 0x0004
-struct FResetCustomConfigForPlayerData
+struct FResetCustomConfigForPlayerGameServerRequestModel
 {
 	int                                                PlayerNetGUID;                                            // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct CustomDeath.KillPlayerData
+// ScriptStruct CustomDeath.KillPlayerGameServerRequestModel
 // 0x0004
-struct FKillPlayerData
+struct FKillPlayerGameServerRequestModel
 {
 	int                                                PlayerNetGUID;                                            // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct CustomDeath.KillCrewData
+// ScriptStruct CustomDeath.KillCrewGameServerRequestModel
 // 0x0010
-struct FKillCrewData
+struct FKillCrewGameServerRequestModel
 {
 	struct FGuid                                       CrewNetGUID;                                              // 0x0000(0x0010) (ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct CustomDeath.ForcePlayerRespawnData
+// ScriptStruct CustomDeath.ForcePlayerRespawnGameServerRequestModel
 // 0x0008
-struct FForcePlayerRespawnData
+struct FForcePlayerRespawnGameServerRequestModel
 {
 	int                                                PlayerNetGUID;                                            // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 	bool                                               bRespawnAsGhost;                                          // 0x0004(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x3];                                       // 0x0005(0x0003) MISSED OFFSET
 };
 
-// ScriptStruct CustomDeath.DestroyCustomPlayerStartData
+// ScriptStruct CustomDeath.DestroyCustomPlayerStartGameServerRequestModel
 // 0x0018
-struct FDestroyCustomPlayerStartData
+struct FDestroyCustomPlayerStartGameServerRequestModel
 {
 	int                                                PlayerStartActorNetID;                                    // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
 	class FString                                      Tag;                                                      // 0x0008(0x0010) (ZeroConstructor)
 };
 
-// ScriptStruct CustomDeath.CustomPlayerStartConfigData
+// ScriptStruct CustomDeath.CustomPlayerStartConfigGameServerRequestModel
 // 0x0030
-struct FCustomPlayerStartConfigData
+struct FCustomPlayerStartConfigGameServerRequestModel
 {
 	struct FVector                                     Location;                                                 // 0x0000(0x000C) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x000C(0x0004) MISSED OFFSET
@@ -106,9 +106,9 @@ struct FCustomPlayerStartConfigData
 	TArray<class FString>                              Tags;                                                     // 0x0020(0x0010) (ZeroConstructor)
 };
 
-// ScriptStruct CustomDeath.CustomPlayerStartConfigResponseData
+// ScriptStruct CustomDeath.CustomPlayerStartConfigResponseGameServerRequestModel
 // 0x0008
-struct FCustomPlayerStartConfigResponseData
+struct FCustomPlayerStartConfigResponseGameServerRequestModel
 {
 	bool                                               Success;                                                  // 0x0000(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x3];                                       // 0x0001(0x0003) MISSED OFFSET

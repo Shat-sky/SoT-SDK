@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -16,6 +16,13 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
+
+// ScriptStruct ActorOfInterestFramework.ActorsOfInterestList
+// 0x0010
+struct FActorsOfInterestList
+{
+	TArray<class AActor*>                              Actors;                                                   // 0x0000(0x0010) (ZeroConstructor)
+};
 
 // ScriptStruct ActorOfInterestFramework.ActorOfInterestUnregisteredEvent
 // 0x0010

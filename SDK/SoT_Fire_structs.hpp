@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -8,9 +8,9 @@
 
 #include "SoT_Basic.hpp"
 #include "SoT_Fire_enums.hpp"
+#include "SoT_StatusEffects_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
-#include "SoT_StatusEffects_classes.hpp"
 #include "SoT_Athena_classes.hpp"
 
 namespace SDK
@@ -289,14 +289,14 @@ struct FShipFireLightManager
 };
 
 // ScriptStruct Fire.FireGridCharringManager
-// 0x00C8
+// 0x00D8
 struct FFireGridCharringManager
 {
 	TArray<class UMaterialInterface*>                  OwnerMaterials;                                           // 0x0000(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 	struct FVector                                     AdditionalGridOffsetForCharring;                          // 0x0010(0x000C) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x001C(0x0004) MISSED OFFSET
 	class UTexture2DDynamic*                           FireGridTexture;                                          // 0x0020(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData01[0xA0];                                      // 0x0028(0x00A0) MISSED OFFSET
+	unsigned char                                      UnknownData01[0xB0];                                      // 0x0028(0x00B0) MISSED OFFSET
 };
 
 // ScriptStruct Fire.ReplicatedFireCellData
@@ -313,6 +313,15 @@ struct FReplicatedFireCellCharringData
 	float                                              MaxCharringTime;                                          // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
 	TArray<float>                                      TimeSpentCharring;                                        // 0x0008(0x0010) (ZeroConstructor)
+};
+
+// ScriptStruct Fire.HullCharringPersistenceModel
+// 0x0017 (0x0018 - 0x0001)
+struct FHullCharringPersistenceModel : public FPersistenceModel
+{
+	TArray<float>                                      TimeSpentCharring;                                        // 0x0000(0x0010) (ZeroConstructor)
+	int                                                TotalCellsOnFire;                                         // 0x0010(0x0004) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0014(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct Fire.PlayerNearBurningFireGridUpdatedEvent
@@ -362,15 +371,6 @@ struct FOnFireChangedEvent
 struct FFireCellStateData
 {
 	unsigned char                                      UnknownData00[0x30];                                      // 0x0000(0x0030) MISSED OFFSET
-};
-
-// ScriptStruct Fire.HullCharringPersistenceModel
-// 0x0017 (0x0018 - 0x0001)
-struct FHullCharringPersistenceModel : public FPersistenceModel
-{
-	TArray<float>                                      TimeSpentCharring;                                        // 0x0000(0x0010) (ZeroConstructor)
-	int                                                TotalCellsOnFire;                                         // 0x0010(0x0004) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x0014(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct Fire.PlayerFireGridTickParams

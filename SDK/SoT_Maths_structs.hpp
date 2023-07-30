@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,6 +23,24 @@ struct FOrientedPoint
 {
 	struct FVector                                     Location;                                                 // 0x0000(0x000C) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	struct FRotator                                    Rotation;                                                 // 0x000C(0x000C) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Maths.Pendulum
+// 0x0060
+struct FPendulum
+{
+	float                                              Increment;                                                // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
+	float                                              IncrementDirectionMultiplier;                             // 0x0004(0x0004) (ZeroConstructor, IsPlainOldData)
+	bool                                               IsSwinging;                                               // 0x0008(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0009(0x0003) MISSED OFFSET
+	float                                              RPM;                                                      // 0x000C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              MinAngleDegrees;                                          // 0x0010(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              MaxAngleDegrees;                                          // 0x0014(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              Length;                                                   // 0x0018(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              CurrentSwingProgress;                                     // 0x001C(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
+	float                                              CurrentRotationAngleDegrees;                              // 0x0020(0x0004) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData01[0xC];                                       // 0x0024(0x000C) MISSED OFFSET
+	struct FTransform                                  InterpolationAsTransform;                                 // 0x0030(0x0030) (Transient, IsPlainOldData)
 };
 
 // ScriptStruct Maths.RotationUpdateResult

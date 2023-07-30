@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -25,12 +25,22 @@ enum class EBootyRewardType : uint8_t
 };
 
 
+// Enum EmissaryLevel.EEmissaryVoyageValidatorType
+enum class EEmissaryVoyageValidatorType : uint8_t
+{
+	EEmissaryVoyageValidatorType__Entitlement = 0,
+	EEmissaryVoyageValidatorType__GuildReputation = 1,
+	EEmissaryVoyageValidatorType__EEmissaryVoyageValidatorType_MAX = 2
+};
+
+
 // Enum EmissaryLevel.EEmissaryDeactivateReason
 enum class EEmissaryDeactivateReason : uint8_t
 {
 	EEmissaryDeactivateReason__DissociateFromShip = 0,
 	EEmissaryDeactivateReason__Cancelled = 1,
-	EEmissaryDeactivateReason__EEmissaryDeactivateReason_MAX = 2
+	EEmissaryDeactivateReason__GuildSessionEnded = 2,
+	EEmissaryDeactivateReason__EEmissaryDeactivateReason_MAX = 3
 };
 
 

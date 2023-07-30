@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -123,15 +123,31 @@ public:
 
 
 // Class Music.MusicZoneService
-// 0x00A8 (0x0470 - 0x03C8)
+// 0x00C8 (0x0490 - 0x03C8)
 class AMusicZoneService : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0xA8];                                      // 0x03C8(0x00A8) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xC8];                                      // 0x03C8(0x00C8) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Music.MusicZoneService"));
+		return ptr;
+	}
+
+};
+
+
+// Class Music.NetMusicZoneActor
+// 0x0008 (0x03D0 - 0x03C8)
+class ANetMusicZoneActor : public AActor
+{
+public:
+	class UMusicZoneComponent*                         MusicZone;                                                // 0x03C8(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Music.NetMusicZoneActor"));
 		return ptr;
 	}
 

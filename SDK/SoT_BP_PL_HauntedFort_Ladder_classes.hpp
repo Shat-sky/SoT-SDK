@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_PL_HauntedFort_Ladder.BP_PL_HauntedFort_Ladder_C
-// 0x0000 (0x0648 - 0x0648)
+// 0x0000 (0x0668 - 0x0668)
 class ABP_PL_HauntedFort_Ladder_C : public ABP_CustomisableLadder_C
 {
 public:

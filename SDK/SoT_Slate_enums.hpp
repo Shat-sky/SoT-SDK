@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,25 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Enums
 //---------------------------------------------------------------------------
+
+// Enum Slate.ETextFlowDirection
+enum class ETextFlowDirection : uint8_t
+{
+	ETextFlowDirection__Auto       = 0,
+	ETextFlowDirection__LeftToRight = 1,
+	ETextFlowDirection__RightToLeft = 2,
+	ETextFlowDirection__ETextFlowDirection_MAX = 3
+};
+
+
+// Enum Slate.ETextWrappingPolicy
+enum class ETextWrappingPolicy : uint8_t
+{
+	ETextWrappingPolicy__DefaultWrapping = 0,
+	ETextWrappingPolicy__AllowPerCharacterWrapping = 1,
+	ETextWrappingPolicy__ETextWrappingPolicy_MAX = 2
+};
+
 
 // Enum Slate.ETextJustify
 enum class ETextJustify : uint8_t

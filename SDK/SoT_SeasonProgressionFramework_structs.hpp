@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -117,7 +117,7 @@ struct FTrackedObjectiveCompletionMessage
 };
 
 // ScriptStruct SeasonProgressionFramework.TrackedObjectiveProgressUpdateMessage
-// 0x00E0
+// 0x00E8
 struct FTrackedObjectiveProgressUpdateMessage
 {
 	struct FGuid                                       ObjectiveId;                                              // 0x0000(0x0010) (ZeroConstructor, IsPlainOldData)
@@ -128,6 +128,8 @@ struct FTrackedObjectiveProgressUpdateMessage
 	unsigned char                                      UnknownData00[0x2];                                       // 0x00D2(0x0002) MISSED OFFSET
 	int                                                Value;                                                    // 0x00D4(0x0004) (ZeroConstructor, IsPlainOldData)
 	double                                             CreatedAt;                                                // 0x00D8(0x0008) (ZeroConstructor, IsPlainOldData)
+	bool                                               ShouldNotifyPlayer;                                       // 0x00E0(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x7];                                       // 0x00E1(0x0007) MISSED OFFSET
 };
 
 // ScriptStruct SeasonProgressionFramework.TrackedObjectiveEvent

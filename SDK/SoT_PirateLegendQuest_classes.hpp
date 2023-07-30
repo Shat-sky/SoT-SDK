@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -34,7 +34,7 @@ public:
 
 
 // Class PirateLegendQuest.VeilService
-// 0x0100 (0x0160 - 0x0060)
+// 0x0120 (0x0180 - 0x0060)
 class UVeilService : public UTaleQuestService
 {
 public:
@@ -44,7 +44,7 @@ public:
 	unsigned char                                      UnknownData01[0x8];                                       // 0x0090(0x0008) MISSED OFFSET
 	class AVeilOfTheAncients*                          TrackedVeil;                                              // 0x0098(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	class AShip*                                       Ship;                                                     // 0x00A0(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0xB8];                                      // 0x00A8(0x00B8) MISSED OFFSET
+	unsigned char                                      UnknownData02[0xD8];                                      // 0x00A8(0x00D8) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -30,7 +30,7 @@ public:
 
 
 // Class ItemQuality.ItemQualityComponent
-// 0x0040 (0x0108 - 0x00C8)
+// 0x0048 (0x0110 - 0x00C8)
 class UItemQualityComponent : public UActorComponent
 {
 public:
@@ -40,6 +40,7 @@ public:
 	TArray<struct FPerComanyItemQualityEntry>          CompanySpecificItemQualityLevels;                         // 0x00D8(0x0010) (Edit, ZeroConstructor)
 	TArray<struct FPerComanyComplexItemQualityEntry>   CompanySpecificComplexItemQualityLevels;                  // 0x00E8(0x0010) (Edit, ZeroConstructor)
 	TArray<struct FPerComanyComplexItemQualityEntry>   CompanySpecificComplexItemQualityLevelsHandin;            // 0x00F8(0x0010) (Edit, ZeroConstructor)
+	class UGuildSettings*                              GuildSettings;                                            // 0x0108(0x0008) (ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

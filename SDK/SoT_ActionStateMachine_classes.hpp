@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -38,6 +38,40 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.ActionStateCreatorDefinition"));
+		return ptr;
+	}
+
+};
+
+
+// Class ActionStateMachine.ActionStateInitialStateCreatorDefinition
+// 0x0000 (0x0028 - 0x0028)
+class UActionStateInitialStateCreatorDefinition : public UObject
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.ActionStateInitialStateCreatorDefinition"));
+		return ptr;
+	}
+
+};
+
+
+// Class ActionStateMachine.CharacterWithActionStateMachine
+// 0x0020 (0x0600 - 0x05E0)
+class ACharacterWithActionStateMachine : public ACharacter
+{
+public:
+	class UActionStateMachineComponent*                ActionStateMachineComponent;                              // 0x05E0(0x0008) (BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UActionStatePriorityTableData*               ActionStatePriorityTableData;                             // 0x05E8(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      ActionStateCreatorDefinition;                             // 0x05F0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      ActionStateInitialStateCreatorDefinition;                 // 0x05F8(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.CharacterWithActionStateMachine"));
 		return ptr;
 	}
 
@@ -164,6 +198,41 @@ public:
 };
 
 
+// Class ActionStateMachine.ActionStateMachineInterface
+// 0x0000 (0x0028 - 0x0028)
+class UActionStateMachineInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.ActionStateMachineInterface"));
+		return ptr;
+	}
+
+};
+
+
+// Class ActionStateMachine.SelfInitialisingActionStateMachineComponent
+// 0x0048 (0x08A0 - 0x0858)
+class USelfInitialisingActionStateMachineComponent : public UActionStateMachineComponent
+{
+public:
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0858(0x0008) MISSED OFFSET
+	class UActionStatePriorityTableData*               ActionStatePriorityTableData;                             // 0x0860(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      ActionStateCreatorDefinition;                             // 0x0868(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      ActionStateInitialStateCreatorDefinition;                 // 0x0870(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x28];                                      // 0x0878(0x0028) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.SelfInitialisingActionStateMachineComponent"));
+		return ptr;
+	}
+
+};
+
+
 // Class ActionStateMachine.CustomClientValidityCheckCallback
 // 0x0008 (0x0030 - 0x0028)
 class UCustomClientValidityCheckCallback : public UObject
@@ -208,21 +277,6 @@ public:
 	static class UClass* GetTypeOfActionStateActiveOnTrack(class UActionStateMachineComponent* InComponent, TEnumAsByte<EActionStateMachineTrackId> TrackId);
 	static bool GetTestActionStateSerialisableDataOnTrack(class UActionStateMachineComponent* InComponent, TEnumAsByte<EActionStateMachineTrackId> TrackId, struct FTestActionStateSerialisableData* Data);
 	static class UCustomClientValidityCheckCallback* CreateCustomClientValidityCheckCallback();
-};
-
-
-// Class ActionStateMachine.ActionStateMachineInterface
-// 0x0000 (0x0028 - 0x0028)
-class UActionStateMachineInterface : public UInterface
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ActionStateMachine.ActionStateMachineInterface"));
-		return ptr;
-	}
-
 };
 
 

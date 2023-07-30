@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -71,7 +71,7 @@ public:
 
 
 // Class MediaAssets.MediaPlayer
-// 0x0150 (0x0178 - 0x0028)
+// 0x0148 (0x0170 - 0x0028)
 class UMediaPlayer : public UObject
 {
 public:
@@ -96,13 +96,12 @@ public:
 	int                                                PlaylistIndex;                                            // 0x00D0(0x0004) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData02[0x4];                                       // 0x00D4(0x0004) MISSED OFFSET
 	struct FTimespan                                   TimeDelay;                                                // 0x00D8(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
-	class UMediaSource*                                CachedMediaSource;                                        // 0x00E0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              HorizontalFieldOfView;                                    // 0x00E8(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              VerticalFieldOfView;                                      // 0x00EC(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FRotator                                    ViewRotation;                                             // 0x00F0(0x000C) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData03[0x64];                                      // 0x00FC(0x0064) MISSED OFFSET
-	struct FGuid                                       PlayerGuid;                                               // 0x0160(0x0010) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData04[0x8];                                       // 0x0170(0x0008) MISSED OFFSET
+	float                                              HorizontalFieldOfView;                                    // 0x00E0(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              VerticalFieldOfView;                                      // 0x00E4(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FRotator                                    ViewRotation;                                             // 0x00E8(0x000C) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData03[0x64];                                      // 0x00F4(0x0064) MISSED OFFSET
+	struct FGuid                                       PlayerGuid;                                               // 0x0158(0x0010) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData04[0x8];                                       // 0x0168(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -357,6 +356,23 @@ public:
 	class UMediaPlayer* GetMediaPlayer();
 	int GetHeight();
 	float GetAspectRatio();
+};
+
+
+// Class MediaAssets.MovieAssetContainer
+// 0x0020 (0x0048 - 0x0028)
+class UMovieAssetContainer : public UDataAsset
+{
+public:
+	TArray<class UMediaTexture*>                       MediaTextures;                                            // 0x0028(0x0010) (Edit, ZeroConstructor)
+	TArray<class UMediaPlayer*>                        MediaPlayers;                                             // 0x0038(0x0010) (Edit, ZeroConstructor)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class MediaAssets.MovieAssetContainer"));
+		return ptr;
+	}
+
 };
 
 

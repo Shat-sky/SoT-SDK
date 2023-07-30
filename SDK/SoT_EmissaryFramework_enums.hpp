@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -30,7 +30,11 @@ enum class EEmisaryCompanyActionType : uint8_t
 	EEmisaryCompanyActionType__DiscoveredLostShipmentsClue = 12,
 	EEmisaryCompanyActionType__CompleteLostShipmentsVoyage = 13,
 	EEmisaryCompanyActionType__CompleteLegendOfTheVeilVoyage = 14,
-	EEmisaryCompanyActionType__EEmisaryCompanyActionType_MAX = 15
+	EEmisaryCompanyActionType__CaughtFish = 15,
+	EEmisaryCompanyActionType__CompletedTallTale = 16,
+	EEmisaryCompanyActionType__CompletedTreasury = 17,
+	EEmisaryCompanyActionType__CookedDish = 18,
+	EEmisaryCompanyActionType__EEmisaryCompanyActionType_MAX = 19
 };
 
 

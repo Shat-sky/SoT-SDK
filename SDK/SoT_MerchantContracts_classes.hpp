@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -47,13 +47,13 @@ public:
 
 
 // Class MerchantContracts.MerchantContractsService
-// 0x00A0 (0x00C8 - 0x0028)
+// 0x00B0 (0x00D8 - 0x0028)
 class UMerchantContractsService : public UObject
 {
 public:
 	unsigned char                                      UnknownData00[0x8];                                       // 0x0028(0x0008) MISSED OFFSET
 	TArray<struct FMerchantContract>                   Contracts;                                                // 0x0030(0x0010) (ZeroConstructor)
-	unsigned char                                      UnknownData01[0x88];                                      // 0x0040(0x0088) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x98];                                      // 0x0040(0x0098) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

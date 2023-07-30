@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_TaleBook_APiratesLife_GoldenSands.BP_TaleBook_APiratesLife_GoldenSands_C
-// 0x0000 (0x07C8 - 0x07C8)
+// 0x0000 (0x0820 - 0x0820)
 class ABP_TaleBook_APiratesLife_GoldenSands_C : public ABP_TaleBook_APiratesLife_C
 {
 public:

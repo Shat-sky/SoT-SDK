@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -219,11 +219,11 @@ public:
 
 
 // Class TaleMaps.TaleQuestAddTornMapStep
-// 0x00C0 (0x0158 - 0x0098)
+// 0x00D8 (0x0170 - 0x0098)
 class UTaleQuestAddTornMapStep : public UTaleQuestStep
 {
 public:
-	unsigned char                                      UnknownData00[0xC0];                                      // 0x0098(0x00C0) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xD8];                                      // 0x0098(0x00D8) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -387,6 +387,23 @@ public:
 		return ptr;
 	}
 
+};
+
+
+// Class TaleMaps.TaleQuestTornMapFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestTornMapFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class TaleMaps.TaleQuestTornMapFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void AddTornMap(const struct FName& IslandName, int NumPieces, class UTornMapParams* MapParams, float MaskRotation, struct FGuid* OutMapId);
 };
 
 

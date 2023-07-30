@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,16 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Enums
 //---------------------------------------------------------------------------
+
+// Enum Watercrafts.EOarInputState
+enum class EOarInputState : uint8_t
+{
+	EOarInputState__Inactive       = 0,
+	EOarInputState__Active         = 1,
+	EOarInputState__Braking        = 2,
+	EOarInputState__EOarInputState_MAX = 3
+};
+
 
 // Enum Watercrafts.EOarState
 enum class EOarState : uint8_t
@@ -52,16 +62,6 @@ enum class EWatercraftDespawnReason : uint8_t
 	EWatercraftDespawnReason__Migration = 3,
 	EWatercraftDespawnReason__WorldEnding = 4,
 	EWatercraftDespawnReason__EWatercraftDespawnReason_MAX = 5
-};
-
-
-// Enum Watercrafts.EOarInputState
-enum class EOarInputState : uint8_t
-{
-	EOarInputState__Inactive       = 0,
-	EOarInputState__Active         = 1,
-	EOarInputState__Braking        = 2,
-	EOarInputState__EOarInputState_MAX = 3
 };
 
 

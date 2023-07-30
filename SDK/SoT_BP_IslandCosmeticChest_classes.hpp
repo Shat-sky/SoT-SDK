@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,11 +15,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_IslandCosmeticChest.BP_IslandCosmeticChest_C
-// 0x0008 (0x0600 - 0x05F8)
+// 0x0008 (0x0610 - 0x0608)
 class ABP_IslandCosmeticChest_C : public AShipCustomizationChest
 {
 public:
-	class UHarbourComponent*                           Harbour;                                                  // 0x05F8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UHarbourComponent*                           Harbour;                                                  // 0x0608(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -53,13 +53,13 @@ public:
 
 
 // Class OceanCrawlers.OceanCrawlerAudioBroadcaster
-// 0x00D8 (0x01A0 - 0x00C8)
+// 0x00F8 (0x01C0 - 0x00C8)
 class UOceanCrawlerAudioBroadcaster : public UActorComponent
 {
 public:
 	class UOceanCrawlerAudioParamsDataAsset*           AudioDataAsset;                                           // 0x00C8(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	class AActor*                                      CachedOwner;                                              // 0x00D0(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0xC8];                                      // 0x00D8(0x00C8) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xE8];                                      // 0x00D8(0x00E8) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

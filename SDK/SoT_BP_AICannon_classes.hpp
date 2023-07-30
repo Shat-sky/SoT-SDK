@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.1) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,11 +15,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_AICannon.BP_AICannon_C
-// 0x0008 (0x0CE0 - 0x0CD8)
+// 0x0008 (0x0DC8 - 0x0DC0)
 class ABP_AICannon_C : public ABP_Cannon_C
 {
 public:
-	class UAthenaAIInteractableComponent*              AthenaAIInteractable;                                     // 0x0CD8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UAthenaAIInteractableComponent*              AthenaAIInteractable;                                     // 0x0DC0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // AnimBlueprintGeneratedClass BP_Anim_Castaway.BP_Anim_Castaway_C
-// 0x0000 (0x1D10 - 0x1D10)
+// 0x0000 (0x1D80 - 0x1D80)
 class UBP_Anim_Castaway_C : public UBP_Anim_Castaway_Base_C
 {
 public:

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -49,13 +49,16 @@ public:
 	void Vomit();
 	void ValidateNPCCullingDistance();
 	void UpdateInvasionAggressivePassiveTeleportOffsetDistance(const class FString& InDistance);
+	void UpdateDisplayString(const class FString& Namespace, const class FString& Key, const class FString& SourceString);
 	void UnlockTradeRouteSelectionForMyCrew();
 	void UnlockTradeRouteSelectionForCrew(const struct FGuid& CrewId);
 	void UnlockEntitlementCategory(const class FString& EntitlementMapToUnlock);
 	void UnlockEntitlement(const class FString& EntitlementId);
 	void UnlockAndEquipSkeletonCurse();
 	void UnlockAndEquipItemFromEntitlement(const class FString& EntitlementId);
+	void UnlockAndEquipGoldGhostCurse();
 	void UnlockAndEquipGhostCurse();
+	void UnlockAllTallTales();
 	void UnlockAllSkeletonClothes();
 	void UnlockAllEntitlements(int TrueFalse);
 	void UnlockAllEmblemsAndAchievements();
@@ -70,12 +73,12 @@ public:
 	void TriggerDebugAggressivePassiveInvasion(const class FString& InCrewId);
 	void TriggerDebugAggressiveAggressiveInvasion(const class FString& InCrewId);
 	void TriggerControllerConnectionChange(bool IsConnect, int UserId, int ControllerId);
-	void TriggerContestMatchmakingPvPMigration();
 	void TriggerContestMatchmakingMigration();
 	void TriggerAIShipTimerBattle();
 	void TriggerAIShipPassive();
 	void TriggerAIShipEncounter();
 	void TriggerAIShipAggressive();
+	void TriggerAdvertiseGameEventsOnDemandAvailability();
 	void ToggleVideprinter(const class FString& Id);
 	void ToggleThirdPerson();
 	void ToggleStoryRefresh();
@@ -102,6 +105,8 @@ public:
 	void ToggleCrewIdToBeBlockedFromBeingInvaded(const class FString& InCrewId);
 	void ToggleContestScoreDebug();
 	void ToggleCinematicCamera();
+	void ToggleAudioReportingForVeryCloseAudio();
+	void ToggleAudioReporting();
 	void ToggleAttributeOverride();
 	void ToggleAggressivePassiveTeleportUseEQS();
 	void TestForceArchiveAsyncPoolCanaryCrash();
@@ -118,6 +123,8 @@ public:
 	void TeleportPlayerToSpireLocation(int SpireIndex);
 	void TeleportPlayerToSafety();
 	void TeleportPlayerToOffsetAndReturn(float OffsetX, float OffsetY, float OffsetZ, float ReturnTime);
+	void TeleportPlayerToNearestActiveRiddleLandmark();
+	void TeleportPlayerToMerchantCrateSpawnLocation();
 	void TeleportPlayerToKraken();
 	void TeleportPlayersCrewShipToPlayerLocation();
 	void TeleportOutOfHideout();
@@ -159,15 +166,19 @@ public:
 	void StartNearestGeysers();
 	void StartNearestEarthquake();
 	void StartInvasionMatchmaking();
+	void StartGuildSessionAsNewCrew();
+	void StartGuildSessionAsCrew();
 	void StartDemoSession();
 	void StartCargoRunFromNearestNPC(int NumOfCrates);
 	void StartCaptaincySessionAsNewCrew();
 	void StartAshenLordGeysers();
 	void StartAllVolcanos();
 	void StartAllCrewVoyages();
+	void StarFieldMaskStartSkySpin();
 	void SpireStreamOut(int SpireIndex);
 	void SpireStreamIn(int SpireIndex);
 	void SpinShip(float YawSpdInDegreesPerSecond);
+	void SpawnWatercraftUnlimited(const class FString& WatercraftClassString);
 	void SpawnWatercraft(const class FString& WatercraftClassString);
 	void SpawnTreasureChestOfType(class FString* ChestTypeString);
 	void SpawnTreasureArtifact(const class FString& TypeString);
@@ -208,7 +219,7 @@ public:
 	void SpawnFirework(const class FString& FireworkItemString);
 	void SpawnCursedCannonball(const class FString& CannonballTypeString);
 	void SpawnContextualPrompt(const class FString& PromptAccessKey);
-	void SpawnCollectorsChestOfType(class FString* ChestTypeString);
+	void SpawnCollectorsChestOfType(class FString* ChestTypeString, class FString* RewardId);
 	void SpawnCargoRunCrate(const class FString& SpawnCargoRunCrateString);
 	void SpawnCabinDoorInFrontOfPlayer(float Distance);
 	void SpawnBountyReward(const class FString& BountyTypeString);
@@ -216,6 +227,7 @@ public:
 	void SpawnBarrelGroup(bool ForcedCloseSpawn);
 	void SpawnAThousandTreasureChests();
 	void SpawnAndEquipDebugWieldable(const class FString& DebugWieldableTypeString);
+	void SpawnAllBooty(int InNumOfEachToSpawn);
 	void SpawnAINoTrigger(const class FString& AIDescString);
 	void SpawnAIEncounter(const class FString& AIEncounterString);
 	void SpawnAIAtNearestAISpawnPoint(const class FString& AIDescString);
@@ -252,7 +264,6 @@ public:
 	void ShowPlayerMilestoneToast(const class FString& MilestoneGuid, const class FString& MilestoneAlignment, uint64_t MilestoneLevel);
 	void ShowEmissaryVoteIndicators();
 	void ShowAllWelds();
-	void ShowAllRomeBeacons();
 	void ShowAllianceStatus(const class FString& CrewId);
 	void ShipwrecksSpawnOne(float SpawnLocationX, float SpawnLocationY, float SpawnLocationZ);
 	void ShipwrecksSpawnCustom(float SpawnLocationX, float SpawnLocationY, float SpawnLocationZ, const class FString& WreckAsset);
@@ -286,6 +297,7 @@ public:
 	void SetShipCapstanFullyRepaired();
 	void SetShipCapstanFullyDamaged();
 	void SetShipBuoyancyBlend(float UnaryBlend);
+	void SetSeaFortAllEnemiesDeadOnAlignmentFlag(int InFort, bool IsDead);
 	void SetSeaFortAlignment(int InFort, int InAlignment);
 	void SetSailLoweredProportions(float Proportion);
 	void SetSailAngles(float Angle);
@@ -296,6 +308,8 @@ public:
 	void SetPlayerMaxTicks(int InMaxTicksPerFrame);
 	void SetPlayerInvisibleToAI();
 	void SetPlayerInert(bool IsInert);
+	void SetPlayerGuildSlotsAreFull(bool InSlotsAreFull);
+	void SetPlayerCanInviteToGuild(bool InCanInvite);
 	void SetPhotoMode(bool Enabled);
 	void SetPetMovementTimeWindow(float TimeWindow);
 	void SetOverridenUGCState(bool InOverridenUGCState);
@@ -312,6 +326,11 @@ public:
 	void SetIsCaptain(bool InIsCaptain);
 	void SetIdleDisconnectEnabled(bool Enabled);
 	void SetHealthInfoReplicateOverride(bool bActive);
+	void SetGuildName(const class FString& InStringGuildName);
+	void SetGuildMotto(const class FString& InStringGuildMotto);
+	void SetGuildLevelToRequiredLevelToUnlockGuildEmissary();
+	void SetGuildIsFull(const class FString& InStringGuildId, bool InGuildIsFull);
+	void SetGuildIcon(const class FString& InStringGuildIcon);
 	void SetGrogSecondary(bool InValue);
 	void SetGodMode(bool GodModeOn);
 	void SetGlitterbeardRequiredPlayersOverride(int RequiredPlayerCount);
@@ -325,6 +344,7 @@ public:
 	void SetDeathPenaltyRespawnTimer(float InSpawnTimer);
 	void SetDeathPenaltyCrewBasedRespawnTimes(float CrewOfOne, float CrewOfTwo, float CrewOfThree, float CrewOfFour);
 	void SetDamageAllowedToPlayerShip(bool InAllowDamage);
+	void SetCVarOnTheServer(const class FString& CVarName, int Value);
 	void SetCutsceneResponseCoordinatorDebug(bool Value);
 	void SetCurrentCulture(const class FString& Culture);
 	void SetCrewSkill(const class FString& TargetCrew, int Skill);
@@ -334,6 +354,10 @@ public:
 	void SetCoordinatedKrakenCurrentPhaseAssetActive();
 	void SetCapstanPosition(float Position);
 	void SetAxisBinding(const class FString& InBindingName, const class FString& InKeyName);
+	void SetAllShipsSailsAngle(float Angle);
+	void SetAllShipsSailLoweredProportions(float Proportion);
+	void SetAllSeaFortsAlignment(int InAlignment);
+	void SetAllCapstanPositions(float Position);
 	void SetAllAIOverrideCannonShotHitChance(float HitChance);
 	void SetAITeamAttitude(const class FString& TeamAString, const class FString& TeamBString, const class FString& AttitudeString);
 	void SetAIExclusiveAbility(const class FString& AIAbilityString);
@@ -343,15 +367,20 @@ public:
 	void SendStatEvent(uint32_t StatId, uint64_t StatValue);
 	void SendRewardRequestEvent(const class FString& CompanyNameAndRewardIdSeparatedByColon);
 	void SendResetReaperLevelEvent();
-	void ScuttleShip();
+	void SendPlayerToFerrySinBin();
+	void ScuttleShip(bool InShouldSendCrewToLosingTunnel);
 	void ScreenFadeStart();
 	void ScreenFadeEnd();
+	void SchedulerToggleUseRemoteService();
 	void SchedulerToggleDebugDraw();
 	void SchedulerSkipToNext();
 	void SchedulerInitTinyShark();
 	void SchedulerInitSkellyFort();
+	void SchedulerInitOceanCrawlersOnShip();
+	void SchedulerInitLegendarySkellyFort();
 	void SchedulerInitKraken();
 	void SchedulerInitDefault();
+	void SchedulerInitCompetitiveVoyage();
 	void SchedulerInitAshenLord();
 	void SchedulerInitAIShipPassive();
 	void SchedulerInitAIShipBattle();
@@ -384,6 +413,7 @@ public:
 	void ResetMouseDelta();
 	void ResetMaxNumOfSpawnedAI();
 	void ResetMaxMovingPetsOnServerToDefault();
+	void ResetLeaveFactionCooldown();
 	void ResetInvasionMatchmakingCooldown();
 	void ResetInitialMatchmakingCooldown();
 	void ResetGlitterbeardTree();
@@ -400,6 +430,7 @@ public:
 	void RequestMysteriousNotesForPlayer();
 	void RequestLargePassiveAIShip();
 	void RequestLargeAggressiveAIShip();
+	void RequestDiveToAdventure();
 	void RequestCaptainedSessionCrewData();
 	void ReplenishShipWithDebugSpawner();
 	void ReplenishShip();
@@ -417,6 +448,7 @@ public:
 	void RemoveGhostCurseEntitlement();
 	void RemoveDebugPetSpawners();
 	void RemoveDebugHealthStage();
+	void RemoveAllSkeletonClothing();
 	void RemoveAllFog();
 	void RemoveAISpawnContext(const class FString& ContextName);
 	void RemoveActiveStory(const class FString& StoryName);
@@ -424,6 +456,7 @@ public:
 	void RebuildPirateFromSeed(int Seed);
 	void ReallyScrambleMyGamertag();
 	void QueryShipStocks();
+	void PuzzleManager_ResetAllPuzzlesOnClosestManager();
 	void Puzzle_UnlockLockByIndex(const class FString& TargetActor, int LockIndex);
 	void Puzzle_UnlockLock(const class FString& TargetActor, const struct FGuid& Guid);
 	void Puzzle_UnlockAllLocks(const class FString& TargetActor);
@@ -532,7 +565,6 @@ public:
 	void HitRegSetPlayerProjectilesHitScan(bool Enabled);
 	void HideTaleDebug();
 	void HideEmissaryVoteIndicators();
-	void HideAllRomeBeacons();
 	void HealthSet(float Value);
 	void HealthReset();
 	void HealthRegenResetToEmpty();
@@ -544,6 +576,8 @@ public:
 	void HealthAdjust(float Amount);
 	void HandInMegalodonSoulToRitualTable(int SoulType);
 	void God();
+	void GetSourceStringHash(const class FString& SourceString);
+	void GameEventOnDemandAvailabilityServiceToggleDebugDraw();
 	void ForceStopAllPetsDanger();
 	void ForceStartAllPetsDangerWithChangingThreatLocation(const class FString& ResponseType, float UpdateThreatLocationTime);
 	void ForceStartAllPetsDanger(const class FString& ResponseType);
@@ -574,12 +608,15 @@ public:
 	void FireSeasonRewardEarnedMessage(int InNumSeason, int InRewardsLevel, bool InMultipleRewards);
 	void FireSeasonGoalProgressionMessage(int InNumSeason, int InPreviousProgress, int InCurrentProgress, int InCompletionTreshold, int InGoalType, const class FString& InGoalCategory);
 	void FireSeasonGoalCompletionMessage(int InNumSeason, int InGoalType, const class FString& InGoalCategory);
+	void FireOnlineSessionMemberLostEventForMyself();
 	void FireLevelCompletionMessage(int InNumSeason, int InLevel, int InTimeSpentInLevel, int InTier, int InTimeSpentInTier, bool InTierCompleted, bool InSeasonCompleted);
+	void FireEndedGuildSessionEvent();
 	void FireCreatorCrewSignedUpStat();
 	void FireCreatorCrewMinutesViewedStat(int InNumMinutes);
 	void FireCreatorCrewMinutesStreamedStat(int InNumMinutes);
 	void FireCreatorCrewCurrentViewersStat(int InNumViewers);
-	void FindText(const class FString& Namespace, const class FString& Key);
+	void FindOrAddDisplayString(const class FString& Namespace, const class FString& Key, const class FString& SourceString);
+	void FindDisplayString(const class FString& Namespace, const class FString& Key);
 	void FillNearestShipWithTrinkets();
 	void FakeMigrateBountyQuests();
 	void ExitedStormShipEvent();
@@ -660,6 +697,7 @@ public:
 	void DeleteAllMermaids();
 	void DecrementFactionStreak();
 	void DecrementDebugHealthStage();
+	void DebugLoadRowboat(const class FString& WatercraftEntitlement, const class FString& LiveryEntitlement);
 	void DebugIslandDelta();
 	void DeactivateSkellyFort(const class FString& FortName);
 	void DeactivateEmissaryFlagCompany();
@@ -668,6 +706,7 @@ public:
 	void DamageShip(float Strength);
 	void DamagePlayerFromRemoteActor(const class FString& ActorIdString, float Strength, float CameraLocationX, float CameraLocationY, float CameraLocationZ, float CameraForwardDirectionX, float CameraForwardDirectionY, float CameraForwardDirectionZ);
 	void DamagePlayer(float Strength);
+	void CustomiseNearestRowboat(const class FString& LiveryDescStringRef);
 	void CureAllAilings();
 	void CreateDebugReapersChestMarkerAtPlayerLocation();
 	void CreateDebugAISpawnerAt(const class FString& SpawnerAssetName, const class FString& LocationActorName);
@@ -695,11 +734,13 @@ public:
 	void ClearCampaignOverrides();
 	void ClearAxisBinding(const class FString& InBindingName);
 	void ClearAIAbilityTimeMultipliers();
+	void ClearAdventureOnDemandCrewDiveCooldown();
 	void CheckLandmarkValidTreasureLocationsAtPlayerPos();
 	void CheckLandmarkRelativeToIslandCalculation();
 	void CapsizeShip();
 	void CancelVoyage();
 	void CancelTale();
+	void CancelLeaveFactionCooldown();
 	void CancelInvasionMatchmakingCooldown();
 	void CancelInitialMatchmakingCooldown();
 	void CancelEmergentVoyages();
@@ -739,6 +780,7 @@ public:
 	void AddInvasionBattleBounds();
 	void AddInactiveCampaignOverride(const class FString& CampaignName);
 	void AddDrunkenness(int DrunkennessType, float DrunkennessChange);
+	void AddAllKnownStories();
 	void AddAISpawnContext(const class FString& ContextName);
 	void AddActiveStory(const class FString& StoryName, bool AddIfNonExistentStory);
 	void AddActiveCampaignOverride(const class FString& CampaignName);

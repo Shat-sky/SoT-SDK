@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -23,6 +23,13 @@ struct FRetractorOrientationAdjustmentFlags
 	bool                                               AdjustPitch;                                              // 0x0000(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	bool                                               AdjustRoll;                                               // 0x0001(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	bool                                               AdjustYaw;                                                // 0x0002(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Retraction.EventItemProxyMovedFromSlot
+// 0x000C
+struct FEventItemProxyMovedFromSlot
+{
+	struct FVector                                     ItemLocation;                                             // 0x0000(0x000C) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Retraction.EventAttachedRetractableToItemProxy

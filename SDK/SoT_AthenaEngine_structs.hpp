@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -40,6 +40,21 @@ struct FStringAssetClassPair
 	class FString                                      String;                                                   // 0x0000(0x0010) (Edit, ZeroConstructor)
 	TAssetPtr<class UClass>                            AssetClass;                                               // 0x0010(0x0020) (Edit)
 	TArray<struct FStringAssetClassPairFeatureOverride> FeatureOverrides;                                         // 0x0030(0x0010) (Edit, ZeroConstructor)
+};
+
+// ScriptStruct AthenaEngine.UserDefinedStructWithSerialisableValue
+// 0x0020
+struct FUserDefinedStructWithSerialisableValue
+{
+	class UScriptStruct*                               InternalStruct;                                           // 0x0000(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x18];                                      // 0x0008(0x0018) MISSED OFFSET
+};
+
+// ScriptStruct AthenaEngine.ConfigurableStructureInstanceWrapper
+// 0x0020
+struct FConfigurableStructureInstanceWrapper
+{
+	struct FUserDefinedStructWithSerialisableValue     Value;                                                    // 0x0000(0x0020) (Edit)
 };
 
 // ScriptStruct AthenaEngine.BoxedRpc

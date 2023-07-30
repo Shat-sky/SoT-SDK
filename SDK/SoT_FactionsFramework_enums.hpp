@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -28,7 +28,18 @@ enum class EFactionLeftReason : uint8_t
 	EFactionLeftReason__Defeated   = 0,
 	EFactionLeftReason__Voted      = 1,
 	EFactionLeftReason__CrewDestroyed = 2,
-	EFactionLeftReason__EFactionLeftReason_MAX = 3
+	EFactionLeftReason__EnteredCrossLevelTunnelOfTheDamned = 3,
+	EFactionLeftReason__Migrated   = 4,
+	EFactionLeftReason__EFactionLeftReason_MAX = 5
+};
+
+
+// Enum FactionsFramework.EFactionType
+enum class EFactionType : uint8_t
+{
+	EFactionType__FactionG         = 0,
+	EFactionType__FactionB         = 1,
+	EFactionType__EFactionType_MAX = 2
 };
 
 

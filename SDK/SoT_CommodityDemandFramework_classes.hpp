@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -48,7 +48,7 @@ public:
 
 
 // Class CommodityDemandFramework.CommodityDemandFrameworkSettings
-// 0x0030 (0x0068 - 0x0038)
+// 0x0040 (0x0078 - 0x0038)
 class UCommodityDemandFrameworkSettings : public UDeveloperSettings
 {
 public:
@@ -59,6 +59,7 @@ public:
 	unsigned char                                      UnknownData00[0x4];                                       // 0x004C(0x0004) MISSED OFFSET
 	struct FGameTime                                   CommodityRedemptionTimeOutPeriodInDays;                   // 0x0050(0x0008) (Edit, Config)
 	struct FStringAssetReference                       NPCListAsset;                                             // 0x0058(0x0010) (Edit, ZeroConstructor, Config)
+	struct FStringAssetReference                       MerchantSovereignHandInNameFileLocation;                  // 0x0068(0x0010) (Edit, ZeroConstructor, Config)
 
 	static UClass* StaticClass()
 	{
@@ -84,13 +85,31 @@ public:
 };
 
 
+// Class CommodityDemandFramework.MerchantSovereignHandInNameInformationDataAsset
+// 0x0010 (0x0038 - 0x0028)
+class UMerchantSovereignHandInNameInformationDataAsset : public UDataAsset
+{
+public:
+	TArray<struct FMerchantSovereignHandInNameInformation> MerchantSovereignHandInNameInformationArray;              // 0x0028(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class CommodityDemandFramework.MerchantSovereignHandInNameInformationDataAsset"));
+		return ptr;
+	}
+
+};
+
+
 // Class CommodityDemandFramework.CommodityDemandService
-// 0x0040 (0x0408 - 0x03C8)
+// 0x0078 (0x0440 - 0x03C8)
 class ACommodityDemandService : public AActor
 {
 public:
 	unsigned char                                      UnknownData00[0x20];                                      // 0x03C8(0x0020) MISSED OFFSET
 	struct FActiveNPCDemands                           ActiveCommodityDemands;                                   // 0x03E8(0x0020) (Net)
+	class UMerchantSovereignHandInNameInformationDataAsset* MerchantSovereignHandInNameInformationDataAsset;          // 0x0408(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x30];                                      // 0x0410(0x0030) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -168,11 +187,11 @@ public:
 
 
 // Class CommodityDemandFramework.CommodityPurchaseTrackingComponent
-// 0x0080 (0x0148 - 0x00C8)
+// 0x0090 (0x0158 - 0x00C8)
 class UCommodityPurchaseTrackingComponent : public UActorComponent
 {
 public:
-	unsigned char                                      UnknownData00[0x80];                                      // 0x00C8(0x0080) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x90];                                      // 0x00C8(0x0090) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -233,13 +252,14 @@ public:
 
 
 // Class CommodityDemandFramework.CommoditySourceComponent
-// 0x0018 (0x00E0 - 0x00C8)
+// 0x0028 (0x00F0 - 0x00C8)
 class UCommoditySourceComponent : public UActorComponent
 {
 public:
 	unsigned char                                      UnknownData00[0x8];                                       // 0x00C8(0x0008) MISSED OFFSET
 	struct FName                                       NPCIdentifier;                                            // 0x00D0(0x0008) (Net, ZeroConstructor, IsPlainOldData)
 	struct FName                                       IslandIdentifier;                                         // 0x00D8(0x0008) (Net, ZeroConstructor, IsPlainOldData)
+	struct FGuid                                       PurchasingCrewId;                                         // 0x00E0(0x0010) (Net, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

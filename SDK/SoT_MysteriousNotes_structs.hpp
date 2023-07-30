@@ -1,14 +1,14 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
-#include "SoT_Athena_classes.hpp"
 #include "SoT_AthenaInputMkII_classes.hpp"
+#include "SoT_Athena_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
 
@@ -26,17 +26,17 @@ struct FMysteriousNotesCompletionEventsModel
 };
 
 // ScriptStruct MysteriousNotes.WieldableMysteriousNoteLayoutItem
-// 0x00D0
+// 0x00E0
 struct FWieldableMysteriousNoteLayoutItem
 {
 	class FString                                      Theme;                                                    // 0x0000(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 	class UFont*                                       Font;                                                     // 0x0010(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FTreasureMapWidgetStreamedTexture           Image;                                                    // 0x0018(0x0030) (Edit, DisableEditOnInstance)
-	struct FStringAssetReference                       RadialIcon;                                               // 0x0048(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
-	struct FTreasureMapWidgetText                      NoteTitleWidgetText;                                      // 0x0058(0x0038) (Edit, DisableEditOnInstance)
-	struct FTreasureMapWidgetText                      NoteBodyWidgetText;                                       // 0x0090(0x0038) (Edit, DisableEditOnInstance)
-	float                                              NoteWidth;                                                // 0x00C8(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              NoteLineSpacingMultiplier;                                // 0x00CC(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FTreasureMapWidgetStreamedTexture           Image;                                                    // 0x0018(0x0038) (Edit, DisableEditOnInstance)
+	struct FStringAssetReference                       RadialIcon;                                               // 0x0050(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	struct FTreasureMapWidgetText                      NoteTitleWidgetText;                                      // 0x0060(0x003C) (Edit, DisableEditOnInstance)
+	struct FTreasureMapWidgetText                      NoteBodyWidgetText;                                       // 0x009C(0x003C) (Edit, DisableEditOnInstance)
+	float                                              NoteWidth;                                                // 0x00D8(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              NoteLineSpacingMultiplier;                                // 0x00DC(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 };
 
 // ScriptStruct MysteriousNotes.MysteriousNoteInfo

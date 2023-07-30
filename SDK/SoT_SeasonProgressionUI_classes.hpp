@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -94,14 +94,14 @@ public:
 
 
 // Class SeasonProgressionUI.SeasonProgressionUIComponent
-// 0x00E8 (0x01B0 - 0x00C8)
+// 0x00F8 (0x01C0 - 0x00C8)
 class USeasonProgressionUIComponent : public UActorComponent
 {
 public:
 	unsigned char                                      UnknownData00[0x20];                                      // 0x00C8(0x0020) MISSED OFFSET
 	TArray<struct FEnableMoreButtonEvent>              DetailsNavigationDesc;                                    // 0x00E8(0x0010) (ZeroConstructor)
 	struct FSeasonProgressionUITelemetryFragment       NextReceivedEventsTelemetryData;                          // 0x00F8(0x0018)
-	unsigned char                                      UnknownData01[0xA0];                                      // 0x0110(0x00A0) MISSED OFFSET
+	unsigned char                                      UnknownData01[0xB0];                                      // 0x0110(0x00B0) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -130,13 +130,13 @@ public:
 
 
 // Class SeasonProgressionUI.SeasonProgressionUIService
-// 0x01C0 (0x0588 - 0x03C8)
+// 0x01E0 (0x05A8 - 0x03C8)
 class ASeasonProgressionUIService : public AActor
 {
 public:
 	unsigned char                                      UnknownData00[0x30];                                      // 0x03C8(0x0030) MISSED OFFSET
 	class USeasonPopupListAsset*                       SeasonPopupListAsset;                                     // 0x03F8(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x188];                                     // 0x0400(0x0188) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x1A8];                                     // 0x0400(0x01A8) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -116,17 +116,17 @@ public:
 
 
 // Class ChecklistMaps.ChecklistMap
-// 0x0150 (0x0920 - 0x07D0)
+// 0x0150 (0x0980 - 0x0830)
 class AChecklistMap : public ATreasureMap
 {
 public:
-	class UFont*                                       Font;                                                     // 0x07D0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              FontScale;                                                // 0x07D8(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              FontLineSpacingScale;                                     // 0x07DC(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x8];                                       // 0x07E0(0x0008) MISSED OFFSET
-	class UChecklistMapLayout*                         ChecklistMapLayout;                                       // 0x07E8(0x0008) (Net, ZeroConstructor, IsPlainOldData)
-	struct FChecklistMapContents                       Contents;                                                 // 0x07F0(0x00E8) (Net)
-	unsigned char                                      UnknownData01[0x48];                                      // 0x08D8(0x0048) MISSED OFFSET
+	class UFont*                                       Font;                                                     // 0x0830(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              FontScale;                                                // 0x0838(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              FontLineSpacingScale;                                     // 0x083C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0840(0x0008) MISSED OFFSET
+	class UChecklistMapLayout*                         ChecklistMapLayout;                                       // 0x0848(0x0008) (Net, ZeroConstructor, IsPlainOldData)
+	struct FChecklistMapContents                       Contents;                                                 // 0x0850(0x00E8) (Net)
+	unsigned char                                      UnknownData01[0x48];                                      // 0x0938(0x0048) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -157,12 +157,12 @@ public:
 
 
 // Class ChecklistMaps.ChecklistMapCompletionComponent
-// 0x0078 (0x0140 - 0x00C8)
+// 0x0088 (0x0150 - 0x00C8)
 class UChecklistMapCompletionComponent : public UActorComponent
 {
 public:
 	class UChecklistActionData*                        ActionData;                                               // 0x00C8(0x0008) (Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x70];                                      // 0x00D0(0x0070) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x80];                                      // 0x00D0(0x0080) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

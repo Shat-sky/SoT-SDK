@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -30,13 +30,13 @@ public:
 
 
 // Class GlitterBeard.GlitterBeardFinaleCoordinatorComponent
-// 0x0098 (0x0160 - 0x00C8)
+// 0x00A8 (0x0170 - 0x00C8)
 class UGlitterBeardFinaleCoordinatorComponent : public UActorComponent
 {
 public:
 	class UWwiseEvent*                                 AudioEventToSynchronise;                                  // 0x00C8(0x0008) (Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData)
 	struct FFinaleReplicationState                     ReplicationState;                                         // 0x00D0(0x0010) (Net)
-	unsigned char                                      UnknownData00[0x80];                                      // 0x00E0(0x0080) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x90];                                      // 0x00E0(0x0090) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -71,7 +71,7 @@ class UGlitterBeardLanternSoundEffect : public UEffectBlendObjectBase
 public:
 	float                                              TriggerThreshold;                                         // 0x0038(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x003C(0x0004) MISSED OFFSET
-	class UWwiseObjectPoolWrapper*                     WWisePool;                                                // 0x0040(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UWwiseObjectPoolWrapper*                     WwisePool;                                                // 0x0040(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class UWwiseEvent*                                 WwiseEvent;                                               // 0x0048(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	struct FWwiseEmitter                               Emitter;                                                  // 0x0050(0x0020) (Transient)
 	unsigned char                                      UnknownData01[0x10];                                      // 0x0070(0x0010) MISSED OFFSET
@@ -133,7 +133,7 @@ public:
 
 
 // Class GlitterBeard.GlitterBeardTree
-// 0x0308 (0x06D0 - 0x03C8)
+// 0x0328 (0x06F0 - 0x03C8)
 class AGlitterBeardTree : public AActor
 {
 public:
@@ -151,10 +151,10 @@ public:
 	class UGlitterBeardFinaleCoordinatorComponent*     FinaleCoordinator;                                        // 0x0430(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnTemplate, InstancedReference, IsPlainOldData)
 	class ULandmarkReactionTriggerComponent*           LandmarkReactionTrigger;                                  // 0x0438(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnTemplate, InstancedReference, IsPlainOldData)
 	float                                              DistanceFromTreeToPauseAISpawn;                           // 0x0440(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x234];                                     // 0x0444(0x0234) MISSED OFFSET
-	class ASlidingDoor*                                HideoutDoor;                                              // 0x0678(0x0008) (Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData)
-	struct FWwiseEmitter                               SoundEmitter;                                             // 0x0680(0x0020)
-	unsigned char                                      UnknownData03[0x30];                                      // 0x06A0(0x0030) MISSED OFFSET
+	unsigned char                                      UnknownData02[0x254];                                     // 0x0444(0x0254) MISSED OFFSET
+	class ASlidingDoor*                                HideoutDoor;                                              // 0x0698(0x0008) (Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData)
+	struct FWwiseEmitter                               SoundEmitter;                                             // 0x06A0(0x0020)
+	unsigned char                                      UnknownData03[0x30];                                      // 0x06C0(0x0030) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

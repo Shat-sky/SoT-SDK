@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -32,6 +32,18 @@ enum class ETaleQuestStepState : uint8_t
 };
 
 
+// Enum Tales.ETaleQuestQueryableStateDataIntComparison
+enum class ETaleQuestQueryableStateDataIntComparison : uint8_t
+{
+	ETaleQuestQueryableStateDataIntComparison__Equal = 0,
+	ETaleQuestQueryableStateDataIntComparison__Greater = 1,
+	ETaleQuestQueryableStateDataIntComparison__GreaterOrEqual = 2,
+	ETaleQuestQueryableStateDataIntComparison__Less = 3,
+	ETaleQuestQueryableStateDataIntComparison__LessOrEqual = 4,
+	ETaleQuestQueryableStateDataIntComparison__ETaleQuestQueryableStateDataIntComparison_MAX = 5
+};
+
+
 // Enum Tales.ETaleInteractionState
 enum class ETaleInteractionState : uint8_t
 {
@@ -50,6 +62,16 @@ enum class ELostShipmentsIslandTypes : uint8_t
 	ELostShipmentsIslandTypes__Outpost = 3,
 	ELostShipmentsIslandTypes__Fort = 4,
 	ELostShipmentsIslandTypes__ELostShipmentsIslandTypes_MAX = 5
+};
+
+
+// Enum Tales.EModifyAtIndexType
+enum class EModifyAtIndexType : uint8_t
+{
+	EModifyAtIndexType__AddPageAtIndex = 0,
+	EModifyAtIndexType__ReplacePageAtIndex = 1,
+	EModifyAtIndexType__ReplacePageFromIndex = 2,
+	EModifyAtIndexType__EModifyAtIndexType_MAX = 3
 };
 
 

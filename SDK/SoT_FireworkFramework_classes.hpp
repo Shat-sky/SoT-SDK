@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -239,7 +239,7 @@ public:
 
 
 // Class FireworkFramework.FireworkStatsComponent
-// 0x00C0 (0x0188 - 0x00C8)
+// 0x00D0 (0x0198 - 0x00C8)
 class UFireworkStatsComponent : public UActorComponent
 {
 public:
@@ -248,7 +248,7 @@ public:
 	int                                                NumberOfFireworksFiredAtNight;                            // 0x00D0(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	float                                              FireworksFiredAtNightRadius;                              // 0x00D4(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	float                                              FiredFireworksAtNightTimer;                               // 0x00D8(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData01[0xAC];                                      // 0x00DC(0x00AC) MISSED OFFSET
+	unsigned char                                      UnknownData01[0xBC];                                      // 0x00DC(0x00BC) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

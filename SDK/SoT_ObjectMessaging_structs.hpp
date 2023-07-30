@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -31,12 +31,12 @@ struct FObjectMessagingDispatcherHandle
 };
 
 // ScriptStruct ObjectMessaging.ObjectMessagingHandle
-// 0x0048
+// 0x0058
 struct FObjectMessagingHandle
 {
 	unsigned char                                      UnknownData00[0x8];                                       // 0x0000(0x0008) MISSED OFFSET
 	class UStruct*                                     EventType;                                                // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x38];                                      // 0x0010(0x0038) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x48];                                      // 0x0010(0x0048) MISSED OFFSET
 };
 
 // ScriptStruct ObjectMessaging.ObjectMessagingDispatcher
@@ -44,6 +44,13 @@ struct FObjectMessagingHandle
 struct FObjectMessagingDispatcher
 {
 	unsigned char                                      UnknownData00[0xA0];                                      // 0x0000(0x00A0) MISSED OFFSET
+};
+
+// ScriptStruct ObjectMessaging.EventObjectMessagingDispatcherBeingDestroyed
+// 0x0008
+struct FEventObjectMessagingDispatcherBeingDestroyed
+{
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0000(0x0008) MISSED OFFSET
 };
 
 }

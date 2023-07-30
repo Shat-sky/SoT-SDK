@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_DynamicDensityFogVolume.BP_DynamicDensityFogVolume_C
-// 0x0060 (0x0438 - 0x03D8)
+// 0x0061 (0x0439 - 0x03D8)
 class ABP_DynamicDensityFogVolume_C : public AFogVolume
 {
 public:
@@ -34,6 +34,7 @@ public:
 	bool                                               UseStateParameters;                                       // 0x0420(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x7];                                       // 0x0421(0x0007) MISSED OFFSET
 	TArray<struct FBP_Struct_DynamicFogVolumeParams>   StateParams;                                              // 0x0428(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+	bool                                               AlignMaskToActor;                                         // 0x0438(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

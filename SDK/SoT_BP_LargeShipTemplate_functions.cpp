@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,28 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.IsPlayerOnShip
+// (Private, HasOutParms, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                           PlayerOnShip                   (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void ABP_LargeShipTemplate_C::IsPlayerOnShip(bool* PlayerOnShip)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.IsPlayerOnShip"));
+
+	struct
+	{
+		bool                           PlayerOnShip;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	if (PlayerOnShip != nullptr)
+		*PlayerOnShip = params.PlayerOnShip;
+}
+
 
 // Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.GetPxActorCapacityForPhysXAggregate
 // (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent, Const)
@@ -81,12 +103,12 @@ void ABP_LargeShipTemplate_C::UserConstructionScript()
 }
 
 
-// Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.Timeline_0__FinishedFunc
+// Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.Timeline_DisableSplash1__FinishedFunc
 // (BlueprintEvent)
 
-void ABP_LargeShipTemplate_C::Timeline_0__FinishedFunc()
+void ABP_LargeShipTemplate_C::Timeline_DisableSplash1__FinishedFunc()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.Timeline_0__FinishedFunc"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.Timeline_DisableSplash1__FinishedFunc"));
 
 	struct
 	{
@@ -97,12 +119,12 @@ void ABP_LargeShipTemplate_C::Timeline_0__FinishedFunc()
 }
 
 
-// Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.Timeline_0__UpdateFunc
+// Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.Timeline_DisableSplash1__UpdateFunc
 // (BlueprintEvent)
 
-void ABP_LargeShipTemplate_C::Timeline_0__UpdateFunc()
+void ABP_LargeShipTemplate_C::Timeline_DisableSplash1__UpdateFunc()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.Timeline_0__UpdateFunc"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.Timeline_DisableSplash1__UpdateFunc"));
 
 	struct
 	{
@@ -113,12 +135,12 @@ void ABP_LargeShipTemplate_C::Timeline_0__UpdateFunc()
 }
 
 
-// Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.Timeline_1__FinishedFunc
+// Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.Timeline_Disable_Secondary__FinishedFunc
 // (BlueprintEvent)
 
-void ABP_LargeShipTemplate_C::Timeline_1__FinishedFunc()
+void ABP_LargeShipTemplate_C::Timeline_Disable_Secondary__FinishedFunc()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.Timeline_1__FinishedFunc"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.Timeline_Disable_Secondary__FinishedFunc"));
 
 	struct
 	{
@@ -129,12 +151,12 @@ void ABP_LargeShipTemplate_C::Timeline_1__FinishedFunc()
 }
 
 
-// Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.Timeline_1__UpdateFunc
+// Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.Timeline_Disable_Secondary__UpdateFunc
 // (BlueprintEvent)
 
-void ABP_LargeShipTemplate_C::Timeline_1__UpdateFunc()
+void ABP_LargeShipTemplate_C::Timeline_Disable_Secondary__UpdateFunc()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.Timeline_1__UpdateFunc"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_LargeShipTemplate.BP_LargeShipTemplate_C.Timeline_Disable_Secondary__UpdateFunc"));
 
 	struct
 	{

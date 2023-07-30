@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class LostSands.LostSandsRowboatGunpowderBarrel
-// 0x0230 (0x05F8 - 0x03C8)
+// 0x0240 (0x0608 - 0x03C8)
 class ALostSandsRowboatGunpowderBarrel : public AActor
 {
 public:
@@ -36,7 +36,7 @@ public:
 	TArray<float>                                      DistanceFromNamedPoints;                                  // 0x0560(0x0010) (Edit, ZeroConstructor)
 	struct FPlayerStat                                 RowboatDestroyedAtGoldenSandsStat;                        // 0x0570(0x0004) (Edit, DisableEditOnInstance)
 	struct FPlayerStat                                 RowboatDestroyedAwayFromGoldenSandsStat;                  // 0x0574(0x0004) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData01[0x80];                                      // 0x0578(0x0080) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x90];                                      // 0x0578(0x0090) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

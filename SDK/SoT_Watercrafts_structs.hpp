@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -8,13 +8,13 @@
 
 #include "SoT_Basic.hpp"
 #include "SoT_Watercrafts_enums.hpp"
+#include "SoT_Athena_classes.hpp"
+#include "SoT_ActionStateMachine_classes.hpp"
+#include "SoT_Water_classes.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
-#include "SoT_Athena_classes.hpp"
-#include "SoT_AthenaInput_classes.hpp"
-#include "SoT_Water_classes.hpp"
 #include "SoT_Maths_classes.hpp"
-#include "SoT_ActionStateMachine_classes.hpp"
+#include "SoT_AthenaInput_classes.hpp"
 #include "SoT_Tales_classes.hpp"
 
 namespace SDK
@@ -22,6 +22,24 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
+
+// ScriptStruct Watercrafts.RowboatLiveryByWeight
+// 0x0028
+struct FRowboatLiveryByWeight
+{
+	TAssetPtr<class UClass>                            LiveryEntitlement;                                        // 0x0000(0x0020) (Edit, DisableEditOnInstance)
+	float                                              Weight;                                                   // 0x0020(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0024(0x0004) MISSED OFFSET
+};
+
+// ScriptStruct Watercrafts.RowboatLiveryPickerDataAssetConditions
+// 0x0018
+struct FRowboatLiveryPickerDataAssetConditions
+{
+	class URowboatLiveryPickerDataAsset*               RowboatLiveryPickerDataAsset;                             // 0x0000(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              Weight;                                                   // 0x0008(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FFeatureFlag                                Feature;                                                  // 0x000C(0x000C) (Edit, DisableEditOnInstance)
+};
 
 // ScriptStruct Watercrafts.ScrapeableDamageSpeedEntry
 // 0x0018
@@ -95,6 +113,13 @@ struct FOar
 	unsigned char                                      UnknownData00[0x28];                                      // 0x0038(0x0028) MISSED OFFSET
 };
 
+// ScriptStruct Watercrafts.EventRowboatLoaded
+// 0x0001
+struct FEventRowboatLoaded
+{
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
 // ScriptStruct Watercrafts.EventOarStrokeEnded
 // 0x0001
 struct FEventOarStrokeEnded
@@ -136,13 +161,14 @@ struct FWatercraftDespawnTelemetryEvent
 };
 
 // ScriptStruct Watercrafts.WatercraftSpawnTelemetryEvent
-// 0x0038
+// 0x0048
 struct FWatercraftSpawnTelemetryEvent
 {
 	struct FGuid                                       WatercraftId;                                             // 0x0000(0x0010) (ZeroConstructor, IsPlainOldData)
 	class FString                                      WatercraftType;                                           // 0x0010(0x0010) (ZeroConstructor)
-	struct FVector                                     Location;                                                 // 0x0020(0x000C) (ZeroConstructor, IsPlainOldData)
-	struct FVector                                     Forward;                                                  // 0x002C(0x000C) (ZeroConstructor, IsPlainOldData)
+	class FString                                      OriginDescription;                                        // 0x0020(0x0010) (ZeroConstructor)
+	struct FVector                                     Location;                                                 // 0x0030(0x000C) (ZeroConstructor, IsPlainOldData)
+	struct FVector                                     Forward;                                                  // 0x003C(0x000C) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Watercrafts.EventExitedWatercraft

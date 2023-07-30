@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -77,12 +77,12 @@ public:
 
 
 // Class Mysteries.PopUpNotificationOnItemWieldedComponent
-// 0x0020 (0x0158 - 0x0138)
+// 0x0020 (0x0168 - 0x0148)
 class UPopUpNotificationOnItemWieldedComponent : public UOnItemWieldedComponent
 {
 public:
-	class UPopUpMessageDesc*                           PopUpDesc;                                                // 0x0138(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x18];                                      // 0x0140(0x0018) MISSED OFFSET
+	class UPopUpMessageDesc*                           PopUpDesc;                                                // 0x0148(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x18];                                      // 0x0150(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

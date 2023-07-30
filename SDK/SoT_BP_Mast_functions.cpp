@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,22 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function BP_Mast.BP_Mast_C.SetupMastMesh
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Mast_C::SetupMastMesh()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Mast.BP_Mast_C.SetupMastMesh"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
 
 // Function BP_Mast.BP_Mast_C.AttemptToAddDamageDecal
 // (Public, HasOutParms, BlueprintCallable, BlueprintEvent)

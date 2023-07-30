@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -81,6 +81,43 @@ public:
 };
 
 
+// Class Tales.TaleQuestRunnableStepDesc
+// 0x0068 (0x00E8 - 0x0080)
+class UTaleQuestRunnableStepDesc : public UTaleQuestStepDesc
+{
+public:
+	unsigned char                                      UnknownData00[0x68];                                      // 0x0080(0x0068) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestRunnableStepDesc"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestFunctionStepLibrary
+// 0x0098 (0x0180 - 0x00E8)
+class UTaleQuestFunctionStepLibrary : public UTaleQuestRunnableStepDesc
+{
+public:
+	unsigned char                                      UnknownData00[0x8];                                       // 0x00E8(0x0008) MISSED OFFSET
+	class UFunction*                                   Function;                                                 // 0x00F0(0x0008) (ZeroConstructor, IsPlainOldData)
+	TMap<struct FName, struct FQuestVariable>          ParameterMappings;                                        // 0x00F8(0x0050) (Edit, ZeroConstructor, EditConst)
+	unsigned char                                      UnknownData01[0x30];                                      // 0x0148(0x0030) MISSED OFFSET
+	unsigned char                                      FunctionStepFlags;                                        // 0x0178(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x7];                                       // 0x0179(0x0007) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestFunctionStepLibrary"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleMigrationAction
 // 0x0000 (0x0028 - 0x0028)
 class UTaleMigrationAction : public UObject
@@ -97,16 +134,15 @@ public:
 
 
 // Class Tales.TaleQuestFramedStep
-// 0x0040 (0x00D8 - 0x0098)
+// 0x0060 (0x00F8 - 0x0098)
 class UTaleQuestFramedStep : public UTaleQuestStep
 {
 public:
 	unsigned char                                      UnknownData00[0x8];                                       // 0x0098(0x0008) MISSED OFFSET
 	TArray<class UTaleQuestService*>                   Services;                                                 // 0x00A0(0x0010) (ZeroConstructor)
 	class UTaleQuestFramedStepDesc*                    FrameDesc;                                                // 0x00B0(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x10];                                      // 0x00B8(0x0010) MISSED OFFSET
-	class UScriptStruct*                               StructForCollector;                                       // 0x00C8(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	class UScriptStruct*                               LocalStructForCollector;                                  // 0x00D0(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	struct FUserDefinedStructWithSerialisableValue     Variables;                                                // 0x00B8(0x0020) (Transient)
+	struct FUserDefinedStructWithSerialisableValue     LocalVariables;                                           // 0x00D8(0x0020) (Transient)
 
 	static UClass* StaticClass()
 	{
@@ -118,13 +154,13 @@ public:
 
 
 // Class Tales.TaleQuestFramedStepDesc
-// 0x0020 (0x00A0 - 0x0080)
+// 0x0038 (0x00B8 - 0x0080)
 class UTaleQuestFramedStepDesc : public UTaleQuestStepDesc
 {
 public:
 	TArray<class UTaleQuestServiceDesc*>               Services;                                                 // 0x0080(0x0010) (Edit, ExportObject, ZeroConstructor)
-	class UScriptStruct*                               Variables;                                                // 0x0090(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FInlineUserDefinedStructDetails             GeneratedVariables;                                       // 0x0098(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FUserDefinedStructWithSerialisableValue     VariablesWithDefaults;                                    // 0x0090(0x0020) (Edit)
+	struct FInlineUserDefinedStructDetails             GeneratedVariables;                                       // 0x00B0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -314,7 +350,7 @@ public:
 
 
 // Class Tales.TaleQuestCargoRunContract
-// 0x0088 (0x00B0 - 0x0028)
+// 0x00C0 (0x00E8 - 0x0028)
 class UTaleQuestCargoRunContract : public UObject
 {
 public:
@@ -326,7 +362,7 @@ public:
 	unsigned char                                      UnknownData01[0x10];                                      // 0x0078(0x0010) MISSED OFFSET
 	class AActor*                                      DeliverToNPC;                                             // 0x0088(0x0008) (ZeroConstructor, IsPlainOldData)
 	class AActor*                                      CollectFromNPC;                                           // 0x0090(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x18];                                      // 0x0098(0x0018) MISSED OFFSET
+	unsigned char                                      UnknownData02[0x50];                                      // 0x0098(0x0050) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -353,7 +389,7 @@ public:
 
 
 	class UTaleQuestCargoRunContract* GetContract(const struct FGuid& Guid);
-	struct FGuid AddContract(TArray<class UClass*> InItems, class AActor* InCollectFromNPC, class AActor* InDeliverToNPC, int InTimeLimitInMinutes);
+	struct FGuid AddContract(TArray<class UClass*> InItems, class AActor* InCollectFromNPC, class AActor* InDeliverToNPC, int InTimeLimitInMinutes, const struct FText& InDeliveryHintLocationText);
 };
 
 
@@ -428,6 +464,198 @@ public:
 
 	class UTaleQuestMerchantContract* GetContract(const struct FGuid& Guid);
 	struct FGuid AddContract(TArray<struct FTaleQuestDeliveryRequest> Requests, const struct FName& InDeliveryDestination, float InTimeLimit);
+};
+
+
+// Class Tales.TaleQuestQueryableStateDataID
+// 0x0000 (0x0028 - 0x0028)
+class UTaleQuestQueryableStateDataID : public UObject
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestQueryableStateDataID"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestQueryableStateCanAllDataBeReadNPCDialogConditional
+// 0x0018 (0x0048 - 0x0030)
+class UTaleQuestQueryableStateCanAllDataBeReadNPCDialogConditional : public UNPCDialogConditional
+{
+public:
+	TArray<class UClass*>                              AllDataToCheck;                                           // 0x0030(0x0010) (Edit, ZeroConstructor)
+	bool                                               ExpectedValue;                                            // 0x0040(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0041(0x0007) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestQueryableStateCanAllDataBeReadNPCDialogConditional"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestQueryableStateCanAnyDataBeReadNPCDialogConditional
+// 0x0018 (0x0048 - 0x0030)
+class UTaleQuestQueryableStateCanAnyDataBeReadNPCDialogConditional : public UNPCDialogConditional
+{
+public:
+	TArray<class UClass*>                              AllDataToCheck;                                           // 0x0030(0x0010) (Edit, ZeroConstructor)
+	bool                                               ExpectedValue;                                            // 0x0040(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0041(0x0007) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestQueryableStateCanAnyDataBeReadNPCDialogConditional"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestQueryableStateReadAllValueBoolNPCDialogConditional
+// 0x0018 (0x0048 - 0x0030)
+class UTaleQuestQueryableStateReadAllValueBoolNPCDialogConditional : public UNPCDialogConditional
+{
+public:
+	TArray<class UClass*>                              AllDataToCheck;                                           // 0x0030(0x0010) (Edit, ZeroConstructor)
+	bool                                               ExpectedValue;                                            // 0x0040(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0041(0x0007) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestQueryableStateReadAllValueBoolNPCDialogConditional"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestQueryableStateReadAnyValueBoolNPCDialogConditional
+// 0x0018 (0x0048 - 0x0030)
+class UTaleQuestQueryableStateReadAnyValueBoolNPCDialogConditional : public UNPCDialogConditional
+{
+public:
+	TArray<class UClass*>                              AllDataToCheck;                                           // 0x0030(0x0010) (Edit, ZeroConstructor)
+	bool                                               ExpectedValue;                                            // 0x0040(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0041(0x0007) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestQueryableStateReadAnyValueBoolNPCDialogConditional"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestQueryableStateReadValueIntNPCDialogConditional
+// 0x0010 (0x0040 - 0x0030)
+class UTaleQuestQueryableStateReadValueIntNPCDialogConditional : public UNPCDialogConditional
+{
+public:
+	class UClass*                                      DataID;                                                   // 0x0030(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	int                                                ExpectedValue;                                            // 0x0038(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ETaleQuestQueryableStateDataIntComparison> ComparisonToExpectedValue;                                // 0x003C(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x003D(0x0003) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestQueryableStateReadValueIntNPCDialogConditional"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestQueryableStatesReadInterface
+// 0x0000 (0x0028 - 0x0028)
+class UTaleQuestQueryableStatesReadInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestQueryableStatesReadInterface"));
+		return ptr;
+	}
+
+
+	bool ReadDataInt(class UClass* DataID, int* OutDataContent);
+	bool ReadDataBool(class UClass* DataID, bool* OutDataContent);
+	bool CanDataBeRead(class UClass* DataID);
+};
+
+
+// Class Tales.TaleQuestQueryableStatesWriteInterface
+// 0x0000 (0x0028 - 0x0028)
+class UTaleQuestQueryableStatesWriteInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestQueryableStatesWriteInterface"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestQueryableStatesAccessComponent
+// 0x0020 (0x00E8 - 0x00C8)
+class UTaleQuestQueryableStatesAccessComponent : public UActorComponent
+{
+public:
+	unsigned char                                      UnknownData00[0x10];                                      // 0x00C8(0x0010) MISSED OFFSET
+	TArray<struct FTaleQuestQueryableStateDataInfo>    TalesData;                                                // 0x00D8(0x0010) (Net, ZeroConstructor)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestQueryableStatesAccessComponent"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestQueryableStatesQuantityReaderInterface
+// 0x0000 (0x0028 - 0x0028)
+class UTaleQuestQueryableStatesQuantityReaderInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestQueryableStatesQuantityReaderInterface"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestQueryableStatesQuantityContainerComponent
+// 0x0020 (0x00E8 - 0x00C8)
+class UTaleQuestQueryableStatesQuantityContainerComponent : public UActorComponent
+{
+public:
+	unsigned char                                      UnknownData00[0x8];                                       // 0x00C8(0x0008) MISSED OFFSET
+	class UClass*                                      QuantityDataID;                                           // 0x00D0(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UClass*                                      OptionalCapacityOverrideDataID;                           // 0x00D8(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	int                                                Capacity;                                                 // 0x00E0(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x00E4(0x0004) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestQueryableStatesQuantityContainerComponent"));
+		return ptr;
+	}
+
 };
 
 
@@ -539,8 +767,25 @@ public:
 };
 
 
+// Class Tales.TaleQuestActorOfInterestService
+// 0x0038 (0x0098 - 0x0060)
+class UTaleQuestActorOfInterestService : public UTaleQuestService
+{
+public:
+	class UTaleQuestActorOfInterestServiceDesc*        Desc;                                                     // 0x0060(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x30];                                      // 0x0068(0x0030) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestActorOfInterestService"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleQuestActorService
-// 0x0310 (0x0370 - 0x0060)
+// 0x0360 (0x03C0 - 0x0060)
 class UTaleQuestActorService : public UTaleQuestService
 {
 public:
@@ -552,28 +797,11 @@ public:
 	TArray<struct FPhasedActor>                        PhasedActors;                                             // 0x00A0(0x0010) (ZeroConstructor)
 	TArray<struct FPhasedItem>                         PhasedItems;                                              // 0x00B0(0x0010) (ZeroConstructor)
 	struct FText                                       CriticalActorHandedInByAnotherCrewFailureMessage;         // 0x00C0(0x0038)
-	unsigned char                                      UnknownData00[0x278];                                     // 0x00F8(0x0278) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x2C8];                                     // 0x00F8(0x02C8) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestActorService"));
-		return ptr;
-	}
-
-};
-
-
-// Class Tales.TaleQuestCheckpointService
-// 0x0048 (0x00A8 - 0x0060)
-class UTaleQuestCheckpointService : public UTaleQuestService
-{
-public:
-	class UTaleQuestCheckpointServiceDesc*             Desc;                                                     // 0x0060(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x40];                                      // 0x0068(0x0040) MISSED OFFSET
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestCheckpointService"));
 		return ptr;
 	}
 
@@ -593,6 +821,10 @@ public:
 		return ptr;
 	}
 
+
+	void AddVectorParam(const struct FName& ParamName, const struct FVector& VectorParam);
+	void AddFloatParam(const struct FName& ParamName, float FloatParam);
+	void AddActorParam(const struct FName& ParamName, class AActor* ActorParam);
 };
 
 
@@ -613,6 +845,71 @@ public:
 
 	void PreventInteractionWithTargetActor(class AActor* Actor);
 	void EnableInteractionWithTargetActor(class AActor* Actor);
+};
+
+
+// Class Tales.TaleQuestLockGhostShipDoorService
+// 0x0008 (0x0068 - 0x0060)
+class UTaleQuestLockGhostShipDoorService : public UTaleQuestService
+{
+public:
+	class UTaleQuestLockGhostShipDoorServiceDesc*      Desc;                                                     // 0x0060(0x0008) (ZeroConstructor, IsPlainOldData)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestLockGhostShipDoorService"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestParticipantDeathService
+// 0x0020 (0x0080 - 0x0060)
+class UTaleQuestParticipantDeathService : public UTaleQuestService
+{
+public:
+	unsigned char                                      UnknownData00[0x20];                                      // 0x0060(0x0020) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestParticipantDeathService"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestQueryableStatesService
+// 0x0050 (0x00B0 - 0x0060)
+class UTaleQuestQueryableStatesService : public UTaleQuestService
+{
+public:
+	TArray<struct FTaleQuestQueryableStateDataInfo>    AllData;                                                  // 0x0060(0x0010) (ZeroConstructor)
+	unsigned char                                      UnknownData00[0x40];                                      // 0x0070(0x0040) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestQueryableStatesService"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestScopeService
+// 0x0050 (0x00B0 - 0x0060)
+class UTaleQuestScopeService : public UTaleQuestService
+{
+public:
+	unsigned char                                      UnknownData00[0x50];                                      // 0x0060(0x0050) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestScopeService"));
+		return ptr;
+	}
+
 };
 
 
@@ -753,6 +1050,23 @@ public:
 };
 
 
+// Class Tales.TaleQuestActorOfInterestServiceDesc
+// 0x0048 (0x0070 - 0x0028)
+class UTaleQuestActorOfInterestServiceDesc : public UTaleQuestServiceDesc
+{
+public:
+	TArray<class UClass*>                              AllNeededActorsOfInterest;                                // 0x0028(0x0010) (Edit, ZeroConstructor)
+	struct FText                                       ActorOfInterestUnregisteredFailureMessage;                // 0x0038(0x0038) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestActorOfInterestServiceDesc"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleQuestActorServiceDesc
 // 0x0008 (0x0030 - 0x0028)
 class UTaleQuestActorServiceDesc : public UTaleQuestServiceDesc
@@ -814,6 +1128,21 @@ public:
 };
 
 
+// Class Tales.TaleQuestLockGhostShipDoorServiceDesc
+// 0x0000 (0x0028 - 0x0028)
+class UTaleQuestLockGhostShipDoorServiceDesc : public UTaleQuestServiceDesc
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestLockGhostShipDoorServiceDesc"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleQuestMerchantContractsServiceDesc
 // 0x0000 (0x0028 - 0x0028)
 class UTaleQuestMerchantContractsServiceDesc : public UTaleQuestServiceDesc
@@ -823,6 +1152,51 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestMerchantContractsServiceDesc"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestParticipantDeathServiceDesc
+// 0x0000 (0x0028 - 0x0028)
+class UTaleQuestParticipantDeathServiceDesc : public UTaleQuestServiceDesc
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestParticipantDeathServiceDesc"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestQueryableStatesServiceDesc
+// 0x0000 (0x0028 - 0x0028)
+class UTaleQuestQueryableStatesServiceDesc : public UTaleQuestServiceDesc
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestQueryableStatesServiceDesc"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestScopeServiceDesc
+// 0x0000 (0x0028 - 0x0028)
+class UTaleQuestScopeServiceDesc : public UTaleQuestServiceDesc
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestScopeServiceDesc"));
 		return ptr;
 	}
 
@@ -1200,6 +1574,23 @@ public:
 };
 
 
+// Class Tales.ParticipantRadiusArrayTrackerStep
+// 0x0020 (0x00B8 - 0x0098)
+class UParticipantRadiusArrayTrackerStep : public UTaleQuestStep
+{
+public:
+	class UParticipantRadiusArrayTrackerStepDesc*      Desc;                                                     // 0x0098(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x18];                                      // 0x00A0(0x0018) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.ParticipantRadiusArrayTrackerStep"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.ParticipantRadiusTrackerStep
 // 0x0020 (0x00B8 - 0x0098)
 class UParticipantRadiusTrackerStep : public UTaleQuestStep
@@ -1407,6 +1798,36 @@ public:
 };
 
 
+// Class Tales.SplinePathingActorActivationStep
+// 0x0000 (0x0098 - 0x0098)
+class USplinePathingActorActivationStep : public UTaleQuestStep
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.SplinePathingActorActivationStep"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.SplinePathingActorAddPrimitiveStep
+// 0x0000 (0x0098 - 0x0098)
+class USplinePathingActorAddPrimitiveStep : public UTaleQuestStep
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.SplinePathingActorAddPrimitiveStep"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.StartSuppressingCutsceneResponsesStep
 // 0x0000 (0x0098 - 0x0098)
 class UStartSuppressingCutsceneResponsesStep : public UTaleQuestStep
@@ -1431,6 +1852,52 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.StopSuppressingCutsceneResponsesStep"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleMigrationVolatileTaskStep
+// 0x0010 (0x00A8 - 0x0098)
+class UTaleMigrationVolatileTaskStep : public UTaleQuestStep
+{
+public:
+	TScriptInterface<class UTaleQuestStepInterface>    Task;                                                     // 0x0098(0x0010) (ZeroConstructor, IsPlainOldData)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleMigrationVolatileTaskStep"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestAddCommonToolsStep
+// 0x0000 (0x0098 - 0x0098)
+class UTaleQuestAddCommonToolsStep : public UTaleQuestStep
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestAddCommonToolsStep"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestAddQuestBookStep
+// 0x0000 (0x0098 - 0x0098)
+class UTaleQuestAddQuestBookStep : public UTaleQuestStep
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestAddQuestBookStep"));
 		return ptr;
 	}
 
@@ -1497,12 +1964,28 @@ public:
 };
 
 
+// Class Tales.TaleQuestAwaitCrewShipSinkStep
+// 0x00C0 (0x0158 - 0x0098)
+class UTaleQuestAwaitCrewShipSinkStep : public UTaleQuestStep
+{
+public:
+	unsigned char                                      UnknownData00[0xC0];                                      // 0x0098(0x00C0) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestAwaitCrewShipSinkStep"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleQuestAwaitEventStep
-// 0x0048 (0x00E0 - 0x0098)
+// 0x0058 (0x00F0 - 0x0098)
 class UTaleQuestAwaitEventStep : public UTaleQuestStep
 {
 public:
-	unsigned char                                      UnknownData00[0x48];                                      // 0x0098(0x0048) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x58];                                      // 0x0098(0x0058) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -1524,21 +2007,6 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestChooseIslandFromWeightsStep"));
-		return ptr;
-	}
-
-};
-
-
-// Class Tales.TaleQuestClearTaleProposalsStep
-// 0x0000 (0x0098 - 0x0098)
-class UTaleQuestClearTaleProposalsStep : public UTaleQuestStep
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestClearTaleProposalsStep"));
 		return ptr;
 	}
 
@@ -1602,6 +2070,23 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestEnableInteractionStep"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestEnumSwitchStep
+// 0x0018 (0x00B0 - 0x0098)
+class UTaleQuestEnumSwitchStep : public UTaleQuestStep
+{
+public:
+	TScriptInterface<class UTaleQuestStepInterface>    Branch;                                                   // 0x0098(0x0010) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x8];                                       // 0x00A8(0x0008) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestEnumSwitchStep"));
 		return ptr;
 	}
 
@@ -1686,6 +2171,21 @@ public:
 };
 
 
+// Class Tales.TaleQuestGetArrayElementStep
+// 0x0000 (0x0098 - 0x0098)
+class UTaleQuestGetArrayElementStep : public UTaleQuestStep
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestGetArrayElementStep"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleQuestGetCollectionItemCountStep
 // 0x0000 (0x0098 - 0x0098)
 class UTaleQuestGetCollectionItemCountStep : public UTaleQuestStep
@@ -1747,6 +2247,22 @@ public:
 };
 
 
+// Class Tales.TaleQuestObstacleCourseSetupAndWaitForCompletionStep
+// 0x0008 (0x00A0 - 0x0098)
+class UTaleQuestObstacleCourseSetupAndWaitForCompletionStep : public UTaleQuestStep
+{
+public:
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0098(0x0008) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestObstacleCourseSetupAndWaitForCompletionStep"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleQuestPermanentPromptStep
 // 0x0000 (0x0098 - 0x0098)
 class UTaleQuestPermanentPromptStep : public UTaleQuestStep
@@ -1773,6 +2289,36 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestPersistentForEachCrewTaskStep"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestRemoveCommonToolsStep
+// 0x0000 (0x0098 - 0x0098)
+class UTaleQuestRemoveCommonToolsStep : public UTaleQuestStep
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestRemoveCommonToolsStep"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestRemoveQuestBookStep
+// 0x0000 (0x0098 - 0x0098)
+class UTaleQuestRemoveQuestBookStep : public UTaleQuestStep
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestRemoveQuestBookStep"));
 		return ptr;
 	}
 
@@ -1826,6 +2372,53 @@ public:
 };
 
 
+// Class Tales.TaleQuestStarFieldPuzzleDimStep
+// 0x0000 (0x0098 - 0x0098)
+class UTaleQuestStarFieldPuzzleDimStep : public UTaleQuestStep
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestStarFieldPuzzleDimStep"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestStarFieldPuzzleEndStep
+// 0x0010 (0x00A8 - 0x0098)
+class UTaleQuestStarFieldPuzzleEndStep : public UTaleQuestStep
+{
+public:
+	unsigned char                                      UnknownData00[0x10];                                      // 0x0098(0x0010) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestStarFieldPuzzleEndStep"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestStarFieldPuzzleSetupAndWaitForCompletionStep
+// 0x0018 (0x00B0 - 0x0098)
+class UTaleQuestStarFieldPuzzleSetupAndWaitForCompletionStep : public UTaleQuestStep
+{
+public:
+	unsigned char                                      UnknownData00[0x18];                                      // 0x0098(0x0018) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestStarFieldPuzzleSetupAndWaitForCompletionStep"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleQuestStartCameraFadeStep
 // 0x0000 (0x0098 - 0x0098)
 class UTaleQuestStartCameraFadeStep : public UTaleQuestStep
@@ -1835,6 +2428,22 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestStartCameraFadeStep"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestStartPermanentPromptAndWaitForEndEventStep
+// 0x0028 (0x00C0 - 0x0098)
+class UTaleQuestStartPermanentPromptAndWaitForEndEventStep : public UTaleQuestStep
+{
+public:
+	unsigned char                                      UnknownData00[0x28];                                      // 0x0098(0x0028) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestStartPermanentPromptAndWaitForEndEventStep"));
 		return ptr;
 	}
 
@@ -1901,21 +2510,6 @@ public:
 };
 
 
-// Class Tales.TaleQuestUpdateCheckpointStep
-// 0x0000 (0x0098 - 0x0098)
-class UTaleQuestUpdateCheckpointStep : public UTaleQuestStep
-{
-public:
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestUpdateCheckpointStep"));
-		return ptr;
-	}
-
-};
-
-
 // Class Tales.TaleQuestWaitForHandInStep
 // 0x0010 (0x00A8 - 0x0098)
 class UTaleQuestWaitForHandInStep : public UTaleQuestStep
@@ -1965,16 +2559,32 @@ public:
 
 
 // Class Tales.WaitForActorOfInterestToUnregisterStep
-// 0x0078 (0x0110 - 0x0098)
+// 0x0088 (0x0120 - 0x0098)
 class UWaitForActorOfInterestToUnregisterStep : public UTaleQuestStep
 {
 public:
 	class UWaitForActorOfInterestToUnregisterStepDesc* Desc;                                                     // 0x0098(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x70];                                      // 0x00A0(0x0070) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x80];                                      // 0x00A0(0x0080) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.WaitForActorOfInterestToUnregisterStep"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.WaitForActorToFullyDockStep
+// 0x0058 (0x00F0 - 0x0098)
+class UWaitForActorToFullyDockStep : public UTaleQuestStep
+{
+public:
+	unsigned char                                      UnknownData00[0x58];                                      // 0x0098(0x0058) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.WaitForActorToFullyDockStep"));
 		return ptr;
 	}
 
@@ -1999,11 +2609,11 @@ public:
 
 
 // Class Tales.WaitForHealthToReachFractionStep
-// 0x0070 (0x0108 - 0x0098)
+// 0x0080 (0x0118 - 0x0098)
 class UWaitForHealthToReachFractionStep : public UTaleQuestStep
 {
 public:
-	unsigned char                                      UnknownData00[0x70];                                      // 0x0098(0x0070) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x80];                                      // 0x0098(0x0080) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -2015,15 +2625,31 @@ public:
 
 
 // Class Tales.WaitForItemPickupStep
-// 0x00D0 (0x0168 - 0x0098)
+// 0x00E0 (0x0178 - 0x0098)
 class UWaitForItemPickupStep : public UTaleQuestStep
 {
 public:
-	unsigned char                                      UnknownData00[0xD0];                                      // 0x0098(0x00D0) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xE0];                                      // 0x0098(0x00E0) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.WaitForItemPickupStep"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.WaitForQueryableStateValueStep
+// 0x0090 (0x0128 - 0x0098)
+class UWaitForQueryableStateValueStep : public UTaleQuestStep
+{
+public:
+	unsigned char                                      UnknownData00[0x90];                                      // 0x0098(0x0090) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.WaitForQueryableStateValueStep"));
 		return ptr;
 	}
 
@@ -2096,7 +2722,7 @@ class UCallObjectFunctionStepDesc : public UTaleQuestStepDesc
 public:
 	class UObject*                                     Target;                                                   // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	struct FClassFunctionSelectionType                 Function;                                                 // 0x0088(0x0010) (Edit)
-	TMap<struct FName, struct FName>                   ParameterMappings;                                        // 0x0098(0x0050) (Edit, ZeroConstructor, EditConst)
+	TMap<struct FName, struct FQuestVariable>          ParameterQuestMappings;                                   // 0x0098(0x0050) (Edit, ZeroConstructor, EditConst)
 
 	static UClass* StaticClass()
 	{
@@ -2379,6 +3005,42 @@ public:
 };
 
 
+// Class Tales.ParticipantRadiusArrayTrackerStepDesc
+// 0x00C8 (0x0148 - 0x0080)
+class UParticipantRadiusArrayTrackerStepDesc : public UTaleQuestStepDesc
+{
+public:
+	float                                              DurationBetweenChecks;                                    // 0x0080(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0084(0x0004) MISSED OFFSET
+	struct FQuestVariableActorArray                    Actors;                                                   // 0x0088(0x0030) (Edit)
+	struct FQuestVariableVectorArray                   Locations;                                                // 0x00B8(0x0030) (Edit)
+	struct FQuestVariableFloat                         Radius;                                                   // 0x00E8(0x0030) (Edit)
+	struct FQuestVariableVector                        OutLocation;                                              // 0x0118(0x0030) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.ParticipantRadiusArrayTrackerStepDesc"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.WaitUntilAnyParticipantEntersAnyRadiusStep
+// 0x0000 (0x0148 - 0x0148)
+class UWaitUntilAnyParticipantEntersAnyRadiusStep : public UParticipantRadiusArrayTrackerStepDesc
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.WaitUntilAnyParticipantEntersAnyRadiusStep"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.ParticipantRadiusTrackerStepDesc
 // 0x0068 (0x00E8 - 0x0080)
 class UParticipantRadiusTrackerStepDesc : public UTaleQuestStepDesc
@@ -2444,7 +3106,7 @@ public:
 
 
 // Class Tales.PlaySequencerAnimationOnCutsceneActorStepDesc
-// 0x0138 (0x01B8 - 0x0080)
+// 0x0168 (0x01E8 - 0x0080)
 class UPlaySequencerAnimationOnCutsceneActorStepDesc : public UTaleQuestStepDesc
 {
 public:
@@ -2455,15 +3117,16 @@ public:
 	struct FQuestVariableActor                         SequencerCutSceneActor;                                   // 0x00C0(0x0030) (Edit)
 	struct FQuestVariableActor                         ActorToPossess;                                           // 0x00F0(0x0030) (Edit)
 	struct FQuestVariableArray                         AdditionalPossessables;                                   // 0x0120(0x0030) (Edit)
-	struct FQuestVariableActor                         InteractingActor;                                         // 0x0150(0x0030) (Edit)
-	class FString                                      PossessableName;                                          // 0x0180(0x0010) (Edit, ZeroConstructor)
-	class USceneDialogueData*                          DialogueData;                                             // 0x0190(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	TArray<struct FText>                               LocalisableNames;                                         // 0x0198(0x0010) (Edit, ZeroConstructor)
-	bool                                               IsLevelSequenceActorAlwaysRelevant;                       // 0x01A8(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	bool                                               IsLooping;                                                // 0x01A9(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x2];                                       // 0x01AA(0x0002) MISSED OFFSET
-	float                                              SubtitleSphereRadiusInCm;                                 // 0x01AC(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	class ULevelSequence*                              FemaleLevelSequence;                                      // 0x01B0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FQuestVariableActor                         ManuallySetInteractor;                                    // 0x0150(0x0030) (Edit)
+	struct FQuestVariableActor                         InteractingActor;                                         // 0x0180(0x0030) (Edit)
+	class FString                                      PossessableName;                                          // 0x01B0(0x0010) (Edit, ZeroConstructor)
+	class USceneDialogueData*                          DialogueData;                                             // 0x01C0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	TArray<struct FText>                               LocalisableNames;                                         // 0x01C8(0x0010) (Edit, ZeroConstructor)
+	bool                                               IsLevelSequenceActorAlwaysRelevant;                       // 0x01D8(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	bool                                               IsLooping;                                                // 0x01D9(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x2];                                       // 0x01DA(0x0002) MISSED OFFSET
+	float                                              SubtitleSphereRadiusInCm;                                 // 0x01DC(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	class ULevelSequence*                              FemaleLevelSequence;                                      // 0x01E0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -2686,7 +3349,7 @@ public:
 
 
 // Class Tales.SpawnPhasedItemStepDesc
-// 0x00D8 (0x0158 - 0x0080)
+// 0x0108 (0x0188 - 0x0080)
 class USpawnPhasedItemStepDesc : public UTaleQuestStepDesc
 {
 public:
@@ -2697,11 +3360,46 @@ public:
 	struct FName                                       SocketName;                                               // 0x00C0(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	struct FQuestVariableItemDescType                  Item;                                                     // 0x00C8(0x0030) (Edit)
 	struct FQuestVariableActor                         LocatorVar;                                               // 0x00F8(0x0030) (Edit)
-	struct FQuestVariableItemInfo                      SpawnedItemVar;                                           // 0x0128(0x0030) (Edit)
+	struct FQuestVariableOrientedPoint                 LocatorPoint;                                             // 0x0128(0x0030) (Edit)
+	struct FQuestVariableItemInfo                      SpawnedItemVar;                                           // 0x0158(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.SpawnPhasedItemStepDesc"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.SplinePathingActorActivationStepDesc
+// 0x0060 (0x00E0 - 0x0080)
+class USplinePathingActorActivationStepDesc : public UTaleQuestStepDesc
+{
+public:
+	struct FQuestVariableActor                         SplinePathingActor;                                       // 0x0080(0x0030) (Edit)
+	struct FQuestVariableBool                          IsActivated;                                              // 0x00B0(0x0030) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.SplinePathingActorActivationStepDesc"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.SplinePathingActorAddPrimitiveStepDesc
+// 0x0060 (0x00E0 - 0x0080)
+class USplinePathingActorAddPrimitiveStepDesc : public UTaleQuestStepDesc
+{
+public:
+	struct FQuestVariableActor                         SplinePathingActor;                                       // 0x0080(0x0030) (Edit)
+	struct FQuestVariableActor                         ActorToManipulate;                                        // 0x00B0(0x0030) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.SplinePathingActorAddPrimitiveStepDesc"));
 		return ptr;
 	}
 
@@ -2732,6 +3430,40 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.StopSuppressingCutsceneResponsesStepDesc"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestAddCommonToolsStepDesc
+// 0x0040 (0x00C0 - 0x0080)
+class UTaleQuestAddCommonToolsStepDesc : public UTaleQuestStepDesc
+{
+public:
+	TArray<class UClass*>                              ToolsToGive;                                              // 0x0080(0x0010) (Edit, ZeroConstructor)
+	struct FQuestVariableActor                         PlayerToWieldImmediately;                                 // 0x0090(0x0030) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestAddCommonToolsStepDesc"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestAddQuestBookStepDesc
+// 0x0010 (0x0090 - 0x0080)
+class UTaleQuestAddQuestBookStepDesc : public UTaleQuestStepDesc
+{
+public:
+	class UClass*                                      QuestBookDesc;                                            // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      RemapperClass;                                            // 0x0088(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestAddQuestBookStepDesc"));
 		return ptr;
 	}
 
@@ -2834,6 +3566,22 @@ public:
 };
 
 
+// Class Tales.TaleQuestAwaitCrewShipSinkStepDesc
+// 0x0030 (0x00B0 - 0x0080)
+class UTaleQuestAwaitCrewShipSinkStepDesc : public UTaleQuestStepDesc
+{
+public:
+	struct FQuestVariableGuid                          CrewId;                                                   // 0x0080(0x0030) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestAwaitCrewShipSinkStepDesc"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleQuestChooseIslandFromWeightsStepDesc
 // 0x0098 (0x0118 - 0x0080)
 class UTaleQuestChooseIslandFromWeightsStepDesc : public UTaleQuestStepDesc
@@ -2847,22 +3595,6 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestChooseIslandFromWeightsStepDesc"));
-		return ptr;
-	}
-
-};
-
-
-// Class Tales.TaleQuestClearTaleProposalsStepDesc
-// 0x0008 (0x0088 - 0x0080)
-class UTaleQuestClearTaleProposalsStepDesc : public UTaleQuestStepDesc
-{
-public:
-	struct FName                                       CampaignId;                                               // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestClearTaleProposalsStepDesc"));
 		return ptr;
 	}
 
@@ -2918,6 +3650,25 @@ public:
 };
 
 
+// Class Tales.TaleQuestEnumSwitchStepDesc
+// 0x0090 (0x0110 - 0x0080)
+class UTaleQuestEnumSwitchStepDesc : public UTaleQuestStepDesc
+{
+public:
+	struct FQuestVariable                              EnumVar;                                                  // 0x0080(0x0030) (Edit, EditConst)
+	class UEnum*                                       Enum;                                                     // 0x00B0(0x0008) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
+	class UTaleQuestStepDesc*                          DefaultBranch;                                            // 0x00B8(0x0008) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
+	TMap<int, class UTaleQuestStepDesc*>               Branches;                                                 // 0x00C0(0x0050) (Edit, ZeroConstructor, EditConst)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestEnumSwitchStepDesc"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleQuestEventStepDescBase
 // 0x0060 (0x00E0 - 0x0080)
 class UTaleQuestEventStepDescBase : public UTaleQuestStepDesc
@@ -2925,7 +3676,7 @@ class UTaleQuestEventStepDescBase : public UTaleQuestStepDesc
 public:
 	class UObject*                                     Dispatcher;                                               // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 	struct FNativeAndUserDefinedStructSelector         EventType;                                                // 0x0088(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	TMap<struct FName, struct FName>                   ArgumentMappings;                                         // 0x0090(0x0050) (Edit, ZeroConstructor, EditConst)
+	TMap<struct FName, struct FQuestVariable>          ArgumentVarMappings;                                      // 0x0090(0x0050) (Edit, ZeroConstructor, EditConst)
 
 	static UClass* StaticClass()
 	{
@@ -3046,6 +3797,25 @@ public:
 };
 
 
+// Class Tales.TaleQuestGetArrayElementStepDesc
+// 0x0068 (0x00E8 - 0x0080)
+class UTaleQuestGetArrayElementStepDesc : public UTaleQuestStepDesc
+{
+public:
+	struct FQuestVariableArray                         InputArray;                                               // 0x0080(0x0030) (Edit)
+	int                                                Index;                                                    // 0x00B0(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x00B4(0x0004) MISSED OFFSET
+	struct FQuestVariableAny                           OutputEntry;                                              // 0x00B8(0x0030) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestGetArrayElementStepDesc"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleQuestGetCollectionItemCountStepDesc
 // 0x0060 (0x00E0 - 0x0080)
 class UTaleQuestGetCollectionItemCountStepDesc : public UTaleQuestStepDesc
@@ -3120,6 +3890,22 @@ public:
 };
 
 
+// Class Tales.TaleQuestObstacleCourseSetupAndWaitForCompletionStepDesc
+// 0x0030 (0x00B0 - 0x0080)
+class UTaleQuestObstacleCourseSetupAndWaitForCompletionStepDesc : public UTaleQuestStepDesc
+{
+public:
+	struct FQuestVariableActor                         ObstacleCourseActor;                                      // 0x0080(0x0030) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestObstacleCourseSetupAndWaitForCompletionStepDesc"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleQuestPermanentPromptStepDesc
 // 0x0038 (0x00B8 - 0x0080)
 class UTaleQuestPermanentPromptStepDesc : public UTaleQuestStepDesc
@@ -3138,40 +3924,70 @@ public:
 };
 
 
-// Class Tales.TaleQuestRunnableStepDesc
-// 0x0068 (0x00E8 - 0x0080)
-class UTaleQuestRunnableStepDesc : public UTaleQuestStepDesc
+// Class Tales.TaleQuestRemoveCommonToolsStepDesc
+// 0x0010 (0x0090 - 0x0080)
+class UTaleQuestRemoveCommonToolsStepDesc : public UTaleQuestStepDesc
 {
 public:
-	unsigned char                                      UnknownData00[0x68];                                      // 0x0080(0x0068) MISSED OFFSET
+	TArray<class UClass*>                              ToolsToRemove;                                            // 0x0080(0x0010) (Edit, ZeroConstructor)
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestRunnableStepDesc"));
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestRemoveCommonToolsStepDesc"));
 		return ptr;
 	}
 
 };
 
 
-// Class Tales.TaleQuestFunctionStepLibrary
-// 0x0098 (0x0180 - 0x00E8)
-class UTaleQuestFunctionStepLibrary : public UTaleQuestRunnableStepDesc
+// Class Tales.TaleQuestRemoveQuestBookStepDesc
+// 0x0000 (0x0080 - 0x0080)
+class UTaleQuestRemoveQuestBookStepDesc : public UTaleQuestStepDesc
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x00E8(0x0008) MISSED OFFSET
-	class UFunction*                                   Function;                                                 // 0x00F0(0x0008) (ZeroConstructor, IsPlainOldData)
-	TMap<struct FName, struct FQuestVariable>          ParameterMappings;                                        // 0x00F8(0x0050) (Edit, ZeroConstructor, EditConst)
-	unsigned char                                      UnknownData01[0x30];                                      // 0x0148(0x0030) MISSED OFFSET
-	unsigned char                                      FunctionStepFlags;                                        // 0x0178(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x7];                                       // 0x0179(0x0007) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestFunctionStepLibrary"));
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestRemoveQuestBookStepDesc"));
 		return ptr;
 	}
 
+};
+
+
+// Class Tales.TaleQuestCopyValueStepDesc
+// 0x0060 (0x0148 - 0x00E8)
+class UTaleQuestCopyValueStepDesc : public UTaleQuestRunnableStepDesc
+{
+public:
+	struct FQuestVariable                              FromVar;                                                  // 0x00E8(0x0030) (Edit, EditConst)
+	struct FQuestVariable                              ToVar;                                                    // 0x0118(0x0030) (Edit, EditConst)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestCopyValueStepDesc"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.ActorOfInterestTaleFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UActorOfInterestTaleFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.ActorOfInterestTaleFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void GetActorsOfInterestForId(class UClass* ActorsOfInterestId, TArray<class AActor*>* Actors);
+	TArray<class AActor*> GetActorsOfInterest(TArray<class UClass*> ActorsOfInterestId);
+	class AActor* GetActorOfInterest(class UClass* ActorOfInterestId);
 };
 
 
@@ -3191,7 +4007,26 @@ public:
 	class AActor* SpawnActor(class UClass* What, const struct FTransform& Where, bool TrackActor, bool AutomaticallyGatherForMigration);
 	class AActor* ResolveActor(TAssetPtr<class AActor> ActorReference);
 	static TScriptInterface<class UInterface> GetInterface(class AActor* Actor, class UClass* InterfaceClass);
+	class UActorComponent* GetComponentByClass(class AActor* Actor, class UClass* ComponentClass);
 	static struct FTransform GetActorTransform(class AActor* Actor);
+};
+
+
+// Class Tales.TaleQuestAnimationMontageFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestAnimationMontageFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestAnimationMontageFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void PushSetNextMontageSectionCommand(class AClientCommandHandler* CommandHandler, class AActor* TargetActor, class UAnimMontage* Montage, const struct FName& FromSectionName, const struct FName& ToSectionName);
+	float PushJumpToMontageSectionCommand(class AClientCommandHandler* CommandHandler, class AActor* TargetActor, class UAnimMontage* Montage, const struct FName& SectionName);
 };
 
 
@@ -3209,6 +4044,279 @@ public:
 
 
 	static struct FPossessableSequence MakePosseableSequence(class AActor* ActorToPossess, const class FString& TrackNameToPossess);
+};
+
+
+// Class Tales.TaleQuestAudioFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestAudioFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestAudioFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void PlayOneShot(const TScriptInterface<class UMusicZoneInterface>& MusicZone, int OneShotIndex);
+};
+
+
+// Class Tales.TaleQuestCharacterFunctionStepLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestCharacterFunctionStepLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestCharacterFunctionStepLibrary"));
+		return ptr;
+	}
+
+
+	static void EnableCharacterInput(class AActor* Character);
+	static void DisableCharacterInput(class AActor* Character);
+};
+
+
+// Class Tales.TaleQuestClassFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestClassFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestClassFunctionLibrary"));
+		return ptr;
+	}
+
+
+	bool IsChildOf(class UClass* Class, class UClass* BaseClass);
+	bool Equals_Class(class UClass* Left, class UClass* Right);
+};
+
+
+// Class Tales.TaleQuestClientCommandFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestClientCommandFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestClientCommandFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void PushStopMontageAnimationCommand(class AClientCommandHandler* CommandHandler, class AActor* TargetActor, class UAnimMontage* Montage, float BlendOutTime);
+	float PushPlayMontageAnimationCommand(class AClientCommandHandler* CommandHandler, class AActor* TargetActor, class UAnimMontage* Montage, float PlayRate, float Position);
+	class AClientCommandHandler* CreateCommandHandler();
+};
+
+
+// Class Tales.TaleQuestConversionFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestConversionFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestConversionFunctionLibrary"));
+		return ptr;
+	}
+
+
+	class FString TextToString(const struct FText& Text);
+	struct FName TextToName(const struct FText& Text);
+	struct FText StringToText(const class FString& String);
+	struct FName StringToName(const class FString& String);
+	struct FText NameToText(const struct FName& Name);
+	class FString NameToString(const struct FName& Name);
+	class FString IntToString(int Int);
+	float IntToFloat(int Int);
+	class FString FloatToString(float Float);
+	int FloatToInt(float Float);
+	class FString BoolToString(bool Bool);
+};
+
+
+// Class Tales.TaleQuestCoreFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestCoreFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestCoreFunctionLibrary"));
+		return ptr;
+	}
+
+
+	class AGameState* GetGameState();
+};
+
+
+// Class Tales.TaleQuestCrewFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestCrewFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestCrewFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void AddCrewShipToCrew(const struct FGuid& CrewId, class AShip* Ship);
+};
+
+
+// Class Tales.TaleQuestCurveFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestCurveFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestCurveFunctionLibrary"));
+		return ptr;
+	}
+
+
+	float SampleCurve_Float(class UCurveFloat* Curve, float Time);
+};
+
+
+// Class Tales.TaleQuestCutscenesFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestCutscenesFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestCutscenesFunctionLibrary"));
+		return ptr;
+	}
+
+
+	static void FireEventCutsceneTargetReady(class AActor* TargetRetrievalActor, class AActor* TargetActor);
+};
+
+
+// Class Tales.TaleQuestDeathFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestDeathFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestDeathFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void WaitForParticipantDeath(class ACharacter** DyingParticipant, struct FDamageInstance* FinalBlow, TEnumAsByte<ECharacterDeathType>* DeathType);
+	void Kill(const TScriptInterface<class UKillableCharacterInterface>& KillableCharacter, TEnumAsByte<ECharacterDeathType> DeathType);
+};
+
+
+// Class Tales.TaleQuestDialogueFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestDialogueFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestDialogueFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void WatchForNPCDialogueInteractionWithQueryableState(class AActor* DialogueActor, class ACharacter** InteractingCharacter, class UClass** DataID);
+	void WatchForNPCDialogueInteraction(class AActor* DialogueActor, class ACharacter** InteractingCharacter, struct FName* DialogueEvent);
+	void WaitForNPCDialogueInteractionWithQueryableState(class AActor* DialogueActor, class UClass* ExpectedDataID, class ACharacter** InteractingCharacter);
+	void SetDialogueInteractionPrompt(class AClientCommandHandler* CommandHandler, class UNPCDialogComponent* DialogueComponent, const struct FText& Prompt);
+	void SetDialogueInteractionEnabled(const TScriptInterface<class UNPCDialogComponentInterface>& DialogueComponent, bool Enabled);
+};
+
+
+// Class Tales.TaleQuestEmoteFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestEmoteFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestEmoteFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void PushIntoEmoteActionState(class AActor* Target, class UEmoteInfo* EmoteInfo, bool ForcedEmote);
+};
+
+
+// Class Tales.TaleQuestFloatMathsFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestFloatMathsFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestFloatMathsFunctionLibrary"));
+		return ptr;
+	}
+
+
+	float Subtract_Float(float Left, float Right);
+	float RandRange(float Min, float Max);
+	bool NotEquals_Float(float Left, float Right);
+	float Multiply_Float(float Left, float Right);
+	float Modulus_Float(float Left, float Right, float* Reminder);
+	bool LessThanOrEqual_Float(float Left, float Right);
+	bool LessThan(float Left, float Right);
+	bool GreaterThanOrEqual_Float(float Left, float Right);
+	bool GreaterThan(float Left, float Right);
+	bool Equals_Float(float Left, float Right);
+	float Divide_Float(float Left, float Right);
+	float Add_Float(float Left, float Right);
+};
+
+
+// Class Tales.TaleQuestHealthFunctionStepLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestHealthFunctionStepLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestHealthFunctionStepLibrary"));
+		return ptr;
+	}
+
+
+	void SetMaxHealth(const TScriptInterface<class UHealthInterface>& HealthInterface, float Health);
+	void SetHealthChangeEnabled(const TScriptInterface<class UHealthInterface>& HealthInterface, bool Enabled);
+	static void SetHealth(const TScriptInterface<class UHealthInterface>& HealthInterface, float Health, TEnumAsByte<EHealthChangedReason> Reason);
+	void ResetToMaxHealth(const TScriptInterface<class UHealthInterface>& HealthInterface);
+	float GetMaxHealth(const TScriptInterface<class UHealthInterface>& HealthInterface);
+	static float GetHealth(const TScriptInterface<class UHealthInterface>& HealthInterface);
 };
 
 
@@ -3241,6 +4349,24 @@ public:
 };
 
 
+// Class Tales.TaleQuestItemFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestItemFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestItemFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void WaitForItemHandIn(const TScriptInterface<class UNPCCustomItemPurchaseInterface>& NPC, class UClass* Item, TScriptInterface<class UVoyageParticipantInterface>* HandInParticipant);
+	class AItemInfo* SpawnAndWieldItem(class AActor* Wielder, class UClass* Item, bool TrackItem, bool MarkItemAsCritical, const struct FText& CritialItemLostMessage);
+};
+
+
 // Class Tales.TaleQuestLogicFunctionLibrary
 // 0x0000 (0x0180 - 0x0180)
 class UTaleQuestLogicFunctionLibrary : public UTaleQuestFunctionStepLibrary
@@ -3254,9 +4380,28 @@ public:
 	}
 
 
+	static bool Logic_XOr(bool Left, bool Right);
 	static bool Logic_Or(bool Left, bool Right);
 	static bool Logic_Not(bool Value);
 	static bool Logic_And(bool Left, bool Right);
+};
+
+
+// Class Tales.TaleQuestModifyPagesFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestModifyPagesFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestModifyPagesFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void ReplacePages(TArray<class UQuestBookPageBundle*> Pages, TArray<class UQuestBookPageBundle*> PagesToReplace);
+	void ModifyPagesAtIndex(TArray<class UQuestBookPageBundle*> Pages, int BookPageIndex, TEnumAsByte<EModifyAtIndexType> ModifyTypeEnum);
 };
 
 
@@ -3291,6 +4436,7 @@ public:
 
 
 	static bool IsNone(const struct FName& Name);
+	bool Equals(const struct FName& Left, const struct FName& Right);
 };
 
 
@@ -3309,6 +4455,161 @@ public:
 
 	void FadeOut(class AActor* InActor);
 	void FadeIn(class AActor* InActor);
+};
+
+
+// Class Tales.TaleQuestOfferingNPCFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestOfferingNPCFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestOfferingNPCFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void OfferItemAndWaitForPickup(const TScriptInterface<class UOfferingNPCInterface>& OfferingNPC, class UClass* ItemToShow, class UClass* ItemToOffer, const struct FText& PickupItemTooltip, const struct FText& CannotPickupItemTooltip);
+};
+
+
+// Class Tales.TaleQuestParticipantFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestParticipantFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestParticipantFunctionLibrary"));
+		return ptr;
+	}
+
+
+	TArray<TScriptInterface<class UVoyageParticipantInterface>> GetParticipants();
+	class ACharacter* GetParticipantCharacter(const TScriptInterface<class UVoyageParticipantInterface>& Participant);
+};
+
+
+// Class Tales.TaleQuestQueryableStateAddToIntFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestQueryableStateAddToIntFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestQueryableStateAddToIntFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void AddToIntQueryableState(class UClass* DataID, int DataToAdd);
+};
+
+
+// Class Tales.TaleQuestQueryableStateReadBoolFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestQueryableStateReadBoolFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestQueryableStateReadBoolFunctionLibrary"));
+		return ptr;
+	}
+
+
+	bool ReadBoolQueryableState(class UClass* DataID, bool* DataValue);
+};
+
+
+// Class Tales.TaleQuestQueryableStateReadIntFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestQueryableStateReadIntFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestQueryableStateReadIntFunctionLibrary"));
+		return ptr;
+	}
+
+
+	bool ReadIntQueryableState(class UClass* DataID, int* DataValue);
+};
+
+
+// Class Tales.TaleQuestQueryableStateWriteBoolFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestQueryableStateWriteBoolFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestQueryableStateWriteBoolFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void WriteBoolQueryableState(class UClass* DataID, bool DataValue);
+};
+
+
+// Class Tales.TaleQuestQueryableStateWriteIntFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestQueryableStateWriteIntFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestQueryableStateWriteIntFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void WriteIntQueryableState(class UClass* DataID, int DataValue);
+};
+
+
+// Class Tales.TaleQuestShantyFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestShantyFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestShantyFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void StopShantyMusic(class AShantyPlayer* InShantyPlayer);
+	void StartShantyMusic(class AShantyPlayer* InShantyPlayer);
+};
+
+
+// Class Tales.TaleQuestSpawnShipFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestSpawnShipFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestSpawnShipFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void SpawnShipFromClass(TAssetPtr<class UClass> ShipClassToSpawn, const struct FTransform& ShipSpawnTransform, class UClass* ShipSize, class UClass* ShipType, class UClass* ShipCategory, class AShip** SpawnedShip);
 };
 
 
@@ -3382,6 +4683,7 @@ public:
 	}
 
 
+	struct FVector ToVector(const struct FTransform& InTransform);
 	static struct FTransform FromVector(const struct FVector& InTranslation);
 	static struct FTransform FromOrientedPoint(const struct FOrientedPoint& InOrientedPoint);
 };
@@ -3418,6 +4720,47 @@ public:
 
 
 	void FailTale(const struct FText& FailureMessage);
+};
+
+
+// Class Tales.TaleQuestValueFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestValueFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestValueFunctionLibrary"));
+		return ptr;
+	}
+
+
+	struct FText Make_Text(const struct FText& Value);
+	class FString Make_String(const class FString& Value);
+	struct FName Make_Name(const struct FName& Value);
+	int Make_Int32(int Value);
+	float Make_Float(float Value);
+	bool Make_Bool(bool Value);
+	class FString Append_String(const class FString& Prefix, const class FString& Value, const class FString& Suffix);
+};
+
+
+// Class Tales.TaleQuestVectorMathsFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestVectorMathsFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestVectorMathsFunctionLibrary"));
+		return ptr;
+	}
+
+
+	float DistanceSquared(const struct FVector& From, const struct FVector& To);
+	float Distance(const struct FVector& From, const struct FVector& To);
 };
 
 
@@ -3491,6 +4834,54 @@ public:
 };
 
 
+// Class Tales.TaleQuestStarFieldPuzzleDimStepDesc
+// 0x0030 (0x00B0 - 0x0080)
+class UTaleQuestStarFieldPuzzleDimStepDesc : public UTaleQuestStepDesc
+{
+public:
+	struct FQuestVariableActor                         StarFieldPuzzleActor;                                     // 0x0080(0x0030) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestStarFieldPuzzleDimStepDesc"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestStarFieldPuzzleEndStepDesc
+// 0x0030 (0x00B0 - 0x0080)
+class UTaleQuestStarFieldPuzzleEndStepDesc : public UTaleQuestStepDesc
+{
+public:
+	struct FQuestVariableActor                         StarFieldPuzzleActor;                                     // 0x0080(0x0030) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestStarFieldPuzzleEndStepDesc"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestStarFieldPuzzleSetupAndWaitForCompletionStepDesc
+// 0x0030 (0x00B0 - 0x0080)
+class UTaleQuestStarFieldPuzzleSetupAndWaitForCompletionStepDesc : public UTaleQuestStepDesc
+{
+public:
+	struct FQuestVariableActor                         StarFieldPuzzleActor;                                     // 0x0080(0x0030) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestStarFieldPuzzleSetupAndWaitForCompletionStepDesc"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleQuestStartCameraFadeStepDesc
 // 0x0020 (0x00A0 - 0x0080)
 class UTaleQuestStartCameraFadeStepDesc : public UTaleQuestStepDesc
@@ -3513,13 +4904,29 @@ public:
 };
 
 
+// Class Tales.TaleQuestStartPermanentPromptAndWaitForEndEventStepDesc
+// 0x0030 (0x00B0 - 0x0080)
+class UTaleQuestStartPermanentPromptAndWaitForEndEventStepDesc : public UTaleQuestStepDesc
+{
+public:
+	struct FQuestVariablePrioritisedPrompt             Prompt;                                                   // 0x0080(0x0030) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestStartPermanentPromptAndWaitForEndEventStepDesc"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleQuestStructStepDescBase
 // 0x0058 (0x00D8 - 0x0080)
 class UTaleQuestStructStepDescBase : public UTaleQuestStepDesc
 {
 public:
 	class UScriptStruct*                               Struct;                                                   // 0x0080(0x0008) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
-	TMap<struct FName, struct FName>                   PropertyMappings;                                         // 0x0088(0x0050) (Edit, ZeroConstructor, EditConst)
+	TMap<struct FName, struct FQuestVariable>          PropertyVarMappings;                                      // 0x0088(0x0050) (Edit, ZeroConstructor, EditConst)
 
 	static UClass* StaticClass()
 	{
@@ -3576,6 +4983,21 @@ public:
 };
 
 
+// Class Tales.TaleMigrationVolatileTaskStepDesc
+// 0x0000 (0x0088 - 0x0088)
+class UTaleMigrationVolatileTaskStepDesc : public UTaleQuestTaskStepDescBase
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleMigrationVolatileTaskStepDesc"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.TaleQuestCrewTaskStepDesc
 // 0x0030 (0x00B8 - 0x0088)
 class UTaleQuestCrewTaskStepDesc : public UTaleQuestTaskStepDescBase
@@ -3618,24 +5040,6 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestToggleAmbientMigrationForServerStepDesc"));
-		return ptr;
-	}
-
-};
-
-
-// Class Tales.TaleQuestUpdateCheckpointStepDesc
-// 0x0018 (0x0098 - 0x0080)
-class UTaleQuestUpdateCheckpointStepDesc : public UTaleQuestStepDesc
-{
-public:
-	struct FRewardId                                   RewardIdToAward;                                          // 0x0080(0x0008) (Edit)
-	struct FName                                       CampaignIdToRemove;                                       // 0x0088(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FName                                       Feature;                                                  // 0x0090(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestUpdateCheckpointStepDesc"));
 		return ptr;
 	}
 
@@ -3710,6 +5114,23 @@ public:
 };
 
 
+// Class Tales.WaitForActorToFullyDockStepDesc
+// 0x0060 (0x00E0 - 0x0080)
+class UWaitForActorToFullyDockStepDesc : public UTaleQuestStepDesc
+{
+public:
+	struct FQuestVariableActor                         DockerActor;                                              // 0x0080(0x0030) (Edit)
+	struct FQuestVariableActor                         DockableTargetActor;                                      // 0x00B0(0x0030) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.WaitForActorToFullyDockStepDesc"));
+		return ptr;
+	}
+
+};
+
+
 // Class Tales.WaitForGameEventToCompleteStepDesc
 // 0x0030 (0x00B0 - 0x0080)
 class UWaitForGameEventToCompleteStepDesc : public UTaleQuestStepDesc
@@ -3755,6 +5176,57 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.WaitForItemPickupStepDesc"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.WaitForQueryableStateValueStepDescBase
+// 0x0008 (0x0088 - 0x0080)
+class UWaitForQueryableStateValueStepDescBase : public UTaleQuestStepDesc
+{
+public:
+	class UClass*                                      DataID;                                                   // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.WaitForQueryableStateValueStepDescBase"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.WaitForQueryableStateValueBoolStepDesc
+// 0x0008 (0x0090 - 0x0088)
+class UWaitForQueryableStateValueBoolStepDesc : public UWaitForQueryableStateValueStepDescBase
+{
+public:
+	bool                                               ExpectedValue;                                            // 0x0088(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0089(0x0007) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.WaitForQueryableStateValueBoolStepDesc"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.WaitForQueryableStateValueIntStepDesc
+// 0x0008 (0x0090 - 0x0088)
+class UWaitForQueryableStateValueIntStepDesc : public UWaitForQueryableStateValueStepDescBase
+{
+public:
+	int                                                ExpectedValue;                                            // 0x0088(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ETaleQuestQueryableStateDataIntComparison> ComparisonType;                                           // 0x008C(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x008D(0x0003) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.WaitForQueryableStateValueIntStepDesc"));
 		return ptr;
 	}
 
@@ -3808,6 +5280,40 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestSelectShipwreckLocationFromValidCandidatesStepDesc"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestClearTaleProposalsStepDesc
+// 0x0008 (0x0088 - 0x0080)
+class UTaleQuestClearTaleProposalsStepDesc : public UTaleQuestStepDesc
+{
+public:
+	struct FName                                       CampaignId;                                               // 0x0080(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestClearTaleProposalsStepDesc"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestUpdateCheckpointStepDesc
+// 0x0018 (0x0098 - 0x0080)
+class UTaleQuestUpdateCheckpointStepDesc : public UTaleQuestStepDesc
+{
+public:
+	struct FRewardId                                   RewardIdToAward;                                          // 0x0080(0x0008) (Edit)
+	struct FName                                       CampaignIdToRemove;                                       // 0x0088(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FName                                       Feature;                                                  // 0x0090(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestUpdateCheckpointStepDesc"));
 		return ptr;
 	}
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class SafeZoneReservationFramework.SafeZoneComponent
-// 0x0140 (0x0720 - 0x05E0)
+// 0x0150 (0x0730 - 0x05E0)
 class USafeZoneComponent : public UCapsuleComponent
 {
 public:
@@ -51,7 +51,7 @@ public:
 	unsigned char                                      UnknownData08[0x2];                                       // 0x06C6(0x0002) MISSED OFFSET
 	struct FName                                       CurrentCollisionProfile;                                  // 0x06C8(0x0008) (Net, ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<ESafeZoneState>                        SafeZoneState;                                            // 0x06D0(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData09[0x4F];                                      // 0x06D1(0x004F) MISSED OFFSET
+	unsigned char                                      UnknownData09[0x5F];                                      // 0x06D1(0x005F) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

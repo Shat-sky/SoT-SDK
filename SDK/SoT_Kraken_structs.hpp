@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -8,11 +8,11 @@
 
 #include "SoT_Basic.hpp"
 #include "SoT_Kraken_enums.hpp"
+#include "SoT_StatusEffects_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_Athena_classes.hpp"
 #include "SoT_AIModule_classes.hpp"
-#include "SoT_StatusEffects_classes.hpp"
 #include "SoT_Maths_classes.hpp"
 
 namespace SDK
@@ -380,18 +380,14 @@ struct FKrakenPlayerGrabbingBehaviourParams : public FKrakenTentacleBehaviourPar
 };
 
 // ScriptStruct Kraken.KrakenServiceSpawnParams
-// 0x0080
+// 0x0018
 struct FKrakenServiceSpawnParams
 {
 	float                                              SpawnLocationDistributionRadius;                          // 0x0000(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	float                                              SpawnLocationDistributionMinDistanceBetweenPoints;        // 0x0004(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	float                                              SpawnDistanceInFrontOfShip;                               // 0x0008(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x000C(0x0004) MISSED OFFSET
-	struct FWeightedProbabilityRangeOfRanges           TimeBetweenSpawnAttemptsRange;                            // 0x0010(0x0030) (Edit, DisableEditOnInstance)
-	struct FWeightedProbabilityRangeOfRanges           TimeBetweenSpawnAttemptsPostSpawnFailure;                 // 0x0040(0x0030) (Edit, DisableEditOnInstance)
-	float                                              SpawnChance;                                              // 0x0070(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	int                                                MaxConsecutiveFailedSpawnAttempts;                        // 0x0074(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UEnvQuery*                                   SpawnLocationQuery;                                       // 0x0078(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UEnvQuery*                                   SpawnLocationQuery;                                       // 0x0010(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 };
 
 // ScriptStruct Kraken.KrakenServiceShipParams
@@ -404,13 +400,13 @@ struct FKrakenServiceShipParams
 };
 
 // ScriptStruct Kraken.KrakenServiceParams
-// 0x00A0
+// 0x0038
 struct FKrakenServiceParams
 {
 	class UClass*                                      KrakenType;                                               // 0x0000(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FKrakenServiceSpawnParams                   SpawnParams;                                              // 0x0008(0x0080) (Edit, DisableEditOnInstance)
-	class UKrakenParamsDataAsset*                      DefaultKrakenParams;                                      // 0x0088(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	TArray<struct FKrakenServiceShipParams>            KrakenParams;                                             // 0x0090(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	struct FKrakenServiceSpawnParams                   SpawnParams;                                              // 0x0008(0x0018) (Edit, DisableEditOnInstance)
+	class UKrakenParamsDataAsset*                      DefaultKrakenParams;                                      // 0x0020(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	TArray<struct FKrakenServiceShipParams>            KrakenParams;                                             // 0x0028(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 };
 
 // ScriptStruct Kraken.KrakenShipHittingBehaviourImpactParams

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_tls_lantern_smp_01_a_Wieldable.BP_tls_lantern_smp_01_a_Wieldable_C
-// 0x0000 (0x09B8 - 0x09B8)
+// 0x0000 (0x0A38 - 0x0A38)
 class ABP_tls_lantern_smp_01_a_Wieldable_C : public ABP_Lantern_C
 {
 public:

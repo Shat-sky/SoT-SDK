@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // AnimBlueprintGeneratedClass BP_Anim_Orderofsouls.BP_Anim_Orderofsouls_C
-// 0x0000 (0x1EE4 - 0x1EE4)
+// 0x0000 (0x2D2C - 0x2D2C)
 class UBP_Anim_Orderofsouls_C : public UBP_Anim_NPC_C
 {
 public:

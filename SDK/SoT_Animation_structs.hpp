@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -269,14 +269,14 @@ struct FAnimationLookAtParams
 };
 
 // ScriptStruct Animation.AnimationLookAt
-// 0x0098
+// 0x00A8
 struct FAnimationLookAt
 {
 	unsigned char                                      UnknownData00[0x8];                                       // 0x0000(0x0008) MISSED OFFSET
 	struct FAnimationLookAtParams                      Params;                                                   // 0x0008(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly)
 	struct FVector                                     LookAtTarget;                                             // 0x0014(0x000C) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	bool                                               IKLookAtActive;                                           // 0x0020(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x77];                                      // 0x0021(0x0077) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x87];                                      // 0x0021(0x0087) MISSED OFFSET
 };
 
 // ScriptStruct Animation.EventAnimationLookAtUpdated
@@ -308,6 +308,17 @@ struct FAnimNode_WeightedLoadOnDemandSquencePlayer : public FAnimNode_AssetPlaye
 	class UAnimSequence*                               CurrentSequence;                                          // 0x0058(0x0008) (ZeroConstructor, IsPlainOldData)
 	class UAnimSequence*                               NextSequence;                                             // 0x0060(0x0008) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData02[0x8];                                       // 0x0068(0x0008) MISSED OFFSET
+};
+
+// ScriptStruct Animation.WeightedAnimationLoadOnDemandDataMetaData
+// 0x0038
+struct FWeightedAnimationLoadOnDemandDataMetaData
+{
+	TArray<struct FWeightedAnimationData>              AnimationList;                                            // 0x0000(0x0010) (ZeroConstructor)
+	class FString                                      AssetName;                                                // 0x0010(0x0010) (ZeroConstructor)
+	class FString                                      FallbackSkeletonName;                                     // 0x0020(0x0010) (ZeroConstructor)
+	bool                                               FallbackValidAdditive;                                    // 0x0030(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0031(0x0007) MISSED OFFSET
 };
 
 // ScriptStruct Animation.EventCustomAnimationMontageExitRequested
@@ -364,10 +375,10 @@ struct FWeightedAnimationTimeoutSelector
 };
 
 // ScriptStruct Animation.Docker
-// 0x0050
+// 0x0090
 struct FDocker
 {
-	unsigned char                                      UnknownData00[0x50];                                      // 0x0000(0x0050) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x90];                                      // 0x0000(0x0090) MISSED OFFSET
 };
 
 }

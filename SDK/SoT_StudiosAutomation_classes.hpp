@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -26,7 +26,8 @@ public:
 	bool                                               RunInEditor;                                              // 0x03DB(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	bool                                               RunOnServer;                                              // 0x03DC(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	bool                                               RequiresServices;                                         // 0x03DD(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x2];                                       // 0x03DE(0x0002) MISSED OFFSET
+	bool                                               OptOutOfFixedFrameTime;                                   // 0x03DE(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x1];                                       // 0x03DF(0x0001) MISSED OFFSET
 	TArray<struct FTestLevelMetadataEntry>             AdditionalMetadata;                                       // 0x03E0(0x0010) (Edit, ZeroConstructor)
 	TEnumAsByte<EPerformanceCaptureType>               CaptureType;                                              // 0x03F0(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<ETestAutomationPlayModeOverride>       PlayModeOverride;                                         // 0x03F1(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
@@ -99,6 +100,21 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StudiosAutomation.ActorThatLogsErrorWhenTicked"));
+		return ptr;
+	}
+
+};
+
+
+// Class StudiosAutomation.AggregateAssetAudit
+// 0x0000 (0x0028 - 0x0028)
+class UAggregateAssetAudit : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class StudiosAutomation.AggregateAssetAudit"));
 		return ptr;
 	}
 

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -213,6 +213,37 @@ public:
 };
 
 
+// Class Maths.PendulumBlueprintFunctionLibrary
+// 0x0000 (0x0028 - 0x0028)
+class UPendulumBlueprintFunctionLibrary : public UBlueprintFunctionLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Maths.PendulumBlueprintFunctionLibrary"));
+		return ptr;
+	}
+
+
+	static void ToggleSwingDirection(struct FPendulum* InPendulum);
+	static void Tick(float InDeltaTime, struct FPendulum* InPendulum);
+	static void StopPendulum(struct FPendulum* InPendulum);
+	static void StartPendulum(struct FPendulum* InPendulum);
+	static void SetRPM(float InRPM, struct FPendulum* InPendulum);
+	static void SetMinAngleDegrees(float InMin, struct FPendulum* InPendulum);
+	static void SetMaxAngleDegrees(float InMax, struct FPendulum* InPendulum);
+	static void SetLength(float InLength, struct FPendulum* InPendulum);
+	static float GetRPM(struct FPendulum* InPendulum);
+	static struct FTransform GetPendulumTransform(struct FPendulum* InPendulum);
+	static float GetPendulumAngleDegrees(struct FPendulum* InPendulum);
+	static float GetMinAngleDegrees(struct FPendulum* InPendulum);
+	static float GetMaxAngleDegrees(struct FPendulum* InPendulum);
+	static float GetLength(struct FPendulum* InPendulum);
+	static void DebugDrawPendulum(class AActor* WorldContext, const struct FTransform& PendulumCenter, struct FPendulum* InPendulum);
+};
+
+
 // Class Maths.PoissonDiscSampling
 // 0x0000 (0x0028 - 0x0028)
 class UPoissonDiscSampling : public UBlueprintFunctionLibrary
@@ -400,6 +431,7 @@ public:
 	static TEnumAsByte<EPlaneLineIntersectionType> IntersectLineSegmentWithPlane(const struct FVector& LineStart, const struct FVector& LineEnd, const struct FVector& PlanePos, const struct FVector& PlaneNormal, float PlaneThickness, struct FVector* IntersectionPos, float* NormalisedIntersectionTOnLineSegment);
 	static float Distance(const struct FVector& A, const struct FVector& B);
 	static float Cross_Vector2DVector2D(const struct FVector2D& A, const struct FVector2D& B);
+	static bool ContainsNaN(const struct FVector& Vector);
 };
 
 

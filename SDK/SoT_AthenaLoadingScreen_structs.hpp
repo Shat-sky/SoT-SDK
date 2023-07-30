@@ -1,15 +1,15 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
-#include "SoT_SlateCore_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
+#include "SoT_SlateCore_classes.hpp"
 
 namespace SDK
 {
@@ -17,12 +17,35 @@ namespace SDK
 //Script Structs
 //---------------------------------------------------------------------------
 
+// ScriptStruct AthenaLoadingScreen.SlateLoadingScreenAdvancedTipDescription
+// 0x00C0
+struct FSlateLoadingScreenAdvancedTipDescription
+{
+	struct FText                                       Text;                                                     // 0x0000(0x0038) (Edit)
+	float                                              Centre;                                                   // 0x0038(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              TopEdge;                                                  // 0x003C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              Width;                                                    // 0x0040(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              Footer;                                                   // 0x0044(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FSlateFontInfo                              Font;                                                     // 0x0048(0x0040) (Edit)
+	struct FSlateColor                                 Colour;                                                   // 0x0088(0x0030) (Edit)
+	float                                              LineHeightPercentage;                                     // 0x00B8(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x00BC(0x0004) MISSED OFFSET
+};
+
+// ScriptStruct AthenaLoadingScreen.SlateLoadingScreenAdvancedTipsParams
+// 0x0010
+struct FSlateLoadingScreenAdvancedTipsParams
+{
+	TArray<struct FSlateLoadingScreenAdvancedTipDescription> TipDescriptions;                                          // 0x0000(0x0010) (Edit, ZeroConstructor)
+};
+
 // ScriptStruct AthenaLoadingScreen.SlateLoadingScreenImageParams
-// 0x0020
+// 0x0030
 struct FSlateLoadingScreenImageParams
 {
 	struct FStringAssetReference                       ImageAsset;                                               // 0x0000(0x0010) (Edit, ZeroConstructor)
 	TArray<struct FText>                               ImageTips;                                                // 0x0010(0x0010) (Edit, ZeroConstructor)
+	struct FSlateLoadingScreenAdvancedTipsParams       AdvancedTips;                                             // 0x0020(0x0010) (Edit)
 };
 
 // ScriptStruct AthenaLoadingScreen.EventAthenaLoadingScreenStateResponse

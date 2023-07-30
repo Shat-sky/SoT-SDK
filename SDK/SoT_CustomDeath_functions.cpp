@@ -1,4 +1,4 @@
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,18 +15,18 @@ namespace SDK
 // Function CustomDeath.CustomDeathInterface.SetShouldUseRevivalFlow
 // (Native, Public, HasOutParms)
 // Parameters:
-// struct FSetShouldUseRevivalFlowData SetShouldUseRevivalFlowData    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FSetShouldUseRevivalFlowGameServerRequestModel SetShouldUseRevivalFlowGameServerRequestModel (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
-void UCustomDeathInterface::SetShouldUseRevivalFlow(const struct FSetShouldUseRevivalFlowData& SetShouldUseRevivalFlowData)
+void UCustomDeathInterface::SetShouldUseRevivalFlow(const struct FSetShouldUseRevivalFlowGameServerRequestModel& SetShouldUseRevivalFlowGameServerRequestModel)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function CustomDeath.CustomDeathInterface.SetShouldUseRevivalFlow"));
 
 	struct
 	{
-		struct FSetShouldUseRevivalFlowData SetShouldUseRevivalFlowData;
+		struct FSetShouldUseRevivalFlowGameServerRequestModel SetShouldUseRevivalFlowGameServerRequestModel;
 	} params;
 
-	params.SetShouldUseRevivalFlowData = SetShouldUseRevivalFlowData;
+	params.SetShouldUseRevivalFlowGameServerRequestModel = SetShouldUseRevivalFlowGameServerRequestModel;
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -35,18 +35,18 @@ void UCustomDeathInterface::SetShouldUseRevivalFlow(const struct FSetShouldUseRe
 // Function CustomDeath.CustomDeathInterface.SetShouldSkipFerryOfTheDamned
 // (Native, Public, HasOutParms)
 // Parameters:
-// struct FSetShouldSkipFerryOfTheDamnedData SetShouldSkipFerryOfTheDamnedData (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FSetShouldSkipFerryOfTheDamnedGameServerRequestModel SetShouldSkipFerryOfTheDamnedGameServerRequestModel (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
-void UCustomDeathInterface::SetShouldSkipFerryOfTheDamned(const struct FSetShouldSkipFerryOfTheDamnedData& SetShouldSkipFerryOfTheDamnedData)
+void UCustomDeathInterface::SetShouldSkipFerryOfTheDamned(const struct FSetShouldSkipFerryOfTheDamnedGameServerRequestModel& SetShouldSkipFerryOfTheDamnedGameServerRequestModel)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function CustomDeath.CustomDeathInterface.SetShouldSkipFerryOfTheDamned"));
 
 	struct
 	{
-		struct FSetShouldSkipFerryOfTheDamnedData SetShouldSkipFerryOfTheDamnedData;
+		struct FSetShouldSkipFerryOfTheDamnedGameServerRequestModel SetShouldSkipFerryOfTheDamnedGameServerRequestModel;
 	} params;
 
-	params.SetShouldSkipFerryOfTheDamnedData = SetShouldSkipFerryOfTheDamnedData;
+	params.SetShouldSkipFerryOfTheDamnedGameServerRequestModel = SetShouldSkipFerryOfTheDamnedGameServerRequestModel;
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -55,18 +55,18 @@ void UCustomDeathInterface::SetShouldSkipFerryOfTheDamned(const struct FSetShoul
 // Function CustomDeath.CustomDeathInterface.SetGameModeDeathPenaltyRespawnTimer
 // (Native, Public, HasOutParms)
 // Parameters:
-// struct FGameModeDeathPenaltyRespawnTimerData GameModeDeathPenaltyRespawnTimerData (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FGameModeDeathPenaltyRespawnTimerGameServerRequestModel GameModeDeathPenaltyRespawnTimerGameServerRequestModel (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
-void UCustomDeathInterface::SetGameModeDeathPenaltyRespawnTimer(const struct FGameModeDeathPenaltyRespawnTimerData& GameModeDeathPenaltyRespawnTimerData)
+void UCustomDeathInterface::SetGameModeDeathPenaltyRespawnTimer(const struct FGameModeDeathPenaltyRespawnTimerGameServerRequestModel& GameModeDeathPenaltyRespawnTimerGameServerRequestModel)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function CustomDeath.CustomDeathInterface.SetGameModeDeathPenaltyRespawnTimer"));
 
 	struct
 	{
-		struct FGameModeDeathPenaltyRespawnTimerData GameModeDeathPenaltyRespawnTimerData;
+		struct FGameModeDeathPenaltyRespawnTimerGameServerRequestModel GameModeDeathPenaltyRespawnTimerGameServerRequestModel;
 	} params;
 
-	params.GameModeDeathPenaltyRespawnTimerData = GameModeDeathPenaltyRespawnTimerData;
+	params.GameModeDeathPenaltyRespawnTimerGameServerRequestModel = GameModeDeathPenaltyRespawnTimerGameServerRequestModel;
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -75,20 +75,20 @@ void UCustomDeathInterface::SetGameModeDeathPenaltyRespawnTimer(const struct FGa
 // Function CustomDeath.CustomDeathInterface.SetCustomPlayerStart
 // (Native, Public, HasOutParms)
 // Parameters:
-// struct FSetCustomPlayerStartData SetCustomPlayerStartData       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FSetCustomPlayerStartGameServerRequestModel SetCustomPlayerStartGameServerRequestModel (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-bool UCustomDeathInterface::SetCustomPlayerStart(const struct FSetCustomPlayerStartData& SetCustomPlayerStartData)
+bool UCustomDeathInterface::SetCustomPlayerStart(const struct FSetCustomPlayerStartGameServerRequestModel& SetCustomPlayerStartGameServerRequestModel)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function CustomDeath.CustomDeathInterface.SetCustomPlayerStart"));
 
 	struct
 	{
-		struct FSetCustomPlayerStartData SetCustomPlayerStartData;
+		struct FSetCustomPlayerStartGameServerRequestModel SetCustomPlayerStartGameServerRequestModel;
 		bool                           ReturnValue;
 	} params;
 
-	params.SetCustomPlayerStartData = SetCustomPlayerStartData;
+	params.SetCustomPlayerStartGameServerRequestModel = SetCustomPlayerStartGameServerRequestModel;
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -142,18 +142,18 @@ void UCustomDeathInterface::SetCrewBasedDeathPenaltyRespawnTimes(const struct FC
 // Function CustomDeath.CustomDeathInterface.ResetCustomConfigForPlayer
 // (Native, Public, HasOutParms)
 // Parameters:
-// struct FResetCustomConfigForPlayerData ResetCustomConfigForPlayerData (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FResetCustomConfigForPlayerGameServerRequestModel ResetCustomConfigForPlayerGameServerRequestModel (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
-void UCustomDeathInterface::ResetCustomConfigForPlayer(const struct FResetCustomConfigForPlayerData& ResetCustomConfigForPlayerData)
+void UCustomDeathInterface::ResetCustomConfigForPlayer(const struct FResetCustomConfigForPlayerGameServerRequestModel& ResetCustomConfigForPlayerGameServerRequestModel)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function CustomDeath.CustomDeathInterface.ResetCustomConfigForPlayer"));
 
 	struct
 	{
-		struct FResetCustomConfigForPlayerData ResetCustomConfigForPlayerData;
+		struct FResetCustomConfigForPlayerGameServerRequestModel ResetCustomConfigForPlayerGameServerRequestModel;
 	} params;
 
-	params.ResetCustomConfigForPlayerData = ResetCustomConfigForPlayerData;
+	params.ResetCustomConfigForPlayerGameServerRequestModel = ResetCustomConfigForPlayerGameServerRequestModel;
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -162,18 +162,18 @@ void UCustomDeathInterface::ResetCustomConfigForPlayer(const struct FResetCustom
 // Function CustomDeath.CustomDeathInterface.KillPlayer
 // (Native, Public, HasOutParms)
 // Parameters:
-// struct FKillPlayerData         KillPlayerData                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FKillPlayerGameServerRequestModel KillPlayerGameServerRequestModel (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
-void UCustomDeathInterface::KillPlayer(const struct FKillPlayerData& KillPlayerData)
+void UCustomDeathInterface::KillPlayer(const struct FKillPlayerGameServerRequestModel& KillPlayerGameServerRequestModel)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function CustomDeath.CustomDeathInterface.KillPlayer"));
 
 	struct
 	{
-		struct FKillPlayerData         KillPlayerData;
+		struct FKillPlayerGameServerRequestModel KillPlayerGameServerRequestModel;
 	} params;
 
-	params.KillPlayerData = KillPlayerData;
+	params.KillPlayerGameServerRequestModel = KillPlayerGameServerRequestModel;
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -182,18 +182,18 @@ void UCustomDeathInterface::KillPlayer(const struct FKillPlayerData& KillPlayerD
 // Function CustomDeath.CustomDeathInterface.KillCrew
 // (Native, Public, HasOutParms)
 // Parameters:
-// struct FKillCrewData           KillCrewData                   (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FKillCrewGameServerRequestModel KillCrewGameServerRequestModel (ConstParm, Parm, OutParm, ReferenceParm)
 
-void UCustomDeathInterface::KillCrew(const struct FKillCrewData& KillCrewData)
+void UCustomDeathInterface::KillCrew(const struct FKillCrewGameServerRequestModel& KillCrewGameServerRequestModel)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function CustomDeath.CustomDeathInterface.KillCrew"));
 
 	struct
 	{
-		struct FKillCrewData           KillCrewData;
+		struct FKillCrewGameServerRequestModel KillCrewGameServerRequestModel;
 	} params;
 
-	params.KillCrewData = KillCrewData;
+	params.KillCrewGameServerRequestModel = KillCrewGameServerRequestModel;
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -277,18 +277,18 @@ class APlayerStart* UCustomDeathInterface::GetCustomPlayerStart(int PlayerId)
 // Function CustomDeath.CustomDeathInterface.ForcePlayerRespawn
 // (Native, Public, HasOutParms)
 // Parameters:
-// struct FForcePlayerRespawnData ForcePlayerRespawnData         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FForcePlayerRespawnGameServerRequestModel ForcePlayerRespawnGameServerRequestModel (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
-void UCustomDeathInterface::ForcePlayerRespawn(const struct FForcePlayerRespawnData& ForcePlayerRespawnData)
+void UCustomDeathInterface::ForcePlayerRespawn(const struct FForcePlayerRespawnGameServerRequestModel& ForcePlayerRespawnGameServerRequestModel)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function CustomDeath.CustomDeathInterface.ForcePlayerRespawn"));
 
 	struct
 	{
-		struct FForcePlayerRespawnData ForcePlayerRespawnData;
+		struct FForcePlayerRespawnGameServerRequestModel ForcePlayerRespawnGameServerRequestModel;
 	} params;
 
-	params.ForcePlayerRespawnData = ForcePlayerRespawnData;
+	params.ForcePlayerRespawnGameServerRequestModel = ForcePlayerRespawnGameServerRequestModel;
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -297,20 +297,20 @@ void UCustomDeathInterface::ForcePlayerRespawn(const struct FForcePlayerRespawnD
 // Function CustomDeath.CustomDeathInterface.DestroyCustomPlayerStart
 // (Native, Public, HasOutParms)
 // Parameters:
-// struct FDestroyCustomPlayerStartData DestroyCustomPlayerStartData   (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FDestroyCustomPlayerStartGameServerRequestModel DestroyCustomPlayerStartGameServerRequestModel (ConstParm, Parm, OutParm, ReferenceParm)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UCustomDeathInterface::DestroyCustomPlayerStart(const struct FDestroyCustomPlayerStartData& DestroyCustomPlayerStartData)
+int UCustomDeathInterface::DestroyCustomPlayerStart(const struct FDestroyCustomPlayerStartGameServerRequestModel& DestroyCustomPlayerStartGameServerRequestModel)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function CustomDeath.CustomDeathInterface.DestroyCustomPlayerStart"));
 
 	struct
 	{
-		struct FDestroyCustomPlayerStartData DestroyCustomPlayerStartData;
+		struct FDestroyCustomPlayerStartGameServerRequestModel DestroyCustomPlayerStartGameServerRequestModel;
 		int                            ReturnValue;
 	} params;
 
-	params.DestroyCustomPlayerStartData = DestroyCustomPlayerStartData;
+	params.DestroyCustomPlayerStartGameServerRequestModel = DestroyCustomPlayerStartGameServerRequestModel;
 
 	UObject::ProcessEvent(fn, &params);
 
@@ -321,20 +321,20 @@ int UCustomDeathInterface::DestroyCustomPlayerStart(const struct FDestroyCustomP
 // Function CustomDeath.CustomDeathInterface.CreateNewCustomPlayerStart
 // (Native, Public, HasOutParms)
 // Parameters:
-// struct FCustomPlayerStartConfigData CustomPlayerStartConfigData    (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FCustomPlayerStartConfigGameServerRequestModel CustomPlayerStartConfigGameServerRequestModel (ConstParm, Parm, OutParm, ReferenceParm)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-int UCustomDeathInterface::CreateNewCustomPlayerStart(const struct FCustomPlayerStartConfigData& CustomPlayerStartConfigData)
+int UCustomDeathInterface::CreateNewCustomPlayerStart(const struct FCustomPlayerStartConfigGameServerRequestModel& CustomPlayerStartConfigGameServerRequestModel)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function CustomDeath.CustomDeathInterface.CreateNewCustomPlayerStart"));
 
 	struct
 	{
-		struct FCustomPlayerStartConfigData CustomPlayerStartConfigData;
+		struct FCustomPlayerStartConfigGameServerRequestModel CustomPlayerStartConfigGameServerRequestModel;
 		int                            ReturnValue;
 	} params;
 
-	params.CustomPlayerStartConfigData = CustomPlayerStartConfigData;
+	params.CustomPlayerStartConfigGameServerRequestModel = CustomPlayerStartConfigGameServerRequestModel;
 
 	UObject::ProcessEvent(fn, &params);
 

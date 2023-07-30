@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,9 +15,9 @@ namespace SDK
 //Script Structs
 //---------------------------------------------------------------------------
 
-// ScriptStruct RemoteEmergentVoyage.GiveEmergentVoyageData
+// ScriptStruct RemoteEmergentVoyage.GiveEmergentVoyageGameServerRequestModel
 // 0x0018
-struct FGiveEmergentVoyageData
+struct FGiveEmergentVoyageGameServerRequestModel
 {
 	int                                                PlayerNetGUID;                                            // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET

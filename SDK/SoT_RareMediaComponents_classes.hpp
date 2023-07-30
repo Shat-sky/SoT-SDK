@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -34,15 +34,13 @@ public:
 
 
 // Class RareMediaComponents.WwiseMediaSoundComponent
-// 0x00E0 (0x03C0 - 0x02E0)
+// 0x00B0 (0x0390 - 0x02E0)
 class UWwiseMediaSoundComponent : public USceneComponent
 {
 public:
-	unsigned char                                      UnknownData00[0x88];                                      // 0x02E0(0x0088) MISSED OFFSET
-	class UWwiseEvent*                                 MediaSoundEvent;                                          // 0x0368(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x40];                                      // 0x0370(0x0040) MISSED OFFSET
-	float                                              RelativeBufferSize;                                       // 0x03B0(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0xC];                                       // 0x03B4(0x000C) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x60];                                      // 0x02E0(0x0060) MISSED OFFSET
+	class UWwiseEvent*                                 MediaSoundEvent;                                          // 0x0340(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x48];                                      // 0x0348(0x0048) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

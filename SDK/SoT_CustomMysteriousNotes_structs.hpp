@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -24,26 +24,26 @@ struct FCustomPlayerNoteList
 	TArray<struct FNotesRemoteServiceNoteDetailModel>  Notes;                                                    // 0x0000(0x0010) (ZeroConstructor)
 };
 
-// ScriptStruct CustomMysteriousNotes.DestroyMysteriousNoteData
+// ScriptStruct CustomMysteriousNotes.DestroyMysteriousNoteGameServerRequestModel
 // 0x0014
-struct FDestroyMysteriousNoteData
+struct FDestroyMysteriousNoteGameServerRequestModel
 {
 	int                                                PlayerNetGUID;                                            // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 	struct FGuid                                       NoteGUID;                                                 // 0x0004(0x0010) (ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct CustomMysteriousNotes.CreateMysteriousNoteResponseData
+// ScriptStruct CustomMysteriousNotes.CreateMysteriousNoteGameServerResponseModel
 // 0x0014
-struct FCreateMysteriousNoteResponseData
+struct FCreateMysteriousNoteGameServerResponseModel
 {
 	bool                                               Success;                                                  // 0x0000(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x3];                                       // 0x0001(0x0003) MISSED OFFSET
 	struct FGuid                                       NoteId;                                                   // 0x0004(0x0010) (ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct CustomMysteriousNotes.CreateMysteriousNoteData
+// ScriptStruct CustomMysteriousNotes.CreateMysteriousNoteGameServerRequestModel
 // 0x0038
-struct FCreateMysteriousNoteData
+struct FCreateMysteriousNoteGameServerRequestModel
 {
 	int                                                PlayerNetGUID;                                            // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET

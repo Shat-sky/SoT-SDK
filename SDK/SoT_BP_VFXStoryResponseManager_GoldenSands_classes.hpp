@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,11 +15,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_VFXStoryResponseManager_GoldenSands.BP_VFXStoryResponseManager_GoldenSands_C
-// 0x0008 (0x0410 - 0x0408)
+// 0x0008 (0x0408 - 0x0400)
 class ABP_VFXStoryResponseManager_GoldenSands_C : public AVfxStoryResponseManager
 {
 public:
-	class USceneComponent*                             DefaultSceneRoot;                                         // 0x0408(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class USceneComponent*                             DefaultSceneRoot;                                         // 0x0400(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

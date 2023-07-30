@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -16,16 +16,16 @@ namespace SDK
 //Script Structs
 //---------------------------------------------------------------------------
 
-// ScriptStruct RemoteActorDestruction.DestroyActorData
+// ScriptStruct RemoteActorDestruction.DestroyActorGameServerRequestModel
 // 0x0004
-struct FDestroyActorData
+struct FDestroyActorGameServerRequestModel
 {
 	int                                                ActorNetID;                                               // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 };
 
-// ScriptStruct RemoteActorDestruction.DestroyAllExistingActorsByClassData
+// ScriptStruct RemoteActorDestruction.DestroyAllExistingActorsByClassGameServerRequestModel
 // 0x0010
-struct FDestroyAllExistingActorsByClassData
+struct FDestroyAllExistingActorsByClassGameServerRequestModel
 {
 	TArray<class FString>                              ActorClassNames;                                          // 0x0000(0x0010) (ZeroConstructor)
 };

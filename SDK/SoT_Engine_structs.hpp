@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -8,10 +8,10 @@
 
 #include "SoT_Basic.hpp"
 #include "SoT_Engine_enums.hpp"
-#include "SoT_SlateCore_classes.hpp"
-#include "SoT_InputCore_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
+#include "SoT_InputCore_classes.hpp"
 #include "SoT_Slate_classes.hpp"
+#include "SoT_SlateCore_classes.hpp"
 
 namespace SDK
 {
@@ -1211,13 +1211,14 @@ struct FInteriorSettings
 };
 
 // ScriptStruct Engine.NetViewer
-// 0x0028
+// 0x0058
 struct FNetViewer
 {
 	class AActor*                                      InViewer;                                                 // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
 	class AActor*                                      ViewTarget;                                               // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ViewLocation;                                             // 0x0010(0x000C) (ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ViewDir;                                                  // 0x001C(0x000C) (ZeroConstructor, IsPlainOldData)
+	TArray<struct FVector>                             CachedViewLocations;                                      // 0x0010(0x0010) (ZeroConstructor)
+	struct FVector                                     ViewDir;                                                  // 0x0020(0x000C) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x2C];                                      // 0x002C(0x002C) MISSED OFFSET
 };
 
 // ScriptStruct Engine.ExternalMip
@@ -4007,7 +4008,7 @@ struct FFloatDistribution
 };
 
 // ScriptStruct Engine.GPUSpriteEmitterInfo
-// 0x02A0
+// 0x02B0
 struct FGPUSpriteEmitterInfo
 {
 	class UParticleModuleRequired*                     RequiredModule;                                           // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
@@ -4055,8 +4056,10 @@ struct FGPUSpriteEmitterInfo
 	unsigned char                                      bUseInheritedVelocityLocationEmitter : 1;                 // 0x0288(0x0001)
 	unsigned char                                      UnknownData04[0x3];                                       // 0x0289(0x0003) MISSED OFFSET
 	struct FVector2D                                   InheritedVelocityScaleLocationEmitter;                    // 0x028C(0x0008) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      bKillParticlesOnFFTWater : 1;                             // 0x0294(0x0001)
-	unsigned char                                      UnknownData05[0xB];                                       // 0x0295(0x000B) MISSED OFFSET
+	TEnumAsByte<EMissingParentParticlesBehaviour>      MissingParentParticlesBehaviour;                          // 0x0294(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData05[0x3];                                       // 0x0295(0x0003) MISSED OFFSET
+	unsigned char                                      bKillParticlesOnFFTWater : 1;                             // 0x0298(0x0001)
+	unsigned char                                      UnknownData06[0x17];                                      // 0x0299(0x0017) MISSED OFFSET
 };
 
 // ScriptStruct Engine.GPUSpriteResourceData
@@ -4110,7 +4113,9 @@ struct FGPUSpriteResourceData
 	struct FVector2D                                   PivotOffset;                                              // 0x020C(0x0008) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x46C];                                     // 0x0214(0x046C) MISSED OFFSET
 	float                                              AlignmentInheritedVelocityScale;                          // 0x0680(0x0004) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x37C];                                     // 0x0684(0x037C) MISSED OFFSET
+	unsigned char                                      UnknownData02[0x374];                                     // 0x0684(0x0374) MISSED OFFSET
+	TEnumAsByte<ESpawnLocationValueSemantic>           SpawnLocationValueSemantic[0x6];                          // 0x09F8(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData03[0x2];                                       // 0x09FE(0x0002) MISSED OFFSET
 };
 
 // ScriptStruct Engine.VelocityConeGroupParams
@@ -4547,6 +4552,29 @@ struct FRuntimeVectorCurve
 struct FNetSubObjectPtr
 {
 	struct FNetObjectPtr                               SubObject;                                                // 0x0000(0x0014)
+};
+
+// ScriptStruct Engine.NetGuidResolveStackEntry
+// 0x0030
+struct FNetGuidResolveStackEntry
+{
+	uint32_t                                           NetGuid;                                                  // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
+	class FString                                      ObjectPath;                                               // 0x0008(0x0010) (ZeroConstructor)
+	class FString                                      path;                                                     // 0x0018(0x0010) (ZeroConstructor)
+	TEnumAsByte<EResolveOperationResult>               Result;                                                   // 0x0028(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x7];                                       // 0x0029(0x0007) MISSED OFFSET
+};
+
+// ScriptStruct Engine.SerializeNewActorFailureContext
+// 0x0038
+struct FSerializeNewActorFailureContext
+{
+	class FString                                      Description;                                              // 0x0000(0x0010) (ZeroConstructor)
+	TArray<struct FNetGuidResolveStackEntry>           ActorGuidResolveStack;                                    // 0x0010(0x0010) (ZeroConstructor)
+	TArray<struct FNetGuidResolveStackEntry>           ArchetypeGuidResolveStack;                                // 0x0020(0x0010) (ZeroConstructor)
+	bool                                               IsCloseBunch;                                             // 0x0030(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0031(0x0007) MISSED OFFSET
 };
 
 // ScriptStruct Engine.ExposedValueCopyRecord
@@ -6621,13 +6649,15 @@ struct FDummySpacerCameraTypes
 };
 
 // ScriptStruct Engine.NetRelevancyConnectionStat
-// 0x0038
+// 0x0090
 struct FNetRelevancyConnectionStat
 {
 	int                                                Id;                                                       // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
-	struct FNetViewer                                  Viewer;                                                   // 0x0008(0x0028)
-	struct FIntPoint                                   ViewerGridLocation;                                       // 0x0030(0x0008) (ZeroConstructor, IsPlainOldData)
+	struct FNetViewer                                  Viewer;                                                   // 0x0008(0x0058)
+	TArray<struct FIntPoint>                           ViewerGridLocations;                                      // 0x0060(0x0010) (ZeroConstructor)
+	TArray<class FString>                              DormantActors;                                            // 0x0070(0x0010) (ZeroConstructor)
+	TArray<class FString>                              ConsideredActors;                                         // 0x0080(0x0010) (ZeroConstructor)
 };
 
 // ScriptStruct Engine.NetRelevancyActorClusterStat
@@ -6644,20 +6674,28 @@ struct FNetRelevancyActorClusterStat
 };
 
 // ScriptStruct Engine.NetRelevancyActorStat
-// 0x0090
+// 0x00C8
 struct FNetRelevancyActorStat
 {
 	class FString                                      Name;                                                     // 0x0000(0x0010) (ZeroConstructor)
 	class FString                                      path;                                                     // 0x0010(0x0010) (ZeroConstructor)
 	class FString                                      Owner;                                                    // 0x0020(0x0010) (ZeroConstructor)
-	struct FVector                                     Location;                                                 // 0x0030(0x000C) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x003C(0x0004) MISSED OFFSET
-	struct FNetRelevancyActorClusterStat               Cluster;                                                  // 0x0040(0x0048)
-	TEnumAsByte<EActorChannelState>                    ChannelState;                                             // 0x0088(0x0001) (ZeroConstructor, IsPlainOldData)
-	bool                                               IsNetRelevant;                                            // 0x0089(0x0001) (ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<ENetDormancy>                          ActorDormancy;                                            // 0x008A(0x0001) (ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EChannelDormancy>                      ChannelDormancy;                                          // 0x008B(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x4];                                       // 0x008C(0x0004) MISSED OFFSET
+	class FString                                      AttachedParent;                                           // 0x0030(0x0010) (ZeroConstructor)
+	class FString                                      AttachedParentOwner;                                      // 0x0040(0x0010) (ZeroConstructor)
+	struct FVector                                     Location;                                                 // 0x0050(0x000C) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x005C(0x0004) MISSED OFFSET
+	struct FNetRelevancyActorClusterStat               Cluster;                                                  // 0x0060(0x0048)
+	TEnumAsByte<EActorChannelState>                    ChannelState;                                             // 0x00A8(0x0001) (ZeroConstructor, IsPlainOldData)
+	bool                                               HasBegunPlay;                                             // 0x00A9(0x0001) (ZeroConstructor, IsPlainOldData)
+	bool                                               IsNetRelevant;                                            // 0x00AA(0x0001) (ZeroConstructor, IsPlainOldData)
+	bool                                               IsAlwaysRelevant;                                         // 0x00AB(0x0001) (ZeroConstructor, IsPlainOldData)
+	bool                                               UseOwnerRelevancy;                                        // 0x00AC(0x0001) (ZeroConstructor, IsPlainOldData)
+	bool                                               OnlyRelevantToOwner;                                      // 0x00AD(0x0001) (ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<ENetDormancy>                          ActorDormancy;                                            // 0x00AE(0x0001) (ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EChannelDormancy>                      ChannelDormancy;                                          // 0x00AF(0x0001) (ZeroConstructor, IsPlainOldData)
+	class FString                                      PushModelDormancy;                                        // 0x00B0(0x0010) (ZeroConstructor)
+	float                                              NetUpdateFrequency;                                       // 0x00C0(0x0004) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x00C4(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct Engine.NetRelevancyLevelStat
@@ -6671,23 +6709,24 @@ struct FNetRelevancyLevelStat
 };
 
 // ScriptStruct Engine.NetRelevancyStateStat
-// 0x0070
+// 0x00C8
 struct FNetRelevancyStateStat
 {
 	float                                              Duration;                                                 // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 	int                                                RemainingCycles;                                          // 0x0004(0x0004) (ZeroConstructor, IsPlainOldData)
 	class FString                                      StreamingMode;                                            // 0x0008(0x0010) (ZeroConstructor)
-	struct FNetRelevancyConnectionStat                 Connection;                                               // 0x0018(0x0038)
-	TArray<struct FNetRelevancyActorStat>              Actors;                                                   // 0x0050(0x0010) (ZeroConstructor)
-	TArray<struct FNetRelevancyLevelStat>              Levels;                                                   // 0x0060(0x0010) (ZeroConstructor)
+	struct FNetRelevancyConnectionStat                 Connection;                                               // 0x0018(0x0090)
+	TArray<struct FNetRelevancyActorStat>              Actors;                                                   // 0x00A8(0x0010) (ZeroConstructor)
+	TArray<struct FNetRelevancyLevelStat>              Levels;                                                   // 0x00B8(0x0010) (ZeroConstructor)
 };
 
 // ScriptStruct Engine.NetRelevancyStat
-// 0x0080
+// 0x00E8
 struct FNetRelevancyStat
 {
-	class FString                                      Reason;                                                   // 0x0000(0x0010) (ZeroConstructor)
-	struct FNetRelevancyStateStat                      State;                                                    // 0x0010(0x0070)
+	struct FGuid                                       RequestID;                                                // 0x0000(0x0010) (ZeroConstructor, IsPlainOldData)
+	class FString                                      Reason;                                                   // 0x0010(0x0010) (ZeroConstructor)
+	struct FNetRelevancyStateStat                      State;                                                    // 0x0020(0x00C8)
 };
 
 // ScriptStruct Engine.NetTimeStampCalculator

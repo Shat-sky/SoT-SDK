@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -8,6 +8,7 @@
 
 #include "SoT_Basic.hpp"
 #include "SoT_Interaction_enums.hpp"
+#include "SoT_ConditionalFramework_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_Athena_classes.hpp"
@@ -32,6 +33,14 @@ struct FEventInteractionBlockingStateChanged
 {
 	bool                                               IsInteractionBlocked;                                     // 0x0000(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	TEnumAsByte<EInteractionBlockReason>               InteractionBlockReason;                                   // 0x0001(0x0001) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Interaction.IsNewInteractingPlayerCondition
+// 0x0040 (0x0048 - 0x0008)
+struct FIsNewInteractingPlayerCondition : public FConditionBase
+{
+	struct FConditionContextPayloadSelectorInstance    PlayerPayloadSelector;                                    // 0x0008(0x0020) (Edit)
+	struct FConditionContextPayloadSelectorInstance    InteractablePayloadSelector;                              // 0x0028(0x0020) (Edit)
 };
 
 }

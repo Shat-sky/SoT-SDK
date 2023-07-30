@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -20,22 +20,6 @@ enum class EAIShipEncounterType : uint8_t
 	EAIShipEncounterType__Aggressive = 2,
 	EAIShipEncounterType__MAX      = 3,
 	EAIShipEncounterType__EAIShipEncounterType_MAX = 4
-};
-
-
-// Enum AIShips.EObstacleType
-enum class EObstacleType : uint8_t
-{
-	EObstacleType__None            = 0,
-	EObstacleType__SeaRock         = 1,
-	EObstacleType__UnderseaRock    = 2,
-	EObstacleType__Island          = 3,
-	EObstacleType__AIShip          = 4,
-	EObstacleType__PlayerShip      = 5,
-	EObstacleType__Shipwreck       = 6,
-	EObstacleType__GameEventExclusionZone = 7,
-	EObstacleType__HauntedSeaFort  = 8,
-	EObstacleType__EObstacleType_MAX = 9
 };
 
 

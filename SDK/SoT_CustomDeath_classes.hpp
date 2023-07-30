@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -27,21 +27,21 @@ public:
 	}
 
 
-	void SetShouldUseRevivalFlow(const struct FSetShouldUseRevivalFlowData& SetShouldUseRevivalFlowData);
-	void SetShouldSkipFerryOfTheDamned(const struct FSetShouldSkipFerryOfTheDamnedData& SetShouldSkipFerryOfTheDamnedData);
-	void SetGameModeDeathPenaltyRespawnTimer(const struct FGameModeDeathPenaltyRespawnTimerData& GameModeDeathPenaltyRespawnTimerData);
-	bool SetCustomPlayerStart(const struct FSetCustomPlayerStartData& SetCustomPlayerStartData);
+	void SetShouldUseRevivalFlow(const struct FSetShouldUseRevivalFlowGameServerRequestModel& SetShouldUseRevivalFlowGameServerRequestModel);
+	void SetShouldSkipFerryOfTheDamned(const struct FSetShouldSkipFerryOfTheDamnedGameServerRequestModel& SetShouldSkipFerryOfTheDamnedGameServerRequestModel);
+	void SetGameModeDeathPenaltyRespawnTimer(const struct FGameModeDeathPenaltyRespawnTimerGameServerRequestModel& GameModeDeathPenaltyRespawnTimerGameServerRequestModel);
+	bool SetCustomPlayerStart(const struct FSetCustomPlayerStartGameServerRequestModel& SetCustomPlayerStartGameServerRequestModel);
 	void SetCustomConfigForPlayer(int PlayerId, const struct FCustomDeathConfiguration& CustomDeathConfiguration);
 	void SetCrewBasedDeathPenaltyRespawnTimes(const struct FCrewBasedRespawnTimes& CrewBasedRespawnTimes);
-	void ResetCustomConfigForPlayer(const struct FResetCustomConfigForPlayerData& ResetCustomConfigForPlayerData);
-	void KillPlayer(const struct FKillPlayerData& KillPlayerData);
-	void KillCrew(const struct FKillCrewData& KillCrewData);
+	void ResetCustomConfigForPlayer(const struct FResetCustomConfigForPlayerGameServerRequestModel& ResetCustomConfigForPlayerGameServerRequestModel);
+	void KillPlayer(const struct FKillPlayerGameServerRequestModel& KillPlayerGameServerRequestModel);
+	void KillCrew(const struct FKillCrewGameServerRequestModel& KillCrewGameServerRequestModel);
 	bool GetShouldUseRevivalFlow(int PlayerId, bool bDefaultValue);
 	bool GetShouldSkipFerryOfTheDamned(int PlayerId);
 	class APlayerStart* GetCustomPlayerStart(int PlayerId);
-	void ForcePlayerRespawn(const struct FForcePlayerRespawnData& ForcePlayerRespawnData);
-	int DestroyCustomPlayerStart(const struct FDestroyCustomPlayerStartData& DestroyCustomPlayerStartData);
-	int CreateNewCustomPlayerStart(const struct FCustomPlayerStartConfigData& CustomPlayerStartConfigData);
+	void ForcePlayerRespawn(const struct FForcePlayerRespawnGameServerRequestModel& ForcePlayerRespawnGameServerRequestModel);
+	int DestroyCustomPlayerStart(const struct FDestroyCustomPlayerStartGameServerRequestModel& DestroyCustomPlayerStartGameServerRequestModel);
+	int CreateNewCustomPlayerStart(const struct FCustomPlayerStartConfigGameServerRequestModel& CustomPlayerStartConfigGameServerRequestModel);
 };
 
 

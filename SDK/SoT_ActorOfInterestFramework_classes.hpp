@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2.8.4) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -85,7 +85,7 @@ class AActorOfInterestService : public AActor
 {
 public:
 	unsigned char                                      UnknownData00[0x10];                                      // 0x03C8(0x0010) MISSED OFFSET
-	TMap<class UClass*, class AActor*>                 ActorsOfInterest;                                         // 0x03D8(0x0050) (ZeroConstructor)
+	TMap<class UClass*, struct FActorsOfInterestList>  ActorsOfInterest;                                         // 0x03D8(0x0050) (ZeroConstructor)
 	struct FObjectMessagingDispatcher                  EventDispatcher;                                          // 0x0428(0x00A0)
 
 	static UClass* StaticClass()
