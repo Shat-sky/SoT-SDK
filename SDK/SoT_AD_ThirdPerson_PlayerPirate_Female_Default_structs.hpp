@@ -7,8 +7,6 @@
 #endif
 
 #include "SoT_Basic.hpp"
-#include "SoT_ADS_CannonNative_classes.hpp"
-#include "SoT_ADS_CapstanNative_classes.hpp"
 #include "SoT_Athena_classes.hpp"
 #include "SoT_ADS_IdlesNative_classes.hpp"
 #include "SoT_ADS_JumpingNative_classes.hpp"
@@ -19,6 +17,8 @@
 #include "SoT_ADS_LocomotionAlternateNative_classes.hpp"
 #include "SoT_ADS_Sockets_classes.hpp"
 #include "SoT_ADS_SwimmingNative_classes.hpp"
+#include "SoT_ADS_CannonNative_classes.hpp"
+#include "SoT_ADS_CapstanNative_classes.hpp"
 #include "SoT_ADS_RowingBoatNative_classes.hpp"
 #include "SoT_ADS_ObjectsNative_classes.hpp"
 #include "SoT_ADS_HitReactsNative_classes.hpp"
