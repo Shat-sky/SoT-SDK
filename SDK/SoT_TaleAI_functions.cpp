@@ -1,4 +1,4 @@
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -36,6 +36,84 @@ class UTaleAICustomRegion* UTaleAIRegionFunctionLibrary::CreateCustomRegion(cons
 	UObject::ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
+}
+
+
+// Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.WaitForBlackboardValueAsObject
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// class APawn*                   Pawn                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   KeyName                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// class UObject*                 ExpectedValue                  (Parm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestAIBlackboardFunctionStepLibrary::WaitForBlackboardValueAsObject(class APawn* Pawn, const struct FName& KeyName, class UObject* ExpectedValue)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.WaitForBlackboardValueAsObject"));
+
+	struct
+	{
+		class APawn*                   Pawn;
+		struct FName                   KeyName;
+		class UObject*                 ExpectedValue;
+	} params;
+
+	params.Pawn = Pawn;
+	params.KeyName = KeyName;
+	params.ExpectedValue = ExpectedValue;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.WaitForBlackboardValueAsClass
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// class APawn*                   Pawn                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   KeyName                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// class UClass*                  ExpectedValue                  (Parm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestAIBlackboardFunctionStepLibrary::WaitForBlackboardValueAsClass(class APawn* Pawn, const struct FName& KeyName, class UClass* ExpectedValue)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.WaitForBlackboardValueAsClass"));
+
+	struct
+	{
+		class APawn*                   Pawn;
+		struct FName                   KeyName;
+		class UClass*                  ExpectedValue;
+	} params;
+
+	params.Pawn = Pawn;
+	params.KeyName = KeyName;
+	params.ExpectedValue = ExpectedValue;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.WaitForBlackboardValueAsBool
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// class APawn*                   Pawn                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   KeyName                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// bool                           ExpectedValue                  (Parm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestAIBlackboardFunctionStepLibrary::WaitForBlackboardValueAsBool(class APawn* Pawn, const struct FName& KeyName, bool ExpectedValue)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.WaitForBlackboardValueAsBool"));
+
+	struct
+	{
+		class APawn*                   Pawn;
+		struct FName                   KeyName;
+		bool                           ExpectedValue;
+	} params;
+
+	params.Pawn = Pawn;
+	params.KeyName = KeyName;
+	params.ExpectedValue = ExpectedValue;
+
+	UObject::ProcessEvent(fn, &params);
 }
 
 
@@ -305,6 +383,267 @@ void UTaleQuestAIBlackboardFunctionStepLibrary::RunBehaviourTree(class APawn* Pa
 }
 
 
+// Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.GetBlackboardValueAsVector
+// (Final, Native, Static, Public, HasOutParms, HasDefaults)
+// Parameters:
+// class APawn*                   Pawn                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   KeyName                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FVector                 Value                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestAIBlackboardFunctionStepLibrary::GetBlackboardValueAsVector(class APawn* Pawn, const struct FName& KeyName, struct FVector* Value)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.GetBlackboardValueAsVector"));
+
+	struct
+	{
+		class APawn*                   Pawn;
+		struct FName                   KeyName;
+		struct FVector                 Value;
+	} params;
+
+	params.Pawn = Pawn;
+	params.KeyName = KeyName;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (Value != nullptr)
+		*Value = params.Value;
+}
+
+
+// Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.GetBlackboardValueAsString
+// (Final, Native, Static, Public, HasOutParms)
+// Parameters:
+// class APawn*                   Pawn                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   KeyName                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// class FString                  Value                          (Parm, OutParm, ZeroConstructor)
+
+void UTaleQuestAIBlackboardFunctionStepLibrary::GetBlackboardValueAsString(class APawn* Pawn, const struct FName& KeyName, class FString* Value)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.GetBlackboardValueAsString"));
+
+	struct
+	{
+		class APawn*                   Pawn;
+		struct FName                   KeyName;
+		class FString                  Value;
+	} params;
+
+	params.Pawn = Pawn;
+	params.KeyName = KeyName;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (Value != nullptr)
+		*Value = params.Value;
+}
+
+
+// Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.GetBlackboardValueAsRotator
+// (Final, Native, Static, Public, HasOutParms, HasDefaults)
+// Parameters:
+// class APawn*                   Pawn                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   KeyName                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FRotator                Value                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestAIBlackboardFunctionStepLibrary::GetBlackboardValueAsRotator(class APawn* Pawn, const struct FName& KeyName, struct FRotator* Value)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.GetBlackboardValueAsRotator"));
+
+	struct
+	{
+		class APawn*                   Pawn;
+		struct FName                   KeyName;
+		struct FRotator                Value;
+	} params;
+
+	params.Pawn = Pawn;
+	params.KeyName = KeyName;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (Value != nullptr)
+		*Value = params.Value;
+}
+
+
+// Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.GetBlackboardValueAsObject
+// (Final, Native, Static, Public, HasOutParms)
+// Parameters:
+// class APawn*                   Pawn                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   KeyName                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// class UObject*                 Value                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestAIBlackboardFunctionStepLibrary::GetBlackboardValueAsObject(class APawn* Pawn, const struct FName& KeyName, class UObject** Value)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.GetBlackboardValueAsObject"));
+
+	struct
+	{
+		class APawn*                   Pawn;
+		struct FName                   KeyName;
+		class UObject*                 Value;
+	} params;
+
+	params.Pawn = Pawn;
+	params.KeyName = KeyName;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (Value != nullptr)
+		*Value = params.Value;
+}
+
+
+// Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.GetBlackboardValueAsName
+// (Final, Native, Static, Public, HasOutParms)
+// Parameters:
+// class APawn*                   Pawn                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   KeyName                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FName                   Value                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestAIBlackboardFunctionStepLibrary::GetBlackboardValueAsName(class APawn* Pawn, const struct FName& KeyName, struct FName* Value)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.GetBlackboardValueAsName"));
+
+	struct
+	{
+		class APawn*                   Pawn;
+		struct FName                   KeyName;
+		struct FName                   Value;
+	} params;
+
+	params.Pawn = Pawn;
+	params.KeyName = KeyName;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (Value != nullptr)
+		*Value = params.Value;
+}
+
+
+// Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.GetBlackboardValueAsInt
+// (Final, Native, Static, Public, HasOutParms)
+// Parameters:
+// class APawn*                   Pawn                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   KeyName                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// int                            Value                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestAIBlackboardFunctionStepLibrary::GetBlackboardValueAsInt(class APawn* Pawn, const struct FName& KeyName, int* Value)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.GetBlackboardValueAsInt"));
+
+	struct
+	{
+		class APawn*                   Pawn;
+		struct FName                   KeyName;
+		int                            Value;
+	} params;
+
+	params.Pawn = Pawn;
+	params.KeyName = KeyName;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (Value != nullptr)
+		*Value = params.Value;
+}
+
+
+// Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.GetBlackboardValueAsFloat
+// (Final, Native, Static, Public, HasOutParms)
+// Parameters:
+// class APawn*                   Pawn                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   KeyName                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// float                          Value                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestAIBlackboardFunctionStepLibrary::GetBlackboardValueAsFloat(class APawn* Pawn, const struct FName& KeyName, float* Value)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.GetBlackboardValueAsFloat"));
+
+	struct
+	{
+		class APawn*                   Pawn;
+		struct FName                   KeyName;
+		float                          Value;
+	} params;
+
+	params.Pawn = Pawn;
+	params.KeyName = KeyName;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (Value != nullptr)
+		*Value = params.Value;
+}
+
+
+// Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.GetBlackboardValueAsClass
+// (Final, Native, Static, Public, HasOutParms)
+// Parameters:
+// class APawn*                   Pawn                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   KeyName                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// class UClass*                  Value                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestAIBlackboardFunctionStepLibrary::GetBlackboardValueAsClass(class APawn* Pawn, const struct FName& KeyName, class UClass** Value)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.GetBlackboardValueAsClass"));
+
+	struct
+	{
+		class APawn*                   Pawn;
+		struct FName                   KeyName;
+		class UClass*                  Value;
+	} params;
+
+	params.Pawn = Pawn;
+	params.KeyName = KeyName;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (Value != nullptr)
+		*Value = params.Value;
+}
+
+
+// Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.GetBlackboardValueAsBool
+// (Final, Native, Static, Public, HasOutParms)
+// Parameters:
+// class APawn*                   Pawn                           (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   KeyName                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// bool                           Value                          (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestAIBlackboardFunctionStepLibrary::GetBlackboardValueAsBool(class APawn* Pawn, const struct FName& KeyName, bool* Value)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.GetBlackboardValueAsBool"));
+
+	struct
+	{
+		class APawn*                   Pawn;
+		struct FName                   KeyName;
+		bool                           Value;
+	} params;
+
+	params.Pawn = Pawn;
+	params.KeyName = KeyName;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	if (Value != nullptr)
+		*Value = params.Value;
+}
+
+
 // Function TaleAI.TaleQuestAIBlackboardFunctionStepLibrary.ClearBlackboardValue
 // (Final, Native, Static, Public, HasOutParms)
 // Parameters:
@@ -377,6 +716,30 @@ void UTaleQuestAIGoalFunctionStepLibrary::SetQuestTargetActor(class APawn* Pawn,
 }
 
 
+// Function TaleAI.TaleQuestAIGoalFunctionStepLibrary.SetQuestLookAtActor
+// (Final, Native, Static, Public)
+// Parameters:
+// class APawn*                   Pawn                           (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 Value                          (Parm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestAIGoalFunctionStepLibrary::SetQuestLookAtActor(class APawn* Pawn, class UObject* Value)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function TaleAI.TaleQuestAIGoalFunctionStepLibrary.SetQuestLookAtActor"));
+
+	struct
+	{
+		class APawn*                   Pawn;
+		class UObject*                 Value;
+	} params;
+
+	params.Pawn = Pawn;
+	params.Value = Value;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+}
+
+
 // Function TaleAI.TaleQuestAIGoalFunctionStepLibrary.SetAreaOfOperation
 // (Final, Native, Static, Public, HasOutParms, HasDefaults)
 // Parameters:
@@ -433,6 +796,27 @@ void UTaleQuestAIGoalFunctionStepLibrary::ClearQuestTargetLocation(class APawn* 
 void UTaleQuestAIGoalFunctionStepLibrary::ClearQuestTargetActor(class APawn* Pawn)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function TaleAI.TaleQuestAIGoalFunctionStepLibrary.ClearQuestTargetActor"));
+
+	struct
+	{
+		class APawn*                   Pawn;
+	} params;
+
+	params.Pawn = Pawn;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+}
+
+
+// Function TaleAI.TaleQuestAIGoalFunctionStepLibrary.ClearQuestLookAtActor
+// (Final, Native, Static, Public)
+// Parameters:
+// class APawn*                   Pawn                           (Parm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestAIGoalFunctionStepLibrary::ClearQuestLookAtActor(class APawn* Pawn)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function TaleAI.TaleQuestAIGoalFunctionStepLibrary.ClearQuestLookAtActor"));
 
 	struct
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -692,6 +692,16 @@ enum class EVirtualKeyboardTextUsage : uint8_t
 };
 
 
+// Enum Athena.EPiratePreviewSkeletonCurseMode
+enum class EPiratePreviewSkeletonCurseMode : uint8_t
+{
+	EPiratePreviewSkeletonCurseMode__KeepPirateAsIs = 0,
+	EPiratePreviewSkeletonCurseMode__ForceRemoveSkeletonCurse = 1,
+	EPiratePreviewSkeletonCurseMode__ForceApplySkeletonCurse = 2,
+	EPiratePreviewSkeletonCurseMode__EPiratePreviewSkeletonCurseMode_MAX = 3
+};
+
+
 // Enum Athena.EScoreReason
 enum class EScoreReason : uint8_t
 {
@@ -1140,16 +1150,6 @@ enum class ETutorialDialogStep : uint8_t
 	ETutorialDialogStep__StartedTalkedToMysteriousStranger = 1,
 	ETutorialDialogStep__FinishedTalkingToMysteriousStranger = 2,
 	ETutorialDialogStep__ETutorialDialogStep_MAX = 3
-};
-
-
-// Enum Athena.EPiratePreviewSkeletonCurseMode
-enum class EPiratePreviewSkeletonCurseMode : uint8_t
-{
-	EPiratePreviewSkeletonCurseMode__KeepPirateAsIs = 0,
-	EPiratePreviewSkeletonCurseMode__ForceRemoveSkeletonCurse = 1,
-	EPiratePreviewSkeletonCurseMode__ForceApplySkeletonCurse = 2,
-	EPiratePreviewSkeletonCurseMode__EPiratePreviewSkeletonCurseMode_MAX = 3
 };
 
 
@@ -2089,6 +2089,16 @@ enum class EStoreRemoteServiceFutureStatus : uint8_t
 };
 
 
+// Enum Athena.FlagServerForMigrationReason
+enum class EFlagServerForMigrationReason : uint8_t
+{
+	FlagServerForMigrationReason__Invalid = 0,
+	FlagServerForMigrationReason__HighAverageFrameTime = 1,
+	FlagServerForMigrationReason__TimeSpentOverBudget = 2,
+	FlagServerForMigrationReason__FlagServerForMigrationReason_MAX = 3
+};
+
+
 // Enum Athena.EServerEnvironmentShutdownStatus
 enum class EServerEnvironmentShutdownStatus : uint8_t
 {
@@ -2123,8 +2133,9 @@ enum class EIntroVideoStateSkipReason : uint8_t
 	EIntroVideoStateSkipReason__AutoProceed = 2,
 	EIntroVideoStateSkipReason__PendingInvite = 3,
 	EIntroVideoStateSkipReason__SteamDeck = 4,
-	EIntroVideoStateSkipReason__Debug = 5,
-	EIntroVideoStateSkipReason__EIntroVideoStateSkipReason_MAX = 6
+	EIntroVideoStateSkipReason__PendingJoinInProgressRequest = 5,
+	EIntroVideoStateSkipReason__Debug = 6,
+	EIntroVideoStateSkipReason__EIntroVideoStateSkipReason_MAX = 7
 };
 
 
@@ -2656,6 +2667,16 @@ enum class EGameSettingType : uint8_t
 };
 
 
+// Enum Athena.ETeleportActionStateLargeItemMode
+enum class ETeleportActionStateLargeItemMode : uint8_t
+{
+	ETeleportActionStateLargeItemMode__DropLargeWieldedItem = 0,
+	ETeleportActionStateLargeItemMode__KeepLargeWieldedItem = 1,
+	ETeleportActionStateLargeItemMode__DropLargeWieldedItemAndMarkAsAbandoned = 2,
+	ETeleportActionStateLargeItemMode__ETeleportActionStateLargeItemMode_MAX = 3
+};
+
+
 // Enum Athena.ETeleportActionStateAudioMode
 enum class ETeleportActionStateAudioMode : uint8_t
 {
@@ -2789,6 +2810,15 @@ enum class ETeleportNotificationSource : uint8_t
 	ETeleportNotificationSource__TeleportState = 0,
 	ETeleportNotificationSource__WaitingToSpawnState = 1,
 	ETeleportNotificationSource__ETeleportNotificationSource_MAX = 2
+};
+
+
+// Enum Athena.ECustomMovementModeId
+enum class ECustomMovementModeId : uint8_t
+{
+	ECustomMovementModeId__ExternallyControlled = 0,
+	ECustomMovementModeId__UnderwaterSwimming = 1,
+	ECustomMovementModeId__ECustomMovementModeId_MAX = 2
 };
 
 
@@ -4046,6 +4076,28 @@ enum class ECompassDirections : uint8_t
 };
 
 
+// Enum Athena.EEndShipSessionReason
+enum class EEndShipSessionReason : uint8_t
+{
+	EEndShipSessionReason__GuildSessionIsNoLongerValid = 0,
+	EEndShipSessionReason__EEndShipSessionReason_MAX = 1
+};
+
+
+// Enum Athena.ECannotJoinGuildReason
+enum class ECannotJoinGuildReason : uint8_t
+{
+	ECannotJoinGuildReason__Pending = 0,
+	ECannotJoinGuildReason__PirateIsInMaximumNumberOfGuilds = 1,
+	ECannotJoinGuildReason__PirateIsAlreadyMemberOfGuild = 2,
+	ECannotJoinGuildReason__GuildDoesNotExist = 3,
+	ECannotJoinGuildReason__GuildIsFull = 4,
+	ECannotJoinGuildReason__Error  = 5,
+	ECannotJoinGuildReason__MAX    = 6,
+	ECannotJoinGuildReason__ECannotJoinGuildReason_MAX = 7
+};
+
+
 // Enum Athena.ECannotInviteToGuildReason
 enum class ECannotInviteToGuildReason : uint8_t
 {
@@ -4054,8 +4106,9 @@ enum class ECannotInviteToGuildReason : uint8_t
 	ECannotInviteToGuildReason__GuildIsFull = 2,
 	ECannotInviteToGuildReason__PirateIsNotAMemberOfTheGuild = 3,
 	ECannotInviteToGuildReason__PirateDoesNotHavePermissionToInvite = 4,
-	ECannotInviteToGuildReason__MAX = 5,
-	ECannotInviteToGuildReason__ECannotInviteToGuildReason_MAX = 6
+	ECannotInviteToGuildReason__Error = 5,
+	ECannotInviteToGuildReason__MAX = 6,
+	ECannotInviteToGuildReason__ECannotInviteToGuildReason_MAX = 7
 };
 
 
@@ -4267,7 +4320,9 @@ enum class EEmergentVoyageSource : uint8_t
 	EEmergentVoyageSource__SkeletonOrder = 2,
 	EEmergentVoyageSource__Emissary = 3,
 	EEmergentVoyageSource__CoralMessageInABottle = 4,
-	EEmergentVoyageSource__EEmergentVoyageSource_MAX = 5
+	EEmergentVoyageSource__CompetitiveVoyage = 5,
+	EEmergentVoyageSource__GlobalDigSpot = 6,
+	EEmergentVoyageSource__EEmergentVoyageSource_MAX = 7
 };
 
 
@@ -4718,8 +4773,10 @@ enum class EBootyTypes : uint8_t
 	EBootyTypes__CaptainsLog       = 27,
 	EBootyTypes__SirenTrident      = 28,
 	EBootyTypes__BaitCrate         = 29,
-	EBootyTypes__NonSellable       = 30,
-	EBootyTypes__EBootyTypes_MAX   = 31
+	EBootyTypes__SkullOfSirenSong  = 30,
+	EBootyTypes__HuntersCallArtifact = 31,
+	EBootyTypes__NonSellable       = 32,
+	EBootyTypes__EBootyTypes_MAX   = 33
 };
 
 
@@ -4916,7 +4973,7 @@ enum class EWorldMapShipType : uint8_t
 	EWorldMapShipType__None        = 0,
 	EWorldMapShipType__IsInAlliance = 1,
 	EWorldMapShipType__IsOwnedShip = 2,
-	EWorldMapShipType__IsContestShip = 3,
+	EWorldMapShipType__IsMaxGradedGuildShip = 3,
 	EWorldMapShipType__IsReapersTrackedShip = 4,
 	EWorldMapShipType__IsInTunnel  = 5,
 	EWorldMapShipType__IsInFaction = 6,

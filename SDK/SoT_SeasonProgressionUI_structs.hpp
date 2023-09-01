@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -84,6 +84,21 @@ struct FSeasonProgressionUITelemetryFragment
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0014(0x0004) MISSED OFFSET
 };
 
+// ScriptStruct SeasonProgressionUI.SeasonTextPopupAsset
+// 0x00A0
+struct FSeasonTextPopupAsset
+{
+	struct FStringAssetReference                       GlowIcon;                                                 // 0x0000(0x0010) (Edit, ZeroConstructor)
+	struct FStringAssetReference                       Icon;                                                     // 0x0010(0x0010) (Edit, ZeroConstructor)
+	struct FText                                       Message;                                                  // 0x0020(0x0038) (Edit)
+	class FString                                      ToastSfxEventName;                                        // 0x0058(0x0010) (Edit, ZeroConstructor)
+	class FString                                      ToastEventName;                                           // 0x0068(0x0010) (Edit, ZeroConstructor)
+	class FString                                      ToastSwitchName;                                          // 0x0078(0x0010) (Edit, ZeroConstructor)
+	class FString                                      ToastSwitchValue;                                         // 0x0088(0x0010) (Edit, ZeroConstructor)
+	float                                              ToastHoldDuration;                                        // 0x0098(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x009C(0x0004) MISSED OFFSET
+};
+
 // ScriptStruct SeasonProgressionUI.SeasonNotificationContent
 // 0x0068
 struct FSeasonNotificationContent
@@ -109,6 +124,15 @@ struct FDeedProgressDesc
 	int                                                Threshold;                                                // 0x0038(0x0004) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x003C(0x0004) MISSED OFFSET
 	struct FGenericPopupAudioDescriptor                Audio;                                                    // 0x0040(0x0040)
+};
+
+// ScriptStruct SeasonProgressionUI.SeasonsTextNotification
+// 0x0088
+struct FSeasonsTextNotification
+{
+	struct FStringAssetReference                       IconUrl;                                                  // 0x0000(0x0010) (ZeroConstructor)
+	struct FText                                       Message;                                                  // 0x0010(0x0038)
+	struct FGenericPopupAudioDescriptor                Audio;                                                    // 0x0048(0x0040)
 };
 
 // ScriptStruct SeasonProgressionUI.SeasonsChatNotification
@@ -150,11 +174,25 @@ struct FShowDeedProgressEvent
 	struct FDeedProgressDesc                           DeedProgressDesc;                                         // 0x0000(0x0080)
 };
 
+// ScriptStruct SeasonProgressionUI.SeasonsTextNotificationNetworkEvent
+// 0x0088 (0x0098 - 0x0010)
+struct FSeasonsTextNotificationNetworkEvent : public FNetworkEventStruct
+{
+	struct FSeasonsTextNotification                    SeasonsTextNotification;                                  // 0x0010(0x0088)
+};
+
 // ScriptStruct SeasonProgressionUI.SeasonsChatNotificationEvent
 // 0x0060
 struct FSeasonsChatNotificationEvent
 {
 	struct FSeasonsChatNotification                    SeasonsChatNotification;                                  // 0x0000(0x0060)
+};
+
+// ScriptStruct SeasonProgressionUI.SeasonsChatNotificationNetworkEvent
+// 0x0060 (0x0070 - 0x0010)
+struct FSeasonsChatNotificationNetworkEvent : public FNetworkEventStruct
+{
+	struct FSeasonsChatNotificationEvent               SeasonsChatNotificationEvent;                             // 0x0010(0x0060)
 };
 
 // ScriptStruct SeasonProgressionUI.SeasonProgressionUITelemetryFragmentInput

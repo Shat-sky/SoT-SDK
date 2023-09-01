@@ -1,4 +1,4 @@
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -33,6 +33,48 @@ bool UMusicZoneInterface::CanPlayForPlayer(class AActor* Player)
 	UObject::ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
+}
+
+
+// Function Music.MusicZoneComponent.SetPlaybackPositionRtpc
+// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// float                          OutTimeInSeconds               (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UMusicZoneComponent::SetPlaybackPositionRtpc(float* OutTimeInSeconds)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Music.MusicZoneComponent.SetPlaybackPositionRtpc"));
+
+	struct
+	{
+		float                          OutTimeInSeconds;
+		bool                           ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	if (OutTimeInSeconds != nullptr)
+		*OutTimeInSeconds = params.OutTimeInSeconds;
+
+	return params.ReturnValue;
+}
+
+
+// Function Music.MusicZoneComponent.OnRep_EmitterRemoteValues
+// (Final, Native, Private)
+
+void UMusicZoneComponent::OnRep_EmitterRemoteValues()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Music.MusicZoneComponent.OnRep_EmitterRemoteValues"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
 }
 
 
@@ -104,6 +146,22 @@ void UMusicZoneComponent::Client_PlayOneShot(int Index)
 	} params;
 
 	params.Index = Index;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Music.MusicZoneComponent.Client_ActivateZone
+// (Net, NetReliable, Native, Event, NetMulticast, Public)
+
+void UMusicZoneComponent::Client_ActivateZone()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Music.MusicZoneComponent.Client_ActivateZone"));
+
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

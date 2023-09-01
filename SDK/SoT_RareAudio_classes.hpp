@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -102,46 +102,6 @@ public:
 		return ptr;
 	}
 
-};
-
-
-// Class RareAudio.AudioEventToComponentMap
-// 0x0008 (0x03D0 - 0x03C8)
-class AAudioEventToComponentMap : public AActor
-{
-public:
-	class UAudioEventToComponentMapComponent*          AudioEventToComponentMapComponent;                        // 0x03C8(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class RareAudio.AudioEventToComponentMap"));
-		return ptr;
-	}
-
-
-	void ClearMappings();
-	void AddMappingWithSingleEmitterComponent(class UWwiseEvent* PlayEvent, class UWwiseEvent* StopEvent, class UWwiseObjectPoolWrapper* WwiseEmitterPool, class UWwiseEmitterComponent** WwiseEmitterComponent);
-	void AddMapping(class UWwiseEvent* PlayEvent, class UWwiseEvent* StopEvent, class UWwiseObjectPoolWrapper* WwiseEmitterPool, TArray<class UWwiseEmitterComponent*>* WwiseEmitterComponents);
-};
-
-
-// Class RareAudio.AudioEventToComponentMapComponent
-// 0x0010 (0x00D8 - 0x00C8)
-class UAudioEventToComponentMapComponent : public UActorComponent
-{
-public:
-	TArray<struct FEventToComponentMapping>            LocalComponentMappings;                                   // 0x00C8(0x0010) (ZeroConstructor)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindObject<UClass>(_xor_("Class RareAudio.AudioEventToComponentMapComponent"));
-		return ptr;
-	}
-
-
-	void ClearMappings();
-	void AddMappingWithSingleEmitterComponent(class UWwiseEvent* PlayEvent, class UWwiseEvent* StopEvent, class UWwiseObjectPoolWrapper* WwiseEmitterPool, class UWwiseEmitterComponent** WwiseEmitterComponent);
-	void AddMapping(class UWwiseEvent* PlayEvent, class UWwiseEvent* StopEvent, class UWwiseObjectPoolWrapper* WwiseEmitterPool, TArray<class UWwiseEmitterComponent*>* WwiseEmitterComponents);
 };
 
 

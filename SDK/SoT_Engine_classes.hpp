@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -4512,7 +4512,7 @@ public:
 
 
 // Class Engine.PlayerCameraManager
-// 0x1888 (0x1C50 - 0x03C8)
+// 0x1898 (0x1C60 - 0x03C8)
 class APlayerCameraManager : public AActor
 {
 public:
@@ -4529,35 +4529,35 @@ public:
 	struct FCameraCacheEntry                           LastFrameCameraCache;                                     // 0x09F0(0x05B0) (Transient)
 	struct FTViewTarget                                ViewTarget;                                               // 0x0FA0(0x05C0) (Transient)
 	struct FTViewTarget                                PendingViewTarget;                                        // 0x1560(0x05C0) (Transient)
-	unsigned char                                      UnknownData04[0x18];                                      // 0x1B20(0x0018) MISSED OFFSET
-	TArray<class UCameraModifier*>                     ModifierList;                                             // 0x1B38(0x0010) (ZeroConstructor, Transient)
-	TArray<class UClass*>                              DefaultModifiers;                                         // 0x1B48(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance)
-	float                                              FreeCamDistance;                                          // 0x1B58(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     FreeCamOffset;                                            // 0x1B5C(0x000C) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	struct FVector                                     ViewTargetOffset;                                         // 0x1B68(0x000C) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData05[0x14];                                      // 0x1B74(0x0014) MISSED OFFSET
-	TArray<class AEmitterCameraLensEffectBase*>        CameraLensEffects;                                        // 0x1B88(0x0010) (ZeroConstructor, Transient)
-	class UCameraModifier_CameraShake*                 CachedCameraShakeMod;                                     // 0x1B98(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	class UCameraAnimInst*                             AnimInstPool[0x8];                                        // 0x1BA0(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	TArray<struct FPostProcessSettings>                PostProcessBlendCache;                                    // 0x1BE0(0x0010) (ZeroConstructor, Transient)
-	unsigned char                                      UnknownData06[0x10];                                      // 0x1BF0(0x0010) MISSED OFFSET
-	TArray<class UCameraAnimInst*>                     ActiveAnims;                                              // 0x1C00(0x0010) (ZeroConstructor, Transient)
-	TArray<class UCameraAnimInst*>                     FreeAnims;                                                // 0x1C10(0x0010) (ZeroConstructor, Transient)
-	class ACameraActor*                                AnimCameraActor;                                          // 0x1C20(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      bIsOrthographic : 1;                                      // 0x1C28(0x0001) (Edit, BlueprintVisible)
-	unsigned char                                      UnknownData07 : 5;                                        // 0x1C28(0x0001)
-	unsigned char                                      bUseClientSideCameraUpdates : 1;                          // 0x1C28(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
-	unsigned char                                      UnknownData08 : 1;                                        // 0x1C28(0x0001)
-	unsigned char                                      UnknownData09 : 5;                                        // 0x1C29(0x0001)
-	unsigned char                                      bFollowHmdOrientation : 1;                                // 0x1C29(0x0001) (Edit, BlueprintVisible)
-	unsigned char                                      UnknownData10[0x2];                                       // 0x1C2A(0x0002) MISSED OFFSET
-	float                                              ViewPitchMin;                                             // 0x1C2C(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              ViewPitchMax;                                             // 0x1C30(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              ViewYawMin;                                               // 0x1C34(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              ViewYawMax;                                               // 0x1C38(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              ViewRollMin;                                              // 0x1C3C(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              ViewRollMax;                                              // 0x1C40(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData11[0xC];                                       // 0x1C44(0x000C) MISSED OFFSET
+	unsigned char                                      UnknownData04[0x30];                                      // 0x1B20(0x0030) MISSED OFFSET
+	TArray<class UCameraModifier*>                     ModifierList;                                             // 0x1B50(0x0010) (ZeroConstructor, Transient)
+	TArray<class UClass*>                              DefaultModifiers;                                         // 0x1B60(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance)
+	float                                              FreeCamDistance;                                          // 0x1B70(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     FreeCamOffset;                                            // 0x1B74(0x000C) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	struct FVector                                     ViewTargetOffset;                                         // 0x1B80(0x000C) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData05[0x14];                                      // 0x1B8C(0x0014) MISSED OFFSET
+	TArray<class AEmitterCameraLensEffectBase*>        CameraLensEffects;                                        // 0x1BA0(0x0010) (ZeroConstructor, Transient)
+	class UCameraModifier_CameraShake*                 CachedCameraShakeMod;                                     // 0x1BB0(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	class UCameraAnimInst*                             AnimInstPool[0x8];                                        // 0x1BB8(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	TArray<struct FPostProcessSettings>                PostProcessBlendCache;                                    // 0x1BF8(0x0010) (ZeroConstructor, Transient)
+	unsigned char                                      UnknownData06[0x10];                                      // 0x1C08(0x0010) MISSED OFFSET
+	TArray<class UCameraAnimInst*>                     ActiveAnims;                                              // 0x1C18(0x0010) (ZeroConstructor, Transient)
+	TArray<class UCameraAnimInst*>                     FreeAnims;                                                // 0x1C28(0x0010) (ZeroConstructor, Transient)
+	class ACameraActor*                                AnimCameraActor;                                          // 0x1C38(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      bIsOrthographic : 1;                                      // 0x1C40(0x0001) (Edit, BlueprintVisible)
+	unsigned char                                      UnknownData07 : 5;                                        // 0x1C40(0x0001)
+	unsigned char                                      bUseClientSideCameraUpdates : 1;                          // 0x1C40(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly)
+	unsigned char                                      UnknownData08 : 1;                                        // 0x1C40(0x0001)
+	unsigned char                                      UnknownData09 : 5;                                        // 0x1C41(0x0001)
+	unsigned char                                      bFollowHmdOrientation : 1;                                // 0x1C41(0x0001) (Edit, BlueprintVisible)
+	unsigned char                                      UnknownData10[0x2];                                       // 0x1C42(0x0002) MISSED OFFSET
+	float                                              ViewPitchMin;                                             // 0x1C44(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	float                                              ViewPitchMax;                                             // 0x1C48(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	float                                              ViewYawMin;                                               // 0x1C4C(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	float                                              ViewYawMax;                                               // 0x1C50(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	float                                              ViewRollMin;                                              // 0x1C54(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	float                                              ViewRollMax;                                              // 0x1C58(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData11[0x4];                                       // 0x1C5C(0x0004) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -7799,6 +7799,21 @@ public:
 };
 
 
+// Class Engine.PostProcessEditorSettings
+// 0x0000 (0x0038 - 0x0038)
+class UPostProcessEditorSettings : public UDeveloperSettings
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Engine.PostProcessEditorSettings"));
+		return ptr;
+	}
+
+};
+
+
 // Class Engine.WaterId
 // 0x0000 (0x0028 - 0x0028)
 class UWaterId : public UObject
@@ -10937,6 +10952,21 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Engine.CameraModifier_CameraShake"));
+		return ptr;
+	}
+
+};
+
+
+// Class Engine.CameraViewTargetInterface
+// 0x0000 (0x0028 - 0x0028)
+class UCameraViewTargetInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Engine.CameraViewTargetInterface"));
 		return ptr;
 	}
 
@@ -17818,6 +17848,27 @@ public:
 };
 
 
+// Class Engine.ParticleModuleKillSphere
+// 0x0068 (0x00B8 - 0x0050)
+class UParticleModuleKillSphere : public UParticleModuleKillBase
+{
+public:
+	struct FVector                                     Centre;                                                   // 0x0050(0x000C) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              Radius;                                                   // 0x005C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      bUseGroupAForAll : 1;                                     // 0x0060(0x0001) (Edit)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0061(0x0003) MISSED OFFSET
+	struct FKillSphereGroupParams                      AdditionalParams[0x5];                                    // 0x0064(0x0010) (Edit)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x00B4(0x0004) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Engine.ParticleModuleKillSphere"));
+		return ptr;
+	}
+
+};
+
+
 // Class Engine.ParticleModuleLifetimeBase
 // 0x0000 (0x0050 - 0x0050)
 class UParticleModuleLifetimeBase : public UParticleModule
@@ -19470,25 +19521,25 @@ public:
 
 
 // Class Engine.ParticleModuleTypeDataGpu
-// 0x0CD0 (0x0D20 - 0x0050)
+// 0x0D30 (0x0D80 - 0x0050)
 class UParticleModuleTypeDataGpu : public UParticleModuleTypeDataBase
 {
 public:
 	struct FGPUSpriteEmitterInfo                       EmitterInfo;                                              // 0x0050(0x02B0) (Transient)
-	struct FGPUSpriteResourceData                      ResourceData;                                             // 0x0300(0x0A00) (Transient)
-	float                                              CameraMotionBlurAmount;                                   // 0x0D00(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      bClearExistingParticlesOnInit : 1;                        // 0x0D04(0x0001) (Edit)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x0D05(0x0003) MISSED OFFSET
-	TEnumAsByte<EParticleAlphaThresholdLevel>          AlphaCullingAggressiveness;                               // 0x0D08(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x3];                                       // 0x0D09(0x0003) MISSED OFFSET
-	unsigned char                                      bOverrideAlphaThreshold : 1;                              // 0x0D0C(0x0001) (Edit)
-	unsigned char                                      UnknownData02[0x3];                                       // 0x0D0D(0x0003) MISSED OFFSET
-	float                                              OverriddenAlphaThreshold;                                 // 0x0D10(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EInteractionWithKillPlane>             InteractionWithKillPlane;                                 // 0x0D14(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EKillPlaneKillPointLocation>           KillPlanePointLocation;                                   // 0x0D15(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData03[0x2];                                       // 0x0D16(0x0002) MISSED OFFSET
-	float                                              FadingTimeWhenKilled;                                     // 0x0D18(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData04[0x4];                                       // 0x0D1C(0x0004) MISSED OFFSET
+	struct FGPUSpriteResourceData                      ResourceData;                                             // 0x0300(0x0A60) (Transient)
+	float                                              CameraMotionBlurAmount;                                   // 0x0D60(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      bClearExistingParticlesOnInit : 1;                        // 0x0D64(0x0001) (Edit)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0D65(0x0003) MISSED OFFSET
+	TEnumAsByte<EParticleAlphaThresholdLevel>          AlphaCullingAggressiveness;                               // 0x0D68(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x3];                                       // 0x0D69(0x0003) MISSED OFFSET
+	unsigned char                                      bOverrideAlphaThreshold : 1;                              // 0x0D6C(0x0001) (Edit)
+	unsigned char                                      UnknownData02[0x3];                                       // 0x0D6D(0x0003) MISSED OFFSET
+	float                                              OverriddenAlphaThreshold;                                 // 0x0D70(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EInteractionWithKillPlane>             InteractionWithKillPlane;                                 // 0x0D74(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EKillPlaneKillPointLocation>           KillPlanePointLocation;                                   // 0x0D75(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData03[0x2];                                       // 0x0D76(0x0002) MISSED OFFSET
+	float                                              FadingTimeWhenKilled;                                     // 0x0D78(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData04[0x4];                                       // 0x0D7C(0x0004) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

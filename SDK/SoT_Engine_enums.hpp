@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -3775,6 +3775,19 @@ enum class EFFTWaterKillPointGroupName : uint8_t
 	FFTWaterKillPointGroupReplacement = 4,
 	FFTWaterKillPointGroup_MAX     = 5,
 	EFFTWaterKillPointGroupName_MAX = 6
+};
+
+
+// Enum Engine.EKillSphereGroupNames
+enum class EKillSphereGroupNames : uint8_t
+{
+	EKillSphereGroupNames__GroupB  = 0,
+	EKillSphereGroupNames__GroupC  = 1,
+	EKillSphereGroupNames__GroupD  = 2,
+	EKillSphereGroupNames__GroupE  = 3,
+	EKillSphereGroupNames__GroupReplacement = 4,
+	EKillSphereGroupNames__Group_MAX = 5,
+	EKillSphereGroupNames__EKillSphereGroupNames_MAX = 6
 };
 
 

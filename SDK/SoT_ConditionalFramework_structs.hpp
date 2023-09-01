@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -9,6 +9,7 @@
 #include "SoT_Basic.hpp"
 #include "SoT_ConditionalFramework_enums.hpp"
 #include "SoT_Engine_classes.hpp"
+#include "SoT_CoreUObject_classes.hpp"
 #include "SoT_AthenaEngine_classes.hpp"
 
 namespace SDK
@@ -104,6 +105,14 @@ struct FIsGameOnSpecificPlayModeVariantCondition : public FTargetedPayloadCondit
 struct FIsObjectOfTypeCondition : public FTargetedPayloadConditionBase
 {
 	TArray<TAssetPtr<class UClass>>                    TargetObjectClasses;                                      // 0x0028(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+};
+
+// ScriptStruct ConditionalFramework.IsSpecifiedActorCondition
+// 0x0040 (0x0048 - 0x0008)
+struct FIsSpecifiedActorCondition : public FConditionBase
+{
+	struct FConditionContextPayloadSelectorInstance    SpecifyingActorPayloadSelector;                           // 0x0008(0x0020) (Edit)
+	struct FConditionContextPayloadSelectorInstance    TargetActorPayloadSelector;                               // 0x0028(0x0020) (Edit)
 };
 
 // ScriptStruct ConditionalFramework.NotCondition

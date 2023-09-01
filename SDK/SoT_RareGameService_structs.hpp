@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -8,6 +8,7 @@
 
 #include "SoT_Basic.hpp"
 #include "SoT_RareGameService_enums.hpp"
+#include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 
 namespace SDK
@@ -16,21 +17,29 @@ namespace SDK
 //Script Structs
 //---------------------------------------------------------------------------
 
-// ScriptStruct RareGameService.RareGameServiceContext
-// 0x0001
-struct FRareGameServiceContext
-{
-	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
-};
-
 // ScriptStruct RareGameService.RareGameServiceSpecification
-// 0x0028
+// 0x0018
 struct FRareGameServiceSpecification
 {
-	TAssetPtr<class UClass>                            ServiceClassToInstantiate;                                // 0x0000(0x0020) (Edit, DisableEditOnInstance)
-	TEnumAsByte<ERareGameServiceRole>                  ServiceRole;                                              // 0x0020(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	bool                                               Replicates;                                               // 0x0021(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x6];                                       // 0x0022(0x0006) MISSED OFFSET
+	struct FName                                       ServiceName;                                              // 0x0000(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UClass*                                      ServiceClassToInstantiate;                                // 0x0008(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	TEnumAsByte<ERareGameServiceRole>                  ServiceRole;                                              // 0x0010(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               Replicates;                                               // 0x0011(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x6];                                       // 0x0012(0x0006) MISSED OFFSET
+};
+
+// ScriptStruct RareGameService.RareGameServiceManagerServiceInitialisedEvent
+// 0x0008
+struct FRareGameServiceManagerServiceInitialisedEvent
+{
+	class UObject*                                     ServiceObject;                                            // 0x0000(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+};
+
+// ScriptStruct RareGameService.RareGameServiceManagerStateChangedEvent
+// 0x0002
+struct FRareGameServiceManagerStateChangedEvent
+{
+	unsigned char                                      UnknownData00[0x2];                                       // 0x0000(0x0002) MISSED OFFSET
 };
 
 }

@@ -1,4 +1,4 @@
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -127,6 +127,32 @@ void ARowboat::SetAlwaysEnabledInteractables(TArray<class UChildActorComponent*>
 	} params;
 
 	params.InAlwaysEnabledInteractables = InAlwaysEnabledInteractables;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Watercrafts.Rowboat.ReactToRepairableStateChanged
+// (Final, Native, Protected)
+// Parameters:
+// TEnumAsByte<ERepairableState>  InNewState                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<ERepairableState>  InPreviousState                (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// class URepairableComponent*    InRepairableComponent          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
+
+void ARowboat::ReactToRepairableStateChanged(TEnumAsByte<ERepairableState> InNewState, TEnumAsByte<ERepairableState> InPreviousState, class URepairableComponent* InRepairableComponent)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Watercrafts.Rowboat.ReactToRepairableStateChanged"));
+
+	struct
+	{
+		TEnumAsByte<ERepairableState>  InNewState;
+		TEnumAsByte<ERepairableState>  InPreviousState;
+		class URepairableComponent*    InRepairableComponent;
+	} params;
+
+	params.InNewState = InNewState;
+	params.InPreviousState = InPreviousState;
+	params.InRepairableComponent = InRepairableComponent;
 
 	UObject::ProcessEvent(fn, &params);
 }

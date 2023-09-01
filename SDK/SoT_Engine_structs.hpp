@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -1103,7 +1103,7 @@ struct FActiveForceFeedbackEffect
 };
 
 // ScriptStruct Engine.ViewTargetTransitionParams
-// 0x0010
+// 0x0028
 struct FViewTargetTransitionParams
 {
 	float                                              BlendTime;                                                // 0x0000(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
@@ -1111,7 +1111,7 @@ struct FViewTargetTransitionParams
 	unsigned char                                      UnknownData00[0x3];                                       // 0x0005(0x0003) MISSED OFFSET
 	float                                              BlendExp;                                                 // 0x0008(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      bLockOutgoing : 1;                                        // 0x000C(0x0001) (Edit, BlueprintVisible)
-	unsigned char                                      UnknownData01[0x3];                                       // 0x000D(0x0003) MISSED OFFSET
+	unsigned char                                      UnknownData01[0x1B];                                      // 0x000D(0x001B) MISSED OFFSET
 };
 
 // ScriptStruct Engine.LatentActionInfo
@@ -3918,6 +3918,14 @@ struct FParticleEventGPU_GenerateInfo
 	TArray<class UParticleModuleEventSendToGame*>      ParticleModuleEventsToSendToGame;                         // 0x0018(0x0010) (Edit, ExportObject, ZeroConstructor)
 };
 
+// ScriptStruct Engine.KillSphereGroupParams
+// 0x0010
+struct FKillSphereGroupParams
+{
+	struct FVector                                     Centre;                                                   // 0x0000(0x000C) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              Radius;                                                   // 0x000C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+};
+
 // ScriptStruct Engine.LocationBoneSocketInfo
 // 0x0014
 struct FLocationBoneSocketInfo
@@ -4044,7 +4052,8 @@ struct FGPUSpriteEmitterInfo
 	unsigned char                                      bIgnoreComponentColorTint : 1;                            // 0x0188(0x0001)
 	unsigned char                                      bGeneratesDeathEvents : 1;                                // 0x0188(0x0001)
 	unsigned char                                      bGeneratesCollisionEvents : 1;                            // 0x0188(0x0001)
-	unsigned char                                      UnknownData02[0x3];                                       // 0x0189(0x0003) MISSED OFFSET
+	unsigned char                                      bHasSpawnEventModule : 1;                                 // 0x0189(0x0001)
+	unsigned char                                      UnknownData02[0x2];                                       // 0x018A(0x0002) MISSED OFFSET
 	TEnumAsByte<EParticleCollisionMode>                CollisionMode;                                            // 0x018C(0x0001) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData03[0x3];                                       // 0x018D(0x0003) MISSED OFFSET
 	struct FRawDistributionVector                      DynamicColor;                                             // 0x0190(0x0038)
@@ -4063,7 +4072,7 @@ struct FGPUSpriteEmitterInfo
 };
 
 // ScriptStruct Engine.GPUSpriteResourceData
-// 0x0A00
+// 0x0A60
 struct FGPUSpriteResourceData
 {
 	TArray<struct FColor>                              QuantizedColorSamples;                                    // 0x0000(0x0010) (ZeroConstructor)
@@ -4113,9 +4122,9 @@ struct FGPUSpriteResourceData
 	struct FVector2D                                   PivotOffset;                                              // 0x020C(0x0008) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x46C];                                     // 0x0214(0x046C) MISSED OFFSET
 	float                                              AlignmentInheritedVelocityScale;                          // 0x0680(0x0004) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x374];                                     // 0x0684(0x0374) MISSED OFFSET
-	TEnumAsByte<ESpawnLocationValueSemantic>           SpawnLocationValueSemantic[0x6];                          // 0x09F8(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData03[0x2];                                       // 0x09FE(0x0002) MISSED OFFSET
+	unsigned char                                      UnknownData02[0x3D4];                                     // 0x0684(0x03D4) MISSED OFFSET
+	TEnumAsByte<ESpawnLocationValueSemantic>           SpawnLocationValueSemantic[0x6];                          // 0x0A58(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData03[0x2];                                       // 0x0A5E(0x0002) MISSED OFFSET
 };
 
 // ScriptStruct Engine.VelocityConeGroupParams
@@ -4555,15 +4564,16 @@ struct FNetSubObjectPtr
 };
 
 // ScriptStruct Engine.NetGuidResolveStackEntry
-// 0x0030
+// 0x0040
 struct FNetGuidResolveStackEntry
 {
 	uint32_t                                           NetGuid;                                                  // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
 	class FString                                      ObjectPath;                                               // 0x0008(0x0010) (ZeroConstructor)
 	class FString                                      path;                                                     // 0x0018(0x0010) (ZeroConstructor)
-	TEnumAsByte<EResolveOperationResult>               Result;                                                   // 0x0028(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x7];                                       // 0x0029(0x0007) MISSED OFFSET
+	class FString                                      AdditionalDetails;                                        // 0x0028(0x0010) (ZeroConstructor)
+	TEnumAsByte<EResolveOperationResult>               Result;                                                   // 0x0038(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x7];                                       // 0x0039(0x0007) MISSED OFFSET
 };
 
 // ScriptStruct Engine.SerializeNewActorFailureContext

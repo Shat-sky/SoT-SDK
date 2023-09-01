@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -95,6 +95,9 @@ public:
 	}
 
 
+	void WaitForBlackboardValueAsObject(class APawn* Pawn, const struct FName& KeyName, class UObject* ExpectedValue);
+	void WaitForBlackboardValueAsClass(class APawn* Pawn, const struct FName& KeyName, class UClass* ExpectedValue);
+	void WaitForBlackboardValueAsBool(class APawn* Pawn, const struct FName& KeyName, bool ExpectedValue);
 	static void SetBlackboardValueAsVector(class APawn* Pawn, const struct FName& KeyName, const struct FVector& Value);
 	static void SetBlackboardValueAsString(class APawn* Pawn, const struct FName& KeyName, const class FString& Value);
 	static void SetBlackboardValueAsRotator(class APawn* Pawn, const struct FName& KeyName, const struct FRotator& Value);
@@ -105,6 +108,15 @@ public:
 	static void SetBlackboardValueAsClass(class APawn* Pawn, const struct FName& KeyName, class UClass* Value);
 	static void SetBlackboardValueAsBool(class APawn* Pawn, const struct FName& KeyName, bool Value);
 	void RunBehaviourTree(class APawn* Pawn, TAssetPtr<class UBehaviorTree> BehaviourTree);
+	static void GetBlackboardValueAsVector(class APawn* Pawn, const struct FName& KeyName, struct FVector* Value);
+	static void GetBlackboardValueAsString(class APawn* Pawn, const struct FName& KeyName, class FString* Value);
+	static void GetBlackboardValueAsRotator(class APawn* Pawn, const struct FName& KeyName, struct FRotator* Value);
+	static void GetBlackboardValueAsObject(class APawn* Pawn, const struct FName& KeyName, class UObject** Value);
+	static void GetBlackboardValueAsName(class APawn* Pawn, const struct FName& KeyName, struct FName* Value);
+	static void GetBlackboardValueAsInt(class APawn* Pawn, const struct FName& KeyName, int* Value);
+	static void GetBlackboardValueAsFloat(class APawn* Pawn, const struct FName& KeyName, float* Value);
+	static void GetBlackboardValueAsClass(class APawn* Pawn, const struct FName& KeyName, class UClass** Value);
+	static void GetBlackboardValueAsBool(class APawn* Pawn, const struct FName& KeyName, bool* Value);
 	static void ClearBlackboardValue(class APawn* Pawn, const struct FName& KeyName);
 };
 
@@ -124,9 +136,11 @@ public:
 
 	static void SetQuestTargetLocation(class APawn* Pawn, const struct FVector& Value);
 	static void SetQuestTargetActor(class APawn* Pawn, class UObject* Value);
+	static void SetQuestLookAtActor(class APawn* Pawn, class UObject* Value);
 	static void SetAreaOfOperation(const TScriptInterface<class UAIAreaOfOperationInterface>& AIAreaOfOperationInterface, const struct FVector& AreaLocation, float AreaRadius);
 	static void ClearQuestTargetLocation(class APawn* Pawn);
 	static void ClearQuestTargetActor(class APawn* Pawn);
+	static void ClearQuestLookAtActor(class APawn* Pawn);
 	static void ClearAreaOfOperation(const TScriptInterface<class UAIAreaOfOperationInterface>& AIAreaOfOperationInterface);
 };
 
@@ -236,7 +250,7 @@ public:
 
 
 // Class TaleAI.TaleQuestSpawnAICustomRootStepDesc
-// 0x00D8 (0x0158 - 0x0080)
+// 0x00E8 (0x0168 - 0x0080)
 class UTaleQuestSpawnAICustomRootStepDesc : public UTaleQuestStepDesc
 {
 public:
@@ -244,9 +258,9 @@ public:
 	struct FSpawnAICustomSetupTaskData                 SetupTaskData;                                            // 0x0088(0x0018)
 	struct FSpawnActorCustomOnTriggerWaveTaskData      OnTriggerWaveTaskData;                                    // 0x00A0(0x0010)
 	struct FSpawnActorCustomOnCompleteWaveTaskData     OnCompleteWaveTaskData;                                   // 0x00B0(0x0008)
-	struct FSpawnAICustomPreSpawnTaskData              PreSpawnTaskData;                                         // 0x00B8(0x0068)
-	struct FSpawnAICustomOnSpawnTaskData               OnSpawnTaskData;                                          // 0x0120(0x0018)
-	struct FSpawnAICustomOnDespawnTaskData             OnDespawnTaskData;                                        // 0x0138(0x0020)
+	struct FSpawnAICustomPreSpawnTaskData              PreSpawnTaskData;                                         // 0x00B8(0x0078)
+	struct FSpawnAICustomOnSpawnTaskData               OnSpawnTaskData;                                          // 0x0130(0x0018)
+	struct FSpawnAICustomOnDespawnTaskData             OnDespawnTaskData;                                        // 0x0148(0x0020)
 
 	static UClass* StaticClass()
 	{
@@ -350,14 +364,14 @@ public:
 
 
 // Class TaleAI.TaleQuestSpawnAICustomPreSpawnTask
-// 0x0088 (0x0100 - 0x0078)
+// 0x0098 (0x0110 - 0x0078)
 class UTaleQuestSpawnAICustomPreSpawnTask : public UTaleQuestSpawnAICustomTaskBase
 {
 public:
 	unsigned char                                      UnknownData00[0x8];                                       // 0x0078(0x0008) MISSED OFFSET
 	TScriptInterface<class UTaleQuestStepInterface>    Body;                                                     // 0x0080(0x0010) (ZeroConstructor, Transient, IsPlainOldData)
-	struct FSpawnAICustomPreSpawnTaskData              TaskData;                                                 // 0x0090(0x0068) (Transient)
-	unsigned char                                      UnknownData01[0x8];                                       // 0x00F8(0x0008) MISSED OFFSET
+	struct FSpawnAICustomPreSpawnTaskData              TaskData;                                                 // 0x0090(0x0078) (Transient)
+	unsigned char                                      UnknownData01[0x8];                                       // 0x0108(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

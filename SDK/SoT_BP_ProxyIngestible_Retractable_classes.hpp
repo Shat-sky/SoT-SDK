@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.6.2) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,11 +15,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_ProxyIngestible_Retractable.BP_ProxyIngestible_Retractable_C
-// 0x0008 (0x07F8 - 0x07F0)
+// 0x0008 (0x08E8 - 0x08E0)
 class ABP_ProxyIngestible_Retractable_C : public ABP_ProxyIngestible_C
 {
 public:
-	class URetractableItemProxyComponent*              RetractableItemProxy;                                     // 0x07F0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class URetractableItemProxyComponent*              RetractableItemProxy;                                     // 0x08E0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

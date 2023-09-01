@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -136,16 +136,16 @@ public:
 
 
 // Class EmissaryLevel.EmissaryFlotsamItemInfo
-// 0x0048 (0x0770 - 0x0728)
+// 0x0048 (0x0788 - 0x0740)
 class AEmissaryFlotsamItemInfo : public ABootyItemInfo
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0728(0x0008) MISSED OFFSET
-	struct FCompanySpecificBootyReward                 HandInOwnFlotsamReward;                                   // 0x0730(0x0018) (Edit, DisableEditOnInstance)
-	struct FCompanySpecificBootyReward                 AlternateHandInOwnFlotsamReward;                          // 0x0748(0x0018) (Edit, DisableEditOnInstance)
-	class UClass*                                      PermittedFlotsamPurchaseCompany;                          // 0x0760(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	bool                                               FlotsamCanBeDuplicated;                                   // 0x0768(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x7];                                       // 0x0769(0x0007) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0740(0x0008) MISSED OFFSET
+	struct FCompanySpecificBootyReward                 HandInOwnFlotsamReward;                                   // 0x0748(0x0018) (Edit, DisableEditOnInstance)
+	struct FCompanySpecificBootyReward                 AlternateHandInOwnFlotsamReward;                          // 0x0760(0x0018) (Edit, DisableEditOnInstance)
+	class UClass*                                      PermittedFlotsamPurchaseCompany;                          // 0x0778(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               FlotsamCanBeDuplicated;                                   // 0x0780(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x7];                                       // 0x0781(0x0007) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -157,13 +157,13 @@ public:
 
 
 // Class EmissaryLevel.EmissaryFlotsamItemSpawnComponent
-// 0x00F0 (0x0530 - 0x0440)
+// 0x00F0 (0x0560 - 0x0470)
 class UEmissaryFlotsamItemSpawnComponent : public UItemSpawnComponent
 {
 public:
-	unsigned char                                      UnknownData00[0xA8];                                      // 0x0440(0x00A8) MISSED OFFSET
-	struct FVector                                     GuildSessionEndedFlotsamOffset;                           // 0x04E8(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x3C];                                      // 0x04F4(0x003C) MISSED OFFSET
+	unsigned char                                      UnknownData00[0xA8];                                      // 0x0470(0x00A8) MISSED OFFSET
+	struct FVector                                     GuildSessionEndedFlotsamOffset;                           // 0x0518(0x000C) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x3C];                                      // 0x0524(0x003C) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -182,7 +182,7 @@ public:
 	unsigned char                                      UnknownData00[0x10];                                      // 0x00C8(0x0010) MISSED OFFSET
 	bool                                               CheckForDelivery;                                         // 0x00D8(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	bool                                               CheckForPickup;                                           // 0x00D9(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	bool                                               HonorBattleFlag;                                          // 0x00DA(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               WonInBattleFlag;                                          // 0x00DA(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x15];                                      // 0x00DB(0x0015) MISSED OFFSET
 
 	static UClass* StaticClass()
@@ -215,7 +215,7 @@ public:
 
 
 // Class EmissaryLevel.EmissaryMaxRankQuestProvider
-// 0x0098 (0x0160 - 0x00C8)
+// 0x00A8 (0x0170 - 0x00C8)
 class UEmissaryMaxRankQuestProvider : public UActorComponent
 {
 public:
@@ -225,7 +225,8 @@ public:
 	struct FText                                       StartMaxRankQuestToolTipText;                             // 0x00D8(0x0038) (Edit, DisableEditOnInstance)
 	struct FText                                       CannotStartMaxRankQuestToolTipText;                       // 0x0110(0x0038) (Edit, DisableEditOnInstance)
 	struct FStringAssetReference                       QuestDesc;                                                // 0x0148(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
-	class UClass*                                      Company;                                                  // 0x0158(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	TArray<struct FEmissaryMaxRankQuestProviderQuestOverrides> QuestDescOverrides;                                       // 0x0158(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	class UClass*                                      Company;                                                  // 0x0168(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -368,7 +369,7 @@ public:
 
 
 // Class EmissaryLevel.StartEmissaryVoyageInlineVoteConsumer
-// 0x01D8 (0x0300 - 0x0128)
+// 0x0210 (0x0338 - 0x0128)
 class UStartEmissaryVoyageInlineVoteConsumer : public UEmissaryVoyageInlineVoteConsumerBase
 {
 public:
@@ -378,9 +379,10 @@ public:
 	struct FText                                       EmissaryVotingCantVoteReasonNoEmissaryEntitlement;        // 0x01D0(0x0038) (Edit, DisableEditOnInstance)
 	struct FText                                       EmissaryVotingCantVoteReasonHasActiveVoteForDifferentCompany;// 0x0208(0x0038) (Edit, DisableEditOnInstance)
 	struct FText                                       EmissaryVotingCantVoteReasonOnOpposingFaction;            // 0x0240(0x0038) (Edit, DisableEditOnInstance)
-	struct FText                                       EmissaryVotingRemoveVote;                                 // 0x0278(0x0038) (Edit, DisableEditOnInstance)
-	struct FText                                       EmissaryVotingCantRemoveVote;                             // 0x02B0(0x0038) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData00[0x18];                                      // 0x02E8(0x0018) MISSED OFFSET
+	struct FText                                       EmissaryVotingCantVoteReasonSaferSeas;                    // 0x0278(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       EmissaryVotingRemoveVote;                                 // 0x02B0(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       EmissaryVotingCantRemoveVote;                             // 0x02E8(0x0038) (Edit, DisableEditOnInstance)
+	unsigned char                                      UnknownData00[0x18];                                      // 0x0320(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -392,13 +394,13 @@ public:
 
 
 // Class EmissaryLevel.StartGuildEmissaryVoyageInlineVoteConsumer
-// 0x0088 (0x0388 - 0x0300)
+// 0x0088 (0x03C0 - 0x0338)
 class UStartGuildEmissaryVoyageInlineVoteConsumer : public UStartEmissaryVoyageInlineVoteConsumer
 {
 public:
-	struct FText                                       GuildEmissaryVotingCantVoteReasonGuildEmissaryNotUnlocked;// 0x0300(0x0038) (Edit, DisableEditOnInstance)
-	struct FText                                       GuildEmissaryVotingCantVoteReasonNoGuildShip;             // 0x0338(0x0038) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData00[0x18];                                      // 0x0370(0x0018) MISSED OFFSET
+	struct FText                                       GuildEmissaryVotingCantVoteReasonGuildEmissaryNotUnlocked;// 0x0338(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       GuildEmissaryVotingCantVoteReasonNoGuildShip;             // 0x0370(0x0038) (Edit, DisableEditOnInstance)
+	unsigned char                                      UnknownData00[0x18];                                      // 0x03A8(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -455,8 +457,10 @@ public:
 	TEnumAsByte<EEmissaryVoyageValidatorType>          ValidatorType;                                            // 0x0030(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x7];                                       // 0x0031(0x0007) MISSED OFFSET
 	class UClass*                                      RequiredEntitlement;                                      // 0x0038(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      IsValidatorTypeEntitlement : 1;                           // 0x0040(0x0001)
-	unsigned char                                      UnknownData01[0x97];                                      // 0x0041(0x0097) MISSED OFFSET
+	bool                                               BlockDuringSaferSeas;                                     // 0x0040(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x3];                                       // 0x0041(0x0003) MISSED OFFSET
+	unsigned char                                      IsValidatorTypeEntitlement : 1;                           // 0x0044(0x0001)
+	unsigned char                                      UnknownData02[0x93];                                      // 0x0045(0x0093) MISSED OFFSET
 	class UClass*                                      TargetCompany;                                            // 0x00D8(0x0008) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 	class UEmissaryVoyageInlineVoteConsumerBase*       Consumer;                                                 // 0x00E0(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
 	class UGuildSettings*                              GuildSettings;                                            // 0x00E8(0x0008) (ZeroConstructor, IsPlainOldData)

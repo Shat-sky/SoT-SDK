@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -8,11 +8,11 @@
 
 #include "SoT_Basic.hpp"
 #include "SoT_EmissaryLevel_enums.hpp"
+#include "SoT_MysteriousNotes_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_AthenaEngine_classes.hpp"
 #include "SoT_Athena_classes.hpp"
-#include "SoT_MysteriousNotes_classes.hpp"
 #include "SoT_ItemQuality_classes.hpp"
 #include "SoT_EmissaryFramework_classes.hpp"
 
@@ -84,7 +84,7 @@ struct FEmissaryLevelData
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0004(0x0004) MISSED OFFSET
 	struct FEmissaryFlagMeshReferences                 EmissaryFlagMeshAssetReferences;                          // 0x0008(0x0020) (Edit, DisableEditOnInstance)
 	TAssetPtr<class UWeightedItemDescSpawnDataAsset>   EmissaryFlotsamSpawnDataAsset;                            // 0x0028(0x0020) (Edit, DisableEditOnInstance)
-	TAssetPtr<class UWeightedItemDescSpawnDataAsset>   HonorBattleEmissaryFlotsamSpawnDataAsset;                 // 0x0048(0x0020) (Edit, DisableEditOnInstance)
+	TAssetPtr<class UWeightedItemDescSpawnDataAsset>   WonInBattleEmissaryFlotsamSpawnDataAsset;                 // 0x0048(0x0020) (Edit, DisableEditOnInstance)
 	class UEmissaryColourSwatchSettingsAsset*          CustomisedFlagSettings;                                   // 0x0068(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	struct FRewardId                                   EmissaryDeactivationReward;                               // 0x0070(0x0008) (Edit, DisableEditOnInstance)
 	TArray<struct FPlayerStat>                         StatsToFireOnEmissaryLevelReached;                        // 0x0078(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
@@ -126,6 +126,15 @@ struct FEmissaryPointBoostMultipliers
 {
 	float                                              PlayerWearningCompanyCostume;                             // 0x0000(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	float                                              CrewShipFullyEquippedWithCompanyCosmetics;                // 0x0004(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+};
+
+// ScriptStruct EmissaryLevel.EmissaryMaxRankQuestProviderQuestOverrides
+// 0x0020
+struct FEmissaryMaxRankQuestProviderQuestOverrides
+{
+	struct FFeatureFlag                                FeatureFlag;                                              // 0x0000(0x000C) (Edit, DisableEditOnInstance)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x000C(0x0004) MISSED OFFSET
+	struct FStringAssetReference                       QuestDesc;                                                // 0x0010(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
 };
 
 // ScriptStruct EmissaryLevel.EmissaryCompanyCampaignScale
@@ -400,18 +409,20 @@ struct FEmissaryJoinedNetworkEvent : public FNetworkEventStruct
 };
 
 // ScriptStruct EmissaryLevel.EmissarySunkNetworkEvent
-// 0x0010 (0x0020 - 0x0010)
+// 0x0020 (0x0030 - 0x0010)
 struct FEmissarySunkNetworkEvent : public FNetworkEventStruct
 {
 	class UDataAsset*                                  PopUpDesc;                                                // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
 	struct FName                                       CompanyName;                                              // 0x0018(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+	struct FGuid                                       GuildId;                                                  // 0x0020(0x0010) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct EmissaryLevel.EmissaryMaxLevelReachedNetworkEvent
-// 0x0008 (0x0018 - 0x0010)
+// 0x0018 (0x0028 - 0x0010)
 struct FEmissaryMaxLevelReachedNetworkEvent : public FNetworkEventStruct
 {
 	class UDataAsset*                                  PopUpDesc;                                                // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
+	struct FGuid                                       GuildId;                                                  // 0x0018(0x0010) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct EmissaryLevel.EmissaryDeactivatedNetworkEvent
@@ -553,12 +564,13 @@ struct FEmissarySessionEndTelemetryEvent
 };
 
 // ScriptStruct EmissaryLevel.EmissarySessionStartTelemetryEvent
-// 0x001C
+// 0x002C
 struct FEmissarySessionStartTelemetryEvent
 {
 	struct FGuid                                       EmissarySessionId;                                        // 0x0000(0x0010) (ZeroConstructor, IsPlainOldData)
 	struct FName                                       EmissaryCompany;                                          // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
 	int                                                EmisarriesOnServerCount;                                  // 0x0018(0x0004) (ZeroConstructor, IsPlainOldData)
+	struct FGuid                                       GuildId;                                                  // 0x001C(0x0010) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct EmissaryLevel.VoteAddedNetworkEvent

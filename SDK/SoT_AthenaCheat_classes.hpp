@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -296,6 +296,7 @@ public:
 	void SetShipFullyDamaged();
 	void SetShipCapstanFullyRepaired();
 	void SetShipCapstanFullyDamaged();
+	void SetShipCanSailForAGuild(bool InCanSailForAGuild);
 	void SetShipBuoyancyBlend(float UnaryBlend);
 	void SetSeaFortAllEnemiesDeadOnAlignmentFlag(int InFort, bool IsDead);
 	void SetSeaFortAlignment(int InFort, int InAlignment);
@@ -418,6 +419,7 @@ public:
 	void ResetInitialMatchmakingCooldown();
 	void ResetGlitterbeardTree();
 	void ResetDemoSession(bool StartNewSession);
+	void ResetCrewsJoinedGameEventOnDemand(const class FString& InGameEventType);
 	void ResetAllShipDamage();
 	void ResetAllOverrideCannonShotHitChance();
 	void ResetAllMechanisms();
@@ -473,6 +475,7 @@ public:
 	void PrintAISpawners();
 	void PrintAISpawnContexts();
 	void PrimeRitualTable();
+	void PreventTunnelMatchmakingForCrew();
 	void PreventShipMotion();
 	void PlayWorldSequence(const class FString& InReference);
 	void PlayLocalSequences();
@@ -589,6 +592,8 @@ public:
 	void ForceNPCOnSurfaceLocation(int LoctationIndex, int LoctationPointIndex);
 	void ForceNPCOnShipIsCurrentlyInDanger(bool IsCurrentlyInDanger);
 	void ForceLocalPlayerMoveForward(float ScaleValue);
+	void ForceLocalPlayerMeleeCombo(float Interval);
+	void ForceLocalPlayerMeleeAttack(float Frequency);
 	void ForceGarbageCollect();
 	void ForceEmoteWithEmoteProp(const struct FName& EmoteIdentifier, const class FString& EmotePropAssetLocation);
 	void ForceEmoteWithDescriptionAndEmoteProp(const struct FName& EmoteIdentifier, const class FString& DisplayName, const class FString& AudioDescription, const class FString& EmotePropAssetLocation);
@@ -757,6 +762,7 @@ public:
 	void ApplyDamageToAllDamageZones(float Damage);
 	void ApplyCursedCannonballStatusToShip(const class FString& CannonballTypeString);
 	void ApplyCursedCannonballStatusToPlayer(const class FString& CannonballTypeString);
+	void AllowTunnelMatchmakingForCrew();
 	void AllowTeleportWithItems(bool CanTeleport);
 	void AllowShipMotion();
 	void AllocatePortalToTunnelOfTheDamned(const class FString& TunnelDescAssetPath);

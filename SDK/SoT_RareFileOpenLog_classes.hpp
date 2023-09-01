@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -62,19 +62,19 @@ public:
 
 
 // Class RareFileOpenLog.RareFileOpenLogSettings
-// 0x0048 (0x0080 - 0x0038)
+// 0x0058 (0x0090 - 0x0038)
 class URareFileOpenLogSettings : public UDeveloperSettings
 {
 public:
-	int                                                InitialOpenOrderArraySize;                                // 0x0038(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	int                                                DataSizeSaveIncrement;                                    // 0x003C(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	float                                              TimeSaveIncrement;                                        // 0x0040(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	TEnumAsByte<EOpenOrderDataSource>                  DataSource;                                               // 0x0044(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x0045(0x0003) MISSED OFFSET
-	class FString                                      OpenOrderLogDirectory;                                    // 0x0048(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
-	class FString                                      OutputOrderLogDirectory;                                  // 0x0058(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
-	int                                                NumberOfLogsToAggregate;                                  // 0x0068(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x14];                                      // 0x006C(0x0014) MISSED OFFSET
+	int                                                DataSizeSaveIncrement;                                    // 0x0038(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	float                                              TimeSaveIncrement;                                        // 0x003C(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	TEnumAsByte<EOpenOrderDataSource>                  DataSource;                                               // 0x0040(0x0001) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x0041(0x0007) MISSED OFFSET
+	TArray<class FString>                              SandboxesToEnableByDefault;                               // 0x0048(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
+	class FString                                      OpenOrderLogDirectory;                                    // 0x0058(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
+	class FString                                      OutputOrderLogDirectory;                                  // 0x0068(0x0010) (Edit, ZeroConstructor, Config, DisableEditOnInstance)
+	int                                                NumberOfLogsToAggregate;                                  // 0x0078(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x14];                                      // 0x007C(0x0014) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

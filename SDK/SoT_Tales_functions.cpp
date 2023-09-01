@@ -1,4 +1,4 @@
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -645,6 +645,37 @@ class AActor* UActorOfInterestTaleFunctionLibrary::GetActorOfInterest(class UCla
 }
 
 
+// Function Tales.TaleQuestActionStateMachineFunctionLibrary.IsActionStateActive
+// (Final, Native, Public, HasOutParms, Const)
+// Parameters:
+// TScriptInterface<class UActionStateMachineInterface> ActionStateMachineInterface    (Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<EActionStateMachineTrackId> ActionStateMachineTrackId      (Parm, ZeroConstructor, IsPlainOldData)
+// class UClass*                  ActionStateId                  (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           OutIsActionStateActive         (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestActionStateMachineFunctionLibrary::IsActionStateActive(const TScriptInterface<class UActionStateMachineInterface>& ActionStateMachineInterface, TEnumAsByte<EActionStateMachineTrackId> ActionStateMachineTrackId, class UClass* ActionStateId, bool* OutIsActionStateActive)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestActionStateMachineFunctionLibrary.IsActionStateActive"));
+
+	struct
+	{
+		TScriptInterface<class UActionStateMachineInterface> ActionStateMachineInterface;
+		TEnumAsByte<EActionStateMachineTrackId> ActionStateMachineTrackId;
+		class UClass*                  ActionStateId;
+		bool                           OutIsActionStateActive;
+	} params;
+
+	params.ActionStateMachineInterface = ActionStateMachineInterface;
+	params.ActionStateMachineTrackId = ActionStateMachineTrackId;
+	params.ActionStateId = ActionStateId;
+
+	UObject::ProcessEvent(fn, &params);
+
+	if (OutIsActionStateActive != nullptr)
+		*OutIsActionStateActive = params.OutIsActionStateActive;
+}
+
+
 // Function Tales.TaleQuestActorFunctionLibrary.SpawnActor
 // (Final, RequiredAPI, Native, Public, HasOutParms, HasDefaults)
 // Parameters:
@@ -847,6 +878,33 @@ float UTaleQuestAnimationMontageFunctionLibrary::PushJumpToMontageSectionCommand
 }
 
 
+// Function Tales.TaleQuestAnimationMontageFunctionLibrary.GetMontageSectionLength
+// (Final, Native, Public, HasOutParms, Const)
+// Parameters:
+// class UAnimMontage*            Montage                        (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   SectionName                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UTaleQuestAnimationMontageFunctionLibrary::GetMontageSectionLength(class UAnimMontage* Montage, const struct FName& SectionName)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestAnimationMontageFunctionLibrary.GetMontageSectionLength"));
+
+	struct
+	{
+		class UAnimMontage*            Montage;
+		struct FName                   SectionName;
+		float                          ReturnValue;
+	} params;
+
+	params.Montage = Montage;
+	params.SectionName = SectionName;
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
 // Function Tales.TaleQuestAnimationStepFunctionLibrary.MakePosseableSequence
 // (Final, Native, Static, Public)
 // Parameters:
@@ -872,6 +930,122 @@ struct FPossessableSequence UTaleQuestAnimationStepFunctionLibrary::MakePosseabl
 	defaultObj->ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
+}
+
+
+// Function Tales.TaleQuestAnimationStepFunctionLibrary.GetPlayLength
+// (Final, Native, Public, Const)
+// Parameters:
+// class UAnimSequenceBase*       Anim                           (Parm, ZeroConstructor, IsPlainOldData)
+// float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+float UTaleQuestAnimationStepFunctionLibrary::GetPlayLength(class UAnimSequenceBase* Anim)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestAnimationStepFunctionLibrary.GetPlayLength"));
+
+	struct
+	{
+		class UAnimSequenceBase*       Anim;
+		float                          ReturnValue;
+	} params;
+
+	params.Anim = Anim;
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Tales.TaleQuestAudioFunctionLibrary.StopMusic
+// (Final, Native, Public, Const)
+// Parameters:
+// TScriptInterface<class UMusicZoneInterface> MusicZone                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestAudioFunctionLibrary::StopMusic(const TScriptInterface<class UMusicZoneInterface>& MusicZone)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestAudioFunctionLibrary.StopMusic"));
+
+	struct
+	{
+		TScriptInterface<class UMusicZoneInterface> MusicZone;
+	} params;
+
+	params.MusicZone = MusicZone;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Tales.TaleQuestAudioFunctionLibrary.StartMusic
+// (Final, Native, Public, Const)
+// Parameters:
+// TScriptInterface<class UMusicZoneInterface> MusicZone                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestAudioFunctionLibrary::StartMusic(const TScriptInterface<class UMusicZoneInterface>& MusicZone)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestAudioFunctionLibrary.StartMusic"));
+
+	struct
+	{
+		TScriptInterface<class UMusicZoneInterface> MusicZone;
+	} params;
+
+	params.MusicZone = MusicZone;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Tales.TaleQuestAudioFunctionLibrary.SetEmitterSwitch
+// (Final, Native, Public, HasOutParms, Const)
+// Parameters:
+// TScriptInterface<class UEmitterManipulatorInterface> MusicZone                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   SwitchGroup                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// struct FName                   Value                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+
+void UTaleQuestAudioFunctionLibrary::SetEmitterSwitch(const TScriptInterface<class UEmitterManipulatorInterface>& MusicZone, const struct FName& SwitchGroup, const struct FName& Value)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestAudioFunctionLibrary.SetEmitterSwitch"));
+
+	struct
+	{
+		TScriptInterface<class UEmitterManipulatorInterface> MusicZone;
+		struct FName                   SwitchGroup;
+		struct FName                   Value;
+	} params;
+
+	params.MusicZone = MusicZone;
+	params.SwitchGroup = SwitchGroup;
+	params.Value = Value;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Tales.TaleQuestAudioFunctionLibrary.SetEmitterRTPC
+// (Final, Native, Public, HasOutParms, Const)
+// Parameters:
+// TScriptInterface<class UEmitterManipulatorInterface> MusicZone                      (Parm, ZeroConstructor, IsPlainOldData)
+// struct FName                   RTPC                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
+// float                          Value                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestAudioFunctionLibrary::SetEmitterRTPC(const TScriptInterface<class UEmitterManipulatorInterface>& MusicZone, const struct FName& RTPC, float Value)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestAudioFunctionLibrary.SetEmitterRTPC"));
+
+	struct
+	{
+		TScriptInterface<class UEmitterManipulatorInterface> MusicZone;
+		struct FName                   RTPC;
+		float                          Value;
+	} params;
+
+	params.MusicZone = MusicZone;
+	params.RTPC = RTPC;
+	params.Value = Value;
+
+	UObject::ProcessEvent(fn, &params);
 }
 
 
@@ -1436,6 +1610,29 @@ void UTaleQuestCutscenesFunctionLibrary::FireEventCutsceneTargetReady(class AAct
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);
+}
+
+
+// Function Tales.TaleQuestDamageableInterfaceFunctionLibrary.SetDefaultVulnerability
+// (Final, Native, Public)
+// Parameters:
+// TScriptInterface<class UDamageableVulnerabilityInterface> DamageableVulnerabilityInterface (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// float                          DefaultVulnerability           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestDamageableInterfaceFunctionLibrary::SetDefaultVulnerability(const TScriptInterface<class UDamageableVulnerabilityInterface>& DamageableVulnerabilityInterface, float DefaultVulnerability)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestDamageableInterfaceFunctionLibrary.SetDefaultVulnerability"));
+
+	struct
+	{
+		TScriptInterface<class UDamageableVulnerabilityInterface> DamageableVulnerabilityInterface;
+		float                          DefaultVulnerability;
+	} params;
+
+	params.DamageableVulnerabilityInterface = DamageableVulnerabilityInterface;
+	params.DefaultVulnerability = DefaultVulnerability;
+
+	UObject::ProcessEvent(fn, &params);
 }
 
 
@@ -2784,6 +2981,26 @@ bool UTaleQuestNameFunctionLibrary::Equals(const struct FName& Left, const struc
 }
 
 
+// Function Tales.TaleQuestNotificationFunctionLibrary.FireSeasonNotification
+// (Final, Native, Public)
+// Parameters:
+// class UTaleQuestSeasonNotificationDataAsset* InTaleQuestSeasonNotificationDataAsset (Parm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestNotificationFunctionLibrary::FireSeasonNotification(class UTaleQuestSeasonNotificationDataAsset* InTaleQuestSeasonNotificationDataAsset)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestNotificationFunctionLibrary.FireSeasonNotification"));
+
+	struct
+	{
+		class UTaleQuestSeasonNotificationDataAsset* InTaleQuestSeasonNotificationDataAsset;
+	} params;
+
+	params.InTaleQuestSeasonNotificationDataAsset = InTaleQuestSeasonNotificationDataAsset;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function Tales.TaleQuestNPCHideFunctionLibrary.FadeOut
 // (Final, Native, Public)
 // Parameters:
@@ -2824,16 +3041,36 @@ void UTaleQuestNPCHideFunctionLibrary::FadeIn(class AActor* InActor)
 }
 
 
+// Function Tales.TaleQuestOfferingNPCFunctionLibrary.StopOfferItem
+// (Final, Native, Public)
+// Parameters:
+// TScriptInterface<class UOfferingNPCInterface> OfferingNPC                    (Parm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestOfferingNPCFunctionLibrary::StopOfferItem(const TScriptInterface<class UOfferingNPCInterface>& OfferingNPC)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestOfferingNPCFunctionLibrary.StopOfferItem"));
+
+	struct
+	{
+		TScriptInterface<class UOfferingNPCInterface> OfferingNPC;
+	} params;
+
+	params.OfferingNPC = OfferingNPC;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function Tales.TaleQuestOfferingNPCFunctionLibrary.OfferItemAndWaitForPickup
 // (Final, Native, Public, HasOutParms)
 // Parameters:
 // TScriptInterface<class UOfferingNPCInterface> OfferingNPC                    (Parm, ZeroConstructor, IsPlainOldData)
 // class UClass*                  ItemToShow                     (Parm, ZeroConstructor, IsPlainOldData)
-// class UClass*                  ItemToOffer                    (Parm, ZeroConstructor, IsPlainOldData)
 // struct FText                   PickupItemTooltip              (ConstParm, Parm, OutParm, ReferenceParm)
 // struct FText                   CannotPickupItemTooltip        (ConstParm, Parm, OutParm, ReferenceParm)
+// class AActor*                  InteractingActor               (Parm, OutParm, ZeroConstructor, IsPlainOldData)
 
-void UTaleQuestOfferingNPCFunctionLibrary::OfferItemAndWaitForPickup(const TScriptInterface<class UOfferingNPCInterface>& OfferingNPC, class UClass* ItemToShow, class UClass* ItemToOffer, const struct FText& PickupItemTooltip, const struct FText& CannotPickupItemTooltip)
+void UTaleQuestOfferingNPCFunctionLibrary::OfferItemAndWaitForPickup(const TScriptInterface<class UOfferingNPCInterface>& OfferingNPC, class UClass* ItemToShow, const struct FText& PickupItemTooltip, const struct FText& CannotPickupItemTooltip, class AActor** InteractingActor)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestOfferingNPCFunctionLibrary.OfferItemAndWaitForPickup"));
 
@@ -2841,18 +3078,20 @@ void UTaleQuestOfferingNPCFunctionLibrary::OfferItemAndWaitForPickup(const TScri
 	{
 		TScriptInterface<class UOfferingNPCInterface> OfferingNPC;
 		class UClass*                  ItemToShow;
-		class UClass*                  ItemToOffer;
 		struct FText                   PickupItemTooltip;
 		struct FText                   CannotPickupItemTooltip;
+		class AActor*                  InteractingActor;
 	} params;
 
 	params.OfferingNPC = OfferingNPC;
 	params.ItemToShow = ItemToShow;
-	params.ItemToOffer = ItemToOffer;
 	params.PickupItemTooltip = PickupItemTooltip;
 	params.CannotPickupItemTooltip = CannotPickupItemTooltip;
 
 	UObject::ProcessEvent(fn, &params);
+
+	if (InteractingActor != nullptr)
+		*InteractingActor = params.InteractingActor;
 }
 
 
@@ -3028,6 +3267,59 @@ void UTaleQuestQueryableStateWriteIntFunctionLibrary::WriteIntQueryableState(cla
 }
 
 
+// Function Tales.TaleQuestRandomFunctionLibrary.InitialiseGrabBag
+// (Final, RequiredAPI, Native, Public, Const)
+// Parameters:
+// int                            Min                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// int                            Max                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// struct FGrabBag                ReturnValue                    (Parm, OutParm, ReturnParm)
+
+struct FGrabBag UTaleQuestRandomFunctionLibrary::InitialiseGrabBag(int Min, int Max)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestRandomFunctionLibrary.InitialiseGrabBag"));
+
+	struct
+	{
+		int                            Min;
+		int                            Max;
+		struct FGrabBag                ReturnValue;
+	} params;
+
+	params.Min = Min;
+	params.Max = Max;
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Tales.TaleQuestRandomFunctionLibrary.GetGrabBagElement
+// (Final, RequiredAPI, Native, Public, HasOutParms, Const)
+// Parameters:
+// struct FGrabBag                GrabBag                        (Parm, OutParm, ReferenceParm)
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UTaleQuestRandomFunctionLibrary::GetGrabBagElement(struct FGrabBag* GrabBag)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestRandomFunctionLibrary.GetGrabBagElement"));
+
+	struct
+	{
+		struct FGrabBag                GrabBag;
+		int                            ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	if (GrabBag != nullptr)
+		*GrabBag = params.GrabBag;
+
+	return params.ReturnValue;
+}
+
+
 // Function Tales.TaleQuestShantyFunctionLibrary.StopShantyMusic
 // (Final, Native, Public, Const)
 // Parameters:
@@ -3102,6 +3394,75 @@ void UTaleQuestSpawnShipFunctionLibrary::SpawnShipFromClass(TAssetPtr<class UCla
 
 	if (SpawnedShip != nullptr)
 		*SpawnedShip = params.SpawnedShip;
+}
+
+
+// Function Tales.TaleQuestStatFunctionLibrary.FireStatToPlayer
+// (Final, Native, Public, Const)
+// Parameters:
+// TScriptInterface<class UVoyageParticipantInterface> PlayerToFireStatOn             (Parm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestStatFunctionLibrary::FireStatToPlayer(const TScriptInterface<class UVoyageParticipantInterface>& PlayerToFireStatOn)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestStatFunctionLibrary.FireStatToPlayer"));
+
+	struct
+	{
+		TScriptInterface<class UVoyageParticipantInterface> PlayerToFireStatOn;
+	} params;
+
+	params.PlayerToFireStatOn = PlayerToFireStatOn;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Tales.TaleQuestStatusEffectsFunctionLibrary.TriggerOnScreenParticles
+// (Final, Native, Public, Const)
+// Parameters:
+// TScriptInterface<class UVoyageParticipantInterface> Participant                    (Parm, ZeroConstructor, IsPlainOldData)
+// class UParticleSystem*         ParticleSystem                 (Parm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestStatusEffectsFunctionLibrary::TriggerOnScreenParticles(const TScriptInterface<class UVoyageParticipantInterface>& Participant, class UParticleSystem* ParticleSystem)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestStatusEffectsFunctionLibrary.TriggerOnScreenParticles"));
+
+	struct
+	{
+		TScriptInterface<class UVoyageParticipantInterface> Participant;
+		class UParticleSystem*         ParticleSystem;
+	} params;
+
+	params.Participant = Participant;
+	params.ParticleSystem = ParticleSystem;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Tales.TaleQuestStatusEffectsFunctionLibrary.EndOnScreenParticles
+// (Final, Native, Public, Const)
+// Parameters:
+// TScriptInterface<class UVoyageParticipantInterface> Participant                    (Parm, ZeroConstructor, IsPlainOldData)
+// class UParticleSystem*         ParticleSystem                 (Parm, ZeroConstructor, IsPlainOldData)
+// float                          Delay                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UTaleQuestStatusEffectsFunctionLibrary::EndOnScreenParticles(const TScriptInterface<class UVoyageParticipantInterface>& Participant, class UParticleSystem* ParticleSystem, float Delay)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestStatusEffectsFunctionLibrary.EndOnScreenParticles"));
+
+	struct
+	{
+		TScriptInterface<class UVoyageParticipantInterface> Participant;
+		class UParticleSystem*         ParticleSystem;
+		float                          Delay;
+	} params;
+
+	params.Participant = Participant;
+	params.ParticleSystem = ParticleSystem;
+	params.Delay = Delay;
+
+	UObject::ProcessEvent(fn, &params);
 }
 
 
@@ -3224,6 +3585,30 @@ struct FVector UTaleQuestTransfromConversionFunctionLibrary::ToVector(const stru
 }
 
 
+// Function Tales.TaleQuestTransfromConversionFunctionLibrary.ToRotator
+// (Final, Native, Public, HasOutParms, HasDefaults, Const)
+// Parameters:
+// struct FTransform              InTransform                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
+// struct FRotator                ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+struct FRotator UTaleQuestTransfromConversionFunctionLibrary::ToRotator(const struct FTransform& InTransform)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestTransfromConversionFunctionLibrary.ToRotator"));
+
+	struct
+	{
+		struct FTransform              InTransform;
+		struct FRotator                ReturnValue;
+	} params;
+
+	params.InTransform = InTransform;
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
 // Function Tales.TaleQuestTransfromConversionFunctionLibrary.FromVector
 // (Final, Native, Static, Public, HasOutParms, HasDefaults)
 // Parameters:
@@ -3294,6 +3679,33 @@ bool UTaleQuestUObjectFunctionLibrary::IsValid(class UObject* Object)
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Tales.TaleQuestUObjectFunctionLibrary.CastTo
+// (Final, Native, Public, Const)
+// Parameters:
+// class UObject*                 Object                         (Parm, ZeroConstructor, IsPlainOldData)
+// class UClass*                  CastToClass                    (Parm, ZeroConstructor, IsPlainOldData)
+// class UObject*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class UObject* UTaleQuestUObjectFunctionLibrary::CastTo(class UObject* Object, class UClass* CastToClass)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Tales.TaleQuestUObjectFunctionLibrary.CastTo"));
+
+	struct
+	{
+		class UObject*                 Object;
+		class UClass*                  CastToClass;
+		class UObject*                 ReturnValue;
+	} params;
+
+	params.Object = Object;
+	params.CastToClass = CastToClass;
+
+	UObject::ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
 }

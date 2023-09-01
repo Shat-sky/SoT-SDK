@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -713,11 +713,11 @@ public:
 
 
 // Class LostShipmentsClueVariants.MerchantCaptainSpawnComponent
-// 0x0010 (0x0450 - 0x0440)
+// 0x0010 (0x0480 - 0x0470)
 class UMerchantCaptainSpawnComponent : public UItemSpawnComponent
 {
 public:
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0440(0x0010) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x10];                                      // 0x0470(0x0010) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -8,9 +8,9 @@
 
 #include "SoT_Basic.hpp"
 #include "SoT_AthenaAI_enums.hpp"
+#include "SoT_StoryFramework_classes.hpp"
 #include "SoT_ActionStateMachine_classes.hpp"
 #include "SoT_StatusEffects_classes.hpp"
-#include "SoT_StoryFramework_classes.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Athena_classes.hpp"
@@ -80,10 +80,8 @@ struct FAIEncounterAndWaveSettingsOverride
 	class UAIEncounterSettings*                        EncounterSettings;                                        // 0x0000(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class UAISpawnWaveSequenceRankProgression*         SpawnWaveProgression;                                     // 0x0008(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	float                                              Chance;                                                   // 0x0010(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FName                                       FeatureToggle;                                            // 0x0014(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FStoryFlag                                  RequiredStory;                                            // 0x001C(0x0008) (Edit, DisableEditOnInstance)
-	bool                                               UseStoryAndNotFeatureToggle;                              // 0x0024(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x3];                                       // 0x0025(0x0003) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0014(0x0004) MISSED OFFSET
+	TArray<class UAISpawnerPrerequisiteBase*>          Prerequisites;                                            // 0x0018(0x0010) (Edit, ExportObject, ZeroConstructor)
 };
 
 // ScriptStruct AthenaAI.AISpawnContextIdEncounterSettingsPair
@@ -461,24 +459,28 @@ struct FAIDebugVisualisationCone
 };
 
 // ScriptStruct AthenaAI.AIIndividualVarietyEntry
-// 0x0020
+// 0x0030
 struct FAIIndividualVarietyEntry
 {
-	TArray<struct FStringAssetReference>               Loadouts;                                                 // 0x0000(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
-	int                                                RankOffset;                                               // 0x0010(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              Weight;                                                   // 0x0014(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	int                                                MaxPerEncounter;                                          // 0x0018(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x001C(0x0004) MISSED OFFSET
+	struct FFeatureFlag                                FeatureFlag;                                              // 0x0000(0x000C) (Edit, BlueprintVisible)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x000C(0x0004) MISSED OFFSET
+	TArray<struct FStringAssetReference>               Loadouts;                                                 // 0x0010(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+	int                                                RankOffset;                                               // 0x0020(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	float                                              Weight;                                                   // 0x0024(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	int                                                MaxPerEncounter;                                          // 0x0028(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x4];                                       // 0x002C(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct AthenaAI.AIFormVarietyEntry
-// 0x0028
+// 0x0038
 struct FAIFormVarietyEntry
 {
-	struct FStringAssetReference                       Form;                                                     // 0x0000(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
-	float                                              Weight;                                                   // 0x0010(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	int                                                MaxPerEncounter;                                          // 0x0014(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	TArray<struct FAIIndividualVarietyEntry>           Individuals;                                              // 0x0018(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+	struct FFeatureFlag                                FeatureFlag;                                              // 0x0000(0x000C) (Edit, BlueprintVisible)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x000C(0x0004) MISSED OFFSET
+	struct FStringAssetReference                       Form;                                                     // 0x0010(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
+	float                                              Weight;                                                   // 0x0020(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	int                                                MaxPerEncounter;                                          // 0x0024(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	TArray<struct FAIIndividualVarietyEntry>           Individuals;                                              // 0x0028(0x0010) (Edit, BlueprintVisible, ZeroConstructor)
 };
 
 // ScriptStruct AthenaAI.TargetSkillsetProgressionPair
@@ -1143,7 +1145,7 @@ struct FAIEncounterWave
 };
 
 // ScriptStruct AthenaAI.AIBountySpawnerParams
-// 0x00C8
+// 0x00D0
 struct FAIBountySpawnerParams
 {
 	TArray<struct FAIEncounterWave>                    AISpawnerCreationDesc;                                    // 0x0000(0x0010) (ZeroConstructor)
@@ -1164,6 +1166,8 @@ struct FAIBountySpawnerParams
 	int                                                NumTargetsPerWaveGroup;                                   // 0x00B0(0x0004) (ZeroConstructor, IsPlainOldData)
 	int                                                NumCaptainsPerWaveGroup;                                  // 0x00B4(0x0004) (ZeroConstructor, IsPlainOldData)
 	TArray<class UClass*>                              AICombatDialogue;                                         // 0x00B8(0x0010) (ZeroConstructor)
+	bool                                               ConvertFinalCaptainToSkeletonLord;                        // 0x00C8(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x7];                                       // 0x00C9(0x0007) MISSED OFFSET
 };
 
 // ScriptStruct AthenaAI.EventAIStartedDeadActionState
@@ -1277,11 +1281,12 @@ struct FAIPerCrewSpawnerRespawnUnit
 };
 
 // ScriptStruct AthenaAI.AIPerCrewSpawnerCrewUnit
-// 0x0030
+// 0x0040
 struct FAIPerCrewSpawnerCrewUnit
 {
 	unsigned char                                      UnknownData00[0x20];                                      // 0x0000(0x0020) MISSED OFFSET
 	TArray<struct FAISpawnerWave>                      SelectedWaves;                                            // 0x0020(0x0010) (ZeroConstructor)
+	TArray<class UAISpawnerPrerequisiteBase*>          Prerequisites;                                            // 0x0030(0x0010) (ExportObject, ZeroConstructor)
 };
 
 // ScriptStruct AthenaAI.AIProgressiveWavesSpawnerArchive
@@ -1359,6 +1364,13 @@ struct FEventSporeBreathAIAbilityFinished
 struct FEventSporeBreathAIAbilityStarted
 {
 	unsigned char                                      UnknownData00[0x1];                                       // 0x0000(0x0001) MISSED OFFSET
+};
+
+// ScriptStruct AthenaAI.EventAIFormEncounteredByLocalPlayer
+// 0x0008 (0x0018 - 0x0010)
+struct FEventAIFormEncounteredByLocalPlayer : public FNetworkEventStruct
+{
+	class UClass*                                      FormType;                                                 // 0x0010(0x0008) (BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct AthenaAI.EventAIAbilityStarted
@@ -1637,16 +1649,17 @@ struct FEventAthenaAISpawnActive
 };
 
 // ScriptStruct AthenaAI.AISpawnerTelemetryEvent
-// 0x0040
+// 0x0050
 struct FAISpawnerTelemetryEvent
 {
-	class FString                                      AISpawnerType;                                            // 0x0000(0x0010) (ZeroConstructor)
-	class FString                                      AISpawnerRegion;                                          // 0x0010(0x0010) (ZeroConstructor)
-	TArray<class FString>                              AISpawnerContexts;                                        // 0x0020(0x0010) (ZeroConstructor)
-	int                                                AISpawnerWaveSpawnNumber;                                 // 0x0030(0x0004) (ZeroConstructor, IsPlainOldData)
-	float                                              AISpawnerWaveDelayBefore;                                 // 0x0034(0x0004) (ZeroConstructor, IsPlainOldData)
-	float                                              AISpawnerWaveDelayAfter;                                  // 0x0038(0x0004) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x003C(0x0004) MISSED OFFSET
+	class FString                                      AISpawnerSourceAsset;                                     // 0x0000(0x0010) (ZeroConstructor)
+	class FString                                      AISpawnerType;                                            // 0x0010(0x0010) (ZeroConstructor)
+	class FString                                      AISpawnerRegion;                                          // 0x0020(0x0010) (ZeroConstructor)
+	TArray<class FString>                              AISpawnerContexts;                                        // 0x0030(0x0010) (ZeroConstructor)
+	int                                                AISpawnerWaveSpawnNumber;                                 // 0x0040(0x0004) (ZeroConstructor, IsPlainOldData)
+	float                                              AISpawnerWaveDelayBefore;                                 // 0x0044(0x0004) (ZeroConstructor, IsPlainOldData)
+	float                                              AISpawnerWaveDelayAfter;                                  // 0x0048(0x0004) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x004C(0x0004) MISSED OFFSET
 };
 
 // ScriptStruct AthenaAI.AITelemetryFragmentInput

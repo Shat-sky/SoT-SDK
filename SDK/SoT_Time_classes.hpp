@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -130,7 +130,7 @@ public:
 
 
 // Class Time.TimeService
-// 0x0128 (0x04F0 - 0x03C8)
+// 0x0130 (0x04F8 - 0x03C8)
 class ATimeService : public AActor
 {
 public:
@@ -154,7 +154,7 @@ public:
 	uint32_t                                           MaxNumReplicatedTimeEntriesToAverage;                     // 0x0448(0x0004) (Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData03[0x4C];                                      // 0x044C(0x004C) MISSED OFFSET
 	struct FReplicatedAuthoritativeTime                ReplicatedServerTime;                                     // 0x0498(0x0010) (BlueprintVisible, BlueprintReadOnly, Net)
-	unsigned char                                      UnknownData04[0x48];                                      // 0x04A8(0x0048) MISSED OFFSET
+	unsigned char                                      UnknownData04[0x50];                                      // 0x04A8(0x0050) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -169,11 +169,11 @@ public:
 
 
 // Class Time.DebugTimeService
-// 0x0008 (0x04F8 - 0x04F0)
+// 0x0008 (0x0500 - 0x04F8)
 class ADebugTimeService : public ATimeService
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x04F0(0x0008) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x04F8(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -187,11 +187,11 @@ public:
 
 
 // Class Time.CustomizableTimeService
-// 0x0008 (0x0500 - 0x04F8)
+// 0x0008 (0x0508 - 0x0500)
 class ACustomizableTimeService : public ADebugTimeService
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x04F8(0x0008) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0500(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

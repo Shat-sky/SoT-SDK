@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -30,6 +30,24 @@ public:
 	void UnregisterDamageablePart(class AActor* DamageableActor);
 	void RegisterDamageablePart(class AActor* DamageableActor);
 	TArray<class AActor*> GetDamageableParts();
+};
+
+
+// Class ShipDamage.GenericShipDamageablePart
+// 0x0020 (0x03E8 - 0x03C8)
+class AGenericShipDamageablePart : public AActor
+{
+public:
+	unsigned char                                      UnknownData00[0x8];                                       // 0x03C8(0x0008) MISSED OFFSET
+	class UShipDamageableComponent*                    ShipDamageableComponent;                                  // 0x03D0(0x0008) (Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x10];                                      // 0x03D8(0x0010) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class ShipDamage.GenericShipDamageablePart"));
+		return ptr;
+	}
+
 };
 
 

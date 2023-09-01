@@ -1,4 +1,4 @@
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,48 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function BP_Merchant.BP_Merchant_C.GetCompanyShopkeeperCinematicCameraComponent
+// (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// class UCameraComponent*        ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class UCameraComponent* ABP_Merchant_C::GetCompanyShopkeeperCinematicCameraComponent()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Merchant.BP_Merchant_C.GetCompanyShopkeeperCinematicCameraComponent"));
+
+	struct
+	{
+		class UCameraComponent*        ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function BP_Merchant.BP_Merchant_C.GetNPCDialogCinematicCameraComponent
+// (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// class UCameraComponent*        ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class UCameraComponent* ABP_Merchant_C::GetNPCDialogCinematicCameraComponent()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Merchant.BP_Merchant_C.GetNPCDialogCinematicCameraComponent"));
+
+	struct
+	{
+		class UCameraComponent*        ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
 
 // Function BP_Merchant.BP_Merchant_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)

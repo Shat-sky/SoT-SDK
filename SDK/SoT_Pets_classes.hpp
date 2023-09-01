@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class Pets.AIPetsOnDemandSpawner
-// 0x0000 (0x0438 - 0x0438)
+// 0x0000 (0x0448 - 0x0448)
 class UAIPetsOnDemandSpawner : public UAISpawner
 {
 public:
@@ -809,20 +809,20 @@ public:
 
 
 // Class Pets.PetItemInfo
-// 0x0080 (0x0590 - 0x0510)
+// 0x0080 (0x05A8 - 0x0528)
 class APetItemInfo : public ANonStorableItemInfo
 {
 public:
-	unsigned char                                      UnknownData00[0x20];                                      // 0x0510(0x0020) MISSED OFFSET
-	class AActor*                                      SpawnedForShip;                                           // 0x0530(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	float                                              DropTraceDistance;                                        // 0x0538(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              PointSearchRadius;                                        // 0x053C(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	TEnumAsByte<ECollisionChannel>                     DropChannel;                                              // 0x0540(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x7];                                       // 0x0541(0x0007) MISSED OFFSET
-	class AActor*                                      PetOwner;                                                 // 0x0548(0x0008) (Net, ZeroConstructor, Transient, IsPlainOldData)
-	struct FPetCustomisation                           PetCustomisation;                                         // 0x0550(0x0028) (Net)
-	class UPetUGCNameComponent*                        PetUGCNameComponent;                                      // 0x0578(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x10];                                      // 0x0580(0x0010) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x20];                                      // 0x0528(0x0020) MISSED OFFSET
+	class AActor*                                      SpawnedForShip;                                           // 0x0548(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	float                                              DropTraceDistance;                                        // 0x0550(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              PointSearchRadius;                                        // 0x0554(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	TEnumAsByte<ECollisionChannel>                     DropChannel;                                              // 0x0558(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x7];                                       // 0x0559(0x0007) MISSED OFFSET
+	class AActor*                                      PetOwner;                                                 // 0x0560(0x0008) (Net, ZeroConstructor, Transient, IsPlainOldData)
+	struct FPetCustomisation                           PetCustomisation;                                         // 0x0568(0x0028) (Net)
+	class UPetUGCNameComponent*                        PetUGCNameComponent;                                      // 0x0590(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x10];                                      // 0x0598(0x0010) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

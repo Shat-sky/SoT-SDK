@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -68,19 +68,22 @@ struct FSpawnActorCustomOnCompleteWaveTaskData
 };
 
 // ScriptStruct TaleAI.SpawnAICustomPreSpawnTaskData
-// 0x0068
+// 0x0078
 struct FSpawnAICustomPreSpawnTaskData
 {
 	int                                                Index;                                                    // 0x0000(0x0004) (ZeroConstructor, IsPlainOldData)
 	struct FVector                                     SpawnLocation;                                            // 0x0004(0x000C) (ZeroConstructor, IsPlainOldData)
-	TAssetPtr<class UClass>                            PawnClass;                                                // 0x0010(0x0020) (Edit)
-	class UAthenaAIControllerParamsDataAsset*          Skillset;                                                 // 0x0030(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	class ULoadoutAsset*                               Loadout;                                                  // 0x0038(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	class UAthenaAIFormDataAsset*                      Form;                                                     // 0x0040(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	class UAthenaAIAmmoDataAsset*                      Ammo;                                                     // 0x0048(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	class UClass*                                      AIClass;                                                  // 0x0050(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	class UAIPartsCategory*                            PartsCategory;                                            // 0x0058(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	class UTaleQuestStepDesc*                          Body;                                                     // 0x0060(0x0008) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
+	struct FRotator                                    SpawnRotation;                                            // 0x0010(0x000C) (ZeroConstructor, IsPlainOldData)
+	bool                                               PerceiveActor;                                            // 0x001C(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x001D(0x0003) MISSED OFFSET
+	TAssetPtr<class UClass>                            PawnClass;                                                // 0x0020(0x0020) (Edit)
+	class UAthenaAIControllerParamsDataAsset*          Skillset;                                                 // 0x0040(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class ULoadoutAsset*                               Loadout;                                                  // 0x0048(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UAthenaAIFormDataAsset*                      Form;                                                     // 0x0050(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UAthenaAIAmmoDataAsset*                      Ammo;                                                     // 0x0058(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UClass*                                      AIClass;                                                  // 0x0060(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UAIPartsCategory*                            PartsCategory;                                            // 0x0068(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UTaleQuestStepDesc*                          Body;                                                     // 0x0070(0x0008) (Edit, ZeroConstructor, EditConst, IsPlainOldData)
 };
 
 }

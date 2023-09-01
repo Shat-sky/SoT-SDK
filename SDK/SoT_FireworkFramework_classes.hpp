@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -119,14 +119,14 @@ public:
 
 
 // Class FireworkFramework.FireworkItemInfo
-// 0x0020 (0x0530 - 0x0510)
+// 0x0020 (0x0548 - 0x0528)
 class AFireworkItemInfo : public AItemInfo
 {
 public:
-	class ULoadableFireworkComponent*                  LoadableProjectileComponent;                              // 0x0510(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
-	struct FStringAssetReference                       FireworkDataAsset;                                        // 0x0518(0x0010) (Edit, ZeroConstructor)
-	int                                                GeneratedDataRNGSeed;                                     // 0x0528(0x0004) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x052C(0x0004) MISSED OFFSET
+	class ULoadableFireworkComponent*                  LoadableProjectileComponent;                              // 0x0528(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+	struct FStringAssetReference                       FireworkDataAsset;                                        // 0x0530(0x0010) (Edit, ZeroConstructor)
+	int                                                GeneratedDataRNGSeed;                                     // 0x0540(0x0004) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0544(0x0004) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

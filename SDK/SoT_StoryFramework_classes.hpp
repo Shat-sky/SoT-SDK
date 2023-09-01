@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -138,12 +138,11 @@ public:
 
 
 // Class StoryFramework.StoryDrivenSalvageItemSpawnComponent
-// 0x0030 (0x05B0 - 0x0580)
+// 0x0020 (0x05F0 - 0x05D0)
 class UStoryDrivenSalvageItemSpawnComponent : public USalvageItemSpawnComponent
 {
 public:
-	struct FStoryFlag                                  Story;                                                    // 0x0580(0x0008) (Edit)
-	unsigned char                                      UnknownData00[0x28];                                      // 0x0588(0x0028) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x20];                                      // 0x05D0(0x0020) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

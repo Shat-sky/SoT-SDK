@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -58,6 +58,16 @@ struct FAdventureOnDemandVoyageSelectionVoyageProposalGroup
 struct FOnDemandQuestResumeConditionMetReasonQuestVariable : public FQuestVariable
 {
 
+};
+
+// ScriptStruct AdventureOnDemandFramework.GameEventOnDemandBannerTextData
+// 0x00B8
+struct FGameEventOnDemandBannerTextData
+{
+	TArray<class UClass*>                              GameEventTypes;                                           // 0x0000(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	struct FText                                       OnShipSunkBannerText;                                     // 0x0010(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       OnVoyageCancelledBannerText;                              // 0x0048(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       OnGameEventCompletedBannerHeaderText;                     // 0x0080(0x0038) (Edit, DisableEditOnInstance)
 };
 
 // ScriptStruct AdventureOnDemandFramework.VoyageHintPopupDescEntry

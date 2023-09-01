@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -16,6 +16,14 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Script Structs
 //---------------------------------------------------------------------------
+
+// ScriptStruct AIGoalFramework.AIGoalMovementModeFilter
+// 0x0020
+struct FAIGoalMovementModeFilter
+{
+	TArray<TEnumAsByte<EMovementMode>>                 DisallowedMovementModes;                                  // 0x0000(0x0010) (Edit, ZeroConstructor)
+	TArray<TEnumAsByte<ECustomMovementModeId>>         DisallowedCustomMovementModes;                            // 0x0010(0x0010) (Edit, ZeroConstructor)
+};
 
 // ScriptStruct AIGoalFramework.EventAIGoalHighPriorityTargetSuggestion
 // 0x0008

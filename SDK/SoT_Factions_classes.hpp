@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -315,7 +315,7 @@ public:
 
 
 // Class Factions.StartFactionVoyageVoteConsumer
-// 0x0280 (0x0350 - 0x00D0)
+// 0x02F0 (0x03C0 - 0x00D0)
 class UStartFactionVoyageVoteConsumer : public UFactionVoteConsumerBase
 {
 public:
@@ -330,7 +330,9 @@ public:
 	struct FText                                       FactionVotingCantVoteReasonIsNotOnNormalPlayMode;         // 0x0290(0x0038) (Edit, DisableEditOnInstance)
 	struct FText                                       FactionVotingCantVoteReasonShroudbreakerIsActive;         // 0x02C8(0x0038) (Edit, DisableEditOnInstance)
 	struct FText                                       FactionVotingSwitchVote;                                  // 0x0300(0x0038) (Edit, DisableEditOnInstance)
-	unsigned char                                      UnknownData00[0x18];                                      // 0x0338(0x0018) MISSED OFFSET
+	struct FText                                       FactionVotingCantVoteReasonIsDivingToAdventure;           // 0x0338(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       FactionVotingCantVoteReasonIsInTunnelOfTheDamned;         // 0x0370(0x0038) (Edit, DisableEditOnInstance)
+	unsigned char                                      UnknownData00[0x18];                                      // 0x03A8(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -390,18 +392,18 @@ public:
 
 
 // Class Factions.FactionVoteValidatorBase
-// 0x00C0 (0x00F0 - 0x0030)
+// 0x00D8 (0x0108 - 0x0030)
 class UFactionVoteValidatorBase : public UVoteValidatorInlineBase
 {
 public:
 	TArray<class UClass*>                              TargetCompanies;                                          // 0x0030(0x0010) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor)
 	float                                              EdgeOfWorldWarningWeightForFactionLock;                   // 0x0040(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x8C];                                      // 0x0044(0x008C) MISSED OFFSET
-	class UFactionVoteConsumerBase*                    Consumer;                                                 // 0x00D0(0x0008) (ZeroConstructor, IsPlainOldData)
-	int                                                CurrentCompany;                                           // 0x00D8(0x0004) (Net, ZeroConstructor, IsPlainOldData)
-	float                                              FlipTime;                                                 // 0x00DC(0x0004) (Net, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x8];                                       // 0x00E0(0x0008) MISSED OFFSET
-	class AActor*                                      OwningActor;                                              // 0x00E8(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData00[0xA4];                                      // 0x0044(0x00A4) MISSED OFFSET
+	class UFactionVoteConsumerBase*                    Consumer;                                                 // 0x00E8(0x0008) (ZeroConstructor, IsPlainOldData)
+	int                                                CurrentCompany;                                           // 0x00F0(0x0004) (Net, ZeroConstructor, IsPlainOldData)
+	float                                              FlipTime;                                                 // 0x00F4(0x0004) (Net, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x8];                                       // 0x00F8(0x0008) MISSED OFFSET
+	class AActor*                                      OwningActor;                                              // 0x0100(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -415,7 +417,7 @@ public:
 
 
 // Class Factions.StartFactionVoyageVoteValidator
-// 0x0000 (0x00F0 - 0x00F0)
+// 0x0000 (0x0108 - 0x0108)
 class UStartFactionVoyageVoteValidator : public UFactionVoteValidatorBase
 {
 public:
@@ -430,7 +432,7 @@ public:
 
 
 // Class Factions.StopFactionVoyageVoteValidator
-// 0x0000 (0x00F0 - 0x00F0)
+// 0x0000 (0x0108 - 0x0108)
 class UStopFactionVoyageVoteValidator : public UFactionVoteValidatorBase
 {
 public:

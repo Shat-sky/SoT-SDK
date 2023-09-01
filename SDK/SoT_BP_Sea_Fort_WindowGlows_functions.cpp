@@ -1,4 +1,4 @@
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,22 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function BP_Sea_Fort_WindowGlows.BP_Sea_Fort_WindowGlows_C.CreateDynamicMaterials
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Sea_Fort_WindowGlows_C::CreateDynamicMaterials()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_Sea_Fort_WindowGlows.BP_Sea_Fort_WindowGlows_C.CreateDynamicMaterials"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
 
 // Function BP_Sea_Fort_WindowGlows.BP_Sea_Fort_WindowGlows_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)

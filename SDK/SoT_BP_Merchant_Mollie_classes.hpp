@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Merchant_Mollie.BP_Merchant_Mollie_C
-// 0x0000 (0x0710 - 0x0710)
+// 0x0000 (0x0740 - 0x0740)
 class ABP_Merchant_Mollie_C : public ABP_Merchant_C
 {
 public:

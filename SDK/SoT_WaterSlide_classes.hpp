@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -76,7 +76,7 @@ public:
 
 
 // Class WaterSlide.Zipline
-// 0x0350 (0x0730 - 0x03E0)
+// 0x0388 (0x0768 - 0x03E0)
 class AZipline : public ARide
 {
 public:
@@ -86,12 +86,14 @@ public:
 	float                                              LaunchForceMultiplier;                                    // 0x03E4(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 	struct FZiplineFeelParameters                      ZiplineFeelParameters;                                    // 0x03E8(0x0310) (Edit)
 	class UZiplineFXParams*                            ZiplineFXParams;                                          // 0x06F8(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x8];                                       // 0x0700(0x0008) MISSED OFFSET
-	class UStaticMesh*                                 ZiplineGeometry;                                          // 0x0708(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	class UStaticMesh*                                 ZiplineTrolleyGeometry;                                   // 0x0710(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	class UMaterialInterface*                          ZiplineGeometryMaterialOverride;                          // 0x0718(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FName                                       ZiplineGeometryMaterialScalerParameterName;               // 0x0720(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData02[0x8];                                       // 0x0728(0x0008) MISSED OFFSET
+	struct FVector2D                                   ForwardsAttachDetachOffsets;                              // 0x0700(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FVector2D                                   BackwardsAttachDetachOffsets;                             // 0x0708(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x30];                                      // 0x0710(0x0030) MISSED OFFSET
+	class UStaticMesh*                                 ZiplineGeometry;                                          // 0x0740(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UStaticMesh*                                 ZiplineTrolleyGeometry;                                   // 0x0748(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UMaterialInterface*                          ZiplineGeometryMaterialOverride;                          // 0x0750(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FName                                       ZiplineGeometryMaterialScalerParameterName;               // 0x0758(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x8];                                       // 0x0760(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -103,18 +105,17 @@ public:
 
 
 // Class WaterSlide.InteractableZipline
-// 0x0038 (0x0768 - 0x0730)
+// 0x0030 (0x0798 - 0x0768)
 class AInteractableZipline : public AZipline
 {
 public:
-	class UInteractableComponentWithActionRules*       ZiplineStartInteractionPoint;                             // 0x0730(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	class UInteractableComponentWithActionRules*       ZiplineEndInteractionPoint;                               // 0x0738(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
-	class UClass*                                      PressedNotificationInputId;                               // 0x0740(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	class UClass*                                      ReleasedNotificationInputId;                              // 0x0748(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	struct FVector2D                                   AttachPointLocationOffset;                                // 0x0750(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              AttachPointSize;                                          // 0x0758(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	float                                              HoldTime;                                                 // 0x075C(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	class UClass*                                      OptionalItem;                                             // 0x0760(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UInteractableComponentWithActionRules*       ZiplineStartInteractionPoint;                             // 0x0768(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UInteractableComponentWithActionRules*       ZiplineEndInteractionPoint;                               // 0x0770(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
+	class UClass*                                      PressedNotificationInputId;                               // 0x0778(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UClass*                                      ReleasedNotificationInputId;                              // 0x0780(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FVector2D                                   AttachPointLocationOffset;                                // 0x0788(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              AttachPointSize;                                          // 0x0790(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              HoldTime;                                                 // 0x0794(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -281,19 +282,20 @@ public:
 
 
 // Class WaterSlide.ZiplineFXParams
-// 0x0048 (0x0070 - 0x0028)
+// 0x0050 (0x0078 - 0x0028)
 class UZiplineFXParams : public UDataAsset
 {
 public:
 	class UWwiseEvent*                                 ZiplineStartSFX;                                          // 0x0028(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	class UWwiseEvent*                                 ZiplineAdditiveOneShotSFX;                                // 0x0030(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	class UWwiseEvent*                                 ZiplineLoopStartSFX;                                      // 0x0038(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	class UWwiseEvent*                                 ZiplineEndSFX;                                            // 0x0040(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	class UWwiseEvent*                                 ZiplineLoopEndSFX;                                        // 0x0048(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FName                                       PlayerSpeedOnZiplineRTPC;                                 // 0x0050(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	class UParticleSystem*                             PlayerZiplineWindVFX;                                     // 0x0058(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	class UParticleSystem*                             PlayerZiplineTrailVFX;                                    // 0x0060(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
-	struct FVector2D                                   SpawnParticleSpeedThreshold;                              // 0x0068(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UWwiseEvent*                                 AttachToZiplineAdditiveOneShotSFX;                        // 0x0030(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UWwiseEvent*                                 DetachFromZiplineAdditiveOneShotSFX;                      // 0x0038(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UWwiseEvent*                                 ZiplineLoopStartSFX;                                      // 0x0040(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UWwiseEvent*                                 ZiplineEndSFX;                                            // 0x0048(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UWwiseEvent*                                 ZiplineLoopEndSFX;                                        // 0x0050(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FName                                       PlayerSpeedOnZiplineRTPC;                                 // 0x0058(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UParticleSystem*                             PlayerZiplineWindVFX;                                     // 0x0060(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	class UParticleSystem*                             PlayerZiplineTrailVFX;                                    // 0x0068(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
+	struct FVector2D                                   SpawnParticleSpeedThreshold;                              // 0x0070(0x0008) (Edit, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

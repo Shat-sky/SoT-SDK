@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,19 +15,20 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Shipwright.BP_Shipwright_C
-// 0x0060 (0x0710 - 0x06B0)
+// 0x0068 (0x0730 - 0x06C8)
 class ABP_Shipwright_C : public ANPC
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x06B0(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
-	class UNamedNPCComponent*                          NamedNPC;                                                 // 0x06B8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UCargoRunParticipantComponent*               CargoRunParticipant;                                      // 0x06C0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UNPCDialogComponent*                         NPCDialogComponent;                                       // 0x06C8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UAnimNotifyWwiseEmitterComponent*            AnimNotifyWwiseEmitter;                                   // 0x06D0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UCapsuleComponent*                           SolidHits;                                                // 0x06D8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	struct FWwiseEmitter                               WwiseEmitter;                                             // 0x06E0(0x0020) (Edit, BlueprintVisible, DisableEditOnInstance)
-	class UWwiseEvent*                                 WwiseShipwrightHummingPlay;                               // 0x0700(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UWwiseEvent*                                 WwiseShipwrightHummingStop;                               // 0x0708(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x06C8(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
+	class UCameraComponent*                            NPCDialogCamera;                                          // 0x06D0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UNamedNPCComponent*                          NamedNPC;                                                 // 0x06D8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UCargoRunParticipantComponent*               CargoRunParticipant;                                      // 0x06E0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UNPCDialogComponent*                         NPCDialogComponent;                                       // 0x06E8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UAnimNotifyWwiseEmitterComponent*            AnimNotifyWwiseEmitter;                                   // 0x06F0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UCapsuleComponent*                           SolidHits;                                                // 0x06F8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	struct FWwiseEmitter                               WwiseEmitter;                                             // 0x0700(0x0020) (Edit, BlueprintVisible, DisableEditOnInstance)
+	class UWwiseEvent*                                 WwiseShipwrightHummingPlay;                               // 0x0720(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UWwiseEvent*                                 WwiseShipwrightHummingStop;                               // 0x0728(0x0008) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -36,6 +37,7 @@ public:
 	}
 
 
+	class UCameraComponent* GetNPCDialogCinematicCameraComponent();
 	void UserConstructionScript();
 	void ReceiveBeginPlay();
 	void ReceiveEndPlay(TEnumAsByte<EEndPlayReason> EndPlayReason);

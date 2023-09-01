@@ -1,4 +1,4 @@
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -26,6 +26,31 @@ class URenderToTextureSceneDetails* URenderToTextureFunctionLibrary::GetRenderTo
 	{
 		struct FName                   Identifier;
 		class URenderToTextureSceneDetails* ReturnValue;
+	} params;
+
+	params.Identifier = Identifier;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function RenderToTexture.RenderToTextureFunctionLibrary.DestroyRenderToTexture
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// struct FName                   Identifier                     (Parm, ZeroConstructor, IsPlainOldData)
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool URenderToTextureFunctionLibrary::DestroyRenderToTexture(const struct FName& Identifier)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function RenderToTexture.RenderToTextureFunctionLibrary.DestroyRenderToTexture"));
+
+	struct
+	{
+		struct FName                   Identifier;
+		bool                           ReturnValue;
 	} params;
 
 	params.Identifier = Identifier;

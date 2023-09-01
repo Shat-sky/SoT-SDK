@@ -1,4 +1,4 @@
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -222,7 +222,7 @@ void UBP_Prompt_CosmeticPurchased_C::OnEndPlay_HUD(TEnumAsByte<EEndPlayReason> E
 // Function BP_Prompt_CosmeticPurchased.BP_Prompt_CosmeticPurchased_C.PlayerEntitlementUpdated
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPlayerEntitlementUpdatedEvent Event                          (Parm, ZeroConstructor, IsPlainOldData)
+// struct FPlayerEntitlementUpdatedEvent Event                          (Parm)
 
 void UBP_Prompt_CosmeticPurchased_C::PlayerEntitlementUpdated(const struct FPlayerEntitlementUpdatedEvent& Event)
 {

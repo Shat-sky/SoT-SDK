@@ -1,16 +1,16 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
 #endif
 
 #include "SoT_Basic.hpp"
-#include "SoT_PrioritisedPrompts_classes.hpp"
+#include "SoT_Engine_classes.hpp"
 #include "SoT_BP_PromptCoordinator_Base_classes.hpp"
 #include "SoT_FactionsFramework_classes.hpp"
-#include "SoT_Engine_classes.hpp"
+#include "SoT_PrioritisedPrompts_classes.hpp"
 #include "SoT_ObjectMessaging_classes.hpp"
 
 namespace SDK

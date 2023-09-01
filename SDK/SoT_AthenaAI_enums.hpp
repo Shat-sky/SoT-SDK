@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -236,6 +236,20 @@ enum class EOceanCrawlerAbilityAudioKey : uint8_t
 };
 
 
+// Enum AthenaAI.EEQSLocationRequestState
+enum class EEQSLocationRequestState : uint8_t
+{
+	EEQSLocationRequestState__Idle = 0,
+	EEQSLocationRequestState__InProgress = 1,
+	EEQSLocationRequestState__Success = 2,
+	EEQSLocationRequestState__FailedNoQuery = 3,
+	EEQSLocationRequestState__FailedNoQueryOwner = 4,
+	EEQSLocationRequestState__FailedCouldNotExecuteQuery = 5,
+	EEQSLocationRequestState__FailedNoValidPos = 6,
+	EEQSLocationRequestState__EEQSLocationRequestState_MAX = 7
+};
+
+
 // Enum AthenaAI.EAIDialogueState
 enum class EAIDialogueState : uint8_t
 {
@@ -273,7 +287,8 @@ enum class EBountyTargetRank : uint8_t
 {
 	EBountyTargetRank__Captain     = 0,
 	EBountyTargetRank__Crew        = 1,
-	EBountyTargetRank__EBountyTargetRank_MAX = 2
+	EBountyTargetRank__Lord        = 2,
+	EBountyTargetRank__EBountyTargetRank_MAX = 3
 };
 
 

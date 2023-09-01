@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Sea_Fort_WindowGlows.BP_Sea_Fort_WindowGlows_C
-// 0x0040 (0x0408 - 0x03C8)
+// 0x0041 (0x0409 - 0x03C8)
 class ABP_Sea_Fort_WindowGlows_C : public ASeaFortDistantLights
 {
 public:
@@ -29,6 +29,7 @@ public:
 	class UTimelineComponent*                          FadeCurve;                                                // 0x03F0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 	class UMaterialInstanceDynamic*                    WindowDynamicMaterial;                                    // 0x03F8(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	class UMaterialInstanceDynamic*                    GlowDynamicMaterial;                                      // 0x0400(0x0008) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               MaterialsCreated;                                         // 0x0408(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -37,6 +38,7 @@ public:
 	}
 
 
+	void CreateDynamicMaterials();
 	void UserConstructionScript();
 	void FadeCurve__FinishedFunc();
 	void FadeCurve__UpdateFunc();

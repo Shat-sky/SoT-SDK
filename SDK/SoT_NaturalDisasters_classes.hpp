@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -429,11 +429,11 @@ public:
 
 
 // Class NaturalDisasters.GeyserItemSpawnComponent
-// 0x0020 (0x0460 - 0x0440)
+// 0x0020 (0x0490 - 0x0470)
 class UGeyserItemSpawnComponent : public UItemSpawnComponent
 {
 public:
-	unsigned char                                      UnknownData00[0x20];                                      // 0x0440(0x0020) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x20];                                      // 0x0470(0x0020) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -60,11 +60,12 @@ struct FOnUpdateZiplineActionStateEvent
 };
 
 // ScriptStruct WaterSlide.OnEndZiplineActionStateEvent
-// 0x0010
+// 0x0018
 struct FOnEndZiplineActionStateEvent
 {
 	class UWwiseEvent*                                 ZiplineEnd;                                               // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
 	class UWwiseEvent*                                 ZiplineEndLoop;                                           // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
+	class UWwiseEvent*                                 DetachFromZiplineAdditiveOneShot;                         // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct WaterSlide.OnStartZiplineActionStateEvent
@@ -72,7 +73,7 @@ struct FOnEndZiplineActionStateEvent
 struct FOnStartZiplineActionStateEvent
 {
 	class UWwiseEvent*                                 ZiplineStart;                                             // 0x0000(0x0008) (ZeroConstructor, IsPlainOldData)
-	class UWwiseEvent*                                 ZiplineAdditiveOneShot;                                   // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
+	class UWwiseEvent*                                 AttachToZiplineAdditiveOneShot;                           // 0x0008(0x0008) (ZeroConstructor, IsPlainOldData)
 	class UWwiseEvent*                                 ZiplineLoopStart;                                         // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
 	class UParticleSystem*                             ZiplineWindVFX;                                           // 0x0018(0x0008) (ZeroConstructor, IsPlainOldData)
 	class UParticleSystem*                             ZiplineTrailVFX;                                          // 0x0020(0x0008) (ZeroConstructor, IsPlainOldData)
@@ -153,12 +154,14 @@ struct FOnStartWaterSlideActionStateEvent
 };
 
 // ScriptStruct WaterSlide.ZiplineActionStateConstructionInfo
-// 0x0010 (0x0040 - 0x0030)
+// 0x0018 (0x0048 - 0x0030)
 struct FZiplineActionStateConstructionInfo : public FActorActionStateConstructionInfo
 {
 	class USceneComponent*                             SceneComponent;                                           // 0x0030(0x0008) (ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 	TEnumAsByte<ERideDirection>                        MovementDirection;                                        // 0x0038(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x7];                                       // 0x0039(0x0007) MISSED OFFSET
+	TEnumAsByte<EZiplineInitialSwingDirection>         InitialSwingDirection;                                    // 0x0039(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x6];                                       // 0x003A(0x0006) MISSED OFFSET
+	double                                             ZiplineStartSmoothedTime;                                 // 0x0040(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct WaterSlide.ZipLineActionStateParams

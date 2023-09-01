@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,13 +15,13 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Mojo_CaptainScott.BP_Mojo_CaptainScott_C
-// 0x0018 (0x06E8 - 0x06D0)
+// 0x0018 (0x0708 - 0x06F0)
 class ABP_Mojo_CaptainScott_C : public ABP_SoleTrader_C
 {
 public:
-	class USceneComponent*                             InteractionPromptOverride;                                // 0x06D0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class USceneComponent*                             DialogueLookAtOverride;                                   // 0x06D8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UActorOfInterestComponent*                   ActorOfInterest;                                          // 0x06E0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class USceneComponent*                             InteractionPromptOverride;                                // 0x06F0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class USceneComponent*                             DialogueLookAtOverride;                                   // 0x06F8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UActorOfInterestComponent*                   ActorOfInterest;                                          // 0x0700(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

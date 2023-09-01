@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -28,6 +28,7 @@ public:
 
 
 	static class URenderToTextureSceneDetails* GetRenderToTexture(const struct FName& Identifier);
+	static bool DestroyRenderToTexture(const struct FName& Identifier);
 	static class URenderToTextureSceneDetails* CreateRenderToTexture(class UObject* WorldContext, const struct FName& Identifier, class UClass* ClassToSpawn, const struct FIntPoint& Resolution, bool bForceLinearGamma, bool bCaptureAlpha);
 };
 

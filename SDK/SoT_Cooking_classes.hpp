@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -252,6 +252,21 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Cooking.CookItemConditionalStatTrigger"));
+		return ptr;
+	}
+
+};
+
+
+// Class Cooking.CookItemFromRawConditionalStatTrigger
+// 0x0000 (0x0030 - 0x0030)
+class UCookItemFromRawConditionalStatTrigger : public UConditionalStatsTriggerType
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Cooking.CookItemFromRawConditionalStatTrigger"));
 		return ptr;
 	}
 

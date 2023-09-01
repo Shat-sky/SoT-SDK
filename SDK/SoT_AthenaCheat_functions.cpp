@@ -1,4 +1,4 @@
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -4908,6 +4908,26 @@ void UAthenaCheatManager::SetShipCapstanFullyDamaged()
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.SetShipCanSailForAGuild
+// (Final, Exec, Native, Public)
+// Parameters:
+// bool                           InCanSailForAGuild             (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaCheatManager::SetShipCanSailForAGuild(bool InCanSailForAGuild)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.SetShipCanSailForAGuild"));
+
+	struct
+	{
+		bool                           InCanSailForAGuild;
+	} params;
+
+	params.InCanSailForAGuild = InCanSailForAGuild;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.SetShipBuoyancyBlend
 // (Final, Exec, Native, Public)
 // Parameters:
@@ -7178,6 +7198,26 @@ void UAthenaCheatManager::ResetDemoSession(bool StartNewSession)
 }
 
 
+// Function AthenaCheat.AthenaCheatManager.ResetCrewsJoinedGameEventOnDemand
+// (Final, Exec, Native, Public)
+// Parameters:
+// class FString                  InGameEventType                (Parm, ZeroConstructor)
+
+void UAthenaCheatManager::ResetCrewsJoinedGameEventOnDemand(const class FString& InGameEventType)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.ResetCrewsJoinedGameEventOnDemand"));
+
+	struct
+	{
+		class FString                  InGameEventType;
+	} params;
+
+	params.InGameEventType = InGameEventType;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function AthenaCheat.AthenaCheatManager.ResetAllShipDamage
 // (Final, Exec, Native, Public)
 
@@ -8110,6 +8150,22 @@ void UAthenaCheatManager::PrintAISpawnContexts()
 void UAthenaCheatManager::PrimeRitualTable()
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.PrimeRitualTable"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.PreventTunnelMatchmakingForCrew
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::PreventTunnelMatchmakingForCrew()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.PreventTunnelMatchmakingForCrew"));
 
 	struct
 	{
@@ -10243,6 +10299,46 @@ void UAthenaCheatManager::ForceLocalPlayerMoveForward(float ScaleValue)
 	} params;
 
 	params.ScaleValue = ScaleValue;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.ForceLocalPlayerMeleeCombo
+// (Final, Exec, Native, Public)
+// Parameters:
+// float                          Interval                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaCheatManager::ForceLocalPlayerMeleeCombo(float Interval)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.ForceLocalPlayerMeleeCombo"));
+
+	struct
+	{
+		float                          Interval;
+	} params;
+
+	params.Interval = Interval;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.ForceLocalPlayerMeleeAttack
+// (Final, Exec, Native, Public)
+// Parameters:
+// float                          Frequency                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UAthenaCheatManager::ForceLocalPlayerMeleeAttack(float Frequency)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.ForceLocalPlayerMeleeAttack"));
+
+	struct
+	{
+		float                          Frequency;
+	} params;
+
+	params.Frequency = Frequency;
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -13333,6 +13429,22 @@ void UAthenaCheatManager::ApplyCursedCannonballStatusToPlayer(const class FStrin
 	} params;
 
 	params.CannonballTypeString = CannonballTypeString;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function AthenaCheat.AthenaCheatManager.AllowTunnelMatchmakingForCrew
+// (Final, Exec, Native, Public)
+
+void UAthenaCheatManager::AllowTunnelMatchmakingForCrew()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function AthenaCheat.AthenaCheatManager.AllowTunnelMatchmakingForCrew"));
+
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }

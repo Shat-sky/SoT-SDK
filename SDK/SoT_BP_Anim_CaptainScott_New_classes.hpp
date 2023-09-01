@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // AnimBlueprintGeneratedClass BP_Anim_CaptainScott_New.BP_Anim_CaptainScott_New_C
-// 0x0000 (0x23F0 - 0x23F0)
+// 0x0000 (0x2730 - 0x2730)
 class UBP_Anim_CaptainScott_New_C : public UBP_Anim_CaptainScott_Base_C
 {
 public:

@@ -1,4 +1,4 @@
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -80,6 +80,22 @@ class UObject* URareGameServiceProviderInterface::GetRareGameService(class UClas
 	UObject::ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
+}
+
+
+// Function RareGameService.RareGameServiceManagerComponent.OnRep_ReplicatedServices
+// (Final, Native, Private)
+
+void URareGameServiceManagerComponent::OnRep_ReplicatedServices()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function RareGameService.RareGameServiceManagerComponent.OnRep_ReplicatedServices"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
 }
 
 

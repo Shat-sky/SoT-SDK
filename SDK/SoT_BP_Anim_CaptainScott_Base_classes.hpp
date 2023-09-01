@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,7 +15,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // AnimBlueprintGeneratedClass BP_Anim_CaptainScott_Base.BP_Anim_CaptainScott_Base_C
-// 0x1D60 (0x23F0 - 0x0690)
+// 0x20A0 (0x2730 - 0x0690)
 class UBP_Anim_CaptainScott_Base_C : public UNPCAnimInstance
 {
 public:
@@ -102,19 +102,26 @@ public:
 	struct FAnimNode_ModifyBone                        AnimGraphNode_ModifyBone_D617ED194736E8F11C6FAA810C498F5E;// 0x22A8(0x0090)
 	struct FAnimNode_ConvertLocalToComponentSpace      AnimGraphNode_LocalToComponentSpace_4DCAA68C4014B93486B393A06B88E875;// 0x2338(0x0048)
 	struct FAnimNode_ConvertComponentToLocalSpace      AnimGraphNode_ComponentToLocalSpace_0EE933D14C69F43ABE6B2189B20B6EAE;// 0x2380(0x0048)
-	bool                                               AnimgraphStarted;                                         // 0x23C8(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	bool                                               IsPhased;                                                 // 0x23C9(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	bool                                               ManualHeadLookAt;                                         // 0x23CA(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	bool                                               Is_Playing_Sequencer_Anim;                                // 0x23CB(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              SequencerBlendWeight;                                     // 0x23CC(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	float                                              AnimationBlendWeight;                                     // 0x23D0(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              FacialOverride;                                           // 0x23D4(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              LookAtActivationSpeed;                                    // 0x23D8(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              LookAtTargetPositionSpeed;                                // 0x23DC(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              Look_At_Clamp;                                            // 0x23E0(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              HeadRotationX;                                            // 0x23E4(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              HeadRotationY;                                            // 0x23E8(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	float                                              HeadRotationZ;                                            // 0x23EC(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FAnimNode_ApplyAdditive                     AnimGraphNode_ApplyAdditive_11A583A44A391F3B21831087C0A45F0C;// 0x23C8(0x0070)
+	struct FAnimNode_SequencePlayer                    AnimGraphNode_SequencePlayer_1E8D3B034D8FCE8D9A1CA78A5C3EDC2B;// 0x2438(0x0060)
+	struct FAnimNode_BlendListByBool                   AnimGraphNode_BlendListByBool_85DF0F4A44D5267A66881584130AA9BE;// 0x2498(0x00B0)
+	struct FAnimNode_LayeredBoneBlend                  AnimGraphNode_LayeredBoneBlend_E87CAC38462EB2263F5999B9F62A32FA;// 0x2548(0x00A0)
+	struct FAnimNode_SaveCachedPose                    AnimGraphNode_SaveCachedPose_EAB7F21F43B791E0C2C11F915D5D7B23;// 0x25E8(0x0090)
+	struct FAnimNode_UseCachedPose                     AnimGraphNode_UseCachedPose_010DCEBC43D3CB2CA74A818FE8151304;// 0x2678(0x0048)
+	struct FAnimNode_UseCachedPose                     AnimGraphNode_UseCachedPose_FB57BE024BB219386DF7A6A3F1CFAFCA;// 0x26C0(0x0048)
+	bool                                               AnimgraphStarted;                                         // 0x2708(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               IsPhased;                                                 // 0x2709(0x0001) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               ManualHeadLookAt;                                         // 0x270A(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	bool                                               Is_Playing_Sequencer_Anim;                                // 0x270B(0x0001) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	float                                              SequencerBlendWeight;                                     // 0x270C(0x0004) (Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	float                                              AnimationBlendWeight;                                     // 0x2710(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              FacialOverride;                                           // 0x2714(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              LookAtActivationSpeed;                                    // 0x2718(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              LookAtTargetPositionSpeed;                                // 0x271C(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              Look_At_Clamp;                                            // 0x2720(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              HeadRotationX;                                            // 0x2724(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              HeadRotationY;                                            // 0x2728(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              HeadRotationZ;                                            // 0x272C(0x0004) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{

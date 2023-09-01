@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,11 +15,11 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Class Water.AthenaFFTWater
-// 0x0028 (0x0438 - 0x0410)
+// 0x0048 (0x0458 - 0x0410)
 class AAthenaFFTWater : public AFFTWater
 {
 public:
-	unsigned char                                      UnknownData00[0x28];                                      // 0x0410(0x0028) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x48];                                      // 0x0410(0x0048) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

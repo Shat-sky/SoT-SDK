@@ -1,0 +1,29 @@
+#pragma once
+
+// Sea of Thieves (2) SDK
+
+#ifdef _MSC_VER
+	#pragma pack(push, 0x8)
+#endif
+
+namespace SDK
+{
+//---------------------------------------------------------------------------
+//Enums
+//---------------------------------------------------------------------------
+
+// Enum GlobalDigSpots.EGlobalDigSpotStatus
+enum class EGlobalDigSpotStatus : uint8_t
+{
+	EGlobalDigSpotStatus__Inactive = 0,
+	EGlobalDigSpotStatus__Buried   = 1,
+	EGlobalDigSpotStatus__DugUp    = 2,
+	EGlobalDigSpotStatus__EGlobalDigSpotStatus_MAX = 3
+};
+
+
+}
+
+#ifdef _MSC_VER
+	#pragma pack(pop)
+#endif

@@ -1,4 +1,4 @@
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -13,7 +13,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // Function Athena.MetalAIFormComponent.OnRep_IsWet
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UMetalAIFormComponent::OnRep_IsWet()
 {
@@ -29,7 +29,7 @@ void UMetalAIFormComponent::OnRep_IsWet()
 
 
 // Function Athena.PlantAIFormComponent.OnRep_IsWet
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UPlantAIFormComponent::OnRep_IsWet()
 {
@@ -45,7 +45,7 @@ void UPlantAIFormComponent::OnRep_IsWet()
 
 
 // Function Athena.PlantAIFormComponent.OnRep_IsWeak
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UPlantAIFormComponent::OnRep_IsWeak()
 {
@@ -206,7 +206,7 @@ bool AControllableObject::CanInteractImpl(class AActor* InCharacter)
 
 
 // Function Athena.SailManipulator.SetMastSocketId
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // struct FSocketId               InMastSocketId                 (Parm)
 
@@ -226,7 +226,7 @@ void ASailManipulator::SetMastSocketId(const struct FSocketId& InMastSocketId)
 
 
 // Function Athena.SailManipulator.SetMast
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AMast*                   InMast                         (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -286,7 +286,7 @@ void ASailManipulator::RotateTowardsLocation(const struct FVector& TargetLocatio
 
 
 // Function Athena.SailManipulator.OnRep_PendingBoundMast
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void ASailManipulator::OnRep_PendingBoundMast()
 {
@@ -323,7 +323,7 @@ bool ASailManipulator::IsLocked()
 
 
 // Function Athena.SailManipulator.HandleBoundMastEndPlay
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 // Parameters:
 // TEnumAsByte<EEndPlayReason>    EndPlayReason                  (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -380,7 +380,7 @@ float ASailManipulator::GetRopeUVOffset()
 
 
 // Function Athena.SailManipulator.GetMast
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AMast*                   ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -401,7 +401,7 @@ class AMast* ASailManipulator::GetMast()
 
 
 // Function Athena.Mast.UpdateSailsLoweredBasedOnIntent
-// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
 // Parameters:
 // float                          LoweredIntent                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -543,7 +543,7 @@ void AMast::SetMastFallingProportion(float InProportion)
 
 
 // Function Athena.Mast.SetFullyRepaired
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  InRepairer                     (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -563,7 +563,7 @@ void AMast::SetFullyRepaired(class AActor* InRepairer)
 
 
 // Function Athena.Mast.SetFullyDamaged
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void AMast::SetFullyDamaged()
 {
@@ -812,7 +812,7 @@ void AMast::OnMastDescLoaded(class UMastDescAsset* MastDesc)
 
 
 // Function Athena.Mast.OnLoweredProportionChange
-// (Native, Event, Protected, BlueprintEvent)
+// (RequiredAPI, Native, Event, Protected, BlueprintEvent)
 // Parameters:
 // float                          LoweredProportion              (Parm, ZeroConstructor, IsPlainOldData)
 // float                          DeltaTime                      (Parm, ZeroConstructor, IsPlainOldData)
@@ -835,7 +835,7 @@ void AMast::OnLoweredProportionChange(float LoweredProportion, float DeltaTime)
 
 
 // Function Athena.Mast.OnAngleChanged
-// (Native, Event, Protected, BlueprintEvent)
+// (RequiredAPI, Native, Event, Protected, BlueprintEvent)
 // Parameters:
 // float                          Angle                          (Parm, ZeroConstructor, IsPlainOldData)
 // float                          DeltaTime                      (Parm, ZeroConstructor, IsPlainOldData)
@@ -881,7 +881,7 @@ void AMast::Multicast_PlayMastDamageEffectsRPC(TArray<int> RepairableComponentIn
 
 
 // Function Athena.Mast.IsMastVisuallyFractured
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// (RequiredAPI, Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -902,7 +902,7 @@ bool AMast::IsMastVisuallyFractured()
 
 
 // Function Athena.Mast.IsMastFullyDamaged
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -985,7 +985,7 @@ TArray<class ASail*> AMast::GetSails()
 
 
 // Function Athena.Mast.GetSailMovementRate
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -1006,7 +1006,7 @@ float AMast::GetSailMovementRate()
 
 
 // Function Athena.Mast.GetSailLoweredProportion
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -1027,7 +1027,7 @@ float AMast::GetSailLoweredProportion()
 
 
 // Function Athena.Mast.GetSailAngleRatio
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -1069,7 +1069,7 @@ int AMast::GetMaxDamageLevel()
 
 
 // Function Athena.Mast.GetMastHeight
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -1195,7 +1195,7 @@ struct FVector AMast::GetFallingImpactLocation()
 
 
 // Function Athena.Mast.GetDamageLevel
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -1606,65 +1606,6 @@ class USkeletalMeshComponent* UCharacterFootImpactMeshInterface::GetFootImpactSk
 	struct
 	{
 		class USkeletalMeshComponent*  ReturnValue;
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-
-	return params.ReturnValue;
-}
-
-
-// Function Athena.CloudDomeInterface.UpdateCloudMeshes
-// (Native, Public, HasOutParms, BlueprintCallable)
-// Parameters:
-// struct FCloudVisualParameters  CloudVisualParametersIn        (Parm, OutParm)
-// TArray<struct FTiledCloudProperties> CloudTileIn                    (Parm, OutParm, ZeroConstructor)
-// TArray<struct FRenderedCloudProperties> RenderedCloudsIn               (Parm, OutParm, ZeroConstructor)
-// TArray<struct FCloudTypeDefinition> CloudMeshesIn                  (Parm, OutParm, ZeroConstructor)
-// TArray<struct FCloudTypeNormalizedWeight> NormalizedCloudWeightsIn       (Parm, OutParm, ZeroConstructor)
-
-void UCloudDomeInterface::UpdateCloudMeshes(struct FCloudVisualParameters* CloudVisualParametersIn, TArray<struct FTiledCloudProperties>* CloudTileIn, TArray<struct FRenderedCloudProperties>* RenderedCloudsIn, TArray<struct FCloudTypeDefinition>* CloudMeshesIn, TArray<struct FCloudTypeNormalizedWeight>* NormalizedCloudWeightsIn)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.CloudDomeInterface.UpdateCloudMeshes"));
-
-	struct
-	{
-		struct FCloudVisualParameters  CloudVisualParametersIn;
-		TArray<struct FTiledCloudProperties> CloudTileIn;
-		TArray<struct FRenderedCloudProperties> RenderedCloudsIn;
-		TArray<struct FCloudTypeDefinition> CloudMeshesIn;
-		TArray<struct FCloudTypeNormalizedWeight> NormalizedCloudWeightsIn;
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-
-	if (CloudVisualParametersIn != nullptr)
-		*CloudVisualParametersIn = params.CloudVisualParametersIn;
-	if (CloudTileIn != nullptr)
-		*CloudTileIn = params.CloudTileIn;
-	if (RenderedCloudsIn != nullptr)
-		*RenderedCloudsIn = params.RenderedCloudsIn;
-	if (CloudMeshesIn != nullptr)
-		*CloudMeshesIn = params.CloudMeshesIn;
-	if (NormalizedCloudWeightsIn != nullptr)
-		*NormalizedCloudWeightsIn = params.NormalizedCloudWeightsIn;
-}
-
-
-// Function Athena.CloudDomeInterface.GetCloudDomePosition
-// (Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FVector                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-struct FVector UCloudDomeInterface::GetCloudDomePosition()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.CloudDomeInterface.GetCloudDomePosition"));
-
-	struct
-	{
-		struct FVector                 ReturnValue;
 	} params;
 
 
@@ -2673,115 +2614,6 @@ TArray<class AAthenaPlayerCharacter*> UPlayerManagerServiceInterface::GetActiveL
 }
 
 
-// Function Athena.CloudDomeServiceInterface.UnregisterCloudDomeFromService
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// TScriptInterface<class UCloudDomeInterface> CloudDome                      (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCloudDomeServiceInterface::UnregisterCloudDomeFromService(const TScriptInterface<class UCloudDomeInterface>& CloudDome)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.CloudDomeServiceInterface.UnregisterCloudDomeFromService"));
-
-	struct
-	{
-		TScriptInterface<class UCloudDomeInterface> CloudDome;
-	} params;
-
-	params.CloudDome = CloudDome;
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
-// Function Athena.CloudDomeServiceInterface.RegisterCloudDomeWithService
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// TScriptInterface<class UCloudDomeInterface> CloudDome                      (Parm, ZeroConstructor, IsPlainOldData)
-
-void UCloudDomeServiceInterface::RegisterCloudDomeWithService(const TScriptInterface<class UCloudDomeInterface>& CloudDome)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.CloudDomeServiceInterface.RegisterCloudDomeWithService"));
-
-	struct
-	{
-		TScriptInterface<class UCloudDomeInterface> CloudDome;
-	} params;
-
-	params.CloudDome = CloudDome;
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
-// Function Athena.CloudDomeServiceInterface.GetNumberOfCloudDomes
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-int UCloudDomeServiceInterface::GetNumberOfCloudDomes()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.CloudDomeServiceInterface.GetNumberOfCloudDomes"));
-
-	struct
-	{
-		int                            ReturnValue;
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-
-	return params.ReturnValue;
-}
-
-
-// Function Athena.CloudDomeServiceInterface.GetCloudDome
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// int                            CloudDomeIndex                 (Parm, ZeroConstructor, IsPlainOldData)
-// TScriptInterface<class UCloudDomeInterface> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-TScriptInterface<class UCloudDomeInterface> UCloudDomeServiceInterface::GetCloudDome(int CloudDomeIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.CloudDomeServiceInterface.GetCloudDome"));
-
-	struct
-	{
-		int                            CloudDomeIndex;
-		TScriptInterface<class UCloudDomeInterface> ReturnValue;
-	} params;
-
-	params.CloudDomeIndex = CloudDomeIndex;
-
-	UObject::ProcessEvent(fn, &params);
-
-	return params.ReturnValue;
-}
-
-
-// Function Athena.CloudDomeServiceInterface.GetActualCloudDome
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// int                            CloudDomeIndex                 (Parm, ZeroConstructor, IsPlainOldData)
-// class ACloudDome*              ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
-
-class ACloudDome* UCloudDomeServiceInterface::GetActualCloudDome(int CloudDomeIndex)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.CloudDomeServiceInterface.GetActualCloudDome"));
-
-	struct
-	{
-		int                            CloudDomeIndex;
-		class ACloudDome*              ReturnValue;
-	} params;
-
-	params.CloudDomeIndex = CloudDomeIndex;
-
-	UObject::ProcessEvent(fn, &params);
-
-	return params.ReturnValue;
-}
-
-
 // Function Athena.AthenaPlayerCharacter.WalkActivate
 // (RequiredAPI, Native, Public, BlueprintCallable)
 
@@ -3079,7 +2911,7 @@ void AAthenaPlayerCharacter::OnMeshSet()
 
 
 // Function Athena.AthenaPlayerCharacter.OnImpactDamageEventReceived
-// (Final, Native, Protected, HasOutParms)
+// (Final, RequiredAPI, Native, Protected, HasOutParms)
 // Parameters:
 // struct FImpactDamageEvent      InImpactEvent                  (ConstParm, Parm, OutParm, ReferenceParm)
 
@@ -3611,7 +3443,7 @@ bool UAllianceBlueprintLibrary::IsCrewInAlliance(class UObject* WorldContext, co
 
 
 // Function Athena.AllianceBlueprintLibrary.AreCrewsInSameAlliance
-// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContext                   (Parm, ZeroConstructor, IsPlainOldData)
 // struct FGuid                   CrewId1                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
@@ -3642,7 +3474,7 @@ bool UAllianceBlueprintLibrary::AreCrewsInSameAlliance(class UObject* WorldConte
 
 
 // Function Athena.AllianceService.OnRep_CrewAllianceJoinStatuses
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 
 void AAllianceService::OnRep_CrewAllianceJoinStatuses()
 {
@@ -3658,7 +3490,7 @@ void AAllianceService::OnRep_CrewAllianceJoinStatuses()
 
 
 // Function Athena.AlwaysRelevantLightweightActor.OnRep_OwningActor
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void AAlwaysRelevantLightweightActor::OnRep_OwningActor()
 {
@@ -3759,7 +3591,7 @@ void AAlwaysRelevantLightweightPlayerNameplate::OnOwningActorDestroyed()
 
 
 // Function Athena.Anchor.SetAnchorLoweredProportion
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // float                          InLoweredProportion            (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -3827,7 +3659,7 @@ void UAnimatedStepsComponent::Close()
 
 
 // Function Athena.AnimationDataOverriderComponent.OnRep_AnimationDataStoreAssetReference
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UAnimationDataOverriderComponent::OnRep_AnimationDataStoreAssetReference()
 {
@@ -3843,7 +3675,7 @@ void UAnimationDataOverriderComponent::OnRep_AnimationDataStoreAssetReference()
 
 
 // Function Athena.AshenLordAIFormComponent.OnRep_CachedNormalisedHealthScalar
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UAshenLordAIFormComponent::OnRep_CachedNormalisedHealthScalar()
 {
@@ -3859,7 +3691,7 @@ void UAshenLordAIFormComponent::OnRep_CachedNormalisedHealthScalar()
 
 
 // Function Athena.AthenaAIInteractableComponent.SetOwnerAITeam
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EAthenaAITeam>     InOwner                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -4422,7 +4254,7 @@ float UAthenaAnimationLocomotionComponentFunctions::GetBlendedTurnRate(const str
 
 
 // Function Athena.AthenaAnimationInstance.UpdateLoadedAnimations
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 
 void UAthenaAnimationInstance::UpdateLoadedAnimations()
 {
@@ -4474,7 +4306,7 @@ void UAthenaAnimationInstance::UnloadDynamicallyAllocatedItemAnimations(class UC
 
 
 // Function Athena.AthenaAnimationInstance.SetWieldedItemContinuousIsAlternate
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                           IsAlternate                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -4494,7 +4326,7 @@ void UAthenaAnimationInstance::SetWieldedItemContinuousIsAlternate(bool IsAltern
 
 
 // Function Athena.AthenaAnimationInstance.SetUsePrimaryOneShotAnimationsFlag
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 // Parameters:
 // bool                           InUsePrimary                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -4514,7 +4346,7 @@ void UAthenaAnimationInstance::SetUsePrimaryOneShotAnimationsFlag(bool InUsePrim
 
 
 // Function Athena.AthenaAnimationInstance.SetUsePrimaryContinuousAnimationsFlag
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 // Parameters:
 // bool                           InUsePrimary                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -4534,7 +4366,7 @@ void UAthenaAnimationInstance::SetUsePrimaryContinuousAnimationsFlag(bool InUseP
 
 
 // Function Athena.AthenaAnimationInstance.SetLoadedItemAllAnimations
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // struct FAthenaAnimationCoreObjectAnimations AllAnimationSet                (ConstParm, Parm, OutParm, ReferenceParm)
 
@@ -4766,7 +4598,7 @@ bool UAthenaAnimationInstance::InMeleeAttack()
 
 
 // Function Athena.AthenaAnimationInstance.InitialiseCharacterAnimations
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // class AActor*                  Owner                          (Parm, ZeroConstructor, IsPlainOldData)
 // class UClass*                  CharacterType                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
@@ -4984,7 +4816,7 @@ struct FAthenaAnimationObjectActionContinuousStruct UAthenaAnimationInstance::Ge
 
 
 // Function Athena.AthenaAnimationInstance.GetLoadedItemLocomotionAnimations
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FAthenaAnimationObjectLocomotionAnimations ReturnValue                    (Parm, OutParm, ReturnParm)
 
@@ -5026,7 +4858,7 @@ struct FTransform UAthenaAnimationInstance::GetLoadedItemLeftHandOffset()
 
 
 // Function Athena.AthenaAnimationInstance.GetLoadedItemJumpingAnimations
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FAthenaAnimationObjectJumpingAnimations ReturnValue                    (Parm, OutParm, ReturnParm)
 
@@ -5068,7 +4900,7 @@ bool UAthenaAnimationInstance::GetLoadedItemIsRangedWeapon()
 
 
 // Function Athena.AthenaAnimationInstance.GetLoadedItemIdleAnimations
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FAthenaAnimationObjectIdleAnimations ReturnValue                    (Parm, OutParm, ReturnParm)
 
@@ -5131,7 +4963,7 @@ struct FAthenaAnimationObjectFacial UAthenaAnimationInstance::GetLoadedItemFacia
 
 
 // Function Athena.AthenaAnimationInstance.GetLoadedItemEquippingAnimations
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FAthenaAnimationObjectEquipAnimations ReturnValue                    (Parm, OutParm, ReturnParm)
 
@@ -5257,7 +5089,7 @@ bool UAthenaAnimationInstance::GetItemUsePitchOverride()
 
 
 // Function Athena.AthenaAnimationInstance.GetItemOneShotStructure
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           IsPrimary                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           IsAlternate                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -5326,7 +5158,7 @@ struct FAthenaAnimationObjectMeleeBlocking UAthenaAnimationInstance::GetItemMele
 
 
 // Function Athena.AthenaAnimationInstance.GetItemContinuousStructure
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           IsPrimary                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           IsAlternate                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -5353,7 +5185,7 @@ struct FAthenaAnimationObjectActionContinuousStruct UAthenaAnimationInstance::Ge
 
 
 // Function Athena.AthenaAnimationInstance.GetItemComplexOneShotStructure
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // TEnumAsByte<EWieldableItemComplexOneShotLookUpType> ComplexOneShotLookUpType       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           IsSwimming                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -5545,7 +5377,7 @@ class UAnimSequence* UAthenaAnimationInstance::GetItemBlockingFeedbackSequence()
 
 
 // Function Athena.AthenaAnimationInstance.GetInDockingTransition
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -5587,7 +5419,7 @@ class AActor* UAthenaAnimationInstance::GetCurrentEquippedItem()
 
 
 // Function Athena.AthenaAnimationInstance.GetControllableSocketGroupCharacterSize
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // TEnumAsByte<EAthenaAnimationSocketGroupCharacterSize> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -5608,7 +5440,7 @@ TEnumAsByte<EAthenaAnimationSocketGroupCharacterSize> UAthenaAnimationInstance::
 
 
 // Function Athena.AthenaAnimationInstance.GetControllableSocketGroup
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // TEnumAsByte<EAthenaAnimationSocketGroup> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -5669,7 +5501,7 @@ void UAthenaAnimationInstance::EnteredItemBlockingFeedbackState()
 
 
 // Function Athena.AthenaAnimationInstance.AdjustIdleTransition
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void UAthenaAnimationInstance::AdjustIdleTransition()
 {
@@ -5685,7 +5517,7 @@ void UAthenaAnimationInstance::AdjustIdleTransition()
 
 
 // Function Athena.FirstPersonAnimationInstance.UpdateLoadedAnimations
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 
 void UFirstPersonAnimationInstance::UpdateLoadedAnimations()
 {
@@ -5701,7 +5533,7 @@ void UFirstPersonAnimationInstance::UpdateLoadedAnimations()
 
 
 // Function Athena.FirstPersonAnimationInstance.SetFirstPersonAnimToPlay
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class UAnimSequence*           AnimSequenceToPlay             (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -5757,7 +5589,7 @@ void UFirstPersonAnimationInstance::FirstPersonAnimaticFinished()
 
 
 // Function Athena.ThirdPersonAnimationInstance.UpdateSkeletonFleeingAnimations
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class UClass*                  ObjectId                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -5777,7 +5609,7 @@ void UThirdPersonAnimationInstance::UpdateSkeletonFleeingAnimations(class UClass
 
 
 // Function Athena.ThirdPersonAnimationInstance.UpdatePitchOverrideAnimation
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                           IsPrimary                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -5797,7 +5629,7 @@ void UThirdPersonAnimationInstance::UpdatePitchOverrideAnimation(bool IsPrimary)
 
 
 // Function Athena.ThirdPersonAnimationInstance.UpdateLoadedAnimations
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 
 void UThirdPersonAnimationInstance::UpdateLoadedAnimations()
 {
@@ -5813,7 +5645,7 @@ void UThirdPersonAnimationInstance::UpdateLoadedAnimations()
 
 
 // Function Athena.ThirdPersonAnimationInstance.UpdateAISpawnAnimation
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AAthenaCharacter*        Owner                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // class UClass*                  ObjectId                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -5921,7 +5753,7 @@ void UThirdPersonAnimationInstance::StartMeleeStanceChange()
 
 
 // Function Athena.ThirdPersonAnimationInstance.SetLocomotionTypeActive
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<ELocomotionType>   LocomotionType                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           Active                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -5944,7 +5776,7 @@ void UThirdPersonAnimationInstance::SetLocomotionTypeActive(TEnumAsByte<ELocomot
 
 
 // Function Athena.ThirdPersonAnimationInstance.SetFullBodyOverlayPoseDisabled
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                           IsDisabled                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -5984,7 +5816,7 @@ void UThirdPersonAnimationInstance::SetEmoteStateActive(bool IsActive)
 
 
 // Function Athena.ThirdPersonAnimationInstance.SelectSkeletonFleeingVariationAnimation
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -6005,7 +5837,7 @@ bool UThirdPersonAnimationInstance::SelectSkeletonFleeingVariationAnimation()
 
 
 // Function Athena.ThirdPersonAnimationInstance.RemoveActiveEmote
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void UThirdPersonAnimationInstance::RemoveActiveEmote()
 {
@@ -6067,7 +5899,7 @@ void UThirdPersonAnimationInstance::LoadSpecificItemAnimations(class UClass* Ite
 
 
 // Function Athena.ThirdPersonAnimationInstance.GetTargetingPitch
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -6247,7 +6079,7 @@ struct FAthenaAnimationObjectActionContinuousStructPitchOverride UThirdPersonAni
 
 
 // Function Athena.ThirdPersonAnimationInstance.GetCurrentLocomotionType
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // TEnumAsByte<ELocomotionType>   ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -6416,7 +6248,7 @@ void USkeletonAnimationInstance::StopAnimation(float BlendOutTime)
 
 
 // Function Athena.SkeletonAnimationInstance.SetNewCustomAnimationLoopingSequence
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                           IsLoopA                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // struct FName                   SequenceName                   (Parm, ZeroConstructor, IsPlainOldData)
@@ -6600,7 +6432,7 @@ void UAthenaAnimationMountedWeaponBlueprintFunctions::SetFireFinished(struct FAt
 
 
 // Function Athena.AthenaAnimationWieldedItemAnimationOverlayFunctions.UpdateThirdPersonArmOverlayFlags
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // class UAthenaAnimationInstance* Owner                          (Parm, ZeroConstructor, IsPlainOldData)
 // class FString                  SourceString                   (ConstParm, Parm, ZeroConstructor)
@@ -6627,7 +6459,7 @@ void UAthenaAnimationWieldedItemAnimationOverlayFunctions::UpdateThirdPersonArmO
 
 
 // Function Athena.AthenaAnimationWieldedItemAnimationOverlayFunctions.UpdateFirstPersonArmOverlayFlags
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // class UAthenaAnimationInstance* Owner                          (Parm, ZeroConstructor, IsPlainOldData)
 // class FString                  SourceString                   (ConstParm, Parm, ZeroConstructor)
@@ -6654,7 +6486,7 @@ void UAthenaAnimationWieldedItemAnimationOverlayFunctions::UpdateFirstPersonArmO
 
 
 // Function Athena.AthenaAnimationWieldedItemAnimationOverlayFunctions.UpdateAnimOverlayParameters
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UAthenaAnimationInstance* Owner                          (Parm, ZeroConstructor, IsPlainOldData)
 // TEnumAsByte<EArmOverlayState>  ArmOverlayState                (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -6681,7 +6513,7 @@ void UAthenaAnimationWieldedItemAnimationOverlayFunctions::UpdateAnimOverlayPara
 
 
 // Function Athena.AthenaAnimationWieldedItemAnimationOverlayFunctions.StopFacialAnimationMontage
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UAthenaAnimationInstance* Owner                          (Parm, ZeroConstructor, IsPlainOldData)
 // class UAnimMontage*            MontageToStop                  (Parm, ZeroConstructor, IsPlainOldData)
@@ -6715,7 +6547,7 @@ bool UAthenaAnimationWieldedItemAnimationOverlayFunctions::StopFacialAnimationMo
 
 
 // Function Athena.AthenaAnimationWieldedItemAnimationOverlayFunctions.PlayNewFacialAnimation
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UAthenaAnimationInstance* Owner                          (Parm, ZeroConstructor, IsPlainOldData)
 // class UAnimMontage*            MontageToPlay                  (Parm, ZeroConstructor, IsPlainOldData)
@@ -6749,7 +6581,7 @@ bool UAthenaAnimationWieldedItemAnimationOverlayFunctions::PlayNewFacialAnimatio
 
 
 // Function Athena.AthenaAnimationWieldedItemAnimationOverlayFunctions.JumpToFacialAnimationMontageSection
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UAthenaAnimationInstance* Owner                          (Parm, ZeroConstructor, IsPlainOldData)
 // class UAnimMontage*            PlayingMontage                 (Parm, ZeroConstructor, IsPlainOldData)
@@ -6866,7 +6698,7 @@ bool UAthenaCameraComponent::GetIsUnderwater()
 
 
 // Function Athena.AthenaCameraComponent.Activate
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                           bReset                         (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -6886,7 +6718,7 @@ void UAthenaCameraComponent::Activate(bool bReset)
 
 
 // Function Athena.CustomAnimationHandlerComponent.OnRep_RequestedLoopingAnim
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UCustomAnimationHandlerComponent::OnRep_RequestedLoopingAnim()
 {
@@ -6902,7 +6734,7 @@ void UCustomAnimationHandlerComponent::OnRep_RequestedLoopingAnim()
 
 
 // Function Athena.CustomAnimationHandlerComponent.OnRep_CurrentCustomAnimationDataAssetReferences
-// (Final, Native, Protected, HasOutParms)
+// (Final, RequiredAPI, Native, Protected, HasOutParms)
 // Parameters:
 // TArray<struct FStringAssetReference> PrevCurrentCustomAnimationDataAssetReferences (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
@@ -7001,7 +6833,7 @@ void UCustomAnimationHandlerComponent::AddLoadedCustomAnimationDataAsset(class U
 
 
 // Function Athena.AthenaAICharacter.SetTargetActorToFace
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  InActor                        (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -7021,7 +6853,7 @@ void AAthenaAICharacter::SetTargetActorToFace(class AActor* InActor)
 
 
 // Function Athena.AthenaAICharacter.SetRegion
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // struct FName                   InRegion                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
@@ -7041,7 +6873,7 @@ void AAthenaAICharacter::SetRegion(const struct FName& InRegion)
 
 
 // Function Athena.AthenaAICharacter.SetOverrideCannonShotHitChance
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                           Enabled                        (Parm, ZeroConstructor, IsPlainOldData)
 // float                          HitChance                      (Parm, ZeroConstructor, IsPlainOldData)
@@ -7084,7 +6916,7 @@ void AAthenaAICharacter::SetLoadout(TAssetPtr<class ULoadoutAsset> InLoadout)
 
 
 // Function Athena.AthenaAICharacter.SetAIStrategy
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class UClass*                  InStrategy                     (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -7104,7 +6936,7 @@ void AAthenaAICharacter::SetAIStrategy(class UClass* InStrategy)
 
 
 // Function Athena.AthenaAICharacter.SetAIAnimationState
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class UClass*                  InAnimationState               (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -7124,7 +6956,7 @@ void AAthenaAICharacter::SetAIAnimationState(class UClass* InAnimationState)
 
 
 // Function Athena.AthenaAICharacter.ResetMaxHealthTo
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // float                          InMaxHealth                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -7144,7 +6976,7 @@ void AAthenaAICharacter::ResetMaxHealthTo(float InMaxHealth)
 
 
 // Function Athena.AthenaAICharacter.OnRep_MeshScale
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 // Parameters:
 // float                          OldMeshScale                   (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -7184,7 +7016,7 @@ void AAthenaAICharacter::OnRep_DamageResponsesDisabled(bool OldDamageResponsesDi
 
 
 // Function Athena.AthenaAICharacter.OnRep_CurrentAnimationState
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 // Parameters:
 // class UClass*                  OldAnimationState              (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -7204,7 +7036,7 @@ void AAthenaAICharacter::OnRep_CurrentAnimationState(class UClass* OldAnimationS
 
 
 // Function Athena.AthenaAICharacter.OnRep_CurrentAIStrategy
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 // Parameters:
 // class UClass*                  OldAIStrategy                  (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -7224,7 +7056,7 @@ void AAthenaAICharacter::OnRep_CurrentAIStrategy(class UClass* OldAIStrategy)
 
 
 // Function Athena.AthenaAICharacter.GetRegion
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FName                   ReturnValue                    (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, IsPlainOldData)
 
@@ -7245,7 +7077,7 @@ struct FName AAthenaAICharacter::GetRegion()
 
 
 // Function Athena.AthenaAICharacter.GetAIStrategy
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class UClass*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -7287,7 +7119,7 @@ struct FAIEncounterSpecification AAthenaAICharacter::GetAIEncounterSpec()
 
 
 // Function Athena.AthenaAICharacter.GetAIAnimationState
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class UClass*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -7308,7 +7140,7 @@ class UClass* AAthenaAICharacter::GetAIAnimationState()
 
 
 // Function Athena.OceanCrawlerAICharacter.OnRep_SporeBreathActive
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void AOceanCrawlerAICharacter::OnRep_SporeBreathActive()
 {
@@ -7344,7 +7176,7 @@ void AAthenaGhostPlayerCharacter::OnCharacterAssignedController(class AControlle
 
 
 // Function Athena.VoyageParticipantComponent.OnRep_View
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UVoyageParticipantComponent::OnRep_View()
 {
@@ -7478,7 +7310,7 @@ void UAthenaCharacterMovementComponent::UnforceSwimmingClientTrustThreshold()
 
 
 // Function Athena.AthenaCharacterMovementComponent.SetMovementMode
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EMovementMode>     NewMovementMode                (Parm, ZeroConstructor, IsPlainOldData)
 // unsigned char                  NewCustomMode                  (Parm, ZeroConstructor, IsPlainOldData)
@@ -7605,7 +7437,7 @@ float UAthenaCharacterMovementComponent::GetTerminalVelocity()
 
 
 // Function Athena.AthenaCharacterMovementComponent.GetMovementMode
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // TEnumAsByte<EMovementMode>     ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -7626,7 +7458,7 @@ TEnumAsByte<EMovementMode> UAthenaCharacterMovementComponent::GetMovementMode()
 
 
 // Function Athena.AthenaCharacterMovementComponent.GetMaxSprintSpeed
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -7647,7 +7479,7 @@ float UAthenaCharacterMovementComponent::GetMaxSprintSpeed()
 
 
 // Function Athena.AthenaCharacterMovementComponent.GetMaxMoveSpeedScalar
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -7780,7 +7612,7 @@ void UStreamingLocationComponent::Server_StreamingLocationOverrideApplied(int Id
 
 
 // Function Athena.StreamingLocationComponent.OnRep_StreamingLocationOverride
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UStreamingLocationComponent::OnRep_StreamingLocationOverride()
 {
@@ -7847,7 +7679,7 @@ void UAthenaCharacterDockingFunctions::StartDockingCharacterWithActor(class AAth
 
 
 // Function Athena.AthenaCharacterDodgeComponent.Server_RequestDodge
-// (Final, Net, NetReliable, Native, Event, Private, NetServer, HasDefaults, NetValidate)
+// (Final, RequiredAPI, Net, NetReliable, Native, Event, Private, NetServer, HasDefaults, NetValidate)
 // Parameters:
 // struct FVector                 Direction                      (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
@@ -7867,7 +7699,7 @@ void UAthenaCharacterDodgeComponent::Server_RequestDodge(const struct FVector& D
 
 
 // Function Athena.AthenaCharacterDodgeComponent.Multicast_CharacterDodge
-// (Final, Net, NetReliable, Native, Event, NetMulticast, Private, HasDefaults)
+// (Final, RequiredAPI, Net, NetReliable, Native, Event, NetMulticast, Private, HasDefaults)
 // Parameters:
 // struct FVector                 Direction                      (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
@@ -7960,7 +7792,7 @@ bool UAthenaCharacterFunctions::IsActionStateMachineActive(class AAthenaCharacte
 
 
 // Function Athena.AthenaCharacterFunctions.GetTeleportLocationForPlayer
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AAthenaCharacter*        Player                         (Parm, ZeroConstructor, IsPlainOldData)
 // TEnumAsByte<ETeleportTransformSpace> Space                          (Parm, ZeroConstructor, IsPlainOldData)
@@ -8013,7 +7845,7 @@ bool UAthenaCharacterFunctions::AllAnimationsLoadedForCharacter(class AAthenaCha
 
 
 // Function Athena.AthenaCharacterKnockbackComponent.SetDisabled
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                           IsDisabled                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -8322,7 +8154,7 @@ void UAthenaCharacterTestFunctions::SimulateButtonPress(class APlayerController*
 
 
 // Function Athena.AthenaCharacterTestFunctions.SetupCharacterForMPTesting
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContextObject             (Parm, ZeroConstructor, IsPlainOldData)
 // class AAthenaCharacter*        AthenaCharacter                (Parm, ZeroConstructor, IsPlainOldData)
@@ -8486,7 +8318,7 @@ class AAthenaPlayerCharacter* UAthenaCharacterTestFunctions::GetClientPlayerChar
 
 
 // Function Athena.AthenaCharacterTestFunctions.GetClientCharacter
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class UObject*                 WorldContextObject             (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ClientId                       (Parm, ZeroConstructor, IsPlainOldData)
@@ -8550,7 +8382,7 @@ void UAthenaCharacterTestFunctions::ForceInteract(class UObject* WorldContextObj
 
 
 // Function Athena.AthenaCharacterTestFunctions.CreateAndEquipItemDesc
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AAthenaCharacter*        Character                      (Parm, ZeroConstructor, IsPlainOldData)
 // class UClass*                  ItemDesc                       (Parm, ZeroConstructor, IsPlainOldData)
@@ -8836,7 +8668,7 @@ void AAthenaGameState::OnRep_ShouldDisableAsyncOcclusionCheck()
 
 
 // Function Athena.AthenaGameState.OnRep_ServiceStatusNotificationsService
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 
 void AAthenaGameState::OnRep_ServiceStatusNotificationsService()
 {
@@ -9145,6 +8977,22 @@ void AAthenaGameState::OnRep_ReplicatedInvasionService()
 void AAthenaGameState::OnRep_ReplicatedGuildService()
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.AthenaGameState.OnRep_ReplicatedGuildService"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Athena.AthenaGameState.OnRep_ReplicatedGameEventsOnDemandLoserTunnelService
+// (Final, Native, Private)
+
+void AAthenaGameState::OnRep_ReplicatedGameEventsOnDemandLoserTunnelService()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.AthenaGameState.OnRep_ReplicatedGameEventsOnDemandLoserTunnelService"));
 
 	struct
 	{
@@ -9513,7 +9361,7 @@ void AAthenaPlayerState::OnRep_PlayerIndexOnServer()
 
 
 // Function Athena.AthenaPlayerState.GetUniquePlayerId
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class FString                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
 
@@ -9534,7 +9382,7 @@ class FString AAthenaPlayerState::GetUniquePlayerId()
 
 
 // Function Athena.AthenaPlayerState.GetPlayerActivity
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // TEnumAsByte<EPlayerActivityType> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -9576,7 +9424,7 @@ struct FPirateDescription AAthenaPlayerState::GetPirateDescCopy()
 
 
 // Function Athena.AthenaPlayerState.GetPirateDesc
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FPirateDescription      ReturnValue                    (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm)
 
@@ -9964,7 +9812,7 @@ void ATestAthenaPlayerController::GrantDebugMenuPermissions(bool AllowAccess)
 
 
 // Function Athena.TestAthenaPlayerController.FakeInput
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // struct FKey                    Key                            (Parm)
 
@@ -10075,7 +9923,7 @@ void UAthenaPlayerControllerTestFunctions::AddEntitlementDescToInventory(class A
 
 
 // Function Athena.TestAthenaPlayerState.SetUniquePlayerID
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class FString                  InUniquePlayerId               (Parm, ZeroConstructor)
 
@@ -10095,7 +9943,7 @@ void ATestAthenaPlayerState::SetUniquePlayerID(const class FString& InUniquePlay
 
 
 // Function Athena.AthenaPlayerZonePenetrationTrackerComponent.OnOverlapEnd
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 // Parameters:
 // class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
 // class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
@@ -10121,7 +9969,7 @@ void UAthenaPlayerZonePenetrationTrackerComponent::OnOverlapEnd(class AActor* Ot
 
 
 // Function Athena.AthenaPlayerZonePenetrationTrackerComponent.OnOverlapBegin
-// (Final, Native, Private, HasOutParms)
+// (Final, RequiredAPI, Native, Private, HasOutParms)
 // Parameters:
 // class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
 // class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
@@ -11199,7 +11047,7 @@ void ABeacon::OnRep_OnBeaconDataChanged(const struct FBeaconData& OldData)
 
 
 // Function Athena.Beacon.IsLit
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -11273,7 +11121,7 @@ void ABeacon::Client_OnBeaconExtinguished()
 
 
 // Function Athena.FortOfTheDamnedBrazierMechanismTrigger.OnRep_IsActiveWaveBrazier
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 // Parameters:
 // bool                           OldActive                      (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -11293,7 +11141,7 @@ void AFortOfTheDamnedBrazierMechanismTrigger::OnRep_IsActiveWaveBrazier(bool Old
 
 
 // Function Athena.FortOfTheDamnedBrazierMechanismTrigger.OnPlinthActivated
-// (Native, Event, Protected, BlueprintEvent)
+// (RequiredAPI, Native, Event, Protected, BlueprintEvent)
 
 void AFortOfTheDamnedBrazierMechanismTrigger::OnPlinthActivated()
 {
@@ -11309,7 +11157,7 @@ void AFortOfTheDamnedBrazierMechanismTrigger::OnPlinthActivated()
 
 
 // Function Athena.FortOfTheDamnedBrazierMechanismTrigger.OnFortOfTheDamnedComplete
-// (Native, Event, Protected, BlueprintEvent)
+// (RequiredAPI, Native, Event, Protected, BlueprintEvent)
 
 void AFortOfTheDamnedBrazierMechanismTrigger::OnFortOfTheDamnedComplete()
 {
@@ -11366,7 +11214,7 @@ void ABell::RingBell(bool IsInTurbulence)
 
 
 // Function Athena.BlendedPostProcessingZoneComponentBase.FadeOut
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // float                          InTime                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -11386,7 +11234,7 @@ void UBlendedPostProcessingZoneComponentBase::FadeOut(float InTime)
 
 
 // Function Athena.BlendedPostProcessingZoneComponentBase.FadeIn
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // float                          InTime                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -11785,7 +11633,7 @@ class AActor* UBlueprintStepBase::SpawnActor(class UClass* InWhat, const struct 
 
 
 // Function Athena.BlueprintStepBase.SignalComplete
-// (Final, Native, Protected, BlueprintCallable)
+// (Final, RequiredAPI, Native, Protected, BlueprintCallable)
 
 void UBlueprintStepBase::SignalComplete()
 {
@@ -11953,7 +11801,7 @@ void UBlueprintStepBase::OnParticipantJoin(class AActor* Participant)
 
 
 // Function Athena.BlueprintStepBase.OnEnd
-// (Event, Protected, BlueprintEvent)
+// (RequiredAPI, Event, Protected, BlueprintEvent)
 
 void UBlueprintStepBase::OnEnd()
 {
@@ -11969,7 +11817,7 @@ void UBlueprintStepBase::OnEnd()
 
 
 // Function Athena.BlueprintStepBase.OnBegin
-// (Event, Protected, BlueprintEvent)
+// (RequiredAPI, Event, Protected, BlueprintEvent)
 // Parameters:
 // TEnumAsByte<ETaleQuestStepBeginMode> InBeginMode                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -12425,7 +12273,7 @@ struct FVector UBlueprintStepBase::FindNamedPointOnTaleActorPtrAsVector(TAssetPt
 
 
 // Function Athena.BlueprintStepBase.FailTale
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // struct FText                   FailureMessage                 (ConstParm, Parm, OutParm, ReferenceParm)
 
@@ -12686,7 +12534,7 @@ void UBlueprintMechanismStepBase::ActivateMechanismTrigger(TAssetPtr<class AActo
 
 
 // Function Athena.BlueprintSpawnAIStepBase.OnSpawn
-// (Event, Protected, BlueprintEvent)
+// (RequiredAPI, Event, Protected, BlueprintEvent)
 // Parameters:
 // class APawn*                   Pawn                           (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -12706,7 +12554,7 @@ void UBlueprintSpawnAIStepBase::OnSpawn(class APawn* Pawn)
 
 
 // Function Athena.BlueprintSpawnAIStepBase.OnSetSpawnLocationActor
-// (Event, Protected, BlueprintEvent)
+// (RequiredAPI, Event, Protected, BlueprintEvent)
 // Parameters:
 // class AActor*                  Actor                          (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -12726,7 +12574,7 @@ void UBlueprintSpawnAIStepBase::OnSetSpawnLocationActor(class AActor* Actor)
 
 
 // Function Athena.BlueprintSpawnAIStepBase.OnSetSpawnLocation
-// (Event, Protected, BlueprintEvent)
+// (RequiredAPI, Event, Protected, BlueprintEvent)
 // Parameters:
 // struct FOrientedPoint          Point                          (Parm)
 
@@ -12746,7 +12594,7 @@ void UBlueprintSpawnAIStepBase::OnSetSpawnLocation(const struct FOrientedPoint& 
 
 
 // Function Athena.BlueprintSpawnAIStepBase.OnDespawn
-// (Event, Protected, BlueprintEvent)
+// (RequiredAPI, Event, Protected, BlueprintEvent)
 // Parameters:
 // class APawn*                   Pawn                           (Parm, ZeroConstructor, IsPlainOldData)
 // TEnumAsByte<ECharacterDeathType> DeathType                      (Parm, ZeroConstructor, IsPlainOldData)
@@ -12806,7 +12654,7 @@ class UAmbientLightSourceComponent* UBodyLightControllerComponent::GetTargetLigh
 
 
 // Function Athena.BodyLightControllerComponent.AssignTargetLight
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class UAmbientLightSourceComponent* InTargetLight                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
@@ -12898,7 +12746,7 @@ void AQuestBook::OnRightSpreadLeftPageCanvasUpdate(class UCanvas* Canvas, int Wi
 
 
 // Function Athena.QuestBook.OnRep_ReplicationInfo
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 // Parameters:
 // struct FQuestBookRepInfo       PreviousValue                  (Parm)
 
@@ -13181,7 +13029,7 @@ void ACannon::SetCannonInteractionState(TEnumAsByte<ECannonInteractionState> InI
 
 
 // Function Athena.Cannon.Server_StartFuse
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// (RequiredAPI, Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
 
 void ACannon::Server_StartFuse()
 {
@@ -13197,7 +13045,7 @@ void ACannon::Server_StartFuse()
 
 
 // Function Athena.Cannon.Server_RequestAim
-// (Net, Native, Event, Public, NetServer, NetValidate)
+// (RequiredAPI, Net, Native, Event, Public, NetServer, NetValidate)
 // Parameters:
 // float                          NewPitch                       (Parm, ZeroConstructor, IsPlainOldData)
 // float                          NewYaw                         (Parm, ZeroConstructor, IsPlainOldData)
@@ -13220,7 +13068,7 @@ void ACannon::Server_RequestAim(float NewPitch, float NewYaw)
 
 
 // Function Athena.Cannon.Server_Fire_WithInstigator
-// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable, NetValidate)
+// (RequiredAPI, Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable, NetValidate)
 // Parameters:
 // class AActor*                  InInstigator                   (Parm, ZeroConstructor, IsPlainOldData)
 // float                          InPitch                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -13246,7 +13094,7 @@ void ACannon::Server_Fire_WithInstigator(class AActor* InInstigator, float InPit
 
 
 // Function Athena.Cannon.Server_Fire
-// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable, NetValidate)
+// (RequiredAPI, Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable, NetValidate)
 // Parameters:
 // float                          InPitch                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // float                          InYaw                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -13285,7 +13133,7 @@ void ACannon::ResetLoadedItemInfoParticles()
 
 
 // Function Athena.Cannon.OnRep_ServerYaw
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void ACannon::OnRep_ServerYaw()
 {
@@ -13301,7 +13149,7 @@ void ACannon::OnRep_ServerYaw()
 
 
 // Function Athena.Cannon.OnRep_ServerPitch
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void ACannon::OnRep_ServerPitch()
 {
@@ -13317,7 +13165,7 @@ void ACannon::OnRep_ServerPitch()
 
 
 // Function Athena.Cannon.OnRep_LoadedItemInfo
-// (Final, Native, Protected)
+// (Final, RequiredAPI, Native, Protected)
 
 void ACannon::OnRep_LoadedItemInfo()
 {
@@ -13333,7 +13181,7 @@ void ACannon::OnRep_LoadedItemInfo()
 
 
 // Function Athena.Cannon.OnRep_InteractionState
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void ACannon::OnRep_InteractionState()
 {
@@ -13349,7 +13197,7 @@ void ACannon::OnRep_InteractionState()
 
 
 // Function Athena.Cannon.Multicast_TriggerCannonFireEffects
-// (Net, NetReliable, Native, Event, NetMulticast, Public)
+// (RequiredAPI, Net, NetReliable, Native, Event, NetMulticast, Public)
 
 void ACannon::Multicast_TriggerCannonFireEffects()
 {
@@ -13423,7 +13271,7 @@ void ACannon::Multicast_FirePlayer(class AActor* InInstigator, bool InstigatorWa
 
 
 // Function Athena.Cannon.IsReadyToFire
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -13444,7 +13292,7 @@ bool ACannon::IsReadyToFire()
 
 
 // Function Athena.Cannon.HandleYawInput
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // float                          YawInput                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -13464,7 +13312,7 @@ void ACannon::HandleYawInput(float YawInput)
 
 
 // Function Athena.Cannon.HandlePitchInput
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // float                          PitchInput                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -13505,7 +13353,7 @@ TEnumAsByte<EProjectileFiredFrom> ACannon::GetProjectileFiredFrom()
 
 
 // Function Athena.Cannon.GetNormalisedYawRate
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -13526,7 +13374,7 @@ float ACannon::GetNormalisedYawRate()
 
 
 // Function Athena.Cannon.GetNormalisedPitchRate
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -13567,7 +13415,7 @@ void ACannon::ForceLoadCannonDesc(class UCannonDescAsset* InCannonDesc)
 
 
 // Function Athena.Cannon.ForceAimCannon
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // float                          Pitch                          (Parm, ZeroConstructor, IsPlainOldData)
 // float                          Yaw                            (Parm, ZeroConstructor, IsPlainOldData)
@@ -13590,7 +13438,7 @@ void ACannon::ForceAimCannon(float Pitch, float Yaw)
 
 
 // Function Athena.Cannon.Fire
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 
 void ACannon::Fire()
 {
@@ -13606,7 +13454,7 @@ void ACannon::Fire()
 
 
 // Function Athena.ShipCurseComponent.OnRep_ActorsAffectedByToggleInteractionsCurse
-// (Final, Native, Private, HasOutParms)
+// (Final, RequiredAPI, Native, Private, HasOutParms)
 // Parameters:
 // TArray<class AActor*>          PreviousActorsAffectedByToggleInteractionsCurse (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
@@ -13626,7 +13474,7 @@ void UShipCurseComponent::OnRep_ActorsAffectedByToggleInteractionsCurse(TArray<c
 
 
 // Function Athena.ShipCurseComponent.OnRep_ActiveCurseFX
-// (Final, Native, Private, HasOutParms)
+// (Final, RequiredAPI, Native, Private, HasOutParms)
 // Parameters:
 // TArray<struct FShipActiveCurseFXData> PreviousActiveCurseFX          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
@@ -13702,7 +13550,7 @@ void USinkingComponent::SetSinkingParams(const struct FSinkingShipParams& Params
 
 
 // Function Athena.SinkingComponent.SetDebugKeelOverConfigIndexOverride
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // int                            Index                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -13847,7 +13695,7 @@ TEnumAsByte<EShipState> USinkingComponent::GetShipState()
 
 
 // Function Athena.SinkingComponent.ForceSinkShip
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void USinkingComponent::ForceSinkShip()
 {
@@ -14356,6 +14204,38 @@ void AShip::OnHitShipActor(class AActor* SelfActor, class AActor* OtherActor, co
 	params.OtherActor = OtherActor;
 	params.NormalImpulse = NormalImpulse;
 	params.Hit = Hit;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Athena.Ship.Multicast_OnShipStartedSurface
+// (Net, NetReliable, Native, Event, NetMulticast, Public)
+
+void AShip::Multicast_OnShipStartedSurface()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.Ship.Multicast_OnShipStartedSurface"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Athena.Ship.Multicast_OnShipDive
+// (Net, NetReliable, Native, Event, NetMulticast, Public)
+
+void AShip::Multicast_OnShipDive()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.Ship.Multicast_OnShipDive"));
+
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -15336,7 +15216,7 @@ void UBuryingTaleQuestService::RemoveBuriedActor(const struct FGuid& InGuid)
 
 
 // Function Athena.BuriedTreasureLocation.IsValidTreasureLocation
-// (Final, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, HasOutParms, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class UObject*                 WorldContextObject             (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLocationGeneratorSample OutLocation                    (Parm, OutParm)
@@ -15406,7 +15286,7 @@ void UBurpComponent::Multicast_Burp(float StrengthRTPC)
 
 
 // Function Athena.BurpComponent.GetCurrentGasAmount
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -16112,7 +15992,7 @@ void ASpectacleCapstan::OnRep_IsEngaged()
 
 
 // Function Athena.RepairableComponent.OnRep_DamageLevel
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void URepairableComponent::OnRep_DamageLevel()
 {
@@ -16128,7 +16008,7 @@ void URepairableComponent::OnRep_DamageLevel()
 
 
 // Function Athena.RepairableComponent.OnRep_AuthorityRepairableState
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void URepairableComponent::OnRep_AuthorityRepairableState()
 {
@@ -16165,7 +16045,7 @@ struct FTransform URepairableComponent::GetMountLocationOffset()
 
 
 // Function Athena.RepairableComponent.ApplyDamage
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // int                            InAmount                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -16425,7 +16305,7 @@ void UCapstanTestFunctions::ForceSetCapstanRatio(class ACapstan* Capstan, float 
 
 
 // Function Athena.CapturedByKrakenActionStateId.PushCharacterIntoCapturedByKrakenActionState
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Character                      (Parm, ZeroConstructor, IsPlainOldData)
 // class AKrakenAnimatedTentacle* Tentacle                       (Parm, ZeroConstructor, IsPlainOldData)
@@ -16449,7 +16329,7 @@ void UCapturedByKrakenActionStateId::PushCharacterIntoCapturedByKrakenActionStat
 
 
 // Function Athena.CapturedByKrakenActionStateId.PopCharacterOutOfCapturedByKrakenActionState
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Character                      (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -16490,7 +16370,7 @@ void UCargoRunCrateComponent::SetDropOffLocationId(const struct FGuid& InDeliver
 
 
 // Function Athena.CargoRunCrateComponent.OnRep_DropOffData
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UCargoRunCrateComponent::OnRep_DropOffData()
 {
@@ -16568,7 +16448,7 @@ void ACargoRunMap::OnRep_Contents(const struct FCargoRunMapContents& PreviousCon
 
 
 // Function Athena.CarouselPirateDescConversion.ToPirateDescriptor
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, BlueprintCallable, BlueprintPure)
 // Parameters:
 // struct FCarouselPirateDesc     InParams                       (ConstParm, Parm, OutParm, ReferenceParm)
 // struct FPirateDescription      ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -16642,7 +16522,7 @@ void UCarouselPirateGenerator::RefreshCurrentPirateStatus(class UObject* WorldCo
 
 
 // Function Athena.CarouselPirateGenerator.GenerateSetOfPirates
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // int                            InSeed                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // int                            InCount                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -16707,7 +16587,7 @@ TArray<struct FName> UCarouselPirateGenerator::GenerateClothingItems(int InSeed,
 
 
 // Function Athena.CharacterAudioComponent.SetNamedState
-// (Native, Public, HasOutParms, BlueprintCallable)
+// (RequiredAPI, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // struct FName                   StateName                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 // bool                           Active                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -17564,26 +17444,6 @@ void UClothingLoadoutComponent::OnRep_Loadout(const struct FClothingLoadoutConta
 }
 
 
-// Function Athena.CloudSystem.SetGlobalAtmosphericPressure
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                          NewAtmosphericPressure         (Parm, ZeroConstructor, IsPlainOldData)
-
-void ACloudSystem::SetGlobalAtmosphericPressure(float NewAtmosphericPressure)
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.CloudSystem.SetGlobalAtmosphericPressure"));
-
-	struct
-	{
-		float                          NewAtmosphericPressure;
-	} params;
-
-	params.NewAtmosphericPressure = NewAtmosphericPressure;
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
 // Function Athena.CoastInterface.UnregisterCoast
 // (Native, Public, BlueprintCallable)
 // Parameters:
@@ -17986,7 +17846,7 @@ void UCoherentUIGTInstancedComponent::NavigateToEventReceived(const class FStrin
 
 
 // Function Athena.CoherentUIGTInstancedComponent.IsScriptingReady
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -18208,7 +18068,7 @@ void UUIInputForwardComponent::TargetViewScriptingReady()
 
 
 // Function Athena.UIInputForwardComponent.SetUIFocus
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EUIInputFocusType> FocusType                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // class UCoherentUIGTBaseComponent* TargetViewComponent            (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
@@ -18520,7 +18380,7 @@ void UCoherentUIGTTooltipComponent::OnReadyForBindings()
 
 
 // Function Athena.CollectableQuestObject.SignalQuestStep
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AAthenaPlayerCharacter*  CollectingPlayerCharacter      (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -18573,6 +18433,43 @@ void UCompanyEventsFunctions::BreakEventCompanyRankProgressUpdateNotification(co
 }
 
 
+// Function Athena.PiratePreviewInterface.PreCreatePreview
+// (Native, Public, BlueprintCallable)
+
+void UPiratePreviewInterface::PreCreatePreview()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.PiratePreviewInterface.PreCreatePreview"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Athena.CompanyShopkeeperCinematicCameraInterface.GetCompanyShopkeeperCinematicCameraComponent
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// class UCameraComponent*        ReturnValue                    (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+
+class UCameraComponent* UCompanyShopkeeperCinematicCameraInterface::GetCompanyShopkeeperCinematicCameraComponent()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.CompanyShopkeeperCinematicCameraInterface.GetCompanyShopkeeperCinematicCameraComponent"));
+
+	struct
+	{
+		class UCameraComponent*        ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
 // Function Athena.WieldableReplica.OnMeshInitialised
 // (Native, Event, Protected, BlueprintEvent)
 
@@ -18611,7 +18508,7 @@ TArray<struct FContestIslandArchetype> UContestTaleQuestService::GetContestVoyag
 
 
 // Function Athena.CrewService.OnRep_Crews
-// (Final, Native, Protected)
+// (Final, RequiredAPI, Native, Protected)
 
 void ACrewService::OnRep_Crews()
 {
@@ -18721,8 +18618,29 @@ void UContestCeremoniesComponent::MulticastStopAllCeremonyAudioEvent(TArray<clas
 }
 
 
+// Function Athena.NPCDialogCinematicCameraInterface.GetNPCDialogCinematicCameraComponent
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// class UCameraComponent*        ReturnValue                    (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
+
+class UCameraComponent* UNPCDialogCinematicCameraInterface::GetNPCDialogCinematicCameraComponent()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.NPCDialogCinematicCameraInterface.GetNPCDialogCinematicCameraComponent"));
+
+	struct
+	{
+		class UCameraComponent*        ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
 // Function Athena.NPC.GetSkeletalMesh
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class USkeletalMeshComponent*  ReturnValue                    (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
@@ -18789,7 +18707,7 @@ void UControlCapstanArmActionStateId::PushCharacterIntoControlCapstanArmActionSt
 
 
 // Function Athena.ControllableObjectFunctionLibrary.GetAnyUncontrolledActor
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // TArray<class AActor*>          Actors                         (Parm, ZeroConstructor)
 // class AActor*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -18814,7 +18732,7 @@ class AActor* UControllableObjectFunctionLibrary::GetAnyUncontrolledActor(TArray
 
 
 // Function Athena.ControllableObjectFunctionLibrary.FilterUncontrolledActors
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // TArray<class AActor*>          Actors                         (Parm, OutParm, ZeroConstructor)
 // TArray<class AActor*>          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
@@ -18841,7 +18759,7 @@ TArray<class AActor*> UControllableObjectFunctionLibrary::FilterUncontrolledActo
 
 
 // Function Athena.ControllableObjectFunctionLibrary.FilterControllableActors
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // TArray<class AActor*>          Actors                         (Parm, OutParm, ZeroConstructor)
 // TArray<class AActor*>          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
@@ -18868,7 +18786,7 @@ TArray<class AActor*> UControllableObjectFunctionLibrary::FilterControllableActo
 
 
 // Function Athena.ControlPulleyActionStateId.PushCharacterIntoControlPulleyActionState
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EActionStateMachineTrackId> TrackId                        (Parm, ZeroConstructor, IsPlainOldData)
 // TScriptInterface<class UDockableInterface> DockableInterface              (Parm, ZeroConstructor, IsPlainOldData)
@@ -19291,7 +19209,7 @@ void UCrewFunctions::SetCrewSpawnProgressOverrideId(class UWorld* World, const s
 
 
 // Function Athena.CrewFunctions.SetCrewShipProgressionSpawnLocations
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContext                   (Parm, ZeroConstructor, IsPlainOldData)
 // struct FGuid                   CrewId                         (Parm, ZeroConstructor, IsPlainOldData)
@@ -19345,7 +19263,7 @@ void UCrewFunctions::ResetCrewToSpawnLocation(class UObject* WorldContext, const
 
 
 // Function Athena.CrewFunctions.ResetCrewToSafeSpawnLocation
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContext                   (Parm, ZeroConstructor, IsPlainOldData)
 // struct FGuid                   CrewId                         (Parm, ZeroConstructor, IsPlainOldData)
@@ -19372,7 +19290,7 @@ void UCrewFunctions::ResetCrewToSafeSpawnLocation(class UObject* WorldContext, c
 
 
 // Function Athena.CrewFunctions.RemoveCharacterFromCrew
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContext                   (Parm, ZeroConstructor, IsPlainOldData)
 // class AAthenaCharacter*        Player                         (Parm, ZeroConstructor, IsPlainOldData)
@@ -19396,7 +19314,7 @@ void UCrewFunctions::RemoveCharacterFromCrew(class UObject* WorldContext, class 
 
 
 // Function Athena.CrewFunctions.QueueNewShipForRespawnAndSetCrewSpawnLocation
-// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContext                   (Parm, ZeroConstructor, IsPlainOldData)
 // struct FGuid                   CrewId                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
@@ -19427,7 +19345,7 @@ bool UCrewFunctions::QueueNewShipForRespawnAndSetCrewSpawnLocation(class UObject
 
 
 // Function Athena.CrewFunctions.IsCharacterMemberOfCrew
-// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
 // Parameters:
 // class AAthenaCharacter*        Player                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // struct FGuid                   CrewId                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
@@ -19455,7 +19373,7 @@ bool UCrewFunctions::IsCharacterMemberOfCrew(class AAthenaCharacter* Player, con
 
 
 // Function Athena.CrewFunctions.IsActorMemberOfCharactersCrew
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Actor                          (Parm, ZeroConstructor, IsPlainOldData)
 // class AAthenaCharacter*        Player                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -19483,7 +19401,7 @@ bool UCrewFunctions::IsActorMemberOfCharactersCrew(class AActor* Actor, class AA
 
 
 // Function Athena.CrewFunctions.GetShipSizeForCrewId
-// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContext                   (Parm, ZeroConstructor, IsPlainOldData)
 // struct FGuid                   CrewId                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
@@ -19567,7 +19485,7 @@ TArray<class AAthenaPlayerController*> UCrewFunctions::GetPlayerControllersFromC
 
 
 // Function Athena.CrewFunctions.GetCrewIdFromActor
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContext                   (Parm, ZeroConstructor, IsPlainOldData)
 // class AActor*                  Actor                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -19595,7 +19513,7 @@ struct FGuid UCrewFunctions::GetCrewIdFromActor(class UObject* WorldContext, cla
 
 
 // Function Athena.CrewFunctions.FindAndAssignSpawnLocation
-// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContext                   (Parm, ZeroConstructor, IsPlainOldData)
 // struct FGuid                   CrewId                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
@@ -19656,7 +19574,7 @@ void UCrewFunctions::CreateCrewWithCaptainedSessionSettings(class UObject* World
 
 
 // Function Athena.CrewFunctions.CreateCrew
-// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContext                   (Parm, ZeroConstructor, IsPlainOldData)
 // struct FGuid                   CrewId                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
@@ -19710,7 +19628,7 @@ void UCrewFunctions::ClearCrewSpawnProgressOverrideId(class UWorld* World, const
 
 
 // Function Athena.CrewFunctions.ClearCrewShipProgressionSpawnLocations
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContext                   (Parm, ZeroConstructor, IsPlainOldData)
 // struct FGuid                   CrewId                         (Parm, ZeroConstructor, IsPlainOldData)
@@ -19734,7 +19652,7 @@ void UCrewFunctions::ClearCrewShipProgressionSpawnLocations(class UObject* World
 
 
 // Function Athena.CrewFunctions.AreInSameCrew
-// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
 // Parameters:
 // struct FGuid                   CrewId1                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 // struct FGuid                   CrewId2                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
@@ -19762,7 +19680,7 @@ bool UCrewFunctions::AreInSameCrew(const struct FGuid& CrewId1, const struct FGu
 
 
 // Function Athena.CrewFunctions.AreCharactersInSameCrew
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AAthenaCharacter*        Player1                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // class AAthenaCharacter*        Player2                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -19790,7 +19708,7 @@ bool UCrewFunctions::AreCharactersInSameCrew(class AAthenaCharacter* Player1, cl
 
 
 // Function Athena.CrewFunctions.AddShipToCrew
-// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContext                   (Parm, ZeroConstructor, IsPlainOldData)
 // class AShip*                   Ship                           (Parm, ZeroConstructor, IsPlainOldData)
@@ -19817,7 +19735,7 @@ void UCrewFunctions::AddShipToCrew(class UObject* WorldContext, class AShip* Shi
 
 
 // Function Athena.CrewFunctions.AddCharacterToCrew
-// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContext                   (Parm, ZeroConstructor, IsPlainOldData)
 // class AAthenaCharacter*        Player                         (Parm, ZeroConstructor, IsPlainOldData)
@@ -20186,7 +20104,7 @@ void ACustomisationPreviewShip::SpawnParticles()
 
 
 // Function Athena.CustomisationPreviewShip.SetShipCustomizationInfo
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class UShipCustomizationInfo*  NewShipCustomizationInfo       (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -20242,7 +20160,7 @@ void ACustomisationPreviewShip::SetCategory(const struct FName& NewCategory)
 
 
 // Function Athena.CustomisationPreviewShip.GetShipCustomizationInfo
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class UShipCustomizationInfo*  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -20446,7 +20364,7 @@ void ACutSceneActor::OnRep_CutsceneActivated()
 
 
 // Function Athena.SirenTridentProjectile.OnStop
-// (Native, Public, HasOutParms)
+// (RequiredAPI, Native, Public, HasOutParms)
 // Parameters:
 // struct FHitResult              Result                         (ConstParm, Parm, OutParm, ReferenceParm)
 
@@ -20546,7 +20464,7 @@ void ADamageableProjectileLauncherMechanism::OnDamageTaken(const struct FImpactD
 
 
 // Function Athena.DamageBlueprintFunctionLibrary.TriggerShipImpactDamageFromLookAt
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AAthenaPlayerCharacter*  AthenaCharacter                (Parm, ZeroConstructor, IsPlainOldData)
 // float                          Strength                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -20573,7 +20491,7 @@ void UDamageBlueprintFunctionLibrary::TriggerShipImpactDamageFromLookAt(class AA
 
 
 // Function Athena.DamageBlueprintFunctionLibrary.TriggerShipImpactDamageFromLocationAndDirection
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContext                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // float                          Strength                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -20636,7 +20554,7 @@ void UDamageBlueprintFunctionLibrary::TriggerShipImpactDamageAtLocation(class AS
 
 
 // Function Athena.DamageBlueprintFunctionLibrary.TriggerPlayerImpactDamageFromLookAt
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AAthenaPlayerCharacter*  AthenaCharacter                (Parm, ZeroConstructor, IsPlainOldData)
 // float                          Strength                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -20663,7 +20581,7 @@ void UDamageBlueprintFunctionLibrary::TriggerPlayerImpactDamageFromLookAt(class 
 
 
 // Function Athena.DamageBlueprintFunctionLibrary.TriggerPlayerImpactDamageFromLocationAndDirection
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UObject*                 WorldContext                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // float                          Strength                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -20717,7 +20635,7 @@ float ULeakableInterface::GetLeakAmount()
 
 
 // Function Athena.DamageZone.ShouldBeDescribed
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  InInteractor                   (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -20741,7 +20659,7 @@ bool ADamageZone::ShouldBeDescribed(class AActor* InInteractor)
 
 
 // Function Athena.DamageZone.SetPreventLeakingForTesting
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                           InPreventLeaking               (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -20861,7 +20779,7 @@ void ADamageZone::OnReppedExternalHitList()
 
 
 // Function Athena.DamageZone.OnRepairMounted
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// (RequiredAPI, Event, Public, BlueprintCallable, BlueprintEvent)
 
 void ADamageZone::OnRepairMounted()
 {
@@ -20913,7 +20831,7 @@ void ADamageZone::OnRep_ExternalHitList()
 
 
 // Function Athena.DamageZone.OnRep_DamageLevel
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void ADamageZone::OnRep_DamageLevel()
 {
@@ -20929,7 +20847,7 @@ void ADamageZone::OnRep_DamageLevel()
 
 
 // Function Athena.DamageZone.OnRep_AuthorityRepairableState
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void ADamageZone::OnRep_AuthorityRepairableState()
 {
@@ -20977,7 +20895,7 @@ void ADamageZone::OnDecalMaterialUpdatedToRepaired()
 
 
 // Function Athena.DamageZone.Multicast_PlayDamageEffectsRPC
-// (Final, Net, Native, Event, NetMulticast, Private)
+// (Final, RequiredAPI, Net, Native, Event, NetMulticast, Private)
 // Parameters:
 // bool                           PlaySfx                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           PlayVFX                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -21041,7 +20959,7 @@ bool ADamageZone::IsRenderToTextureWorld()
 
 
 // Function Athena.DamageZone.IsOnSinkingShip
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -21062,7 +20980,7 @@ bool ADamageZone::IsOnSinkingShip()
 
 
 // Function Athena.DamageZone.IsAboutToBlow
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -21099,7 +21017,7 @@ void ADamageZone::InitialiseInternalWaterSamplePositions()
 
 
 // Function Athena.DamageZone.GetShipOwner
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AShip*                   ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -21120,7 +21038,7 @@ class AShip* ADamageZone::GetShipOwner()
 
 
 // Function Athena.DamageZone.GetRepairMountLocation
-// (Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// (RequiredAPI, Event, Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
 // class USceneComponent*         MountLocation                  (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // struct FName                   MountSocket                    (Parm, OutParm, ZeroConstructor, IsPlainOldData)
@@ -21150,7 +21068,7 @@ bool ADamageZone::GetRepairMountLocation(class USceneComponent** MountLocation, 
 
 
 // Function Athena.DamageZone.GetRepairedDamageLevel
-// (Native, Public, Const)
+// (RequiredAPI, Native, Public, Const)
 // Parameters:
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -21171,7 +21089,7 @@ int ADamageZone::GetRepairedDamageLevel()
 
 
 // Function Athena.DamageZone.GetPropertiesForSpecificLevelOfDamage
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // int                            InLevelOfDamage                (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // struct FLevelOfDamageProperties ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -21195,7 +21113,7 @@ struct FLevelOfDamageProperties ADamageZone::GetPropertiesForSpecificLevelOfDama
 
 
 // Function Athena.DamageZone.GetMaxDamageLevel
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -21216,7 +21134,7 @@ int ADamageZone::GetMaxDamageLevel()
 
 
 // Function Athena.DamageZone.GetLeakAmount
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -21237,7 +21155,7 @@ float ADamageZone::GetLeakAmount()
 
 
 // Function Athena.DamageZone.GetHoleDecalPositionWorldSpace
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FVector                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -21279,7 +21197,7 @@ struct FVector ADamageZone::GetHoleDecalPositionLocalSpace()
 
 
 // Function Athena.DamageZone.GetDamagePercentage
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -21300,7 +21218,7 @@ float ADamageZone::GetDamagePercentage()
 
 
 // Function Athena.DamageZone.GetDamageLevel
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -21321,7 +21239,7 @@ int ADamageZone::GetDamageLevel()
 
 
 // Function Athena.DamageZone.GetCurrentLevelOfDamageProperties
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FLevelOfDamageProperties ReturnValue                    (Parm, OutParm, ReturnParm)
 
@@ -21342,7 +21260,7 @@ struct FLevelOfDamageProperties ADamageZone::GetCurrentLevelOfDamageProperties()
 
 
 // Function Athena.DamageZone.ApplyDamage
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // struct FImpactDamageEvent      InHit                          (ConstParm, Parm, OutParm, ReferenceParm)
 
@@ -21362,7 +21280,7 @@ void ADamageZone::ApplyDamage(const struct FImpactDamageEvent& InHit)
 
 
 // Function Athena.DebugFlyingActionStateId.PushCharacterIntoDebugFlyingActionState
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EActionStateMachineTrackId> TrackId                        (Parm, ZeroConstructor, IsPlainOldData)
 // class AActor*                  Character                      (Parm, ZeroConstructor, IsPlainOldData)
@@ -21502,7 +21420,7 @@ void UDebugShipFunctionLibrary::ToggleAllMastsDestroyedEveryXSecond(TArray<class
 
 
 // Function Athena.DebugShipFunctionLibrary.SetAllWheelAngle
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Ship                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // float                          Angle                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -21526,7 +21444,7 @@ void UDebugShipFunctionLibrary::SetAllWheelAngle(class AActor* Ship, float Angle
 
 
 // Function Athena.DebugShipFunctionLibrary.SetAllSailsLoweredProportion
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Ship                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // float                          Proportion                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -21574,7 +21492,7 @@ void UDebugShipFunctionLibrary::SetAllSailsDamageScalar(class AActor* Ship, floa
 
 
 // Function Athena.DebugShipFunctionLibrary.SetAllSailsAngle
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Ship                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // float                          Angle                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -21622,7 +21540,7 @@ void UDebugShipFunctionLibrary::SetAllRuddersAngleRatio(class AActor* Ship, floa
 
 
 // Function Athena.DebugShipFunctionLibrary.SetAllCapstansPosition
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Ship                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // float                          Position                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -21673,7 +21591,7 @@ void UDebugShipFunctionLibrary::SetAllCannonsAim(class AActor* Ship, float Pitch
 
 
 // Function Athena.DebugShipFunctionLibrary.SetAllAnchorsLoweredProportion
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Ship                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // float                          InLoweredProportion            (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -21697,7 +21615,7 @@ void UDebugShipFunctionLibrary::SetAllAnchorsLoweredProportion(class AActor* Shi
 
 
 // Function Athena.DebugShipFunctionLibrary.RotateAllMastsSailAngles
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // TArray<class AActor*>          Masts                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 // float                          DeltaSeconds                   (Parm, ZeroConstructor, IsPlainOldData)
@@ -21750,7 +21668,7 @@ void UDebugShipFunctionLibrary::FireEveryNthCannons(class AActor* Ship, int Ever
 
 
 // Function Athena.DebugShipFunctionLibrary.FireCannonEveryXSecond
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // TArray<class AActor*>          Cannons                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 // float                          DeltaSeconds                   (Parm, ZeroConstructor, IsPlainOldData)
@@ -21807,7 +21725,7 @@ void UDebugShipFunctionLibrary::FireAllCannons(class AActor* Ship)
 
 
 // Function Athena.DebugShipFunctionLibrary.CycleAllMastsSailLowered
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // TArray<class AActor*>          Masts                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 // float                          DeltaSeconds                   (Parm, ZeroConstructor, IsPlainOldData)
@@ -21836,7 +21754,7 @@ void UDebugShipFunctionLibrary::CycleAllMastsSailLowered(TArray<class AActor*> M
 
 
 // Function Athena.DebugSuperSailorActionStateId.PushCharacterIntoDebugSuperSailorActionState
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EActionStateMachineTrackId> TrackId                        (Parm, ZeroConstructor, IsPlainOldData)
 // class AActor*                  Character                      (Parm, ZeroConstructor, IsPlainOldData)
@@ -21942,7 +21860,7 @@ void UDiggingComponent::OnRep_State(TEnumAsByte<EDiggingState> OldState)
 
 
 // Function Athena.DiggingComponent.OnRep_BuriedFactor
-// (Final, Native, Private, HasOutParms)
+// (Final, RequiredAPI, Native, Private, HasOutParms)
 // Parameters:
 // struct FBuriedFactor           PreviousBuriedFactor           (ConstParm, Parm, OutParm, ReferenceParm)
 
@@ -22117,7 +22035,7 @@ void ADoubleActionItemWithAmmo::OnRep_AmmoLeft(int PreviousAmmo)
 
 
 // Function Athena.DroppedPouchItemProxy.Multicast_Open
-// (Net, NetReliable, Native, Event, NetMulticast, Protected)
+// (RequiredAPI, Net, NetReliable, Native, Event, NetMulticast, Protected)
 
 void ADroppedPouchItemProxy::Multicast_Open()
 {
@@ -22153,7 +22071,7 @@ void UDrunkennessComponent::TestForceVomiting(float Duration)
 
 
 // Function Athena.DrunkennessComponent.SetTargetDrunkenness
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EDrunkennessType>  Type                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // float                          InTargetValue                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -22176,7 +22094,7 @@ void UDrunkennessComponent::SetTargetDrunkenness(TEnumAsByte<EDrunkennessType> T
 
 
 // Function Athena.DrunkennessComponent.Reset
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void UDrunkennessComponent::Reset()
 {
@@ -22192,7 +22110,7 @@ void UDrunkennessComponent::Reset()
 
 
 // Function Athena.DrunkennessComponent.OnRep_TargetDrunkenness
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UDrunkennessComponent::OnRep_TargetDrunkenness()
 {
@@ -22224,7 +22142,7 @@ void UDrunkennessComponent::OnRep_RemainingAmountToSoberUpDueToWaterSplash()
 
 
 // Function Athena.DrunkennessComponent.OnRep_CurrentDrunkenness
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UDrunkennessComponent::OnRep_CurrentDrunkenness()
 {
@@ -22240,7 +22158,7 @@ void UDrunkennessComponent::OnRep_CurrentDrunkenness()
 
 
 // Function Athena.DrunkennessComponent.GetStaggerAmplitude
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -22261,7 +22179,7 @@ float UDrunkennessComponent::GetStaggerAmplitude()
 
 
 // Function Athena.DrunkennessComponent.GetOverallCurrentDrunkenness
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -22282,7 +22200,7 @@ float UDrunkennessComponent::GetOverallCurrentDrunkenness()
 
 
 // Function Athena.DrunkennessComponent.ChangeDrunkenness
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EDrunkennessType>  Type                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // float                          DrunkennessChange              (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -22389,7 +22307,7 @@ void AEmissaryFlag::OnEmissaryFlagStaticMeshLoaded(class UStaticMesh* EmissaryFl
 
 
 // Function Athena.EmoteActionStateId.PushCharacterIntoEmoteActionStateUsingEmoteData
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // class AActor*                  Character                      (Parm, ZeroConstructor, IsPlainOldData)
 // struct FEmoteData              EmoteData                      (ConstParm, Parm, OutParm, ReferenceParm)
@@ -22416,7 +22334,7 @@ void UEmoteActionStateId::PushCharacterIntoEmoteActionStateUsingEmoteData(class 
 
 
 // Function Athena.EmoteActionStateId.PushCharacterIntoEmoteActionState
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // class AActor*                  Character                      (Parm, ZeroConstructor, IsPlainOldData)
 // struct FName                   EmoteIdentifier                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
@@ -22632,7 +22550,7 @@ void UFaceTargetComponent::OnRep_TargetActorToFace(class AActor* PrevTargetActor
 
 
 // Function Athena.FiredFromCannonActionStateId.PushCharacterIntoFiredFromCannonActionState
-// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
 // Parameters:
 // class AActor*                  Character                      (Parm, ZeroConstructor, IsPlainOldData)
 // class AActor*                  FiringActor                    (Parm, ZeroConstructor, IsPlainOldData)
@@ -22822,7 +22740,7 @@ float UControllableIntentComponent::GetIntent()
 
 
 // Function Athena.FlamesOfFateContainerComponent.OnRep_CurrentFlameData
-// (Final, Native, Private, HasOutParms)
+// (Final, RequiredAPI, Native, Private, HasOutParms)
 // Parameters:
 // struct FFlameData              OldFlameData                   (ConstParm, Parm, OutParm, ReferenceParm)
 
@@ -22842,7 +22760,7 @@ void UFlamesOfFateContainerComponent::OnRep_CurrentFlameData(const struct FFlame
 
 
 // Function Athena.FlamesOfFateHelpers.GetFlameOfFateTypeFromActor
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class AActor*                  FlameOfFateActor               (Parm, ZeroConstructor, IsPlainOldData)
 // TEnumAsByte<EFlameOfFateType>  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -22867,7 +22785,7 @@ TEnumAsByte<EFlameOfFateType> UFlamesOfFateHelpers::GetFlameOfFateTypeFromActor(
 
 
 // Function Athena.FlamesOfFateHelpers.GetColourForFlameOfFateType
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
+// (Final, RequiredAPI, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class UObject*                 WorldContextObject             (Parm, ZeroConstructor, IsPlainOldData)
 // TEnumAsByte<EFlameOfFateType>  FlameType                      (Parm, ZeroConstructor, IsPlainOldData)
@@ -22922,7 +22840,7 @@ class UTexture* AFlamesOfFateLantern::GetTextureForFlameOfFateType()
 
 
 // Function Athena.FlamesOfFateLantern.GetColourForFlameOfFateType
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // TEnumAsByte<EFlameColourType>  ColourType                     (Parm, ZeroConstructor, IsPlainOldData)
 // struct FLinearColor            DefaultColour                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -22949,7 +22867,7 @@ struct FLinearColor AFlamesOfFateLantern::GetColourForFlameOfFateType(TEnumAsByt
 
 
 // Function Athena.FogBank.OnRep_Settings
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void AFogBank::OnRep_Settings()
 {
@@ -23202,7 +23120,7 @@ void AFrontendGameMode::BeginPreloading()
 
 
 // Function Athena.FuseComponent.TriggerFuse
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                           Ignite                         (Parm, ZeroConstructor, IsPlainOldData)
 // class AActor*                  Instigator                     (Parm, ZeroConstructor, IsPlainOldData)
@@ -23248,7 +23166,7 @@ void UFuseComponent::Server_RequestEnableFuse(bool Enabled, class AActor* Instig
 
 
 // Function Athena.FuseComponent.OnRep_FuseEnabled
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UFuseComponent::OnRep_FuseEnabled()
 {
@@ -23940,7 +23858,7 @@ struct FGuid UShipServiceInterface::GetCrewFromShip(class AShip* Ship)
 
 
 // Function Athena.GameCustomizationService.ToggleAFKFunctionality
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 // Parameters:
 // bool                           Enabled                        (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -23960,7 +23878,7 @@ void AGameCustomizationService::ToggleAFKFunctionality(bool Enabled)
 
 
 // Function Athena.GameCustomizationService.SetTriggerDetectingShips
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 // Parameters:
 // int                            NetId                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           Detecting                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -23983,7 +23901,7 @@ void AGameCustomizationService::SetTriggerDetectingShips(int NetId, bool Detecti
 
 
 // Function Athena.GameCustomizationService.SetTriggerDetectingPlayers
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 // Parameters:
 // int                            NetId                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           Detecting                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -24006,7 +23924,7 @@ void AGameCustomizationService::SetTriggerDetectingPlayers(int NetId, bool Detec
 
 
 // Function Athena.GameCustomizationService.SetTriggerDetectingItem
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 // Parameters:
 // int                            TriggerNetId                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // int                            ItemId                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -24032,7 +23950,7 @@ void AGameCustomizationService::SetTriggerDetectingItem(int TriggerNetId, int It
 
 
 // Function Athena.GameCustomizationService.SetTriggerDetectingEntity
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 // Parameters:
 // int                            TriggerNetId                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // int                            EntityNetId                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -24058,7 +23976,7 @@ void AGameCustomizationService::SetTriggerDetectingEntity(int TriggerNetId, int 
 
 
 // Function Athena.GameCustomizationService.SetTriggerDetectingEnemies
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 // Parameters:
 // int                            NetId                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           Detecting                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -24104,7 +24022,7 @@ void AGameCustomizationService::SetTimeHoursAndMinutes(int Hours, int Minutes)
 
 
 // Function Athena.GameCustomizationService.SetTime
-// (Native, Public)
+// (RequiredAPI, Native, Public)
 // Parameters:
 // int                            Hours                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -24124,7 +24042,7 @@ void AGameCustomizationService::SetTime(int Hours)
 
 
 // Function Athena.GameCustomizationService.SetShouldUseRevivalFlow
-// (Final, Native, Public, HasOutParms)
+// (Final, RequiredAPI, Native, Public, HasOutParms)
 // Parameters:
 // struct FSetShouldUseRevivalFlowGameServerRequestModel SetShouldUseRevivalFlowGameServerRequestModel (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
@@ -24144,7 +24062,7 @@ void AGameCustomizationService::SetShouldUseRevivalFlow(const struct FSetShouldU
 
 
 // Function Athena.GameCustomizationService.SetShouldSkipFerryOfTheDamned
-// (Final, Native, Public, HasOutParms)
+// (Final, RequiredAPI, Native, Public, HasOutParms)
 // Parameters:
 // struct FSetShouldSkipFerryOfTheDamnedGameServerRequestModel SetShouldSkipFerryOfTheDamnedGameServerRequestModel (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
@@ -24164,7 +24082,7 @@ void AGameCustomizationService::SetShouldSkipFerryOfTheDamned(const struct FSetS
 
 
 // Function Athena.GameCustomizationService.SetGameModeDeathPenaltyRespawnTimer
-// (Final, Native, Public, HasOutParms)
+// (Final, RequiredAPI, Native, Public, HasOutParms)
 // Parameters:
 // struct FGameModeDeathPenaltyRespawnTimerGameServerRequestModel GameModeDeathPenaltyRespawnTimerGameServerRequestModel (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
@@ -24184,7 +24102,7 @@ void AGameCustomizationService::SetGameModeDeathPenaltyRespawnTimer(const struct
 
 
 // Function Athena.GameCustomizationService.SetCustomPlayerStart
-// (Final, Native, Public, HasOutParms)
+// (Final, RequiredAPI, Native, Public, HasOutParms)
 // Parameters:
 // struct FSetCustomPlayerStartGameServerRequestModel SetCustomPlayerStartGameServerRequestModel (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
@@ -24204,7 +24122,7 @@ void AGameCustomizationService::SetCustomPlayerStart(const struct FSetCustomPlay
 
 
 // Function Athena.GameCustomizationService.SetCrewBasedDeathPenaltyRespawnTimes
-// (Final, Native, Public, HasOutParms)
+// (Final, RequiredAPI, Native, Public, HasOutParms)
 // Parameters:
 // struct FCrewBasedRespawnTimes  CrewBasedRespawnTimes          (ConstParm, Parm, OutParm, ReferenceParm)
 
@@ -24224,7 +24142,7 @@ void AGameCustomizationService::SetCrewBasedDeathPenaltyRespawnTimes(const struc
 
 
 // Function Athena.GameCustomizationService.ResetCustomConfigForPlayer
-// (Final, Native, Public, HasOutParms)
+// (Final, RequiredAPI, Native, Public, HasOutParms)
 // Parameters:
 // struct FResetCustomConfigForPlayerGameServerRequestModel ResetCustomConfigForPlayerGameServerRequestModel (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
@@ -24244,7 +24162,7 @@ void AGameCustomizationService::ResetCustomConfigForPlayer(const struct FResetCu
 
 
 // Function Athena.GameCustomizationService.ReplenishShip
-// (Final, Native, Public, HasOutParms, HasDefaults)
+// (Final, RequiredAPI, Native, Public, HasOutParms, HasDefaults)
 // Parameters:
 // struct FGuid                   InCrewId                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
@@ -24264,7 +24182,7 @@ void AGameCustomizationService::ReplenishShip(const struct FGuid& InCrewId)
 
 
 // Function Athena.GameCustomizationService.RemoveTrigger
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 // Parameters:
 // int                            TriggerId                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -24284,7 +24202,7 @@ void AGameCustomizationService::RemoveTrigger(int TriggerId)
 
 
 // Function Athena.GameCustomizationService.LoadShipCannon
-// (Final, Native, Public, HasOutParms, HasDefaults)
+// (Final, RequiredAPI, Native, Public, HasOutParms, HasDefaults)
 // Parameters:
 // class FString                  InItemDescString               (Parm, ZeroConstructor)
 // struct FGuid                   InCrewId                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
@@ -24310,7 +24228,7 @@ void AGameCustomizationService::LoadShipCannon(const class FString& InItemDescSt
 
 
 // Function Athena.GameCustomizationService.KillPlayer
-// (Final, Native, Public, HasOutParms)
+// (Final, RequiredAPI, Native, Public, HasOutParms)
 // Parameters:
 // struct FKillPlayerGameServerRequestModel KillPlayerGameServerRequestModel (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
@@ -24330,7 +24248,7 @@ void AGameCustomizationService::KillPlayer(const struct FKillPlayerGameServerReq
 
 
 // Function Athena.GameCustomizationService.KillCrew
-// (Final, Native, Public, HasOutParms)
+// (Final, RequiredAPI, Native, Public, HasOutParms)
 // Parameters:
 // struct FKillCrewGameServerRequestModel KillCrewGameServerRequestModel (ConstParm, Parm, OutParm, ReferenceParm)
 
@@ -24350,7 +24268,7 @@ void AGameCustomizationService::KillCrew(const struct FKillCrewGameServerRequest
 
 
 // Function Athena.GameCustomizationService.GetTime
-// (Native, Public)
+// (RequiredAPI, Native, Public)
 // Parameters:
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -24371,7 +24289,7 @@ int AGameCustomizationService::GetTime()
 
 
 // Function Athena.GameCustomizationService.ForcePlayerRespawn
-// (Final, Native, Public, HasOutParms)
+// (Final, RequiredAPI, Native, Public, HasOutParms)
 // Parameters:
 // struct FForcePlayerRespawnGameServerRequestModel ForcePlayerRespawnGameServerRequestModel (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
@@ -24391,7 +24309,7 @@ void AGameCustomizationService::ForcePlayerRespawn(const struct FForcePlayerResp
 
 
 // Function Athena.GameCustomizationService.DestroyCustomPlayerStart
-// (Final, Native, Public, HasOutParms)
+// (Final, RequiredAPI, Native, Public, HasOutParms)
 // Parameters:
 // struct FDestroyCustomPlayerStartGameServerRequestModel DestroyCustomPlayerStartGameServerRequestModel (ConstParm, Parm, OutParm, ReferenceParm)
 
@@ -24411,7 +24329,7 @@ void AGameCustomizationService::DestroyCustomPlayerStart(const struct FDestroyCu
 
 
 // Function Athena.GameCustomizationService.DestroyAllExistingActorsByClass
-// (Final, Native, Public, HasOutParms)
+// (Final, RequiredAPI, Native, Public, HasOutParms)
 // Parameters:
 // struct FDestroyAllExistingActorsByClassGameServerRequestModel DestroyAllExistingActorsByClassGameServerRequestModel (ConstParm, Parm, OutParm, ReferenceParm)
 
@@ -24431,7 +24349,7 @@ void AGameCustomizationService::DestroyAllExistingActorsByClass(const struct FDe
 
 
 // Function Athena.GameCustomizationService.DestroyActor
-// (Final, Native, Public, HasOutParms)
+// (Final, RequiredAPI, Native, Public, HasOutParms)
 // Parameters:
 // struct FDestroyActorGameServerRequestModel DestroyActorGameServerRequestModel (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
@@ -24451,7 +24369,7 @@ void AGameCustomizationService::DestroyActor(const struct FDestroyActorGameServe
 
 
 // Function Athena.GameCustomizationService.ChangeBoundaryGameServerRequestModel
-// (Final, Native, Public, HasOutParms)
+// (Final, RequiredAPI, Native, Public, HasOutParms)
 // Parameters:
 // float                          MaxX                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 // float                          MinX                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
@@ -24480,7 +24398,7 @@ void AGameCustomizationService::ChangeBoundaryGameServerRequestModel(float MaxX,
 
 
 // Function Athena.GameCustomizationService.AddItemToShip
-// (Final, Native, Public, HasOutParms, HasDefaults)
+// (Final, RequiredAPI, Native, Public, HasOutParms, HasDefaults)
 // Parameters:
 // class FString                  InItemDescString               (Parm, ZeroConstructor)
 // struct FGuid                   InCrewId                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
@@ -24506,7 +24424,7 @@ void AGameCustomizationService::AddItemToShip(const class FString& InItemDescStr
 
 
 // Function Athena.GameStateFunctionLibrary.GetAthenaGameStateFromWorld
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class UWorld*                  InWorld                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // class AAthenaGameState*        ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -25059,7 +24977,7 @@ class UParticleSystemComponent* AGenericPartWithVFX::GetVFXComponent()
 
 
 // Function Athena.TaleQuestStructGenService.GetNextQuestInChain
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // struct FTQStructGenSelection   ReturnValue                    (Parm, OutParm, ReturnParm)
 
@@ -25136,12 +25054,12 @@ void AGuildPlaque::RefreshGuildPlaqueRender()
 }
 
 
-// Function Athena.GuildPlaque.OnRep_GuildDistinctionLevel
+// Function Athena.GuildPlaque.OnRep_GuildPlaqueData
 // (Final, RequiredAPI, Native, Public)
 
-void AGuildPlaque::OnRep_GuildDistinctionLevel()
+void AGuildPlaque::OnRep_GuildPlaqueData()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.GuildPlaque.OnRep_GuildDistinctionLevel"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.GuildPlaque.OnRep_GuildPlaqueData"));
 
 	struct
 	{
@@ -25152,19 +25070,24 @@ void AGuildPlaque::OnRep_GuildDistinctionLevel()
 }
 
 
-// Function Athena.GuildPlaque.OnRep_GuildDisplayName
-// (Final, RequiredAPI, Native, Public)
+// Function Athena.GuildPlaque.GetGuildIcon
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UTexture*                ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-void AGuildPlaque::OnRep_GuildDisplayName()
+class UTexture* AGuildPlaque::GetGuildIcon()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.GuildPlaque.OnRep_GuildDisplayName"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.GuildPlaque.GetGuildIcon"));
 
 	struct
 	{
+		class UTexture*                ReturnValue;
 	} params;
 
 
 	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
 }
 
 
@@ -25211,7 +25134,7 @@ class FString AGuildPlaque::GetGuildDisplayNameToRender()
 
 
 // Function Athena.GuildServiceFunctionLibrary.IsPlayerCurrentlyInAGuildSessionAndSailingForAGuild
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AController*             InController                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -25236,7 +25159,7 @@ bool UGuildServiceFunctionLibrary::IsPlayerCurrentlyInAGuildSessionAndSailingFor
 
 
 // Function Athena.GuildServiceFunctionLibrary.HasPlayerUnlockedGuildEmissaryFlagWithCurrentlyGuild
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AController*             InController                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -25283,7 +25206,7 @@ int UGuildServiceFunctionLibrary::GetMinGuildLevelForEmissary()
 
 
 // Function Athena.GuildServiceFunctionLibrary.GetLocalPlayerPlaque
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AController*             InController                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // class AGuildPlaque*            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -25308,7 +25231,7 @@ class AGuildPlaque* UGuildServiceFunctionLibrary::GetLocalPlayerPlaque(class ACo
 
 
 // Function Athena.GuildServiceFunctionLibrary.GetGuildToastBackground
-// (Final, BlueprintCosmetic, Native, Static, Public, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, BlueprintCosmetic, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class AController*             InController                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // struct FStringAssetReference   ReturnValue                    (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm)
@@ -25486,7 +25409,7 @@ bool UHandlesFunctionLibrary::Equal(const struct FBlueprintableIntegerHandle& A,
 
 
 // Function Athena.HarpoonLauncher.Server_RequestRetractHarpoon
-// (Final, Net, NetReliable, Native, Event, Private, NetServer, NetValidate)
+// (Final, RequiredAPI, Net, NetReliable, Native, Event, Private, NetServer, NetValidate)
 
 void AHarpoonLauncher::Server_RequestRetractHarpoon()
 {
@@ -25545,7 +25468,7 @@ void AHarpoonLauncher::Server_RequestReel(TEnumAsByte<EHarpoonLauncherReelingSta
 
 
 // Function Athena.HarpoonLauncher.Server_RequestFire
-// (Final, Net, NetReliable, Native, Event, Private, NetServer, NetValidate)
+// (Final, RequiredAPI, Net, NetReliable, Native, Event, Private, NetServer, NetValidate)
 // Parameters:
 // float                          InPitch                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // float                          InYaw                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -25682,7 +25605,7 @@ void AHarpoonLauncher::Multicast_NonOwningClientsPlayFireFX()
 
 
 // Function Athena.HarpoonProjectile.OnRep_ReplicatedTransformState
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void AHarpoonProjectile::OnRep_ReplicatedTransformState()
 {
@@ -25698,7 +25621,7 @@ void AHarpoonProjectile::OnRep_ReplicatedTransformState()
 
 
 // Function Athena.HarpoonProjectile.OnRep_ProjectileState
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 // Parameters:
 // TEnumAsByte<EHarpoonProjectileState> PrevState                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -25718,7 +25641,7 @@ void AHarpoonProjectile::OnRep_ProjectileState(TEnumAsByte<EHarpoonProjectileSta
 
 
 // Function Athena.HarpoonProjectile.Multicast_ProjectileHit
-// (Final, Net, Native, Event, NetMulticast, Private)
+// (Final, RequiredAPI, Net, Native, Event, NetMulticast, Private)
 // Parameters:
 // struct FHitResult              Result                         (ConstParm, Parm, ReferenceParm)
 // struct FImpactDamageEvent      InImpactDamageEvent            (ConstParm, Parm, ReferenceParm)
@@ -26225,7 +26148,7 @@ void UHealthTestFunctions::DisableAdjustHealth_Dead(class UHealthComponent* Comp
 
 
 // Function Athena.Hideout.OnPlayerInViewOfHideout
-// (Final, Native, Protected, HasOutParms)
+// (Final, RequiredAPI, Native, Protected, HasOutParms)
 // Parameters:
 // class AActor*                  Other                          (Parm, ZeroConstructor, IsPlainOldData)
 // class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
@@ -26321,7 +26244,7 @@ void AHideoutExit::OnBeginOverlap(class AActor* OtherActor, class UPrimitiveComp
 
 
 // Function Athena.HitReactionComponent.OnHitReactionImpact
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // struct FImpactDamageEvent      ImpactDamageEvent              (ConstParm, Parm, OutParm, ReferenceParm)
 
@@ -26743,7 +26666,7 @@ void AHullDamage::RepairDamage()
 
 
 // Function Athena.HullDamage.Multicast_ResetDecals
-// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+// (Final, RequiredAPI, Net, NetReliable, Native, Event, NetMulticast, Private)
 // Parameters:
 // TArray<unsigned char>          DamageZonesToReset             (ConstParm, Parm, ZeroConstructor, ReferenceParm)
 
@@ -26763,7 +26686,7 @@ void AHullDamage::Multicast_ResetDecals(TArray<unsigned char> DamageZonesToReset
 
 
 // Function Athena.HullDamage.IsShipSinking
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -26784,7 +26707,7 @@ bool AHullDamage::IsShipSinking()
 
 
 // Function Athena.HullDamage.IsShipLeaking
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -26805,7 +26728,7 @@ bool AHullDamage::IsShipLeaking()
 
 
 // Function Athena.HullDamage.GetDamageZonesByDamagerType
-// (Native, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// (RequiredAPI, Native, Public, HasOutParms, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UClass*                  InDamagerType                  (Parm, ZeroConstructor, IsPlainOldData)
 // struct FVector                 InPosition                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
@@ -26888,7 +26811,7 @@ void ULeakerComponent::SetLeakState(int InLeakId, TEnumAsByte<ELeakState> InStat
 
 
 // Function Athena.LeakerComponent.RemoveLeak
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // int                            InLeakId                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -26929,7 +26852,7 @@ float ULeakerComponent::GetLeakAmount()
 
 
 // Function Athena.ShipLeakerComponent.Update
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // float                          InDeltaTime                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // TEnumAsByte<EShipLeakerUpdateType> InUpdateTpe                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -26952,7 +26875,7 @@ void UShipLeakerComponent::Update(float InDeltaTime, TEnumAsByte<EShipLeakerUpda
 
 
 // Function Athena.ShipLeakerComponent.SetShip
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AShip*                   InShip                         (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -26972,7 +26895,7 @@ void UShipLeakerComponent::SetShip(class AShip* InShip)
 
 
 // Function Athena.ShipLeakerComponent.AddLeak
-// (Final, Native, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, HasOutParms, HasDefaults, BlueprintCallable)
 // Parameters:
 // struct FTransform              InWhere                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
 // float                          InAmount                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -27186,7 +27109,7 @@ void UIngestedByKrakenActionStateId::PushCharacterIntoIngestedByKrakenActionStat
 
 
 // Function Athena.IngestedByKrakenActionStateId.PopCharacterOutOfIngestedByKrakenActionState
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Character                      (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -27207,7 +27130,7 @@ void UIngestedByKrakenActionStateId::PopCharacterOutOfIngestedByKrakenActionStat
 
 
 // Function Athena.IntentCombinerComponent.SetIntentProviders
-// (Final, BlueprintAuthorityOnly, Native, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, BlueprintAuthorityOnly, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // TArray<class UControllableIntentComponent*> InIntentProviders              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
@@ -27227,7 +27150,7 @@ void UIntentCombinerComponent::SetIntentProviders(TArray<class UControllableInte
 
 
 // Function Athena.IntentCombinerComponent.GetCombinedIntent
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           IsMoving                       (Parm, ZeroConstructor, IsPlainOldData)
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -27299,7 +27222,7 @@ void AInteractableLight::LightStateChanged()
 
 
 // Function Athena.InteractableLight.IsLightOn
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -27596,7 +27519,7 @@ bool UInteractionPoliciesTestFunctions::AirbornePolicy_ExecuteCanInteract(class 
 
 
 // Function Athena.InventoryManipulatorComponent.WieldItemByActor
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Item                           (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           UnwieldFast                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -27623,7 +27546,7 @@ TEnumAsByte<EWieldItemReturnCode> UInventoryManipulatorComponent::WieldItemByAct
 
 
 // Function Athena.InventoryManipulatorComponent.WieldItem
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // int                            ItemIndex                      (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           Fast                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -27646,7 +27569,7 @@ void UInventoryManipulatorComponent::WieldItem(int ItemIndex, bool Fast)
 
 
 // Function Athena.InventoryManipulatorComponent.ToggleWieldItem
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 
 void UInventoryManipulatorComponent::ToggleWieldItem()
 {
@@ -27682,7 +27605,7 @@ void UInventoryManipulatorComponent::Server_DropItemRPC(class AActor* Item)
 
 
 // Function Athena.InventoryManipulatorComponent.RemoveItem
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AItemInfo*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -27706,7 +27629,7 @@ bool UInventoryManipulatorComponent::RemoveItem(class AItemInfo* Item)
 
 
 // Function Athena.InventoryManipulatorComponent.RemoveAndUnwieldItem
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -27727,7 +27650,7 @@ bool UInventoryManipulatorComponent::RemoveAndUnwieldItem()
 
 
 // Function Athena.InventoryManipulatorComponent.QuickSelectItemOfType
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EItemType>         ItemType                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            TypedItemIndex                 (Parm, ZeroConstructor, IsPlainOldData)
@@ -27750,7 +27673,7 @@ void UInventoryManipulatorComponent::QuickSelectItemOfType(TEnumAsByte<EItemType
 
 
 // Function Athena.InventoryManipulatorComponent.QuickSelectItemOfCategory
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class UClass*                  Category                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            IndexIntoCategory              (Parm, ZeroConstructor, IsPlainOldData)
@@ -27773,7 +27696,7 @@ void UInventoryManipulatorComponent::QuickSelectItemOfCategory(class UClass* Cat
 
 
 // Function Athena.InventoryManipulatorComponent.QuickSelectItem
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // int                            ItemIndex                      (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -27793,7 +27716,7 @@ void UInventoryManipulatorComponent::QuickSelectItem(int ItemIndex)
 
 
 // Function Athena.InventoryManipulatorComponent.PickUpItem
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AItemInfo*               ItemInfo                       (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           AndWield                       (Parm, ZeroConstructor, IsPlainOldData)
@@ -27866,7 +27789,7 @@ void UInventoryManipulatorComponent::Multicast_CurrentItemActorIndexChangedRPC(i
 
 
 // Function Athena.InventoryManipulatorComponent.IsIdle
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -27887,7 +27810,7 @@ bool UInventoryManipulatorComponent::IsIdle()
 
 
 // Function Athena.InventoryManipulatorComponent.GetNumberOfItemsOfItemCategory
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class UClass*                  ItemSlot                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -27911,7 +27834,7 @@ int UInventoryManipulatorComponent::GetNumberOfItemsOfItemCategory(class UClass*
 
 
 // Function Athena.InventoryManipulatorComponent.GetCurrentItemIndex
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -27932,7 +27855,7 @@ int UInventoryManipulatorComponent::GetCurrentItemIndex()
 
 
 // Function Athena.InventoryManipulatorComponent.DropWieldedItem
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EDropItemReturnCode> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -27952,24 +27875,8 @@ TEnumAsByte<EDropItemReturnCode> UInventoryManipulatorComponent::DropWieldedItem
 }
 
 
-// Function Athena.InventoryManipulatorComponent.DropOrDestroyLargeWieldedItem
-// (Final, Native, Public, BlueprintCallable)
-
-void UInventoryManipulatorComponent::DropOrDestroyLargeWieldedItem()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.InventoryManipulatorComponent.DropOrDestroyLargeWieldedItem"));
-
-	struct
-	{
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
 // Function Athena.InventoryManipulatorComponent.CycleItemUp
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 
 void UInventoryManipulatorComponent::CycleItemUp()
 {
@@ -27985,7 +27892,7 @@ void UInventoryManipulatorComponent::CycleItemUp()
 
 
 // Function Athena.InventoryManipulatorComponent.CycleItemType
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EItemType>         ItemType                       (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -28005,7 +27912,7 @@ void UInventoryManipulatorComponent::CycleItemType(TEnumAsByte<EItemType> ItemTy
 
 
 // Function Athena.InventoryManipulatorComponent.CycleItemDown
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 
 void UInventoryManipulatorComponent::CycleItemDown()
 {
@@ -28021,7 +27928,7 @@ void UInventoryManipulatorComponent::CycleItemDown()
 
 
 // Function Athena.InventoryManipulatorComponent.CycleItemCategory
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class UClass*                  Category                       (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -28041,7 +27948,7 @@ void UInventoryManipulatorComponent::CycleItemCategory(class UClass* Category)
 
 
 // Function Athena.InventoryManipulatorComponent.ConsumeItem
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AItemInfo*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -28065,7 +27972,7 @@ bool UInventoryManipulatorComponent::ConsumeItem(class AItemInfo* Item)
 
 
 // Function Athena.InventoryManipulatorComponent.CanDropWieldedItem
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // TEnumAsByte<EDropItemReturnCode> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -28086,7 +27993,7 @@ TEnumAsByte<EDropItemReturnCode> UInventoryManipulatorComponent::CanDropWieldedI
 
 
 // Function Athena.InventoryManipulatorComponent.CanAddItemOfItemCategory
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class UClass*                  ItemSlot                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // TEnumAsByte<ECanAddItemQueryResult> ReturnValue                    (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -28110,7 +28017,7 @@ TEnumAsByte<ECanAddItemQueryResult> UInventoryManipulatorComponent::CanAddItemOf
 
 
 // Function Athena.InventoryManipulatorComponent.AddItem
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AItemInfo*               Item                           (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -28181,7 +28088,7 @@ bool UIslandFunctions::IsClosestIslandOfType(class UObject* InWorldContext, cons
 
 
 // Function Athena.IslandFunctions.GetLocalisedIslandName
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // class AActor*                  InActor                        (Parm, ZeroConstructor, IsPlainOldData)
 // struct FName                   IslandName                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
@@ -28209,7 +28116,7 @@ struct FText UIslandFunctions::GetLocalisedIslandName(class AActor* InActor, con
 
 
 // Function Athena.IslandFunctions.GetIslandTriggerCircle
-// (Final, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UObject*                 InWorldContext                 (Parm, ZeroConstructor, IsPlainOldData)
 // struct FName                   InIslandName                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
@@ -28304,7 +28211,7 @@ TEnumAsByte<EIslandType> UIslandFunctions::GetCurrentIslandTypeForPlayer(class A
 
 
 // Function Athena.IslandFunctions.GetClosestIslandOfType
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // class AActor*                  InActor                        (Parm, ZeroConstructor, IsPlainOldData)
 // TEnumAsByte<EIslandType>       SearchType                     (Parm, ZeroConstructor, IsPlainOldData)
@@ -28405,7 +28312,7 @@ void AIslandService::OnRep_ReplicatedIslandArray()
 
 
 // Function Athena.IslandService.CollectLandmarksFromWorld
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 
 void AIslandService::CollectLandmarksFromWorld()
 {
@@ -28437,7 +28344,7 @@ void AIslandService::CollectIslandDataFromWorld()
 
 
 // Function Athena.ItemLoadoutComponent.OnRep_Slots
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UItemLoadoutComponent::OnRep_Slots()
 {
@@ -28525,7 +28432,7 @@ void UKrakenActionCoordinatorComponent::OnRep_CurrentAction()
 
 
 // Function Athena.KrakenAnimatedTentacle.ToggleInstantStateSwitching
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                           Enabled                        (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -28545,7 +28452,7 @@ void AKrakenAnimatedTentacle::ToggleInstantStateSwitching(bool Enabled)
 
 
 // Function Athena.KrakenAnimatedTentacle.ToggleAlwaysFallbackToIdle
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                           Enabled                        (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -28581,7 +28488,7 @@ void AKrakenAnimatedTentacle::TestToggleInstantStateSwitching()
 
 
 // Function Athena.KrakenAnimatedTentacle.SetMinHoldingTargetTime
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // float                          HoldingTime                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -28601,7 +28508,7 @@ void AKrakenAnimatedTentacle::SetMinHoldingTargetTime(float HoldingTime)
 
 
 // Function Athena.KrakenAnimatedTentacle.SetCurrentTarget
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AAthenaCharacter*        Target                         (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -28621,7 +28528,7 @@ void AKrakenAnimatedTentacle::SetCurrentTarget(class AAthenaCharacter* Target)
 
 
 // Function Athena.KrakenAnimatedTentacle.RequestState
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class UClass*                  NewState                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -28641,7 +28548,7 @@ void AKrakenAnimatedTentacle::RequestState(class UClass* NewState)
 
 
 // Function Athena.KrakenAnimatedTentacle.RequestIdleState
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class UClass*                  IdleState                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -28717,7 +28624,7 @@ void AKrakenAnimatedTentacle::OnRep_PendingState()
 
 
 // Function Athena.KrakenAnimatedTentacle.OnRep_CurrentTarget
-// (Native, Protected)
+// (RequiredAPI, Native, Protected)
 
 void AKrakenAnimatedTentacle::OnRep_CurrentTarget()
 {
@@ -28749,7 +28656,7 @@ void AKrakenAnimatedTentacle::OnRep_CurrentState()
 
 
 // Function Athena.KrakenAnimatedTentacle.OnRep_AnimationProgression
-// (Native, Protected)
+// (RequiredAPI, Native, Protected)
 
 void AKrakenAnimatedTentacle::OnRep_AnimationProgression()
 {
@@ -28786,7 +28693,7 @@ bool AKrakenAnimatedTentacle::IsAnimationLooping()
 
 
 // Function Athena.KrakenAnimatedTentacle.GetCurrentTarget
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AAthenaCharacter*        ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -28828,7 +28735,7 @@ class UClass* AKrakenAnimatedTentacle::GetCurrentState()
 
 
 // Function Athena.KrakenAnimatedTentacle.DockToComponent
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class USceneComponent*         ComponentToDockTo              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
@@ -28848,7 +28755,7 @@ void AKrakenAnimatedTentacle::DockToComponent(class USceneComponent* ComponentTo
 
 
 // Function Athena.KrakenAnimatedTentacle.DockToActor
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  ActorToDockTo                  (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -28868,7 +28775,7 @@ void AKrakenAnimatedTentacle::DockToActor(class AActor* ActorToDockTo)
 
 
 // Function Athena.KrakenAnimatedTentacle.DemandState
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class UClass*                  NewState                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -29091,7 +28998,7 @@ float ULadderInterface::GetLadderHeight()
 
 
 // Function Athena.Ladder.GetTopLadderRungTransform
-// (Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (RequiredAPI, Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FTransform              ReturnValue                    (Parm, OutParm, ReturnParm, IsPlainOldData)
 
@@ -29219,7 +29126,7 @@ void ALantern::TriggerGlow()
 
 
 // Function Athena.Lantern.SetIsFlameOfFateLocked
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                           InFlameOfFateLocked            (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -29582,7 +29489,7 @@ class UTexture* ALantern::GetTextureForFlameOfFateType()
 
 
 // Function Athena.Lantern.GetFlameOfFateType
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // TEnumAsByte<EFlameOfFateType>  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -29630,7 +29537,7 @@ struct FLinearColor ALantern::GetColourForFlameOfFateType(TEnumAsByte<EFlameColo
 
 
 // Function Athena.Lantern.FlareLight_Multicast_RPC
-// (Net, NetReliable, Native, Event, NetMulticast, Public)
+// (RequiredAPI, Net, NetReliable, Native, Event, NetMulticast, Public)
 
 void ALantern::FlareLight_Multicast_RPC()
 {
@@ -29662,7 +29569,7 @@ void UItemActionComponent::OnRep_ActionState()
 
 
 // Function Athena.LaunchableShotActionComponent.OnRep_LaunchableProjectileState
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 
 void ULaunchableShotActionComponent::OnRep_LaunchableProjectileState()
 {
@@ -29678,7 +29585,7 @@ void ULaunchableShotActionComponent::OnRep_LaunchableProjectileState()
 
 
 // Function Athena.LaunchableShotActionComponent.Multicast_SpawnProjectile
-// (Net, NetReliable, Native, Event, NetMulticast, Protected, HasDefaults)
+// (RequiredAPI, Net, NetReliable, Native, Event, NetMulticast, Protected, HasDefaults)
 // Parameters:
 // struct FTransform              SpawnTransform                 (ConstParm, Parm, ReferenceParm, IsPlainOldData)
 
@@ -29795,7 +29702,7 @@ void ULaunchedFromKrakenActionStateId::PopCharacterOutOfLaunchedFromKrakenAction
 
 
 // Function Athena.SimpleLeakerComponent.AddLeak
-// (Final, Native, Public, HasOutParms, HasDefaults)
+// (Final, RequiredAPI, Native, Public, HasOutParms, HasDefaults)
 // Parameters:
 // struct FTransform              InWhere                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData)
 // float                          InAmount                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -29822,7 +29729,7 @@ int USimpleLeakerComponent::AddLeak(const struct FTransform& InWhere, float InAm
 
 
 // Function Athena.LightingControllerSettings.GetOutput
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class ULightingControllerSettings* Settings                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // float                          Input                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -29912,7 +29819,7 @@ bool ALightingController::IsPlayerInBoatSpace()
 
 
 // Function Athena.LightingController.GetZoneWeights
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TArray<struct FLightingZoneBlendValues> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
 
@@ -29974,7 +29881,7 @@ void ULightningComponent::Multicast_QueueLightning(const struct FLightningImpact
 
 
 // Function Athena.LightningComponent.EnableLightningEffects
-// (Final, BlueprintCosmetic, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, BlueprintCosmetic, Native, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EStormEffectLockReasons> Reason                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -29994,7 +29901,7 @@ void ULightningComponent::EnableLightningEffects(TEnumAsByte<EStormEffectLockRea
 
 
 // Function Athena.LightningComponent.DisableLightningEffects
-// (Final, BlueprintCosmetic, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, BlueprintCosmetic, Native, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EStormEffectLockReasons> Reason                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -30014,7 +29921,7 @@ void ULightningComponent::DisableLightningEffects(TEnumAsByte<EStormEffectLockRe
 
 
 // Function Athena.LightningManagerComponent.SetIntensity
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // float                          InIntensity                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -30034,7 +29941,7 @@ void ULightningManagerComponent::SetIntensity(float InIntensity)
 
 
 // Function Athena.LightningManagerComponent.ForceTargetPointStop
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void ULightningManagerComponent::ForceTargetPointStop()
 {
@@ -30050,7 +29957,7 @@ void ULightningManagerComponent::ForceTargetPointStop()
 
 
 // Function Athena.LightningManagerComponent.ForceTargetPointStart
-// (Final, Native, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, HasOutParms, HasDefaults, BlueprintCallable)
 // Parameters:
 // struct FVector                 Location                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 
@@ -30070,7 +29977,7 @@ void ULightningManagerComponent::ForceTargetPointStart(const struct FVector& Loc
 
 
 // Function Athena.LightningManagerComponent.ForceLightningStrike
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // float                          TimeTillStrike                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -30090,7 +29997,7 @@ void ULightningManagerComponent::ForceLightningStrike(float TimeTillStrike)
 
 
 // Function Athena.LimpingComponent.TestForceLimpingOffLocally
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void ULimpingComponent::TestForceLimpingOffLocally()
 {
@@ -30222,7 +30129,7 @@ float ULimpingComponent::GetCheatPenaltyTimeLeft()
 
 
 // Function Athena.LimpingComponent.EndLimpingIndefinitely
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void ULimpingComponent::EndLimpingIndefinitely()
 {
@@ -30238,7 +30145,7 @@ void ULimpingComponent::EndLimpingIndefinitely()
 
 
 // Function Athena.LimpingComponent.BeginLimpingIndefinitely
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void ULimpingComponent::BeginLimpingIndefinitely()
 {
@@ -30335,7 +30242,7 @@ class AVomitProjectile* AVomitProjectile::LaunchVomitProjectile(class AActor* Vo
 
 
 // Function Athena.LoadableComponent.OnRepLoadableComponentState
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 // Parameters:
 // struct FLoadableComponentState PrevLoadableComponentState     (Parm)
 
@@ -30355,7 +30262,7 @@ void ULoadableComponent::OnRepLoadableComponentState(const struct FLoadableCompo
 
 
 // Function Athena.LoadItemActionStateId.PushCharacterIntoLoadItemActionState
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Character                      (Parm, ZeroConstructor, IsPlainOldData)
 // class AActor*                  LoadableActor                  (Parm, ZeroConstructor, IsPlainOldData)
@@ -30385,7 +30292,7 @@ void ULoadItemActionStateId::PushCharacterIntoLoadItemActionState(class AActor* 
 
 
 // Function Athena.LoadItemActionStateId.PopCharacterOutOfLoadItemActionState
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Character                      (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -30427,7 +30334,7 @@ bool ULoadoutControlInterface::IsRequestLoadoutCompleted()
 
 
 // Function Athena.LoadPlayerActionStateId.PushCharacterIntoLoadPlayerActionState
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  InCharacter                    (Parm, ZeroConstructor, IsPlainOldData)
 // class AActor*                  InLoadable                     (Parm, ZeroConstructor, IsPlainOldData)
@@ -30640,7 +30547,7 @@ void AMapTable::Server_LeaveTable(class AActor* Controller)
 
 
 // Function Athena.MapTable.Server_JoinTable
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// (RequiredAPI, Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
 // Parameters:
 // class AActor*                  Controller                     (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -30708,7 +30615,7 @@ void AMapTable::OnRep_MapPins()
 
 
 // Function Athena.MapTable.OnRep_CentreLocation
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 
 void AMapTable::OnRep_CentreLocation()
 {
@@ -31048,7 +30955,7 @@ bool UMapTableTestFunctions::IsLocationDirty(class AMapTable* MapTable)
 
 
 // Function Athena.MapTableTestFunctions.GetControlPoint
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AMapTable*               MapTable                       (Parm, ZeroConstructor, IsPlainOldData)
 // int                            PointIndex                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -31933,7 +31840,7 @@ void AMerchantMap::OnRep_Contents(const struct FMerchantMapContents& InPreviousC
 
 
 // Function Athena.Mermaid.OnRep_State
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void AMermaid::OnRep_State()
 {
@@ -31949,7 +31856,7 @@ void AMermaid::OnRep_State()
 
 
 // Function Athena.Mermaid.IsBeaconActive
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -32012,7 +31919,7 @@ TArray<struct FGuid> AMermaid::GetCrewIdsResponsibleForSavingAsCopy()
 
 
 // Function Athena.Mermaid.AddCrewResponsibleForSaving
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // struct FGuid                   CrewId                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -32075,13 +31982,33 @@ void UMermaidServiceInterface::DebugEnableMermaidSpawning(bool Flag)
 
 
 // Function Athena.MermaidService.SetParams
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // struct FMermaidServiceParams   P                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void AMermaidService::SetParams(const struct FMermaidServiceParams& P)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.MermaidService.SetParams"));
+
+	struct
+	{
+		struct FMermaidServiceParams   P;
+	} params;
+
+	params.P = P;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Athena.MermaidService.SetInvasionParams
+// (Final, RequiredAPI, Native, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FMermaidServiceParams   P                              (ConstParm, Parm, OutParm, ReferenceParm)
+
+void AMermaidService::SetInvasionParams(const struct FMermaidServiceParams& P)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.MermaidService.SetInvasionParams"));
 
 	struct
 	{
@@ -32119,7 +32046,7 @@ bool AMermaidService::IsMermaidActive(class AMermaid* M)
 
 
 // Function Athena.MermaidService.GetParams
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // struct FMermaidServiceParams   ReturnValue                    (ConstParm, Parm, OutParm, ReturnParm)
 
@@ -32160,8 +32087,29 @@ int AMermaidService::GetNumActiveMermaids()
 }
 
 
+// Function Athena.MermaidService.GetInvasionParams
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// struct FMermaidServiceParams   ReturnValue                    (ConstParm, Parm, OutParm, ReturnParm)
+
+struct FMermaidServiceParams AMermaidService::GetInvasionParams()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.MermaidService.GetInvasionParams"));
+
+	struct
+	{
+		struct FMermaidServiceParams   ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
 // Function Athena.MigrationActionStateId.PushCharacterIntoMigrationActionState
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AAthenaCharacter*        Character                      (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           EnableMigrationUI              (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -32475,7 +32423,7 @@ void AClothingChestInteraction::Server_ClothingChestChangeClothing(TArray<class 
 
 
 // Function Athena.ClothingChestInteraction.OnRep_Loadout
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void AClothingChestInteraction::OnRep_Loadout()
 {
@@ -32720,7 +32668,7 @@ void AVoyageProposalContainerInteraction::Server_VoyageProposalSelected(const cl
 
 
 // Function Athena.ModalInteractionActionStateId.PushCharacterIntoModalInteractionActionState
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Character                      (Parm, ZeroConstructor, IsPlainOldData)
 // class AModalInteractionProxy*  InInteractionProxy             (Parm, ZeroConstructor, IsPlainOldData)
@@ -32744,7 +32692,7 @@ void UModalInteractionActionStateId::PushCharacterIntoModalInteractionActionStat
 
 
 // Function Athena.CaptainsBookcase.RegisterBookcaseIndicator
-// (Final, Native, Protected, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Protected, HasOutParms, BlueprintCallable)
 // Parameters:
 // class UStaticMeshComponent*    InMeshComp                     (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // class UClass*                  InCompany                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
@@ -32767,7 +32715,7 @@ void ACaptainsBookcase::RegisterBookcaseIndicator(class UStaticMeshComponent* In
 
 
 // Function Athena.CaptainsBookcase.OnRep_FullnessData
-// (Final, Native, Protected)
+// (Final, RequiredAPI, Native, Protected)
 
 void ACaptainsBookcase::OnRep_FullnessData()
 {
@@ -32887,7 +32835,7 @@ void AVoyageProposalContainer::SetTaleManifest(class ACrewShipManifest* Manifest
 
 
 // Function Athena.VoyageProposalContainer.SetManifest
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class ACrewShipManifest*       Manifest                       (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -33000,7 +32948,7 @@ void AMusicalTrigger::OnMechanismActionRegisteredWithTrigger(const TScriptInterf
 
 
 // Function Athena.MusicalTrigger.OnEndOverlapOuterRadius
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 // Parameters:
 // class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
 // class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
@@ -33026,7 +32974,7 @@ void AMusicalTrigger::OnEndOverlapOuterRadius(class AActor* OtherActor, class UP
 
 
 // Function Athena.MusicalTrigger.OnEndOverlapInnerRadius
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 // Parameters:
 // class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
 // class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
@@ -33052,7 +33000,7 @@ void AMusicalTrigger::OnEndOverlapInnerRadius(class AActor* OtherActor, class UP
 
 
 // Function Athena.MusicalTrigger.OnBeginOverlapOuterRadius
-// (Final, Native, Public, HasOutParms)
+// (Final, RequiredAPI, Native, Public, HasOutParms)
 // Parameters:
 // class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
 // class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
@@ -33084,7 +33032,7 @@ void AMusicalTrigger::OnBeginOverlapOuterRadius(class AActor* OtherActor, class 
 
 
 // Function Athena.MusicalTrigger.OnBeginOverlapInnerRadius
-// (Final, Native, Public, HasOutParms)
+// (Final, RequiredAPI, Native, Public, HasOutParms)
 // Parameters:
 // class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
 // class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
@@ -33159,7 +33107,7 @@ void UNPCAnimInstance::UseHeldObject(TEnumAsByte<EAthenaNPCSpawnHand> SpawnHand,
 
 
 // Function Athena.NPCAnimInstance.TriggerNPCCustomAnimationSequence
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // struct FName                   SequenceName                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -33183,7 +33131,7 @@ bool UNPCAnimInstance::TriggerNPCCustomAnimationSequence(const struct FName& Seq
 
 
 // Function Athena.NPCAnimInstance.TriggerCustomAnimation
-// (Native, Public, HasOutParms, BlueprintCallable)
+// (RequiredAPI, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // struct FName                   SequenceName                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 // float                          StartTime                      (Parm, ZeroConstructor, IsPlainOldData)
@@ -33226,7 +33174,7 @@ void UNPCAnimInstance::StopFacialAnimation()
 
 
 // Function Athena.NPCAnimInstance.StopCustomAnimation
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 
 void UNPCAnimInstance::StopCustomAnimation()
 {
@@ -33279,7 +33227,7 @@ bool UNPCAnimInstance::SpawnInitialCosmeticItems()
 
 
 // Function Athena.NPCAnimInstance.ShowOfferObject
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EOfferingNPCSpawnHand> SpawnHand                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -33299,7 +33247,7 @@ void UNPCAnimInstance::ShowOfferObject(TEnumAsByte<EOfferingNPCSpawnHand> SpawnH
 
 
 // Function Athena.NPCAnimInstance.SetNewNPCCustomAnimationLoopingSequence
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                           IsLoopA                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // struct FName                   SequenceName                   (Parm, ZeroConstructor, IsPlainOldData)
@@ -33392,7 +33340,7 @@ void UNPCAnimInstance::OnSequenceStarted(const struct FName& SequenceName, float
 
 
 // Function Athena.NPCAnimInstance.HideOfferObject
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void UNPCAnimInstance::HideOfferObject()
 {
@@ -33429,7 +33377,7 @@ TArray<class AActor*> UNPCAnimInstance::GetNPCInitialSpawnedCosmeticItemArray()
 
 
 // Function Athena.NPCAnimInstance.GetCurrentMontagePosition
-// (Native, Public, BlueprintCallable, BlueprintPure)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -33450,7 +33398,7 @@ float UNPCAnimInstance::GetCurrentMontagePosition()
 
 
 // Function Athena.NPCAnimInstance.FinishReacting
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EInteractResponseTypeID> StateFinishing                 (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -33516,7 +33464,7 @@ void UNPCAnimInstance::DestroyHeldObject(TEnumAsByte<EAthenaNPCSpawnHand> SpawnH
 
 
 // Function Athena.NPCAnimInstance.CleanUpNPCCustomAnimationInitialCosmeticItems
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void UNPCAnimInstance::CleanUpNPCCustomAnimationInitialCosmeticItems()
 {
@@ -33552,7 +33500,7 @@ void UNPCAnimInstance::AttachHeldObject(TEnumAsByte<EAthenaNPCSpawnHand> SpawnHa
 
 
 // Function Athena.NPCAnimInstance.AllocateNPCInteractResponseVariantAnimation
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 
 void UNPCAnimInstance::AllocateNPCInteractResponseVariantAnimation()
 {
@@ -33588,7 +33536,7 @@ void UNPCAnimInstance::AllocateNPCIdleVariantAnimation(TEnumAsByte<ENPCIdleVaria
 
 
 // Function Athena.NPCAnimInstance.AllocateNPCCustomAnimationSet
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class UNPCCustomAnimationDataAsset* AnimationData                  (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -33612,7 +33560,7 @@ bool UNPCAnimInstance::AllocateNPCCustomAnimationSet(class UNPCCustomAnimationDa
 
 
 // Function Athena.NPCDialogComponent.SetParameterFromString
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // struct FName                   Parameter                      (Parm, ZeroConstructor, IsPlainOldData)
 // class FString                  Value                          (Parm, ZeroConstructor)
@@ -33639,7 +33587,7 @@ bool UNPCDialogComponent::SetParameterFromString(const struct FName& Parameter, 
 
 
 // Function Athena.NPCDialogComponent.SetIntegerParameter
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // struct FName                   Parameter                      (Parm, ZeroConstructor, IsPlainOldData)
 // int                            Value                          (Parm, ZeroConstructor, IsPlainOldData)
@@ -33666,7 +33614,7 @@ bool UNPCDialogComponent::SetIntegerParameter(const struct FName& Parameter, int
 
 
 // Function Athena.NPCDialogComponent.SetBooleanParameter
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // struct FName                   Parameter                      (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           Value                          (Parm, ZeroConstructor, IsPlainOldData)
@@ -33693,7 +33641,7 @@ bool UNPCDialogComponent::SetBooleanParameter(const struct FName& Parameter, boo
 
 
 // Function Athena.NPCDialogComponent.OnRep_Disabled
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UNPCDialogComponent::OnRep_Disabled()
 {
@@ -33709,7 +33657,7 @@ void UNPCDialogComponent::OnRep_Disabled()
 
 
 // Function Athena.NPCDialogComponent.OnRep_DialogBlackboard
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UNPCDialogComponent::OnRep_DialogBlackboard()
 {
@@ -33725,7 +33673,7 @@ void UNPCDialogComponent::OnRep_DialogBlackboard()
 
 
 // Function Athena.NPCDialogComponent.GetParameterAsString
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FName                   Parameter                      (Parm, ZeroConstructor, IsPlainOldData)
 // class FString                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
@@ -33749,7 +33697,7 @@ class FString UNPCDialogComponent::GetParameterAsString(const struct FName& Para
 
 
 // Function Athena.NPCDialogComponent.GetIntegerParameter
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FName                   Parameter                      (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -33773,7 +33721,7 @@ int UNPCDialogComponent::GetIntegerParameter(const struct FName& Parameter)
 
 
 // Function Athena.NPCDialogComponent.GetBooleanParameter
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FName                   Parameter                      (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -33831,45 +33779,29 @@ void UNPCDialogComponent::DisableDialogue()
 // Function Athena.TalkToNPCActionStateId.PopCharOutOfActionState
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class UNPCDialogComponent*     NPCDialogComp                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 // class AActor*                  Character                      (Parm, ZeroConstructor, IsPlainOldData)
+// class UNPCDialogComponent*     NPCDialogComponent             (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
 
-void UTalkToNPCActionStateId::PopCharOutOfActionState(class UNPCDialogComponent* NPCDialogComp, class AActor* Character)
+void UTalkToNPCActionStateId::PopCharOutOfActionState(class AActor* Character, class UNPCDialogComponent* NPCDialogComponent)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.TalkToNPCActionStateId.PopCharOutOfActionState"));
 
 	struct
 	{
-		class UNPCDialogComponent*     NPCDialogComp;
 		class AActor*                  Character;
+		class UNPCDialogComponent*     NPCDialogComponent;
 	} params;
 
-	params.NPCDialogComp = NPCDialogComp;
 	params.Character = Character;
+	params.NPCDialogComponent = NPCDialogComponent;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);
 }
 
 
-// Function Athena.PiratePreviewInterface.PreCreatePreview
-// (Native, Public, BlueprintCallable)
-
-void UPiratePreviewInterface::PreCreatePreview()
-{
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.PiratePreviewInterface.PreCreatePreview"));
-
-	struct
-	{
-	} params;
-
-
-	UObject::ProcessEvent(fn, &params);
-}
-
-
 // Function Athena.ObjectProximityResetComponent.OnPlayerLeftOverlap
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 // Parameters:
 // int                            RemainingPlayers               (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -33889,7 +33821,7 @@ void UObjectProximityResetComponent::OnPlayerLeftOverlap(int RemainingPlayers)
 
 
 // Function Athena.ObjectProximityResetComponent.OnPlayerEnteredOverlap
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UObjectProximityResetComponent::OnPlayerEnteredOverlap()
 {
@@ -33930,7 +33862,7 @@ class UObject* UObjectUtilities::GetDefaultObject(class UClass* Class)
 
 
 // Function Athena.ObjectUtilities.CreateObject
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UClass*                  Class                          (Parm, ZeroConstructor, IsPlainOldData)
 // class UObject*                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -34305,6 +34237,38 @@ void APanicTeleportVolume::OnOverlapBegin(class AActor* OtherActor, class UPrimi
 }
 
 
+// Function Athena.InstantaneousPanicTeleportVolume.Enable
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+
+void AInstantaneousPanicTeleportVolume::Enable()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.InstantaneousPanicTeleportVolume.Enable"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Athena.InstantaneousPanicTeleportVolume.Disable
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+
+void AInstantaneousPanicTeleportVolume::Disable()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.InstantaneousPanicTeleportVolume.Disable"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function Athena.PartConnectionMock.Tick
 // (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
 // Parameters:
@@ -34387,7 +34351,7 @@ void UPartConnectionMock::AddConnection(class UObject* WorldContextObject, TEnum
 
 
 // Function Athena.PerformancePetSpawnerActor.SpawnPets
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void APerformancePetSpawnerActor::SpawnPets()
 {
@@ -34403,7 +34367,7 @@ void APerformancePetSpawnerActor::SpawnPets()
 
 
 // Function Athena.PerformancePetSpawnerActor.SetOverridePetOwner
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  NewOwner                       (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -34649,6 +34613,38 @@ void UPetLoadoutComponent::OnRep_Loadout()
 }
 
 
+// Function Athena.PhasedGenericMarkerService.OnRep_RelevantCrewIds
+// (Final, Native, Private)
+
+void APhasedGenericMarkerService::OnRep_RelevantCrewIds()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.PhasedGenericMarkerService.OnRep_RelevantCrewIds"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Athena.PhasedGenericMarkerService.OnRep_GenericMarkers
+// (Final, Native, Private)
+
+void APhasedGenericMarkerService::OnRep_GenericMarkers()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.PhasedGenericMarkerService.OnRep_GenericMarkers"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function Athena.PirateGeneratorServiceInterface.BakeFromDescriptionAsync
 // (Native, Public, HasOutParms, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -34865,7 +34861,7 @@ TArray<class UClass*> UPirateSelector::GetSelectedPirateOutfit()
 
 
 // Function Athena.PirateSelector.GetSelectedPirateDescription
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FPirateDescription      ReturnValue                    (Parm, OutParm, ReturnParm)
 
@@ -34886,7 +34882,7 @@ struct FPirateDescription UPirateSelector::GetSelectedPirateDescription()
 
 
 // Function Athena.PirateSelector.EndCelebration
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void UPirateSelector::EndCelebration()
 {
@@ -34902,7 +34898,7 @@ void UPirateSelector::EndCelebration()
 
 
 // Function Athena.PirateSelector.ConfirmAndSavePirate
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // struct FPirateDescription      Description                    (ConstParm, Parm, OutParm, ReferenceParm)
 // TArray<class UClass*>          Outfit                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
@@ -35164,7 +35160,7 @@ void UPlayerCrewComponent::Server_SetAllowCrewToCustomiseCaptainedShip(bool InAl
 
 
 // Function Athena.PlayerCrewComponent.OnRep_TaleProgressLevel
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 // Parameters:
 // int                            PreviousTaleProgressLevel      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -35184,7 +35180,7 @@ void UPlayerCrewComponent::OnRep_TaleProgressLevel(int PreviousTaleProgressLevel
 
 
 // Function Athena.PlayerCrewComponent.OnRep_ShipId
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UPlayerCrewComponent::OnRep_ShipId()
 {
@@ -35200,7 +35196,7 @@ void UPlayerCrewComponent::OnRep_ShipId()
 
 
 // Function Athena.PlayerCrewComponent.OnRep_IsShipCustomizationCaptainOnly
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UPlayerCrewComponent::OnRep_IsShipCustomizationCaptainOnly()
 {
@@ -35216,7 +35212,7 @@ void UPlayerCrewComponent::OnRep_IsShipCustomizationCaptainOnly()
 
 
 // Function Athena.PlayerCrewComponent.OnRep_IsCaptainedSession
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UPlayerCrewComponent::OnRep_IsCaptainedSession()
 {
@@ -35232,7 +35228,7 @@ void UPlayerCrewComponent::OnRep_IsCaptainedSession()
 
 
 // Function Athena.PlayerCrewComponent.OnRep_IsCaptain
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UPlayerCrewComponent::OnRep_IsCaptain()
 {
@@ -35248,7 +35244,7 @@ void UPlayerCrewComponent::OnRep_IsCaptain()
 
 
 // Function Athena.PlayerCrewComponent.OnRep_CrewShip
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UPlayerCrewComponent::OnRep_CrewShip()
 {
@@ -35264,7 +35260,7 @@ void UPlayerCrewComponent::OnRep_CrewShip()
 
 
 // Function Athena.PlayerCrewComponent.OnRep_CrewRivalVotingData
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UPlayerCrewComponent::OnRep_CrewRivalVotingData()
 {
@@ -35280,7 +35276,7 @@ void UPlayerCrewComponent::OnRep_CrewRivalVotingData()
 
 
 // Function Athena.PlayerCrewComponent.OnRep_CrewMembers
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UPlayerCrewComponent::OnRep_CrewMembers()
 {
@@ -35296,7 +35292,7 @@ void UPlayerCrewComponent::OnRep_CrewMembers()
 
 
 // Function Athena.PlayerCrewComponent.OnRep_CrewMatchmakingVisibility
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UPlayerCrewComponent::OnRep_CrewMatchmakingVisibility()
 {
@@ -35354,7 +35350,7 @@ bool UPlayerCrewComponent::GetIsCaptain()
 
 
 // Function Athena.PlayerCurseComponent.OnRep_ActiveCurseForFX
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 // Parameters:
 // TEnumAsByte<EPlayerCurseTag>   PreviousValue                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -35515,7 +35511,7 @@ TArray<class UClass*> UPlayerEntitlementBlueprintFunctionLibrary::GetEntitlement
 
 
 // Function Athena.PlayerEntitlementComponent.ServerRequestEntitlements
-// (Net, Native, Event, Public, NetServer, NetValidate)
+// (RequiredAPI, Net, Native, Event, Public, NetServer, NetValidate)
 // Parameters:
 // TEnumAsByte<ERequestEntitlementBehaviour> InBehaviour                    (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -35595,7 +35591,7 @@ void UPlayerFunctionLibrary::DebugRemoveLocalPlayer(class UObject* WorldContextO
 
 
 // Function Athena.PlayerHeroStatsComponent.OnRep_ServerValues
-// (Final, Native, Private, HasOutParms)
+// (Final, RequiredAPI, Native, Private, HasOutParms)
 // Parameters:
 // TArray<int64_t>                PreviousServerValues           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
@@ -35721,7 +35717,7 @@ void UPlayerNonVerbalComponent::Server_SendPhrase(const class FString& PhraseKey
 
 
 // Function Athena.PlayerNonVerbalComponent.Client_ReceiveText
-// (Final, Net, NetReliable, Native, Event, Private, NetClient)
+// (Final, RequiredAPI, Net, NetReliable, Native, Event, Private, NetClient)
 // Parameters:
 // class AAthenaPlayerState*      SenderPlayerState              (Parm, ZeroConstructor, IsPlainOldData)
 // struct FText                   Message                        (ConstParm, Parm, ReferenceParm)
@@ -35747,7 +35743,7 @@ void UPlayerNonVerbalComponent::Client_ReceiveText(class AAthenaPlayerState* Sen
 
 
 // Function Athena.PlayerNonVerbalComponent.Client_ReceivePhraseWithNonLocalisedArgument
-// (Final, Net, NetReliable, Native, Event, Private, NetClient)
+// (Final, RequiredAPI, Net, NetReliable, Native, Event, Private, NetClient)
 // Parameters:
 // class AAthenaPlayerState*      SenderPlayerState              (Parm, ZeroConstructor, IsPlainOldData)
 // class FString                  PhraseKey                      (Parm, ZeroConstructor)
@@ -35773,7 +35769,7 @@ void UPlayerNonVerbalComponent::Client_ReceivePhraseWithNonLocalisedArgument(cla
 
 
 // Function Athena.PlayerNonVerbalComponent.Client_ReceivePhraseWithArgument
-// (Final, Net, NetReliable, Native, Event, Private, NetClient)
+// (Final, RequiredAPI, Net, NetReliable, Native, Event, Private, NetClient)
 // Parameters:
 // class AAthenaPlayerState*      SenderPlayerState              (Parm, ZeroConstructor, IsPlainOldData)
 // class FString                  PhraseKey                      (Parm, ZeroConstructor)
@@ -35799,7 +35795,7 @@ void UPlayerNonVerbalComponent::Client_ReceivePhraseWithArgument(class AAthenaPl
 
 
 // Function Athena.PlayerNonVerbalComponent.Client_ReceivePhrase
-// (Final, Net, NetReliable, Native, Event, Private, NetClient)
+// (Final, RequiredAPI, Net, NetReliable, Native, Event, Private, NetClient)
 // Parameters:
 // class AAthenaPlayerState*      SenderPlayerState              (Parm, ZeroConstructor, IsPlainOldData)
 // class FString                  PhraseKey                      (Parm, ZeroConstructor)
@@ -35822,7 +35818,7 @@ void UPlayerNonVerbalComponent::Client_ReceivePhrase(class AAthenaPlayerState* S
 
 
 // Function Athena.PlayerNonVerbalComponent.Client_ReceiveNPCText
-// (Final, Net, NetReliable, Native, Event, Private, NetClient)
+// (Final, RequiredAPI, Net, NetReliable, Native, Event, Private, NetClient)
 // Parameters:
 // class FString                  SenderNameKey                  (Parm, ZeroConstructor)
 // class FString                  TextKey                        (Parm, ZeroConstructor)
@@ -35893,7 +35889,7 @@ bool UPlayerOceanAudioComponent::GetIsPlaying()
 
 
 // Function Athena.PlayerOceanAudioComponent.GetIsOnIsland
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -35914,7 +35910,7 @@ bool UPlayerOceanAudioComponent::GetIsOnIsland()
 
 
 // Function Athena.PlayerOceanAudioComponent.GetIsInDeepSeaRegion
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -35935,7 +35931,7 @@ bool UPlayerOceanAudioComponent::GetIsInDeepSeaRegion()
 
 
 // Function Athena.PlayerOceanAudioComponent.GetEmitterPosition
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FVector                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -35956,7 +35952,7 @@ struct FVector UPlayerOceanAudioComponent::GetEmitterPosition()
 
 
 // Function Athena.TestPlayerPermissionsComponent.GrantDebugMenuPermissions
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                           AllowAccess                    (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -35992,7 +35988,7 @@ void UPlayerWalletComponent::ServerRequestBalance()
 
 
 // Function Athena.PlayerWalletComponent.OnRep_BalanceUpdated
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UPlayerWalletComponent::OnRep_BalanceUpdated()
 {
@@ -36353,7 +36349,7 @@ void UWieldableItemAnimationInstance::OnOneShotUseTriggered(class UClass* InputI
 
 
 // Function Athena.PopUpNotificationComponent.OnRep_EmissaryProgressUpdated
-// (Final, Native, Protected)
+// (Final, RequiredAPI, Native, Protected)
 
 void UPopUpNotificationComponent::OnRep_EmissaryProgressUpdated()
 {
@@ -36369,7 +36365,7 @@ void UPopUpNotificationComponent::OnRep_EmissaryProgressUpdated()
 
 
 // Function Athena.PopUpNotificationComponent.OnHUDEndPlay
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 // Parameters:
 // TEnumAsByte<EEndPlayReason>    InReason                       (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -36592,7 +36588,7 @@ void AProjectileLauncherMechanismAction::OnMechanismActionStateChanged(const TSc
 
 
 // Function Athena.ProjectileWeapon.ShouldPlayVfx
-// (Final, BlueprintCosmetic, Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, BlueprintCosmetic, Native, Protected, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -36629,7 +36625,7 @@ void AProjectileWeapon::SetRadialBlurOff()
 
 
 // Function Athena.ProjectileWeapon.SetAmmoUIVisibility
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                           InVisibility                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -36649,7 +36645,7 @@ void AProjectileWeapon::SetAmmoUIVisibility(bool InVisibility)
 
 
 // Function Athena.ProjectileWeapon.ScopeTick
-// (Event, Protected, BlueprintEvent)
+// (RequiredAPI, Event, Protected, BlueprintEvent)
 // Parameters:
 // float                          DeltaSeconds                   (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -36781,7 +36777,7 @@ void AProjectileWeapon::OnWeaponFired()
 
 
 // Function Athena.ProjectileWeapon.OnRep_State
-// (Final, Native, Protected)
+// (Final, RequiredAPI, Native, Protected)
 // Parameters:
 // TEnumAsByte<EProjectileWeaponState> PreviousState                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -36910,7 +36906,7 @@ int AProjectileWeapon::GetNumShotsLeftInClip()
 
 
 // Function Athena.ProjectileWeapon.GetLastAttackId
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FGuid                   ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -36988,7 +36984,7 @@ bool AProjectileWeapon::CanFire()
 
 
 // Function Athena.ProjectileWeapon.AddBulletsToClip
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // int                            NumBullets                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           DoClipSizeCheck                (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -37093,7 +37089,7 @@ TArray<struct FHitResult> ATestProjectileWeapon::GenerateAndFireProjectiles()
 
 
 // Function Athena.TestProjectileWeapon.FireInstantly
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void ATestProjectileWeapon::FireInstantly()
 {
@@ -37109,7 +37105,7 @@ void ATestProjectileWeapon::FireInstantly()
 
 
 // Function Athena.ProjectileWeaponValidationFunctionLibrary.ClampAimPositionToWeapon
-// (Final, Native, Static, Public, HasOutParms, HasDefaults)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, HasDefaults)
 // Parameters:
 // class AProjectileWeapon*       ProjectileWeapon               (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // struct FProjectileAim          InAim                          (ConstParm, Parm, OutParm, ReferenceParm)
@@ -37159,7 +37155,7 @@ void UPuzzleConfigurationInterface::ResetToInitialConfigurationState()
 
 
 // Function Athena.RotatingBlockPuzzle.OnRep_CurrentPosition
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void ARotatingBlockPuzzle::OnRep_CurrentPosition()
 {
@@ -37265,7 +37261,7 @@ void UPuzzleObjectInterface::DisablePuzzleObject()
 
 
 // Function Athena.PuzzleStatueBase.ResetPuzzleObject
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 
 void APuzzleStatueBase::ResetPuzzleObject()
 {
@@ -37281,7 +37277,7 @@ void APuzzleStatueBase::ResetPuzzleObject()
 
 
 // Function Athena.PuzzleStatueBase.OnRep_IsStatueDisabled
-// (Native, Protected)
+// (RequiredAPI, Native, Protected)
 
 void APuzzleStatueBase::OnRep_IsStatueDisabled()
 {
@@ -37297,7 +37293,7 @@ void APuzzleStatueBase::OnRep_IsStatueDisabled()
 
 
 // Function Athena.PuzzleStatueBase.OnRep_IsStatueActive
-// (Native, Protected)
+// (RequiredAPI, Native, Protected)
 
 void APuzzleStatueBase::OnRep_IsStatueActive()
 {
@@ -37333,7 +37329,7 @@ void APuzzleStatueBase::LockComponentOpened(class AActor* Interactor)
 
 
 // Function Athena.PuzzleStatueBase.IsPuzzleObjectDisabled
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -37354,7 +37350,7 @@ bool APuzzleStatueBase::IsPuzzleObjectDisabled()
 
 
 // Function Athena.PuzzleStatueBase.IsActivated
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -37375,7 +37371,7 @@ bool APuzzleStatueBase::IsActivated()
 
 
 // Function Athena.PuzzleStatueBase.EnablePuzzleObject
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 
 void APuzzleStatueBase::EnablePuzzleObject()
 {
@@ -37391,7 +37387,7 @@ void APuzzleStatueBase::EnablePuzzleObject()
 
 
 // Function Athena.PuzzleStatueBase.DisablePuzzleObject
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 
 void APuzzleStatueBase::DisablePuzzleObject()
 {
@@ -37407,7 +37403,7 @@ void APuzzleStatueBase::DisablePuzzleObject()
 
 
 // Function Athena.BroadcasterPuzzleStatue.ResetPuzzleObject
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 
 void ABroadcasterPuzzleStatue::ResetPuzzleObject()
 {
@@ -37423,7 +37419,7 @@ void ABroadcasterPuzzleStatue::ResetPuzzleObject()
 
 
 // Function Athena.BroadcasterPuzzleStatue.ResetBroadcasterReceiversAndMechanisms
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 
 void ABroadcasterPuzzleStatue::ResetBroadcasterReceiversAndMechanisms()
 {
@@ -37439,7 +37435,7 @@ void ABroadcasterPuzzleStatue::ResetBroadcasterReceiversAndMechanisms()
 
 
 // Function Athena.BroadcasterPuzzleStatue.OnSignalActionComplete
-// (Native, Protected)
+// (RequiredAPI, Native, Protected)
 // Parameters:
 // TScriptInterface<class UMechanismActionInterface> InAction                       (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -37459,7 +37455,7 @@ void ABroadcasterPuzzleStatue::OnSignalActionComplete(const TScriptInterface<cla
 
 
 // Function Athena.BroadcasterPuzzleStatue.OnRep_ReactionSequenceState
-// (Native, Protected, HasOutParms)
+// (RequiredAPI, Native, Protected, HasOutParms)
 // Parameters:
 // struct FReactionSequenceStateInfo PreviousReactionSequenceState  (ConstParm, Parm, OutParm, ReferenceParm)
 
@@ -37479,7 +37475,7 @@ void ABroadcasterPuzzleStatue::OnRep_ReactionSequenceState(const struct FReactio
 
 
 // Function Athena.BroadcasterPuzzleStatue.DoShockwaveEffect
-// (Native, Protected)
+// (RequiredAPI, Native, Protected)
 
 void ABroadcasterPuzzleStatue::DoShockwaveEffect()
 {
@@ -37495,7 +37491,7 @@ void ABroadcasterPuzzleStatue::DoShockwaveEffect()
 
 
 // Function Athena.ReceiverPuzzleStatue.ResetToInitialConfigurationState
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 
 void AReceiverPuzzleStatue::ResetToInitialConfigurationState()
 {
@@ -37511,7 +37507,7 @@ void AReceiverPuzzleStatue::ResetToInitialConfigurationState()
 
 
 // Function Athena.ReceiverPuzzleStatue.ResetPuzzleObject
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 
 void AReceiverPuzzleStatue::ResetPuzzleObject()
 {
@@ -37527,7 +37523,7 @@ void AReceiverPuzzleStatue::ResetPuzzleObject()
 
 
 // Function Athena.ReceiverPuzzleStatue.OnRep_CurrentStatueConfiguration
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 // Parameters:
 // int8_t                         PreviousConfiguration          (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -37579,7 +37575,7 @@ void AReceiverPuzzleStatue::OnConfigurationChangeAnimationFinish()
 
 
 // Function Athena.PuzzleStatueVFXComponent.BuildMaterialMap
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 
 void UPuzzleStatueVFXComponent::BuildMaterialMap()
 {
@@ -37846,15 +37842,19 @@ void APuzzleVault::OnOverlapBegin(class AActor* OtherActor, class UPrimitiveComp
 
 // Function Athena.PuzzleVault.OnOuterDoorOpened
 // (Final, Native, Private)
+// Parameters:
+// class AActor*                  Interactor                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
-void APuzzleVault::OnOuterDoorOpened()
+void APuzzleVault::OnOuterDoorOpened(class AActor* Interactor)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.PuzzleVault.OnOuterDoorOpened"));
 
 	struct
 	{
+		class AActor*                  Interactor;
 	} params;
 
+	params.Interactor = Interactor;
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -38055,7 +38055,7 @@ struct FVector2D URendererSettingsFunctionLibrary::GetBackBufferSize()
 
 
 // Function Athena.RepairObjectActionStateId.PushCharacterIntoRepairObjectActionState
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // struct FNetSubObjectPtr        Repairable                     (ConstParm, Parm, OutParm, ReferenceParm)
 // class AActor*                  Character                      (Parm, ZeroConstructor, IsPlainOldData)
@@ -38171,7 +38171,7 @@ void UReplenishableComponent::Replenish()
 
 
 // Function Athena.ReplenishableComponent.RefreshFromSpawner
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 
 void UReplenishableComponent::RefreshFromSpawner()
 {
@@ -38362,7 +38362,7 @@ void URewardComponent::Client_OnRewardRequestFailedEvent(const struct FRewardReq
 
 
 // Function Athena.RiddleMap.TriggerMagicGlow_RPC
-// (Net, NetReliable, Native, Event, Public, NetClient)
+// (RequiredAPI, Net, NetReliable, Native, Event, Public, NetClient)
 
 void ARiddleMap::TriggerMagicGlow_RPC()
 {
@@ -38452,7 +38452,7 @@ void ARiddleMap::OnRep_MapInventoryTexturePath()
 
 
 // Function Athena.RiddleMap.OnRep_Contents
-// (Final, Native, Private, HasOutParms)
+// (Final, RequiredAPI, Native, Private, HasOutParms)
 // Parameters:
 // struct FRiddleMapContents      InPreviousContents             (ConstParm, Parm, OutParm, ReferenceParm)
 
@@ -38498,7 +38498,7 @@ void ARiddleMap::OnMaskCanvasUpdate(class UCanvas* Canvas, int Width, int Height
 
 
 // Function Athena.Rudder.SetRudderAngleRatio
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // float                          InRudderAngleRatio             (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -39164,7 +39164,7 @@ void ASeagulls::FadeIn()
 
 
 // Function Athena.SelectionOfSirenStatues.Take
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TAssetPtr<class UClass>        ReturnValue                    (Parm, OutParm, ReturnParm)
 
@@ -39372,7 +39372,7 @@ struct FShipDesc UShipDescGeneratorTestFunctionLibrary::GenerateShipDescForTestM
 
 
 // Function Athena.ShipDescGeneratorTestFunctionLibrary.GenerateShipDescForTestLargeShip
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // struct FShipDesc               ReturnValue                    (Parm, OutParm, ReturnParm)
 
@@ -39394,7 +39394,7 @@ struct FShipDesc UShipDescGeneratorTestFunctionLibrary::GenerateShipDescForTestL
 
 
 // Function Athena.ShipEntitlementComponent.OnRep_VoyageInventory
-// (Final, Native, Private, HasOutParms)
+// (Final, RequiredAPI, Native, Private, HasOutParms)
 // Parameters:
 // TArray<struct FShipVoyageModel> OldData                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
@@ -39414,7 +39414,7 @@ void UShipEntitlementComponent::OnRep_VoyageInventory(TArray<struct FShipVoyageM
 
 
 // Function Athena.ShipFactory.MakeShipFactory
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UShipFactory*            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -39464,7 +39464,7 @@ class AActor* UShipFunctionLibrary::SpawnShip(const struct FVector& Pos, const s
 
 
 // Function Athena.ShipFunctionLibrary.SpawnFunctioningSmallShipWithCrewId
-// (Final, BlueprintAuthorityOnly, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
+// (Final, RequiredAPI, BlueprintAuthorityOnly, Native, Static, Public, HasOutParms, HasDefaults, BlueprintCallable)
 // Parameters:
 // struct FVector                 Pos                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // struct FRotator                Rotation                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -39563,7 +39563,7 @@ void UShipFunctionLibrary::SpawnFunctioningLargeShip(const struct FVector& Pos, 
 
 
 // Function Athena.ShipFunctionLibrary.GetWheels
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Actor                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // TArray<class AWheel*>          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
@@ -39588,7 +39588,7 @@ TArray<class AWheel*> UShipFunctionLibrary::GetWheels(class AActor* Actor)
 
 
 // Function Athena.ShipFunctionLibrary.GetSailHoists
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Actor                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // TArray<class ASailHoist*>      ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
@@ -39613,7 +39613,7 @@ TArray<class ASailHoist*> UShipFunctionLibrary::GetSailHoists(class AActor* Acto
 
 
 // Function Athena.ShipFunctionLibrary.GetSailAnglers
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Actor                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // TArray<class ASailAngle*>      ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
@@ -39638,7 +39638,7 @@ TArray<class ASailAngle*> UShipFunctionLibrary::GetSailAnglers(class AActor* Act
 
 
 // Function Athena.ShipFunctionLibrary.GetLadders
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Actor                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // TArray<class ALadder*>         ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
@@ -39663,7 +39663,7 @@ TArray<class ALadder*> UShipFunctionLibrary::GetLadders(class AActor* Actor)
 
 
 // Function Athena.ShipFunctionLibrary.GetInteractablesOfClass
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Actor                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // class UClass*                  Class                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -39691,7 +39691,7 @@ TArray<class AActor*> UShipFunctionLibrary::GetInteractablesOfClass(class AActor
 
 
 // Function Athena.ShipFunctionLibrary.GetInteractables
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Actor                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // TArray<class AActor*>          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
@@ -39716,7 +39716,7 @@ TArray<class AActor*> UShipFunctionLibrary::GetInteractables(class AActor* Actor
 
 
 // Function Athena.ShipFunctionLibrary.GetCannons
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Actor                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // TArray<class ACannon*>         ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
@@ -39923,7 +39923,7 @@ void UShipLightComponent::LightStateChanged()
 
 
 // Function Athena.ShipMilestoneEntitlementComponent.OnRep_Entitlements
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UShipMilestoneEntitlementComponent::OnRep_Entitlements()
 {
@@ -40007,7 +40007,7 @@ void AShipNetProxy::OnRep_LanternBits()
 
 
 // Function Athena.ShipNetProxy.OnRep_EmmissaryFlagTextureReference
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void AShipNetProxy::OnRep_EmmissaryFlagTextureReference()
 {
@@ -40023,7 +40023,7 @@ void AShipNetProxy::OnRep_EmmissaryFlagTextureReference()
 
 
 // Function Athena.ShipNetProxy.OnRep_EmissaryFlagActive
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void AShipNetProxy::OnRep_EmissaryFlagActive()
 {
@@ -40039,7 +40039,7 @@ void AShipNetProxy::OnRep_EmissaryFlagActive()
 
 
 // Function Athena.ShipNetProxy.OnOwningActorDestroyed
-// (Native, Protected)
+// (RequiredAPI, Native, Protected)
 
 void AShipNetProxy::OnOwningActorDestroyed()
 {
@@ -40095,7 +40095,7 @@ void AShipNetProxy::OnEmissaryActiveStateChanged(bool InNewEmissaryActiveState)
 
 
 // Function Athena.ShipNetProxy.GetLanternBits
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -40116,7 +40116,7 @@ int AShipNetProxy::GetLanternBits()
 
 
 // Function Athena.ShipPartCustomization.MakeAsyncShipPartCustomization
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UShipPartCustomization*  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -40138,7 +40138,7 @@ class UShipPartCustomization* UShipPartCustomization::MakeAsyncShipPartCustomiza
 
 
 // Function Athena.ShipPartCustomization.Customize
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // class AActor*                  InShip                         (Parm, ZeroConstructor, IsPlainOldData)
 // struct FPartDesc               PartDesc                       (ConstParm, Parm, OutParm, ReferenceParm)
@@ -40167,7 +40167,7 @@ void UShipPartCustomization::Customize(class AActor* InShip, const struct FPartD
 
 
 // Function Athena.ShipService.IsWorldPosInsideHull
-// (Final, Native, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FVector                 Pos                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 // class AShip*                   ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -40191,7 +40191,7 @@ class AShip* AShipService::IsWorldPosInsideHull(const struct FVector& Pos)
 
 
 // Function Athena.ShipService.IsWorldPosInsideCabin
-// (Final, Native, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, HasOutParms, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FVector                 Pos                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 // class AShip*                   ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -40215,7 +40215,7 @@ class AShip* AShipService::IsWorldPosInsideCabin(const struct FVector& Pos)
 
 
 // Function Athena.ShipService.GetNumShips
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -40277,7 +40277,7 @@ void UShipTelemetryComponent::SetShipHeartbeatInterval(float Interval)
 
 
 // Function Athena.ShipTelemetryComponent.GetShipIdForWebServices
-// (Final, Native, Public, HasDefaults, Const)
+// (Final, RequiredAPI, Native, Public, HasDefaults, Const)
 // Parameters:
 // struct FGuid                   ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -40561,7 +40561,7 @@ bool AShovel::GetHasPlayedShovelHitTreasureSfx()
 
 
 // Function Athena.Shovel.GetCurrentDigType
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // TEnumAsByte<EShovelDigType>    ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -40667,7 +40667,7 @@ void AShroudBreakerOnShip::ActivateShroudBreakerCalculationsOnShip()
 
 
 // Function Athena.SicknessComponent.OnRep_SicknessScreenEffectStrength
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void USicknessComponent::OnRep_SicknessScreenEffectStrength()
 {
@@ -40683,7 +40683,7 @@ void USicknessComponent::OnRep_SicknessScreenEffectStrength()
 
 
 // Function Athena.SicknessComponent.OnRep_SicknessMaterialEffectStrength
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void USicknessComponent::OnRep_SicknessMaterialEffectStrength()
 {
@@ -40726,7 +40726,7 @@ class USelectionOfSirenStatues* USirenStatuesSelector::GenerateSelection(class U
 
 
 // Function Athena.SkeletonFortDoor.ResetDoor
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void ASkeletonFortDoor::ResetDoor()
 {
@@ -40742,7 +40742,7 @@ void ASkeletonFortDoor::ResetDoor()
 
 
 // Function Athena.SkeletonFortDoor.OpenDoor
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void ASkeletonFortDoor::OpenDoor()
 {
@@ -40758,7 +40758,7 @@ void ASkeletonFortDoor::OpenDoor()
 
 
 // Function Athena.SkeletonFortDoor.OnRep_ServerDoorState
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void ASkeletonFortDoor::OnRep_ServerDoorState()
 {
@@ -40853,7 +40853,7 @@ void ASkellyFortOfTheDamned::OnRep_CurrentAudioState(TEnumAsByte<EDamnedFortAudi
 
 
 // Function Athena.SpawnProgressTriggerVolume.Enable
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void ASpawnProgressTriggerVolume::Enable()
 {
@@ -40869,7 +40869,7 @@ void ASpawnProgressTriggerVolume::Enable()
 
 
 // Function Athena.SpawnProgressTriggerVolume.Disable
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void ASpawnProgressTriggerVolume::Disable()
 {
@@ -40926,7 +40926,7 @@ void ASpyglass::SpyGlassRaisedFirstPerson(bool IsRaised)
 
 
 // Function Athena.Spyglass.SetGlintOff
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 
 void ASpyglass::SetGlintOff()
 {
@@ -40958,7 +40958,7 @@ void ASpyglass::ResetSpyglassEffects()
 
 
 // Function Athena.StaggerComponent.SetStaggerStrength
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // float                          UnaryStrength                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // TEnumAsByte<EStaggerReason>    Reason                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -41040,7 +41040,7 @@ void ABuoyantStorageContainer::OnRep_PhysicsState()
 
 
 // Function Athena.Storm.OnRep_AvoidAreaList
-// (Final, Native, Private, HasOutParms)
+// (Final, RequiredAPI, Native, Private, HasOutParms)
 // Parameters:
 // TArray<struct FStormAvoidanceArea> InPreviousAvoidAreaList        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
@@ -41060,7 +41060,7 @@ void AStorm::OnRep_AvoidAreaList(TArray<struct FStormAvoidanceArea> InPreviousAv
 
 
 // Function Athena.StunnedActionStateId.PushCharacterIntoStunnedActionState
-// (Final, Native, Static, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // class AAthenaCharacter*        Character                      (Parm, ZeroConstructor, IsPlainOldData)
 // struct FStunnedActionStateParams Params                         (ConstParm, Parm, OutParm, ReferenceParm)
@@ -41310,7 +41310,7 @@ void USwallowedByKrakenActionStateId::PopCharacterOutOfSwallowedByKrakenActionSt
 
 
 // Function Athena.SwimmingCreaturePawn.SetAIStrategy
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class UClass*                  InStrategy                     (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -41366,7 +41366,7 @@ void ASwimmingCreaturePawn::Multicast_DespawnRPC()
 
 
 // Function Athena.SwimmingCreaturePawn.GetCreatureDistanceFromWaterHeight
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -41387,7 +41387,7 @@ float ASwimmingCreaturePawn::GetCreatureDistanceFromWaterHeight()
 
 
 // Function Athena.SwimmingCreaturePawn.GetAIStrategy
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class UClass*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -41431,7 +41431,7 @@ void ASharkPawn::Multicast_PlayMontageRPC(int AnimIndex, bool PlayAsDynamicMonta
 
 
 // Function Athena.SharkPawn.IsDoingQuickDeath
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -41452,7 +41452,7 @@ bool ASharkPawn::IsDoingQuickDeath()
 
 
 // Function Athena.SharkPawn.GetIndexForMontage
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class UObject*                 Montage                        (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -41476,7 +41476,7 @@ int ASharkPawn::GetIndexForMontage(class UObject* Montage)
 
 
 // Function Athena.SirenPawn.WieldItem
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TScriptInterface<class UWieldableInterface> InWieldableItem                (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           InShouldFastWield              (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -41503,7 +41503,7 @@ TEnumAsByte<EWieldItemReturnCode> ASirenPawn::WieldItem(const TScriptInterface<c
 
 
 // Function Athena.SirenPawn.PickUpItem
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AItemInfo*               InItemInfo                     (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           InAndWield                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -41526,7 +41526,7 @@ void ASirenPawn::PickUpItem(class AItemInfo* InItemInfo, bool InAndWield)
 
 
 // Function Athena.TaleProgressStatue.EnableStatue
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void ATaleProgressStatue::EnableStatue()
 {
@@ -41542,7 +41542,7 @@ void ATaleProgressStatue::EnableStatue()
 
 
 // Function Athena.TaleProgressStatue.DisableStatue
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void ATaleProgressStatue::DisableStatue()
 {
@@ -41574,7 +41574,7 @@ void UTaleProgressStatueInteractableComponent::OnRep_StatueInteractionState()
 
 
 // Function Athena.TaleQuestPlankService.SetWoodenPlankDesc
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class UClass*                  PlankDesc                      (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -41594,7 +41594,7 @@ void UTaleQuestPlankService::SetWoodenPlankDesc(class UClass* PlankDesc)
 
 
 // Function Athena.TallTaleService.OnRep_InTaleCrews
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 // Parameters:
 // TArray<struct FGuid>           PrevInTaleCrews                (Parm, ZeroConstructor)
 
@@ -41638,7 +41638,7 @@ float UTankardInterface::DrainTankard(float InDrainVoume)
 
 
 // Function Athena.Tankard.SetLiquidLevel
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // float                          Level                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -41706,7 +41706,7 @@ void ATankard::Multicast_OnTankardRefill()
 
 
 // Function Athena.Tankard.GetWantedLiquidLevel
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -41727,7 +41727,7 @@ float ATankard::GetWantedLiquidLevel()
 
 
 // Function Athena.Tankard.GetMaxLiquidCollectionAmount
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -41748,7 +41748,7 @@ float ATankard::GetMaxLiquidCollectionAmount()
 
 
 // Function Athena.Tankard.GetLiquidLevel
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -41769,7 +41769,7 @@ float ATankard::GetLiquidLevel()
 
 
 // Function Athena.Tankard.CollectLiquidAmount
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // float                          DesiredAmount                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -41789,6 +41789,42 @@ float ATankard::CollectLiquidAmount(float DesiredAmount)
 	UObject::ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
+}
+
+
+// Function Athena.DroppableTankard.SetLiquidLevel
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// float                          Level                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void ADroppableTankard::SetLiquidLevel(float Level)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.DroppableTankard.SetLiquidLevel"));
+
+	struct
+	{
+		float                          Level;
+	} params;
+
+	params.Level = Level;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Athena.DroppableTankard.DestroyTankard
+// (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
+
+void ADroppableTankard::DestroyTankard()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.DroppableTankard.DestroyTankard"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
 }
 
 
@@ -41813,7 +41849,7 @@ void ATavernStepsTrigger::OnRep_StepsState(TEnumAsByte<EStepsTriggerState> LastS
 
 
 // Function Athena.TavernStepsTrigger.OnEndOverlapTavern
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 // Parameters:
 // class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
 // class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
@@ -41839,7 +41875,7 @@ void ATavernStepsTrigger::OnEndOverlapTavern(class AActor* OtherActor, class UPr
 
 
 // Function Athena.TavernStepsTrigger.OnEndOverlapStepsListener
-// (Final, Native, Public)
+// (Final, RequiredAPI, Native, Public)
 // Parameters:
 // class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
 // class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
@@ -41865,7 +41901,7 @@ void ATavernStepsTrigger::OnEndOverlapStepsListener(class AActor* OtherActor, cl
 
 
 // Function Athena.TavernStepsTrigger.OnBeginOverlapTavern
-// (Final, Native, Public, HasOutParms)
+// (Final, RequiredAPI, Native, Public, HasOutParms)
 // Parameters:
 // class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
 // class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
@@ -41897,7 +41933,7 @@ void ATavernStepsTrigger::OnBeginOverlapTavern(class AActor* OtherActor, class U
 
 
 // Function Athena.TavernStepsTrigger.OnBeginOverlapStepsListener
-// (Final, Native, Public, HasOutParms)
+// (Final, RequiredAPI, Native, Public, HasOutParms)
 // Parameters:
 // class AActor*                  OtherActor                     (Parm, ZeroConstructor, IsPlainOldData)
 // class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
@@ -43277,7 +43313,7 @@ void UUnifiedDelegateTestUnifiedDelegate::BindDelegate(const struct FScriptDeleg
 
 
 // Function Athena.UnloadItemActionStateId.PushCharacterIntoUnloadItemActionState
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Character                      (Parm, ZeroConstructor, IsPlainOldData)
 // class AActor*                  UnloadableActor                (Parm, ZeroConstructor, IsPlainOldData)
@@ -43304,7 +43340,7 @@ void UUnloadItemActionStateId::PushCharacterIntoUnloadItemActionState(class AAct
 
 
 // Function Athena.UnloadItemActionStateId.PopCharacterOutOfUnloadItemActionState
-// (Final, Native, Static, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Character                      (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -43418,7 +43454,7 @@ void UUseMapTableActionStateId::PushCharacterIntoUseMapTableActionState(TEnumAsB
 
 
 // Function Athena.VfxStoryResponseManager.OnRep_EmitterValue
-// (Final, Native, Protected)
+// (Final, RequiredAPI, Native, Protected)
 
 void AVfxStoryResponseManager::OnRep_EmitterValue()
 {
@@ -43498,7 +43534,7 @@ void UVisualHealthResponseComponent::GateChangeDelegate__DelegateSignature(int N
 
 
 // Function Athena.VomitComponent.VomitActivate
-// (Final, Native, Public, HasOutParms, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, HasOutParms, BlueprintCallable)
 // Parameters:
 // struct FName                   VomitType                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 // float                          Duration                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -43521,7 +43557,7 @@ void UVomitComponent::VomitActivate(const struct FName& VomitType, float Duratio
 
 
 // Function Athena.VomitComponent.OnOverlapBegin
-// (Final, Native, Public, HasOutParms)
+// (Final, RequiredAPI, Native, Public, HasOutParms)
 // Parameters:
 // class AActor*                  Other                          (Parm, ZeroConstructor, IsPlainOldData)
 // class UPrimitiveComponent*     OtherComp                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData)
@@ -43573,7 +43609,7 @@ void UVomitComponent::Multicast_VomitImpact(const struct FHitResult& Result)
 
 
 // Function Athena.VomitComponent.Multicast_VomitActivate
-// (Net, NetReliable, Native, Event, NetMulticast, Public)
+// (RequiredAPI, Net, NetReliable, Native, Event, NetMulticast, Public)
 // Parameters:
 // struct FName                   VomitType                      (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 // float                          Duration                       (Parm, ZeroConstructor, IsPlainOldData)
@@ -43638,7 +43674,7 @@ bool UVomitComponent::DidVomitVFXSpawn()
 
 
 // Function Athena.VomitComponent.Client_VomitHit
-// (Net, NetReliable, Native, Event, Public, NetClient)
+// (RequiredAPI, Net, NetReliable, Native, Event, Public, NetClient)
 
 void UVomitComponent::Client_VomitHit()
 {
@@ -43714,7 +43750,7 @@ void AVotableObjectView::OnVoteAdded(const TScriptInterface<class UVoterInterfac
 
 
 // Function Athena.VotableObjectView.GetVoter
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // int                            Index                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // TScriptInterface<class UVoterInterface> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -43738,7 +43774,7 @@ TScriptInterface<class UVoterInterface> AVotableObjectView::GetVoter(int Index)
 
 
 // Function Athena.VotableWithSessionComponent.SetVoteDataIndex
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // int                            InVoteDataIndex                (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -43779,7 +43815,7 @@ bool UVotableWithSessionComponent::IsSessionLocked()
 
 
 // Function Athena.VotableWithSessionComponent.GetVoteDataIndex
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -44320,6 +44356,26 @@ void UWaitForMechanismActivationStep::OnMechanismActionStateChanged(const TScrip
 }
 
 
+// Function Athena.WaitForUnlockStep.OnLockOpened
+// (Final, Native, Private)
+// Parameters:
+// class AActor*                  Interactor                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UWaitForUnlockStep::OnLockOpened(class AActor* Interactor)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.WaitForUnlockStep.OnLockOpened"));
+
+	struct
+	{
+		class AActor*                  Interactor;
+	} params;
+
+	params.Interactor = Interactor;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function Athena.WaitingToSpawnActionStateId.PushCharacterIntoWaitingToSpawnActionState
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -44562,7 +44618,7 @@ void UWaterBarrelActionStateId::PushCharacterIntoWaterBarrelActionState(class AW
 
 
 // Function Athena.MurkWaterModifierZoneComponent.OnRep_State
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 // Parameters:
 // TEnumAsByte<EMurkWaterModifierZoneState> PreviousState                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -44607,7 +44663,7 @@ bool UWeakActorHandleTestsFunctionLib::TestCreatingWeakActorHandleFromConsoleStr
 
 
 // Function Athena.WeepingComponent.OnRep_State
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UWeepingComponent::OnRep_State()
 {
@@ -44709,7 +44765,7 @@ void AWheel::UpdateWheelDamageState(TEnumAsByte<ERepairableState> RepairableStat
 
 
 // Function Athena.Wheel.SetFullyRepaired
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  InRepairer                     (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -44729,7 +44785,7 @@ void AWheel::SetFullyRepaired(class AActor* InRepairer)
 
 
 // Function Athena.Wheel.SetFullyDamaged
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 
 void AWheel::SetFullyDamaged()
 {
@@ -44745,7 +44801,7 @@ void AWheel::SetFullyDamaged()
 
 
 // Function Athena.Wheel.Server_SetWheelAngle
-// (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable, NetValidate)
+// (RequiredAPI, Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable, NetValidate)
 // Parameters:
 // float                          WheelAngleIncrement            (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -44915,7 +44971,7 @@ void AWheel::OnRep_ServerWheelAngle()
 
 
 // Function Athena.Wheel.Multicast_ForceSetWheelAngle
-// (Net, NetReliable, Native, Event, NetMulticast, Public)
+// (RequiredAPI, Net, NetReliable, Native, Event, NetMulticast, Public)
 // Parameters:
 // float                          Angle                          (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -44935,7 +44991,7 @@ void AWheel::Multicast_ForceSetWheelAngle(float Angle)
 
 
 // Function Athena.Wheel.GetWheelMesh
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class USkeletalMeshComponent*  ReturnValue                    (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
 
@@ -44956,7 +45012,7 @@ class USkeletalMeshComponent* AWheel::GetWheelMesh()
 
 
 // Function Athena.Wheel.GetRepairableComponentByLabel
-// (Final, Native, Public, HasOutParms, Const)
+// (Final, RequiredAPI, Native, Public, HasOutParms, Const)
 // Parameters:
 // TEnumAsByte<EWheelFractureLabel> Label                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData)
 // class URepairableComponent*    ReturnValue                    (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData)
@@ -44980,7 +45036,7 @@ class URepairableComponent* AWheel::GetRepairableComponentByLabel(TEnumAsByte<EW
 
 
 // Function Athena.Wheel.GetMinWheelAngle
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -45001,7 +45057,7 @@ float AWheel::GetMinWheelAngle()
 
 
 // Function Athena.Wheel.GetMaxWheelAngle
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -45043,7 +45099,7 @@ int AWheel::GetMaxLevelOfDamage()
 
 
 // Function Athena.Wheel.GetLevelOfDamage
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -45064,7 +45120,7 @@ int AWheel::GetLevelOfDamage()
 
 
 // Function Athena.Wheel.ForceSetWheelAngle
-// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
 // Parameters:
 // float                          Angle                          (Parm, ZeroConstructor, IsPlainOldData)
 
@@ -45136,7 +45192,7 @@ void AWheel::BindToDamageComponent()
 
 
 // Function Athena.Wheel.ApplyWheelInput
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // float                          Value                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -45409,7 +45465,7 @@ bool UWieldableItemFunctionLibrary::IsFirstPersonMeshComponentTickEnabled(class 
 
 
 // Function Athena.WieldableItemSetComponent.RemoveItem
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Item                           (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -45433,7 +45489,7 @@ bool UWieldableItemSetComponent::RemoveItem(class AActor* Item)
 
 
 // Function Athena.WieldableItemSetComponent.OnRep_Items
-// (Final, Native, Protected)
+// (Final, RequiredAPI, Native, Protected)
 
 void UWieldableItemSetComponent::OnRep_Items()
 {
@@ -45469,7 +45525,7 @@ void UWieldableItemSetComponent::OnItemDestroyed(class AActor* Actor)
 
 
 // Function Athena.WieldableItemSetComponent.GetSlotForItem
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // int                            Index                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // class UClass*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -45493,7 +45549,7 @@ class UClass* UWieldableItemSetComponent::GetSlotForItem(int Index)
 
 
 // Function Athena.WieldableItemSetComponent.GetNumItemsOfType
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class UClass*                  Type                           (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -45517,7 +45573,7 @@ int UWieldableItemSetComponent::GetNumItemsOfType(class UClass* Type)
 
 
 // Function Athena.WieldableItemSetComponent.GetNumItemsOfCategory
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class UClass*                  ItemCategory                   (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -45541,7 +45597,7 @@ int UWieldableItemSetComponent::GetNumItemsOfCategory(class UClass* ItemCategory
 
 
 // Function Athena.WieldableItemSetComponent.GetNumItems
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -45562,7 +45618,7 @@ int UWieldableItemSetComponent::GetNumItems()
 
 
 // Function Athena.WieldableItemSetComponent.GetItemsOfCategory
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class UClass*                  ItemCategory                   (Parm, ZeroConstructor, IsPlainOldData)
 // TArray<class AActor*>          ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm)
@@ -45586,7 +45642,7 @@ TArray<class AActor*> UWieldableItemSetComponent::GetItemsOfCategory(class UClas
 
 
 // Function Athena.WieldableItemSetComponent.GetItemIndexInCategorySet
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AActor*                  Item                           (Parm, ZeroConstructor, IsPlainOldData)
 // class UClass*                  ItemCategory                   (Parm, ZeroConstructor, IsPlainOldData)
@@ -45613,7 +45669,7 @@ int UWieldableItemSetComponent::GetItemIndexInCategorySet(class AActor* Item, cl
 
 
 // Function Athena.WieldableItemSetComponent.GetItemIndex
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AActor*                  Item                           (Parm, ZeroConstructor, IsPlainOldData)
 // int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -45637,7 +45693,7 @@ int UWieldableItemSetComponent::GetItemIndex(class AActor* Item)
 
 
 // Function Athena.WieldableItemSetComponent.GetItemFromSlot
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class UClass*                  ItemCategory                   (Parm, ZeroConstructor, IsPlainOldData)
 // class AActor*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -45661,7 +45717,7 @@ class AActor* UWieldableItemSetComponent::GetItemFromSlot(class UClass* ItemCate
 
 
 // Function Athena.WieldableItemSetComponent.GetItem
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // int                            Index                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // class AActor*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -45685,7 +45741,7 @@ class AActor* UWieldableItemSetComponent::GetItem(int Index)
 
 
 // Function Athena.WieldableItemSetComponent.ContainsItemOfType
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class UClass*                  ItemType                       (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -45709,7 +45765,7 @@ bool UWieldableItemSetComponent::ContainsItemOfType(class UClass* ItemType)
 
 
 // Function Athena.WieldableItemSetComponent.Contains
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AActor*                  Item                           (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -45733,7 +45789,7 @@ bool UWieldableItemSetComponent::Contains(class AActor* Item)
 
 
 // Function Athena.WieldableItemSetComponent.AddItemToSlot
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  Item                           (Parm, ZeroConstructor, IsPlainOldData)
 // class UClass*                  ItemCategory                   (Parm, ZeroConstructor, IsPlainOldData)
@@ -45886,7 +45942,7 @@ void UWieldablePetAnimationInstance::AssignNewPetHeldBaseIdleAnimation(bool IsId
 
 
 // Function Athena.WieldablePetAnimationInstance.AssignNewPetCurrentRoamingState
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EAthenaAnimationPetRoamingState> WantedRoamingState             (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -45906,7 +45962,7 @@ void UWieldablePetAnimationInstance::AssignNewPetCurrentRoamingState(TEnumAsByte
 
 
 // Function Athena.WieldablePetAnimationInstance.AssignNewPetCurrentHeldState
-// (Native, Public, BlueprintCallable)
+// (RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EAthenaAnimationPetHeldState> WantedHeldState                (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -45950,7 +46006,7 @@ void UWieldableTestFunctions::ChangeItemSize(class AWieldableItem* InWieldable, 
 
 
 // Function Athena.WieldedItemComponent.WieldItem
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TScriptInterface<class UWieldableInterface> Item                           (Parm, ZeroConstructor, IsPlainOldData)
 // bool                           Fast                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
@@ -45977,7 +46033,7 @@ TEnumAsByte<EWieldItemReturnCode> UWieldedItemComponent::WieldItem(const TScript
 
 
 // Function Athena.WieldedItemComponent.UnstashItem
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EStashReason>      Reason                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -45997,7 +46053,7 @@ void UWieldedItemComponent::UnstashItem(TEnumAsByte<EStashReason> Reason)
 
 
 // Function Athena.WieldedItemComponent.StashItem
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EStashReason>      Reason                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -46017,7 +46073,7 @@ void UWieldedItemComponent::StashItem(TEnumAsByte<EStashReason> Reason)
 
 
 // Function Athena.WieldedItemComponent.SlowStashItem
-// (Final, Native, Public, BlueprintCallable)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
 // TEnumAsByte<EStashReason>      Reason                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
@@ -46060,7 +46116,7 @@ void UWieldedItemComponent::Server_WieldRPC(class AActor* Item, int InEpochId)
 
 
 // Function Athena.WieldedItemComponent.OnRep_HeldItem
-// (Final, Native, Private)
+// (Final, RequiredAPI, Native, Private)
 
 void UWieldedItemComponent::OnRep_HeldItem()
 {
@@ -46076,7 +46132,7 @@ void UWieldedItemComponent::OnRep_HeldItem()
 
 
 // Function Athena.WieldedItemComponent.IsItemWielded
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AActor*                  ItemActor                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
@@ -46100,7 +46156,7 @@ bool UWieldedItemComponent::IsItemWielded(class AActor* ItemActor)
 
 
 // Function Athena.WieldedItemComponent.IsItemStashed
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -46121,7 +46177,7 @@ bool UWieldedItemComponent::IsItemStashed()
 
 
 // Function Athena.WieldedItemComponent.GetWieldedItemIfNotStashed
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // TScriptInterface<class UWieldableInterface> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -46142,7 +46198,7 @@ TScriptInterface<class UWieldableInterface> UWieldedItemComponent::GetWieldedIte
 
 
 // Function Athena.WieldedItemComponent.GetWieldedItem
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // TScriptInterface<class UWieldableInterface> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
@@ -46204,7 +46260,7 @@ void UWieldedItemComponent::Client_WieldItemCorrectionRPC(class AActor* Item)
 
 
 // Function Athena.WieldedItemComponent.Client_WieldItem
-// (Net, NetReliable, Native, Event, Public, NetClient)
+// (RequiredAPI, Net, NetReliable, Native, Event, Public, NetClient)
 // Parameters:
 // struct FNetActorPtr            Item                           (Parm)
 // int                            InEpochId                      (Parm, ZeroConstructor, IsPlainOldData)
@@ -46297,15 +46353,19 @@ void ASlidingDoor::ResetDoor()
 
 // Function Athena.SlidingDoor.OpenDoor
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                  Interactor                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
-void ASlidingDoor::OpenDoor()
+void ASlidingDoor::OpenDoor(class AActor* Interactor)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.SlidingDoor.OpenDoor"));
 
 	struct
 	{
+		class AActor*                  Interactor;
 	} params;
 
+	params.Interactor = Interactor;
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -48288,8 +48348,9 @@ bool UStaticMeshMemoryConstraintComponent::GetIsMeshFinishedChange()
 // int                            StreamOutLevelId               (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // int                            StreamInLevelId                (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // TEnumAsByte<ETeleportActionStateAudioMode> TeleportAudioMode              (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<ETeleportActionStateLargeItemMode> TeleportActionStateLargeItemMode (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
-void UTeleportActionStateId::PushCharacterIntoTeleportActionStateWithCustomTeleportLocation(class AActor* Character, const struct FTeleportLocation& TeleportLocation, TEnumAsByte<ETeleportActionStateReason> Reason, TEnumAsByte<ETeleportActionStateFadeType> TeleportFadeType, TEnumAsByte<ETeleportActionStateConditions> TeleportConditions, TEnumAsByte<ETeleportTransformSpace> TeleportSpace, int StreamOutLevelId, int StreamInLevelId, TEnumAsByte<ETeleportActionStateAudioMode> TeleportAudioMode)
+void UTeleportActionStateId::PushCharacterIntoTeleportActionStateWithCustomTeleportLocation(class AActor* Character, const struct FTeleportLocation& TeleportLocation, TEnumAsByte<ETeleportActionStateReason> Reason, TEnumAsByte<ETeleportActionStateFadeType> TeleportFadeType, TEnumAsByte<ETeleportActionStateConditions> TeleportConditions, TEnumAsByte<ETeleportTransformSpace> TeleportSpace, int StreamOutLevelId, int StreamInLevelId, TEnumAsByte<ETeleportActionStateAudioMode> TeleportAudioMode, TEnumAsByte<ETeleportActionStateLargeItemMode> TeleportActionStateLargeItemMode)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.TeleportActionStateId.PushCharacterIntoTeleportActionStateWithCustomTeleportLocation"));
 
@@ -48304,6 +48365,7 @@ void UTeleportActionStateId::PushCharacterIntoTeleportActionStateWithCustomTelep
 		int                            StreamOutLevelId;
 		int                            StreamInLevelId;
 		TEnumAsByte<ETeleportActionStateAudioMode> TeleportAudioMode;
+		TEnumAsByte<ETeleportActionStateLargeItemMode> TeleportActionStateLargeItemMode;
 	} params;
 
 	params.Character = Character;
@@ -48315,6 +48377,7 @@ void UTeleportActionStateId::PushCharacterIntoTeleportActionStateWithCustomTelep
 	params.StreamOutLevelId = StreamOutLevelId;
 	params.StreamInLevelId = StreamInLevelId;
 	params.TeleportAudioMode = TeleportAudioMode;
+	params.TeleportActionStateLargeItemMode = TeleportActionStateLargeItemMode;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);
@@ -48335,8 +48398,9 @@ void UTeleportActionStateId::PushCharacterIntoTeleportActionStateWithCustomTelep
 // bool                           ShouldWaitForLoadout           (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           ShouldWaitForEntitlements      (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 // bool                           CallFinishSpawningOnEnd        (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// TEnumAsByte<ETeleportActionStateLargeItemMode> TeleportActionStateLargeItemMode (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
-void UTeleportActionStateId::PushCharacterIntoTeleportActionState(class AActor* Character, TEnumAsByte<ETeleportActionStateReason> Reason, TEnumAsByte<ETeleportActionStateFadeType> TeleportFadeType, TEnumAsByte<ETeleportActionStateConditions> TeleportConditions, TEnumAsByte<ETeleportTransformSpace> TeleportSpace, int StreamOutLevelId, int StreamInLevelId, TEnumAsByte<ETeleportActionStateAudioMode> TeleportAudioMode, bool ShouldWaitForLoadout, bool ShouldWaitForEntitlements, bool CallFinishSpawningOnEnd)
+void UTeleportActionStateId::PushCharacterIntoTeleportActionState(class AActor* Character, TEnumAsByte<ETeleportActionStateReason> Reason, TEnumAsByte<ETeleportActionStateFadeType> TeleportFadeType, TEnumAsByte<ETeleportActionStateConditions> TeleportConditions, TEnumAsByte<ETeleportTransformSpace> TeleportSpace, int StreamOutLevelId, int StreamInLevelId, TEnumAsByte<ETeleportActionStateAudioMode> TeleportAudioMode, bool ShouldWaitForLoadout, bool ShouldWaitForEntitlements, bool CallFinishSpawningOnEnd, TEnumAsByte<ETeleportActionStateLargeItemMode> TeleportActionStateLargeItemMode)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.TeleportActionStateId.PushCharacterIntoTeleportActionState"));
 
@@ -48353,6 +48417,7 @@ void UTeleportActionStateId::PushCharacterIntoTeleportActionState(class AActor* 
 		bool                           ShouldWaitForLoadout;
 		bool                           ShouldWaitForEntitlements;
 		bool                           CallFinishSpawningOnEnd;
+		TEnumAsByte<ETeleportActionStateLargeItemMode> TeleportActionStateLargeItemMode;
 	} params;
 
 	params.Character = Character;
@@ -48366,6 +48431,7 @@ void UTeleportActionStateId::PushCharacterIntoTeleportActionState(class AActor* 
 	params.ShouldWaitForLoadout = ShouldWaitForLoadout;
 	params.ShouldWaitForEntitlements = ShouldWaitForEntitlements;
 	params.CallFinishSpawningOnEnd = CallFinishSpawningOnEnd;
+	params.TeleportActionStateLargeItemMode = TeleportActionStateLargeItemMode;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);
@@ -48566,6 +48632,26 @@ bool UCharacterInertInterface::ClearInert(TEnumAsByte<ECharacterInertReason> Rea
 	UObject::ProcessEvent(fn, &params);
 
 	return params.ReturnValue;
+}
+
+
+// Function Athena.CollidableCharacterComponent.SetShouldCollideWithOtherCharacters
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           InShouldCollideWithOtherCharacters (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+
+void UCollidableCharacterComponent::SetShouldCollideWithOtherCharacters(bool InShouldCollideWithOtherCharacters)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.CollidableCharacterComponent.SetShouldCollideWithOtherCharacters"));
+
+	struct
+	{
+		bool                           InShouldCollideWithOtherCharacters;
+	} params;
+
+	params.InShouldCollideWithOtherCharacters = InShouldCollideWithOtherCharacters;
+
+	UObject::ProcessEvent(fn, &params);
 }
 
 
@@ -53446,6 +53532,31 @@ bool UItemPickupBlueprintFunctionLibrary::IsActorWieldingLargeItem(class AActor*
 }
 
 
+// Function Athena.ItemPickupBlueprintFunctionLibrary.GetActorsWieldedItemInfo
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                  WieldingActor                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
+// class AItemInfo*               ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class AItemInfo* UItemPickupBlueprintFunctionLibrary::GetActorsWieldedItemInfo(class AActor* WieldingActor)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.ItemPickupBlueprintFunctionLibrary.GetActorsWieldedItemInfo"));
+
+	struct
+	{
+		class AActor*                  WieldingActor;
+		class AItemInfo*               ReturnValue;
+	} params;
+
+	params.WieldingActor = WieldingActor;
+
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
 // Function Athena.ItemPickupBlueprintFunctionLibrary.GetActorsWieldedItem
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -53471,36 +53582,32 @@ class AActor* UItemPickupBlueprintFunctionLibrary::GetActorsWieldedItem(class AA
 }
 
 
-// Function Athena.ReplenishableItemsInterface.ReplenishItem
+// Function Athena.ReplenishableItemsInterface.SpawnItem
 // (Native, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                  InWielder                      (Parm, ZeroConstructor, IsPlainOldData)
-// class AItemInfo*               ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
 
-class AItemInfo* UReplenishableItemsInterface::ReplenishItem(class AActor* InWielder)
+void UReplenishableItemsInterface::SpawnItem(class AActor* InWielder)
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.ReplenishableItemsInterface.ReplenishItem"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.ReplenishableItemsInterface.SpawnItem"));
 
 	struct
 	{
 		class AActor*                  InWielder;
-		class AItemInfo*               ReturnValue;
 	} params;
 
 	params.InWielder = InWielder;
 
 	UObject::ProcessEvent(fn, &params);
-
-	return params.ReturnValue;
 }
 
 
-// Function Athena.ReplenishableItemsInterface.DepleteReplenishableItem
+// Function Athena.ReplenishableItemsInterface.DecrementNumberOfItemsSpawned
 // (Native, Public, BlueprintCallable)
 
-void UReplenishableItemsInterface::DepleteReplenishableItem()
+void UReplenishableItemsInterface::DecrementNumberOfItemsSpawned()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.ReplenishableItemsInterface.DepleteReplenishableItem"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.ReplenishableItemsInterface.DecrementNumberOfItemsSpawned"));
 
 	struct
 	{
@@ -56340,6 +56447,27 @@ void UDockableBaseActionStateId::PushCharacterIntoDockableBaseActionState(const 
 }
 
 
+// Function Athena.MountpointInterface.TryUnmount
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+bool UMountpointInterface::TryUnmount()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.MountpointInterface.TryUnmount"));
+
+	struct
+	{
+		bool                           ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
 // Function Athena.MountpointInterface.TryMountActor
 // (Native, Public, BlueprintCallable)
 // Parameters:
@@ -58327,6 +58455,194 @@ TArray<struct FAtmosphericPressureZoneParametersAndLocation> UAtmosphericPressur
 }
 
 
+// Function Athena.CloudDomeInterface.UpdateCloudMeshes
+// (Native, Public, HasOutParms, BlueprintCallable)
+// Parameters:
+// struct FCloudVisualParameters  CloudVisualParametersIn        (Parm, OutParm)
+// TArray<struct FTiledCloudProperties> CloudTileIn                    (Parm, OutParm, ZeroConstructor)
+// TArray<struct FRenderedCloudProperties> RenderedCloudsIn               (Parm, OutParm, ZeroConstructor)
+// TArray<struct FCloudTypeDefinition> CloudMeshesIn                  (Parm, OutParm, ZeroConstructor)
+// TArray<struct FCloudTypeNormalizedWeight> NormalizedCloudWeightsIn       (Parm, OutParm, ZeroConstructor)
+
+void UCloudDomeInterface::UpdateCloudMeshes(struct FCloudVisualParameters* CloudVisualParametersIn, TArray<struct FTiledCloudProperties>* CloudTileIn, TArray<struct FRenderedCloudProperties>* RenderedCloudsIn, TArray<struct FCloudTypeDefinition>* CloudMeshesIn, TArray<struct FCloudTypeNormalizedWeight>* NormalizedCloudWeightsIn)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.CloudDomeInterface.UpdateCloudMeshes"));
+
+	struct
+	{
+		struct FCloudVisualParameters  CloudVisualParametersIn;
+		TArray<struct FTiledCloudProperties> CloudTileIn;
+		TArray<struct FRenderedCloudProperties> RenderedCloudsIn;
+		TArray<struct FCloudTypeDefinition> CloudMeshesIn;
+		TArray<struct FCloudTypeNormalizedWeight> NormalizedCloudWeightsIn;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	if (CloudVisualParametersIn != nullptr)
+		*CloudVisualParametersIn = params.CloudVisualParametersIn;
+	if (CloudTileIn != nullptr)
+		*CloudTileIn = params.CloudTileIn;
+	if (RenderedCloudsIn != nullptr)
+		*RenderedCloudsIn = params.RenderedCloudsIn;
+	if (CloudMeshesIn != nullptr)
+		*CloudMeshesIn = params.CloudMeshesIn;
+	if (NormalizedCloudWeightsIn != nullptr)
+		*NormalizedCloudWeightsIn = params.NormalizedCloudWeightsIn;
+}
+
+
+// Function Athena.CloudDomeInterface.GetCloudDomePosition
+// (Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector                 ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+struct FVector UCloudDomeInterface::GetCloudDomePosition()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.CloudDomeInterface.GetCloudDomePosition"));
+
+	struct
+	{
+		struct FVector                 ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Athena.CloudDomeServiceInterface.UnregisterCloudDomeFromService
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// TScriptInterface<class UCloudDomeInterface> CloudDome                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void UCloudDomeServiceInterface::UnregisterCloudDomeFromService(const TScriptInterface<class UCloudDomeInterface>& CloudDome)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.CloudDomeServiceInterface.UnregisterCloudDomeFromService"));
+
+	struct
+	{
+		TScriptInterface<class UCloudDomeInterface> CloudDome;
+	} params;
+
+	params.CloudDome = CloudDome;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Athena.CloudDomeServiceInterface.RegisterCloudDomeWithService
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// TScriptInterface<class UCloudDomeInterface> CloudDome                      (Parm, ZeroConstructor, IsPlainOldData)
+
+void UCloudDomeServiceInterface::RegisterCloudDomeWithService(const TScriptInterface<class UCloudDomeInterface>& CloudDome)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.CloudDomeServiceInterface.RegisterCloudDomeWithService"));
+
+	struct
+	{
+		TScriptInterface<class UCloudDomeInterface> CloudDome;
+	} params;
+
+	params.CloudDome = CloudDome;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Athena.CloudDomeServiceInterface.GetNumberOfCloudDomes
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// int                            ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+int UCloudDomeServiceInterface::GetNumberOfCloudDomes()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.CloudDomeServiceInterface.GetNumberOfCloudDomes"));
+
+	struct
+	{
+		int                            ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Athena.CloudDomeServiceInterface.GetCloudDome
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// int                            CloudDomeIndex                 (Parm, ZeroConstructor, IsPlainOldData)
+// TScriptInterface<class UCloudDomeInterface> ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+TScriptInterface<class UCloudDomeInterface> UCloudDomeServiceInterface::GetCloudDome(int CloudDomeIndex)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.CloudDomeServiceInterface.GetCloudDome"));
+
+	struct
+	{
+		int                            CloudDomeIndex;
+		TScriptInterface<class UCloudDomeInterface> ReturnValue;
+	} params;
+
+	params.CloudDomeIndex = CloudDomeIndex;
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Athena.CloudDomeServiceInterface.GetActualCloudDome
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// int                            CloudDomeIndex                 (Parm, ZeroConstructor, IsPlainOldData)
+// class ACloudDome*              ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class ACloudDome* UCloudDomeServiceInterface::GetActualCloudDome(int CloudDomeIndex)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.CloudDomeServiceInterface.GetActualCloudDome"));
+
+	struct
+	{
+		int                            CloudDomeIndex;
+		class ACloudDome*              ReturnValue;
+	} params;
+
+	params.CloudDomeIndex = CloudDomeIndex;
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Athena.CloudSystem.SetGlobalAtmosphericPressure
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                          NewAtmosphericPressure         (Parm, ZeroConstructor, IsPlainOldData)
+
+void ACloudSystem::SetGlobalAtmosphericPressure(float NewAtmosphericPressure)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.CloudSystem.SetGlobalAtmosphericPressure"));
+
+	struct
+	{
+		float                          NewAtmosphericPressure;
+	} params;
+
+	params.NewAtmosphericPressure = NewAtmosphericPressure;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function Athena.GameplayEventSignal.UpdateMaterialVisibility
 // (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -59704,6 +60020,22 @@ void UItemProxyShipTrackerComponent::OnCurrentShipDestroyed(class AActor* Destro
 	} params;
 
 	params.DestroyedShip = DestroyedShip;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Athena.DroppableTankardStaticSimpleBootyItemProxy.OnRep_RemainingVolume
+// (Final, Native, Private)
+
+void ADroppableTankardStaticSimpleBootyItemProxy::OnRep_RemainingVolume()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.DroppableTankardStaticSimpleBootyItemProxy.OnRep_RemainingVolume"));
+
+	struct
+	{
+	} params;
+
 
 	UObject::ProcessEvent(fn, &params);
 }
@@ -63854,6 +64186,48 @@ void AObstacleCourse::OnBeginOverlap(class AActor* Other, class UPrimitiveCompon
 }
 
 
+// Function Athena.ObstacleCourse.GetLastPlayerToCompleteCourse
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class AActor*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class AActor* AObstacleCourse::GetLastPlayerToCompleteCourse()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.ObstacleCourse.GetLastPlayerToCompleteCourse"));
+
+	struct
+	{
+		class AActor*                  ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
+// Function Athena.ObstacleCourse.GetCurrentPlayer
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class AActor*                  ReturnValue                    (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData)
+
+class AActor* AObstacleCourse::GetCurrentPlayer()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.ObstacleCourse.GetCurrentPlayer"));
+
+	struct
+	{
+		class AActor*                  ReturnValue;
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+
+	return params.ReturnValue;
+}
+
+
 // Function Athena.ClothingDependentObstacleCourse.ValidateClothing
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -64688,12 +65062,60 @@ float UMountedWeaponInterface::GetPitch()
 }
 
 
+// Function Athena.PollyProxy.SetOutOfCave
+// (Native, Public, BlueprintCallable)
+
+void APollyProxy::SetOutOfCave()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.PollyProxy.SetOutOfCave"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Athena.PollyProxy.SetInCave
+// (Native, Public, BlueprintCallable)
+
+void APollyProxy::SetInCave()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.PollyProxy.SetInCave"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
 // Function Athena.PollyProxy.ResetFlight
 // (Native, Public, BlueprintCallable)
 
 void APollyProxy::ResetFlight()
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.PollyProxy.ResetFlight"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function Athena.PollyProxy.OnRep_IsInCave
+// (Final, Native, Protected)
+
+void APollyProxy::OnRep_IsInCave()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.PollyProxy.OnRep_IsInCave"));
 
 	struct
 	{
@@ -65249,12 +65671,12 @@ void ATunnelOfTheDamnedBase::OnActorEnteredTunnelOverlapZone(class AActor* Actor
 }
 
 
-// Function Athena.InvasionDepartureTunnelOfTheDamned.OnRep_AllowTunnelCancellation
+// Function Athena.DepartureTunnelOfTheDamned.OnRep_AllowTunnelVoyageVoting
 // (Final, Native, Private)
 
-void AInvasionDepartureTunnelOfTheDamned::OnRep_AllowTunnelCancellation()
+void ADepartureTunnelOfTheDamned::OnRep_AllowTunnelVoyageVoting()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.InvasionDepartureTunnelOfTheDamned.OnRep_AllowTunnelCancellation"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.DepartureTunnelOfTheDamned.OnRep_AllowTunnelVoyageVoting"));
 
 	struct
 	{
@@ -70708,15 +71130,19 @@ void USeaFortAddOnComponent::OnRep_IsCandleVfxActive()
 
 // Function Athena.SeaFortAddOnComponent.OnCellLockOpened
 // (Final, Native, Private)
+// Parameters:
+// class AActor*                  Interactor                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData)
 
-void USeaFortAddOnComponent::OnCellLockOpened()
+void USeaFortAddOnComponent::OnCellLockOpened(class AActor* Interactor)
 {
 	static auto fn = UObject::FindObject<UFunction>(_xor_("Function Athena.SeaFortAddOnComponent.OnCellLockOpened"));
 
 	struct
 	{
+		class AActor*                  Interactor;
 	} params;
 
+	params.Interactor = Interactor;
 
 	UObject::ProcessEvent(fn, &params);
 }

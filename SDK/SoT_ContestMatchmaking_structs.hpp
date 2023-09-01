@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -159,14 +159,15 @@ struct FServerContendedModel
 };
 
 // ScriptStruct ContestMatchmaking.GameMainEventTypeModel
-// 0x0028
+// 0x0038
 struct FGameMainEventTypeModel
 {
 	class FString                                      EventName;                                                // 0x0000(0x0010) (ZeroConstructor)
 	TArray<class FString>                              ExcludedEvents;                                           // 0x0010(0x0010) (ZeroConstructor)
-	TEnumAsByte<EGameEventAvailabilityStatus>          Status;                                                   // 0x0020(0x0001) (ZeroConstructor, IsPlainOldData)
-	TEnumAsByte<EGameEventShipSizeLimit>               ShipSizeLimit;                                            // 0x0021(0x0001) (ZeroConstructor, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x6];                                       // 0x0022(0x0006) MISSED OFFSET
+	TArray<struct FGuid>                               ExcludedCrewIds;                                          // 0x0020(0x0010) (ZeroConstructor)
+	TEnumAsByte<EGameEventAvailabilityStatus>          Status;                                                   // 0x0030(0x0001) (ZeroConstructor, IsPlainOldData)
+	TEnumAsByte<EGameEventShipSizeLimit>               ShipSizeLimit;                                            // 0x0031(0x0001) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x6];                                       // 0x0032(0x0006) MISSED OFFSET
 };
 
 // ScriptStruct ContestMatchmaking.GameSubEventTypeModel

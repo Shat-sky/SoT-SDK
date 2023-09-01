@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -16,7 +16,7 @@ namespace SDK
 
 // BlueprintGeneratedClass BaitItemCategory.BaitItemCategory_C
 // 0x0000 (0x0080 - 0x0080)
-class UBaitItemCategory_C : public UConsumableItemCategory
+class UBaitItemCategory_C : public UBaitItemCategory
 {
 public:
 

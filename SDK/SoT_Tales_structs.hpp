@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -8,14 +8,16 @@
 
 #include "SoT_Basic.hpp"
 #include "SoT_Tales_enums.hpp"
-#include "SoT_MerchantContracts_classes.hpp"
 #include "SoT_CoreUObject_classes.hpp"
 #include "SoT_Engine_classes.hpp"
 #include "SoT_PrioritisedPrompts_classes.hpp"
+#include "SoT_MerchantContracts_classes.hpp"
 #include "SoT_Athena_classes.hpp"
 #include "SoT_AthenaEngine_classes.hpp"
 #include "SoT_AIModule_classes.hpp"
 #include "SoT_EmissaryFramework_classes.hpp"
+#include "SoT_SeasonProgressionUI_classes.hpp"
+#include "SoT_ActionStateMachine_classes.hpp"
 #include "SoT_Maths_classes.hpp"
 #include "SoT_TaleMaps_classes.hpp"
 #include "SoT_ConditionalFramework_classes.hpp"
@@ -553,6 +555,20 @@ struct FQuestVariableItemDescTypeArray : public FQuestVariable
 struct FQuestVariablePageLayout : public FQuestVariable
 {
 
+};
+
+// ScriptStruct Tales.EndOnScreenParticlesRpc
+// 0x0008 (0x0018 - 0x0010)
+struct FEndOnScreenParticlesRpc : public FBoxedRpc
+{
+	class UParticleSystem*                             Particles;                                                // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
+};
+
+// ScriptStruct Tales.TriggerOnScreenParticlesRpc
+// 0x0008 (0x0018 - 0x0010)
+struct FTriggerOnScreenParticlesRpc : public FBoxedRpc
+{
+	class UParticleSystem*                             Particles;                                                // 0x0010(0x0008) (ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct Tales.QuestVariableTexture

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -669,6 +669,22 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestImportFrame"));
+		return ptr;
+	}
+
+};
+
+
+// Class Tales.TaleQuestSeasonNotificationDataAsset
+// 0x00A0 (0x00C8 - 0x0028)
+class UTaleQuestSeasonNotificationDataAsset : public UDataAsset
+{
+public:
+	struct FSeasonTextPopupAsset                       SeasonTextPopupAsset;                                     // 0x0028(0x00A0) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestSeasonNotificationDataAsset"));
 		return ptr;
 	}
 
@@ -2326,12 +2342,13 @@ public:
 
 
 // Class Tales.TaleQuestSelectEntryFromArrayStep
-// 0x0060 (0x00F8 - 0x0098)
+// 0x0090 (0x0128 - 0x0098)
 class UTaleQuestSelectEntryFromArrayStep : public UTaleQuestStep
 {
 public:
 	struct FQuestVariableArray                         InputArray;                                               // 0x0098(0x0030) (Transient)
 	struct FQuestVariable                              OutputEntry;                                              // 0x00C8(0x0030) (Transient)
+	struct FQuestVariableInt                           OutputEntryIndex;                                         // 0x00F8(0x0030) (Transient)
 
 	static UClass* StaticClass()
 	{
@@ -3991,6 +4008,23 @@ public:
 };
 
 
+// Class Tales.TaleQuestActionStateMachineFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestActionStateMachineFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestActionStateMachineFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void IsActionStateActive(const TScriptInterface<class UActionStateMachineInterface>& ActionStateMachineInterface, TEnumAsByte<EActionStateMachineTrackId> ActionStateMachineTrackId, class UClass* ActionStateId, bool* OutIsActionStateActive);
+};
+
+
 // Class Tales.TaleQuestActorFunctionLibrary
 // 0x0000 (0x0180 - 0x0180)
 class UTaleQuestActorFunctionLibrary : public UTaleQuestFunctionStepLibrary
@@ -4027,6 +4061,7 @@ public:
 
 	void PushSetNextMontageSectionCommand(class AClientCommandHandler* CommandHandler, class AActor* TargetActor, class UAnimMontage* Montage, const struct FName& FromSectionName, const struct FName& ToSectionName);
 	float PushJumpToMontageSectionCommand(class AClientCommandHandler* CommandHandler, class AActor* TargetActor, class UAnimMontage* Montage, const struct FName& SectionName);
+	float GetMontageSectionLength(class UAnimMontage* Montage, const struct FName& SectionName);
 };
 
 
@@ -4044,6 +4079,7 @@ public:
 
 
 	static struct FPossessableSequence MakePosseableSequence(class AActor* ActorToPossess, const class FString& TrackNameToPossess);
+	float GetPlayLength(class UAnimSequenceBase* Anim);
 };
 
 
@@ -4060,6 +4096,10 @@ public:
 	}
 
 
+	void StopMusic(const TScriptInterface<class UMusicZoneInterface>& MusicZone);
+	void StartMusic(const TScriptInterface<class UMusicZoneInterface>& MusicZone);
+	void SetEmitterSwitch(const TScriptInterface<class UEmitterManipulatorInterface>& MusicZone, const struct FName& SwitchGroup, const struct FName& Value);
+	void SetEmitterRTPC(const TScriptInterface<class UEmitterManipulatorInterface>& MusicZone, const struct FName& RTPC, float Value);
 	void PlayOneShot(const TScriptInterface<class UMusicZoneInterface>& MusicZone, int OneShotIndex);
 };
 
@@ -4211,6 +4251,23 @@ public:
 
 
 	static void FireEventCutsceneTargetReady(class AActor* TargetRetrievalActor, class AActor* TargetActor);
+};
+
+
+// Class Tales.TaleQuestDamageableInterfaceFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestDamageableInterfaceFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestDamageableInterfaceFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void SetDefaultVulnerability(const TScriptInterface<class UDamageableVulnerabilityInterface>& DamageableVulnerabilityInterface, float DefaultVulnerability);
 };
 
 
@@ -4440,6 +4497,23 @@ public:
 };
 
 
+// Class Tales.TaleQuestNotificationFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestNotificationFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestNotificationFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void FireSeasonNotification(class UTaleQuestSeasonNotificationDataAsset* InTaleQuestSeasonNotificationDataAsset);
+};
+
+
 // Class Tales.TaleQuestNPCHideFunctionLibrary
 // 0x0000 (0x0180 - 0x0180)
 class UTaleQuestNPCHideFunctionLibrary : public UTaleQuestFunctionStepLibrary
@@ -4471,7 +4545,8 @@ public:
 	}
 
 
-	void OfferItemAndWaitForPickup(const TScriptInterface<class UOfferingNPCInterface>& OfferingNPC, class UClass* ItemToShow, class UClass* ItemToOffer, const struct FText& PickupItemTooltip, const struct FText& CannotPickupItemTooltip);
+	void StopOfferItem(const TScriptInterface<class UOfferingNPCInterface>& OfferingNPC);
+	void OfferItemAndWaitForPickup(const TScriptInterface<class UOfferingNPCInterface>& OfferingNPC, class UClass* ItemToShow, const struct FText& PickupItemTooltip, const struct FText& CannotPickupItemTooltip, class AActor** InteractingActor);
 };
 
 
@@ -4578,6 +4653,24 @@ public:
 };
 
 
+// Class Tales.TaleQuestRandomFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestRandomFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestRandomFunctionLibrary"));
+		return ptr;
+	}
+
+
+	struct FGrabBag InitialiseGrabBag(int Min, int Max);
+	int GetGrabBagElement(struct FGrabBag* GrabBag);
+};
+
+
 // Class Tales.TaleQuestShantyFunctionLibrary
 // 0x0000 (0x0180 - 0x0180)
 class UTaleQuestShantyFunctionLibrary : public UTaleQuestFunctionStepLibrary
@@ -4610,6 +4703,43 @@ public:
 
 
 	void SpawnShipFromClass(TAssetPtr<class UClass> ShipClassToSpawn, const struct FTransform& ShipSpawnTransform, class UClass* ShipSize, class UClass* ShipType, class UClass* ShipCategory, class AShip** SpawnedShip);
+};
+
+
+// Class Tales.TaleQuestStatFunctionLibrary
+// 0x0008 (0x0188 - 0x0180)
+class UTaleQuestStatFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+	struct FPlayerStat                                 Stat;                                                     // 0x0180(0x0004) (Edit)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x0184(0x0004) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestStatFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void FireStatToPlayer(const TScriptInterface<class UVoyageParticipantInterface>& PlayerToFireStatOn);
+};
+
+
+// Class Tales.TaleQuestStatusEffectsFunctionLibrary
+// 0x0000 (0x0180 - 0x0180)
+class UTaleQuestStatusEffectsFunctionLibrary : public UTaleQuestFunctionStepLibrary
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class Tales.TaleQuestStatusEffectsFunctionLibrary"));
+		return ptr;
+	}
+
+
+	void TriggerOnScreenParticles(const TScriptInterface<class UVoyageParticipantInterface>& Participant, class UParticleSystem* ParticleSystem);
+	void EndOnScreenParticles(const TScriptInterface<class UVoyageParticipantInterface>& Participant, class UParticleSystem* ParticleSystem, float Delay);
 };
 
 
@@ -4684,6 +4814,7 @@ public:
 
 
 	struct FVector ToVector(const struct FTransform& InTransform);
+	struct FRotator ToRotator(const struct FTransform& InTransform);
 	static struct FTransform FromVector(const struct FVector& InTranslation);
 	static struct FTransform FromOrientedPoint(const struct FOrientedPoint& InOrientedPoint);
 };
@@ -4703,6 +4834,7 @@ public:
 
 
 	static bool IsValid(class UObject* Object);
+	class UObject* CastTo(class UObject* Object, class UClass* CastToClass);
 };
 
 
@@ -4785,13 +4917,14 @@ public:
 
 
 // Class Tales.TaleQuestSelectEntryFromArrayStepDesc
-// 0x0068 (0x00E8 - 0x0080)
+// 0x0098 (0x0118 - 0x0080)
 class UTaleQuestSelectEntryFromArrayStepDesc : public UTaleQuestStepDesc
 {
 public:
 	class UTaleQuestArrayEntrySelectionStrategy*       SelectionStrategy;                                        // 0x0080(0x0008) (Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData)
 	struct FQuestVariableArray                         InputArray;                                               // 0x0088(0x0030) (Edit)
 	struct FQuestVariableAny                           OutputEntry;                                              // 0x00B8(0x0030) (Edit)
+	struct FQuestVariableInt                           OutputEntryIndex;                                         // 0x00E8(0x0030) (Edit)
 
 	static UClass* StaticClass()
 	{

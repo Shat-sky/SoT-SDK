@@ -1,4 +1,4 @@
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -11,6 +11,147 @@ namespace SDK
 //---------------------------------------------------------------------------
 //Functions
 //---------------------------------------------------------------------------
+
+// Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.ApplyRenderTargetOutputsToMIDs
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_GuildMastPlaque_C::ApplyRenderTargetOutputsToMIDs()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.ApplyRenderTargetOutputsToMIDs"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.UpdateBevelIcon
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCanvas*                 Canvas                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void ABP_GuildMastPlaque_C::UpdateBevelIcon(class UCanvas* Canvas)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.UpdateBevelIcon"));
+
+	struct
+	{
+		class UCanvas*                 Canvas;
+	} params;
+
+	params.Canvas = Canvas;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.UpdateBevelRank
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCanvas*                 Canvas                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void ABP_GuildMastPlaque_C::UpdateBevelRank(class UCanvas* Canvas)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.UpdateBevelRank"));
+
+	struct
+	{
+		class UCanvas*                 Canvas;
+	} params;
+
+	params.Canvas = Canvas;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.UpdateBevelText
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCanvas*                 Canvas                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void ABP_GuildMastPlaque_C::UpdateBevelText(class UCanvas* Canvas)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.UpdateBevelText"));
+
+	struct
+	{
+		class UCanvas*                 Canvas;
+	} params;
+
+	params.Canvas = Canvas;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.UpdateIcon
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCanvas*                 Canvas                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void ABP_GuildMastPlaque_C::UpdateIcon(class UCanvas* Canvas)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.UpdateIcon"));
+
+	struct
+	{
+		class UCanvas*                 Canvas;
+	} params;
+
+	params.Canvas = Canvas;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.UpdateRank
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCanvas*                 Canvas                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void ABP_GuildMastPlaque_C::UpdateRank(class UCanvas* Canvas)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.UpdateRank"));
+
+	struct
+	{
+		class UCanvas*                 Canvas;
+	} params;
+
+	params.Canvas = Canvas;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.GetTextScale
+// (Public, HasOutParms, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// struct FVector2D               FontSizeInScreenSpace          (Parm, ZeroConstructor, IsPlainOldData)
+// float                          AdjustedFontScalar             (Parm, OutParm, ZeroConstructor, IsPlainOldData)
+
+void ABP_GuildMastPlaque_C::GetTextScale(const struct FVector2D& FontSizeInScreenSpace, float* AdjustedFontScalar)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.GetTextScale"));
+
+	struct
+	{
+		struct FVector2D               FontSizeInScreenSpace;
+		float                          AdjustedFontScalar;
+	} params;
+
+	params.FontSizeInScreenSpace = FontSizeInScreenSpace;
+
+	UObject::ProcessEvent(fn, &params);
+
+	if (AdjustedFontScalar != nullptr)
+		*AdjustedFontScalar = params.AdjustedFontScalar;
+}
+
 
 // Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.UpdateBevelMaterials
 // (Public, BlueprintCallable, BlueprintEvent)
@@ -38,14 +179,14 @@ void ABP_GuildMastPlaque_C::UpdateBevelMaterials(class UCanvas* Canvas, int Widt
 }
 
 
-// Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.UpdateTextAndIcons
+// Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.UpdateText
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UCanvas*                 Canvas                         (Parm, ZeroConstructor, IsPlainOldData)
 
-void ABP_GuildMastPlaque_C::UpdateTextAndIcons(class UCanvas* Canvas)
+void ABP_GuildMastPlaque_C::UpdateText(class UCanvas* Canvas)
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.UpdateTextAndIcons"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.UpdateText"));
 
 	struct
 	{
@@ -125,12 +266,12 @@ void ABP_GuildMastPlaque_C::AssignMedallionColour(const struct FLinearColor& Med
 }
 
 
-// Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.CreateMIDs
+// Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.Create_MIDs
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_GuildMastPlaque_C::CreateMIDs()
+void ABP_GuildMastPlaque_C::Create_MIDs()
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.CreateMIDs"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.Create_MIDs"));
 
 	struct
 	{
@@ -199,16 +340,32 @@ void ABP_GuildMastPlaque_C::OnCanvasUpdate_Text(class UCanvas* Canvas, int Width
 }
 
 
-// Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.OnCanvasUpdate_Bevel
+// Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.RefreshGuildPlaqueRender
+// (Event, Public, BlueprintEvent)
+
+void ABP_GuildMastPlaque_C::RefreshGuildPlaqueRender()
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.RefreshGuildPlaqueRender"));
+
+	struct
+	{
+	} params;
+
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.OnCanvasUpdate_Rank
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UCanvas*                 Canvas                         (Parm, ZeroConstructor, IsPlainOldData)
 // int                            Width                          (Parm, ZeroConstructor, IsPlainOldData)
 // int                            Height                         (Parm, ZeroConstructor, IsPlainOldData)
 
-void ABP_GuildMastPlaque_C::OnCanvasUpdate_Bevel(class UCanvas* Canvas, int Width, int Height)
+void ABP_GuildMastPlaque_C::OnCanvasUpdate_Rank(class UCanvas* Canvas, int Width, int Height)
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.OnCanvasUpdate_Bevel"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.OnCanvasUpdate_Rank"));
 
 	struct
 	{
@@ -225,17 +382,105 @@ void ABP_GuildMastPlaque_C::OnCanvasUpdate_Bevel(class UCanvas* Canvas, int Widt
 }
 
 
-// Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.RefreshGuildPlaqueRender
-// (Event, Public, BlueprintEvent)
+// Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.OnCanvasUpdate_Icon
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCanvas*                 Canvas                         (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Width                          (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Height                         (Parm, ZeroConstructor, IsPlainOldData)
 
-void ABP_GuildMastPlaque_C::RefreshGuildPlaqueRender()
+void ABP_GuildMastPlaque_C::OnCanvasUpdate_Icon(class UCanvas* Canvas, int Width, int Height)
 {
-	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.RefreshGuildPlaqueRender"));
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.OnCanvasUpdate_Icon"));
 
 	struct
 	{
+		class UCanvas*                 Canvas;
+		int                            Width;
+		int                            Height;
 	} params;
 
+	params.Canvas = Canvas;
+	params.Width = Width;
+	params.Height = Height;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.OnCanvasUpdate_Text_Bevel
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCanvas*                 Canvas                         (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Width                          (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Height                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void ABP_GuildMastPlaque_C::OnCanvasUpdate_Text_Bevel(class UCanvas* Canvas, int Width, int Height)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.OnCanvasUpdate_Text_Bevel"));
+
+	struct
+	{
+		class UCanvas*                 Canvas;
+		int                            Width;
+		int                            Height;
+	} params;
+
+	params.Canvas = Canvas;
+	params.Width = Width;
+	params.Height = Height;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.OnCanvasUpdate_Rank_Bevel
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCanvas*                 Canvas                         (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Width                          (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Height                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void ABP_GuildMastPlaque_C::OnCanvasUpdate_Rank_Bevel(class UCanvas* Canvas, int Width, int Height)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.OnCanvasUpdate_Rank_Bevel"));
+
+	struct
+	{
+		class UCanvas*                 Canvas;
+		int                            Width;
+		int                            Height;
+	} params;
+
+	params.Canvas = Canvas;
+	params.Width = Width;
+	params.Height = Height;
+
+	UObject::ProcessEvent(fn, &params);
+}
+
+
+// Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.OnCanvasUpdate_Icon_Bevel
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UCanvas*                 Canvas                         (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Width                          (Parm, ZeroConstructor, IsPlainOldData)
+// int                            Height                         (Parm, ZeroConstructor, IsPlainOldData)
+
+void ABP_GuildMastPlaque_C::OnCanvasUpdate_Icon_Bevel(class UCanvas* Canvas, int Width, int Height)
+{
+	static auto fn = UObject::FindObject<UFunction>(_xor_("Function BP_GuildMastPlaque.BP_GuildMastPlaque_C.OnCanvasUpdate_Icon_Bevel"));
+
+	struct
+	{
+		class UCanvas*                 Canvas;
+		int                            Width;
+		int                            Height;
+	} params;
+
+	params.Canvas = Canvas;
+	params.Width = Width;
+	params.Height = Height;
 
 	UObject::ProcessEvent(fn, &params);
 }

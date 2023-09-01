@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -108,11 +108,11 @@ public:
 
 
 // Class BreakableActorFramework.BreakableActorItemSpawnComponent
-// 0x0080 (0x04C0 - 0x0440)
+// 0x0080 (0x04F0 - 0x0470)
 class UBreakableActorItemSpawnComponent : public UItemSpawnComponent
 {
 public:
-	unsigned char                                      UnknownData00[0x80];                                      // 0x0440(0x0080) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x80];                                      // 0x0470(0x0080) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

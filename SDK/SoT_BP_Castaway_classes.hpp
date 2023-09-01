@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -15,14 +15,15 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // BlueprintGeneratedClass BP_Castaway.BP_Castaway_C
-// 0x0028 (0x06F8 - 0x06D0)
+// 0x0030 (0x0720 - 0x06F0)
 class ABP_Castaway_C : public ABP_Orderofsouls_TallTales_C
 {
 public:
-	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x06D0(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
-	class UActorPhasingComponent*                      ActorPhasing;                                             // 0x06D8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	class UAnimNotifyWwiseEmitterComponent*            AnimNotifyWwiseEmitter_1;                                 // 0x06E0(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
-	TArray<class UWwiseEvent*>                         AudioEvents;                                              // 0x06E8(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame                    UberGraphFrame;                                           // 0x06F0(0x0008) (ZeroConstructor, Transient, DuplicateTransient)
+	class UCameraComponent*                            NPCDialogCamera;                                          // 0x06F8(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UActorPhasingComponent*                      ActorPhasing;                                             // 0x0700(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	class UAnimNotifyWwiseEmitterComponent*            AnimNotifyWwiseEmitter_1;                                 // 0x0708(0x0008) (BlueprintVisible, ZeroConstructor, IsPlainOldData)
+	TArray<class UWwiseEvent*>                         AudioEvents;                                              // 0x0710(0x0010) (Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{
@@ -31,6 +32,7 @@ public:
 	}
 
 
+	class UCameraComponent* GetNPCDialogCinematicCameraComponent();
 	void UserConstructionScript();
 	void TriggerAudioEvent(class UWwiseEvent* AudioEvent);
 	void StopCurrentAudioEvent();

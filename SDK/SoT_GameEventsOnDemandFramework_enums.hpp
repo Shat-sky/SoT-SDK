@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -30,7 +30,8 @@ enum class EAvailabilityState : uint8_t
 	EAvailabilityState__Unavailable_CrewLimitReached = 3,
 	EAvailabilityState__Unavailable_Cooldown = 4,
 	EAvailabilityState__Unavailable_ProgressedPastLimit = 5,
-	EAvailabilityState__EAvailabilityState_MAX = 6
+	EAvailabilityState__Unavailable_Invalid = 6,
+	EAvailabilityState__EAvailabilityState_MAX = 7
 };
 
 

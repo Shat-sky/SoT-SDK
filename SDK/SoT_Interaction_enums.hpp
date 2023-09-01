@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -18,7 +18,8 @@ enum class EInteractionBlockReason : uint8_t
 	EInteractionBlockReason__None  = 0,
 	EInteractionBlockReason__Radial = 1,
 	EInteractionBlockReason__Other = 2,
-	EInteractionBlockReason__EInteractionBlockReason_MAX = 3
+	EInteractionBlockReason__NPCShopInteraction = 3,
+	EInteractionBlockReason__EInteractionBlockReason_MAX = 4
 };
 
 

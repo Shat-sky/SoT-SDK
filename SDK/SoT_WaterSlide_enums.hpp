@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -29,6 +29,15 @@ enum class EZiplineAttachPointConfig : uint8_t
 	EZiplineAttachPointConfig__AttachPointAtEnd = 2,
 	EZiplineAttachPointConfig__AttachPointAtStartAndEnd = 3,
 	EZiplineAttachPointConfig__EZiplineAttachPointConfig_MAX = 4
+};
+
+
+// Enum WaterSlide.EZiplineInitialSwingDirection
+enum class EZiplineInitialSwingDirection : uint8_t
+{
+	EZiplineInitialSwingDirection__Right = 0,
+	EZiplineInitialSwingDirection__Left = 1,
+	EZiplineInitialSwingDirection__EZiplineInitialSwingDirection_MAX = 2
 };
 
 

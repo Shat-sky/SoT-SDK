@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -18,7 +18,7 @@ namespace SDK
 //---------------------------------------------------------------------------
 
 // ScriptStruct AIGoals.BestActionSpotSelectionCriteria
-// 0x0024
+// 0x002C
 struct FBestActionSpotSelectionCriteria
 {
 	bool                                               PreferActionSpotsRelativeToTargetForwardFacingDirection;  // 0x0000(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
@@ -30,10 +30,13 @@ struct FBestActionSpotSelectionCriteria
 	bool                                               PreferStayingAtCurrentSpotOverMovingToNewSpot;            // 0x0014(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData01[0x3];                                       // 0x0015(0x0003) MISSED OFFSET
 	float                                              StayingPreferenceDistance;                                // 0x0018(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
-	bool                                               ShouldAlwaysRefreshWhileMoving;                           // 0x001C(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
-	bool                                               ShouldRefreshAfterStayingForTooLong;                      // 0x001D(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	bool                                               ShouldAlwaysRefreshWhileOwnerMoving;                      // 0x001C(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	bool                                               ShouldRefreshAfterTargetMovesBeyondThreshold;             // 0x001D(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
 	unsigned char                                      UnknownData02[0x2];                                       // 0x001E(0x0002) MISSED OFFSET
-	float                                              RefreshTimeInSeconds;                                     // 0x0020(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	float                                              TargetMovementRefreshThresholdDistance;                   // 0x0020(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
+	bool                                               ShouldRefreshAfterStayingForTooLong;                      // 0x0024(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData03[0x3];                                       // 0x0025(0x0003) MISSED OFFSET
+	float                                              RefreshTimeInSeconds;                                     // 0x0028(0x0004) (Edit, ZeroConstructor, IsPlainOldData)
 };
 
 // ScriptStruct AIGoals.HasAllActionContextTagsCondition

@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -48,16 +48,18 @@ public:
 
 
 // Class GameEventsOnDemand.GameEventsOnDemandLoserTunnelService
-// 0x0060 (0x0088 - 0x0028)
-class UGameEventsOnDemandLoserTunnelService : public UObject
+// 0x0140 (0x0508 - 0x03C8)
+class AGameEventsOnDemandLoserTunnelService : public AActor
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0028(0x0008) MISSED OFFSET
-	class UWorld*                                      World;                                                    // 0x0030(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	class UVoyageDescDataAsset*                        LoserTunnelVoyageDescDataAsset;                           // 0x0038(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x20];                                      // 0x0040(0x0020) MISSED OFFSET
-	TArray<struct FGuid>                               TrackedCrews;                                             // 0x0060(0x0010) (ZeroConstructor)
-	unsigned char                                      UnknownData02[0x18];                                      // 0x0070(0x0018) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x8];                                       // 0x03C8(0x0008) MISSED OFFSET
+	class UWorld*                                      World;                                                    // 0x03D0(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x58];                                      // 0x03D8(0x0058) MISSED OFFSET
+	class UVoyageDescDataAsset*                        LoserTunnelVoyageDescDataAsset;                           // 0x0430(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x50];                                      // 0x0438(0x0050) MISSED OFFSET
+	TArray<struct FGameEventsOnDemandLoserTunnelCrewData> TrackedCrews;                                             // 0x0488(0x0010) (Net, ZeroConstructor)
+	struct FName                                       TemporaryBannerTag;                                       // 0x0498(0x0008) (ZeroConstructor, IsPlainOldData)
+	unsigned char                                      UnknownData03[0x68];                                      // 0x04A0(0x0068) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

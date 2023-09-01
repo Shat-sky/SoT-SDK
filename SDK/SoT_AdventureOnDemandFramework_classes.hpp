@@ -1,6 +1,6 @@
 #pragma once
 
-// Sea of Thieves (2.8.4) SDK
+// Sea of Thieves (2) SDK
 
 #ifdef _MSC_VER
 	#pragma pack(push, 0x8)
@@ -79,17 +79,17 @@ public:
 
 
 // Class AdventureOnDemandFramework.AdventureOnDemandArrivalTunnelDesc
-// 0x0028 (0x00D0 - 0x00A8)
+// 0x0028 (0x00D8 - 0x00B0)
 class UAdventureOnDemandArrivalTunnelDesc : public UClientDestinationPreLoadingArrivalTunnelDesc
 {
 public:
-	struct FVector                                     ResurfaceLocationOffset;                                  // 0x00A8(0x000C) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x4];                                       // 0x00B4(0x0004) MISSED OFFSET
-	class UAdventureOnDemandArrivalTunnelWorkerBase*   DefaultArrivalLocationWorkerClass;                        // 0x00B8(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
-	class UEnvQuery*                                   ResurfaceLocationEQ;                                      // 0x00C0(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	bool                                               ShouldExcludeCrewFromBeingTargetedForGameEvents;          // 0x00C8(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
-	unsigned char                                      UnknownData01[0x3];                                       // 0x00C9(0x0003) MISSED OFFSET
-	float                                              ExclusionTimerFromBeingTargetedForGameEvents;             // 0x00CC(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	struct FVector                                     ResurfaceLocationOffset;                                  // 0x00B0(0x000C) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x00BC(0x0004) MISSED OFFSET
+	class UAdventureOnDemandArrivalTunnelWorkerBase*   DefaultArrivalLocationWorkerClass;                        // 0x00C0(0x0008) (Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData)
+	class UEnvQuery*                                   ResurfaceLocationEQ;                                      // 0x00C8(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	bool                                               ShouldExcludeCrewFromBeingTargetedForGameEvents;          // 0x00D0(0x0001) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x3];                                       // 0x00D1(0x0003) MISSED OFFSET
+	float                                              ExclusionTimerFromBeingTargetedForGameEvents;             // 0x00D4(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -183,10 +183,13 @@ public:
 
 
 // Class AdventureOnDemandFramework.AdventureOnDemandDepartureTunnelDesc
-// 0x0000 (0x0100 - 0x0100)
+// 0x0010 (0x0128 - 0x0118)
 class UAdventureOnDemandDepartureTunnelDesc : public UDepartureTunnelDesc
 {
 public:
+	float                                              SecondsAfterCrewArriveInTunnelBeforeAllowingTunnelCancellation;// 0x0118(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	float                                              SecondsBetweenTunnelCancellationPopupReminder;            // 0x011C(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UPopUpMessageDesc*                           DefaultTunnelCancellationAvailableReminderPopup;          // 0x0120(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -198,11 +201,11 @@ public:
 
 
 // Class AdventureOnDemandFramework.GameEventOnDemandDepartureTunnelDesc
-// 0x0020 (0x0120 - 0x0100)
+// 0x0020 (0x0148 - 0x0128)
 class UGameEventOnDemandDepartureTunnelDesc : public UAdventureOnDemandDepartureTunnelDesc
 {
 public:
-	TAssetPtr<class UClass>                            GameEventType;                                            // 0x0100(0x0020) (Edit, DisableEditOnInstance)
+	TAssetPtr<class UClass>                            GameEventType;                                            // 0x0128(0x0020) (Edit, DisableEditOnInstance)
 
 	static UClass* StaticClass()
 	{
@@ -214,7 +217,7 @@ public:
 
 
 // Class AdventureOnDemandFramework.VoyageOnDemandDepartureTunnelDesc
-// 0x0000 (0x0100 - 0x0100)
+// 0x0000 (0x0128 - 0x0128)
 class UVoyageOnDemandDepartureTunnelDesc : public UAdventureOnDemandDepartureTunnelDesc
 {
 public:
@@ -229,13 +232,12 @@ public:
 
 
 // Class AdventureOnDemandFramework.AdventureOnDemandDepartureTunnelOfTheDamned
-// 0x0020 (0x08C0 - 0x08A0)
+// 0x0020 (0x08E0 - 0x08C0)
 class AAdventureOnDemandDepartureTunnelOfTheDamned : public ADepartureTunnelOfTheDamned
 {
 public:
-	class UAdventureOnDemandDepartureTunnelDesc*       AdventureOnDemandDepartureTunnelDesc;                     // 0x08A0(0x0008) (ZeroConstructor, Transient, IsPlainOldData)
-	TScriptInterface<class UAdventureOnDemandServiceInterface> AdventureOnDemandService;                                 // 0x08A8(0x0010) (ZeroConstructor, Transient, IsPlainOldData)
-	unsigned char                                      UnknownData00[0x8];                                       // 0x08B8(0x0008) MISSED OFFSET
+	TScriptInterface<class UAdventureOnDemandServiceInterface> AdventureOnDemandService;                                 // 0x08C0(0x0010) (ZeroConstructor, Transient, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x10];                                      // 0x08D0(0x0010) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -247,7 +249,7 @@ public:
 
 
 // Class AdventureOnDemandFramework.GameEventOnDemandDepartureTunnelOfTheDamned
-// 0x0000 (0x08C0 - 0x08C0)
+// 0x0000 (0x08E0 - 0x08E0)
 class AGameEventOnDemandDepartureTunnelOfTheDamned : public AAdventureOnDemandDepartureTunnelOfTheDamned
 {
 public:
@@ -262,7 +264,7 @@ public:
 
 
 // Class AdventureOnDemandFramework.VoyageOnDemandDepartureTunnelOfTheDamned
-// 0x0000 (0x08C0 - 0x08C0)
+// 0x0000 (0x08E0 - 0x08E0)
 class AVoyageOnDemandDepartureTunnelOfTheDamned : public AAdventureOnDemandDepartureTunnelOfTheDamned
 {
 public:
@@ -431,7 +433,7 @@ public:
 
 
 // Class AdventureOnDemandFramework.AdventureOnDemandServiceParams
-// 0x0038 (0x0060 - 0x0028)
+// 0x0048 (0x0070 - 0x0028)
 class UAdventureOnDemandServiceParams : public UDataAsset
 {
 public:
@@ -442,6 +444,8 @@ public:
 	float                                              WorldEventsCooldown;                                      // 0x0050(0x0004) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 	unsigned char                                      UnknownData00[0x4];                                       // 0x0054(0x0004) MISSED OFFSET
 	class UAdventureOnDemandLocationRequestDataAsset*  LocationRequestDataAsset;                                 // 0x0058(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UGameEventsOnDemandBannerTextDataAsset*      GameEventsOnDemandBannerTextDataAsset;                    // 0x0060(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
+	class UClass*                                      HuntersCallCompany;                                       // 0x0068(0x0008) (Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData)
 
 	static UClass* StaticClass()
 	{
@@ -613,11 +617,11 @@ public:
 
 
 // Class AdventureOnDemandFramework.AdventureOnDemandYieldQuestResumeOnConditionsTaleStep
-// 0x0010 (0x00A8 - 0x0098)
+// 0x0018 (0x00B0 - 0x0098)
 class UAdventureOnDemandYieldQuestResumeOnConditionsTaleStep : public UTaleQuestStep
 {
 public:
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0098(0x0010) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x18];                                      // 0x0098(0x0018) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -691,6 +695,27 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AdventureOnDemandFramework.AdventureOnDemandYieldQuestResumeOnConditionsStepDesc"));
+		return ptr;
+	}
+
+};
+
+
+// Class AdventureOnDemandFramework.GameEventsOnDemandBannerTextDataAsset
+// 0x0128 (0x0150 - 0x0028)
+class UGameEventsOnDemandBannerTextDataAsset : public UDataAsset
+{
+public:
+	TArray<struct FGameEventOnDemandBannerTextData>    GameEventSpecificBannerTextData;                          // 0x0028(0x0010) (Edit, ZeroConstructor, DisableEditOnInstance)
+	struct FText                                       OnShipSunkBannerText;                                     // 0x0038(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       OnVoyageCancelledBannerText;                              // 0x0070(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       OnCrewJoinedGameEventBannerHeaderText;                    // 0x00A8(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       OnCrewJoinedGameEventBannerMessageText;                   // 0x00E0(0x0038) (Edit, DisableEditOnInstance)
+	struct FText                                       OnGameEventCompletedBannerMessageText;                    // 0x0118(0x0038) (Edit, DisableEditOnInstance)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindObject<UClass>(_xor_("Class AdventureOnDemandFramework.GameEventsOnDemandBannerTextDataAsset"));
 		return ptr;
 	}
 
